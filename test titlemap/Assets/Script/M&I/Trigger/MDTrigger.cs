@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PWTrigger : MonoBehaviour
+public class MDTrigger : MonoBehaviour
 {
     public Text show1;
     public GameObject show2;
     private bool pick;
-    private int once = 0;
+    private int once=0;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -21,23 +21,24 @@ public class PWTrigger : MonoBehaviour
         if (pick && Input.GetKeyDown(KeyCode.Space) && once == 0)
         {
             show2.SetActive(true);
-            show1.text = "Pure water +1";
-            PlayerPrefs.SetInt("SPW", PlayerPrefs.GetInt("SPW") + 1);
+            show1.text = "Morning drop +1";
+            //PlayerPrefs.SetInt("SMD", PlayerPrefs.GetInt("SMD") + 1);
+            ContainerController.MorningDrop += 1;
             once = 1;
             Invoke("delay1", 1f);
             Debug.Log(PlayerPrefs.GetInt("SMD"));
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             pick = true;
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             pick = false;
         }
@@ -45,7 +46,7 @@ public class PWTrigger : MonoBehaviour
     void delay1()
     {
         show2.SetActive(false);
-        //Destroy(gameObject);
+        Destroy(gameObject);
         once = 0;
     }
 }

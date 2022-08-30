@@ -75,8 +75,8 @@ public class SaveGameSystem : MonoBehaviour
         PlayerPrefs.SetInt("SaveLevelP2D1", PlayerPrefs.GetInt("AfterLevelP2"));
         PlayerPrefs.SetInt("SaveMaxEXPP2D1", PlayerPrefs.GetInt("AfterMaxEXPP2"));
         PlayerPrefs.SetInt("SaveCurEXPP2D1", PlayerPrefs.GetInt("AfterCurEXPP2"));
-
-        PlayerPrefs.SetInt("SaveMDD1", PlayerPrefs.GetInt("SMD"));
+        //Set M&I
+        /*PlayerPrefs.SetInt("SaveMDD1", PlayerPrefs.GetInt("SMD"));
         PlayerPrefs.SetInt("SaveDLD1", PlayerPrefs.GetInt("SDL"));
         PlayerPrefs.SetInt("SavePWD1", PlayerPrefs.GetInt("SPW"));
         PlayerPrefs.SetInt("SaveMGD1", PlayerPrefs.GetInt("SMG"));
@@ -84,7 +84,17 @@ public class SaveGameSystem : MonoBehaviour
         PlayerPrefs.SetInt("SaveMPD1", PlayerPrefs.GetInt("SMP"));
         PlayerPrefs.SetInt("SaveEPD1", PlayerPrefs.GetInt("SEP"));
         PlayerPrefs.SetInt("SaveID1", PlayerPrefs.GetInt("SI"));
-        PlayerPrefs.SetInt("SaveBD1", PlayerPrefs.GetInt("SB"));
+        PlayerPrefs.SetInt("SaveBD1", PlayerPrefs.GetInt("SB"));*/
+
+        PlayerPrefs.SetInt("SaveMDD1", ContainerController.MorningDrop);
+        PlayerPrefs.SetInt("SaveDLD1", ContainerController.DriedLeaves);
+        PlayerPrefs.SetInt("SavePWD1", ContainerController.PureWater);
+        PlayerPrefs.SetInt("SaveMGD1", ContainerController.ManaGem);
+        PlayerPrefs.SetInt("SaveHPD1", ContainerController.HealPotion);
+        PlayerPrefs.SetInt("SaveMPD1", ContainerController.ManaPotion);
+        PlayerPrefs.SetInt("SaveEPD1", ContainerController.ElixirPotion);
+        PlayerPrefs.SetInt("SaveID1", ContainerController.Iron);
+        PlayerPrefs.SetInt("SaveBD1", ContainerController.Bom);
 
         PlayerPrefs.SetInt("SaveDTakeDD1", PlayerPrefs.GetInt("DTakeD"));
 
@@ -137,7 +147,7 @@ public class SaveGameSystem : MonoBehaviour
         PlayerPrefs.SetInt("SaveMaxEXPP2D2", PlayerPrefs.GetInt("AfterMaxEXPP2"));
         PlayerPrefs.SetInt("SaveCurEXPP2D2", PlayerPrefs.GetInt("AfterCurEXPP2"));
 
-        PlayerPrefs.SetInt("SaveMDD2", PlayerPrefs.GetInt("SMD"));
+        /*PlayerPrefs.SetInt("SaveMDD2", PlayerPrefs.GetInt("SMD"));
         PlayerPrefs.SetInt("SaveDLD2", PlayerPrefs.GetInt("SDL"));
         PlayerPrefs.SetInt("SavePWD2", PlayerPrefs.GetInt("SPW"));
         PlayerPrefs.SetInt("SaveMGD2", PlayerPrefs.GetInt("SMG"));
@@ -145,7 +155,17 @@ public class SaveGameSystem : MonoBehaviour
         PlayerPrefs.SetInt("SaveMPD2", PlayerPrefs.GetInt("SMP"));
         PlayerPrefs.SetInt("SaveEPD2", PlayerPrefs.GetInt("SEP"));
         PlayerPrefs.SetInt("SaveID2", PlayerPrefs.GetInt("SI"));
-        PlayerPrefs.SetInt("SaveBD2", PlayerPrefs.GetInt("SB"));
+        PlayerPrefs.SetInt("SaveBD2", PlayerPrefs.GetInt("SB"));*/
+
+        PlayerPrefs.SetInt("SaveMDD2", ContainerController.MorningDrop);
+        PlayerPrefs.SetInt("SaveDLD2", ContainerController.DriedLeaves);
+        PlayerPrefs.SetInt("SavePWD2", ContainerController.PureWater);
+        PlayerPrefs.SetInt("SaveMGD2", ContainerController.ManaGem);
+        PlayerPrefs.SetInt("SaveHPD2", ContainerController.HealPotion);
+        PlayerPrefs.SetInt("SaveMPD2", ContainerController.ManaPotion);
+        PlayerPrefs.SetInt("SaveEPD2", ContainerController.ElixirPotion);
+        PlayerPrefs.SetInt("SaveID2", ContainerController.Iron);
+        PlayerPrefs.SetInt("SaveBD2", ContainerController.Bom);
 
         PlayerPrefs.SetInt("SaveDTakeDD2", PlayerPrefs.GetInt("DTakeD"));
 
@@ -198,7 +218,7 @@ public class SaveGameSystem : MonoBehaviour
         PlayerPrefs.SetInt("SaveMaxEXPP2D3", PlayerPrefs.GetInt("AfterMaxEXPP2"));
         PlayerPrefs.SetInt("SaveCurEXPP2D3", PlayerPrefs.GetInt("AfterCurEXPP2"));
 
-        PlayerPrefs.SetInt("SaveMDD3", PlayerPrefs.GetInt("SMD"));
+        /*PlayerPrefs.SetInt("SaveMDD3", PlayerPrefs.GetInt("SMD"));
         PlayerPrefs.SetInt("SaveDLD3", PlayerPrefs.GetInt("SDL"));
         PlayerPrefs.SetInt("SavePWD3", PlayerPrefs.GetInt("SPW"));
         PlayerPrefs.SetInt("SaveMGD3", PlayerPrefs.GetInt("SMG"));
@@ -206,7 +226,17 @@ public class SaveGameSystem : MonoBehaviour
         PlayerPrefs.SetInt("SaveMPD3", PlayerPrefs.GetInt("SMP"));
         PlayerPrefs.SetInt("SaveEPD3", PlayerPrefs.GetInt("SEP"));
         PlayerPrefs.SetInt("SaveID3", PlayerPrefs.GetInt("SI"));
-        PlayerPrefs.SetInt("SaveBD3", PlayerPrefs.GetInt("SB"));
+        PlayerPrefs.SetInt("SaveBD3", PlayerPrefs.GetInt("SB"));*/
+
+        PlayerPrefs.SetInt("SaveMDD3", ContainerController.MorningDrop);
+        PlayerPrefs.SetInt("SaveDLD3", ContainerController.DriedLeaves);
+        PlayerPrefs.SetInt("SavePWD3", ContainerController.PureWater);
+        PlayerPrefs.SetInt("SaveMGD3", ContainerController.ManaGem);
+        PlayerPrefs.SetInt("SaveHPD3", ContainerController.HealPotion);
+        PlayerPrefs.SetInt("SaveMPD3", ContainerController.ManaPotion);
+        PlayerPrefs.SetInt("SaveEPD3", ContainerController.ElixirPotion);
+        PlayerPrefs.SetInt("SaveID3", ContainerController.Iron);
+        PlayerPrefs.SetInt("SaveBD3", ContainerController.Bom);
 
         PlayerPrefs.SetInt("SaveDTakeDD3", PlayerPrefs.GetInt("DTakeD"));
 

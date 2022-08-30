@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MDTrigger : MonoBehaviour
+public class DLTrigger : MonoBehaviour
 {
     public Text show1;
     public GameObject show2;
@@ -21,11 +21,12 @@ public class MDTrigger : MonoBehaviour
         if (pick && Input.GetKeyDown(KeyCode.Space) && once == 0)
         {
             show2.SetActive(true);
-            show1.text = "Morning drop +1";
-            PlayerPrefs.SetInt("SMD", PlayerPrefs.GetInt("SMD") + 1);
+            show1.text = "Dried leaves +1";
+            //PlayerPrefs.SetInt("SDL", PlayerPrefs.GetInt("SDL") + 1);
+            ContainerController.DriedLeaves += 1;
             once = 1;
             Invoke("delay1", 1f);
-            Debug.Log(PlayerPrefs.GetInt("SMD"));
+            Debug.Log(PlayerPrefs.GetInt("SDL"));
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

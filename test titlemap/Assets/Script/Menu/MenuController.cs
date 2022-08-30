@@ -31,7 +31,7 @@ public class MenuController : MonoBehaviour
     }
     public void PressStartNewGame()
     {
-        PlayerPrefs.SetInt("cus1", 0);
+        /*PlayerPrefs.SetInt("cus1", 0);
         PlayerPrefs.SetInt("cus2", 0);
         PlayerPrefs.SetInt("cus3", 0);
         PlayerPrefs.SetInt("cus4", 0);
@@ -42,7 +42,20 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.SetInt("cus9", 0);
         PlayerPrefs.SetInt("cus10", 0);
         PlayerPrefs.SetInt("cus11", 0);
-        PlayerPrefs.SetInt("cus12", 0);
+        PlayerPrefs.SetInt("cus12", 0);*/
+
+        CutscenesController.cus1 = 0;
+        CutscenesController.cus2 = 0;
+        CutscenesController.cus3 = 0;
+        CutscenesController.cus4 = 0;
+        CutscenesController.cus5 = 0;
+        CutscenesController.cus6 = 0;
+        CutscenesController.cus7 = 0;
+        CutscenesController.cus8 = 0;
+        CutscenesController.cus9 = 0;
+        CutscenesController.cus10 = 0;
+        CutscenesController.cus11 = 0;
+        CutscenesController.cus12 = 0;
 
         PlayerPrefs.SetInt("SKGQ", 0);
         PlayerPrefs.SetInt("SHVStop1", 0);
@@ -90,7 +103,7 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.SetInt("AfterMaxEXPP2", 80);
         PlayerPrefs.SetInt("AfterCurEXPP2", 0);
         //Set item material
-        PlayerPrefs.SetInt("SMD", 0);
+        /*PlayerPrefs.SetInt("SMD", 0);
         PlayerPrefs.SetInt("SDL", 0);
         PlayerPrefs.SetInt("SPW", 0);
         PlayerPrefs.SetInt("SMG", 0);
@@ -98,7 +111,16 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.SetInt("SMP", 0);
         PlayerPrefs.SetInt("SEP", 0);
         PlayerPrefs.SetInt("SI", 0);
-        PlayerPrefs.SetInt("SB", 0);
+        PlayerPrefs.SetInt("SB", 0);*/
+        ContainerController.MorningDrop = 0;
+        ContainerController.DriedLeaves = 0;
+        ContainerController.PureWater = 0;
+        ContainerController.ManaGem = 0;
+        ContainerController.HealPotion = 0;
+        ContainerController.ManaPotion = 0;
+        ContainerController.ElixirPotion = 0;
+        ContainerController.Iron = 0;
+        ContainerController.Bom = 0;
 
         PlayerPrefs.SetInt("DTakeD", 0);
 
@@ -121,7 +143,7 @@ public class MenuController : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("SaveGameD1") == 1)
         {
-            PlayerPrefs.SetInt("cus1", PlayerPrefs.GetInt("Savecus1D1"));
+            /*PlayerPrefs.SetInt("cus1", PlayerPrefs.GetInt("Savecus1D1"));
             PlayerPrefs.SetInt("cus2", PlayerPrefs.GetInt("Savecus2D1"));
             PlayerPrefs.SetInt("cus3", PlayerPrefs.GetInt("Savecus3D1"));
             PlayerPrefs.SetInt("cus4", PlayerPrefs.GetInt("Savecus4D1"));
@@ -132,7 +154,19 @@ public class MenuController : MonoBehaviour
             PlayerPrefs.SetInt("cus9", PlayerPrefs.GetInt("Savecus9D1"));
             PlayerPrefs.SetInt("cus10", PlayerPrefs.GetInt("Savecus10D1"));
             PlayerPrefs.SetInt("cus11", PlayerPrefs.GetInt("Savecus11D1"));
-            PlayerPrefs.SetInt("cus12", PlayerPrefs.GetInt("Savecus12D1"));
+            PlayerPrefs.SetInt("cus12", PlayerPrefs.GetInt("Savecus12D1"));*/
+            CutscenesController.cus1 = PlayerPrefs.GetInt("Savecus1D1");
+            CutscenesController.cus2 = PlayerPrefs.GetInt("Savecus2D1");
+            CutscenesController.cus3 = PlayerPrefs.GetInt("Savecus3D1");
+            CutscenesController.cus4 = PlayerPrefs.GetInt("Savecus4D1");
+            CutscenesController.cus5 = PlayerPrefs.GetInt("Savecus5D1");
+            CutscenesController.cus6 = PlayerPrefs.GetInt("Savecus6D1");
+            CutscenesController.cus7 = PlayerPrefs.GetInt("Savecus7D1");
+            CutscenesController.cus8 = PlayerPrefs.GetInt("Savecus8D1");
+            CutscenesController.cus9 = PlayerPrefs.GetInt("Savecus9D1");
+            CutscenesController.cus10 = PlayerPrefs.GetInt("Savecus10D1");
+            CutscenesController.cus11 = PlayerPrefs.GetInt("Savecus11D1");
+            CutscenesController.cus12 = PlayerPrefs.GetInt("Savecus12D1");
 
             PlayerPrefs.SetInt("SKGQ", PlayerPrefs.GetInt("SaveKGQD1"));
             PlayerPrefs.SetInt("SHVStop1", PlayerPrefs.GetInt("SaveHVStop1D1"));
@@ -183,7 +217,7 @@ public class MenuController : MonoBehaviour
             PlayerPrefs.SetInt("AfterMaxEXPP2", PlayerPrefs.GetInt("SaveMaxEXPP2D1"));
             PlayerPrefs.SetInt("AfterCurEXPP2", PlayerPrefs.GetInt("SaveCurEXPP2D1"));
 
-            PlayerPrefs.SetInt("SMD", PlayerPrefs.GetInt("SaveMDD1"));
+            /*PlayerPrefs.SetInt("SMD", PlayerPrefs.GetInt("SaveMDD1"));
             PlayerPrefs.SetInt("SDL", PlayerPrefs.GetInt("SaveDLD1"));
             PlayerPrefs.SetInt("SPW", PlayerPrefs.GetInt("SavePWD1"));
             PlayerPrefs.SetInt("SMG", PlayerPrefs.GetInt("SaveMGD1"));
@@ -191,7 +225,17 @@ public class MenuController : MonoBehaviour
             PlayerPrefs.SetInt("SMP", PlayerPrefs.GetInt("SaveMPD1"));
             PlayerPrefs.SetInt("SEP", PlayerPrefs.GetInt("SaveEPD1"));
             PlayerPrefs.SetInt("SI", PlayerPrefs.GetInt("SaveID1"));
-            PlayerPrefs.SetInt("SB", PlayerPrefs.GetInt("SaveBD1"));
+            PlayerPrefs.SetInt("SB", PlayerPrefs.GetInt("SaveBD1"));*/
+
+            ContainerController.MorningDrop = PlayerPrefs.GetInt("SaveMDD1");
+            ContainerController.DriedLeaves = PlayerPrefs.GetInt("SaveDLD1");
+            ContainerController.PureWater = PlayerPrefs.GetInt("SavePWD1");
+            ContainerController.ManaGem = PlayerPrefs.GetInt("SaveMGD1");
+            ContainerController.HealPotion = PlayerPrefs.GetInt("SaveHPD1");
+            ContainerController.ManaPotion = PlayerPrefs.GetInt("SaveMPD1");
+            ContainerController.ElixirPotion = PlayerPrefs.GetInt("SaveEPD1");
+            ContainerController.Iron = PlayerPrefs.GetInt("SaveID1");
+            ContainerController.Bom = PlayerPrefs.GetInt("SaveBD1");
 
             PlayerPrefs.SetInt("DTakeD", PlayerPrefs.GetInt("SaveDTakeDD1"));
 
@@ -202,7 +246,7 @@ public class MenuController : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("SaveGameD2") == 1)
         {
-            PlayerPrefs.SetInt("cus1", PlayerPrefs.GetInt("Savecus1D2"));
+            /*PlayerPrefs.SetInt("cus1", PlayerPrefs.GetInt("Savecus1D2"));
             PlayerPrefs.SetInt("cus2", PlayerPrefs.GetInt("Savecus2D2"));
             PlayerPrefs.SetInt("cus3", PlayerPrefs.GetInt("Savecus3D2"));
             PlayerPrefs.SetInt("cus4", PlayerPrefs.GetInt("Savecus4D2"));
@@ -213,7 +257,19 @@ public class MenuController : MonoBehaviour
             PlayerPrefs.SetInt("cus9", PlayerPrefs.GetInt("Savecus9D2"));
             PlayerPrefs.SetInt("cus10", PlayerPrefs.GetInt("Savecus10D2"));
             PlayerPrefs.SetInt("cus11", PlayerPrefs.GetInt("Savecus11D2"));
-            PlayerPrefs.SetInt("cus12", PlayerPrefs.GetInt("Savecus12D2"));
+            PlayerPrefs.SetInt("cus12", PlayerPrefs.GetInt("Savecus12D2"));*/
+            CutscenesController.cus1 = PlayerPrefs.GetInt("Savecus1D2");
+            CutscenesController.cus2 = PlayerPrefs.GetInt("Savecus2D2");
+            CutscenesController.cus3 = PlayerPrefs.GetInt("Savecus3D2");
+            CutscenesController.cus4 = PlayerPrefs.GetInt("Savecus4D2");
+            CutscenesController.cus5 = PlayerPrefs.GetInt("Savecus5D2");
+            CutscenesController.cus6 = PlayerPrefs.GetInt("Savecus6D2");
+            CutscenesController.cus7 = PlayerPrefs.GetInt("Savecus7D2");
+            CutscenesController.cus8 = PlayerPrefs.GetInt("Savecus8D2");
+            CutscenesController.cus9 = PlayerPrefs.GetInt("Savecus9D2");
+            CutscenesController.cus10 = PlayerPrefs.GetInt("Savecus10D2");
+            CutscenesController.cus11 = PlayerPrefs.GetInt("Savecus11D2");
+            CutscenesController.cus12 = PlayerPrefs.GetInt("Savecus12D2");
 
             PlayerPrefs.SetInt("SKGQ", PlayerPrefs.GetInt("SaveKGQD2"));
             PlayerPrefs.SetInt("SHVStop1", PlayerPrefs.GetInt("SaveHVStop1D2"));
@@ -264,7 +320,7 @@ public class MenuController : MonoBehaviour
             PlayerPrefs.SetInt("AfterMaxEXPP2", PlayerPrefs.GetInt("SaveMaxEXPP2D2"));
             PlayerPrefs.SetInt("AfterCurEXPP2", PlayerPrefs.GetInt("SaveCurEXPP2D2"));
 
-            PlayerPrefs.SetInt("SMD", PlayerPrefs.GetInt("SaveMDD2"));
+            /*PlayerPrefs.SetInt("SMD", PlayerPrefs.GetInt("SaveMDD2"));
             PlayerPrefs.SetInt("SDL", PlayerPrefs.GetInt("SaveDLD2"));
             PlayerPrefs.SetInt("SPW", PlayerPrefs.GetInt("SavePWD2"));
             PlayerPrefs.SetInt("SMG", PlayerPrefs.GetInt("SaveMGD2"));
@@ -272,7 +328,17 @@ public class MenuController : MonoBehaviour
             PlayerPrefs.SetInt("SMP", PlayerPrefs.GetInt("SaveMPD2"));
             PlayerPrefs.SetInt("SEP", PlayerPrefs.GetInt("SaveEPD2"));
             PlayerPrefs.SetInt("SI", PlayerPrefs.GetInt("SaveID2"));
-            PlayerPrefs.SetInt("SB", PlayerPrefs.GetInt("SaveBD2"));
+            PlayerPrefs.SetInt("SB", PlayerPrefs.GetInt("SaveBD2"));*/
+
+            ContainerController.MorningDrop = PlayerPrefs.GetInt("SaveMDD2");
+            ContainerController.DriedLeaves = PlayerPrefs.GetInt("SaveDLD2");
+            ContainerController.PureWater = PlayerPrefs.GetInt("SavePWD2");
+            ContainerController.ManaGem = PlayerPrefs.GetInt("SaveMGD2");
+            ContainerController.HealPotion = PlayerPrefs.GetInt("SaveHPD2");
+            ContainerController.ManaPotion = PlayerPrefs.GetInt("SaveMPD2");
+            ContainerController.ElixirPotion = PlayerPrefs.GetInt("SaveEPD2");
+            ContainerController.Iron = PlayerPrefs.GetInt("SaveID2");
+            ContainerController.Bom = PlayerPrefs.GetInt("SaveBD2");
 
             PlayerPrefs.SetInt("DTakeD", PlayerPrefs.GetInt("SaveDTakeDD2"));
 
@@ -283,7 +349,7 @@ public class MenuController : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("SaveGameD3") == 1)
         {
-            PlayerPrefs.SetInt("cus1", PlayerPrefs.GetInt("Savecus1D3"));
+            /*PlayerPrefs.SetInt("cus1", PlayerPrefs.GetInt("Savecus1D3"));
             PlayerPrefs.SetInt("cus2", PlayerPrefs.GetInt("Savecus2D3"));
             PlayerPrefs.SetInt("cus3", PlayerPrefs.GetInt("Savecus3D3"));
             PlayerPrefs.SetInt("cus4", PlayerPrefs.GetInt("Savecus4D3"));
@@ -294,7 +360,19 @@ public class MenuController : MonoBehaviour
             PlayerPrefs.SetInt("cus9", PlayerPrefs.GetInt("Savecus9D3"));
             PlayerPrefs.SetInt("cus10", PlayerPrefs.GetInt("Savecus10D3"));
             PlayerPrefs.SetInt("cus11", PlayerPrefs.GetInt("Savecus11D3"));
-            PlayerPrefs.SetInt("cus12", PlayerPrefs.GetInt("Savecus12D3"));
+            PlayerPrefs.SetInt("cus12", PlayerPrefs.GetInt("Savecus12D3"));*/
+            CutscenesController.cus1 = PlayerPrefs.GetInt("Savecus1D3");
+            CutscenesController.cus2 = PlayerPrefs.GetInt("Savecus2D3");
+            CutscenesController.cus3 = PlayerPrefs.GetInt("Savecus3D3");
+            CutscenesController.cus4 = PlayerPrefs.GetInt("Savecus4D3");
+            CutscenesController.cus5 = PlayerPrefs.GetInt("Savecus5D3");
+            CutscenesController.cus6 = PlayerPrefs.GetInt("Savecus6D3");
+            CutscenesController.cus7 = PlayerPrefs.GetInt("Savecus7D3");
+            CutscenesController.cus8 = PlayerPrefs.GetInt("Savecus8D3");
+            CutscenesController.cus9 = PlayerPrefs.GetInt("Savecus9D3");
+            CutscenesController.cus10 = PlayerPrefs.GetInt("Savecus10D3");
+            CutscenesController.cus11 = PlayerPrefs.GetInt("Savecus11D3");
+            CutscenesController.cus12 = PlayerPrefs.GetInt("Savecus12D3");
 
             PlayerPrefs.SetInt("SKGQ", PlayerPrefs.GetInt("SaveKGQD3"));
             PlayerPrefs.SetInt("SHVStop1", PlayerPrefs.GetInt("SaveHVStop1D3"));
@@ -345,7 +423,7 @@ public class MenuController : MonoBehaviour
             PlayerPrefs.SetInt("AfterMaxEXPP2", PlayerPrefs.GetInt("SaveMaxEXPP2D3"));
             PlayerPrefs.SetInt("AfterCurEXPP2", PlayerPrefs.GetInt("SaveCurEXPP2D3"));
 
-            PlayerPrefs.SetInt("SMD", PlayerPrefs.GetInt("SaveMDD3"));
+            /*PlayerPrefs.SetInt("SMD", PlayerPrefs.GetInt("SaveMDD3"));
             PlayerPrefs.SetInt("SDL", PlayerPrefs.GetInt("SaveDLD3"));
             PlayerPrefs.SetInt("SPW", PlayerPrefs.GetInt("SavePWD3"));
             PlayerPrefs.SetInt("SMG", PlayerPrefs.GetInt("SaveMGD3"));
@@ -353,7 +431,17 @@ public class MenuController : MonoBehaviour
             PlayerPrefs.SetInt("SMP", PlayerPrefs.GetInt("SaveMPD3"));
             PlayerPrefs.SetInt("SEP", PlayerPrefs.GetInt("SaveEPD3"));
             PlayerPrefs.SetInt("SI", PlayerPrefs.GetInt("SaveID3"));
-            PlayerPrefs.SetInt("SB", PlayerPrefs.GetInt("SaveBD3"));
+            PlayerPrefs.SetInt("SB", PlayerPrefs.GetInt("SaveBD3"));*/
+
+            ContainerController.MorningDrop = PlayerPrefs.GetInt("SaveMDD3");
+            ContainerController.DriedLeaves = PlayerPrefs.GetInt("SaveDLD3");
+            ContainerController.PureWater = PlayerPrefs.GetInt("SavePWD3");
+            ContainerController.ManaGem = PlayerPrefs.GetInt("SaveMGD3");
+            ContainerController.HealPotion = PlayerPrefs.GetInt("SaveHPD3");
+            ContainerController.ManaPotion = PlayerPrefs.GetInt("SaveMPD3");
+            ContainerController.ElixirPotion = PlayerPrefs.GetInt("SaveEPD3");
+            ContainerController.Iron = PlayerPrefs.GetInt("SaveID3");
+            ContainerController.Bom = PlayerPrefs.GetInt("SaveBD3");
 
             PlayerPrefs.SetInt("DTakeD", PlayerPrefs.GetInt("SaveDTakeDD3"));
 

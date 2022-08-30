@@ -22,7 +22,8 @@ public class ITrigger : MonoBehaviour
         {
             show2.SetActive(true);
             show1.text = "Iron +1";
-            PlayerPrefs.SetInt("SI", PlayerPrefs.GetInt("SI") + 1);
+            //PlayerPrefs.SetInt("SI", PlayerPrefs.GetInt("SI") + 1);
+            ContainerController.Iron += 1;
             once = 1;
             Invoke("delay1", 1f);
             Debug.Log(PlayerPrefs.GetInt("SDL"));
