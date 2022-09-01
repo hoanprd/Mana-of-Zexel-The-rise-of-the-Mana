@@ -52,7 +52,7 @@ public class Cus3 : MonoBehaviour
             dia.text = "Alia: Ok, no problem, the tavern is on the west side of town.";
         else if (tang >= 17)
         {
-            PlayerPrefs.SetInt("cus3", 1);
+            CutscenesController.cus3 = 1;
             SceneManager.LoadScene(3);
         }
     }
@@ -62,7 +62,7 @@ public class Cus3 : MonoBehaviour
     }
     public void Pressskip()
     {
-        PlayerPrefs.SetInt("cus3", 1);
+        CutscenesController.cus3 = 1;
         SceneManager.LoadScene(3);
     }
 }

@@ -73,7 +73,7 @@ public class Cus1 : MonoBehaviour
             dia.text = "Vayne: Are you kidding me? A thief in middel of the day? I think I have to teach this bandit a lesson!";
         else if (tang >= 20)
         {
-            PlayerPrefs.SetInt("cus1", 1);
+            CutscenesController.cus1 = 1;
             SceneManager.LoadScene(20);
         }
     }
@@ -83,7 +83,7 @@ public class Cus1 : MonoBehaviour
     }
     public void Pressskip()
     {
-        PlayerPrefs.SetInt("cus1", 1);
+        CutscenesController.cus1 = 1;
         SceneManager.LoadScene(20);
     }
 }

@@ -38,7 +38,7 @@ public class Cus10 : MonoBehaviour
             dia.text = "Alia: Uhm...";
         else if (tang >= 10)
         {
-            PlayerPrefs.SetInt("cus10", 1);
+            CutscenesController.cus10 = 1;
             SceneManager.LoadScene(4);
         }
     }
@@ -48,7 +48,7 @@ public class Cus10 : MonoBehaviour
     }
     public void Pressskip()
     {
-        PlayerPrefs.SetInt("cus10", 1);
+        CutscenesController.cus10 = 1;
         SceneManager.LoadScene(4);
     }
 }

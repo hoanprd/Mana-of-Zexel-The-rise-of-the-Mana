@@ -52,8 +52,8 @@ public class Cus7 : MonoBehaviour
             dia.text = "Mr. Lance: Those two are so passionate, hehe. Good luck both.";
         else if (tang >= 17)
         {
-            PlayerPrefs.SetInt("cus7", 1);
-            PlayerPrefs.SetInt("SZen", PlayerPrefs.GetInt("SZen") + 100);
+            CutscenesController.cus7 = 1;
+            Global.Zen += 100;
             SceneManager.LoadScene(5);
         }
     }
@@ -63,12 +63,12 @@ public class Cus7 : MonoBehaviour
     }
     public void Pressskip()
     {
-        PlayerPrefs.SetInt("cus7", 1);
+        CutscenesController.cus7 = 1;
         if (tang >=17)
             SceneManager.LoadScene(5);
         else
         {
-            PlayerPrefs.SetInt("SZen", PlayerPrefs.GetInt("SZen") + 100);
+            Global.Zen += 100;
             SceneManager.LoadScene(5);
         }
     }

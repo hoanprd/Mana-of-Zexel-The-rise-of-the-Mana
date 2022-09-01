@@ -58,7 +58,7 @@ public class Cus4 : MonoBehaviour
             dia.text = "Alia: Yeah, okay Vayne, my room's on the right front door.";
         else if (tang >= 20)
         {
-            PlayerPrefs.SetInt("cus4", 1);
+            CutscenesController.cus4 = 1;
             SceneManager.LoadScene(5);
         }
     }
@@ -68,7 +68,7 @@ public class Cus4 : MonoBehaviour
     }
     public void Pressskip()
     {
-        PlayerPrefs.SetInt("cus4", 1);
+        CutscenesController.cus4 = 1;
         SceneManager.LoadScene(5);
     }
 }

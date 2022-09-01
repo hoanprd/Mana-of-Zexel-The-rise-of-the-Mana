@@ -32,7 +32,7 @@ public class Cus12 : MonoBehaviour
             dia.text = "To be continued...";
         else if (tang >= 7)
         {
-            PlayerPrefs.SetInt("cus12", 1);
+            CutscenesController.cus12 = 1;
             SceneManager.LoadScene(19);
         }
     }
@@ -42,7 +42,7 @@ public class Cus12 : MonoBehaviour
     }
     public void Pressskip()
     {
-        PlayerPrefs.SetInt("cus12", 1);
+        CutscenesController.cus12 = 1;
         SceneManager.LoadScene(19);
     }
 }

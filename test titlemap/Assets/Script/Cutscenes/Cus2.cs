@@ -70,7 +70,7 @@ public class Cus2 : MonoBehaviour
             dia.text = "Alia join the team.";
         else if (tang >= 21)
         {
-            PlayerPrefs.SetInt("cus2", 1);
+            CutscenesController.cus2 = 1;
             SceneManager.LoadScene(2);
         }
     }
@@ -80,7 +80,7 @@ public class Cus2 : MonoBehaviour
     }
     public void Pressskip()
     {
-        PlayerPrefs.SetInt("cus2", 1);
+        CutscenesController.cus2 = 1;
         SceneManager.LoadScene(2);
     }
 }

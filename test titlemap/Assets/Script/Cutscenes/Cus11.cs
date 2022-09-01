@@ -78,7 +78,7 @@ public class Cus11 : MonoBehaviour
             dia.text = "Maria: They can be found in the southern part of this forest, be careful, they are very strong!";
         else if (tang >= 25)
         {
-            PlayerPrefs.SetInt("cus11", 1);
+            CutscenesController.cus11 = 1;
             SceneManager.LoadScene(4);
         }
     }
@@ -88,7 +88,7 @@ public class Cus11 : MonoBehaviour
     }
     public void Pressskip()
     {
-        PlayerPrefs.SetInt("cus11", 1);
+        CutscenesController.cus11 = 1;
         SceneManager.LoadScene(4);
     }
 }

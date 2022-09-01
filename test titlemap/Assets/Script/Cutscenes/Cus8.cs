@@ -46,7 +46,7 @@ public class Cus8 : MonoBehaviour
             dia.text = "Vayne: ... Maybe. I'll try my best to help this town.";
         else if (tang >= 14)
         {
-            PlayerPrefs.SetInt("cus8", 1);
+            CutscenesController.cus8 = 1;
             SceneManager.LoadScene(3);
         }
     }
@@ -56,7 +56,7 @@ public class Cus8 : MonoBehaviour
     }
     public void Pressskip()
     {
-        PlayerPrefs.SetInt("cus8", 1);
+        CutscenesController.cus8 = 1;
         SceneManager.LoadScene(3);
     }
 }

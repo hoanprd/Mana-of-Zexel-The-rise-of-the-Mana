@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class BSGoblin1 : MonoBehaviour
 {
-    Global gb;
+    //Global gb;
     PlayerBattle pb;
     GoblinBattle GB;
     public GameObject Item_panel;
@@ -47,17 +47,17 @@ public class BSGoblin1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gb = FindObjectOfType<Global>();
+        //gb = FindObjectOfType<Global>();
         pb = FindObjectOfType<PlayerBattle>();
         GB = FindObjectOfType<GoblinBattle>();
-        a1 = gb.SpeedP1 / 10;
-        Debug.Log(gb.SpeedP2);
-        a2 = gb.SpeedP2 / 10;
+        a1 = Global.SpeedP1 / 10;
+        Debug.Log(Global.SpeedP2);
+        a2 = Global.SpeedP2 / 10;
         Debug.Log(a2);
-        aE2 = gb.SpeedE2 / 10;
-        if (gb.CurHPP1 > 0)
+        aE2 = Global.SpeedE2 / 10;
+        if (Global.CurHPP1 > 0)
             pb.dead1 = 0;
-        if (gb.CurHPP2 > 0)
+        if (Global.CurHPP2 > 0)
             pb.dead2 = 0;
     }
 
@@ -68,21 +68,21 @@ public class BSGoblin1 : MonoBehaviour
         CheckP1P2Die();
         CheckP1Die();
         CheckP2Die();
-        HP1.text = "HP: " + gb.CurHPP1.ToString() + "/" + gb.MaxHPP1;
-        MP1.text = "MP: " + gb.CurMPP1.ToString() + "/" + gb.MaxMPP1;
-        HP2.text = "HP: " + gb.CurHPP2.ToString() + "/" + gb.MaxHPP2;
-        MP2.text = "MP: " + gb.CurMPP2.ToString() + "/" + gb.MaxMPP2;
-        HPE2.text = "HP: " + gb.HPE2.ToString();
+        HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
+        MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
+        HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
+        MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
+        HPE2.text = "HP: " + Global.HPE2.ToString();
         NumTurn.text = "Turn " + dem_turn.ToString();
-        if (gb.HPE2 <= 0)
+        if (Global.HPE2 <= 0)
             HPE2.text = "HP: 0";
-        if (gb.CurHPP1 <= 0)
+        if (Global.CurHPP1 <= 0)
             HP1.text = "HP: 0";
-        if (gb.CurHPP2 <= 0)
+        if (Global.CurHPP2 <= 0)
             HP2.text = "HP: 0";
-        if (gb.SpeedP2 >= gb.SpeedE2)
+        if (Global.SpeedP2 >= Global.SpeedE2)
         {
-            if(a2 > 0 && gb.CurHPP2 > 0)
+            if(a2 > 0 && Global.CurHPP2 > 0)
             {
                 CheckE2Die();
                 CheckP1Die();
@@ -93,7 +93,7 @@ public class BSGoblin1 : MonoBehaviour
                 else
                     ShowP2Panel(false);
             }
-            else if (a1 > 0 && gb.CurHPP1 > 0)
+            else if (a1 > 0 && Global.CurHPP1 > 0)
             {
                 CheckE2Die();
                 CheckP1Die();
@@ -104,7 +104,7 @@ public class BSGoblin1 : MonoBehaviour
                 else
                     ShowP1Panel(false);
             }
-            else if (aE2 > 0 && gb.HPE2 > 0)
+            else if (aE2 > 0 && Global.HPE2 > 0)
             {
                 CheckE2Die();
                 ShowP1Panel(false);
@@ -150,7 +150,7 @@ public class BSGoblin1 : MonoBehaviour
     }
     public void PressSkill()
     {
-        if (gb.CurMPP1 >= 20)
+        if (Global.CurMPP1 >= 20)
         {
             pb.yes2 = 1;
             show1 = 1;
@@ -160,7 +160,7 @@ public class BSGoblin1 : MonoBehaviour
     }
     public void PressSkillP2()
     {
-        if (gb.CurMPP2 >= 20)
+        if (Global.CurMPP2 >= 20)
         {
             pb.yes4 = 1;
             show2 = 1;
@@ -171,24 +171,24 @@ public class BSGoblin1 : MonoBehaviour
     public void PressItem()
     {
         show1 = 1;
-        num1.text = PlayerPrefs.GetInt("SHP") + "";
-        num2.text = PlayerPrefs.GetInt("SMP") + "";
-        num3.text = PlayerPrefs.GetInt("SEP") + "";
-        num4.text = PlayerPrefs.GetInt("SB") + "";
+        num1.text = ContainerController.HealPotion + "";
+        num2.text = ContainerController.ManaPotion + "";
+        num3.text = ContainerController.ElixirPotion + "";
+        num4.text = ContainerController.Bom + "";
         Item_panel.SetActive(true);
     }
     public void UseHP()
     {
-        if (PlayerPrefs.GetInt("SHP") > 0)
+        if (ContainerController.HealPotion > 0)
         {
             Item_panel.SetActive(false);
-            gb.CurHPP1 += 50;
+            Global.CurHPP1 += 50;
             showr2.SetActive(true);
             showr1.text = "HP +50";
-            PlayerPrefs.SetInt("SHP", PlayerPrefs.GetInt("SHP") - 1);
-            if (gb.CurHPP1 > gb.MaxHPP1)
+            ContainerController.HealPotion -= 1;
+            if (Global.CurHPP1 > Global.MaxHPP1)
             {
-                gb.CurHPP1 = gb.MaxHPP1;
+                Global.CurHPP1 = Global.MaxHPP1;
             }
             show1 = 0;
             a1 -= 1;
@@ -196,7 +196,7 @@ public class BSGoblin1 : MonoBehaviour
             dem_turn += 1;
             if (a1 == 0)
             {
-                aE2 = gb.SpeedE2 / 10;
+                aE2 = Global.SpeedE2 / 10;
             }
             Invoke("delayshowr", 2f);
         }
@@ -209,16 +209,16 @@ public class BSGoblin1 : MonoBehaviour
     }
     public void UseMP()
     {
-        if (PlayerPrefs.GetInt("SMP") > 0)
+        if (ContainerController.ManaPotion > 0)
         {
             Item_panel.SetActive(false);
-            gb.CurMPP1 += 30;
+            Global.CurMPP1 += 30;
             showr2.SetActive(true);
             showr1.text = "MP +30";
-            PlayerPrefs.SetInt("SMP", PlayerPrefs.GetInt("SMP") - 1);
-            if (gb.CurMPP1 > gb.MaxMPP1)
+            ContainerController.ManaPotion -= 1;
+            if (Global.CurMPP1 > Global.MaxMPP1)
             {
-                gb.CurMPP1 = gb.MaxMPP1;
+                Global.CurMPP1 = Global.MaxMPP1;
             }
             show1 = 0;
             a1 -= 1;
@@ -226,7 +226,7 @@ public class BSGoblin1 : MonoBehaviour
             dem_turn += 1;
             if (a1 == 0)
             {
-                aE2 = gb.SpeedE2 / 10;
+                aE2 = Global.SpeedE2 / 10;
             }
             Invoke("delayshowr", 2f);
         }
@@ -239,28 +239,28 @@ public class BSGoblin1 : MonoBehaviour
     }
     public void UseEP()
     {
-        if (PlayerPrefs.GetInt("SEP") > 0)
+        if (ContainerController.ElixirPotion > 0)
         {
             Item_panel.SetActive(false);
-            gb.CurHPP1 += 50;
-            gb.CurMPP1 += 30;
+            Global.CurHPP1 += 50;
+            Global.CurMPP1 += 30;
             showr2.SetActive(true);
             showr1.text = "MP +50 MP +30";
-            PlayerPrefs.SetInt("SEP", PlayerPrefs.GetInt("SEP") - 1);
-            if (gb.CurHPP1 > gb.MaxHPP1)
+            ContainerController.ElixirPotion -= 1;
+            if (Global.CurHPP1 > Global.MaxHPP1)
             {
-                gb.CurHPP1 = gb.MaxHPP1;
+                Global.CurHPP1 = Global.MaxHPP1;
             }
-            if (gb.CurMPP1 > gb.MaxMPP1)
+            if (Global.CurMPP1 > Global.MaxMPP1)
             {
-                gb.CurMPP1 = gb.MaxMPP1;
+                Global.CurMPP1 = Global.MaxMPP1;
             }
             a1 -= 1;
             dem_turn += 1;
             dem = 1;
             if (a1 == 0)
             {
-                aE2 = gb.SpeedE2 / 10;
+                aE2 = Global.SpeedE2 / 10;
             }
             Invoke("delayshowr", 2f);
         }
@@ -273,19 +273,19 @@ public class BSGoblin1 : MonoBehaviour
     }
     public void UseB()
     {
-        if (PlayerPrefs.GetInt("SB") > 0)
+        if (ContainerController.Bom > 0)
         {
             Item_panel.SetActive(false);
-            gb.HPE2 -= 200;
+            Global.HPE2 -= 200;
             //showr2.SetActive(true);
             //showr1.text = "MP +50 MP +30";
-            PlayerPrefs.SetInt("SB", PlayerPrefs.GetInt("SB") - 1);
+            ContainerController.Bom -= 1;
             a1 -= 1;
             dem_turn += 1;
             dem = 1;
             if (a1 == 0)
             {
-                aE2 = gb.SpeedE2 / 10;
+                aE2 = Global.SpeedE2 / 10;
             }
             Invoke("delayshowr", 2f);
         }
@@ -303,95 +303,69 @@ public class BSGoblin1 : MonoBehaviour
     }
     public void PressRun()
     {
-        PlayerPrefs.SetInt("AfterHPP1", gb.CurHPP1);
-        PlayerPrefs.SetInt("AfterMPP1", gb.CurMPP1);
-        PlayerPrefs.SetInt("AfterHPP2", gb.CurHPP2);
-        PlayerPrefs.SetInt("AfterMPP2", gb.CurMPP2);
-        PlayerPrefs.SetInt("DTakeD", 1);
         SceneManager.LoadScene(3);
     }
     public void PressBackToTheMap2()
     {
-        if(PlayerPrefs.GetInt("cus6") == 1 && PlayerPrefs.GetInt("cus7") == 0)
+        if(CutscenesController.cus6 == 1 && CutscenesController.cus7 == 0)
         {
-            PlayerPrefs.SetInt("SKGQ", PlayerPrefs.GetInt("SKGQ") + 1);
-            if (PlayerPrefs.GetInt("SKGQ") > 4)
-                PlayerPrefs.SetInt("SKGQ", 4);
+            GlobalQuest.KillGoblinQuest += 1;
+            if (GlobalQuest.KillGoblinQuest > 4)
+                GlobalQuest.KillGoblinQuest = 4;
         }
         SceneManager.LoadScene(3);
     }
     public void CheckP1Die()
     {
-        if(gb.CurHPP1 <= 0)
+        if(Global.CurHPP1 <= 0)
         {
             pb.dead1 = 1;
         }
     }
     public void CheckP2Die()
     {
-        if(gb.CurHPP2 <= 0)
+        if(Global.CurHPP2 <= 0)
         {
             pb.dead2 = 1;
         }
     }
     public void CheckP1P2Die()
     {
-        if (gb.CurHPP1 <= 0 && gb.CurHPP2 <= 0)
+        if (Global.CurHPP1 <= 0 && Global.CurHPP2 <= 0)
         {
-            HP1.text = "HP: " + gb.CurHPP1.ToString() + "/" + gb.MaxHPP1;
-            MP1.text = "MP: " + gb.CurMPP1.ToString() + "/" + gb.MaxMPP1;
-            HP2.text = "HP: " + gb.CurHPP2.ToString() + "/" + gb.MaxHPP2;
-            MP2.text = "MP: " + gb.CurMPP2.ToString() + "/" + gb.MaxMPP2;
-            HPE2.text = "HP: " + gb.HPE2.ToString();
+            HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
+            MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
+            HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
+            MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
+            HPE2.text = "HP: " + Global.HPE2.ToString();
             Invoke("delay3", 1f);
             Invoke("delay4", 2f);
         }
     }
     public void CheckE2Die()
     {
-        if (gb.HPE2 <= 0)
+        if (Global.HPE2 <= 0)
         {
             ShowP1Panel(false);
             ShowP2Panel(false);
-            HP1.text = "HP: " + gb.CurHPP1.ToString() + "/" + gb.MaxHPP1;
-            MP1.text = "MP: " + gb.CurMPP1.ToString() + "/" + gb.MaxMPP1;
-            HP2.text = "HP: " + gb.CurHPP2.ToString() + "/" + gb.MaxHPP2;
-            MP2.text = "MP: " + gb.CurMPP2.ToString() + "/" + gb.MaxMPP2;
-            HPE2.text = "HP: " + gb.HPE2.ToString();
+            HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
+            MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
+            HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
+            MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
+            HPE2.text = "HP: " + Global.HPE2.ToString();
             HPE2.text = "HP: 0";
             stop = 1;
-            LevelP1.text = "Level " + gb.LevelP1;
-            EXPP1.text = gb.CurEXPP1 + "/" + gb.MaxEXPP1;
-            Money.text = gb.Zen + " ";
-            LevelP2.text = "Level " + gb.LevelP2;
-            EXPP2.text = gb.CurEXPP2 + "/" + gb.MaxEXPP2;
-            PlayerPrefs.SetInt("AfterHPP1", gb.CurHPP1);
-            PlayerPrefs.SetInt("AfterMPP1", gb.CurMPP1);
-            PlayerPrefs.SetInt("AfterHPP2", gb.CurHPP2);
-            PlayerPrefs.SetInt("AfterMPP2", gb.CurMPP2);
-            PlayerPrefs.SetInt("DTakeD", 1);
+            LevelP1.text = "Level " + Global.LevelP1;
+            EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
+            Money.text = Global.Zen + " ";
+            LevelP2.text = "Level " + Global.LevelP2;
+            EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
             Invoke("delay5", 1f);
             if (once == 0)
             {
                 Invoke("delay6", 2f);
                 once = 1;
             }
-            PlayerPrefs.SetInt("AfterCurEXPP1", gb.CurEXPP1);
-            PlayerPrefs.SetInt("AfterMaxEXPP1", gb.MaxEXPP1);
-            PlayerPrefs.SetInt("AfterZen", gb.Zen);
-            PlayerPrefs.SetInt("AfterLevelP1", gb.LevelP1);
-            PlayerPrefs.SetInt("AfterMaxHPP1", gb.MaxHPP1);
-            PlayerPrefs.SetInt("AfterMaxMPP1", gb.MaxMPP1);
-            PlayerPrefs.SetInt("AfterDamageP1", gb.DamageP1);
-            PlayerPrefs.SetInt("AfterSpeedP1", gb.SpeedP1);
-
-            PlayerPrefs.SetInt("AfterCurEXPP2", gb.CurEXPP2);
-            PlayerPrefs.SetInt("AfterMaxEXPP2", gb.MaxEXPP2);
-            PlayerPrefs.SetInt("AfterLevelP2", gb.LevelP2);
-            PlayerPrefs.SetInt("AfterMaxHPP2", gb.MaxHPP2);
-            PlayerPrefs.SetInt("AfterMaxMPP2", gb.MaxMPP2);
-            PlayerPrefs.SetInt("AfterDamageP2", gb.DamageP2);
-            PlayerPrefs.SetInt("AfterSpeedP2", gb.SpeedP2);
         }
     }
     void delay()
@@ -399,86 +373,86 @@ public class BSGoblin1 : MonoBehaviour
         CheckE2Die();
         ShowP1Panel(false);
         E2Hit = Random.Range(1, 3);
-        if(E2Hit == 1 && gb.CurHPP1 > 0)
-            gb.CurHPP1 -= gb.DamageE2;
-        else if(E2Hit == 1 && gb.CurHPP1 <= 0 && gb.CurHPP2 > 0)
-            gb.CurHPP2 -= gb.DamageE2;
-        else if(E2Hit == 2 && gb.CurHPP2 >0)
-            gb.CurHPP2 -= gb.DamageE2;
-        else if(E2Hit == 2 && gb.CurHPP2 <= 0 && gb.CurHPP1 > 0)
-            gb.CurHPP1 -= gb.DamageE2;
-        HP1.text = "HP: " + gb.CurHPP1.ToString() + "/" + gb.MaxHPP1;
-        MP1.text = "MP: " + gb.CurMPP1.ToString() + "/" + gb.MaxMPP1;
-        HPE2.text = "HP: " + gb.HPE2.ToString();
+        if(E2Hit == 1 && Global.CurHPP1 > 0)
+            Global.CurHPP1 -= Global.DamageE2;
+        else if(E2Hit == 1 && Global.CurHPP1 <= 0 && Global.CurHPP2 > 0)
+            Global.CurHPP2 -= Global.DamageE2;
+        else if(E2Hit == 2 && Global.CurHPP2 >0)
+            Global.CurHPP2 -= Global.DamageE2;
+        else if(E2Hit == 2 && Global.CurHPP2 <= 0 && Global.CurHPP1 > 0)
+            Global.CurHPP1 -= Global.DamageE2;
+        HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
+        MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
+        HPE2.text = "HP: " + Global.HPE2.ToString();
         aE2 -= 1;
         dem_turn += 1;
         if (aE2 == 0)
         {
-            a1 = gb.SpeedP1 / 10;
-            a2 = gb.SpeedP2 / 10;
+            a1 = Global.SpeedP1 / 10;
+            a2 = Global.SpeedP2 / 10;
         }
     }
     void delay1()
     {
         ShowP1Panel(false);
-        gb.HPE2 -= gb.DamageP1;
-        HP1.text = "HP: " + gb.CurHPP1.ToString() + "/" + gb.MaxHPP1;
-        MP1.text = "MP: " + gb.CurMPP1.ToString() + "/" + gb.MaxMPP1;
-        HPE2.text = "HP: " + gb.HPE2.ToString();
+        Global.HPE2 -= Global.DamageP1;
+        HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
+        MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
+        HPE2.text = "HP: " + Global.HPE2.ToString();
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
         if (a1 == 0)
         {
-            aE2 = gb.SpeedE2 / 10;
+            aE2 = Global.SpeedE2 / 10;
         }
         CheckE2Die();
     }
     void delay7()
     {
         ShowP2Panel(false);
-        gb.HPE2 -= gb.DamageP2;
-        HP2.text = "HP: " + gb.CurHPP2.ToString() + "/" + gb.MaxHPP2;
-        MP2.text = "MP: " + gb.CurMPP2.ToString() + "/" + gb.MaxMPP2;
-        HPE2.text = "HP: " + gb.HPE2.ToString();
+        Global.HPE2 -= Global.DamageP2;
+        HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
+        MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
+        HPE2.text = "HP: " + Global.HPE2.ToString();
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
         if (a2 == 0)
         {
-            aE2 = gb.SpeedE2 / 10;
+            aE2 = Global.SpeedE2 / 10;
         }
         CheckE2Die();
     }
     void delay2()
     {
-        gb.CurMPP1 -= 20;
-        gb.HPE2 = gb.HPE2 - (gb.DamageP1 + (gb.DamageP1 * 100 / 100));
-        HP1.text = "HP: " + gb.CurHPP1.ToString() + "/" + gb.MaxHPP1;
-        MP1.text = "MP: " + gb.CurMPP1.ToString() + "/" + gb.MaxMPP1;
-        HPE2.text = "HP: " + gb.HPE2.ToString();
+        Global.CurMPP1 -= 20;
+        Global.HPE2 = Global.HPE2 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
+        HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
+        MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
+        HPE2.text = "HP: " + Global.HPE2.ToString();
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
         if (a1 == 0)
         {
-            aE2 = gb.SpeedE2 / 10;
+            aE2 = Global.SpeedE2 / 10;
         }
         CheckE2Die();
     }
     void delay8()
     {
-        gb.CurMPP2 -= 20;
-        gb.HPE2 = gb.HPE2 - (gb.DamageP2 + (gb.DamageP2 * 100 / 100));
-        HP2.text = "HP: " + gb.CurHPP2.ToString() + "/" + gb.MaxHPP2;
-        MP2.text = "MP: " + gb.CurMPP2.ToString() + "/" + gb.MaxMPP2;
-        HPE2.text = "HP: " + gb.HPE2.ToString();
+        Global.CurMPP2 -= 20;
+        Global.HPE2 = Global.HPE2 - (Global.DamageP2 + (Global.DamageP2 * 100 / 100));
+        HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
+        MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
+        HPE2.text = "HP: " + Global.HPE2.ToString();
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
         if (a2 == 0)
         {
-            aE2 = gb.SpeedE2 / 10;
+            aE2 = Global.SpeedE2 / 10;
         }
         CheckE2Die();
     }
@@ -498,58 +472,58 @@ public class BSGoblin1 : MonoBehaviour
     }
     void delay6()
     {
-        if (gb.LevelP1 < 30)
+        if (Global.LevelP1 < 30)
         {
-            gb.CurEXPP1 += 20;
+            Global.CurEXPP1 += 20;
         }
-        if (gb.LevelP2 < 30)
+        if (Global.LevelP2 < 30)
         {
-            gb.CurEXPP2 += 20;
+            Global.CurEXPP2 += 20;
         }
-        gb.Zen += 20;
-        while (gb.CurEXPP1 >= gb.MaxEXPP1)
+        Global.Zen += 20;
+        while (Global.CurEXPP1 >= Global.MaxEXPP1)
         {
             lu.SetActive(true);
-            gb.CurEXPP1 -= gb.MaxEXPP1;
-            gb.MaxEXPP1 += 40;
-            gb.LevelP1 += 1;
-            gb.MaxHPP1 += 20;
-            gb.MaxMPP1 += 4;
-            gb.DamageP1 += 10;
-            gb.SpeedP1 += 1;
+            Global.CurEXPP1 -= Global.MaxEXPP1;
+            Global.MaxEXPP1 += 40;
+            Global.LevelP1 += 1;
+            Global.MaxHPP1 += 20;
+            Global.MaxMPP1 += 4;
+            Global.DamageP1 += 10;
+            Global.SpeedP1 += 1;
         }
-        while (gb.CurEXPP2 >= gb.MaxEXPP2)
+        while (Global.CurEXPP2 >= Global.MaxEXPP2)
         {
             lu2.SetActive(true);
-            gb.CurEXPP2 -= gb.MaxEXPP2;
-            gb.MaxEXPP2 += 40;
-            gb.LevelP2 += 1;
-            gb.MaxHPP2 += 10;
-            gb.MaxMPP2 += 3;
-            gb.DamageP2 += 15;
-            gb.SpeedP2 += 1;
+            Global.CurEXPP2 -= Global.MaxEXPP2;
+            Global.MaxEXPP2 += 40;
+            Global.LevelP2 += 1;
+            Global.MaxHPP2 += 10;
+            Global.MaxMPP2 += 3;
+            Global.DamageP2 += 15;
+            Global.SpeedP2 += 1;
         }
-        if (gb.LevelP1 < 30)
+        if (Global.LevelP1 < 30)
         {
-            LevelP1.text = "Level " + gb.LevelP1;
-            EXPP1.text = gb.CurEXPP1 + "/" + gb.MaxEXPP1;
+            LevelP1.text = "Level " + Global.LevelP1;
+            EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
         }
         else
         {
             LevelP1.text = "Level Max";
             EXPP1.text = "MAX";
         }
-        if (gb.LevelP2 < 30)
+        if (Global.LevelP2 < 30)
         {
-            LevelP2.text = "Level " + gb.LevelP2;
-            EXPP2.text = gb.CurEXPP2 + "/" + gb.MaxEXPP2;
+            LevelP2.text = "Level " + Global.LevelP2;
+            EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
         }
         else
         {
             LevelP2.text = "Level Max";
             EXPP2.text = "MAX";
         }
-        Money.text = gb.Zen + " ";
+        Money.text = Global.Zen + " ";
         NB.SetActive(true);
     }
     void delayshowr()

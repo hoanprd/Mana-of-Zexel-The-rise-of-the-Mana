@@ -16,7 +16,7 @@ public class HV3 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         if (pick && Input.GetKeyDown(KeyCode.Space) && PlayerPrefs.GetInt("cus8") == 1 && PlayerPrefs.GetInt("SEP") > 0 && PlayerPrefs.GetInt("SHVStop3") == 0)
         {
@@ -34,7 +34,28 @@ public class HV3 : MonoBehaviour
             PlayerPrefs.SetInt("SHVStop3", 2);
             SceneManager.LoadScene(15);
         }
+    }*/
+
+    void Update()
+    {
+        if (pick && Input.GetKeyDown(KeyCode.Space) && CutscenesController.cus8 == 1 && ContainerController.ElixirPotion > 0 && GlobalQuest.HelpVillagerStop3 == 0)
+        {
+            GlobalQuest.HelpVillagerStop3 = 1;
+            show2.SetActive(true);
+            show1.text = "Help +1";
+            ContainerController.ElixirPotion -= 1;
+            GlobalQuest.HelpVillagerDone += 1;
+            Invoke("delay1", 1f);
+        }
+        if (PlayerPrefs.GetInt("SHV") == 3 && GlobalQuest.HelpVillagerStop1 == 1 && GlobalQuest.HelpVillagerStop2 == 1 && GlobalQuest.HelpVillagerStop3 == 1)
+        {
+            GlobalQuest.HelpVillagerStop1 = 2;
+            GlobalQuest.HelpVillagerStop2 = 2;
+            GlobalQuest.HelpVillagerStop3 = 2;
+            SceneManager.LoadScene(15);
+        }
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

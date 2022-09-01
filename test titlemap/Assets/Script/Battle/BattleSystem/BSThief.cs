@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class BSThief : MonoBehaviour
 {
-    Global gb;
     PlayerBattle pb;
     ThiefBattle tb;
     public GameObject Item_panel;
@@ -37,11 +36,10 @@ public class BSThief : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gb = FindObjectOfType<Global>();
         pb = FindObjectOfType<PlayerBattle>();
         tb = FindObjectOfType<ThiefBattle>();
-        a1 = gb.SpeedP1 / 10;
-        aE1 = gb.SpeedE1 / 10;
+        a1 = Global.SpeedP1 / 10;
+        aE1 = Global.SpeedE1 / 10;
     }
 
     // Update is called once per frame
@@ -49,15 +47,15 @@ public class BSThief : MonoBehaviour
     {
         CheckE1Die();
         CheckP1Die();
-        HP1.text = "HP: " + gb.CurHPP1.ToString() + "/" + gb.MaxHPP1;
-        MP1.text = "MP: " + gb.CurMPP1.ToString() + "/" + gb.MaxMPP1;
-        HPE1.text = "HP: " + gb.HPE1.ToString();
-        if(gb.HPE1 <= 0)
+        HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
+        MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
+        HPE1.text = "HP: " + Global.HPE1.ToString();
+        if(Global.HPE1 <= 0)
             HPE1.text = "HP: 0";
 
-        if (gb.SpeedP1 >= gb.SpeedE1)
+        if (Global.SpeedP1 >= Global.SpeedE1)
         {
-            if(a1 > 0 && gb.CurHPP1 > 0)
+            if(a1 > 0 && Global.CurHPP1 > 0)
             {
                 CheckE1Die();
                 CheckP1Die();
@@ -66,7 +64,7 @@ public class BSThief : MonoBehaviour
                 else
                     ShowP1Panel(false);
             }
-            else if(aE1 > 0 && gb.HPE1 > 0)
+            else if(aE1 > 0 && Global.HPE1 > 0)
             {
                 CheckE1Die();
                 ShowP1Panel(false);
@@ -79,11 +77,11 @@ public class BSThief : MonoBehaviour
                 CheckP1Die();
                 if (aE1 == 0)
                 {
-                    a1 = gb.SpeedP1 / 10;
+                    a1 = Global.SpeedP1 / 10;
                 }
             }
         }
-        else if(gb.SpeedP1 < gb.SpeedE1)
+        else if(Global.SpeedP1 < Global.SpeedE1)
         {
             if (aE1 != 0)
             {
@@ -98,7 +96,7 @@ public class BSThief : MonoBehaviour
                 CheckP1Die();
                 if (aE1 == 0)
                 {
-                    a1 = gb.SpeedP1 / 10;
+                    a1 = Global.SpeedP1 / 10;
                 }
             }
             else if (a1 != 0)
@@ -126,7 +124,7 @@ public class BSThief : MonoBehaviour
     }
     public void PressSkill()
     {
-        if(gb.CurMPP1 >= 20)
+        if(Global.CurMPP1 >= 20)
         {
             pb.yes2 = 1;
             show = 1;
@@ -138,29 +136,30 @@ public class BSThief : MonoBehaviour
     public void PressItem()
     {
         show = 1;
-        num1.text = PlayerPrefs.GetInt("SHP") + "";
-        num2.text = PlayerPrefs.GetInt("SMP") + "";
-        num3.text = PlayerPrefs.GetInt("SEP") + "";
-        num4.text = PlayerPrefs.GetInt("SB") + "";
+        num1.text = ContainerController.HealPotion + "";
+        num2.text = ContainerController.ManaPotion + "";
+        num3.text = ContainerController.ElixirPotion + "";
+        num4.text = ContainerController.Bom + "";
         Item_panel.SetActive(true);
     }
     public void UseHP()
     {
-        if(PlayerPrefs.GetInt("SHP") > 0)
+        if(ContainerController.HealPotion > 0)
         {
             Item_panel.SetActive(false);
-            gb.CurHPP1 += 50;
+            Global.CurHPP1 += 50;
             showr2.SetActive(true);
             showr1.text = "HP +50";
-            if(gb.CurHPP1 > gb.MaxHPP1)
+            ContainerController.HealPotion -= 1;
+            if (Global.CurHPP1 > Global.MaxHPP1)
             {
-                gb.CurHPP1 = gb.MaxHPP1;
+                Global.CurHPP1 = Global.MaxHPP1;
             }
             a1 -= 1;
             dem = 1;
             if (a1 == 0)
             {
-                aE1 = gb.SpeedE1 / 10;
+                aE1 = Global.SpeedE1 / 10;
             }
             Invoke("delayshowr", 2f);
         }
@@ -173,21 +172,22 @@ public class BSThief : MonoBehaviour
     }
     public void UseMP()
     {
-        if (PlayerPrefs.GetInt("SMP") > 0)
+        if (ContainerController.ManaPotion > 0)
         {
             Item_panel.SetActive(false);
-            gb.CurMPP1 += 30;
+            Global.CurMPP1 += 30;
             showr2.SetActive(true);
             showr1.text = "MP +30";
-            if (gb.CurHPP1 > gb.MaxHPP1)
+            ContainerController.ManaPotion -= 1;
+            if (Global.CurHPP1 > Global.MaxHPP1)
             {
-                gb.CurHPP1 = gb.MaxHPP1;
+                Global.CurHPP1 = Global.MaxHPP1;
             }
             a1 -= 1;
             dem = 1;
             if (a1 == 0)
             {
-                aE1 = gb.SpeedE1 / 10;
+                aE1 = Global.SpeedE1 / 10;
             }
             Invoke("delayshowr", 2f);
         }
@@ -200,26 +200,27 @@ public class BSThief : MonoBehaviour
     }
     public void UseEP()
     {
-        if (PlayerPrefs.GetInt("SEP") > 0)
+        if (ContainerController.ElixirPotion > 0)
         {
             Item_panel.SetActive(false);
-            gb.CurHPP1 += 50;
-            gb.CurMPP1 += 30;
+            Global.CurHPP1 += 50;
+            Global.CurMPP1 += 30;
             showr2.SetActive(true);
             showr1.text = "MP +50 MP +30";
-            if (gb.CurHPP1 > gb.MaxHPP1)
+            ContainerController.ElixirPotion -= 1;
+            if (Global.CurHPP1 > Global.MaxHPP1)
             {
-                gb.CurHPP1 = gb.MaxHPP1;
+                Global.CurHPP1 = Global.MaxHPP1;
             }
-            if (gb.CurMPP1 > gb.MaxMPP1)
+            if (Global.CurMPP1 > Global.MaxMPP1)
             {
-                gb.CurMPP1 = gb.MaxMPP1;
+                Global.CurMPP1 = Global.MaxMPP1;
             }
             a1 -= 1;
             dem = 1;
             if (a1 == 0)
             {
-                aE1 = gb.SpeedE1 / 10;
+                aE1 = Global.SpeedE1 / 10;
             }
             Invoke("delayshowr", 2f);
         }
@@ -232,17 +233,18 @@ public class BSThief : MonoBehaviour
     }
     public void UseB()
     {
-        if (PlayerPrefs.GetInt("SB") > 0)
+        if (ContainerController.Bom > 0)
         {
             Item_panel.SetActive(false);
-            gb.HPE1 -= 200;
+            Global.HPE1 -= 200;
             //showr2.SetActive(true);
             //showr1.text = "MP +50 MP +30";
+            ContainerController.Bom -= 1;
             a1 -= 1;
             dem = 1;
             if (a1 == 0)
             {
-                aE1 = gb.SpeedE1 / 10;
+                aE1 = Global.SpeedE1 / 10;
             }
             Invoke("delayshowr", 2f);
         }
@@ -260,9 +262,6 @@ public class BSThief : MonoBehaviour
     }
     public void PressRun()
     {
-        //PlayerPrefs.SetInt("AfterHPP1", gb.CurHPP1);
-        //PlayerPrefs.SetInt("AfterMPP1", gb.CurMPP1);
-        //PlayerPrefs.SetInt("DTakeD", 1);
         //SceneManager.LoadScene(1);
     }
     public void PressBackToTheMap()
@@ -271,72 +270,61 @@ public class BSThief : MonoBehaviour
     }
     public void CheckP1Die()
     {
-        if(gb.CurHPP1 <=0)
+        if(Global.CurHPP1 <=0)
         {
-            HP1.text = "HP: " + gb.CurHPP1.ToString() + "/" + gb.MaxHPP1;
-            MP1.text = "MP: " + gb.CurMPP1.ToString() + "/" + gb.MaxMPP1;
-            HPE1.text = "HP: " + gb.HPE1.ToString();
+            HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
+            MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
+            HPE1.text = "HP: " + Global.HPE1.ToString();
             Invoke("delay3", 1f);
             Invoke("delay4", 2f);
         }
     }
     public void CheckE1Die()
     {
-        if(gb.HPE1 <= 0)
+        if(Global.HPE1 <= 0)
         {
             ShowP1Panel(false);
-            HP1.text = "HP: " + gb.CurHPP1.ToString() + "/" + gb.MaxHPP1;
-            MP1.text = "MP: " + gb.CurMPP1.ToString() + "/" + gb.MaxMPP1;
-            HPE1.text = "HP: " + gb.HPE1.ToString();
+            HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
+            MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
+            HPE1.text = "HP: " + Global.HPE1.ToString();
             stop = 1;
-            LevelP1.text = "Level " + gb.LevelP1;
-            EXPP1.text = gb.CurEXPP1 + "/" + gb.MaxEXPP1;
-            Money.text = gb.Zen + " ";
-            PlayerPrefs.SetInt("AfterHPP1", gb.CurHPP1);
-            PlayerPrefs.SetInt("AfterMPP1", gb.CurMPP1);
-            PlayerPrefs.SetInt("DTakeD", 1);
+            LevelP1.text = "Level " + Global.LevelP1;
+            EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
+            Money.text = Global.Zen + " ";
             Invoke("delay5", 1f);
             if (once == 0)
             {
                 Invoke("delay6", 2f);
                 once = 1;
             }
-            PlayerPrefs.SetInt("AfterCurEXPP1", gb.CurEXPP1);
-            PlayerPrefs.SetInt("AfterMaxEXPP1", gb.MaxEXPP1);
-            PlayerPrefs.SetInt("AfterZen", gb.Zen);
-            PlayerPrefs.SetInt("AfterLevelP1", gb.LevelP1);
-            PlayerPrefs.SetInt("AfterMaxHPP1", gb.MaxHPP1);
-            PlayerPrefs.SetInt("AfterMaxMPP1", gb.MaxMPP1);
-            PlayerPrefs.SetInt("AfterDamageP1", gb.DamageP1);
-            PlayerPrefs.SetInt("AfterSpeedP1", gb.SpeedP1);
         }
     }
     void delay()
     {
         CheckE1Die();
         ShowP1Panel(false);
-        gb.CurHPP1 -= gb.DamageE1;
-        HP1.text = "HP: " + gb.CurHPP1.ToString() + "/" + gb.MaxHPP1;
-        MP1.text = "MP: " + gb.CurMPP1.ToString() + "/" + gb.MaxMPP1;
-        HPE1.text = "HP: " + gb.HPE1.ToString();
+        Global.CurHPP1 -= Global.DamageE1;
+        HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
+        MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
+        HPE1.text = "HP: " + Global.HPE1.ToString();
         aE1 -= 1;
         if (aE1 == 0)
         {
-            a1 = gb.SpeedP1 / 10;
+            a1 = Global.SpeedP1 / 10;
         }
     }
     void delay1()
     {
         ShowP1Panel(false);
-        gb.HPE1 -= gb.DamageP1;
-        HP1.text = "HP: " + gb.CurHPP1.ToString() + "/" + gb.MaxHPP1;
-        MP1.text = "MP: " + gb.CurMPP1.ToString() + "/" + gb.MaxMPP1;
-        HPE1.text = "HP: " + gb.HPE1.ToString();
+        Global.HPE1 -= Global.DamageP1;
+        HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
+        MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
+        HPE1.text = "HP: " + Global.HPE1.ToString();
         a1 -= 1;
         show = 0;
         if (a1 == 0)
         {
-            aE1 = gb.SpeedE1 / 10;
+            aE1 = Global.SpeedE1 / 10;
         }
         CheckE1Die();
     }
@@ -344,16 +332,16 @@ public class BSThief : MonoBehaviour
     {
         //Run P1 animation attack skill
         ShowP1Panel(false);
-        gb.CurMPP1 -= 20;
-        gb.HPE1 = gb.HPE1 - (gb.DamageP1 + (gb.DamageP1 * 100 / 100));
-        HP1.text = "HP: " + gb.CurHPP1.ToString() + "/" + gb.MaxHPP1;
-        MP1.text = "MP: " + gb.CurMPP1.ToString() + "/" + gb.MaxMPP1;
-        HPE1.text = "HP: " + gb.HPE1.ToString();
+        Global.CurMPP1 -= 20;
+        Global.HPE1 = Global.HPE1 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
+        HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
+        MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
+        HPE1.text = "HP: " + Global.HPE1.ToString();
         a1 -= 1;
         show = 0;
         if (a1 == 0)
         {
-            aE1 = gb.SpeedE1 / 10;
+            aE1 = Global.SpeedE1 / 10;
         }
         CheckE1Die();
     }
@@ -373,33 +361,33 @@ public class BSThief : MonoBehaviour
     }
     void delay6()
     {
-        if(gb.LevelP1 < 30)
+        if(Global.LevelP1 < 30)
         {
-            gb.CurEXPP1 += 10;
+            Global.CurEXPP1 += 10;
         }
-        gb.Zen += 10;
-        while(gb.CurEXPP1 >= gb.MaxEXPP1)
+        Global.Zen += 10;
+        while(Global.CurEXPP1 >= Global.MaxEXPP1)
         {
             lu.SetActive(true);
-            gb.CurEXPP1 -= gb.MaxEXPP1;
-            gb.MaxEXPP1 += 40;
-            gb.LevelP1 += 1;
-            gb.MaxHPP1 += 20;
-            gb.MaxMPP1 += 4;
-            gb.DamageP1 += 10;
-            gb.SpeedP1 += 1;
+            Global.CurEXPP1 -= Global.MaxEXPP1;
+            Global.MaxEXPP1 += 40;
+            Global.LevelP1 += 1;
+            Global.MaxHPP1 += 20;
+            Global.MaxMPP1 += 4;
+            Global.DamageP1 += 10;
+            Global.SpeedP1 += 1;
         }
-        if (gb.LevelP1 < 30)
+        if (Global.LevelP1 < 30)
         {
-            LevelP1.text = "Level " + gb.LevelP1;
-            EXPP1.text = gb.CurEXPP1 + "/" + gb.MaxEXPP1;
+            LevelP1.text = "Level " + Global.LevelP1;
+            EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
         }
         else
         {
             LevelP1.text = "Level Max";
             EXPP1.text = "MAX";
         }
-        Money.text = gb.Zen + " ";
+        Money.text = Global.Zen + " ";
         NB.SetActive(true);
     }
     void delayshowr()

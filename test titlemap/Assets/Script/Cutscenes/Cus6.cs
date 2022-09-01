@@ -51,7 +51,7 @@ public class Cus6 : MonoBehaviour
             dia.text = "Vayne: Hey, don't be like that, Alia! Wait for me!";
         else if (tang >= 14)
         {
-            PlayerPrefs.SetInt("cus6", 1);
+            CutscenesController.cus6 = 1;
             SceneManager.LoadScene(5);
         }
     }
@@ -61,7 +61,7 @@ public class Cus6 : MonoBehaviour
     }
     public void Pressskip()
     {
-        PlayerPrefs.SetInt("cus6", 1);
+        CutscenesController.cus6 = 1;
         SceneManager.LoadScene(5);
     }
 }

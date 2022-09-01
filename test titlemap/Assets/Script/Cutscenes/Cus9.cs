@@ -44,7 +44,7 @@ public class Cus9 : MonoBehaviour
             dia.text = "Vayne: Okay! Let's go!";
         else if (tang >= 13)
         {
-            PlayerPrefs.SetInt("cus9", 1);
+            CutscenesController.cus9 = 1;
             SceneManager.LoadScene(3);
         }
     }
@@ -54,7 +54,7 @@ public class Cus9 : MonoBehaviour
     }
     public void Pressskip()
     {
-        PlayerPrefs.SetInt("cus9", 1);
+        CutscenesController.cus9 = 1;
         SceneManager.LoadScene(3);
     }
 }

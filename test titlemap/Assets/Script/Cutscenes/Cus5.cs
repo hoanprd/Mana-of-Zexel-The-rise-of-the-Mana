@@ -38,7 +38,7 @@ public class Cus5 : MonoBehaviour
             dia.text = "Vayne: Thank you Alia!";
         else if (tang >= 10)
         {
-            PlayerPrefs.SetInt("cus5", 1);
+            CutscenesController.cus5 = 1;
             SceneManager.LoadScene(6);
         }
     }
@@ -48,7 +48,7 @@ public class Cus5 : MonoBehaviour
     }
     public void Pressskip()
     {
-        PlayerPrefs.SetInt("cus5", 1);
+        CutscenesController.cus5 = 1;
         SceneManager.LoadScene(6);
     }
 }
