@@ -45,6 +45,7 @@ public class HubController : MonoBehaviour
     public Text numi3;
     public Text numi4;
     public int ShowLevelP1, ShowLevelP2, ShowHPP1, ShowHPP2, ShowHPP3, ShowMPP1, ShowMPP2, ShowMPP3, ShowZen;
+    public GameObject ShowVayneDetailPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -180,6 +181,14 @@ public class HubController : MonoBehaviour
     public void Back4()
     {
         bag.SetActive(false);
+    }
+    public void OpenVaynePanel()
+    {
+        ShowVayneDetailPanel.SetActive(true);
+    }
+    public void CloseVaynePanel()
+    {
+        ShowVayneDetailPanel.SetActive(false);
     }
     public void BackToGame()
     {
