@@ -52,7 +52,7 @@ public class HV1 : MonoBehaviour
             GlobalQuest.HelpVillagerStop1 = 2;
             GlobalQuest.HelpVillagerStop2 = 2;
             GlobalQuest.HelpVillagerStop3 = 2;
-            SceneManager.LoadScene(15);
+            SceneManager.LoadScene(7);
         }
     }
 

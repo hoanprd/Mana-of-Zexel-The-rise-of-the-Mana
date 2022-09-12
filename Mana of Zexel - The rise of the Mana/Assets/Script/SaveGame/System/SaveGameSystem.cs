@@ -11,6 +11,7 @@ public class SaveGameSystem : MonoBehaviour
     public Text showdata1;
     public Text showdata2;
     public Text showdata3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -88,6 +89,14 @@ public class SaveGameSystem : MonoBehaviour
         PlayerPrefs.SetInt("SaveMaxEXPP2D1", Global.MaxEXPP2);
         PlayerPrefs.SetInt("SaveCurEXPP2D1", Global.CurEXPP2);
 
+        //Set weapon
+        PlayerPrefs.SetInt("SaveVayneStaff1D1", Global.VayneStaff1);
+        PlayerPrefs.SetInt("SaveVayneStaff2D1", Global.VayneStaff2);
+        PlayerPrefs.SetInt("SaveVayneStaff3D1", Global.VayneStaff3);
+        PlayerPrefs.SetInt("SaveAlchemistArmor1D1", Global.AlchemistArmor1);
+        PlayerPrefs.SetInt("SaveAlchemistArmor2D1", Global.AlchemistArmor2);
+        PlayerPrefs.SetInt("SaveAlchemistArmor3D1", Global.AlchemistArmor3);
+
         //Set item material
         PlayerPrefs.SetInt("SaveMDD1", ContainerController.MorningDrop);
         PlayerPrefs.SetInt("SaveDLD1", ContainerController.DriedLeaves);
@@ -160,6 +169,14 @@ public class SaveGameSystem : MonoBehaviour
         PlayerPrefs.SetInt("SaveMaxEXPP2D2", Global.MaxEXPP2);
         PlayerPrefs.SetInt("SaveCurEXPP2D2", Global.CurEXPP2);
 
+        //Set weapon
+        PlayerPrefs.SetInt("SaveVayneStaff1D2", Global.VayneStaff1);
+        PlayerPrefs.SetInt("SaveVayneStaff2D2", Global.VayneStaff2);
+        PlayerPrefs.SetInt("SaveVayneStaff3D2", Global.VayneStaff3);
+        PlayerPrefs.SetInt("SaveAlchemistArmor1D2", Global.AlchemistArmor1);
+        PlayerPrefs.SetInt("SaveAlchemistArmor2D2", Global.AlchemistArmor2);
+        PlayerPrefs.SetInt("SaveAlchemistArmor3D2", Global.AlchemistArmor3);
+
         //Set item material
         PlayerPrefs.SetInt("SaveMDD2", ContainerController.MorningDrop);
         PlayerPrefs.SetInt("SaveDLD2", ContainerController.DriedLeaves);
@@ -231,6 +248,14 @@ public class SaveGameSystem : MonoBehaviour
         PlayerPrefs.SetInt("SaveLevelP2D3", Global.LevelP2);
         PlayerPrefs.SetInt("SaveMaxEXPP2D3", Global.MaxEXPP2);
         PlayerPrefs.SetInt("SaveCurEXPP2D3", Global.CurEXPP2);
+
+        //Set weapon
+        PlayerPrefs.SetInt("SaveVayneStaff1D3", Global.VayneStaff1);
+        PlayerPrefs.SetInt("SaveVayneStaff2D3", Global.VayneStaff2);
+        PlayerPrefs.SetInt("SaveVayneStaff3D3", Global.VayneStaff3);
+        PlayerPrefs.SetInt("SaveAlchemistArmor1D3", Global.AlchemistArmor1);
+        PlayerPrefs.SetInt("SaveAlchemistArmor2D3", Global.AlchemistArmor2);
+        PlayerPrefs.SetInt("SaveAlchemistArmor3D3", Global.AlchemistArmor3);
 
         //Set item material
         PlayerPrefs.SetInt("SaveMDD3", ContainerController.MorningDrop);

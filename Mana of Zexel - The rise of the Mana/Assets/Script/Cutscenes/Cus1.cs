@@ -74,7 +74,7 @@ public class Cus1 : MonoBehaviour
         else if (tang >= 20)
         {
             CutscenesController.cus1 = 1;
-            SceneManager.LoadScene(20);
+            SceneManager.LoadScene(9);
         }
     }
     public void Pressnext()
@@ -84,6 +84,6 @@ public class Cus1 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus1 = 1;
-        SceneManager.LoadScene(20);
+        SceneManager.LoadScene(9);
     }
 }

@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
                 if (ContainerController.HealPotion > 0)
                 {
                     ContainerController.HealPotion -= 1;
-                    SceneManager.LoadScene(12);
+                    SceneManager.LoadScene(7);
                 }
                 else
                 {
@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
             {
                 if (GlobalQuest.KillGoblinQuest == 4)
                 {
-                    SceneManager.LoadScene(13);
+                    SceneManager.LoadScene(7);
                 }
                 else
                 {
@@ -73,14 +73,14 @@ public class Player : MonoBehaviour
         {
             if (CutscenesController.cus11 == 0)
             {
-                SceneManager.LoadScene(17);
+                SceneManager.LoadScene(7);
             }
             else if (CutscenesController.cus11 == 1)
             {
                 if (ContainerController.ManaGem >= 3)
                 {
                     ContainerController.ManaGem -= 3;
-                    SceneManager.LoadScene(18);
+                    SceneManager.LoadScene(7);
                 }
                 else
                 {
@@ -113,7 +113,7 @@ public class Player : MonoBehaviour
         {
             PlayerPrefs.SetInt("CPosi1", 1);
             if (CutscenesController.cus3 == 0)
-                SceneManager.LoadScene(9);
+                SceneManager.LoadScene(7);
             else
                 SceneManager.LoadScene(3);
         }
@@ -126,7 +126,7 @@ public class Player : MonoBehaviour
         {
             PlayerPrefs.SetInt("CPosi2", 1);
             if (CutscenesController.cus4 == 0)
-                SceneManager.LoadScene(10);
+                SceneManager.LoadScene(7);
             else
                 SceneManager.LoadScene(5);
         }
@@ -134,7 +134,7 @@ public class Player : MonoBehaviour
         {
             PlayerPrefs.SetInt("BPosi2", 1);
             if (CutscenesController.cus7 == 1 && CutscenesController.cus8 == 0)
-                SceneManager.LoadScene(14);
+                SceneManager.LoadScene(7);
             else
                 SceneManager.LoadScene(3);
         }
@@ -142,7 +142,7 @@ public class Player : MonoBehaviour
         {
             PlayerPrefs.SetInt("CPosi3", 1);
             if (CutscenesController.cus5 == 0)
-                SceneManager.LoadScene(11);
+                SceneManager.LoadScene(7);
             else
                 SceneManager.LoadScene(6);
         }
@@ -164,7 +164,7 @@ public class Player : MonoBehaviour
                 if (CutscenesController.cus10 == 0)
                 {
                     PlayerPrefs.SetInt("CPosi4", 1);
-                    SceneManager.LoadScene(16);
+                    SceneManager.LoadScene(7);
                 }
                 else
                 {

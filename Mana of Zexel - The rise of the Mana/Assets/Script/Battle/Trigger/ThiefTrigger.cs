@@ -18,7 +18,7 @@ public class ThiefTrigger : MonoBehaviour
     {
         if(battle && Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene(21);
+            SceneManager.LoadScene(10);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

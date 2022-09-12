@@ -31,10 +31,11 @@ public class MenuController : MonoBehaviour
     }
     public void PressStartNewGame()
     {
-        Global.VayneStaff2 = 1;
-        Global.VayneStaff3 = 1;
-        Global.AlchemistArmor2 = 2;
-        Global.AlchemistArmor3 = 2;
+        Global.VayneStaff1 = 0;
+        Global.VayneStaff2 = 0;
+        Global.VayneStaff3 = 0;
+        Global.AlchemistArmor2 = 0;
+        Global.AlchemistArmor3 = 0;
         //Set cut
         CutscenesController.cus1 = 0;
         CutscenesController.cus2 = 0;
@@ -175,6 +176,14 @@ public class MenuController : MonoBehaviour
             //Set Zen
             Global.Zen = PlayerPrefs.GetInt("SaveZenD1");
 
+            //Set Weapon
+            Global.VayneStaff1 = PlayerPrefs.GetInt("SaveVayneStaff1D1");
+            Global.VayneStaff2 = PlayerPrefs.GetInt("SaveVayneStaff2D1");
+            Global.VayneStaff3 = PlayerPrefs.GetInt("SaveVayneStaff3D1");
+            Global.AlchemistArmor1 = PlayerPrefs.GetInt("SaveAlchemistArmor1D1");
+            Global.AlchemistArmor2 = PlayerPrefs.GetInt("SaveAlchemistArmor2D1");
+            Global.AlchemistArmor3 = PlayerPrefs.GetInt("SaveAlchemistArmor3D1");
+
             //Set item material
             ContainerController.MorningDrop = PlayerPrefs.GetInt("SaveMDD1");
             ContainerController.DriedLeaves = PlayerPrefs.GetInt("SaveDLD1");
@@ -251,6 +260,14 @@ public class MenuController : MonoBehaviour
 
             //Set Zen
             Global.Zen = PlayerPrefs.GetInt("SaveZenD2");
+
+            //Set Weapon
+            Global.VayneStaff1 = PlayerPrefs.GetInt("SaveVayneStaff1D2");
+            Global.VayneStaff2 = PlayerPrefs.GetInt("SaveVayneStaff2D2");
+            Global.VayneStaff3 = PlayerPrefs.GetInt("SaveVayneStaff3D2");
+            Global.AlchemistArmor1 = PlayerPrefs.GetInt("SaveAlchemistArmor1D2");
+            Global.AlchemistArmor2 = PlayerPrefs.GetInt("SaveAlchemistArmor2D2");
+            Global.AlchemistArmor3 = PlayerPrefs.GetInt("SaveAlchemistArmor3D2");
 
             //Set item material
             ContainerController.MorningDrop = PlayerPrefs.GetInt("SaveMDD2");
@@ -329,6 +346,14 @@ public class MenuController : MonoBehaviour
 
             //Set Zen
             Global.Zen = PlayerPrefs.GetInt("SaveZenD3");
+
+            //Set Weapon
+            Global.VayneStaff1 = PlayerPrefs.GetInt("SaveVayneStaff1D3");
+            Global.VayneStaff2 = PlayerPrefs.GetInt("SaveVayneStaff2D3");
+            Global.VayneStaff3 = PlayerPrefs.GetInt("SaveVayneStaff3D3");
+            Global.AlchemistArmor1 = PlayerPrefs.GetInt("SaveAlchemistArmor1D3");
+            Global.AlchemistArmor2 = PlayerPrefs.GetInt("SaveAlchemistArmor2D3");
+            Global.AlchemistArmor3 = PlayerPrefs.GetInt("SaveAlchemistArmor3D3");
 
             //Set item material
             ContainerController.MorningDrop = PlayerPrefs.GetInt("SaveMDD3");
