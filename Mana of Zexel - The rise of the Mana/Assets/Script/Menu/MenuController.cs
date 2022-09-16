@@ -31,9 +31,11 @@ public class MenuController : MonoBehaviour
     }
     public void PressStartNewGame()
     {
+        //Set weapon
         Global.VayneStaff1 = 0;
         Global.VayneStaff2 = 0;
         Global.VayneStaff3 = 0;
+        Global.AlchemistArmor1 = 0;
         Global.AlchemistArmor2 = 0;
         Global.AlchemistArmor3 = 0;
         //Set cut
