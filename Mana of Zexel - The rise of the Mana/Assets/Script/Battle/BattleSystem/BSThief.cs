@@ -71,7 +71,7 @@ public class BSThief : MonoBehaviour
                 if (dem == 1)
                 {
                     tb.yes_thief = 1;
-                    Invoke("delay", 1f);
+                    Invoke("delayE1", 1f);
                     dem = 0;
                 }
                 CheckP1Die();
@@ -90,7 +90,7 @@ public class BSThief : MonoBehaviour
                 if (dem == 1)
                 {
                     tb.yes_thief = 1;
-                    Invoke("delay", 1f);
+                    Invoke("delayE1", 1f);
                     dem = 0;
                 }
                 CheckP1Die();
@@ -119,7 +119,7 @@ public class BSThief : MonoBehaviour
         pb.yes1 = 1;
         show = 1;
         ShowP1Panel(false);
-        Invoke("delay1", 1f);
+        Invoke("delayP1PressAttack", 1f);
         dem = 1;
     }
     public void PressSkill()
@@ -129,7 +129,7 @@ public class BSThief : MonoBehaviour
             pb.yes2 = 1;
             show = 1;
             ShowP1Panel(false);
-            Invoke("delay2", 1f);
+            Invoke("delayP1PressSkill", 1f);
             dem = 1;
         }
     }
@@ -275,8 +275,8 @@ public class BSThief : MonoBehaviour
             HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
             MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
             HPE1.text = "HP: " + Global.HPE1.ToString();
-            Invoke("delay3", 1f);
-            Invoke("delay4", 2f);
+            Invoke("delayCheckP1Die1", 1f);
+            Invoke("delayCheckP1Die2", 2f);
         }
     }
     public void CheckE1Die()
@@ -291,15 +291,15 @@ public class BSThief : MonoBehaviour
             LevelP1.text = "Level " + Global.LevelP1;
             EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
             Money.text = Global.Zen + " ";
-            Invoke("delay5", 1f);
+            Invoke("delayCheckE1Die1", 1f);
             if (once == 0)
             {
-                Invoke("delay6", 2f);
+                Invoke("delayCheckE1Die2", 2f);
                 once = 1;
             }
         }
     }
-    void delay()
+    void delayE1()
     {
         CheckE1Die();
         ShowP1Panel(false);
@@ -313,7 +313,7 @@ public class BSThief : MonoBehaviour
             a1 = Global.SpeedP1 / 10;
         }
     }
-    void delay1()
+    void delayP1PressAttack()
     {
         ShowP1Panel(false);
         Global.HPE1 -= Global.DamageP1;
@@ -328,7 +328,7 @@ public class BSThief : MonoBehaviour
         }
         CheckE1Die();
     }
-    void delay2()
+    void delayP1PressSkill()
     {
         //Run P1 animation attack skill
         ShowP1Panel(false);
@@ -345,21 +345,21 @@ public class BSThief : MonoBehaviour
         }
         CheckE1Die();
     }
-    void delay3()
+    void delayCheckP1Die1()
     {
         HPMP.SetActive(false);
         Lose_panel.SetActive(true);
     }
-    void delay4()
+    void delayCheckP1Die2()
     {
         SceneManager.LoadScene(0);
     }
-    void delay5()
+    void delayCheckE1Die1()
     {
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }
-    void delay6()
+    void delayCheckE1Die2()
     {
         if(Global.LevelP1 < 30)
         {

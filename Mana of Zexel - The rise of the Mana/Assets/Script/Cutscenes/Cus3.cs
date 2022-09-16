@@ -8,7 +8,9 @@ public class Cus3 : MonoBehaviour
 {
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaDAR1;
     private int tang=0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +21,15 @@ public class Cus3 : MonoBehaviour
     void Update()
     {
         if (tang == 1)
+        {
+            AliaDAR1.SetActive(true);
             dia.text = "Alia: We have arrived at Zexel town!";
+        }
         else if (tang == 2)
+        {
+            VayneVAL1.SetActive(true);
             dia.text = "Vayne: Thank you, Alia. Amazingly, this town is so bustling, the children look so happy.";
+        }
         else if (tang == 3)
             dia.text = "Alia: Of course, I really like this town.";
         else if (tang == 4)

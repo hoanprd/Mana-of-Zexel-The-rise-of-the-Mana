@@ -8,8 +8,7 @@ public class Cus11 : MonoBehaviour
 {
     public Text dia;
     public GameObject va1;
-    public GameObject va2;
-    public GameObject va3;
+    public GameObject VayneVAL1, VayneVAR1, AliaDAR1, MariaDAL1;
     private int tang = 0;
     // Start is called before the first frame update
     void Start()
@@ -21,9 +20,15 @@ public class Cus11 : MonoBehaviour
     void Update()
     {
         if (tang == 1)
+        {
+            VayneVAL1.SetActive(true);
             dia.text = "Vayne: Look, Alia! There is a house in the middle of this secluded forest.";
+        }
         else if (tang == 2)
+        {
+            AliaDAR1.SetActive(true);
             dia.text = "Alia: Do you think that is the old house of Mr. Lance?";
+        }
         else if (tang == 3)
             dia.text = "Vayne: It's possible.";
         else if (tang == 4)
@@ -36,18 +41,18 @@ public class Cus11 : MonoBehaviour
             dia.text = "Vayne: How are you sure this house belongs to Maria!";
         else if (tang == 8)
         {
-            va1.SetActive(false);
-            va2.SetActive(true);
             dia.text = "???: Hey, what are you two doing in front of my house? Oh, is that Alia?";
         }
         else if (tang == 9)
             dia.text = "Alia: Sister Maria! Long time no see!";
         else if (tang == 10)
+        {
+            VayneVAL1.SetActive(false);
+            MariaDAL1.SetActive(true);
             dia.text = "Maria: Alright, let's talk in the house. In addition to this should not be outside for too long.";
+        }
         else if (tang == 11)
         {
-            va2.SetActive(false);
-            va3.SetActive(true);
             dia.text = "Maria: Is this guy your boyfriend, Alia?";
         }
         else if (tang == 12)
@@ -55,7 +60,11 @@ public class Cus11 : MonoBehaviour
         else if (tang == 13)
             dia.text = "Maria: Okay, just kidding! No need to stress. Now let's get to the main story.";
         else if (tang == 14)
+        {
+            AliaDAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             dia.text = "Vayne: Hi Maria, my name is Vayne, an alchemist from Zorth. I need you to check the books of someone who has been to Mr. Lance 1 year ago.";
+        }
         else if (tang == 15)
             dia.text = "Maria: Is that person important to you?";
         else if (tang == 16)
@@ -73,7 +82,11 @@ public class Cus11 : MonoBehaviour
         else if (tang == 22)
             dia.text = "Maria: The golems in this forest had a fair amount of mana. So if you cut them down, there will be a lot of mana gems.";
         else if (tang == 23)
+        {
+            VayneVAR1.SetActive(false);
+            AliaDAR1.SetActive(true);
             dia.text = "Alia: Then it's fine for the two of us to just kill those golems.";
+        }
         else if (tang == 24)
             dia.text = "Maria: They can be found in the southern part of this forest, be careful, they are very strong!";
         else if (tang >= 25)
