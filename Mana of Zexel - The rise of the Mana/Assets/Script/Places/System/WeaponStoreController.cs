@@ -22,7 +22,7 @@ public class WeaponStoreController : MonoBehaviour
         {
             WeaponStorePanel.SetActive(true);
         }
-        else
+        else if (IsActived == false)
         {
             WeaponStorePanel.SetActive(false);
         }
@@ -40,7 +40,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyVayneStaff1()
     {
-        if (1 - Global.VayneStaff1 > 0)
+        if (1 - Global.VayneStaff1 > 0 && Global.Zen >= 500)
         {
             Global.VayneStaff1 += 1;
             InShock1.text = "In shock: " + (1 - Global.VayneStaff1).ToString();
@@ -49,7 +49,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyVayneStaff2()
     {
-        if(1 - Global.VayneStaff2 > 0)
+        if(1 - Global.VayneStaff2 > 0 && Global.Zen >= 2000)
         {
             Global.VayneStaff2 += 1;
             InShock2.text = "In shock: " + (1 - Global.VayneStaff2).ToString();
@@ -58,7 +58,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyVayneStaff3()
     {
-        if (1 - Global.VayneStaff3 > 0)
+        if (1 - Global.VayneStaff3 > 0 && Global.Zen >= 4000)
         {
             Global.VayneStaff3 += 1;
             InShock3.text = "In shock: " + (1 - Global.VayneStaff3).ToString();
@@ -67,7 +67,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyAchelmistArmor1()
     {
-        if (2 - Global.AlchemistArmor1 > 0)
+        if (2 - Global.AlchemistArmor1 > 0 && Global.Zen >= 500)
         {
             Global.AlchemistArmor1 += 1;
             InShock4.text = "In shock: " + (2 - Global.AlchemistArmor1).ToString();
@@ -76,7 +76,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyAchelmistArmor2()
     {
-        if (2 - Global.AlchemistArmor2 > 0)
+        if (2 - Global.AlchemistArmor2 > 0 && Global.Zen >= 2000)
         {
             Global.AlchemistArmor2 += 1;
             InShock5.text = "In shock: " + (2 - Global.AlchemistArmor2).ToString();
@@ -85,10 +85,15 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyAchelmistArmor3()
     {
-        if (2 - Global.AlchemistArmor3 > 0)
+        if (2 - Global.AlchemistArmor3 > 0 && Global.Zen >= 4000)
         {
             Global.AlchemistArmor3 += 1;
             InShock6.text = "In shock: " + (2 - Global.AlchemistArmor3).ToString();
         }
+    }
+
+    public void CloseWeaponStorePanel()
+    {
+        WeaponStorePanel.SetActive(false);
     }
 }
