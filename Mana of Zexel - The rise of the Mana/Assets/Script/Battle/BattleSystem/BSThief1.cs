@@ -7,15 +7,19 @@ using UnityEngine.SceneManagement;
 
 public class BSThief1 : MonoBehaviour
 {
-    //Global Global;
     PlayerBattle pb;
     ThiefBattle tb;
     public GameObject Item_panel;
     public GameObject showr2;
     public GameObject P1_panel;
     public GameObject P2_panel;
+    public GameObject MariaStatus;
     public GameObject P3_panel;
     public GameObject Win_panel;
+    public GameObject MariaName;
+    public GameObject MariaLevel;
+    public GameObject MariaExp;
+    public GameObject MariaPlusExp;
     public GameObject Lose_panel;
     public Text num1;
     public Text num2;
@@ -51,16 +55,30 @@ public class BSThief1 : MonoBehaviour
     public int show2 = 0;
     public int show3 = 0;
     public int E1Hit;
+    public bool P2Available, P3Availabel;
     // Start is called before the first frame update
     void Start()
     {
-        //Global = FindObjectOfType<Global>();
         pb = FindObjectOfType<PlayerBattle>();
         tb = FindObjectOfType<ThiefBattle>();
         a1 = Global.SpeedP1 / 10;
         a2 = Global.SpeedP2 / 10;
         a3 = Global.SpeedP3 / 10;
         aE1 = Global.SpeedE1 / 10;
+
+        if (CutscenesController.cus12 == 0)
+        {
+            MariaStatus.SetActive(false);
+            HP3.text = "";
+            MP3.text = "";
+            P3Availabel = false;
+        }
+        else
+        {
+            MariaStatus.SetActive(true);
+            P3Availabel = true;
+        }
+
         if (Global.CurHPP1 > 0)
             pb.dead1 = 0;
         if (Global.CurHPP2 > 0)
@@ -77,14 +95,7 @@ public class BSThief1 : MonoBehaviour
         CheckP1Die();
         CheckP2Die();
         CheckP3Die();
-        HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
-        MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
-        HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
-        MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
-        HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
-        MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
-        HPE1.text = "HP: " + Global.HPE1.ToString();
-        NumTurn.text = "Turn " + dem_turn.ToString();
+        UpdateUIText();
         if (Global.HPE1 <= 0)
             HPE1.text = "HP: 0";
         if (Global.CurHPP1 <= 0)
@@ -119,7 +130,7 @@ public class BSThief1 : MonoBehaviour
                 else
                     ShowP1Panel(false);
             }
-            else if (a3 > 0 && Global.CurHPP3 > 0)
+            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Availabel == true)
             {
                 CheckE1Die();
                 CheckP1Die();
@@ -147,6 +158,26 @@ public class BSThief1 : MonoBehaviour
             }
         }
     }
+
+    public void UpdateUIText()
+    {
+        HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
+        MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
+
+        HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
+        MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
+
+        if (P3Availabel == true)
+        {
+            HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
+            MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
+        }
+
+        HPE1.text = "HP: " + Global.HPE1.ToString();
+
+        NumTurn.text = "Turn " + dem_turn.ToString();
+    }
+
     public void ShowP1Panel(bool isshow)
     {
         if (P1_panel)
@@ -385,13 +416,7 @@ public class BSThief1 : MonoBehaviour
     {
         if (Global.CurHPP1 <= 0 && Global.CurHPP2 <= 0 && Global.CurHPP3 <=0)
         {
-            HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
-            MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
-            HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
-            MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
-            HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
-            MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
-            HPE1.text = "HP: " + Global.HPE1.ToString();
+            UpdateUIText();
             Invoke("delayCheckP1P2P3Die1", 1f);
             Invoke("delayCheckP1P2P3Die2", 2f);
         }
@@ -402,18 +427,26 @@ public class BSThief1 : MonoBehaviour
         {
             ShowP1Panel(false);
             ShowP2Panel(false);
-            HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
-            MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
-            HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
-            MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
-            HPE1.text = "HP: " + Global.HPE1.ToString();
-            HPE1.text = "HP: 0";
+            UpdateUIText();
             stop = 1;
             LevelP1.text = "Level " + Global.LevelP1;
             EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
-            Money.text = Global.Zen + " ";
+
             LevelP2.text = "Level " + Global.LevelP2;
             EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
+
+            if (P3Availabel == true)
+            {
+                MariaName.SetActive(true);
+                MariaLevel.SetActive(true);
+                MariaExp.SetActive(true);
+                MariaPlusExp.SetActive(true);
+                LevelP3.text = "Level " + Global.LevelP3;
+                EXPP3.text = Global.CurEXPP3 + "/" + Global.MaxEXPP3;
+            }
+
+            Money.text = Global.Zen + " ";
+
             Invoke("delayCheckE1Die1", 1f);
             if (once == 0)
             {
@@ -616,7 +649,7 @@ public class BSThief1 : MonoBehaviour
         {
             Global.CurEXPP2 += 10;
         }
-        if (Global.LevelP3 < 30)
+        if (Global.LevelP3 < 30 && P3Availabel == true)
         {
             Global.CurEXPP3 += 10;
         }

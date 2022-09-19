@@ -31,6 +31,7 @@ public class HubController : MonoBehaviour
     public Text LevelP2;
     public Text HPP2;
     public Text MPP2;
+    public Text LevelP3;
     public Text HPP3;
     public Text MPP3;
     public Text Zen;
@@ -44,7 +45,7 @@ public class HubController : MonoBehaviour
     public Text numi2;
     public Text numi3;
     public Text numi4;
-    public int ShowLevelP1, ShowLevelP2, ShowHPP1, ShowHPP2, ShowHPP3, ShowMPP1, ShowMPP2, ShowMPP3, ShowZen;
+    public int ShowLevelP1, ShowLevelP2, ShowLevelP3, ShowHPP1, ShowHPP2, ShowHPP3, ShowMPP1, ShowMPP2, ShowMPP3, ShowZen;
     public GameObject ShowVayneDetailPanel;
     public GameObject DShowLevelP1, DShowAttackP1, DShowHPP1, DShowMPP1, DShowSpeedP1;
     public GameObject PointPlusP1, AttackPointPlusLvP1, HPPointPlusLvP1, MPPointPlusLvP1, SpeedPointPlusLvP1, AttackPointPlusInfoP1, HPPointPlusInfoP1, MPPointPlusInfoP1, SpeedPointPlusInfoP1;
@@ -60,12 +61,17 @@ public class HubController : MonoBehaviour
         ShowLevelP1 = Global.LevelP1;
         ShowHPP1 = Global.CurHPP1;
         ShowMPP1 = Global.CurMPP1;
+
         ShowLevelP2 = Global.LevelP2;
         ShowHPP2 = Global.CurHPP2;
         ShowMPP2 = Global.CurMPP2;
+
+        ShowLevelP3 = Global.LevelP3;
+        ShowHPP3 = Global.CurHPP3;
+        ShowMPP3 = Global.CurMPP3;
         ShowZen = Global.Zen;
         
-        if (CutscenesController.cus1 == 1)
+        if (CutscenesController.cus12 == 0)
         {
             showp31.SetActive(false);
             showp32.SetActive(false);
@@ -101,13 +107,21 @@ public class HubController : MonoBehaviour
         {
             bag.SetActive(true);
         }
+
         LevelP1.text = "Level " + ShowLevelP1;
         HPP1.text = "HP: " + ShowHPP1;
         MPP1.text = "MP: " + ShowMPP1;
+
         LevelP2.text = "Level " + ShowLevelP2;
         HPP2.text = "HP: " + ShowHPP2;
         MPP2.text = "MP: " + ShowMPP2;
+
+        LevelP3.text = "Level " + ShowLevelP3;
+        HPP3.text = "HP: " + ShowHPP3;
+        MPP3.text = "MP: " + ShowMPP3;
+
         Zen.text = ShowZen + " ";
+
         if (CutscenesController.cus3 == 0)
         {
             QT.text = "Go to the Zexel town on the west side of the Wishing hill";
@@ -137,43 +151,6 @@ public class HubController : MonoBehaviour
         numi2.text = ContainerController.ManaPotion + "";
         numi3.text = ContainerController.ElixirPotion + "";
         numi4.text = ContainerController.Bom + "";
-
-        /*if (PlayerPrefs.GetInt("SDL") > 0)
-        {
-            showDL.SetActive(true);
-        }
-        if (PlayerPrefs.GetInt("SMD") > 0)
-        {
-            showMD.SetActive(true);
-        }
-        if (PlayerPrefs.GetInt("SPW") > 0)
-        {
-            showPW.SetActive(true);
-        }
-        if (PlayerPrefs.GetInt("SI") > 0)
-        {
-            showI.SetActive(true);
-        }
-        if (PlayerPrefs.GetInt("SMG") > 0)
-        {
-            showMG.SetActive(true);
-        }
-        if (PlayerPrefs.GetInt("SHP") > 0)
-        {
-            showHP.SetActive(true);
-        }
-        if (PlayerPrefs.GetInt("SMP") > 0)
-        {
-            showMP.SetActive(true);
-        }
-        if (PlayerPrefs.GetInt("SEP") > 0)
-        {
-            showEP.SetActive(true);
-        }
-        if (PlayerPrefs.GetInt("SB") > 0)
-        {
-            showB.SetActive(true);
-        }*/
     }
     public void Back1()
     {

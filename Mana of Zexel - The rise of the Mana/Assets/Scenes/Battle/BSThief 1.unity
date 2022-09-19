@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 173144178}
   - component: {fileID: 173144177}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: AliaText (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1085,12 +1085,12 @@ GameObject:
   - component: {fileID: 319856857}
   - component: {fileID: 319856856}
   m_Layer: 5
-  m_Name: Text (Legacy) (1)
+  m_Name: MariaText (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &319856855
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1144,7 +1144,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Alia: '
+  m_Text: 'Maria: '
 --- !u!222 &319856857
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1833,7 +1833,7 @@ GameObject:
   - component: {fileID: 613602574}
   - component: {fileID: 613602573}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: VayneText (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2944,7 +2944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &859438263
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3024,7 +3024,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &883459936
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6106,7 +6106,7 @@ GameObject:
   - component: {fileID: 1242791398}
   - component: {fileID: 1242791397}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: ExpPlusText2 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7439,7 +7439,7 @@ GameObject:
   - component: {fileID: 1380083781}
   - component: {fileID: 1380083780}
   m_Layer: 5
-  m_Name: MoneyText (Legacy)
+  m_Name: ZenValueText (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7956,7 +7956,7 @@ GameObject:
   - component: {fileID: 1533057270}
   - component: {fileID: 1533057269}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: ZenText (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8286,8 +8286,13 @@ MonoBehaviour:
   showr2: {fileID: 226068126}
   P1_panel: {fileID: 1285538563}
   P2_panel: {fileID: 1847688984}
+  MariaStatus: {fileID: 1087531950}
   P3_panel: {fileID: 492855767}
   Win_panel: {fileID: 1261485424}
+  MariaName: {fileID: 319856854}
+  MariaLevel: {fileID: 859438262}
+  MariaExp: {fileID: 883459935}
+  MariaPlusExp: {fileID: 1912297947}
   Lose_panel: {fileID: 1209780870}
   num1: {fileID: 1203692702}
   num2: {fileID: 1203692701}
@@ -8323,6 +8328,8 @@ MonoBehaviour:
   show2: 0
   show3: 0
   E1Hit: 0
+  P2Available: 0
+  P3Availabel: 0
 --- !u!1 &1731955965
 GameObject:
   m_ObjectHideFlags: 0
@@ -8335,7 +8342,7 @@ GameObject:
   - component: {fileID: 1731955968}
   - component: {fileID: 1731955967}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: ExpPlusText1 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8415,12 +8422,12 @@ GameObject:
   - component: {fileID: 1733269997}
   - component: {fileID: 1733269996}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: ExpPlusText3 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1733269995
 RectTransform:
   m_ObjectHideFlags: 0
