@@ -88,6 +88,21 @@ public class MenuController : MonoBehaviour
         Global.MaxEXPP2 = 80;
         Global.CurEXPP2 = 0;
 
+        Global.PlusPointP2 = 2;
+
+        //Set Maria
+        Global.CurHPP3 = 235;
+        Global.MaxHPP3 = 235;
+        Global.CurMPP3 = 85;
+        Global.MaxMPP3 = 85;
+        Global.DamageP3 = 60;
+        Global.SpeedP3 = 15;
+        Global.LevelP3 = 5;
+        Global.MaxEXPP3 = 200;
+        Global.CurEXPP3 = 0;
+
+        Global.PlusPointP3 = 5;
+
         //Set Zen
         Global.Zen = 0;
 

@@ -14,6 +14,7 @@ public class BSThief1 : MonoBehaviour
     public GameObject showr2;
     public GameObject P1_panel;
     public GameObject P2_panel;
+    public GameObject P3_panel;
     public GameObject Win_panel;
     public GameObject Lose_panel;
     public Text num1;
@@ -25,24 +26,30 @@ public class BSThief1 : MonoBehaviour
     public Text MP1;
     public Text HP2;
     public Text MP2;
+    public Text HP3;
+    public Text MP3;
     public Text HPE1;
     public Text EXPP1;
     public Text EXPP2;
+    public Text EXPP3;
     public Text Money;
     public Text LevelP1;
     public Text LevelP2;
+    public Text LevelP3;
     public Text NumTurn;
     public GameObject lu;
     public GameObject lu2;
+    public GameObject lu3;
     public GameObject HPMP;
     public GameObject NB;
-    public int a1, a2, aE1;
+    public int a1, a2, a3, aE1;
     public int stop = 0;
     private int dem = 0;
     private int dem_turn = 1;
     private int once = 0;
-    private int show1 = 0;
+    public int show1 = 0;
     public int show2 = 0;
+    public int show3 = 0;
     public int E1Hit;
     // Start is called before the first frame update
     void Start()
@@ -52,24 +59,30 @@ public class BSThief1 : MonoBehaviour
         tb = FindObjectOfType<ThiefBattle>();
         a1 = Global.SpeedP1 / 10;
         a2 = Global.SpeedP2 / 10;
+        a3 = Global.SpeedP3 / 10;
         aE1 = Global.SpeedE1 / 10;
         if (Global.CurHPP1 > 0)
             pb.dead1 = 0;
         if (Global.CurHPP2 > 0)
             pb.dead2 = 0;
+        if (Global.CurHPP3 > 0)
+            pb.dead3 = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckE1Die();
-        CheckP1P2Die();
+        CheckP1P2P3Die();
         CheckP1Die();
         CheckP2Die();
+        CheckP3Die();
         HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
         MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
         HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
         MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
+        HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
+        MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
         HPE1.text = "HP: " + Global.HPE1.ToString();
         NumTurn.text = "Turn " + dem_turn.ToString();
         if (Global.HPE1 <= 0)
@@ -78,6 +91,8 @@ public class BSThief1 : MonoBehaviour
             HP1.text = "HP: 0";
         if (Global.CurHPP2 <= 0)
             HP2.text = "HP: 0";
+        if (Global.CurHPP3 <= 0)
+            HP3.text = "HP: 0";
         if (Global.SpeedP2 >= Global.SpeedE1)
         {
             if(a2 > 0 && Global.CurHPP2 > 0)
@@ -85,7 +100,8 @@ public class BSThief1 : MonoBehaviour
                 CheckE1Die();
                 CheckP1Die();
                 CheckP2Die();
-                CheckP1P2Die();
+                CheckP3Die();
+                CheckP1P2P3Die();
                 if(show2 == 0)
                     ShowP2Panel(true);
                 else
@@ -96,11 +112,24 @@ public class BSThief1 : MonoBehaviour
                 CheckE1Die();
                 CheckP1Die();
                 CheckP2Die();
-                CheckP1P2Die();
+                CheckP3Die();
+                CheckP1P2P3Die();
                 if (show1 == 0)
                     ShowP1Panel(true);
                 else
                     ShowP1Panel(false);
+            }
+            else if (a3 > 0 && Global.CurHPP3 > 0)
+            {
+                CheckE1Die();
+                CheckP1Die();
+                CheckP2Die();
+                CheckP3Die();
+                CheckP1P2P3Die();
+                if (show3 == 0)
+                    ShowP3Panel(true);
+                else
+                    ShowP3Panel(false);
             }
             else if (aE1 > 0 && Global.HPE1 > 0)
             {
@@ -109,12 +138,12 @@ public class BSThief1 : MonoBehaviour
                 if (dem == 1)
                 {
                     tb.yes_thief = 1;
-                    Invoke("delay", 1f);
+                    Invoke("delayE1", 1f);
                     dem = 0;
                 }
                 CheckP1Die();
                 CheckP2Die();
-                CheckP1P2Die();
+                CheckP1P2P3Die();
             }
         }
     }
@@ -132,18 +161,32 @@ public class BSThief1 : MonoBehaviour
             P2_panel.SetActive(isshow);
         }
     }
+    public void ShowP3Panel(bool isshow)
+    {
+        if (P3_panel)
+        {
+            P3_panel.SetActive(isshow);
+        }
+    }
     public void PressAttack()
     {
         pb.yes1 = 1;
         show1 = 1;
-        Invoke("delay1", 1f);
+        Invoke("delayP1PressAttack", 1f);
         dem = 1;
     }
     public void PressAttackP2()
     {
         pb.yes3 = 1;
         show2 = 1;
-        Invoke("delay7", 1f);
+        Invoke("delayP2PressAttack", 1f);
+        dem = 1;
+    }
+    public void PressAttackP3()
+    {
+        pb.yes5 = 1;
+        show3 = 1;
+        Invoke("delayP3PressAttack", 1f);
         dem = 1;
     }
     public void PressSkill()
@@ -152,7 +195,7 @@ public class BSThief1 : MonoBehaviour
         {
             pb.yes2 = 1;
             show1 = 1;
-            Invoke("delay2", 1f);
+            Invoke("delayP1PressSkill", 1f);
             dem = 1;
         }
     }
@@ -162,7 +205,17 @@ public class BSThief1 : MonoBehaviour
         {
             pb.yes4 = 1;
             show2 = 1;
-            Invoke("delay8", 1f);
+            Invoke("delayP2PressSkill", 1f);
+            dem = 1;
+        }
+    }
+    public void PressSkillP3()
+    {
+        if (Global.CurMPP3 >= 40)
+        {
+            pb.yes6 = 1;
+            show3 = 1;
+            Invoke("delayP3PressSkill", 1f);
             dem = 1;
         }
     }
@@ -321,17 +374,26 @@ public class BSThief1 : MonoBehaviour
             pb.dead2 = 1;
         }
     }
-    public void CheckP1P2Die()
+    public void CheckP3Die()
     {
-        if (Global.CurHPP1 <= 0 && Global.CurHPP2 <= 0)
+        if (Global.CurHPP3 <= 0)
+        {
+            pb.dead3 = 1;
+        }
+    }
+    public void CheckP1P2P3Die()
+    {
+        if (Global.CurHPP1 <= 0 && Global.CurHPP2 <= 0 && Global.CurHPP3 <=0)
         {
             HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
             MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
             HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
             MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
+            HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
+            MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
             HPE1.text = "HP: " + Global.HPE1.ToString();
-            Invoke("delay3", 1f);
-            Invoke("delay4", 2f);
+            Invoke("delayCheckP1P2P3Die1", 1f);
+            Invoke("delayCheckP1P2P3Die2", 2f);
         }
     }
     public void CheckE1Die()
@@ -352,27 +414,34 @@ public class BSThief1 : MonoBehaviour
             Money.text = Global.Zen + " ";
             LevelP2.text = "Level " + Global.LevelP2;
             EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
-            Invoke("delay5", 1f);
+            Invoke("delayCheckE1Die1", 1f);
             if (once == 0)
             {
-                Invoke("delay6", 2f);
+                Invoke("delayCheckE1Die2", 2f);
                 once = 1;
             }
         }
     }
-    void delay()
+    void delayE1()
     {
         CheckE1Die();
         ShowP1Panel(false);
-        E1Hit = Random.Range(1, 3);
-        if(E1Hit == 1 && Global.CurHPP1 > 0)
+        /*if (CutscenesController.cus12 == 0)
+            E1Hit = Random.Range(1, 3);
+        else if (CutscenesController.cus12 == 1)
+            E1Hit = Random.Range(1, 4);
+
+        if (E1Hit == 1 && Global.CurHPP1 > 0)
             Global.CurHPP1 -= Global.DamageE1;
         else if(E1Hit == 1 && Global.CurHPP1 <= 0 && Global.CurHPP2 > 0)
             Global.CurHPP2 -= Global.DamageE1;
         else if(E1Hit == 2 && Global.CurHPP2 >0)
             Global.CurHPP2 -= Global.DamageE1;
         else if(E1Hit == 2 && Global.CurHPP2 <= 0 && Global.CurHPP1 > 0)
-            Global.CurHPP1 -= Global.DamageE1;
+            Global.CurHPP1 -= Global.DamageE1;*/
+
+        E1AttackTarget();
+
         HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
         MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
         HPE1.text = "HP: " + Global.HPE1.ToString();
@@ -384,7 +453,27 @@ public class BSThief1 : MonoBehaviour
             a2 = Global.SpeedP2 / 10;
         }
     }
-    void delay1()
+    void E1AttackTarget()
+    {
+        if (CutscenesController.cus12 == 0)
+            E1Hit = Random.Range(1, 3);
+        else if (CutscenesController.cus12 == 1)
+            E1Hit = Random.Range(1, 4);
+
+        if (E1Hit == 1 && Global.CurHPP1 > 0)
+            Global.CurHPP1 -= Global.DamageE1;
+        else if (E1Hit == 1 && Global.CurHPP1 <= 0)
+            E1AttackTarget();
+        else if (E1Hit == 2 && Global.CurHPP2 > 0)
+            Global.CurHPP2 -= Global.DamageE1;
+        else if (E1Hit == 2 && Global.CurHPP2 <= 0)
+            E1AttackTarget();
+        else if (E1Hit == 3 && Global.CurHPP3 > 0)
+            Global.CurHPP3 -= Global.DamageE1;
+        else if (E1Hit == 3 && Global.CurHPP3 <= 0)
+            E1AttackTarget();
+    }
+    void delayP1PressAttack()
     {
         ShowP1Panel(false);
         Global.HPE1 -= Global.DamageP1;
@@ -400,7 +489,7 @@ public class BSThief1 : MonoBehaviour
         }
         CheckE1Die();
     }
-    void delay7()
+    void delayP2PressAttack()
     {
         ShowP2Panel(false);
         Global.HPE1 -= Global.DamageP2;
@@ -416,7 +505,23 @@ public class BSThief1 : MonoBehaviour
         }
         CheckE1Die();
     }
-    void delay2()
+    void delayP3PressAttack()
+    {
+        ShowP3Panel(false);
+        Global.HPE1 -= Global.DamageP3;
+        HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
+        MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
+        HPE1.text = "HP: " + Global.HPE1.ToString();
+        a3 -= 1;
+        show3 = 0;
+        dem_turn += 1;
+        if (a3 == 0)
+        {
+            aE1 = Global.SpeedE1 / 10;
+        }
+        CheckE1Die();
+    }
+    void delayP1PressSkill()
     {
         Global.CurMPP1 -= 20;
         Global.HPE1 = Global.HPE1 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
@@ -432,7 +537,7 @@ public class BSThief1 : MonoBehaviour
         }
         CheckE1Die();
     }
-    void delay8()
+    void delayP2PressSkill()
     {
         Global.CurMPP2 -= 20;
         Global.HPE1 = Global.HPE1 - (Global.DamageP2 + (Global.DamageP2 * 100 / 100));
@@ -448,21 +553,60 @@ public class BSThief1 : MonoBehaviour
         }
         CheckE1Die();
     }
-    void delay3()
+    void delayP3PressSkill()
+    {
+        Global.CurMPP3 -= 40;
+        int HealAmount = Global.DamageP3 * 20 / 100;
+        int CheckMaxhealP1 = Global.MaxHPP1 - Global.CurHPP1;
+        int CheckMaxhealP2 = Global.MaxHPP2 - Global.CurHPP2;
+
+        if (HealAmount < CheckMaxhealP1)
+        {
+            Global.CurHPP1 += HealAmount;
+        }
+        else
+        {
+            Global.CurHPP1 = Global.MaxHPP1;
+        }
+        if (HealAmount < CheckMaxhealP2)
+        {
+            Global.CurHPP2 += HealAmount;
+        }
+        else
+        {
+            Global.CurHPP2 = Global.MaxHPP2;
+        }
+
+        HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
+        MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
+        HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
+        MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
+        HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
+        MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
+        a3 -= 1;
+        show3 = 0;
+        dem_turn += 1;
+        if (a3 == 0)
+        {
+            aE1 = Global.SpeedE1 / 10;
+        }
+        //CheckE1Die();
+    }
+    void delayCheckP1P2P3Die1()
     {
         HPMP.SetActive(false);
         Lose_panel.SetActive(true);
     }
-    void delay4()
+    void delayCheckP1P2P3Die2()
     {
         SceneManager.LoadScene(1);
     }
-    void delay5()
+    void delayCheckE1Die1()
     {
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }
-    void delay6()
+    void delayCheckE1Die2()
     {
         if (Global.LevelP1 < 30)
         {
@@ -471,6 +615,10 @@ public class BSThief1 : MonoBehaviour
         if (Global.LevelP2 < 30)
         {
             Global.CurEXPP2 += 10;
+        }
+        if (Global.LevelP3 < 30)
+        {
+            Global.CurEXPP3 += 10;
         }
         Global.Zen += 10;
         while (Global.CurEXPP1 >= Global.MaxEXPP1)
@@ -497,6 +645,18 @@ public class BSThief1 : MonoBehaviour
             Global.SpeedP2 += 1;
             Global.PlusPointP2 += 1;
         }
+        while (Global.CurEXPP3 >= Global.MaxEXPP3)
+        {
+            lu3.SetActive(true);
+            Global.CurEXPP3 -= Global.MaxEXPP3;
+            Global.MaxEXPP3 += 40;
+            Global.LevelP3 += 1;
+            Global.MaxHPP3 += 25;
+            Global.MaxMPP3 += 5;
+            Global.DamageP3 += 10;
+            Global.SpeedP3 += 1;
+            Global.PlusPointP3 += 1;
+        }
         if (Global.LevelP1 < 30)
         {
             LevelP1.text = "Level " + Global.LevelP1;
@@ -516,6 +676,16 @@ public class BSThief1 : MonoBehaviour
         {
             LevelP2.text = "Level Max";
             EXPP2.text = "MAX";
+        }
+        if (Global.LevelP3 < 30)
+        {
+            LevelP3.text = "Level " + Global.LevelP3;
+            EXPP3.text = Global.CurEXPP3 + "/" + Global.MaxEXPP3;
+        }
+        else
+        {
+            LevelP3.text = "Level Max";
+            EXPP3.text = "MAX";
         }
         Money.text = Global.Zen + " ";
         NB.SetActive(true);

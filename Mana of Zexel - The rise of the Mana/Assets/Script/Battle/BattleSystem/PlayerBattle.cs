@@ -6,14 +6,18 @@ public class PlayerBattle : MonoBehaviour
 {
     public Animator ani;
     public Animator anip2;
+    public Animator anip3;
     public Transform P1;
     public Transform P2;
     public int yes1=0;
     public int yes2=0;
     public int yes3=0;
     public int yes4=0;
+    public int yes5=0;
+    public int yes6=0;
     public int dead1=0;
     public int dead2=0;
+    public int dead3=0;
     public float MoveSpeed = 4f;
     // Start is called before the first frame update
     void Start()
@@ -50,13 +54,27 @@ public class PlayerBattle : MonoBehaviour
             Invoke("delayP2", 1.2f);
             yes4 = 0;
         }
-        if(dead1 == 1)
+        if (yes5 == 1)
+        {
+            anip3.SetTrigger("p3attack");
+            yes5 = 0;
+        }
+        if (yes6 == 1)
+        {
+            anip3.SetTrigger("p3skill");
+            yes6 = 0;
+        }
+        if (dead1 == 1)
         {
             ani.SetBool("p1dead", true);
         }
         if(dead2 == 1)
         {
             anip2.SetBool("p2dead", true);
+        }
+        if(dead3 == 1)
+        {
+            anip3.SetBool("p3dead", true);
         }
     }
 
