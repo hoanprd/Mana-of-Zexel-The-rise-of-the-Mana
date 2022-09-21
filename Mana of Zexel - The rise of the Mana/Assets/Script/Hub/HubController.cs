@@ -46,12 +46,14 @@ public class HubController : MonoBehaviour
     public Text numi3;
     public Text numi4;
     public int ShowLevelP1, ShowLevelP2, ShowLevelP3, ShowHPP1, ShowHPP2, ShowHPP3, ShowMPP1, ShowMPP2, ShowMPP3, ShowZen;
-    public GameObject ShowVayneDetailPanel;
-    public GameObject DShowLevelP1, DShowAttackP1, DShowHPP1, DShowMPP1, DShowSpeedP1;
+    public GameObject ShowVayneDetailPanel, ShowAliaDetailPanel, ShowMariaDetailPanel;
+    public GameObject DShowLevelP1, DShowAttackP1, DShowHPP1, DShowMPP1, DShowSpeedP1, DShowLevelP2, DShowAttackP2, DShowHPP2, DShowMPP2, DShowSpeedP2, DShowLevelP3, DShowAttackP3, DShowHPP3, DShowMPP3, DShowSpeedP3;
     public GameObject PointPlusP1, AttackPointPlusLvP1, HPPointPlusLvP1, MPPointPlusLvP1, SpeedPointPlusLvP1, AttackPointPlusInfoP1, HPPointPlusInfoP1, MPPointPlusInfoP1, SpeedPointPlusInfoP1;
-    public GameObject ShowVayneWeaponEquip, ShowVayneArmorEquip;
-    public GameObject[] VayneWI, VayneAI;
-    public GameObject VayneW1, VayneW2, VayneW3, VayneA1, VayneA2, VayneA3;
+    public GameObject PointPlusP2, AttackPointPlusLvP2, HPPointPlusLvP2, MPPointPlusLvP2, SpeedPointPlusLvP2, AttackPointPlusInfoP2, HPPointPlusInfoP2, MPPointPlusInfoP2, SpeedPointPlusInfoP2;
+    public GameObject PointPlusP3, AttackPointPlusLvP3, HPPointPlusLvP3, MPPointPlusLvP3, SpeedPointPlusLvP3, AttackPointPlusInfoP3, HPPointPlusInfoP3, MPPointPlusInfoP3, SpeedPointPlusInfoP3;
+    public GameObject ShowVayneWeaponEquip, ShowVayneArmorEquip, ShowAliaWeaponEquip, ShowAliaArmorEquip, ShowMariaWeaponEquip, ShowMariaArmorEquip;
+    public GameObject[] VayneWI, VayneAI, AliaWI, AliaAI, MariaWI, MariaAI;
+    public GameObject VayneW1, VayneW2, VayneW3, VayneA1, VayneA2, VayneA3, AliaW1, AliaW2, AliaW3, AliaA1, AliaA2, AliaA3, MariaW1, MariaW2, MariaW3, MariaA1, MariaA2, MariaA3;
 
     // Start is called before the first frame update
     void Start()
@@ -82,6 +84,10 @@ public class HubController : MonoBehaviour
         //Show detail
         ShowP1Detail();
         ShowP1Equip();
+        ShowP2Detail();
+        ShowP2Equip();
+        ShowP3Detail();
+        ShowP3Equip();
     }
 
     // Update is called once per frame
@@ -168,9 +174,20 @@ public class HubController : MonoBehaviour
     {
         bag.SetActive(false);
     }
+
     public void OpenVaynePanel()
     {
         ShowVayneDetailPanel.SetActive(true);
+    }
+
+    public void OpenAliaPanel()
+    {
+        ShowAliaDetailPanel.SetActive(true);
+    }
+
+    public void OpenMariaPanel()
+    {
+        ShowMariaDetailPanel.SetActive(true);
     }
 
     public void ShowP1Detail()
@@ -193,6 +210,46 @@ public class HubController : MonoBehaviour
         SpeedPointPlusInfoP1.GetComponent<Text>().text = "Speed (need 2): +" + Global.PlusPointSpeedInfoP1;
     }
 
+    public void ShowP2Detail()
+    {
+        DShowLevelP2.GetComponent<Text>().text = "Level " + Global.LevelP2;
+        DShowAttackP2.GetComponent<Text>().text = "Attack: " + Global.DamageP2;
+        DShowHPP2.GetComponent<Text>().text = "HP: " + Global.CurHPP2 + "/" + Global.MaxHPP2;
+        DShowMPP2.GetComponent<Text>().text = "MP: " + Global.CurMPP2 + "/" + Global.MaxMPP2;
+        DShowSpeedP2.GetComponent<Text>().text = "Speed: " + Global.SpeedP2;
+
+        PointPlusP2.GetComponent<Text>().text = "Point: " + Global.PlusPointP2;
+        AttackPointPlusLvP2.GetComponent<Text>().text = "" + Global.PlusPointAttackLvP2;
+        HPPointPlusLvP2.GetComponent<Text>().text = "" + Global.PlusPointHPLvP2;
+        MPPointPlusLvP2.GetComponent<Text>().text = "" + Global.PlusPointMPLvP2;
+        SpeedPointPlusLvP2.GetComponent<Text>().text = "" + Global.PlusPointSpeedLvP2;
+
+        AttackPointPlusInfoP2.GetComponent<Text>().text = "Attack (need 1): +" + Global.PlusPointAttackInfoP2;
+        HPPointPlusInfoP2.GetComponent<Text>().text = "HP (need 1): +" + Global.PlusPointHPInfoP2;
+        MPPointPlusInfoP2.GetComponent<Text>().text = "MP (need 1): +" + Global.PlusPointMPInfoP2;
+        SpeedPointPlusInfoP2.GetComponent<Text>().text = "Speed (need 2): +" + Global.PlusPointSpeedInfoP2;
+    }
+
+    public void ShowP3Detail()
+    {
+        DShowLevelP3.GetComponent<Text>().text = "Level " + Global.LevelP3;
+        DShowAttackP3.GetComponent<Text>().text = "Attack: " + Global.DamageP3;
+        DShowHPP3.GetComponent<Text>().text = "HP: " + Global.CurHPP3 + "/" + Global.MaxHPP3;
+        DShowMPP3.GetComponent<Text>().text = "MP: " + Global.CurMPP3 + "/" + Global.MaxMPP3;
+        DShowSpeedP3.GetComponent<Text>().text = "Speed: " + Global.SpeedP3;
+
+        PointPlusP3.GetComponent<Text>().text = "Point: " + Global.PlusPointP3;
+        AttackPointPlusLvP3.GetComponent<Text>().text = "" + Global.PlusPointAttackLvP3;
+        HPPointPlusLvP3.GetComponent<Text>().text = "" + Global.PlusPointHPLvP3;
+        MPPointPlusLvP3.GetComponent<Text>().text = "" + Global.PlusPointMPLvP3;
+        SpeedPointPlusLvP3.GetComponent<Text>().text = "" + Global.PlusPointSpeedLvP3;
+
+        AttackPointPlusInfoP3.GetComponent<Text>().text = "Attack (need 1): +" + Global.PlusPointAttackInfoP3;
+        HPPointPlusInfoP3.GetComponent<Text>().text = "HP (need 1): +" + Global.PlusPointHPInfoP3;
+        MPPointPlusInfoP3.GetComponent<Text>().text = "MP (need 1): +" + Global.PlusPointMPInfoP3;
+        SpeedPointPlusInfoP3.GetComponent<Text>().text = "Speed (need 2): +" + Global.PlusPointSpeedInfoP3;
+    }
+
     public void ShowP1Equip()
     {
         for (int i = 0; i < VayneWI.Length; i++)
@@ -210,6 +267,44 @@ public class HubController : MonoBehaviour
         VayneA1.GetComponent<Text>().text = "" + Global.AlchemistArmor1;
         VayneA2.GetComponent<Text>().text = "" + Global.AlchemistArmor2;
         VayneA3.GetComponent<Text>().text = "" + Global.AlchemistArmor3;
+    }
+
+    public void ShowP2Equip()
+    {
+        for (int i = 0; i < AliaWI.Length; i++)
+        {
+            if (i == Global.VayneWeaponStatus)
+                AliaWI[i].SetActive(true);
+            else
+                AliaWI[i].SetActive(false);
+        }
+
+        AliaW1.GetComponent<Text>().text = "" + Global.AliaShoes1;
+        AliaW2.GetComponent<Text>().text = "" + Global.AliaShoes2;
+        AliaW3.GetComponent<Text>().text = "" + Global.AliaShoes3;
+
+        AliaA1.GetComponent<Text>().text = "" + Global.WarriorArmor1;
+        AliaA2.GetComponent<Text>().text = "" + Global.WarriorArmor1;
+        AliaA3.GetComponent<Text>().text = "" + Global.WarriorArmor1;
+    }
+
+    public void ShowP3Equip()
+    {
+        for (int i = 0; i < MariaWI.Length; i++)
+        {
+            if (i == Global.MariaWeaponStatus)
+                MariaWI[i].SetActive(true);
+            else
+                MariaWI[i].SetActive(false);
+        }
+
+        MariaW1.GetComponent<Text>().text = "" + Global.MariaCrystal1;
+        MariaW2.GetComponent<Text>().text = "" + Global.MariaCrystal2;
+        MariaW3.GetComponent<Text>().text = "" + Global.MariaCrystal3;
+
+        MariaA1.GetComponent<Text>().text = "" + Global.AlchemistArmor1;
+        MariaA2.GetComponent<Text>().text = "" + Global.AlchemistArmor2;
+        MariaA3.GetComponent<Text>().text = "" + Global.AlchemistArmor3;
     }
 
     public void VayneWeaponEquip()
@@ -598,6 +693,778 @@ public class HubController : MonoBehaviour
         }
     }
 
+    public void AliaWeaponEquip()
+    {
+        ShowAliaArmorEquip.SetActive(false);
+        ShowAliaWeaponEquip.SetActive(true);
+    }
+
+    //Equip Alia weapon
+    public void AliaEquipW1()
+    {
+        if (Global.AliaWeaponStatus == 0 && Global.AliaShoes1 >= 1)
+        {
+            for (int i = 0; i < AliaWI.Length; i++)
+            {
+                if (i == 1)
+                {
+                    AliaWI[i].SetActive(true);
+                }
+                else
+                {
+                    AliaWI[i].SetActive(false);
+                }
+            }
+            Global.DamageP2 += 20;
+            Global.AliaShoes1 -= 1;
+            Global.AliaWeaponStatus = 1;
+            ShowP2Detail();
+        }
+        else if (Global.AliaWeaponStatus == 2 && Global.AliaShoes1 >= 1)
+        {
+            for (int i = 0; i < AliaWI.Length; i++)
+            {
+                if (i == 1)
+                {
+                    AliaWI[i].SetActive(true);
+                }
+                else
+                {
+                    AliaWI[i].SetActive(false);
+                }
+            }
+            Global.DamageP2 -= 60;
+            Global.DamageP2 += 20;
+            Global.AliaShoes2 += 1;
+            Global.AliaShoes1 -= 1;
+            Global.AliaWeaponStatus = 1;
+            ShowP2Detail();
+        }
+        else if (Global.AliaWeaponStatus == 3 && Global.AliaShoes1 >= 1)
+        {
+            for (int i = 0; i < AliaWI.Length; i++)
+            {
+                if (i == 1)
+                {
+                    AliaWI[i].SetActive(true);
+                }
+                else
+                {
+                    AliaWI[i].SetActive(false);
+                }
+            }
+            Global.DamageP2 -= 100;
+            Global.DamageP2 += 20;
+            Global.AliaShoes3 += 1;
+            Global.AliaShoes1 -= 1;
+            Global.AliaWeaponStatus = 1;
+            ShowP2Detail();
+        }
+    }
+
+    public void AliaEquipW2()
+    {
+        if (Global.AliaWeaponStatus == 0 && Global.AliaShoes2 >= 1)
+        {
+            for (int i = 0; i < AliaWI.Length; i++)
+            {
+                if (i == 2)
+                {
+                    AliaWI[i].SetActive(true);
+                }
+                else
+                {
+                    AliaWI[i].SetActive(false);
+                }
+            }
+            Global.DamageP2 += 60;
+            Global.AliaShoes2 -= 1;
+            Global.AliaWeaponStatus = 2;
+            ShowP2Detail();
+        }
+        else if (Global.AliaWeaponStatus == 1 && Global.AliaShoes2 >= 1)
+        {
+            for (int i = 0; i < AliaWI.Length; i++)
+            {
+                if (i == 2)
+                {
+                    AliaWI[i].SetActive(true);
+                }
+                else
+                {
+                    AliaWI[i].SetActive(false);
+                }
+            }
+            Global.DamageP2 -= 20;
+            Global.DamageP2 += 60;
+            Global.AliaShoes1 += 1;
+            Global.AliaShoes2 -= 1;
+            Global.AliaWeaponStatus = 2;
+            ShowP2Detail();
+        }
+        else if (Global.AliaWeaponStatus == 3 && Global.AliaShoes2 >= 1)
+        {
+            for (int i = 0; i < AliaWI.Length; i++)
+            {
+                if (i == 2)
+                {
+                    AliaWI[i].SetActive(true);
+                }
+                else
+                {
+                    AliaWI[i].SetActive(false);
+                }
+            }
+            Global.DamageP2 -= 100;
+            Global.DamageP2 += 60;
+            Global.AliaShoes3 += 1;
+            Global.AliaShoes2 -= 1;
+            Global.AliaWeaponStatus = 2;
+            ShowP2Detail();
+        }
+    }
+
+    public void AliaEquipW3()
+    {
+        if (Global.AliaWeaponStatus == 0 && Global.AliaShoes3 >= 1)
+        {
+            for (int i = 0; i < AliaWI.Length; i++)
+            {
+                if (i == 3)
+                {
+                    AliaWI[i].SetActive(true);
+                }
+                else
+                {
+                    AliaWI[i].SetActive(false);
+                }
+            }
+            Global.DamageP2 += 100;
+            Global.AliaShoes3 -= 1;
+            Global.AliaWeaponStatus = 3;
+            ShowP2Detail();
+        }
+        else if (Global.AliaWeaponStatus == 1 && Global.AliaShoes3 >= 1)
+        {
+            for (int i = 0; i < AliaWI.Length; i++)
+            {
+                if (i == 3)
+                {
+                    AliaWI[i].SetActive(true);
+                }
+                else
+                {
+                    AliaWI[i].SetActive(false);
+                }
+            }
+            Global.DamageP2 -= 20;
+            Global.DamageP2 += 100;
+            Global.AliaShoes1 += 1;
+            Global.AliaShoes3 -= 1;
+            Global.AliaWeaponStatus = 3;
+            ShowP2Detail();
+        }
+        else if (Global.AliaWeaponStatus == 2 && Global.AliaShoes3 >= 1)
+        {
+            for (int i = 0; i < AliaWI.Length; i++)
+            {
+                if (i == 3)
+                {
+                    AliaWI[i].SetActive(true);
+                }
+                else
+                {
+                    AliaWI[i].SetActive(false);
+                }
+            }
+            Global.DamageP2 -= 60;
+            Global.DamageP2 += 100;
+            Global.AliaShoes2 += 1;
+            Global.AliaShoes3 -= 1;
+            Global.AliaWeaponStatus = 3;
+            ShowP2Detail();
+        }
+    }
+
+    public void AliaArmorEquip()
+    {
+        ShowAliaWeaponEquip.SetActive(false);
+        ShowAliaArmorEquip.SetActive(true);
+    }
+
+    //Equip Alia armor
+    public void AliaEquipA1()
+    {
+        if (Global.AliaArmorStatus == 0 && Global.WarriorArmor1 >= 1)
+        {
+            for (int i = 0; i < AliaAI.Length; i++)
+            {
+                if (i == 1)
+                {
+                    AliaAI[i].SetActive(true);
+                }
+                else
+                {
+                    AliaAI[i].SetActive(false);
+                }
+            }
+            Global.MaxHPP2 += 100;
+            Global.WarriorArmor1 -= 1;
+            Global.AliaArmorStatus = 1;
+            ShowP2Detail();
+        }
+        else if (Global.AliaArmorStatus == 2 && Global.WarriorArmor1 >= 1)
+        {
+            for (int i = 0; i < AliaAI.Length; i++)
+            {
+                if (i == 1)
+                {
+                    AliaAI[i].SetActive(true);
+                }
+                else
+                {
+                    AliaAI[i].SetActive(false);
+                }
+            }
+            Global.MaxHPP2 -= 300;
+            Global.MaxHPP2 += 100;
+            Global.WarriorArmor2 += 1;
+            Global.WarriorArmor1 -= 1;
+            Global.AliaArmorStatus = 1;
+            ShowP2Detail();
+        }
+        else if (Global.AliaArmorStatus == 3 && Global.WarriorArmor1 >= 1)
+        {
+            for (int i = 0; i < AliaAI.Length; i++)
+            {
+                if (i == 1)
+                {
+                    AliaAI[i].SetActive(true);
+                }
+                else
+                {
+                    AliaAI[i].SetActive(false);
+                }
+            }
+            Global.MaxHPP2 -= 500;
+            Global.MaxHPP2 += 100;
+            Global.WarriorArmor3 += 1;
+            Global.WarriorArmor1 -= 1;
+            Global.AliaArmorStatus = 1;
+            ShowP2Detail();
+        }
+    }
+
+    public void AliaEquipA2()
+    {
+        if (Global.AliaArmorStatus == 0 && Global.WarriorArmor2 >= 1)
+        {
+            for (int i = 0; i < AliaAI.Length; i++)
+            {
+                if (i == 2)
+                {
+                    AliaAI[i].SetActive(true);
+                }
+                else
+                {
+                    AliaAI[i].SetActive(false);
+                }
+            }
+            Global.MaxHPP2 += 300;
+            Global.WarriorArmor2 -= 1;
+            Global.AliaArmorStatus = 2;
+            ShowP2Detail();
+        }
+        else if (Global.AliaArmorStatus == 1 && Global.WarriorArmor2 >= 1)
+        {
+            for (int i = 0; i < AliaWI.Length; i++)
+            {
+                if (i == 2)
+                {
+                    AliaAI[i].SetActive(true);
+                }
+                else
+                {
+                    AliaAI[i].SetActive(false);
+                }
+            }
+            Global.MaxHPP2 -= 100;
+            Global.MaxHPP2 += 300;
+            Global.WarriorArmor1 += 1;
+            Global.WarriorArmor2 -= 1;
+            Global.AliaArmorStatus = 2;
+            ShowP2Detail();
+        }
+        else if (Global.AliaArmorStatus == 3 && Global.WarriorArmor2 >= 1)
+        {
+            for (int i = 0; i < AliaWI.Length; i++)
+            {
+                if (i == 2)
+                {
+                    AliaAI[i].SetActive(true);
+                }
+                else
+                {
+                    AliaAI[i].SetActive(false);
+                }
+            }
+            Global.MaxHPP2 -= 500;
+            Global.MaxHPP2 += 300;
+            Global.WarriorArmor3 += 1;
+            Global.WarriorArmor2 -= 1;
+            Global.AliaArmorStatus = 2;
+            ShowP2Detail();
+        }
+    }
+
+    public void AliaEquipA3()
+    {
+        if (Global.AliaArmorStatus == 0 && Global.WarriorArmor3 >= 1)
+        {
+            for (int i = 0; i < AliaAI.Length; i++)
+            {
+                if (i == 3)
+                {
+                    AliaAI[i].SetActive(true);
+                }
+                else
+                {
+                    AliaAI[i].SetActive(false);
+                }
+            }
+            Global.MaxHPP2 += 500;
+            Global.WarriorArmor3 -= 1;
+            Global.AliaArmorStatus = 3;
+            ShowP2Detail();
+        }
+        else if (Global.AliaArmorStatus == 1 && Global.WarriorArmor3 >= 1)
+        {
+            for (int i = 0; i < AliaAI.Length; i++)
+            {
+                if (i == 3)
+                {
+                    AliaAI[i].SetActive(true);
+                }
+                else
+                {
+                    AliaAI[i].SetActive(false);
+                }
+            }
+            Global.MaxHPP2 -= 100;
+            Global.MaxHPP2 += 500;
+            Global.WarriorArmor1 += 1;
+            Global.WarriorArmor3 -= 1;
+            Global.AliaArmorStatus = 3;
+            ShowP2Detail();
+        }
+        else if (Global.AliaArmorStatus == 2 && Global.WarriorArmor3 >= 1)
+        {
+            for (int i = 0; i < AliaAI.Length; i++)
+            {
+                if (i == 3)
+                {
+                    AliaAI[i].SetActive(true);
+                }
+                else
+                {
+                    AliaAI[i].SetActive(false);
+                }
+            }
+            Global.MaxHPP2 -= 300;
+            Global.MaxHPP2 += 500;
+            Global.WarriorArmor2 += 1;
+            Global.WarriorArmor3 -= 1;
+            Global.AliaArmorStatus = 3;
+            ShowP2Detail();
+        }
+    }
+
+    public void MariaWeaponEquip()
+    {
+        ShowMariaArmorEquip.SetActive(false);
+        ShowMariaWeaponEquip.SetActive(true);
+    }
+
+    //Equip Maria weapon
+    public void MariaEquipW1()
+    {
+        if (Global.MariaWeaponStatus == 0 && Global.MariaCrystal1 >= 1)
+        {
+            for (int i = 0; i < MariaWI.Length; i++)
+            {
+                if (i == 1)
+                {
+                    MariaWI[i].SetActive(true);
+                }
+                else
+                {
+                    MariaWI[i].SetActive(false);
+                }
+            }
+            Global.DamageP3 += 20;
+            Global.MariaCrystal1 -= 1;
+            Global.MariaWeaponStatus = 1;
+            ShowP3Detail();
+        }
+        else if (Global.MariaWeaponStatus == 2 && Global.MariaCrystal1 >= 1)
+        {
+            for (int i = 0; i < MariaWI.Length; i++)
+            {
+                if (i == 1)
+                {
+                    MariaWI[i].SetActive(true);
+                }
+                else
+                {
+                    MariaWI[i].SetActive(false);
+                }
+            }
+            Global.DamageP3 -= 60;
+            Global.DamageP3 += 20;
+            Global.MariaCrystal2 += 1;
+            Global.MariaCrystal1 -= 1;
+            Global.MariaWeaponStatus = 1;
+            ShowP3Detail();
+        }
+        else if (Global.MariaWeaponStatus == 3 && Global.MariaCrystal1 >= 1)
+        {
+            for (int i = 0; i < MariaWI.Length; i++)
+            {
+                if (i == 1)
+                {
+                    MariaWI[i].SetActive(true);
+                }
+                else
+                {
+                    MariaWI[i].SetActive(false);
+                }
+            }
+            Global.DamageP3 -= 100;
+            Global.DamageP3 += 20;
+            Global.MariaCrystal3 += 1;
+            Global.MariaCrystal1 -= 1;
+            Global.MariaWeaponStatus = 1;
+            ShowP3Detail();
+        }
+    }
+
+    public void MariaEquipW2()
+    {
+        if (Global.MariaWeaponStatus == 0 && Global.MariaCrystal2 >= 1)
+        {
+            for (int i = 0; i < MariaWI.Length; i++)
+            {
+                if (i == 2)
+                {
+                    MariaWI[i].SetActive(true);
+                }
+                else
+                {
+                    MariaWI[i].SetActive(false);
+                }
+            }
+            Global.DamageP3 += 60;
+            Global.MariaCrystal2 -= 1;
+            Global.MariaWeaponStatus = 2;
+            ShowP3Detail();
+        }
+        else if (Global.MariaWeaponStatus == 1 && Global.MariaCrystal2 >= 1)
+        {
+            for (int i = 0; i < MariaWI.Length; i++)
+            {
+                if (i == 2)
+                {
+                    MariaWI[i].SetActive(true);
+                }
+                else
+                {
+                    MariaWI[i].SetActive(false);
+                }
+            }
+            Global.DamageP3 -= 20;
+            Global.DamageP3 += 60;
+            Global.MariaCrystal1 += 1;
+            Global.MariaCrystal2 -= 1;
+            Global.MariaWeaponStatus = 2;
+            ShowP3Detail();
+        }
+        else if (Global.MariaWeaponStatus == 3 && Global.MariaCrystal2 >= 1)
+        {
+            for (int i = 0; i < MariaWI.Length; i++)
+            {
+                if (i == 2)
+                {
+                    MariaWI[i].SetActive(true);
+                }
+                else
+                {
+                    MariaWI[i].SetActive(false);
+                }
+            }
+            Global.DamageP3 -= 100;
+            Global.DamageP3 += 60;
+            Global.MariaCrystal3 += 1;
+            Global.MariaCrystal2 -= 1;
+            Global.MariaWeaponStatus = 2;
+            ShowP3Detail();
+        }
+    }
+
+    public void MariaEquipW3()
+    {
+        if (Global.MariaWeaponStatus == 0 && Global.MariaCrystal3 >= 1)
+        {
+            for (int i = 0; i < MariaWI.Length; i++)
+            {
+                if (i == 3)
+                {
+                    MariaWI[i].SetActive(true);
+                }
+                else
+                {
+                    MariaWI[i].SetActive(false);
+                }
+            }
+            Global.DamageP3 += 100;
+            Global.MariaCrystal3 -= 1;
+            Global.MariaWeaponStatus = 3;
+            ShowP3Detail();
+        }
+        else if (Global.MariaWeaponStatus == 1 && Global.MariaCrystal3 >= 1)
+        {
+            for (int i = 0; i < MariaWI.Length; i++)
+            {
+                if (i == 3)
+                {
+                    MariaWI[i].SetActive(true);
+                }
+                else
+                {
+                    MariaWI[i].SetActive(false);
+                }
+            }
+            Global.DamageP3 -= 20;
+            Global.DamageP3 += 100;
+            Global.MariaCrystal1 += 1;
+            Global.MariaCrystal3 -= 1;
+            Global.MariaWeaponStatus = 3;
+            ShowP3Detail();
+        }
+        else if (Global.MariaWeaponStatus == 2 && Global.MariaCrystal3 >= 1)
+        {
+            for (int i = 0; i < MariaWI.Length; i++)
+            {
+                if (i == 3)
+                {
+                    MariaWI[i].SetActive(true);
+                }
+                else
+                {
+                    MariaWI[i].SetActive(false);
+                }
+            }
+            Global.DamageP3 -= 60;
+            Global.DamageP3 += 100;
+            Global.MariaCrystal2 += 1;
+            Global.MariaCrystal3 -= 1;
+            Global.MariaWeaponStatus = 3;
+            ShowP3Detail();
+        }
+    }
+
+    public void MariaArmorEquip()
+    {
+        ShowMariaArmorEquip.SetActive(true);
+        ShowMariaWeaponEquip.SetActive(false);
+    }
+
+    //Equip Maria armor
+    public void MariaEquipA1()
+    {
+        if (Global.MariaArmorStatus == 0 && Global.AlchemistArmor1 >= 1)
+        {
+            for (int i = 0; i < MariaAI.Length; i++)
+            {
+                if (i == 1)
+                {
+                    MariaAI[i].SetActive(true);
+                }
+                else
+                {
+                    MariaAI[i].SetActive(false);
+                }
+            }
+            Global.MaxHPP3 += 100;
+            Global.AlchemistArmor1 -= 1;
+            Global.MariaArmorStatus = 1;
+            ShowP3Detail();
+        }
+        else if (Global.MariaArmorStatus == 2 && Global.AlchemistArmor1 >= 1)
+        {
+            for (int i = 0; i < MariaAI.Length; i++)
+            {
+                if (i == 1)
+                {
+                    MariaAI[i].SetActive(true);
+                }
+                else
+                {
+                    MariaAI[i].SetActive(false);
+                }
+            }
+            Global.MaxHPP3 -= 300;
+            Global.MaxHPP3 += 100;
+            Global.AlchemistArmor2 += 1;
+            Global.AlchemistArmor1 -= 1;
+            Global.MariaArmorStatus = 1;
+            ShowP3Detail();
+        }
+        else if (Global.MariaArmorStatus == 3 && Global.AlchemistArmor1 >= 1)
+        {
+            for (int i = 0; i < MariaAI.Length; i++)
+            {
+                if (i == 1)
+                {
+                    MariaAI[i].SetActive(true);
+                }
+                else
+                {
+                    MariaAI[i].SetActive(false);
+                }
+            }
+            Global.MaxHPP3 -= 500;
+            Global.MaxHPP3 += 100;
+            Global.AlchemistArmor3 += 1;
+            Global.AlchemistArmor1 -= 1;
+            Global.MariaArmorStatus = 1;
+            ShowP3Detail();
+        }
+    }
+
+    public void MariaEquipA2()
+    {
+        if (Global.MariaArmorStatus == 0 && Global.AlchemistArmor2 >= 1)
+        {
+            for (int i = 0; i < MariaAI.Length; i++)
+            {
+                if (i == 2)
+                {
+                    MariaAI[i].SetActive(true);
+                }
+                else
+                {
+                    MariaAI[i].SetActive(false);
+                }
+            }
+            Global.MaxHPP3 += 300;
+            Global.AlchemistArmor2 -= 1;
+            Global.MariaArmorStatus = 2;
+            ShowP3Detail();
+        }
+        else if (Global.MariaArmorStatus == 1 && Global.AlchemistArmor2 >= 1)
+        {
+            for (int i = 0; i < MariaWI.Length; i++)
+            {
+                if (i == 2)
+                {
+                    MariaAI[i].SetActive(true);
+                }
+                else
+                {
+                    MariaAI[i].SetActive(false);
+                }
+            }
+            Global.MaxHPP3 -= 100;
+            Global.MaxHPP3 += 300;
+            Global.AlchemistArmor1 += 1;
+            Global.AlchemistArmor2 -= 1;
+            Global.MariaArmorStatus = 2;
+            ShowP3Detail();
+        }
+        else if (Global.MariaArmorStatus == 3 && Global.AlchemistArmor2 >= 1)
+        {
+            for (int i = 0; i < MariaWI.Length; i++)
+            {
+                if (i == 2)
+                {
+                    MariaAI[i].SetActive(true);
+                }
+                else
+                {
+                    MariaAI[i].SetActive(false);
+                }
+            }
+            Global.MaxHPP3 -= 500;
+            Global.MaxHPP3 += 300;
+            Global.AlchemistArmor3 += 1;
+            Global.AlchemistArmor2 -= 1;
+            Global.MariaArmorStatus = 2;
+            ShowP3Detail();
+        }
+    }
+
+    public void MariaEquipA3()
+    {
+        if (Global.MariaArmorStatus == 0 && Global.AlchemistArmor3 >= 1)
+        {
+            for (int i = 0; i < MariaAI.Length; i++)
+            {
+                if (i == 3)
+                {
+                    MariaAI[i].SetActive(true);
+                }
+                else
+                {
+                    MariaAI[i].SetActive(false);
+                }
+            }
+            Global.MaxHPP3 += 500;
+            Global.AlchemistArmor3 -= 1;
+            Global.MariaArmorStatus = 3;
+            ShowP3Detail();
+        }
+        else if (Global.MariaArmorStatus == 1 && Global.AlchemistArmor3 >= 1)
+        {
+            for (int i = 0; i < MariaAI.Length; i++)
+            {
+                if (i == 3)
+                {
+                    MariaAI[i].SetActive(true);
+                }
+                else
+                {
+                    MariaAI[i].SetActive(false);
+                }
+            }
+            Global.MaxHPP3 -= 100;
+            Global.MaxHPP3 += 500;
+            Global.AlchemistArmor1 += 1;
+            Global.AlchemistArmor3 -= 1;
+            Global.MariaArmorStatus = 3;
+            ShowP3Detail();
+        }
+        else if (Global.MariaArmorStatus == 2 && Global.AlchemistArmor3 >= 1)
+        {
+            for (int i = 0; i < MariaAI.Length; i++)
+            {
+                if (i == 3)
+                {
+                    MariaAI[i].SetActive(true);
+                }
+                else
+                {
+                    MariaAI[i].SetActive(false);
+                }
+            }
+            Global.MaxHPP3 -= 300;
+            Global.MaxHPP3 += 500;
+            Global.AlchemistArmor2 += 1;
+            Global.AlchemistArmor3 -= 1;
+            Global.MariaArmorStatus = 3;
+            ShowP3Detail();
+        }
+    }
+
     //Plus Vayne point
     public void PlusAttackP1()
     {
@@ -647,16 +1514,130 @@ public class HubController : MonoBehaviour
         }
     }
 
+    //Plus Alia point
+    public void PlusAttackP2()
+    {
+        if (Global.PlusPointP2 >= 1)
+        {
+            Global.PlusPointP2 -= 1;
+            Global.DamageP2 += 2;
+            Global.PlusPointAttackLvP2 += 1;
+            Global.PlusPointAttackInfoP2 += 2;
+            ShowP2Detail();
+        }
+    }
+
+    public void PlusHPP2()
+    {
+        if (Global.PlusPointP2 >= 1)
+        {
+            Global.PlusPointP2 -= 1;
+            Global.MaxHPP2 += 5;
+            Global.PlusPointHPLvP2 += 1;
+            Global.PlusPointHPInfoP2 += 5;
+            ShowP2Detail();
+        }
+    }
+
+    public void PlusMPP2()
+    {
+        if (Global.PlusPointP2 >= 1)
+        {
+            Global.PlusPointP2 -= 1;
+            Global.MaxMPP2 += 2;
+            Global.PlusPointMPLvP2 += 1;
+            Global.PlusPointMPInfoP2 += 2;
+            ShowP2Detail();
+        }
+    }
+
+    public void PlusSpeedP2()
+    {
+        if (Global.PlusPointP2 >= 2)
+        {
+            Global.PlusPointP2 -= 1;
+            Global.SpeedP2 += 1;
+            Global.PlusPointSpeedLvP2 += 1;
+            Global.PlusPointSpeedInfoP2 += 1;
+            ShowP2Detail();
+        }
+    }
+
+    //Plus Maria point
+    public void PlusAttackP3()
+    {
+        if (Global.PlusPointP3 >= 1)
+        {
+            Global.PlusPointP3 -= 1;
+            Global.DamageP3 += 2;
+            Global.PlusPointAttackLvP3 += 1;
+            Global.PlusPointAttackInfoP3 += 2;
+            ShowP3Detail();
+        }
+    }
+
+    public void PlusHPP3()
+    {
+        if (Global.PlusPointP3 >= 1)
+        {
+            Global.PlusPointP3 -= 1;
+            Global.MaxHPP3 += 5;
+            Global.PlusPointHPLvP3 += 1;
+            Global.PlusPointHPInfoP3 += 5;
+            ShowP3Detail();
+        }
+    }
+
+    public void PlusMPP3()
+    {
+        if (Global.PlusPointP3 >= 1)
+        {
+            Global.PlusPointP3 -= 1;
+            Global.MaxMPP2 += 3;
+            Global.PlusPointMPLvP3 += 1;
+            Global.PlusPointMPInfoP3 += 2;
+            ShowP3Detail();
+        }
+    }
+
+    public void PlusSpeedP3()
+    {
+        if (Global.PlusPointP3 >= 2)
+        {
+            Global.PlusPointP3 -= 1;
+            Global.SpeedP3 += 1;
+            Global.PlusPointSpeedLvP3 += 1;
+            Global.PlusPointSpeedInfoP3 += 1;
+            ShowP3Detail();
+        }
+    }
+
     public void CloseVaynePanel()
     {
         ShowVayneDetailPanel.SetActive(false);
         ShowVayneWeaponEquip.SetActive(false);
         ShowVayneArmorEquip.SetActive(false);
     }
+
+    public void CloseAliaPanel()
+    {
+        ShowAliaDetailPanel.SetActive(false);
+        ShowAliaWeaponEquip.SetActive(false);
+        ShowAliaArmorEquip.SetActive(false);
+    }
+
+    public void CloseMariaPanel()
+    {
+        ShowMariaDetailPanel.SetActive(false);
+        ShowMariaWeaponEquip.SetActive(false);
+        ShowMariaArmorEquip.SetActive(false);
+    }
+
     public void BackToGame()
     {
         esc.SetActive(false);
     }
+
     public void ExitGame()
     {
         Application.Quit();

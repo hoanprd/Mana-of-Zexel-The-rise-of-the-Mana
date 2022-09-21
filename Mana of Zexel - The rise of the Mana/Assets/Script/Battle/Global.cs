@@ -13,6 +13,8 @@ public class Global : MonoBehaviour
     //Bonus
     public static int PlusPointP1, PlusPointP2, PlusPointP3;
     public static int PlusPointAttackLvP1, PlusPointHPLvP1, PlusPointMPLvP1, PlusPointSpeedLvP1, PlusPointAttackInfoP1, PlusPointHPInfoP1, PlusPointMPInfoP1, PlusPointSpeedInfoP1;
+    public static int PlusPointAttackLvP2, PlusPointHPLvP2, PlusPointMPLvP2, PlusPointSpeedLvP2, PlusPointAttackInfoP2, PlusPointHPInfoP2, PlusPointMPInfoP2, PlusPointSpeedInfoP2;
+    public static int PlusPointAttackLvP3, PlusPointHPLvP3, PlusPointMPLvP3, PlusPointSpeedLvP3, PlusPointAttackInfoP3, PlusPointHPInfoP3, PlusPointMPInfoP3, PlusPointSpeedInfoP3;
 
     //Enemy status
     public static int HPE1, DamageE1, SpeedE1;
@@ -21,6 +23,8 @@ public class Global : MonoBehaviour
 
     //Equip
     public static int VayneStaff1, VayneStaff2, VayneStaff3, AlchemistArmor1, AlchemistArmor2, AlchemistArmor3, VayneWeaponStatus, VayneArmorStatus;
+    public static int AliaShoes1, AliaShoes2, AliaShoes3, WarriorArmor1, WarriorArmor2, WarriorArmor3, AliaWeaponStatus, AliaArmorStatus;
+    public static int MariaCrystal1, MariaCrystal2, MariaCrystal3, MariaWeaponStatus, MariaArmorStatus;
 
     // Start is called before the first frame update
     void Start()

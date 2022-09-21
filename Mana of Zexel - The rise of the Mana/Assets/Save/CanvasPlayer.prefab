@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9136377592272048582}
   - component: {fileID: 1148128537912180347}
   m_Layer: 5
-  m_Name: Armor2Button (Legacy)
+  m_Name: MariaArmor2Button (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: VayneEquipA2
+        m_MethodName: MariaEquipA2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -258,7 +258,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: OpenMariaPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -752,7 +752,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 199d3422bc04bba4fb4527031acfed65, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b6747ee652235014da86ae4b7479183c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -808,7 +808,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: VayneEquipW2
+        m_MethodName: AliaEquipW2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -942,7 +942,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: CloseMariaPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1211,7 +1211,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: PlusMPP1
+        m_MethodName: PlusMPP2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1506,7 +1506,7 @@ GameObject:
   - component: {fileID: 3952816512363525372}
   - component: {fileID: 8914703156793903159}
   m_Layer: 5
-  m_Name: A1Text (Legacy)
+  m_Name: AliaA1Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1800,7 +1800,7 @@ GameObject:
   - component: {fileID: 8973699471008386416}
   - component: {fileID: 6230301067102327344}
   m_Layer: 5
-  m_Name: Warrior3Image
+  m_Name: AliaArmorArmor3Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1873,7 +1873,7 @@ GameObject:
   - component: {fileID: 4509337485039676109}
   - component: {fileID: 4185653542063222365}
   m_Layer: 5
-  m_Name: A3Text (Legacy)
+  m_Name: AliaA3Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1953,7 +1953,7 @@ GameObject:
   - component: {fileID: 5660446868989012123}
   - component: {fileID: 3767271668091438360}
   m_Layer: 5
-  m_Name: ArmorEmptyImage
+  m_Name: AliaArmorEmptyImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5135,11 +5135,23 @@ MonoBehaviour:
   ShowMPP3: 0
   ShowZen: 0
   ShowVayneDetailPanel: {fileID: 2971623194907676870}
+  ShowAliaDetailPanel: {fileID: 8936455510161493171}
+  ShowMariaDetailPanel: {fileID: 7127956243144686918}
   DShowLevelP1: {fileID: 4159152273181421794}
   DShowAttackP1: {fileID: 2814491498334684294}
   DShowHPP1: {fileID: 2907324949507835179}
   DShowMPP1: {fileID: 5160466228112417616}
   DShowSpeedP1: {fileID: 8170981548291528995}
+  DShowLevelP2: {fileID: 7463716207886021490}
+  DShowAttackP2: {fileID: 3013390584383339713}
+  DShowHPP2: {fileID: 2468974911514957544}
+  DShowMPP2: {fileID: 6193595230749458851}
+  DShowSpeedP2: {fileID: 5562587681353259841}
+  DShowLevelP3: {fileID: 3299160631452277677}
+  DShowAttackP3: {fileID: 628977825548218824}
+  DShowHPP3: {fileID: 2997171327161753807}
+  DShowMPP3: {fileID: 3799505145308719776}
+  DShowSpeedP3: {fileID: 8792859796202521620}
   PointPlusP1: {fileID: 9139590626820083226}
   AttackPointPlusLvP1: {fileID: 8067845455600124701}
   HPPointPlusLvP1: {fileID: 2867779946809560718}
@@ -5149,8 +5161,30 @@ MonoBehaviour:
   HPPointPlusInfoP1: {fileID: 6581687762680202904}
   MPPointPlusInfoP1: {fileID: 4675496526871440589}
   SpeedPointPlusInfoP1: {fileID: 4919634512731924861}
+  PointPlusP2: {fileID: 5408807376158354570}
+  AttackPointPlusLvP2: {fileID: 3669440864616106431}
+  HPPointPlusLvP2: {fileID: 362168036862524406}
+  MPPointPlusLvP2: {fileID: 8475252489490515316}
+  SpeedPointPlusLvP2: {fileID: 7602585208159737913}
+  AttackPointPlusInfoP2: {fileID: 5275939914625429000}
+  HPPointPlusInfoP2: {fileID: 8536222662871457419}
+  MPPointPlusInfoP2: {fileID: 9102157921122811855}
+  SpeedPointPlusInfoP2: {fileID: 8177709696905487941}
+  PointPlusP3: {fileID: 3935522837769905920}
+  AttackPointPlusLvP3: {fileID: 3679698978602658430}
+  HPPointPlusLvP3: {fileID: 4210129273827565612}
+  MPPointPlusLvP3: {fileID: 8338719945838209793}
+  SpeedPointPlusLvP3: {fileID: 1025182204104645858}
+  AttackPointPlusInfoP3: {fileID: 3311761437342514980}
+  HPPointPlusInfoP3: {fileID: 8932511881763749258}
+  MPPointPlusInfoP3: {fileID: 2688511711492476692}
+  SpeedPointPlusInfoP3: {fileID: 7415536974260082284}
   ShowVayneWeaponEquip: {fileID: 4660859117586285968}
   ShowVayneArmorEquip: {fileID: 790205620845607607}
+  ShowAliaWeaponEquip: {fileID: 6933511424789857559}
+  ShowAliaArmorEquip: {fileID: 4682749893385142543}
+  ShowMariaWeaponEquip: {fileID: 4161742696004214924}
+  ShowMariaArmorEquip: {fileID: 2276296540228497954}
   VayneWI:
   - {fileID: 2078260261066681301}
   - {fileID: 4192995201119373627}
@@ -5161,12 +5195,44 @@ MonoBehaviour:
   - {fileID: 6372080180150358185}
   - {fileID: 3779978055554788277}
   - {fileID: 6207445353507719817}
+  AliaWI:
+  - {fileID: 9036847654647882101}
+  - {fileID: 1839632611898584394}
+  - {fileID: 3064329225463080890}
+  - {fileID: 3957824218559763209}
+  AliaAI:
+  - {fileID: 1198982884213456778}
+  - {fileID: 7873515228402564705}
+  - {fileID: 2422789130841932939}
+  - {fileID: 1040623139948196094}
+  MariaWI:
+  - {fileID: 6283791614407828597}
+  - {fileID: 6946015783427732637}
+  - {fileID: 2078697756768144240}
+  - {fileID: 5364399739454175118}
+  MariaAI:
+  - {fileID: 2605741904333344893}
+  - {fileID: 2061414991069904633}
+  - {fileID: 3108026751558790281}
+  - {fileID: 1594459631550077766}
   VayneW1: {fileID: 2258024092653129142}
   VayneW2: {fileID: 1460333466629767079}
   VayneW3: {fileID: 5521338698737976034}
   VayneA1: {fileID: 6293279904113558941}
   VayneA2: {fileID: 3731012436515645641}
   VayneA3: {fileID: 8961959420726536676}
+  AliaW1: {fileID: 2247333820407023240}
+  AliaW2: {fileID: 3421584220300830324}
+  AliaW3: {fileID: 1578579926170658486}
+  AliaA1: {fileID: 809737772930135637}
+  AliaA2: {fileID: 6815834124376169176}
+  AliaA3: {fileID: 1075172289812369755}
+  MariaW1: {fileID: 3460977592059792555}
+  MariaW2: {fileID: 5813361738902757037}
+  MariaW3: {fileID: 4639757122037842458}
+  MariaA1: {fileID: 8198711260268650582}
+  MariaA2: {fileID: 5991252984226539419}
+  MariaA3: {fileID: 5147144534706135584}
 --- !u!1 &1455677027431946590
 GameObject:
   m_ObjectHideFlags: 0
@@ -7584,7 +7650,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: PlusSpeedP3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7607,7 +7673,7 @@ GameObject:
   - component: {fileID: 4825024396007945962}
   - component: {fileID: 5390561502157480048}
   m_Layer: 5
-  m_Name: Armor2Button (Legacy)
+  m_Name: AliaArmor2Button (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7662,7 +7728,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0eb241a6eff79af48b91b341eb240571, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 05fc66b0eb9f6af439ba63c59f2505c2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7718,7 +7784,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: VayneEquipA2
+        m_MethodName: AliaEquipA2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8046,7 +8112,7 @@ GameObject:
   - component: {fileID: 5869695884378338327}
   - component: {fileID: 1446836687958324078}
   m_Layer: 5
-  m_Name: Shoes1Image
+  m_Name: AliaWeapon1Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8309,7 +8375,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9f1e4b1a5c7d69a45a455d49ce950f77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4fc408c5374afe945a61ea9a0aac67ed, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8365,7 +8431,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: VayneEquipW3
+        m_MethodName: AliaEquipW3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8594,7 +8660,7 @@ GameObject:
   - component: {fileID: 189846321661380027}
   - component: {fileID: 4965114616051689538}
   m_Layer: 5
-  m_Name: WeaponEmptyImage
+  m_Name: VayneWeaponEmptyImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8721,7 +8787,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 199d3422bc04bba4fb4527031acfed65, type: 3}
+  m_Texture: {fileID: 2800000, guid: 980775d2b8d4b134ea569189d06368c6, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -8918,7 +8984,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 688.41, y: 150}
+  m_AnchoredPosition: {x: 688.41, y: 132}
   m_SizeDelta: {x: 298.7462, y: 100.4184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4677809520666445821
@@ -9005,7 +9071,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: OpenAliaPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9227,7 +9293,7 @@ GameObject:
   - component: {fileID: 8977220255959459707}
   - component: {fileID: 6169095686119540363}
   m_Layer: 5
-  m_Name: Armor1Button (Legacy)
+  m_Name: AliaArmor1Button (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9282,7 +9348,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f70df59e5423f1146b15031db3ab2abd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da535d092af5ba44293d24992226e8e8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9338,7 +9404,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: VayneEquipA1
+        m_MethodName: AliaEquipA1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9360,7 +9426,7 @@ GameObject:
   - component: {fileID: 675694321773950812}
   - component: {fileID: 427594703391669895}
   m_Layer: 5
-  m_Name: Warrior2Image
+  m_Name: AliaArmorArmor2Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9513,7 +9579,7 @@ GameObject:
   - component: {fileID: 3368321543385543498}
   - component: {fileID: 6453607990334992900}
   m_Layer: 5
-  m_Name: ArmorEmptyImage
+  m_Name: MariaArmorEmptyImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9859,7 +9925,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: MariaWeaponEquip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10208,7 +10274,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: AliaWeaponEquip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10971,7 +11037,7 @@ GameObject:
   - component: {fileID: 6126981914866178083}
   - component: {fileID: 5979536707536700739}
   m_Layer: 5
-  m_Name: Weapon1Button (Legacy)
+  m_Name: MariaWeapon1Button (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11026,7 +11092,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 49dbf5831c11f834398d398ee7e7f16e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 27b9e5b51f174224fbc4307cae23d49d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11082,7 +11148,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: VayneEquipW1
+        m_MethodName: MariaEquipW1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11104,7 +11170,7 @@ GameObject:
   - component: {fileID: 313330334471058817}
   - component: {fileID: 3409073808002987032}
   m_Layer: 5
-  m_Name: Shoes2Image
+  m_Name: AliaWeapon2Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11251,7 +11317,7 @@ GameObject:
   - component: {fileID: 3719563034386426808}
   - component: {fileID: 8497359415335977173}
   m_Layer: 5
-  m_Name: Weapon3Button (Legacy)
+  m_Name: MariaWeapon3Button (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11306,7 +11372,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9f1e4b1a5c7d69a45a455d49ce950f77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 429c408c1c02dd44a805421c60fabdfa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11362,7 +11428,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: VayneEquipW3
+        m_MethodName: MariaEquipW3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11918,7 +11984,7 @@ GameObject:
   - component: {fileID: 2501406958507930185}
   - component: {fileID: 4562600535297629726}
   m_Layer: 5
-  m_Name: W1Text (Legacy)
+  m_Name: MariaW1Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12454,7 +12520,7 @@ GameObject:
   - component: {fileID: 6272102342236607441}
   - component: {fileID: 854300187014048896}
   m_Layer: 5
-  m_Name: A2Text (Legacy)
+  m_Name: VayneA2Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13142,7 +13208,7 @@ GameObject:
   - component: {fileID: 7968439398778845866}
   - component: {fileID: 4772421165680191417}
   m_Layer: 5
-  m_Name: Shoes3Image
+  m_Name: AliaWeapon3Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13965,7 +14031,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: PlusSpeedP1
+        m_MethodName: PlusSpeedP2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14197,7 +14263,7 @@ GameObject:
   - component: {fileID: 3874823442185470100}
   - component: {fileID: 1382908555565128362}
   m_Layer: 5
-  m_Name: W3Text (Legacy)
+  m_Name: MariaW3Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14515,7 +14581,7 @@ GameObject:
   - component: {fileID: 81917316283589883}
   - component: {fileID: 7675196798192315088}
   m_Layer: 5
-  m_Name: A3Text (Legacy)
+  m_Name: MariaA3Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14707,7 +14773,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: MariaArmorEquip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14922,7 +14988,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: PlusMPP3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15025,7 +15091,7 @@ GameObject:
   - component: {fileID: 5121183038001446740}
   - component: {fileID: 667379115530010929}
   m_Layer: 5
-  m_Name: Weapon2Button (Legacy)
+  m_Name: MariaWeapon2Button (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15080,7 +15146,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 199d3422bc04bba4fb4527031acfed65, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 980775d2b8d4b134ea569189d06368c6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15136,7 +15202,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: VayneEquipW2
+        m_MethodName: MariaEquipW2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15159,7 +15225,7 @@ GameObject:
   - component: {fileID: 3629859230738529915}
   - component: {fileID: 8075164253446281292}
   m_Layer: 5
-  m_Name: Armor1Button (Legacy)
+  m_Name: MariaArmor1Button (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15270,7 +15336,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: VayneEquipA1
+        m_MethodName: MariaEquipA1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15346,7 +15412,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 9f1e4b1a5c7d69a45a455d49ce950f77, type: 3}
+  m_Texture: {fileID: 2800000, guid: 429c408c1c02dd44a805421c60fabdfa, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -15478,7 +15544,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: PlusHPP3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15774,7 +15840,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: AliaArmorEquip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16269,7 +16335,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: PlusAttackP1
+        m_MethodName: PlusAttackP2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16347,7 +16413,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 49dbf5831c11f834398d398ee7e7f16e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bcdde9312abe2714197a760fd809fd96, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16403,7 +16469,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: VayneEquipW1
+        m_MethodName: AliaEquipW1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16425,7 +16491,7 @@ GameObject:
   - component: {fileID: 3139846602632337968}
   - component: {fileID: 6443900420597880755}
   m_Layer: 5
-  m_Name: W2Text (Legacy)
+  m_Name: MariaW2Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16587,7 +16653,7 @@ GameObject:
   - component: {fileID: 1675261417371888289}
   - component: {fileID: 7857834041952572745}
   m_Layer: 5
-  m_Name: A2Text (Legacy)
+  m_Name: MariaA2Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16932,7 +16998,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: CloseAliaPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16954,7 +17020,7 @@ GameObject:
   - component: {fileID: 3501930409394043277}
   - component: {fileID: 7317133592757212290}
   m_Layer: 5
-  m_Name: WeaponEmptyImage
+  m_Name: MariaWeaponEmptyImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17027,7 +17093,7 @@ GameObject:
   - component: {fileID: 5674042055165557896}
   - component: {fileID: 7344332254801224302}
   m_Layer: 5
-  m_Name: A1Text (Legacy)
+  m_Name: VayneA1Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17559,7 +17625,7 @@ GameObject:
   - component: {fileID: 1225605823575599386}
   - component: {fileID: 3051279035402069091}
   m_Layer: 5
-  m_Name: Armor3Button (Legacy)
+  m_Name: MariaArmor3Button (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17670,7 +17736,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: VayneEquipA3
+        m_MethodName: MariaEquipA3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17772,7 +17838,7 @@ GameObject:
   - component: {fileID: 3171531527622606812}
   - component: {fileID: 4569541530654201797}
   m_Layer: 5
-  m_Name: A2Text (Legacy)
+  m_Name: AliaA2Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18101,7 +18167,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 49dbf5831c11f834398d398ee7e7f16e, type: 3}
+  m_Texture: {fileID: 2800000, guid: 27b9e5b51f174224fbc4307cae23d49d, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -18435,7 +18501,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: PlusAttackP3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18697,7 +18763,7 @@ GameObject:
   - component: {fileID: 8465784825384630413}
   - component: {fileID: 4476990232770042556}
   m_Layer: 5
-  m_Name: VayneAPlText (Legacy)
+  m_Name: VayneAPText (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18992,7 +19058,7 @@ GameObject:
   - component: {fileID: 6587022576117710872}
   - component: {fileID: 2896907989079468446}
   m_Layer: 5
-  m_Name: WarriorArmor1Image
+  m_Name: AliaArmorArmor1Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19392,7 +19458,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: PlusHPP1
+        m_MethodName: PlusHPP2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19574,7 +19640,7 @@ GameObject:
   - component: {fileID: 1159045218443644792}
   - component: {fileID: 717992638873604464}
   m_Layer: 5
-  m_Name: A1Text (Legacy)
+  m_Name: MariaA1Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19734,7 +19800,7 @@ GameObject:
   - component: {fileID: 5173537403703822974}
   - component: {fileID: 8158093183591359821}
   m_Layer: 5
-  m_Name: ArmorEmptyImage
+  m_Name: VayneArmorEmptyImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20044,7 +20110,7 @@ GameObject:
   - component: {fileID: 513954925768378494}
   - component: {fileID: 3042383079004447664}
   m_Layer: 5
-  m_Name: Armor3Button (Legacy)
+  m_Name: AliaArmor3Button (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20099,7 +20165,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dd7d611472d5a4a4c9347864e053bf8f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e1aff5fa3d8247748bde8471746083cb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20155,7 +20221,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1455677027431896752}
         m_TargetAssemblyTypeName: HubController, Assembly-CSharp
-        m_MethodName: VayneEquipA3
+        m_MethodName: AliaEquipA3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20500,7 +20566,7 @@ GameObject:
   - component: {fileID: 2620943325693881015}
   - component: {fileID: 487283219742143459}
   m_Layer: 5
-  m_Name: A3Text (Legacy)
+  m_Name: VayneA3Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20580,7 +20646,7 @@ GameObject:
   - component: {fileID: 1756025063508376906}
   - component: {fileID: 2233736362153968814}
   m_Layer: 5
-  m_Name: WeaponEmptyImage
+  m_Name: AliaWeaponEmptyImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
