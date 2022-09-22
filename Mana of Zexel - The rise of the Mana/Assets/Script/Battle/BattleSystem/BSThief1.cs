@@ -176,6 +176,27 @@ public class BSThief1 : MonoBehaviour
         HPE1.text = "HP: " + Global.HPE1.ToString();
 
         NumTurn.text = "Turn " + dem_turn.ToString();
+
+        if (Global.HPE1 < 0)
+        {
+            Global.HPE1 = 0;
+            HPE1.text = "HP: " + Global.HPE1.ToString();
+        }
+        else if (Global.CurHPP1 < 0)
+        {
+            Global.CurHPP1 = 0;
+            HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
+        }
+        else if (Global.CurHPP2 < 0)
+        {
+            Global.CurHPP2 = 0;
+            HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
+        }
+        else if (Global.CurHPP3 < 0)
+        {
+            Global.CurHPP3 = 0;
+            HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
+        }
     }
 
     public void ShowP1Panel(bool isshow)

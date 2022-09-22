@@ -21,10 +21,7 @@ public class HubController : MonoBehaviour
     public GameObject showMP;
     public GameObject showEP;
     public GameObject showB;
-    public GameObject showp31;
-    public GameObject showp32;
-    public GameObject showp33;
-    public GameObject showp34;
+    public GameObject MariaInfo;
     public Text LevelP1;
     public Text HPP1;
     public Text MPP1;
@@ -75,10 +72,7 @@ public class HubController : MonoBehaviour
         
         if (CutscenesController.cus12 == 0)
         {
-            showp31.SetActive(false);
-            showp32.SetActive(false);
-            showp33.SetActive(false);
-            showp34.SetActive(false);
+            MariaInfo.SetActive(false);
         }
 
         //Show detail
