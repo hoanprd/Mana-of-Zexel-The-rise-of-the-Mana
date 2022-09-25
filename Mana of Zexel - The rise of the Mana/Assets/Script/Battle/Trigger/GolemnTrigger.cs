@@ -18,7 +18,7 @@ public class GolemnTrigger : MonoBehaviour
     {
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene(12);
+            SceneManager.LoadScene(14);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

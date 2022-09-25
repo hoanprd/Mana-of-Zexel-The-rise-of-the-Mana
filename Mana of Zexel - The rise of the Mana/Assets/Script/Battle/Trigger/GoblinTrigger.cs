@@ -18,7 +18,7 @@ public class GoblinTrigger : MonoBehaviour
     {
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene(11);
+            SceneManager.LoadScene(13);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

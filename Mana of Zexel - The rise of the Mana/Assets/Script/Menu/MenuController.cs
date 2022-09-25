@@ -117,16 +117,18 @@ public class MenuController : MonoBehaviour
         ContainerController.Iron = 0;
         ContainerController.Bom = 0;
 
-        PlayerPrefs.SetInt("CPosi1", 0);
-        PlayerPrefs.SetInt("BPosi1", 0);
-        PlayerPrefs.SetInt("CPosi2", 0);
-        PlayerPrefs.SetInt("BPosi2", 0);
-        PlayerPrefs.SetInt("CPosi3", 0);
-        PlayerPrefs.SetInt("BPosi3", 0);
-        PlayerPrefs.SetInt("CPosi4", 0);
-        PlayerPrefs.SetInt("BPosi4", 0);
+        MapController.WishingHillToZexelTown = false;
+        MapController.ZexelTownToTavern = false;
+        MapController.TavernToSaveRoom = false;
+        MapController.ZexelTownToWishingForest = false;
+        MapController.ZexelTownToInfinityDesert = false;
+        MapController.ZexelTownToWishingHill = false;
+        MapController.TavernToZexelTown = false;
+        MapController.SaveRoomToTavern = false;
+        MapController.WishingForestToZexelTown = false;
+        MapController.InfinityDesertToZexelTown = false;
 
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(9);
     }
     public void PressLoadGame()
     {

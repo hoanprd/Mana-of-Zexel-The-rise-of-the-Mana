@@ -266,7 +266,7 @@ public class BSThief : MonoBehaviour
     }
     public void PressBackToTheMap()
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(9);
     }
     public void CheckP1Die()
     {

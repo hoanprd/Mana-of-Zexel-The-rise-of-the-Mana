@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
                 if (ContainerController.HealPotion > 0)
                 {
                     ContainerController.HealPotion -= 1;
-                    SceneManager.LoadScene(7);
+                    SceneManager.LoadScene(9);
                 }
                 else
                 {
@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
             {
                 if (GlobalQuest.KillGoblinQuest == 4)
                 {
-                    SceneManager.LoadScene(7);
+                    SceneManager.LoadScene(9);
                 }
                 else
                 {
@@ -73,14 +73,14 @@ public class Player : MonoBehaviour
         {
             if (CutscenesController.cus11 == 0)
             {
-                SceneManager.LoadScene(7);
+                SceneManager.LoadScene(9);
             }
             else if (CutscenesController.cus11 == 1)
             {
                 if (ContainerController.ManaGem >= 3)
                 {
                     ContainerController.ManaGem -= 3;
-                    SceneManager.LoadScene(7);
+                    SceneManager.LoadScene(9);
                 }
                 else
                 {
@@ -109,49 +109,69 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("CS1"))
+        if (collision.CompareTag("WishingHillToZexelTown"))
         {
-            PlayerPrefs.SetInt("CPosi1", 1);
+            MapController.WishingHillToZexelTown = true;
             if (CutscenesController.cus3 == 0)
-                SceneManager.LoadScene(7);
+                SceneManager.LoadScene(9);
             else
                 SceneManager.LoadScene(3);
         }
-        if (collision.CompareTag("BS1"))
+        if (collision.CompareTag("ZexelTownToWishingHill"))
         {
-            PlayerPrefs.SetInt("BPosi1", 1);
+            MapController.ZexelTownToWishingHill = true;
             SceneManager.LoadScene(2);
         }
-        if (collision.CompareTag("CS2"))
+        if (collision.CompareTag("ZexelTownToTavern"))
         {
-            PlayerPrefs.SetInt("CPosi2", 1);
+            MapController.ZexelTownToTavern = true;
             if (CutscenesController.cus4 == 0)
-                SceneManager.LoadScene(7);
+                SceneManager.LoadScene(9);
             else
                 SceneManager.LoadScene(5);
         }
-        if (collision.CompareTag("BS2"))
+        if (collision.CompareTag("TavernToZexelTown"))
         {
-            PlayerPrefs.SetInt("BPosi2", 1);
+            MapController.TavernToZexelTown = true;
             if (CutscenesController.cus7 == 1 && CutscenesController.cus8 == 0)
-                SceneManager.LoadScene(7);
+                SceneManager.LoadScene(9);
             else
                 SceneManager.LoadScene(3);
         }
-        if (collision.CompareTag("CS3"))
+        if (collision.CompareTag("TavernToSaveRoom"))
         {
-            PlayerPrefs.SetInt("CPosi3", 1);
+            MapController.TavernToSaveRoom = true;
             if (CutscenesController.cus5 == 0)
-                SceneManager.LoadScene(7);
+                SceneManager.LoadScene(9);
             else
                 SceneManager.LoadScene(6);
         }
-        if (collision.CompareTag("BS3"))
+        if (collision.CompareTag("SaveRoomToTavern"))
         {
-            PlayerPrefs.SetInt("BPosi3", 1);
+            MapController.SaveRoomToTavern = true;
             SceneManager.LoadScene(5);
         }
-        if (collision.CompareTag("CS4"))
+        if (collision.CompareTag("ZexelTownToGroceryStore"))
+        {
+            MapController.ZexelTownToGroceryStore = true;
+            SceneManager.LoadScene(7);
+        }
+        if (collision.CompareTag("GroceryStoreToZexelTown"))
+        {
+            MapController.GroceryStoreToZexelTown = true;
+            SceneManager.LoadScene(3);
+        }
+        if (collision.CompareTag("ZexelTownToWeaponStore"))
+        {
+            MapController.ZexelTownToWeaponStore = true;
+            SceneManager.LoadScene(8);
+        }
+        if (collision.CompareTag("WeaponStoreToZexelTown"))
+        {
+            MapController.WeaponStoreToZexelTown = true;
+            SceneManager.LoadScene(3);
+        }
+        if (collision.CompareTag("ZexelTownToWishingForest"))
         {
             if (CutscenesController.cus9 == 0)
             {
@@ -163,19 +183,19 @@ public class Player : MonoBehaviour
             {
                 if (CutscenesController.cus10 == 0)
                 {
-                    PlayerPrefs.SetInt("CPosi4", 1);
-                    SceneManager.LoadScene(7);
+                    MapController.ZexelTownToWishingForest = true;
+                    SceneManager.LoadScene(9);
                 }
                 else
                 {
-                    PlayerPrefs.SetInt("CPosi4", 1);
+                    MapController.ZexelTownToWishingForest = true;
                     SceneManager.LoadScene(4);
                 }
             }
         }
-        if (collision.CompareTag("BS4"))
+        if (collision.CompareTag("WishingForestToZexelTown"))
         {
-            PlayerPrefs.SetInt("BPosi4", 1);
+            MapController.WishingForestToZexelTown = true;
             SceneManager.LoadScene(3);
         }
         if (collision.CompareTag("HealPoint"))
