@@ -14,6 +14,7 @@ public class BSThief1 : MonoBehaviour
     public GameObject P1_panel;
     public GameObject P2_panel;
     public GameObject MariaStatus;
+    public GameObject MariaBar;
     public GameObject P3_panel;
     public GameObject Win_panel;
     public GameObject MariaName;
@@ -69,6 +70,7 @@ public class BSThief1 : MonoBehaviour
         if (CutscenesController.cus12 == 0)
         {
             MariaStatus.SetActive(false);
+            MariaBar.SetActive(false);
             HP3.text = "";
             MP3.text = "";
             P3Availabel = false;
@@ -76,6 +78,7 @@ public class BSThief1 : MonoBehaviour
         else
         {
             MariaStatus.SetActive(true);
+            MariaBar.SetActive(true);
             P3Availabel = true;
         }
 

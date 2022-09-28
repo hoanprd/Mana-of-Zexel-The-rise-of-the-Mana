@@ -9,6 +9,7 @@ public class BSThief : MonoBehaviour
 {
     PlayerBattle pb;
     ThiefBattle tb;
+    HPMPBarController bar;
     public GameObject Item_panel;
     public GameObject showr2;
     public GameObject P1_panel;
