@@ -69,7 +69,7 @@ public class MenuController : MonoBehaviour
         Global.MaxHPP1 = 100;
         Global.CurMPP1 = 50;
         Global.MaxMPP1 = 50;
-        Global.DamageP1 = 10;
+        Global.DamageP1 = 100;
         Global.SpeedP1 = 20;
         Global.LevelP1 = 1;
         Global.MaxEXPP1 = 40;

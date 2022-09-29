@@ -4,13 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GoblinTrigger : MonoBehaviour
+public class GoblinTrigger2 : MonoBehaviour
 {
+    public static bool despawn = false;
     private bool battle;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        if (despawn == true)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame

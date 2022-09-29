@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MapController : MonoBehaviour
 {
-    ThiefTrigger tt;
     //public Transform target2;
     public static bool WishingHillToZexelTown, ZexelTownToTavern, TavernToSaveRoom, ZexelTownToGroceryStore, ZexelTownToWeaponStore, ZexelTownToWishingForest, ZexelTownToInfinityDesert;
     public static bool ZexelTownToWishingHill, TavernToZexelTown, SaveRoomToTavern, GroceryStoreToZexelTown, WeaponStoreToZexelTown, WishingForestToZexelTown, InfinityDesertToZexelTown;

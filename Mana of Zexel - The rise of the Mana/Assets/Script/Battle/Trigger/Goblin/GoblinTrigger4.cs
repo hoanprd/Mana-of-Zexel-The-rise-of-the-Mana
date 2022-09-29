@@ -4,13 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GolemnTrigger : MonoBehaviour
+public class GoblinTrigger4 : MonoBehaviour
 {
+    public static bool despawn = false;
     private bool battle;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        if (despawn == true)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -18,8 +23,8 @@ public class GolemnTrigger : MonoBehaviour
     {
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
-            HPMPBarController.EIndex = 3;
-            SceneManager.LoadScene(14);
+            HPMPBarController.EIndex = 2;
+            SceneManager.LoadScene(13);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

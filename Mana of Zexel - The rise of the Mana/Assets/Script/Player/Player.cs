@@ -112,6 +112,9 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("WishingHillToZexelTown"))
         {
             MapController.WishingHillToZexelTown = true;
+            ThiefTrigger1.despawn = false;
+            ThiefTrigger2.despawn = false;
+            ThiefTrigger3.despawn = false;
             if (CutscenesController.cus3 == 0)
                 SceneManager.LoadScene(9);
             else
@@ -120,11 +123,19 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("ZexelTownToWishingHill"))
         {
             MapController.ZexelTownToWishingHill = true;
+            GoblinTrigger1.despawn = false;
+            GoblinTrigger2.despawn = false;
+            GoblinTrigger3.despawn = false;
+            GoblinTrigger4.despawn = false;
             SceneManager.LoadScene(2);
         }
         if (collision.CompareTag("ZexelTownToTavern"))
         {
             MapController.ZexelTownToTavern = true;
+            GoblinTrigger1.despawn = false;
+            GoblinTrigger2.despawn = false;
+            GoblinTrigger3.despawn = false;
+            GoblinTrigger4.despawn = false;
             if (CutscenesController.cus4 == 0)
                 SceneManager.LoadScene(9);
             else
@@ -154,6 +165,10 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("ZexelTownToGroceryStore"))
         {
             MapController.ZexelTownToGroceryStore = true;
+            GoblinTrigger1.despawn = false;
+            GoblinTrigger2.despawn = false;
+            GoblinTrigger3.despawn = false;
+            GoblinTrigger4.despawn = false;
             SceneManager.LoadScene(7);
         }
         if (collision.CompareTag("GroceryStoreToZexelTown"))
@@ -164,6 +179,10 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("ZexelTownToWeaponStore"))
         {
             MapController.ZexelTownToWeaponStore = true;
+            GoblinTrigger1.despawn = false;
+            GoblinTrigger2.despawn = false;
+            GoblinTrigger3.despawn = false;
+            GoblinTrigger4.despawn = false;
             SceneManager.LoadScene(8);
         }
         if (collision.CompareTag("WeaponStoreToZexelTown"))
@@ -173,6 +192,10 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("ZexelTownToWishingForest"))
         {
+            GoblinTrigger1.despawn = false;
+            GoblinTrigger2.despawn = false;
+            GoblinTrigger3.despawn = false;
+            GoblinTrigger4.despawn = false;
             if (CutscenesController.cus9 == 0)
             {
                 show2.SetActive(true);
@@ -196,6 +219,9 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("WishingForestToZexelTown"))
         {
             MapController.WishingForestToZexelTown = true;
+            GolemnTrigger1.despawn = false;
+            GolemnTrigger2.despawn = false;
+            GolemnTrigger3.despawn = false;
             SceneManager.LoadScene(3);
         }
         if (collision.CompareTag("HealPoint"))

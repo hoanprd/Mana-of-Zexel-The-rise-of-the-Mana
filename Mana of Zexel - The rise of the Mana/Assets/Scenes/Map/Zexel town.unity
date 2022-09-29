@@ -461,6 +461,69 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   show1: {fileID: 1481463562}
   show2: {fileID: 1481463561}
+--- !u!1 &201495124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 201495125}
+  - component: {fileID: 201495126}
+  - component: {fileID: 201495127}
+  m_Layer: 0
+  m_Name: E2_02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &201495125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201495124}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.59, y: -1.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 241575972}
+  m_Father: {fileID: 969734527}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &201495126
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201495124}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.006965637, y: 0.083577156}
+  m_Size: {x: 1.4332962, y: 3.3402119}
+  m_Direction: 0
+--- !u!114 &201495127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201495124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd4d35bcc4d3ff42b82e47c29a42fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goblin: {fileID: 201495124}
 --- !u!1 &241575971
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +536,6 @@ GameObject:
   - component: {fileID: 241575976}
   - component: {fileID: 241575975}
   - component: {fileID: 241575974}
-  - component: {fileID: 241575973}
   m_Layer: 0
   m_Name: Goblin 1 (1)
   m_TagString: Untagged
@@ -489,25 +551,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241575971}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.48, y: -1.18, z: 0.26171425}
+  m_LocalPosition: {x: -0.11000061, y: 0.069999695, z: 0.26171425}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 969734527}
-  m_RootOrder: 1
+  m_Father: {fileID: 201495125}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &241575973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241575971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 508caa50fbfc6734fb93f772a93e7d69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &241575974
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -725,6 +775,69 @@ Transform:
   m_Father: {fileID: 1616904108}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -25}
+--- !u!1 &284891548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 284891549}
+  - component: {fileID: 284891550}
+  - component: {fileID: 284891551}
+  m_Layer: 0
+  m_Name: E2_03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &284891549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284891548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.4099998, y: -5.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 649011319}
+  m_Father: {fileID: 969734527}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &284891550
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284891548}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.006965637, y: 0.083577156}
+  m_Size: {x: 1.4332962, y: 3.3402119}
+  m_Direction: 0
+--- !u!114 &284891551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284891548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5625b8bde5934174e8fe53e20cdbb15b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goblin: {fileID: 284891548}
 --- !u!1 &377607605
 GameObject:
   m_ObjectHideFlags: 0
@@ -24917,7 +25030,6 @@ GameObject:
   - component: {fileID: 609487241}
   - component: {fileID: 609487240}
   - component: {fileID: 609487239}
-  - component: {fileID: 609487242}
   m_Layer: 0
   m_Name: Goblin 1
   m_TagString: Untagged
@@ -24933,11 +25045,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609487237}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.25, y: -0.91, z: 0.26171425}
+  m_LocalPosition: {x: -0.089999914, y: 0.09000015, z: 0.26171425}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 969734527}
+  m_Father: {fileID: 1589187392}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &609487239
@@ -25099,18 +25211,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &609487242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 609487237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 508caa50fbfc6734fb93f772a93e7d69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &649011318
 GameObject:
   m_ObjectHideFlags: 0
@@ -25123,7 +25223,6 @@ GameObject:
   - component: {fileID: 649011323}
   - component: {fileID: 649011322}
   - component: {fileID: 649011321}
-  - component: {fileID: 649011320}
   m_Layer: 0
   m_Name: Goblin 1 (2)
   m_TagString: Untagged
@@ -25139,25 +25238,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649011318}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.52, y: -5.66, z: 0.26171425}
+  m_LocalPosition: {x: -0.11000061, y: 0.09000015, z: 0.26171425}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 969734527}
-  m_RootOrder: 2
+  m_Father: {fileID: 284891549}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &649011320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 649011318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 508caa50fbfc6734fb93f772a93e7d69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &649011321
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -56755,10 +56842,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 609487238}
-  - {fileID: 241575972}
-  - {fileID: 649011319}
-  - {fileID: 2106703838}
+  - {fileID: 1589187392}
+  - {fileID: 201495125}
+  - {fileID: 284891549}
+  - {fileID: 1723800406}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -59214,6 +59301,69 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1589187391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1589187392}
+  - component: {fileID: 1589187393}
+  - component: {fileID: 1589187394}
+  m_Layer: 0
+  m_Name: E2_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1589187392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589187391}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.16, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 609487238}
+  m_Father: {fileID: 969734527}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &1589187393
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589187391}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.006965637, y: 0.083577156}
+  m_Size: {x: 1.4332962, y: 3.3402119}
+  m_Direction: 0
+--- !u!114 &1589187394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589187391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508caa50fbfc6734fb93f772a93e7d69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goblin: {fileID: 1589187391}
 --- !u!1 &1616904105
 GameObject:
   m_ObjectHideFlags: 0
@@ -59718,6 +59868,69 @@ PolygonCollider2D:
       - {x: 3.466667, y: -1.9333334}
       - {x: 3.5333335, y: -1.8666668}
       - {x: 3.9333336, y: 0.6}
+--- !u!1 &1723800405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1723800406}
+  - component: {fileID: 1723800407}
+  - component: {fileID: 1723800408}
+  m_Layer: 0
+  m_Name: E2_04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1723800406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723800405}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.09, y: -5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2106703838}
+  m_Father: {fileID: 969734527}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &1723800407
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723800405}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.006965637, y: 0.083577156}
+  m_Size: {x: 1.4332962, y: 3.3402119}
+  m_Direction: 0
+--- !u!114 &1723800408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723800405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a67676bc71716c543a69f61fc7f5c548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goblin: {fileID: 1723800405}
 --- !u!1 &1808343112
 GameObject:
   m_ObjectHideFlags: 0
@@ -60485,7 +60698,6 @@ GameObject:
   - component: {fileID: 2106703842}
   - component: {fileID: 2106703841}
   - component: {fileID: 2106703840}
-  - component: {fileID: 2106703839}
   m_Layer: 0
   m_Name: Goblin 1 (3)
   m_TagString: Untagged
@@ -60501,25 +60713,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106703837}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.98, y: -4.91, z: 0.26171425}
+  m_LocalPosition: {x: -0.11000061, y: 0.09000015, z: 0.26171425}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 969734527}
-  m_RootOrder: 3
+  m_Father: {fileID: 1723800406}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2106703839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106703837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 508caa50fbfc6734fb93f772a93e7d69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &2106703840
 PolygonCollider2D:
   m_ObjectHideFlags: 0

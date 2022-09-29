@@ -26,7 +26,6 @@ public class DLTrigger : MonoBehaviour
             ContainerController.DriedLeaves += 1;
             once = 1;
             Invoke("delay1", 1f);
-            Debug.Log(PlayerPrefs.GetInt("SDL"));
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

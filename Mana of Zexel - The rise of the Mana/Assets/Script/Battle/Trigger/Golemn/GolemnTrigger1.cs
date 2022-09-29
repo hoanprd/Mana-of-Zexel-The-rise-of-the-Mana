@@ -4,22 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class ThiefTrigger : MonoBehaviour
+public class GolemnTrigger1 : MonoBehaviour
 {
+    public static bool despawn = false;
     private bool battle;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        if (despawn == true)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(battle && Input.GetKeyDown(KeyCode.Space))
+        if (battle && Input.GetKeyDown(KeyCode.Space))
         {
-            HPMPBarController.EIndex = 1;
-            SceneManager.LoadScene(12);
+            HPMPBarController.EIndex = 3;
+            SceneManager.LoadScene(14);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
