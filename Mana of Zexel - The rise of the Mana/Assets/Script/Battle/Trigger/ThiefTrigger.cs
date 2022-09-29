@@ -18,6 +18,7 @@ public class ThiefTrigger : MonoBehaviour
     {
         if(battle && Input.GetKeyDown(KeyCode.Space))
         {
+            HPMPBarController.EIndex = 1;
             SceneManager.LoadScene(12);
         }
     }

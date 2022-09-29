@@ -182,9 +182,9 @@ public class MenuController : MonoBehaviour
             Global.PlusPointSpeedInfoP1 = PlayerPrefs.GetInt("SavePlusPointSpeedInfoP1D1");
 
             //Set Alia
-            Global.CurHPP2 = PlayerPrefs.GetInt("SaveHPP1D2");
+            Global.CurHPP2 = PlayerPrefs.GetInt("SaveHPP2D1");
             Global.MaxHPP2 = PlayerPrefs.GetInt("SaveMaxHPP2D1");
-            Global.CurMPP2 = PlayerPrefs.GetInt("SaveMPP1D2");
+            Global.CurMPP2 = PlayerPrefs.GetInt("SaveMPP2D1");
             Global.MaxMPP2 = PlayerPrefs.GetInt("SaveMaxMPP2D1");
             Global.DamageP2 = PlayerPrefs.GetInt("SaveDamageP2D1");
             Global.SpeedP2 = PlayerPrefs.GetInt("SaveSpeedP2D1");

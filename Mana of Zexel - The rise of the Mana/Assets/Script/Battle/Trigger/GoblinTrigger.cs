@@ -18,6 +18,7 @@ public class GoblinTrigger : MonoBehaviour
     {
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
+            HPMPBarController.EIndex = 2;
             SceneManager.LoadScene(13);
         }
     }

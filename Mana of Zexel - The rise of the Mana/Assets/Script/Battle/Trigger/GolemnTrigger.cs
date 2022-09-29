@@ -18,6 +18,7 @@ public class GolemnTrigger : MonoBehaviour
     {
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
+            HPMPBarController.EIndex = 3;
             SceneManager.LoadScene(14);
         }
     }

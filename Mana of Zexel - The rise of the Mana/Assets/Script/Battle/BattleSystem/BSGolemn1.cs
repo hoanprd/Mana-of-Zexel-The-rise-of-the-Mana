@@ -14,7 +14,14 @@ public class BSGolemn1 : MonoBehaviour
     public GameObject showr2;
     public GameObject P1_panel;
     public GameObject P2_panel;
+    public GameObject MariaStatus;
+    public GameObject MariaBar;
+    public GameObject P3_panel;
     public GameObject Win_panel;
+    public GameObject MariaName;
+    public GameObject MariaLevel;
+    public GameObject MariaExp;
+    public GameObject MariaPlusExp;
     public GameObject Lose_panel;
     public Text num1;
     public Text num2;
@@ -25,25 +32,33 @@ public class BSGolemn1 : MonoBehaviour
     public Text MP1;
     public Text HP2;
     public Text MP2;
+    public Text HP3;
+    public Text MP3;
     public Text HPE3;
     public Text EXPP1;
     public Text EXPP2;
+    public Text EXPP3;
     public Text Money;
     public Text LevelP1;
     public Text LevelP2;
+    public Text LevelP3;
     public Text NumTurn;
     public GameObject lu;
     public GameObject lu2;
+    public GameObject lu3;
     public GameObject HPMP;
     public GameObject NB;
-    public int a1, a2, aE3;
+    public int a1, a2, a3, aE3;
     public int stop = 0;
     private int dem = 0;
     private int dem_turn = 1;
     private int once = 0;
     private int show1 = 0;
     public int show2 = 0;
+    public int show3 = 0;
     public int E3Hit;
+    public bool P2Available, P3Availabel;
+    public int UseItemIndex;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,35 +66,43 @@ public class BSGolemn1 : MonoBehaviour
         pb = FindObjectOfType<PlayerBattle>();
         GB = FindObjectOfType<GolemnBattle>();
         a1 = Global.SpeedP1 / 10;
-        Debug.Log(Global.SpeedP2);
         a2 = Global.SpeedP2 / 10;
-        Debug.Log(a2);
+        a3 = Global.SpeedP3 / 10;
         aE3 = Global.SpeedE3 / 10;
+
+        if (CutscenesController.cus12 == 0)
+        {
+            MariaStatus.SetActive(false);
+            MariaBar.SetActive(false);
+            HP3.text = "";
+            MP3.text = "";
+            P3Availabel = false;
+        }
+        else
+        {
+            MariaStatus.SetActive(true);
+            MariaBar.SetActive(true);
+            P3Availabel = true;
+        }
+
         if (Global.CurHPP1 > 0)
             pb.dead1 = 0;
         if (Global.CurHPP2 > 0)
             pb.dead2 = 0;
+        if (Global.CurHPP3 > 0)
+            pb.dead3 = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckE3Die();
-        CheckP1P2Die();
+        CheckP1P2P3Die();
         CheckP1Die();
         CheckP2Die();
-        HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
-        MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
-        HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
-        MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
-        HPE3.text = "HP: " + Global.HPE3.ToString();
-        NumTurn.text = "Turn " + dem_turn.ToString();
-        if (Global.HPE3 <= 0)
-            HPE3.text = "HP: 0";
-        if (Global.CurHPP1 <= 0)
-            HP1.text = "HP: 0";
-        if (Global.CurHPP2 <= 0)
-            HP2.text = "HP: 0";
+        CheckP3Die();
+        UpdateUIText();
+
         if (Global.SpeedP2 >= Global.SpeedE3)
         {
             if(a2 > 0 && Global.CurHPP2 > 0)
@@ -87,7 +110,7 @@ public class BSGolemn1 : MonoBehaviour
                 CheckE3Die();
                 CheckP1Die();
                 CheckP2Die();
-                CheckP1P2Die();
+                CheckP1P2P3Die();
                 if(show2 == 0)
                     ShowP2Panel(true);
                 else
@@ -98,7 +121,8 @@ public class BSGolemn1 : MonoBehaviour
                 CheckE3Die();
                 CheckP1Die();
                 CheckP2Die();
-                CheckP1P2Die();
+                CheckP1P2P3Die();
+                UseItemIndex = 1;
                 if (show1 == 0)
                     ShowP1Panel(true);
                 else
@@ -108,19 +132,84 @@ public class BSGolemn1 : MonoBehaviour
             {
                 CheckE3Die();
                 ShowP1Panel(false);
+                ShowP2Panel(false);
+                ShowP3Panel(false);
                 if (dem == 2)
                 {
                     GB.yes_golemn = 1;
                     dem -= 1;
-                    Invoke("delay", 1f);
-                    Invoke("delaye3attack2", 2f);
+                    Invoke("delayE3", 1f);
+                    Invoke("delayeE3attack2", 2f);
                 }
                 CheckP1Die();
                 CheckP2Die();
-                CheckP1P2Die();
+                CheckP1P2P3Die();
+            }
+            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Availabel == true)
+            {
+                CheckE3Die();
+                CheckP1Die();
+                CheckP2Die();
+                CheckP3Die();
+                CheckP1P2P3Die();
+                UseItemIndex = 3;
+                if (show3 == 0)
+                    ShowP3Panel(true);
+                else
+                    ShowP3Panel(false);
             }
         }
     }
+
+    public void UpdateUIText()
+    {
+        HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
+        MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
+
+        HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
+        MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
+
+        if (P3Availabel == true)
+        {
+            HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
+            MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
+        }
+
+        HPE3.text = "HP: " + Global.HPE3.ToString();
+
+        NumTurn.text = "Turn " + dem_turn.ToString();
+
+        if (Global.HPE3 < 0)
+        {
+            Global.HPE3 = 0;
+            HPE3.text = "HP: " + Global.HPE3.ToString();
+        }
+        else if (Global.CurHPP1 < 0)
+        {
+            Global.CurHPP1 = 0;
+            HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
+        }
+        else if (Global.CurHPP2 < 0)
+        {
+            Global.CurHPP2 = 0;
+            HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
+        }
+        else if (Global.CurHPP3 < 0)
+        {
+            Global.CurHPP3 = 0;
+            HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
+        }
+
+        if (Global.HPE2 <= 0)
+            HPE3.text = "HP: 0";
+        if (Global.CurHPP1 <= 0)
+            HP1.text = "HP: 0";
+        if (Global.CurHPP2 <= 0)
+            HP2.text = "HP: 0";
+        if (Global.CurHPP3 <= 0)
+            HP3.text = "HP: 0";
+    }
+
     public void ShowP1Panel(bool isshow)
     {
         if (P1_panel)
@@ -135,18 +224,32 @@ public class BSGolemn1 : MonoBehaviour
             P2_panel.SetActive(isshow);
         }
     }
+    public void ShowP3Panel(bool isshow)
+    {
+        if (P3_panel)
+        {
+            P3_panel.SetActive(isshow);
+        }
+    }
     public void PressAttack()
     {
         pb.yes1 = 1;
         show1 = 1;
-        Invoke("delay1", 1f);
+        Invoke("delayP1PressAttack", 1f);
         dem = 2;
     }
     public void PressAttackP2()
     {
         pb.yes3 = 1;
         show2 = 1;
-        Invoke("delay7", 1f);
+        Invoke("delayP2PressAttack", 1f);
+        dem = 2;
+    }
+    public void PressAttackP3()
+    {
+        pb.yes5 = 1;
+        show3 = 1;
+        Invoke("delayP3PressAttack", 1f);
         dem = 2;
     }
     public void PressSkill()
@@ -155,7 +258,7 @@ public class BSGolemn1 : MonoBehaviour
         {
             pb.yes2 = 1;
             show1 = 1;
-            Invoke("delay2", 1f);
+            Invoke("delayP1PressSkill", 1f);
             dem = 2;
         }
     }
@@ -165,7 +268,17 @@ public class BSGolemn1 : MonoBehaviour
         {
             pb.yes4 = 1;
             show2 = 1;
-            Invoke("delay8", 1f);
+            Invoke("delayP2PressSkill", 1f);
+            dem = 2;
+        }
+    }
+    public void PressSkillP3()
+    {
+        if (Global.CurMPP3 >= 40)
+        {
+            pb.yes6 = 1;
+            show3 = 1;
+            Invoke("delayP3PressSkill", 1f);
             dem = 2;
         }
     }
@@ -183,7 +296,12 @@ public class BSGolemn1 : MonoBehaviour
         if (ContainerController.HealPotion > 0)
         {
             Item_panel.SetActive(false);
-            Global.CurHPP1 += 50;
+
+            if (UseItemIndex == 1)
+                Global.CurHPP1 += 50;
+            else if (UseItemIndex == 3)
+                Global.CurHPP3 += 50;
+
             showr2.SetActive(true);
             showr1.text = "HP +50";
             ContainerController.HealPotion -= 1;
@@ -195,7 +313,7 @@ public class BSGolemn1 : MonoBehaviour
             a1 -= 1;
             dem = 2;
             dem_turn += 1;
-            if (a1 == 0)
+            if (a1 == 0 || a3 == 0)
             {
                 aE3 = Global.SpeedE3 / 10;
             }
@@ -213,7 +331,12 @@ public class BSGolemn1 : MonoBehaviour
         if (ContainerController.ManaPotion > 0)
         {
             Item_panel.SetActive(false);
-            Global.CurMPP1 += 30;
+
+            if (UseItemIndex == 1)
+                Global.CurMPP1 += 30;
+            else if (UseItemIndex == 3)
+                Global.CurMPP3 += 30;
+
             showr2.SetActive(true);
             showr1.text = "MP +30";
             ContainerController.ManaPotion -= 1;
@@ -225,7 +348,7 @@ public class BSGolemn1 : MonoBehaviour
             a1 -= 1;
             dem = 2;
             dem_turn += 1;
-            if (a1 == 0)
+            if (a1 == 0 || a3 == 0)
             {
                 aE3 = Global.SpeedE3 / 10;
             }
@@ -243,8 +366,18 @@ public class BSGolemn1 : MonoBehaviour
         if (ContainerController.ElixirPotion > 0)
         {
             Item_panel.SetActive(false);
-            Global.CurHPP1 += 50;
-            Global.CurMPP1 += 30;
+
+            if (UseItemIndex == 1)
+            {
+                Global.CurHPP1 += 50;
+                Global.CurMPP1 += 30;
+            }
+            else if (UseItemIndex == 3)
+            {
+                Global.CurHPP3 += 50;
+                Global.CurMPP3 += 30;
+            }
+
             showr2.SetActive(true);
             showr1.text = "MP +50 MP +30";
             ContainerController.ElixirPotion -= 1;
@@ -259,9 +392,9 @@ public class BSGolemn1 : MonoBehaviour
             a1 -= 1;
             dem_turn += 1;
             dem = 2;
-            if (a1 == 0)
+            if (a1 == 0 || a3 == 0)
             {
-                aE3 = Global.SpeedE2 / 10;
+                aE3 = Global.SpeedE3 / 10;
             }
             Invoke("delayshowr", 2f);
         }
@@ -284,9 +417,9 @@ public class BSGolemn1 : MonoBehaviour
             a1 -= 1;
             dem_turn += 1;
             dem = 2;
-            if (a1 == 0)
+            if (a1 == 0 || a3 == 0)
             {
-                aE3 = Global.SpeedE2 / 10;
+                aE3 = Global.SpeedE3 / 10;
             }
             Invoke("delayshowr", 2f);
         }
@@ -325,17 +458,20 @@ public class BSGolemn1 : MonoBehaviour
             pb.dead2 = 1;
         }
     }
-    public void CheckP1P2Die()
+    public void CheckP3Die()
+    {
+        if (Global.CurHPP3 <= 0)
+        {
+            pb.dead3 = 1;
+        }
+    }
+    public void CheckP1P2P3Die()
     {
         if (Global.CurHPP1 <= 0 && Global.CurHPP2 <= 0)
         {
-            HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
-            MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
-            HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
-            MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
-            HPE3.text = "HP: " + Global.HPE3.ToString();
-            Invoke("delay3", 1f);
-            Invoke("delay4", 2f);
+            UpdateUIText();
+            Invoke("delayCheckP1P2P3Die1", 1f);
+            Invoke("delayCheckP1P2P3Die2", 2f);
         }
     }
     public void CheckE3Die()
@@ -344,66 +480,88 @@ public class BSGolemn1 : MonoBehaviour
         {
             ShowP1Panel(false);
             ShowP2Panel(false);
-            HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
-            MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
-            HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
-            MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
-            HPE3.text = "HP: " + Global.HPE3.ToString();
-            HPE3.text = "HP: 0";
+            ShowP3Panel(false);
+            UpdateUIText();
             stop = 1;
+
             LevelP1.text = "Level " + Global.LevelP1;
             EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
-            Money.text = Global.Zen + " ";
+
             LevelP2.text = "Level " + Global.LevelP2;
             EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
-            Invoke("delay5", 1f);
+
+            if (P3Availabel == true)
+            {
+                MariaName.SetActive(true);
+                MariaLevel.SetActive(true);
+                MariaExp.SetActive(true);
+                MariaPlusExp.SetActive(true);
+                LevelP3.text = "Level " + Global.LevelP3;
+                EXPP3.text = Global.CurEXPP3 + "/" + Global.MaxEXPP3;
+            }
+
+            Money.text = Global.Zen + " ";
+
+            Invoke("delayCheckE3Die1", 1f);
             if (once == 0)
             {
-                Invoke("delay6", 2f);
+                Invoke("delayCheckE3Die2", 2f);
                 once = 1;
             }
         }
     }
-    void delay()
+    void delayE3()
     {
         CheckE3Die();
         ShowP1Panel(false);
-        E3Hit = Random.Range(1, 3);
-        if(E3Hit == 1 && Global.CurHPP1 > 0)
-            Global.CurHPP1 -= Global.DamageE3;
-        else if(E3Hit == 1 && Global.CurHPP1 <= 0 && Global.CurHPP2 > 0)
-            Global.CurHPP2 -= Global.DamageE3;
-        else if(E3Hit == 2 && Global.CurHPP2 >0)
-            Global.CurHPP2 -= Global.DamageE3;
-        else if(E3Hit == 2 && Global.CurHPP2 <= 0 && Global.CurHPP1 > 0)
-            Global.CurHPP1 -= Global.DamageE3;
-        HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
-        MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
-        HPE3.text = "HP: " + Global.HPE3.ToString();
+        ShowP2Panel(false);
+        ShowP3Panel(false);
+        E3AttackTarget();
+        
         aE3 -= 1;
         dem_turn += 1;
         if (aE3 == 0)
         {
             a1 = Global.SpeedP1 / 10;
             a2 = Global.SpeedP2 / 10;
+            a3 = Global.SpeedP3 / 10;
         }
     }
-    void delaye3attack2()
+
+    void E3AttackTarget()
+    {
+        if (CutscenesController.cus12 == 0)
+            E3Hit = Random.Range(1, 3);
+        else if (CutscenesController.cus12 == 1)
+            E3Hit = Random.Range(1, 4);
+
+        if (E3Hit == 1 && Global.CurHPP1 > 0)
+            Global.CurHPP1 -= Global.DamageE3;
+        else if (E3Hit == 1 && Global.CurHPP1 <= 0)
+            E3AttackTarget();
+        else if (E3Hit == 2 && Global.CurHPP2 > 0)
+            Global.CurHPP2 -= Global.DamageE3;
+        else if (E3Hit == 2 && Global.CurHPP2 <= 0)
+            E3AttackTarget();
+        else if (E3Hit == 3 && Global.CurHPP3 > 0)
+            Global.CurHPP3 -= Global.DamageE3;
+        else if (E3Hit == 3 && Global.CurHPP3 <= 0)
+            E3AttackTarget();
+    }
+
+    void delayeE3attack2()
     {
         if (dem == 1)
         {
             GB.yes_golemn = 1;
             dem -= 1;
-            Invoke("delay", 1f);
+            Invoke("delayE3", 1f);
         }
     }
-    void delay1()
+    void delayP1PressAttack()
     {
         ShowP1Panel(false);
         Global.HPE3 -= Global.DamageP1;
-        HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
-        MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
-        HPE3.text = "HP: " + Global.HPE3.ToString();
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
@@ -413,13 +571,10 @@ public class BSGolemn1 : MonoBehaviour
         }
         CheckE3Die();
     }
-    void delay7()
+    void delayP2PressAttack()
     {
         ShowP2Panel(false);
         Global.HPE3 -= Global.DamageP2;
-        HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
-        MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
-        HPE3.text = "HP: " + Global.HPE3.ToString();
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
@@ -429,13 +584,23 @@ public class BSGolemn1 : MonoBehaviour
         }
         CheckE3Die();
     }
-    void delay2()
+    void delayP3PressAttack()
+    {
+        ShowP3Panel(false);
+        Global.HPE3 -= Global.DamageP3;
+        a3 -= 1;
+        show3 = 0;
+        dem_turn += 1;
+        if (a3 == 0)
+        {
+            aE3 = Global.SpeedE3 / 10;
+        }
+        CheckE3Die();
+    }
+    void delayP1PressSkill()
     {
         Global.CurMPP1 -= 20;
         Global.HPE3 = Global.HPE3 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
-        HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
-        MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
-        HPE3.text = "HP: " + Global.HPE3.ToString();
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
@@ -445,13 +610,10 @@ public class BSGolemn1 : MonoBehaviour
         }
         CheckE3Die();
     }
-    void delay8()
+    void delayP2PressSkill()
     {
         Global.CurMPP2 -= 20;
         Global.HPE3 = Global.HPE3 - (Global.DamageP2 + (Global.DamageP2 * 100 / 100));
-        HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
-        MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
-        HPE3.text = "HP: " + Global.HPE3.ToString();
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
@@ -461,21 +623,54 @@ public class BSGolemn1 : MonoBehaviour
         }
         CheckE3Die();
     }
-    void delay3()
+    void delayP3PressSkill()
+    {
+        Global.CurMPP3 -= 40;
+        int HealAmount = Global.DamageP3 * 20 / 100;
+        int CheckMaxhealP1 = Global.MaxHPP1 - Global.CurHPP1;
+        int CheckMaxhealP2 = Global.MaxHPP2 - Global.CurHPP2;
+
+        if (HealAmount < CheckMaxhealP1)
+        {
+            Global.CurHPP1 += HealAmount;
+        }
+        else
+        {
+            Global.CurHPP1 = Global.MaxHPP1;
+        }
+        if (HealAmount < CheckMaxhealP2)
+        {
+            Global.CurHPP2 += HealAmount;
+        }
+        else
+        {
+            Global.CurHPP2 = Global.MaxHPP2;
+        }
+
+        UpdateUIText();
+        a3 -= 1;
+        show3 = 0;
+        dem_turn += 1;
+        if (a3 == 0)
+        {
+            aE3 = Global.SpeedE3 / 10;
+        }
+    }
+    void delayCheckP1P2P3Die1()
     {
         HPMP.SetActive(false);
         Lose_panel.SetActive(true);
     }
-    void delay4()
+    void delayCheckP1P2P3Die2()
     {
         SceneManager.LoadScene(1);
     }
-    void delay5()
+    void delayCheckE3Die1()
     {
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }
-    void delay6()
+    void delayCheckE3Die2()
     {
         if (Global.LevelP1 < 30)
         {
@@ -484,6 +679,10 @@ public class BSGolemn1 : MonoBehaviour
         if (Global.LevelP2 < 30)
         {
             Global.CurEXPP2 += 40;
+        }
+        if (Global.LevelP3 < 30 && P3Availabel == true)
+        {
+            Global.CurEXPP3 += 40;
         }
         Global.Zen += 40;
         while (Global.CurEXPP1 >= Global.MaxEXPP1)
@@ -510,6 +709,18 @@ public class BSGolemn1 : MonoBehaviour
             Global.SpeedP2 += 1;
             Global.PlusPointP2 += 1;
         }
+        while (Global.CurEXPP3 >= Global.MaxEXPP3)
+        {
+            lu3.SetActive(true);
+            Global.CurEXPP3 -= Global.MaxEXPP3;
+            Global.MaxEXPP3 += 40;
+            Global.LevelP3 += 1;
+            Global.MaxHPP3 += 25;
+            Global.MaxMPP3 += 5;
+            Global.DamageP3 += 10;
+            Global.SpeedP3 += 1;
+            Global.PlusPointP3 += 1;
+        }
         if (Global.LevelP1 < 30)
         {
             LevelP1.text = "Level " + Global.LevelP1;
@@ -529,6 +740,16 @@ public class BSGolemn1 : MonoBehaviour
         {
             LevelP2.text = "Level Max";
             EXPP2.text = "MAX";
+        }
+        if (Global.LevelP3 < 30)
+        {
+            LevelP3.text = "Level " + Global.LevelP3;
+            EXPP3.text = Global.CurEXPP3 + "/" + Global.MaxEXPP3;
+        }
+        else
+        {
+            LevelP3.text = "Level Max";
+            EXPP3.text = "MAX";
         }
         Money.text = Global.Zen + " ";
         NB.SetActive(true);

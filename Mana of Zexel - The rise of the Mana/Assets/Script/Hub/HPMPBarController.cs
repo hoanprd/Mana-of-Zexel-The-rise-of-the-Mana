@@ -12,6 +12,7 @@ public class HPMPBarController : MonoBehaviour
     public Slider HPP3Slider;
     public Slider MPP3Slider;
     public Slider HPESlider;
+    public static int EIndex;
 
     void Start()
     {
@@ -21,7 +22,12 @@ public class HPMPBarController : MonoBehaviour
         MPP2Slider.maxValue = Global.MaxMPP2;
         HPP3Slider.maxValue = Global.MaxHPP3;
         MPP3Slider.maxValue = Global.MaxMPP3;
-        HPESlider.maxValue = Global.HPE1;
+        if (EIndex == 1)
+            HPESlider.maxValue = Global.HPE1;
+        else if (EIndex == 2)
+            HPESlider.maxValue = Global.HPE2;
+        else if (EIndex == 3)
+            HPESlider.maxValue = Global.HPE3;
     }
 
     void Update()
@@ -32,6 +38,11 @@ public class HPMPBarController : MonoBehaviour
         MPP2Slider.value = Global.CurMPP2;
         HPP3Slider.value = Global.CurHPP3;
         MPP3Slider.value = Global.CurMPP3;
-        HPESlider.value = Global.HPE1;
+        if (EIndex == 1)
+            HPESlider.value = Global.HPE1;
+        else if (EIndex == 2)
+            HPESlider.value = Global.HPE2;
+        else if (EIndex == 3)
+            HPESlider.value = Global.HPE3;
     }
 }
