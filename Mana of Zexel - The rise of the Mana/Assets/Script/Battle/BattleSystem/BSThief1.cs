@@ -9,6 +9,7 @@ public class BSThief1 : MonoBehaviour
 {
     PlayerBattle pb;
     ThiefBattle tb;
+
     public GameObject Item_panel;
     public GameObject showr2;
     public GameObject P1_panel;
@@ -58,6 +59,7 @@ public class BSThief1 : MonoBehaviour
     public int E1Hit;
     public bool P2Available, P3Availabel;
     public int UseItemIndex;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +69,13 @@ public class BSThief1 : MonoBehaviour
         a2 = Global.SpeedP2 / 10;
         a3 = Global.SpeedP3 / 10;
         aE1 = Global.SpeedE1 / 10;
+
+        if (Global.CurHPP1 <= 0)
+            a1 = 0;
+        if (Global.CurHPP2 <= 0)
+            a2 = 0;
+        if (Global.CurHPP3 <= 0)
+            a3 = 0;
 
         if (CutscenesController.cus12 == 0)
         {
@@ -100,62 +109,60 @@ public class BSThief1 : MonoBehaviour
         CheckP2Die();
         CheckP3Die();
         UpdateUIText();
-        if (Global.SpeedP2 >= Global.SpeedE1)
+
+        if (a2 > 0 && Global.CurHPP2 > 0)
         {
-            if(a2 > 0 && Global.CurHPP2 > 0)
-            {
-                CheckE1Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP3Die();
-                CheckP1P2P3Die();
-                if(show2 == 0)
-                    ShowP2Panel(true);
-                else
-                    ShowP2Panel(false);
-            }
-            else if (a1 > 0 && Global.CurHPP1 > 0)
-            {
-                CheckE1Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP3Die();
-                CheckP1P2P3Die();
-                UseItemIndex = 1;
-                if (show1 == 0)
-                    ShowP1Panel(true);
-                else
-                    ShowP1Panel(false);
-            }
-            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Availabel == true)
-            {
-                CheckE1Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP3Die();
-                CheckP1P2P3Die();
-                UseItemIndex = 3;
-                if (show3 == 0)
-                    ShowP3Panel(true);
-                else
-                    ShowP3Panel(false);
-            }
-            else if (aE1 > 0 && Global.HPE1 > 0)
-            {
-                CheckE1Die();
-                ShowP1Panel(false);
+            CheckE1Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP3Die();
+            CheckP1P2P3Die();
+            if (show2 == 0)
+                ShowP2Panel(true);
+            else
                 ShowP2Panel(false);
+        }
+        else if (a1 > 0 && Global.CurHPP1 > 0)
+        {
+            CheckE1Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP3Die();
+            CheckP1P2P3Die();
+            UseItemIndex = 1;
+            if (show1 == 0)
+                ShowP1Panel(true);
+            else
+                ShowP1Panel(false);
+        }
+        else if (a3 > 0 && Global.CurHPP3 > 0 && P3Availabel == true)
+        {
+            CheckE1Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP3Die();
+            CheckP1P2P3Die();
+            UseItemIndex = 3;
+            if (show3 == 0)
+                ShowP3Panel(true);
+            else
                 ShowP3Panel(false);
-                if (dem == 1)
-                {
-                    tb.yes_thief = 1;
-                    Invoke("delayE1", 1f);
-                    dem = 0;
-                }
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
+        }
+        else if (aE1 > 0 && Global.HPE1 > 0)
+        {
+            CheckE1Die();
+            ShowP1Panel(false);
+            ShowP2Panel(false);
+            ShowP3Panel(false);
+            if (dem == 1)
+            {
+                tb.yes_thief = 1;
+                Invoke("delayE1", 1f);
+                dem = 0;
             }
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
         }
     }
 

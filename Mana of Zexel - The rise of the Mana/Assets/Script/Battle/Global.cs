@@ -41,9 +41,4 @@ public class Global : MonoBehaviour
         DamageE3 = 40;
         SpeedE3 = 20;
     }
-
-    void Update()
-    {
-        
-    }
 }
