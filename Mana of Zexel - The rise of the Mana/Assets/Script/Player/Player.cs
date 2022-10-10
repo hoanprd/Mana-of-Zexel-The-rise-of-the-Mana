@@ -162,7 +162,7 @@ public class Player : MonoBehaviour
             MapController.SaveRoomToTavern = true;
             SceneManager.LoadScene(5);
         }
-        if (collision.CompareTag("ZexelTownToGroceryStore"))
+        if (collision.CompareTag("ZexelTownToGroceryStore") && CutscenesController.cus19 == 1)
         {
             MapController.ZexelTownToGroceryStore = true;
             GoblinTrigger1.despawn = false;
@@ -176,7 +176,7 @@ public class Player : MonoBehaviour
             MapController.GroceryStoreToZexelTown = true;
             SceneManager.LoadScene(3);
         }
-        if (collision.CompareTag("ZexelTownToWeaponStore"))
+        if (collision.CompareTag("ZexelTownToWeaponStore") && CutscenesController.cus20 == 1)
         {
             MapController.ZexelTownToWeaponStore = true;
             GoblinTrigger1.despawn = false;
