@@ -8,6 +8,8 @@ public class HubController : MonoBehaviour
 {
     MenuController mc;
     public GameObject map;
+    public GameObject[] MapArrow;
+    public Text[] MapText;
     public GameObject info;
     public GameObject quest;
     public GameObject bag;
@@ -56,6 +58,72 @@ public class HubController : MonoBehaviour
     void Start()
     {
         mc = FindObjectOfType<MenuController>();
+
+        //Map detail
+        for (int i = 0; i < MapArrow.Length; i++)
+        {
+            if (i == Player.MapIndex)
+            {
+                MapArrow[i].SetActive(true);
+            }
+
+            if (i == 0 && CutscenesController.cus1 == 1)
+            {
+                MapText[i].text = "Wishing hill";
+            }
+            else if (i == 1 && CutscenesController.cus3 == 1)
+            {
+                MapText[i].text = "Zexel town";
+            }
+            else if (i == 2 && CutscenesController.cus8 == 1)
+            {
+                MapText[i].text = "Wishing forest";
+            }
+            else if (i == 3)
+            {
+                MapText[i].text = "Inferno desert";
+            }
+            else if (i == 4)
+            {
+                MapText[i].text = "Zexel gate";
+            }
+            else if (i == 5)
+            {
+                MapText[i].text = "Mana gate";
+            }
+            else if (i == 6)
+            {
+                MapText[i].text = "Mana dimesion";
+            }
+            else if (i == 7)
+            {
+                MapText[i].text = "Mana temple";
+            }
+            else if (i == 8)
+            {
+                MapText[i].text = "Inferno volcano";
+            }
+            else if (i == 9)
+            {
+                MapText[i].text = "Inferno ice";
+            }
+            else if (i == 10)
+            {
+                MapText[i].text = "Alta inferno";
+            }
+            else if (i == 11)
+            {
+                MapText[i].text = "Zexel temple";
+            }
+            else if (i == 12)
+            {
+                MapText[i].text = "Mana Cllif";
+            }
+            else
+            {
+                MapText[i].text = "???";
+            }
+        }
 
         ShowLevelP1 = Global.LevelP1;
         ShowHPP1 = Global.CurHPP1;

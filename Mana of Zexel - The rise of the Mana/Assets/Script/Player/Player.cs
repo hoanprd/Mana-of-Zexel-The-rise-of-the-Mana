@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public Text show3;
     public GameObject show4;
     private bool heal, tqz, mqz;
+    public static int MapIndex;
     Vector2 movement;
 
     // Update is called once per frame
@@ -115,6 +116,7 @@ public class Player : MonoBehaviour
             ThiefTrigger1.despawn = false;
             ThiefTrigger2.despawn = false;
             ThiefTrigger3.despawn = false;
+            MapIndex = 1;
             if (CutscenesController.cus3 == 0)
                 SceneManager.LoadScene(9);
             else
@@ -127,6 +129,7 @@ public class Player : MonoBehaviour
             GoblinTrigger2.despawn = false;
             GoblinTrigger3.despawn = false;
             GoblinTrigger4.despawn = false;
+            MapIndex = 0;
             SceneManager.LoadScene(2);
         }
         if (collision.CompareTag("ZexelTownToTavern"))
@@ -196,6 +199,7 @@ public class Player : MonoBehaviour
             GoblinTrigger2.despawn = false;
             GoblinTrigger3.despawn = false;
             GoblinTrigger4.despawn = false;
+            MapIndex = 2;
             if (CutscenesController.cus9 == 0)
             {
                 show2.SetActive(true);
@@ -222,6 +226,7 @@ public class Player : MonoBehaviour
             GolemnTrigger1.despawn = false;
             GolemnTrigger2.despawn = false;
             GolemnTrigger3.despawn = false;
+            MapIndex = 1;
             SceneManager.LoadScene(3);
         }
         if (collision.CompareTag("HealPoint"))

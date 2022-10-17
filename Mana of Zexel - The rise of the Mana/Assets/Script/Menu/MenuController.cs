@@ -31,6 +31,8 @@ public class MenuController : MonoBehaviour
     }
     public void PressStartNewGame()
     {
+        //SetMapIndex
+        Player.MapIndex = 0;
         //Set weapon
         Global.VayneStaff1 = 0;
         Global.VayneStaff2 = 0;
@@ -138,6 +140,8 @@ public class MenuController : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("SaveGameD1") == 1)
         {
+            Player.MapIndex = 1;
+
             CutscenesController.cus1 = PlayerPrefs.GetInt("Savecus1D1");
             CutscenesController.cus2 = PlayerPrefs.GetInt("Savecus2D1");
             CutscenesController.cus3 = PlayerPrefs.GetInt("Savecus3D1");
@@ -221,6 +225,8 @@ public class MenuController : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("SaveGameD2") == 1)
         {
+            Player.MapIndex = 1;
+
             CutscenesController.cus1 = PlayerPrefs.GetInt("Savecus1D2");
             CutscenesController.cus2 = PlayerPrefs.GetInt("Savecus2D2");
             CutscenesController.cus3 = PlayerPrefs.GetInt("Savecus3D2");
@@ -306,6 +312,8 @@ public class MenuController : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("SaveGameD3") == 1)
         {
+            Player.MapIndex = 1;
+
             //Set cut
             CutscenesController.cus1 = PlayerPrefs.GetInt("Savecus1D3");
             CutscenesController.cus2 = PlayerPrefs.GetInt("Savecus2D3");
