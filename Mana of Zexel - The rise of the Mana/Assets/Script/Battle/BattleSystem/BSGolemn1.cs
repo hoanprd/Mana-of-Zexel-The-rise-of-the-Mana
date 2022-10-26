@@ -39,6 +39,7 @@ public class BSGolemn1 : MonoBehaviour
     public Text EXPP2;
     public Text EXPP3;
     public Text Money;
+    public Text ManaGemItem;
     public Text LevelP1;
     public Text LevelP2;
     public Text LevelP3;
@@ -501,6 +502,7 @@ public class BSGolemn1 : MonoBehaviour
             }
 
             Money.text = Global.Zen + " ";
+            ManaGemItem.text = "Mana Gem +1";
 
             Invoke("delayCheckE3Die1", 1f);
             if (once == 0)
