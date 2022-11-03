@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Cus1 : MonoBehaviour
 {
+    public Text NameTagText;
     public Text dia;
     public GameObject va1;
     public GameObject va2;
     public GameObject va3;
     public GameObject va4;
+    public GameObject NameTag;
     private int tang=0;
     // Start is called before the first frame update
     void Start()
@@ -22,55 +24,108 @@ public class Cus1 : MonoBehaviour
     void Update()
     {
         if (tang == 1)
-            dia.text = "Dante: Look Zane! This must be it, Mana of Zexel.";
+        {
+            NameTag.SetActive(true);
+            NameTagText.text = "Dante";
+            dia.text = "Look Zane! This must be it, Mana of Zexel.";
+        }
         else if (tang == 2)
-            dia.text = "Zane: You right. I can feel a huge amount of mana in that thing.";
+        {
+            NameTagText.text = "Zane";
+            dia.text = "You right. I can feel a huge amount of mana in that thing.";
+        }
         else if (tang == 3)
-            dia.text = "Dante: With this we cam help people everywhere with the fuel problem.";
+        {
+            NameTagText.text = "Dante";
+            dia.text = "With this we cam help people everywhere with the fuel problem.";
+        }
         else if (tang == 4)
-            dia.text = "Dante: Right Zane?";
+        {
+            NameTagText.text = "Dante";
+            dia.text = "Right Zane?";
+        }
         else if (tang == 5)
         {
             va1.SetActive(false);
             va2.SetActive(true);
-            dia.text = "Dante: Uh... What the?";
+            NameTagText.text = "Dante";
+            dia.text = "Uh... What the?";
         }
         else if (tang == 6)
-            dia.text = "Zane: That's pathetic, Dante.";
+        {
+            NameTagText.text = "Zane";
+            dia.text = "That's pathetic, Dante.";
+        }
         else if (tang == 7)
-            dia.text = "Dante: ...Uh... But why? Why you do this.";
+        {
+            NameTagText.text = "Dante";
+            dia.text = "...Uh... But why? Why you do this.";
+        }
         else if (tang == 8)
-            dia.text = "Zane: You should know that with this power, I can do anything. Even dominating this world.";
+        {
+            NameTagText.text = "Zane";
+            dia.text = "You should know that with this power, I can do anything. Even dominating this world.";
+        }
         else if (tang == 9)
-            dia.text = "Dante: ...Unbelievably, I was miserably betrayed. Anyway, your selfishness and ambition will destroy you.";
+        {
+            NameTagText.text = "Dante";
+            dia.text = "...Unbelievably, I was miserably betrayed. Anyway, your selfishness and ambition will destroy you.";
+        }
         else if (tang == 10)
-            dia.text = "Zane: Hahaha. So that was your last words Dante?";
+        {
+            NameTagText.text = "Zane";
+            dia.text = "Hahaha. So that was your last words Dante?";
+        }
         else if (tang == 11)
-            dia.text = "Zane: It's sad that you didn't get to see the world kneeling down on me. Once I revieve Malagam, I will become the strongest.";
+        {
+            NameTagText.text = "Zane";
+            dia.text = "It's sad that you didn't get to see the world kneeling down on me. Once I revieve Malagam, I will become the strongest.";
+        }
         else if (tang == 12)
-            dia.text = "Zane: Good night Dante. Hahahahahahaha...";
+        {
+            NameTagText.text = "Zane";
+            dia.text = "Good night Dante. Hahahahahahaha...";
+        }
         else if (tang == 13)
         {
             va2.SetActive(false);
             va3.SetActive(true);
+            NameTag.SetActive(false);
             dia.text = "1 year later";
         }
         else if (tang == 14)
-            dia.text = "Vayne: I'm going mom! Wish you stay healthy.";
+        {
+            NameTag.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "I'm going mom! Wish you stay healthy.";
+        }
         else if (tang == 15)
-            dia.text = "Jin: Well, it's been over a year and your father still hasn't returned. I hope you find your father again.";
+        {
+            NameTagText.text = "Jin";
+            dia.text = "Well, it's been over a year and your father still hasn't returned. I hope you find your father again.";
+        }
         else if (tang == 16)
-            dia.text = "Vayne: I will!";
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "I will!";
+        }
         else if (tang == 17)
         {
             va3.SetActive(false);
             va4.SetActive(true);
-            dia.text = "Vayne: Phuff... Am I nearing to Zexel town yet?";
+            NameTagText.text = "Vayne";
+            dia.text = "Phuff... Am I nearing to Zexel town yet?";
         }
         else if (tang == 18)
-            dia.text = "Thief: Stop there kid! Give me all your jewelry and valuables things.";
+        {
+            NameTagText.text = "Thief";
+            dia.text = "Stop there kid! Give me all your jewelry and valuables things.";
+        }
         else if (tang == 19)
-            dia.text = "Vayne: Are you kidding me? A thief in middel of the day? I think I have to teach this bandit a lesson!";
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "Are you kidding me? A thief in middel of the day? I think I have to teach this bandit a lesson!";
+        }
         else if (tang >= 20)
         {
             CutscenesController.cus1 = 1;

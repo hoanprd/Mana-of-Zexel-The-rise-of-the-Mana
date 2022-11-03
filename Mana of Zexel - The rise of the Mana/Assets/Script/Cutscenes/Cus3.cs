@@ -10,6 +10,7 @@ public class Cus3 : MonoBehaviour
     public Text dia;
     public GameObject va1;
     public GameObject VayneVAL1, AliaDAR1;
+    public GameObject NameTag;
     private int tang=0;
 
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class Cus3 : MonoBehaviour
         if (tang == 1)
         {
             AliaDAR1.SetActive(true);
+            NameTag.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "We have arrived at Zexel town!";
         }
