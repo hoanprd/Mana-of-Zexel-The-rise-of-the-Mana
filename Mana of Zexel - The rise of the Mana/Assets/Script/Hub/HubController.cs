@@ -93,7 +93,7 @@ public class HubController : MonoBehaviour
             }
             else if (i == 6)
             {
-                MapText[i].text = "Mana dimesion";
+                MapText[i].text = "Mana dimension";
             }
             else if (i == 7)
             {
