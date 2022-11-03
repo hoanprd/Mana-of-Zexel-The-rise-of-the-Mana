@@ -130,6 +130,11 @@ public class MenuController : MonoBehaviour
         MapController.WishingForestToZexelTown = false;
         MapController.InfinityDesertToZexelTown = false;
 
+        //Set ManaSynthesize
+        SynthesizeSystem.ManaSynthesize = 100;
+        SynthesizeSystem.ManaFireSynthesize = 0;
+        SynthesizeSystem.ManaIceSynthesize = 0;
+
         SceneManager.LoadScene(9);
     }
     public void PressLoadGame()
