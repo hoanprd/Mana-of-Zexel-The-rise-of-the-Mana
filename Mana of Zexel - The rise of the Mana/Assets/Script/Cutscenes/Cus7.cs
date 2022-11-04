@@ -117,11 +117,11 @@ public class Cus7 : MonoBehaviour
     {
         CutscenesController.cus7 = 1;
         if (tang >=17)
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene("Tavern");
         else
         {
             Global.Zen += 100;
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene("Tavern");
         }
     }
 }

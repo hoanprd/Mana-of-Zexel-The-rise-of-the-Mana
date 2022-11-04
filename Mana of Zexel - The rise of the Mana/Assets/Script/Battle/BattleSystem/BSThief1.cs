@@ -439,11 +439,11 @@ public class BSThief1 : MonoBehaviour
     }
     public void PressRun()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Wishing hill");
     }
     public void PressBackToTheMap2()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Wishing hill");
     }
     public void CheckP1Die()
     {
@@ -663,7 +663,7 @@ public class BSThief1 : MonoBehaviour
     }
     void delayCheckP1P2P3Die2()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Intro");
     }
     void delayCheckE1Die1()
     {

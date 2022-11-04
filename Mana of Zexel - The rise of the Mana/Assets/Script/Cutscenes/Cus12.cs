@@ -55,7 +55,7 @@ public class Cus12 : MonoBehaviour
         else if (tang >= 7)
         {
             CutscenesController.cus12 = 1;
-            SceneManager.LoadScene(10);
+            SceneManager.LoadScene("EndDemo");
         }
     }
     public void Pressnext()
@@ -65,6 +65,6 @@ public class Cus12 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus12 = 1;
-        SceneManager.LoadScene(10);
+        SceneManager.LoadScene("EndDemo");
     }
 }

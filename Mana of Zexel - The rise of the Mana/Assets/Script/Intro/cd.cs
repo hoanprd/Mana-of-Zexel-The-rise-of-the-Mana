@@ -24,7 +24,7 @@ public class cd : MonoBehaviour
         }
         if (ct < 0)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("StartMenu");
         }
     }
     public void SkipTimer()

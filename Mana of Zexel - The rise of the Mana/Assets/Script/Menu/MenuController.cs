@@ -135,7 +135,7 @@ public class MenuController : MonoBehaviour
         SynthesizeSystem.ManaFireSynthesize = 0;
         SynthesizeSystem.ManaIceSynthesize = 0;
 
-        SceneManager.LoadScene(9);
+        SceneManager.LoadScene("Cutscenes");
     }
     public void PressLoadGame()
     {
@@ -223,7 +223,7 @@ public class MenuController : MonoBehaviour
             ContainerController.Iron = PlayerPrefs.GetInt("SaveID1");
             ContainerController.Bom = PlayerPrefs.GetInt("SaveBD1");
 
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene("Save room");
         }
     }
     public void PressLoadGameData2()
@@ -310,7 +310,7 @@ public class MenuController : MonoBehaviour
             ContainerController.Iron = PlayerPrefs.GetInt("SaveID2");
             ContainerController.Bom = PlayerPrefs.GetInt("SaveBD2");
 
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene("Save room");
         }
     }
     public void PressLoadGameData3()
@@ -398,7 +398,7 @@ public class MenuController : MonoBehaviour
             ContainerController.Iron = PlayerPrefs.GetInt("SaveID3");
             ContainerController.Bom = PlayerPrefs.GetInt("SaveBD3");
 
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene("Save room");
         }
     }
     public void PressDLGameD1()

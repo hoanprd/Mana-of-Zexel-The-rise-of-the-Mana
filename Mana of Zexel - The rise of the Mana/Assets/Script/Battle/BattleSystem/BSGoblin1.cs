@@ -435,7 +435,7 @@ public class BSGoblin1 : MonoBehaviour
     }
     public void PressRun()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("Zexel town");
     }
     public void PressBackToTheMap2()
     {
@@ -445,7 +445,7 @@ public class BSGoblin1 : MonoBehaviour
             if (GlobalQuest.KillGoblinQuest > 4)
                 GlobalQuest.KillGoblinQuest = 4;
         }
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("Zexel town");
     }
     public void CheckP1Die()
     {
@@ -653,7 +653,7 @@ public class BSGoblin1 : MonoBehaviour
     }
     void delayCheckP1P2P3Die2()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Intro");
     }
     void delayCheckE2Die1()
     {

@@ -267,7 +267,7 @@ public class BSThief : MonoBehaviour
     }
     public void PressBackToTheMap()
     {
-        SceneManager.LoadScene(9);
+        SceneManager.LoadScene("Cutscenes");
     }
     public void CheckP1Die()
     {
@@ -353,7 +353,7 @@ public class BSThief : MonoBehaviour
     }
     void delayCheckP1Die2()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Intro");
     }
     void delayCheckE1Die1()
     {

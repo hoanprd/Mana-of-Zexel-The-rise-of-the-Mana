@@ -70,7 +70,7 @@ public class Cus10 : MonoBehaviour
         else if (tang >= 10)
         {
             CutscenesController.cus10 = 1;
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene("Wishing forest");
         }
     }
     public void Pressnext()
@@ -80,6 +80,6 @@ public class Cus10 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus10 = 1;
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("Wishing forest");
     }
 }

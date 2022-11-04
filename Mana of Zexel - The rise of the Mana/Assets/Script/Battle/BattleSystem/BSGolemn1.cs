@@ -438,12 +438,12 @@ public class BSGolemn1 : MonoBehaviour
     }
     public void PressRun()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("Wishing forest");
     }
     public void PressBackToTheMap2()
     {
         ContainerController.ManaGem += 1;
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("Wishing forest");
     }
     public void CheckP1Die()
     {
@@ -665,7 +665,7 @@ public class BSGolemn1 : MonoBehaviour
     }
     void delayCheckP1P2P3Die2()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Intro");
     }
     void delayCheckE3Die1()
     {

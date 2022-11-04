@@ -130,7 +130,7 @@ public class Cus2 : MonoBehaviour
         else if (tang >= 21)
         {
             CutscenesController.cus2 = 1;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene("Wishing hill");
         }
     }
     public void Pressnext()
@@ -140,6 +140,6 @@ public class Cus2 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus2 = 1;
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Wishing hill");
     }
 }
