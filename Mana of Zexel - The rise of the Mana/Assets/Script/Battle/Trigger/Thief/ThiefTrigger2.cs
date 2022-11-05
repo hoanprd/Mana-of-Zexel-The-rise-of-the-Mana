@@ -25,7 +25,7 @@ public class ThiefTrigger2 : MonoBehaviour
         {
             HPMPBarController.EIndex = 1;
             despawn = true;
-            SceneManager.LoadScene(12);
+            SceneManager.LoadScene("BSThief 1");
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

@@ -24,7 +24,7 @@ public class GolemnTrigger1 : MonoBehaviour
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
             HPMPBarController.EIndex = 3;
-            SceneManager.LoadScene(14);
+            SceneManager.LoadScene("BSGolemn 1");
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

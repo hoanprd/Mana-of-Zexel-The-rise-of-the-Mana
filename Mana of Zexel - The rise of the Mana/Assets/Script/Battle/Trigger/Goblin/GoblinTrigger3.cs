@@ -24,7 +24,7 @@ public class GoblinTrigger3 : MonoBehaviour
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
             HPMPBarController.EIndex = 2;
-            SceneManager.LoadScene(13);
+            SceneManager.LoadScene("BSGoblin 1");
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
