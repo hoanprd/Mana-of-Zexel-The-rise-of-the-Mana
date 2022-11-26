@@ -23,6 +23,8 @@ public class BSThief1 : MonoBehaviour
     public GameObject MariaExp;
     public GameObject MariaPlusExp;
     public GameObject Lose_panel;
+    public Text PDamage;
+    public Text EDamage;
     public Text num1;
     public Text num2;
     public Text num3;
@@ -157,6 +159,7 @@ public class BSThief1 : MonoBehaviour
             if (dem == 1)
             {
                 tb.yes_thief = 1;
+                EDamage.text = "-" + Global.DamageE1;
                 Invoke("delayE1", 1f);
                 dem = 0;
             }
@@ -240,6 +243,7 @@ public class BSThief1 : MonoBehaviour
     {
         pb.yes1 = 1;
         show1 = 1;
+        PDamage.text = "-" + Global.DamageP1;
         Invoke("delayP1PressAttack", 1f);
         dem = 1;
     }
@@ -247,6 +251,7 @@ public class BSThief1 : MonoBehaviour
     {
         pb.yes3 = 1;
         show2 = 1;
+        PDamage.text = "-" + Global.DamageP2;
         Invoke("delayP2PressAttack", 1f);
         dem = 1;
     }
@@ -254,6 +259,7 @@ public class BSThief1 : MonoBehaviour
     {
         pb.yes5 = 1;
         show3 = 1;
+        PDamage.text = "-" + Global.DamageP3;
         Invoke("delayP3PressAttack", 1f);
         dem = 1;
     }
@@ -263,6 +269,8 @@ public class BSThief1 : MonoBehaviour
         {
             pb.yes2 = 1;
             show1 = 1;
+            int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 100 / 100);
+            PDamage.text = "-" + DamgeCal;
             Invoke("delayP1PressSkill", 1f);
             dem = 1;
         }
@@ -273,6 +281,8 @@ public class BSThief1 : MonoBehaviour
         {
             pb.yes4 = 1;
             show2 = 1;
+            int DamgeCal = Global.DamageP2 + (Global.DamageP2 * 100 / 100);
+            PDamage.text = "-" + DamgeCal;
             Invoke("delayP2PressSkill", 1f);
             dem = 1;
         }
@@ -283,6 +293,10 @@ public class BSThief1 : MonoBehaviour
         {
             pb.yes6 = 1;
             show3 = 1;
+            int HealAmount = Global.DamageP3 * 20 / 100;
+            showr2.SetActive(true);
+            showr1.text = "HP +" + HealAmount;
+            Invoke("delayshowr", 2f);
             Invoke("delayP3PressSkill", 1f);
             dem = 1;
         }
@@ -416,6 +430,7 @@ public class BSThief1 : MonoBehaviour
             //showr2.SetActive(true);
             //showr1.text = "MP +50 MP +30";
             ContainerController.Bom -= 1;
+            PDamage.text = "-200";
             a1 -= 1;
             dem_turn += 1;
             dem = 1;
@@ -529,6 +544,7 @@ public class BSThief1 : MonoBehaviour
 
         E1AttackTarget();
 
+        EDamage.text = "";
         aE1 -= 1;
         dem_turn += 1;
         if (aE1 == 0)
@@ -562,6 +578,7 @@ public class BSThief1 : MonoBehaviour
     {
         ShowP1Panel(false);
         Global.HPE1 -= Global.DamageP1;
+        PDamage.text = "";
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
@@ -575,6 +592,7 @@ public class BSThief1 : MonoBehaviour
     {
         ShowP2Panel(false);
         Global.HPE1 -= Global.DamageP2;
+        PDamage.text = "";
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
@@ -588,6 +606,7 @@ public class BSThief1 : MonoBehaviour
     {
         ShowP3Panel(false);
         Global.HPE1 -= Global.DamageP3;
+        PDamage.text = "";
         a3 -= 1;
         show3 = 0;
         dem_turn += 1;
@@ -601,6 +620,7 @@ public class BSThief1 : MonoBehaviour
     {
         Global.CurMPP1 -= 20;
         Global.HPE1 = Global.HPE1 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
+        PDamage.text = "";
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
@@ -614,6 +634,7 @@ public class BSThief1 : MonoBehaviour
     {
         Global.CurMPP2 -= 20;
         Global.HPE1 = Global.HPE1 - (Global.DamageP2 + (Global.DamageP2 * 100 / 100));
+        PDamage.text = "";
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
@@ -756,6 +777,7 @@ public class BSThief1 : MonoBehaviour
     }
     void delayshowr()
     {
+        PDamage.text = "";
         showr2.SetActive(false);
     }
 }

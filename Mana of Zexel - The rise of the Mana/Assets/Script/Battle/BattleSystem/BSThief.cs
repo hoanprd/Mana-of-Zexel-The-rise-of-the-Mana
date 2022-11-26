@@ -15,6 +15,8 @@ public class BSThief : MonoBehaviour
     public GameObject P1_panel;
     public GameObject Win_panel;
     public GameObject Lose_panel;
+    public Text PDamage;
+    public Text EDamage;
     public Text num1;
     public Text num2;
     public Text num3;
@@ -72,6 +74,7 @@ public class BSThief : MonoBehaviour
                 if (dem == 1)
                 {
                     tb.yes_thief = 1;
+                    EDamage.text = "-" + Global.DamageE1;
                     Invoke("delayE1", 1f);
                     dem = 0;
                 }
@@ -91,6 +94,7 @@ public class BSThief : MonoBehaviour
                 if (dem == 1)
                 {
                     tb.yes_thief = 1;
+                    EDamage.text = "-" + Global.DamageE1;
                     Invoke("delayE1", 1f);
                     dem = 0;
                 }
@@ -120,6 +124,7 @@ public class BSThief : MonoBehaviour
         pb.yes1 = 1;
         show = 1;
         ShowP1Panel(false);
+        PDamage.text = "-" + Global.DamageP1;
         Invoke("delayP1PressAttack", 1f);
         dem = 1;
     }
@@ -130,6 +135,8 @@ public class BSThief : MonoBehaviour
             pb.yes2 = 1;
             show = 1;
             ShowP1Panel(false);
+            int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 100 / 100);
+            PDamage.text = "-" + DamgeCal;
             Invoke("delayP1PressSkill", 1f);
             dem = 1;
         }
@@ -241,6 +248,7 @@ public class BSThief : MonoBehaviour
             //showr2.SetActive(true);
             //showr1.text = "MP +50 MP +30";
             ContainerController.Bom -= 1;
+            PDamage.text = "-200";
             a1 -= 1;
             dem = 1;
             if (a1 == 0)
@@ -308,6 +316,7 @@ public class BSThief : MonoBehaviour
         HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
         MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
         HPE1.text = "HP: " + Global.HPE1.ToString();
+        EDamage.text = "";
         aE1 -= 1;
         if (aE1 == 0)
         {
@@ -321,6 +330,7 @@ public class BSThief : MonoBehaviour
         HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
         MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
         HPE1.text = "HP: " + Global.HPE1.ToString();
+        PDamage.text = "";
         a1 -= 1;
         show = 0;
         if (a1 == 0)
@@ -338,6 +348,7 @@ public class BSThief : MonoBehaviour
         HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
         MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
         HPE1.text = "HP: " + Global.HPE1.ToString();
+        PDamage.text = "";
         a1 -= 1;
         show = 0;
         if (a1 == 0)
@@ -394,6 +405,7 @@ public class BSThief : MonoBehaviour
     }
     void delayshowr()
     {
+        PDamage.text = "";
         showr2.SetActive(false);
     }
 }
