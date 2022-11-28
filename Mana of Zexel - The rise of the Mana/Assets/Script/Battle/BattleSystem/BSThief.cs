@@ -74,6 +74,7 @@ public class BSThief : MonoBehaviour
                 if (dem == 1)
                 {
                     tb.yes_thief = 1;
+                    EDamage.color = Color.red;
                     EDamage.text = "-" + Global.DamageE1;
                     Invoke("delayE1", 1f);
                     dem = 0;
@@ -94,6 +95,7 @@ public class BSThief : MonoBehaviour
                 if (dem == 1)
                 {
                     tb.yes_thief = 1;
+                    EDamage.color = Color.red;
                     EDamage.text = "-" + Global.DamageE1;
                     Invoke("delayE1", 1f);
                     dem = 0;
@@ -124,6 +126,7 @@ public class BSThief : MonoBehaviour
         pb.yes1 = 1;
         show = 1;
         ShowP1Panel(false);
+        PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP1;
         Invoke("delayP1PressAttack", 1f);
         dem = 1;
@@ -136,6 +139,7 @@ public class BSThief : MonoBehaviour
             show = 1;
             ShowP1Panel(false);
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 100 / 100);
+            PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
             Invoke("delayP1PressSkill", 1f);
             dem = 1;
@@ -248,6 +252,7 @@ public class BSThief : MonoBehaviour
             //showr2.SetActive(true);
             //showr1.text = "MP +50 MP +30";
             ContainerController.Bom -= 1;
+            PDamage.color = Color.red;
             PDamage.text = "-200";
             a1 -= 1;
             dem = 1;
