@@ -123,12 +123,12 @@ public class MenuController : MonoBehaviour
         MapController.ZexelTownToTavern = false;
         MapController.TavernToSaveRoom = false;
         MapController.ZexelTownToWishingForest = false;
-        MapController.ZexelTownToInfinityDesert = false;
+        MapController.ZexelTownToInfernoDesert = false;
         MapController.ZexelTownToWishingHill = false;
         MapController.TavernToZexelTown = false;
         MapController.SaveRoomToTavern = false;
         MapController.WishingForestToZexelTown = false;
-        MapController.InfinityDesertToZexelTown = false;
+        MapController.InfernoDesertToZexelTown = false;
 
         //Set ManaSynthesize
         SynthesizeSystem.ManaSynthesize = 100;

@@ -5,8 +5,8 @@ using UnityEngine;
 public class MapController : MonoBehaviour
 {
     //public Transform target2;
-    public static bool WishingHillToZexelTown, ZexelTownToTavern, TavernToSaveRoom, ZexelTownToGroceryStore, ZexelTownToWeaponStore, ZexelTownToWishingForest, ZexelTownToInfinityDesert;
-    public static bool ZexelTownToWishingHill, TavernToZexelTown, SaveRoomToTavern, GroceryStoreToZexelTown, WeaponStoreToZexelTown, WishingForestToZexelTown, InfinityDesertToZexelTown;
+    public static bool WishingHillToZexelTown, ZexelTownToTavern, TavernToSaveRoom, ZexelTownToGroceryStore, ZexelTownToWeaponStore, ZexelTownToWishingForest, ZexelTownToInfernoDesert;
+    public static bool ZexelTownToWishingHill, TavernToZexelTown, SaveRoomToTavern, GroceryStoreToZexelTown, WeaponStoreToZexelTown, WishingForestToZexelTown, InfernoDesertToZexelTown;
 
     // Start is called before the first frame update
     void Start()
@@ -94,6 +94,20 @@ public class MapController : MonoBehaviour
             PlayerPrefs.SetFloat("y", -40);
             PlayerPrefs.SetFloat("z", 0);
             WishingForestToZexelTown = false;
+        }
+        else if (ZexelTownToInfernoDesert == true)
+        {
+            PlayerPrefs.SetFloat("x", -1.25f);
+            PlayerPrefs.SetFloat("y", 9);
+            PlayerPrefs.SetFloat("z", 0);
+            ZexelTownToInfernoDesert = false;
+        }
+        else if (InfernoDesertToZexelTown == true)
+        {
+            PlayerPrefs.SetFloat("x", -71.5f);
+            PlayerPrefs.SetFloat("y", -21.5f);
+            PlayerPrefs.SetFloat("z", 0);
+            InfernoDesertToZexelTown = false;
         }
 
         transform.position = new Vector3(PlayerPrefs.GetFloat("x"), PlayerPrefs.GetFloat("y"), PlayerPrefs.GetFloat("z"));

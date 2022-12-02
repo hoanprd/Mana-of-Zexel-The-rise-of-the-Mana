@@ -229,6 +229,25 @@ public class Player : MonoBehaviour
             MapIndex = 1;
             SceneManager.LoadScene("Zexel town");
         }
+        if (collision.CompareTag("ZexelTownToInfernoDesert"))
+        {
+            MapController.ZexelTownToInfernoDesert = true;
+            GoblinTrigger1.despawn = false;
+            GoblinTrigger2.despawn = false;
+            GoblinTrigger3.despawn = false;
+            GoblinTrigger4.despawn = false;
+            MapIndex = 3;
+            SceneManager.LoadScene("Inferno desert");
+        }
+        if (collision.CompareTag("InfernoDesertToZexelTown"))
+        {
+            MapController.InfernoDesertToZexelTown = true;
+            //GolemnTrigger1.despawn = false;
+            //GolemnTrigger2.despawn = false;
+            //GolemnTrigger3.despawn = false;
+            MapIndex = 1;
+            SceneManager.LoadScene("Zexel town");
+        }
         if (collision.CompareTag("HealPoint"))
         {
             heal = true;

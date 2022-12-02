@@ -20,6 +20,7 @@ public class Global : MonoBehaviour
     public static int HPE1, DamageE1, SpeedE1;
     public static int HPE2, DamageE2, SpeedE2;
     public static int HPE3, DamageE3, SpeedE3;
+    public static int HPE4, DamageE4, SpeedE4;
 
     //Equip
     public static int VayneStaff1, VayneStaff2, VayneStaff3, AlchemistArmor1, AlchemistArmor2, AlchemistArmor3, VayneWeaponStatus, VayneArmorStatus;
@@ -40,5 +41,9 @@ public class Global : MonoBehaviour
         HPE3 = 300;
         DamageE3 = 40;
         SpeedE3 = 20;
+
+        HPE4 = 600;
+        DamageE4 = 60;
+        SpeedE4 = 20;
     }
 }
