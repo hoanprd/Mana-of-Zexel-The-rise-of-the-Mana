@@ -164,6 +164,14 @@ public class BSInfernoScorpion1 : MonoBehaviour
                     ShowP3Panel(false);
             }
         }
+
+        if (a1 == 0 && a2 == 0 && a3 == 0 && aE4 == 0)
+        {
+            a1 = Global.SpeedP1 / 10;
+            a2 = Global.SpeedP2 / 10;
+            a3 = Global.SpeedP3 / 10;
+            aE4 = Global.SpeedBE4 / 10;
+        }
     }
 
     public void UpdateUIText()
@@ -305,7 +313,14 @@ public class BSInfernoScorpion1 : MonoBehaviour
     }
     public void PressItem()
     {
-        show1 = 1;
+        if (UseItemIndex == 1)
+        {
+            show1 = 1;
+        }
+        else if (UseItemIndex == 3)
+        {
+            show3 = 1;
+        }
         num1.text = ContainerController.HealPotion + "";
         num2.text = ContainerController.ManaPotion + "";
         num3.text = ContainerController.ElixirPotion + "";
@@ -319,25 +334,31 @@ public class BSInfernoScorpion1 : MonoBehaviour
             Item_panel.SetActive(false);
 
             if (UseItemIndex == 1)
+            {
+                a1 -= 1;
                 Global.CurHPP1 += 50;
+                if (Global.CurHPP1 > Global.MaxHPP1)
+                {
+                    Global.CurHPP1 = Global.MaxHPP1;
+                }
+                show1 = 0;
+            }
             else if (UseItemIndex == 3)
+            {
+                a3 -= 1;
                 Global.CurHPP3 += 50;
+                if (Global.CurHPP3 > Global.MaxHPP3)
+                {
+                    Global.CurHPP3 = Global.MaxHPP3;
+                }
+                show3 = 0;
+            }
 
             showr2.SetActive(true);
             showr1.text = "HP +50";
             ContainerController.HealPotion -= 1;
-            if (Global.CurHPP1 > Global.MaxHPP1)
-            {
-                Global.CurHPP1 = Global.MaxHPP1;
-            }
-            show1 = 0;
-            a1 -= 1;
-            dem = 2;
+            dem = 3;
             dem_turn += 1;
-            if (a1 == 0 || a3 == 0)
-            {
-                aE4 = Global.SpeedE4 / 10;
-            }
             Invoke("delayshowr", 2f);
         }
         else
@@ -354,25 +375,31 @@ public class BSInfernoScorpion1 : MonoBehaviour
             Item_panel.SetActive(false);
 
             if (UseItemIndex == 1)
+            {
+                a1 -= 1;
                 Global.CurMPP1 += 30;
+                if (Global.CurMPP1 > Global.MaxMPP1)
+                {
+                    Global.CurMPP1 = Global.MaxMPP1;
+                }
+                show1 = 0;
+            }
             else if (UseItemIndex == 3)
+            {
+                a3 -= 1;
                 Global.CurMPP3 += 30;
+                if (Global.CurMPP3 > Global.MaxMPP3)
+                {
+                    Global.CurMPP3 = Global.MaxMPP3;
+                }
+                show3 = 0;
+            }
 
             showr2.SetActive(true);
             showr1.text = "MP +30";
             ContainerController.ManaPotion -= 1;
-            if (Global.CurMPP1 > Global.MaxMPP1)
-            {
-                Global.CurMPP1 = Global.MaxMPP1;
-            }
-            show1 = 0;
-            a1 -= 1;
-            dem = 2;
+            dem = 3;
             dem_turn += 1;
-            if (a1 == 0 || a3 == 0)
-            {
-                aE4 = Global.SpeedE4 / 10;
-            }
             Invoke("delayshowr", 2f);
         }
         else
@@ -390,33 +417,40 @@ public class BSInfernoScorpion1 : MonoBehaviour
 
             if (UseItemIndex == 1)
             {
+                a1 -= 1;
                 Global.CurHPP1 += 50;
                 Global.CurMPP1 += 30;
+                if (Global.CurHPP1 > Global.MaxHPP1)
+                {
+                    Global.CurHPP1 = Global.MaxHPP1;
+                }
+                if (Global.CurMPP1 > Global.MaxMPP1)
+                {
+                    Global.CurMPP1 = Global.MaxMPP1;
+                }
+                show1 = 0;
             }
             else if (UseItemIndex == 3)
             {
+                a3 -= 1;
                 Global.CurHPP3 += 50;
                 Global.CurMPP3 += 30;
+                if (Global.CurHPP3 > Global.MaxHPP3)
+                {
+                    Global.CurHPP3 = Global.MaxHPP3;
+                }
+                if (Global.CurMPP3 > Global.MaxMPP3)
+                {
+                    Global.CurMPP3 = Global.MaxMPP3;
+                }
+                show3 = 0;
             }
 
             showr2.SetActive(true);
             showr1.text = "MP +50 MP +30";
             ContainerController.ElixirPotion -= 1;
-            if (Global.CurHPP1 > Global.MaxHPP1)
-            {
-                Global.CurHPP1 = Global.MaxHPP1;
-            }
-            if (Global.CurMPP1 > Global.MaxMPP1)
-            {
-                Global.CurMPP1 = Global.MaxMPP1;
-            }
-            a1 -= 1;
             dem_turn += 1;
-            dem = 2;
-            if (a1 == 0 || a3 == 0)
-            {
-                aE4 = Global.SpeedE4 / 10;
-            }
+            dem = 3;
             Invoke("delayshowr", 2f);
         }
         else
@@ -432,18 +466,21 @@ public class BSInfernoScorpion1 : MonoBehaviour
         {
             Item_panel.SetActive(false);
             Global.HPE4 -= 200;
-            //showr2.SetActive(true);
-            //showr1.text = "MP +50 MP +30";
+            if (UseItemIndex == 1)
+            {
+                a1 -= 1;
+                show1 = 0;
+            }
+            else if (UseItemIndex == 3)
+            {
+                a3 -= 1;
+                show3 = 0;
+            }
             ContainerController.Bom -= 1;
             PDamage.color = Color.red;
             PDamage.text = "-200";
-            a1 -= 1;
             dem_turn += 1;
-            dem = 2;
-            if (a1 == 0 || a3 == 0)
-            {
-                aE4 = Global.SpeedE4 / 10;
-            }
+            dem = 3;
             Invoke("delayshowr", 2f);
         }
         else
@@ -455,7 +492,14 @@ public class BSInfernoScorpion1 : MonoBehaviour
     }
     public void CloseItemPanel()
     {
-        show1 = 0;
+        if (UseItemIndex == 1)
+        {
+            show1 = 0;
+        }
+        else if (UseItemIndex == 3)
+        {
+            show3 = 0;
+        }
         Item_panel.SetActive(false);
     }
     public void PressRun()
@@ -472,6 +516,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
         if(Global.CurHPP1 <= 0)
         {
             pb.dead1 = 1;
+            a1 = 0;
         }
     }
     public void CheckP2Die()
@@ -479,6 +524,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
         if(Global.CurHPP2 <= 0)
         {
             pb.dead2 = 1;
+            a2 = 0;
         }
     }
     public void CheckP3Die()
@@ -486,15 +532,28 @@ public class BSInfernoScorpion1 : MonoBehaviour
         if (Global.CurHPP3 <= 0)
         {
             pb.dead3 = 1;
+            a3 = 0;
         }
     }
     public void CheckP1P2P3Die()
     {
-        if (Global.CurHPP1 <= 0 && Global.CurHPP2 <= 0)
+        if (CutscenesController.cus12 == 0)
         {
-            UpdateUIText();
-            Invoke("delayCheckP1P2P3Die1", 1f);
-            Invoke("delayCheckP1P2P3Die2", 2f);
+            if (Global.CurHPP1 <= 0 && Global.CurHPP2 <= 0)
+            {
+                UpdateUIText();
+                Invoke("delayCheckP1P2P3Die1", 1f);
+                Invoke("delayCheckP1P2P3Die2", 2f);
+            }
+        }
+        else
+        {
+            if (Global.CurHPP1 <= 0 && Global.CurHPP2 <= 0 && Global.CurHPP3 <= 0)
+            {
+                UpdateUIText();
+                Invoke("delayCheckP1P2P3Die1", 1f);
+                Invoke("delayCheckP1P2P3Die2", 2f);
+            }
         }
     }
     public void CheckE4Die()
@@ -545,12 +604,6 @@ public class BSInfernoScorpion1 : MonoBehaviour
 
         aE4 -= 1;
         dem_turn += 1;
-        if (aE4 == 0)
-        {
-            a1 = Global.SpeedP1 / 10;
-            a2 = Global.SpeedP2 / 10;
-            a3 = Global.SpeedP3 / 10;
-        }
     }
 
     void E4AttackTarget()
@@ -593,10 +646,6 @@ public class BSInfernoScorpion1 : MonoBehaviour
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
-        if (a1 == 0)
-        {
-            aE4 = Global.SpeedE4 / 10;
-        }
         CheckE4Die();
     }
     void delayP2PressAttack()
@@ -607,10 +656,6 @@ public class BSInfernoScorpion1 : MonoBehaviour
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
-        if (a2 == 0)
-        {
-            aE4 = Global.SpeedE4 / 10;
-        }
         CheckE4Die();
     }
     void delayP3PressAttack()
@@ -621,10 +666,6 @@ public class BSInfernoScorpion1 : MonoBehaviour
         a3 -= 1;
         show3 = 0;
         dem_turn += 1;
-        if (a3 == 0)
-        {
-            aE4 = Global.SpeedE4 / 10;
-        }
         CheckE4Die();
     }
     void delayP1PressSkill()
@@ -635,10 +676,6 @@ public class BSInfernoScorpion1 : MonoBehaviour
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
-        if (a1 == 0)
-        {
-            aE4 = Global.SpeedE4 / 10;
-        }
         CheckE4Die();
     }
     void delayP2PressSkill()
@@ -649,10 +686,6 @@ public class BSInfernoScorpion1 : MonoBehaviour
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
-        if (a2 == 0)
-        {
-            aE4 = Global.SpeedE4 / 10;
-        }
         CheckE4Die();
     }
     void delayP3PressSkill()
@@ -662,19 +695,19 @@ public class BSInfernoScorpion1 : MonoBehaviour
         int CheckMaxhealP1 = Global.MaxHPP1 - Global.CurHPP1;
         int CheckMaxhealP2 = Global.MaxHPP2 - Global.CurHPP2;
 
-        if (HealAmount < CheckMaxhealP1)
+        if ((HealAmount < CheckMaxhealP1) && (Global.CurHPP1 > 0))
         {
             Global.CurHPP1 += HealAmount;
         }
-        else
+        else if ((HealAmount >= CheckMaxhealP1) && (Global.CurHPP1 > 0))
         {
             Global.CurHPP1 = Global.MaxHPP1;
         }
-        if (HealAmount < CheckMaxhealP2)
+        if ((HealAmount < CheckMaxhealP2) && (Global.CurHPP2 > 0))
         {
             Global.CurHPP2 += HealAmount;
         }
-        else
+        else if ((HealAmount >= CheckMaxhealP2) && (Global.CurHPP2 > 0))
         {
             Global.CurHPP2 = Global.MaxHPP2;
         }
@@ -683,10 +716,6 @@ public class BSInfernoScorpion1 : MonoBehaviour
         a3 -= 1;
         show3 = 0;
         dem_turn += 1;
-        if (a3 == 0)
-        {
-            aE4 = Global.SpeedE4 / 10;
-        }
     }
     void delayCheckP1P2P3Die1()
     {
@@ -706,15 +735,15 @@ public class BSInfernoScorpion1 : MonoBehaviour
     {
         if (Global.LevelP1 < 30)
         {
-            Global.CurEXPP1 += 40;
+            Global.CurEXPP1 += 60;
         }
         if (Global.LevelP2 < 30)
         {
-            Global.CurEXPP2 += 40;
+            Global.CurEXPP2 += 60;
         }
         if (Global.LevelP3 < 30 && P3Availabel == true)
         {
-            Global.CurEXPP3 += 40;
+            Global.CurEXPP3 += 60;
         }
         Global.Zen += 40;
         while (Global.CurEXPP1 >= Global.MaxEXPP1)

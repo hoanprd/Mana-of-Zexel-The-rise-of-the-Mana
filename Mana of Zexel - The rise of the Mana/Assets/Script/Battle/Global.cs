@@ -22,6 +22,8 @@ public class Global : MonoBehaviour
     public static int HPE3, DamageE3, SpeedE3;
     public static int HPE4, DamageE4, SpeedE4;
 
+    public static int HPBE4, DamageBE4, SpeedBE4;
+
     //Equip
     public static int VayneStaff1, VayneStaff2, VayneStaff3, AlchemistArmor1, AlchemistArmor2, AlchemistArmor3, VayneWeaponStatus, VayneArmorStatus;
     public static int AliaShoes1, AliaShoes2, AliaShoes3, WarriorArmor1, WarriorArmor2, WarriorArmor3, AliaWeaponStatus, AliaArmorStatus;
@@ -30,6 +32,7 @@ public class Global : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Mob
         HPE1 = 100;
         DamageE1 = 10;
         SpeedE1 = 10;
@@ -45,5 +48,10 @@ public class Global : MonoBehaviour
         HPE4 = 600;
         DamageE4 = 60;
         SpeedE4 = 20;
+
+        //Boss
+        HPBE4 = 30000;
+        DamageBE4 = 400;//120
+        SpeedBE4 = 30;
     }
 }

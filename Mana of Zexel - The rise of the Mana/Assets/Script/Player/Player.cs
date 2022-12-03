@@ -365,7 +365,66 @@ public class Player : MonoBehaviour
             MapIndex = 6;
             SceneManager.LoadScene("Mana dimension");
         }
-
+        if (collision.CompareTag("InfernoVolcanoToInsideVolcanoCave"))
+        {
+            MapController.InfernoVolcanoToInsideVolcanoCave = true;
+            MapIndex = 8;
+            SceneManager.LoadScene("InsideVolcanoCave");
+        }
+        if (collision.CompareTag("InsideVolcanoCaveToInfernoVolcano"))
+        {
+            MapController.InsideVolcanoCaveToInfernoVolcano = true;
+            MapIndex = 8;
+            SceneManager.LoadScene("Inferno volcano");
+        }
+        if (collision.CompareTag("InfernoVolcanoToAltaInferno"))
+        {
+            MapController.InfernoVolcanoToAltaInferno = true;
+            MapIndex = 10;
+            SceneManager.LoadScene("Alta inferno");
+        }
+        if (collision.CompareTag("AltaInfernoToInfernoVolcano"))
+        {
+            MapController.AltaInfernoToInfernoVolcano = true;
+            MapIndex = 8;
+            SceneManager.LoadScene("Inferno volcano");
+        }
+        if (collision.CompareTag("InfernoIceToInsideIceCave"))
+        {
+            MapController.InfernoIceToInsideIceCave = true;
+            MapIndex = 9;
+            SceneManager.LoadScene("InsideIceCave");
+        }
+        if (collision.CompareTag("InsideIceCaveToInfernoIce"))
+        {
+            MapController.InsideIceCaveToInfernoIce = true;
+            MapIndex = 9;
+            SceneManager.LoadScene("Inferno ice");
+        }
+        if (collision.CompareTag("InfernoIceToAltaInferno"))
+        {
+            MapController.InfernoIceToAltaInferno = true;
+            MapIndex = 10;
+            SceneManager.LoadScene("Alta inferno");
+        }
+        if (collision.CompareTag("AltaInfernoToInfernoIce"))
+        {
+            MapController.AltaInfernoToInfernoIce = true;
+            MapIndex = 9;
+            SceneManager.LoadScene("Inferno Ice");
+        }
+        if (collision.CompareTag("ZexelGateToZexelTemple"))
+        {
+            MapController.ZexelGateToZexelTemple = true;
+            MapIndex = 11;
+            SceneManager.LoadScene("Zexel temple");
+        }
+        if (collision.CompareTag("ZexelTempleToZexelGate"))
+        {
+            MapController.ZexelTempleToZexelGate = true;
+            MapIndex = 4;
+            SceneManager.LoadScene("Zexel gate");
+        }
 
         if (collision.CompareTag("HealPoint"))
         {

@@ -5,11 +5,11 @@ using System.Threading;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class BSGolemn1 : MonoBehaviour
+public class BSIronGolemn1 : MonoBehaviour
 {
     //Global gb;
     PlayerBattle pb;
-    GolemnBattle GB;
+    IronGolemnBattle IGB;
     public GameObject Item_panel;
     public GameObject showr2;
     public GameObject P1_panel;
@@ -36,7 +36,7 @@ public class BSGolemn1 : MonoBehaviour
     public Text MP2;
     public Text HP3;
     public Text MP3;
-    public Text HPE3;
+    public Text HPBE4;
     public Text EXPP1;
     public Text EXPP2;
     public Text EXPP3;
@@ -51,27 +51,28 @@ public class BSGolemn1 : MonoBehaviour
     public GameObject lu3;
     public GameObject HPMP;
     public GameObject NB;
-    public int a1, a2, a3, aE3;
+    public int a1, a2, a3, aBE4;
     public int stop = 0;
     private int dem = 0;
     private int dem_turn = 1;
     private int once = 0;
-    private int show1 = 0;
+    public int show1 = 0;
     public int show2 = 0;
     public int show3 = 0;
-    public int E3Hit;
+    public int BE4Hit;
     public bool P2Available, P3Availabel;
     public int UseItemIndex;
+    public int BE4ANum, TurnIndex;
     // Start is called before the first frame update
     void Start()
     {
         //gb = FindObjectOfType<Global>();
         pb = FindObjectOfType<PlayerBattle>();
-        GB = FindObjectOfType<GolemnBattle>();
+        IGB = FindObjectOfType<IronGolemnBattle>();
         a1 = Global.SpeedP1 / 10;
         a2 = Global.SpeedP2 / 10;
         a3 = Global.SpeedP3 / 10;
-        aE3 = Global.SpeedE3 / 10;
+        aBE4 = Global.SpeedBE4 / 10;
 
         if (CutscenesController.cus12 == 0)
         {
@@ -80,6 +81,7 @@ public class BSGolemn1 : MonoBehaviour
             HP3.text = "";
             MP3.text = "";
             P3Availabel = false;
+            a3 = 0;
         }
         else
         {
@@ -99,21 +101,22 @@ public class BSGolemn1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckE3Die();
+        CheckBE4Die();
         CheckP1P2P3Die();
         CheckP1Die();
         CheckP2Die();
         CheckP3Die();
         UpdateUIText();
 
-        if (Global.SpeedP2 >= Global.SpeedE3)
+        if (Global.SpeedP2 >= Global.SpeedBE4)
         {
             if(a2 > 0 && Global.CurHPP2 > 0)
             {
-                CheckE3Die();
+                CheckBE4Die();
                 CheckP1Die();
                 CheckP2Die();
                 CheckP1P2P3Die();
+                TurnIndex = 2;
                 if(show2 == 0)
                     ShowP2Panel(true);
                 else
@@ -121,7 +124,7 @@ public class BSGolemn1 : MonoBehaviour
             }
             else if (a1 > 0 && Global.CurHPP1 > 0)
             {
-                CheckE3Die();
+                CheckBE4Die();
                 CheckP1Die();
                 CheckP2Die();
                 CheckP1P2P3Die();
@@ -131,20 +134,25 @@ public class BSGolemn1 : MonoBehaviour
                 else
                     ShowP1Panel(false);
             }
-            else if (aE3 > 0 && Global.HPE3 > 0)
+            else if (aBE4 > 0 && Global.HPBE4 > 0)
             {
-                CheckE3Die();
+                CheckBE4Die();
                 ShowP1Panel(false);
                 ShowP2Panel(false);
                 ShowP3Panel(false);
-                if (dem == 2)
+                if (dem == 3)
                 {
-                    GB.yes_golemn = 1;
+                    BE4Action();
                     dem -= 1;
+                    int DamgeCal = Global.DamageBE4 + (Global.DamageBE4 * 100) / 100;
                     EDamage.color = Color.red;
-                    EDamage.text = "-" + Global.DamageE3;
-                    Invoke("delayE3", 1f);
-                    Invoke("delayeE3attack2", 2f);
+                    if (BE4ANum <= 7)
+                        EDamage.text = "-" + Global.DamageBE4;
+                    else
+                        EDamage.text = "-" + DamgeCal;
+                    Invoke("delayBE4", 1f);
+                    Invoke("delayBE4attack2", 2f);
+                    Invoke("delayBE4attack3", 4f);
                 }
                 CheckP1Die();
                 CheckP2Die();
@@ -152,7 +160,7 @@ public class BSGolemn1 : MonoBehaviour
             }
             else if (a3 > 0 && Global.CurHPP3 > 0 && P3Availabel == true)
             {
-                CheckE3Die();
+                CheckBE4Die();
                 CheckP1Die();
                 CheckP2Die();
                 CheckP3Die();
@@ -165,12 +173,12 @@ public class BSGolemn1 : MonoBehaviour
             }
         }
 
-        if (a1 == 0 && a2 == 0 && a3 == 0 && aE3 == 0)
+        if (a1 == 0 && a2 == 0 && a3 == 0 && aBE4 == 0)
         {
             a1 = Global.SpeedP1 / 10;
             a2 = Global.SpeedP2 / 10;
             a3 = Global.SpeedP3 / 10;
-            aE3 = Global.SpeedBE4 / 10;
+            aBE4 = Global.SpeedBE4 / 10;
         }
     }
 
@@ -188,14 +196,14 @@ public class BSGolemn1 : MonoBehaviour
             MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
         }
 
-        HPE3.text = "HP: " + Global.HPE3.ToString();
+        HPBE4.text = "HP: " + Global.HPBE4.ToString();
 
         NumTurn.text = "Turn " + dem_turn.ToString();
 
-        if (Global.HPE3 < 0)
+        if (Global.HPBE4 < 0)
         {
-            Global.HPE3 = 0;
-            HPE3.text = "HP: " + Global.HPE3.ToString();
+            Global.HPBE4 = 0;
+            HPBE4.text = "HP: " + Global.HPBE4.ToString();
         }
         else if (Global.CurHPP1 < 0)
         {
@@ -214,7 +222,7 @@ public class BSGolemn1 : MonoBehaviour
         }
 
         if (Global.HPE2 <= 0)
-            HPE3.text = "HP: 0";
+            HPBE4.text = "HP: 0";
         if (Global.CurHPP1 <= 0)
             HP1.text = "HP: 0";
         if (Global.CurHPP2 <= 0)
@@ -251,7 +259,7 @@ public class BSGolemn1 : MonoBehaviour
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP1;
         Invoke("delayP1PressAttack", 1f);
-        dem = 2;
+        dem = 3;
     }
     public void PressAttackP2()
     {
@@ -260,7 +268,7 @@ public class BSGolemn1 : MonoBehaviour
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP2;
         Invoke("delayP2PressAttack", 1f);
-        dem = 2;
+        dem = 3;
     }
     public void PressAttackP3()
     {
@@ -269,7 +277,7 @@ public class BSGolemn1 : MonoBehaviour
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP3;
         Invoke("delayP3PressAttack", 1f);
-        dem = 2;
+        dem = 3;
     }
     public void PressSkill()
     {
@@ -281,7 +289,7 @@ public class BSGolemn1 : MonoBehaviour
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
             Invoke("delayP1PressSkill", 1f);
-            dem = 2;
+            dem = 3;
         }
     }
     public void PressSkillP2()
@@ -294,7 +302,7 @@ public class BSGolemn1 : MonoBehaviour
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
             Invoke("delayP2PressSkill", 1f);
-            dem = 2;
+            dem = 3;
         }
     }
     public void PressSkillP3()
@@ -308,7 +316,7 @@ public class BSGolemn1 : MonoBehaviour
             showr1.text = "HP +" + HealAmount;
             Invoke("delayshowr", 2f);
             Invoke("delayP3PressSkill", 1f);
-            dem = 2;
+            dem = 3;
         }
     }
     public void PressItem()
@@ -465,7 +473,7 @@ public class BSGolemn1 : MonoBehaviour
         if (ContainerController.Bom > 0)
         {
             Item_panel.SetActive(false);
-            Global.HPE3 -= 200;
+            Global.HPBE4 -= 200;
             if (UseItemIndex == 1)
             {
                 a1 -= 1;
@@ -508,8 +516,21 @@ public class BSGolemn1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
-        ContainerController.ManaGem += 1;
+        ContainerController.ManaGem += 10;
         SceneManager.LoadScene("Wishing forest");
+    }
+
+    public void BE4Action()
+    {
+        BE4ANum = Random.Range(0, 9);
+        if (BE4ANum <= 7)
+        {
+            IGB.yes_IronGolemnAttack = 1;
+        }
+        else
+        {
+            IGB.yes_IronGolemnSkill = 1;
+        }
     }
     public void CheckP1Die()
     {
@@ -556,9 +577,9 @@ public class BSGolemn1 : MonoBehaviour
             }
         }
     }
-    public void CheckE3Die()
+    public void CheckBE4Die()
     {
-        if (Global.HPE3 <= 0)
+        if (Global.HPBE4 <= 0)
         {
             ShowP1Panel(false);
             ShowP2Panel(false);
@@ -583,110 +604,158 @@ public class BSGolemn1 : MonoBehaviour
             }
 
             Money.text = Global.Zen + " ";
-            ManaGemItem.text = "Mana Gem +1";
+            ManaGemItem.text = "Mana Gem +10";
 
-            Invoke("delayCheckE3Die1", 1f);
+            Invoke("delayCheckBE4Die1", 1f);
             if (once == 0)
             {
-                Invoke("delayCheckE3Die2", 2f);
+                Invoke("delayCheckBE4Die2", 2f);
                 once = 1;
             }
         }
     }
-    void delayE3()
+    void delayBE4()
     {
-        CheckE3Die();
+        CheckBE4Die();
         ShowP1Panel(false);
         ShowP2Panel(false);
         ShowP3Panel(false);
-        E3AttackTarget();
+        BE4AttackTarget();
         EDamage.text = "";
 
-        aE3 -= 1;
+        aBE4 -= 1;
         dem_turn += 1;
     }
 
-    void E3AttackTarget()
+    void BE4AttackTarget()
     {
         if (CutscenesController.cus12 == 0)
-            E3Hit = Random.Range(1, 3);
+            BE4Hit = Random.Range(1, 3);
         else if (CutscenesController.cus12 == 1)
-            E3Hit = Random.Range(1, 4);
+            BE4Hit = Random.Range(1, 4);
 
-        if (E3Hit == 1 && Global.CurHPP1 > 0)
-            Global.CurHPP1 -= Global.DamageE3;
-        else if (E3Hit == 1 && Global.CurHPP1 <= 0)
-            E3AttackTarget();
-        else if (E3Hit == 2 && Global.CurHPP2 > 0)
-            Global.CurHPP2 -= Global.DamageE3;
-        else if (E3Hit == 2 && Global.CurHPP2 <= 0)
-            E3AttackTarget();
-        else if (E3Hit == 3 && Global.CurHPP3 > 0)
-            Global.CurHPP3 -= Global.DamageE3;
-        else if (E3Hit == 3 && Global.CurHPP3 <= 0)
-            E3AttackTarget();
+        if (BE4Hit == 1 && Global.CurHPP1 > 0)
+        {
+            if (BE4ANum <= 7)
+            {
+                Global.CurHPP1 -= Global.DamageBE4;
+            }
+            else
+            {
+                Global.CurHPP1 -= Global.DamageBE4 + ((Global.DamageBE4 * 100) / 100);
+            }
+        }
+        else if (BE4Hit == 1 && Global.CurHPP1 <= 0)
+            BE4AttackTarget();
+        else if (BE4Hit == 2 && Global.CurHPP2 > 0)
+        {
+            if (BE4ANum <= 7)
+            {
+                Global.CurHPP2 -= Global.DamageBE4;
+            }
+            else
+            {
+                Global.CurHPP2 -= Global.DamageBE4 + ((Global.DamageBE4 * 100) / 100);
+            }
+        }
+        else if (BE4Hit == 2 && Global.CurHPP2 <= 0)
+            BE4AttackTarget();
+        else if (BE4Hit == 3 && Global.CurHPP3 > 0)
+        {
+            if (BE4ANum <= 7)
+            {
+                Global.CurHPP3 -= Global.DamageBE4;
+            }
+            else
+            {
+                Global.CurHPP3 -= Global.DamageBE4 + ((Global.DamageBE4 * 100) / 100);
+            }
+        }
+        else if (BE4Hit == 3 && Global.CurHPP3 <= 0)
+            BE4AttackTarget();
     }
 
-    void delayeE3attack2()
+    void delayBE4attack2()
+    {
+        if (dem == 2)
+        {
+            BE4Action();
+            dem -= 1;
+            int DamgeCal = Global.DamageBE4 + (Global.DamageBE4 * 100) / 100;
+            EDamage.color = Color.red;
+            if (BE4ANum <= 7)
+                EDamage.text = "-" + Global.DamageBE4;
+            else
+                EDamage.text = "-" + DamgeCal;
+            Invoke("delayBE4", 1f);
+        }
+    }
+
+    void delayBE4attack3()
     {
         if (dem == 1)
         {
-            GB.yes_golemn = 1;
+            BE4Action();
             dem -= 1;
+            int DamgeCal = Global.DamageBE4 + (Global.DamageBE4 * 100) / 100;
             EDamage.color = Color.red;
-            EDamage.text = "-" + Global.DamageE3;
-            Invoke("delayE3", 1f);
+            if (BE4ANum <= 7)
+                EDamage.text = "-" + Global.DamageBE4;
+            else
+                EDamage.text = "-" + DamgeCal;
+            Invoke("delayBE4", 1f);
         }
     }
+
     void delayP1PressAttack()
     {
         ShowP1Panel(false);
-        Global.HPE3 -= Global.DamageP1;
+        Global.HPBE4 -= Global.DamageP1;
         PDamage.text = "";
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
-        CheckE3Die();
+        CheckBE4Die();
     }
     void delayP2PressAttack()
     {
         ShowP2Panel(false);
-        Global.HPE3 -= Global.DamageP2;
+        Global.HPBE4 -= Global.DamageP2;
         PDamage.text = "";
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
-        CheckE3Die();
+        CheckBE4Die();
     }
     void delayP3PressAttack()
     {
         ShowP3Panel(false);
-        Global.HPE3 -= Global.DamageP3;
+        Global.HPBE4 -= Global.DamageP3;
         PDamage.text = "";
         a3 -= 1;
         show3 = 0;
         dem_turn += 1;
-        CheckE3Die();
+        CheckBE4Die();
     }
     void delayP1PressSkill()
     {
         Global.CurMPP1 -= 20;
-        Global.HPE3 = Global.HPE3 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
+        Global.HPBE4 = Global.HPBE4 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
         PDamage.text = "";
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
-        CheckE3Die();
+        CheckBE4Die();
     }
     void delayP2PressSkill()
     {
         Global.CurMPP2 -= 20;
-        Global.HPE3 = Global.HPE3 - (Global.DamageP2 + (Global.DamageP2 * 100 / 100));
+        Global.HPBE4 = Global.HPBE4 - (Global.DamageP2 + (Global.DamageP2 * 100 / 100));
         PDamage.text = "";
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
-        CheckE3Die();
+        CheckBE4Die();
     }
     void delayP3PressSkill()
     {
@@ -726,12 +795,12 @@ public class BSGolemn1 : MonoBehaviour
     {
         SceneManager.LoadScene("Intro");
     }
-    void delayCheckE3Die1()
+    void delayCheckBE4Die1()
     {
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }
-    void delayCheckE3Die2()
+    void delayCheckBE4Die2()
     {
         if (Global.LevelP1 < 30)
         {

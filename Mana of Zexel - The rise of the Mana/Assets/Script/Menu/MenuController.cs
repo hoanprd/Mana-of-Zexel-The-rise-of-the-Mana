@@ -79,6 +79,18 @@ public class MenuController : MonoBehaviour
 
         Global.PlusPointP1 = 1;
 
+        /*Global.CurHPP1 = 1000;
+        Global.MaxHPP1 = 1000;
+        Global.CurMPP1 = 500;
+        Global.MaxMPP1 = 500;
+        Global.DamageP1 = 100;
+        Global.SpeedP1 = 20;
+        Global.LevelP1 = 1;
+        Global.MaxEXPP1 = 40;
+        Global.CurEXPP1 = 0;
+
+        Global.PlusPointP1 = 1;*/
+
         //Set Alia
         Global.CurHPP2 = 60;
         Global.MaxHPP2 = 60;
@@ -92,6 +104,18 @@ public class MenuController : MonoBehaviour
 
         Global.PlusPointP2 = 2;
 
+        /*Global.CurHPP2 = 600;
+        Global.MaxHPP2 = 600;
+        Global.CurMPP2 = 320;
+        Global.MaxMPP2 = 320;
+        Global.DamageP2 = 150;
+        Global.SpeedP2 = 30;
+        Global.LevelP2 = 2;
+        Global.MaxEXPP2 = 80;
+        Global.CurEXPP2 = 0;
+
+        Global.PlusPointP2 = 2;*/
+
         //Set Maria
         Global.CurHPP3 = 235;
         Global.MaxHPP3 = 235;
@@ -104,6 +128,18 @@ public class MenuController : MonoBehaviour
         Global.CurEXPP3 = 0;
 
         Global.PlusPointP3 = 5;
+
+        /*Global.CurHPP3 = 2350;
+        Global.MaxHPP3 = 2350;
+        Global.CurMPP3 = 850;
+        Global.MaxMPP3 = 850;
+        Global.DamageP3 = 600;
+        Global.SpeedP3 = 15;
+        Global.LevelP3 = 5;
+        Global.MaxEXPP3 = 200;
+        Global.CurEXPP3 = 0;
+
+        Global.PlusPointP3 = 5;*/
 
         //Set Zen
         Global.Zen = 0;
@@ -136,6 +172,7 @@ public class MenuController : MonoBehaviour
         SynthesizeSystem.ManaIceSynthesize = 0;
 
         SceneManager.LoadScene("Cutscenes");
+        //SceneManager.LoadScene("Wishing forest");
     }
     public void PressLoadGame()
     {

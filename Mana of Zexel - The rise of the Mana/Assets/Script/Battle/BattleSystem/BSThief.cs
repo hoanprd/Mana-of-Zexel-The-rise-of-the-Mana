@@ -113,6 +113,12 @@ public class BSThief : MonoBehaviour
                 ShowP1Panel(true);
             }
         }
+
+        /*if (a1 == 0 && aE1 == 0)
+        {
+            a1 = Global.SpeedP1 / 10;
+            aE1 = aE1 = Global.SpeedE1 / 10; ;
+        }*/
     }
     public void ShowP1Panel(bool isshow)
     {

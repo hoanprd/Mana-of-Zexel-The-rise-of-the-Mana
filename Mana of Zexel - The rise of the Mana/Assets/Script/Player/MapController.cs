@@ -6,9 +6,11 @@ public class MapController : MonoBehaviour
 {
     //public Transform target2;
     public static bool WishingHillToZexelTown, ZexelTownToTavern, TavernToSaveRoom, ZexelTownToGroceryStore, ZexelTownToWeaponStore, ZexelTownToWishingForest, ZexelTownToInfernoDesert, InfernoDesertToZexelGate,
-        InfernoDesertToManaGate, InfernoDesertToInfernoVolcano, InfernoDesertToInfernoIce, InfernoDesertToManaCliff, ManaGateToManaDimension, ManaDimensionToManaTemple;
+        InfernoDesertToManaGate, InfernoDesertToInfernoVolcano, InfernoDesertToInfernoIce, InfernoDesertToManaCliff, ManaGateToManaDimension, ManaDimensionToManaTemple,
+        InfernoVolcanoToInsideVolcanoCave, InfernoVolcanoToAltaInferno, InfernoIceToInsideIceCave, InfernoIceToAltaInferno, ZexelGateToZexelTemple;
     public static bool ZexelTownToWishingHill, TavernToZexelTown, SaveRoomToTavern, GroceryStoreToZexelTown, WeaponStoreToZexelTown, WishingForestToZexelTown, InfernoDesertToZexelTown, ZexelGateToInfernoDesert,
-        ManaGateToInfernoDesert, InfernoVolcanoToInfernoDesert, InfernoIceToInfernoDesert, ManaCliffToInfernoDesert, ManaDimensionToManaGate, ManaTempleToManaDimension;
+        ManaGateToInfernoDesert, InfernoVolcanoToInfernoDesert, InfernoIceToInfernoDesert, ManaCliffToInfernoDesert, ManaDimensionToManaGate, ManaTempleToManaDimension,
+        InsideVolcanoCaveToInfernoVolcano, AltaInfernoToInfernoVolcano, InsideIceCaveToInfernoIce, AltaInfernoToInfernoIce, ZexelTempleToZexelGate;
 
     // Start is called before the first frame update
     void Start()
@@ -198,7 +200,7 @@ public class MapController : MonoBehaviour
         else if (ManaDimensionToManaTemple == true)
         {
             PlayerPrefs.SetFloat("x", -4);
-            PlayerPrefs.SetFloat("y", -1);
+            PlayerPrefs.SetFloat("y", 1);
             PlayerPrefs.SetFloat("z", 0);
             ManaDimensionToManaTemple = false;
         }
@@ -209,7 +211,76 @@ public class MapController : MonoBehaviour
             PlayerPrefs.SetFloat("z", 0);
             ManaTempleToManaDimension = false;
         }
-
+        else if (InfernoVolcanoToInsideVolcanoCave == true)
+        {
+            PlayerPrefs.SetFloat("x", -4);
+            PlayerPrefs.SetFloat("y", 1);
+            PlayerPrefs.SetFloat("z", 0);
+            InfernoVolcanoToInsideVolcanoCave = false;
+        }
+        else if (InsideVolcanoCaveToInfernoVolcano == true)
+        {
+            PlayerPrefs.SetFloat("x", -62);
+            PlayerPrefs.SetFloat("y", 14);
+            PlayerPrefs.SetFloat("z", 0);
+            InsideVolcanoCaveToInfernoVolcano = false;
+        }
+        else if (InfernoVolcanoToAltaInferno == true)
+        {
+            PlayerPrefs.SetFloat("x", -4);
+            PlayerPrefs.SetFloat("y", 10);
+            PlayerPrefs.SetFloat("z", 0);
+            InfernoVolcanoToAltaInferno = false;
+        }
+        else if (AltaInfernoToInfernoVolcano == true)
+        {
+            PlayerPrefs.SetFloat("x", -81);
+            PlayerPrefs.SetFloat("y", -12);
+            PlayerPrefs.SetFloat("z", 0);
+            AltaInfernoToInfernoVolcano = false;
+        }
+        else if (InfernoIceToInsideIceCave == true)
+        {
+            PlayerPrefs.SetFloat("x", -4);
+            PlayerPrefs.SetFloat("y", 1);
+            PlayerPrefs.SetFloat("z", 0);
+            InfernoIceToInsideIceCave = false;
+        }
+        else if (InsideIceCaveToInfernoIce == true)
+        {
+            PlayerPrefs.SetFloat("x", -34);
+            PlayerPrefs.SetFloat("y", -79);
+            PlayerPrefs.SetFloat("z", 0);
+            InsideIceCaveToInfernoIce = false;
+        }
+        else if (InfernoIceToAltaInferno == true)
+        {
+            PlayerPrefs.SetFloat("x", -15);
+            PlayerPrefs.SetFloat("y", -22);
+            PlayerPrefs.SetFloat("z", 0);
+            InfernoIceToAltaInferno = false;
+        }
+        else if (AltaInfernoToInfernoIce == true)
+        {
+            PlayerPrefs.SetFloat("x", -45);
+            PlayerPrefs.SetFloat("y", -27);
+            PlayerPrefs.SetFloat("z", 0);
+            AltaInfernoToInfernoIce = false;
+        }
+        else if (ZexelGateToZexelTemple == true)
+        {
+            PlayerPrefs.SetFloat("x", -4);
+            PlayerPrefs.SetFloat("y", 1);
+            PlayerPrefs.SetFloat("z", 0);
+            ZexelGateToZexelTemple = false;
+        }
+        else if (ZexelTempleToZexelGate == true)
+        {
+            PlayerPrefs.SetFloat("x", -4);
+            PlayerPrefs.SetFloat("y", 15);
+            PlayerPrefs.SetFloat("z", 0);
+            ZexelTempleToZexelGate = false;
+        }
 
         transform.position = new Vector3(PlayerPrefs.GetFloat("x"), PlayerPrefs.GetFloat("y"), PlayerPrefs.GetFloat("z"));
     }
