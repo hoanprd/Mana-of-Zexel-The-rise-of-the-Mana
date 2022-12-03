@@ -24,6 +24,7 @@ public class GolemnTrigger1 : MonoBehaviour
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
             HPMPBarController.EIndex = 3;
+            despawn = true;
             SceneManager.LoadScene("BSGolemn 1");
         }
     }

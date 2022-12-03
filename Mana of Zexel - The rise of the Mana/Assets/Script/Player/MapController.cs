@@ -5,8 +5,10 @@ using UnityEngine;
 public class MapController : MonoBehaviour
 {
     //public Transform target2;
-    public static bool WishingHillToZexelTown, ZexelTownToTavern, TavernToSaveRoom, ZexelTownToGroceryStore, ZexelTownToWeaponStore, ZexelTownToWishingForest, ZexelTownToInfernoDesert;
-    public static bool ZexelTownToWishingHill, TavernToZexelTown, SaveRoomToTavern, GroceryStoreToZexelTown, WeaponStoreToZexelTown, WishingForestToZexelTown, InfernoDesertToZexelTown;
+    public static bool WishingHillToZexelTown, ZexelTownToTavern, TavernToSaveRoom, ZexelTownToGroceryStore, ZexelTownToWeaponStore, ZexelTownToWishingForest, ZexelTownToInfernoDesert, InfernoDesertToZexelGate,
+        InfernoDesertToManaGate, InfernoDesertToInfernoVolcano, InfernoDesertToInfernoIce, InfernoDesertToManaCliff, ManaGateToManaDimension, ManaDimensionToManaTemple;
+    public static bool ZexelTownToWishingHill, TavernToZexelTown, SaveRoomToTavern, GroceryStoreToZexelTown, WeaponStoreToZexelTown, WishingForestToZexelTown, InfernoDesertToZexelTown, ZexelGateToInfernoDesert,
+        ManaGateToInfernoDesert, InfernoVolcanoToInfernoDesert, InfernoIceToInfernoDesert, ManaCliffToInfernoDesert, ManaDimensionToManaGate, ManaTempleToManaDimension;
 
     // Start is called before the first frame update
     void Start()
@@ -109,6 +111,105 @@ public class MapController : MonoBehaviour
             PlayerPrefs.SetFloat("z", 0);
             InfernoDesertToZexelTown = false;
         }
+        else if (InfernoDesertToZexelGate == true)
+        {
+            PlayerPrefs.SetFloat("x", -4);
+            PlayerPrefs.SetFloat("y", 6);
+            PlayerPrefs.SetFloat("z", 0);
+            InfernoDesertToZexelGate = false;
+        }
+        else if (ZexelGateToInfernoDesert == true)
+        {
+            PlayerPrefs.SetFloat("x", -66);
+            PlayerPrefs.SetFloat("y", 44);
+            PlayerPrefs.SetFloat("z", 0);
+            ZexelGateToInfernoDesert = false;
+        }
+        else if (InfernoDesertToManaGate == true)
+        {
+            PlayerPrefs.SetFloat("x", -4);
+            PlayerPrefs.SetFloat("y", -1);
+            PlayerPrefs.SetFloat("z", 0);
+            InfernoDesertToManaGate = false;
+        }
+        else if (ManaGateToInfernoDesert == true)
+        {
+            PlayerPrefs.SetFloat("x", -77);
+            PlayerPrefs.SetFloat("y", -13);
+            PlayerPrefs.SetFloat("z", 0);
+            ManaGateToInfernoDesert = false;
+        }
+        else if (InfernoDesertToInfernoVolcano == true)
+        {
+            PlayerPrefs.SetFloat("x", -4);
+            PlayerPrefs.SetFloat("y", 1);
+            PlayerPrefs.SetFloat("z", 0);
+            InfernoDesertToInfernoVolcano = false;
+        }
+        else if (InfernoVolcanoToInfernoDesert == true)
+        {
+            PlayerPrefs.SetFloat("x", -130);
+            PlayerPrefs.SetFloat("y", 32);
+            PlayerPrefs.SetFloat("z", 0);
+            InfernoVolcanoToInfernoDesert = false;
+        }
+        else if (InfernoDesertToInfernoIce == true)
+        {
+            PlayerPrefs.SetFloat("x", -4);
+            PlayerPrefs.SetFloat("y", 1);
+            PlayerPrefs.SetFloat("z", 0);
+            InfernoDesertToInfernoIce = false;
+        }
+        else if (InfernoIceToInfernoDesert == true)
+        {
+            PlayerPrefs.SetFloat("x", -138);
+            PlayerPrefs.SetFloat("y", 13);
+            PlayerPrefs.SetFloat("z", 0);
+            InfernoIceToInfernoDesert = false;
+        }
+        else if (InfernoDesertToManaCliff == true)
+        {
+            PlayerPrefs.SetFloat("x", -4);
+            PlayerPrefs.SetFloat("y", 1);
+            PlayerPrefs.SetFloat("z", 0);
+            InfernoDesertToManaCliff = false;
+        }
+        else if (ManaCliffToInfernoDesert == true)
+        {
+            PlayerPrefs.SetFloat("x", -120);
+            PlayerPrefs.SetFloat("y", -8);
+            PlayerPrefs.SetFloat("z", 0);
+            ManaCliffToInfernoDesert = false;
+        }
+        else if (ManaGateToManaDimension == true)
+        {
+            PlayerPrefs.SetFloat("x", -4);
+            PlayerPrefs.SetFloat("y", 1);
+            PlayerPrefs.SetFloat("z", 0);
+            ManaGateToManaDimension = false;
+        }
+        else if (ManaDimensionToManaGate == true)
+        {
+            PlayerPrefs.SetFloat("x", 55);
+            PlayerPrefs.SetFloat("y", -6);
+            PlayerPrefs.SetFloat("z", 0);
+            ManaDimensionToManaGate = false;
+        }
+        else if (ManaDimensionToManaTemple == true)
+        {
+            PlayerPrefs.SetFloat("x", -4);
+            PlayerPrefs.SetFloat("y", -1);
+            PlayerPrefs.SetFloat("z", 0);
+            ManaDimensionToManaTemple = false;
+        }
+        else if (ManaTempleToManaDimension == true)
+        {
+            PlayerPrefs.SetFloat("x", 36);
+            PlayerPrefs.SetFloat("y", -5);
+            PlayerPrefs.SetFloat("z", 0);
+            ManaTempleToManaDimension = false;
+        }
+
 
         transform.position = new Vector3(PlayerPrefs.GetFloat("x"), PlayerPrefs.GetFloat("y"), PlayerPrefs.GetFloat("z"));
     }

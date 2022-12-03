@@ -242,12 +242,131 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("InfernoDesertToZexelTown"))
         {
             MapController.InfernoDesertToZexelTown = true;
-            //GolemnTrigger1.despawn = false;
-            //GolemnTrigger2.despawn = false;
-            //GolemnTrigger3.despawn = false;
+            InfernoScorpionTrigger1.despawn = false;
+            InfernoScorpionTrigger2.despawn = false;
+            InfernoScorpionTrigger3.despawn = false;
+            InfernoScorpionTrigger4.despawn = false;
+            InfernoScorpionTrigger5.despawn = false;
+            InfernoScorpionTrigger6.despawn = false;
             MapIndex = 1;
             SceneManager.LoadScene("Zexel town");
         }
+        if (collision.CompareTag("InfernoDesertToZexelGate"))
+        {
+            MapController.InfernoDesertToZexelGate = true;
+            InfernoScorpionTrigger1.despawn = false;
+            InfernoScorpionTrigger2.despawn = false;
+            InfernoScorpionTrigger3.despawn = false;
+            InfernoScorpionTrigger4.despawn = false;
+            InfernoScorpionTrigger5.despawn = false;
+            InfernoScorpionTrigger6.despawn = false;
+            MapIndex = 4;
+            SceneManager.LoadScene("Zexel gate");
+        }
+        if (collision.CompareTag("ZexelGateToInfernoDesert"))
+        {
+            MapController.ZexelGateToInfernoDesert = true;
+            MapIndex = 3;
+            SceneManager.LoadScene("Inferno desert");
+        }
+        if (collision.CompareTag("InfernoDesertToManaGate"))
+        {
+            MapController.InfernoDesertToManaGate = true;
+            InfernoScorpionTrigger1.despawn = false;
+            InfernoScorpionTrigger2.despawn = false;
+            InfernoScorpionTrigger3.despawn = false;
+            InfernoScorpionTrigger4.despawn = false;
+            InfernoScorpionTrigger5.despawn = false;
+            InfernoScorpionTrigger6.despawn = false;
+            MapIndex = 5;
+            SceneManager.LoadScene("Mana gate");
+        }
+        if (collision.CompareTag("ManaGateToInfernoDesert"))
+        {
+            MapController.ManaGateToInfernoDesert = true;
+            MapIndex = 3;
+            SceneManager.LoadScene("Inferno desert");
+        }
+        if (collision.CompareTag("InfernoDesertToInfernoVolcano"))
+        {
+            MapController.InfernoDesertToInfernoVolcano = true;
+            InfernoScorpionTrigger1.despawn = false;
+            InfernoScorpionTrigger2.despawn = false;
+            InfernoScorpionTrigger3.despawn = false;
+            InfernoScorpionTrigger4.despawn = false;
+            InfernoScorpionTrigger5.despawn = false;
+            InfernoScorpionTrigger6.despawn = false;
+            MapIndex = 8;
+            SceneManager.LoadScene("Inferno volcano");
+        }
+        if (collision.CompareTag("InfernoVolcanoToInfernoDesert"))
+        {
+            MapController.InfernoVolcanoToInfernoDesert = true;
+            MapIndex = 3;
+            SceneManager.LoadScene("Inferno desert");
+        }
+        if (collision.CompareTag("InfernoDesertToInfernoIce"))
+        {
+            MapController.InfernoDesertToInfernoIce = true;
+            InfernoScorpionTrigger1.despawn = false;
+            InfernoScorpionTrigger2.despawn = false;
+            InfernoScorpionTrigger3.despawn = false;
+            InfernoScorpionTrigger4.despawn = false;
+            InfernoScorpionTrigger5.despawn = false;
+            InfernoScorpionTrigger6.despawn = false;
+            MapIndex = 9;
+            SceneManager.LoadScene("Inferno ice");
+        }
+        if (collision.CompareTag("InfernoIceToInfernoDesert"))
+        {
+            MapController.InfernoIceToInfernoDesert = true;
+            MapIndex = 3;
+            SceneManager.LoadScene("Inferno desert");
+        }
+        if (collision.CompareTag("InfernoDesertToManaCliff"))
+        {
+            MapController.InfernoDesertToManaCliff = true;
+            InfernoScorpionTrigger1.despawn = false;
+            InfernoScorpionTrigger2.despawn = false;
+            InfernoScorpionTrigger3.despawn = false;
+            InfernoScorpionTrigger4.despawn = false;
+            InfernoScorpionTrigger5.despawn = false;
+            InfernoScorpionTrigger6.despawn = false;
+            MapIndex = 12;
+            SceneManager.LoadScene("Mana cliff");
+        }
+        if (collision.CompareTag("ManaCliffToInfernoDesert"))
+        {
+            MapController.ManaCliffToInfernoDesert = true;
+            MapIndex = 3;
+            SceneManager.LoadScene("Inferno desert");
+        }
+        if (collision.CompareTag("ManaGateToManaDimension"))
+        {
+            MapController.ManaGateToManaDimension = true;
+            MapIndex = 6;
+            SceneManager.LoadScene("Mana dimension");
+        }
+        if (collision.CompareTag("ManaDimensionToManaGate"))
+        {
+            MapController.ManaDimensionToManaGate = true;
+            MapIndex = 5;
+            SceneManager.LoadScene("Mana gate");
+        }
+        if (collision.CompareTag("ManaDimensionToManaTemple"))
+        {
+            MapController.ManaDimensionToManaTemple = true;
+            MapIndex = 7;
+            SceneManager.LoadScene("Mana temple");
+        }
+        if (collision.CompareTag("ManaTempleToManaDimension"))
+        {
+            MapController.ManaTempleToManaDimension = true;
+            MapIndex = 6;
+            SceneManager.LoadScene("Mana dimension");
+        }
+
+
         if (collision.CompareTag("HealPoint"))
         {
             heal = true;

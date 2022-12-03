@@ -24,6 +24,7 @@ public class InfernoScorpionTrigger2 : MonoBehaviour
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
             HPMPBarController.EIndex = 4;
+            despawn = true;
             SceneManager.LoadScene("BSInfernoScorpion 1");
         }
     }

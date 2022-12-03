@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GolemnTrigger2 : MonoBehaviour
+public class InfernoScorpionTrigger6 : MonoBehaviour
 {
     public static bool despawn = false;
     private bool battle;
@@ -23,9 +23,9 @@ public class GolemnTrigger2 : MonoBehaviour
     {
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
-            HPMPBarController.EIndex = 3;
+            HPMPBarController.EIndex = 4;
             despawn = true;
-            SceneManager.LoadScene("BSGolemn 1");
+            SceneManager.LoadScene("BSInfernoScorpion 1");
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
