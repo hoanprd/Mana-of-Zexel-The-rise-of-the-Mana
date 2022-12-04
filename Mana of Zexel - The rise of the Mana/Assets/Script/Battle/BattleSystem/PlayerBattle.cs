@@ -35,21 +35,21 @@ public class PlayerBattle : MonoBehaviour
         }
         if(yes2 == 1)
         {
-            P1.position = new Vector2(P1.position.x + 6f, P1.position.y);
+            P1.position = new Vector2(P1.position.x + 5f, P1.position.y);
             ani.SetTrigger("p1skill");
             Invoke("delayP1", 1.2f);
             yes2 = 0;
         }
         if(yes3 == 1)
         {
-            P2.position = new Vector2(P2.position.x + 9f, P2.position.y - 1.5f);
+            P2.position = new Vector2(P2.position.x + 8f, P2.position.y - 1.5f);
             anip2.SetTrigger("p2attack");
             Invoke("delayP2", 1.2f);
             yes3 = 0;
         }
         if(yes4 == 1)
         {
-            P2.position = new Vector2(P2.position.x + 9f, P2.position.y - 1.5f);
+            P2.position = new Vector2(P2.position.x + 8f, P2.position.y - 1.5f);
             anip2.SetTrigger("p2skill");
             Invoke("delayP2", 1.2f);
             yes4 = 0;
@@ -80,11 +80,11 @@ public class PlayerBattle : MonoBehaviour
 
     void delayP1()
     {
-        P1.position = new Vector2(P1.position.x - 6f, P1.position.y);
+        P1.position = new Vector2(P1.position.x - 5f, P1.position.y);
     }
 
     void delayP2()
     {
-        P2.position = new Vector2(P2.position.x - 9f, P2.position.y + 1.5f);
+        P2.position = new Vector2(P2.position.x - 8f, P2.position.y + 1.5f);
     }
 }
