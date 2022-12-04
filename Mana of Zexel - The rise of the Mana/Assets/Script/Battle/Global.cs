@@ -21,8 +21,16 @@ public class Global : MonoBehaviour
     public static int HPE2, DamageE2, SpeedE2;
     public static int HPE3, DamageE3, SpeedE3;
     public static int HPE4, DamageE4, SpeedE4;
+    public static int HPE5, DamageE5, SpeedE5;
+    public static int HPE6, DamageE6, SpeedE6;
+    public static int HPE7, DamageE7, SpeedE7;
+    public static int HPE8, DamageE8, SpeedE8;
 
+    public static int HPBE1, DamageBE1, SpeedBE1;
+    public static int HPBE2, DamageBE2, SpeedBE2;
+    public static int HPBE3, DamageBE3, SpeedBE3;
     public static int HPBE4, DamageBE4, SpeedBE4;
+    public static int HPBE5, DamageBE5, SpeedBE5;
 
     //Equip
     public static int VayneStaff1, VayneStaff2, VayneStaff3, AlchemistArmor1, AlchemistArmor2, AlchemistArmor3, VayneWeaponStatus, VayneArmorStatus;
@@ -49,9 +57,41 @@ public class Global : MonoBehaviour
         DamageE4 = 60;
         SpeedE4 = 20;
 
+        HPE5 = 1000;
+        DamageE5 = 80;
+        SpeedE5 = 10;
+
+        HPE6 = 1500;
+        DamageE6 = 160;
+        SpeedE6 = 20;
+
+        HPE7 = 2000;
+        DamageE7 = 100;
+        SpeedE7 = 30;
+
+        HPE8 = 3000;
+        DamageE8 = 220;
+        SpeedE8 = 20;
+
         //Boss
-        HPBE4 = 30000;
-        DamageBE4 = 400;//120
+        HPBE1 = 2000;
+        DamageBE1 = 120;
+        SpeedBE1 = 20;
+
+        HPBE2 = 6000;
+        DamageBE2 = 220;
+        SpeedBE2 = 30;
+
+        HPBE3 = 10000;
+        DamageBE3 = 360;
+        SpeedBE3 = 10;
+
+        HPBE4 = 8000;
+        DamageBE4 = 180;
         SpeedBE4 = 30;
+
+        HPBE5 = 20000;
+        DamageBE5 = 400;
+        SpeedBE5 = 10;
     }
 }

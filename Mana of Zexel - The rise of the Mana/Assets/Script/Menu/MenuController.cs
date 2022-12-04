@@ -71,7 +71,7 @@ public class MenuController : MonoBehaviour
         Global.MaxHPP1 = 100;
         Global.CurMPP1 = 50;
         Global.MaxMPP1 = 50;
-        Global.DamageP1 = 100;
+        Global.DamageP1 = 200;
         Global.SpeedP1 = 20;
         Global.LevelP1 = 1;
         Global.MaxEXPP1 = 40;
@@ -83,13 +83,11 @@ public class MenuController : MonoBehaviour
         Global.MaxHPP1 = 1000;
         Global.CurMPP1 = 500;
         Global.MaxMPP1 = 500;
-        Global.DamageP1 = 100;
+        Global.DamageP1 = 10;
         Global.SpeedP1 = 20;
         Global.LevelP1 = 1;
         Global.MaxEXPP1 = 40;
-        Global.CurEXPP1 = 0;
-
-        Global.PlusPointP1 = 1;*/
+        Global.CurEXPP1 = 0;*/
 
         //Set Alia
         Global.CurHPP2 = 60;
@@ -104,17 +102,15 @@ public class MenuController : MonoBehaviour
 
         Global.PlusPointP2 = 2;
 
-        /*Global.CurHPP2 = 600;
-        Global.MaxHPP2 = 600;
+        /*Global.CurHPP2 = 6000;
+        Global.MaxHPP2 = 6000;
         Global.CurMPP2 = 320;
         Global.MaxMPP2 = 320;
-        Global.DamageP2 = 150;
+        Global.DamageP2 = 50;
         Global.SpeedP2 = 30;
         Global.LevelP2 = 2;
         Global.MaxEXPP2 = 80;
-        Global.CurEXPP2 = 0;
-
-        Global.PlusPointP2 = 2;*/
+        Global.CurEXPP2 = 0;*/
 
         //Set Maria
         Global.CurHPP3 = 235;
@@ -133,13 +129,11 @@ public class MenuController : MonoBehaviour
         Global.MaxHPP3 = 2350;
         Global.CurMPP3 = 850;
         Global.MaxMPP3 = 850;
-        Global.DamageP3 = 600;
+        Global.DamageP3 = 60;
         Global.SpeedP3 = 15;
         Global.LevelP3 = 5;
         Global.MaxEXPP3 = 200;
-        Global.CurEXPP3 = 0;
-
-        Global.PlusPointP3 = 5;*/
+        Global.CurEXPP3 = 0;*/
 
         //Set Zen
         Global.Zen = 0;
@@ -173,6 +167,8 @@ public class MenuController : MonoBehaviour
 
         SceneManager.LoadScene("Cutscenes");
         //SceneManager.LoadScene("Wishing forest");
+        //SceneManager.LoadScene("Mana gate");
+        //SceneManager.LoadScene("BSManaGuardian 1");
     }
     public void PressLoadGame()
     {

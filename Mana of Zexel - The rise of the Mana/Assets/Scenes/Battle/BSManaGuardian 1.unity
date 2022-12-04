@@ -679,8 +679,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1670761288}
-        m_TargetAssemblyTypeName: BSInfernoScorpion1, Assembly-CSharp
+      - m_Target: {fileID: 1670761289}
+        m_TargetAssemblyTypeName: BSManaGuardian1, Assembly-CSharp
         m_MethodName: PressRun
         m_Mode: 1
         m_Arguments:
@@ -988,8 +988,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1670761288}
-        m_TargetAssemblyTypeName: BSInfernoScorpion1, Assembly-CSharp
+      - m_Target: {fileID: 1670761289}
+        m_TargetAssemblyTypeName: BSManaGuardian1, Assembly-CSharp
         m_MethodName: PressBackToTheMap2
         m_Mode: 1
         m_Arguments:
@@ -1172,6 +1172,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234725038}
   m_CullTransparentMesh: 1
+--- !u!1 &303433816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 303433817}
+  m_Layer: 0
+  m_Name: BatlleEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &303433817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303433816}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.7769704, y: 0.95680976, z: 487.0064}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 644790844}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &318926444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,8 +1449,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1670761288}
-        m_TargetAssemblyTypeName: BSInfernoScorpion1, Assembly-CSharp
+      - m_Target: {fileID: 1670761289}
+        m_TargetAssemblyTypeName: BSManaGuardian1, Assembly-CSharp
         m_MethodName: PressItem
         m_Mode: 1
         m_Arguments:
@@ -1791,8 +1823,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1670761288}
-        m_TargetAssemblyTypeName: BSInfernoScorpion1, Assembly-CSharp
+      - m_Target: {fileID: 1670761289}
+        m_TargetAssemblyTypeName: BSManaGuardian1, Assembly-CSharp
         m_MethodName: PressItem
         m_Mode: 1
         m_Arguments:
@@ -1841,126 +1873,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468586469}
   m_CullTransparentMesh: 1
---- !u!1 &470245579
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 470245582}
-  - component: {fileID: 470245581}
-  - component: {fileID: 470245580}
-  - component: {fileID: 470245583}
-  m_Layer: 0
-  m_Name: Inferno scorpion battle 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!95 &470245580
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 470245579}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bb4c63880f4e66d418e8f55057460e75, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!212 &470245581
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 470245579}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: c6c3d25289f4fac40b7238e4981049d5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 5.688889, y: 5.688889}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &470245582
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 470245579}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.89, y: -0.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &470245583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 470245579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd3f41fb3ceee0741b0609ae01250047, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aniInfernoScorpion: {fileID: 470245580}
-  yes_InfernoScorpion: 0
 --- !u!1 &472662269
 GameObject:
   m_ObjectHideFlags: 0
@@ -2448,8 +2360,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1670761288}
-        m_TargetAssemblyTypeName: BSInfernoScorpion1, Assembly-CSharp
+      - m_Target: {fileID: 1670761289}
+        m_TargetAssemblyTypeName: BSManaGuardian1, Assembly-CSharp
         m_MethodName: PressAttackP2
         m_Mode: 1
         m_Arguments:
@@ -2662,8 +2574,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1670761288}
-        m_TargetAssemblyTypeName: BSInfernoScorpion1, Assembly-CSharp
+      - m_Target: {fileID: 1670761289}
+        m_TargetAssemblyTypeName: BSManaGuardian1, Assembly-CSharp
         m_MethodName: PressAttack
         m_Mode: 1
         m_Arguments:
@@ -3226,6 +3138,111 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642641733}
   m_CullTransparentMesh: 1
+--- !u!1 &644790841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 644790844}
+  - component: {fileID: 644790843}
+  - component: {fileID: 644790842}
+  m_Layer: 0
+  m_Name: Tornado effect 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!95 &644790842
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644790841}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0047e34a18ec36341a4967e2bc40f471, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!212 &644790843
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644790841}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: b6536df6f163da44fbcfd859cf3ac8fe, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.56, y: 2.56}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &644790844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644790841}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.7030296, y: -0.49680975, z: -487.0064}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 303433817}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &661399339
 GameObject:
   m_ObjectHideFlags: 0
@@ -3815,8 +3832,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1670761288}
-        m_TargetAssemblyTypeName: BSInfernoScorpion1, Assembly-CSharp
+      - m_Target: {fileID: 1670761289}
+        m_TargetAssemblyTypeName: BSManaGuardian1, Assembly-CSharp
         m_MethodName: PressSkill
         m_Mode: 1
         m_Arguments:
@@ -7317,8 +7334,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1670761288}
-        m_TargetAssemblyTypeName: BSInfernoScorpion1, Assembly-CSharp
+      - m_Target: {fileID: 1670761289}
+        m_TargetAssemblyTypeName: BSManaGuardian1, Assembly-CSharp
         m_MethodName: PressAttackP3
         m_Mode: 1
         m_Arguments:
@@ -9519,7 +9536,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1670761284}
-  - component: {fileID: 1670761288}
+  - component: {fileID: 1670761289}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -9542,16 +9559,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1670761288
+--- !u!114 &1670761289
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670761282}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15f54ea0828c9a649af0dbfa416cdd77, type: 3}
+  m_Script: {fileID: 11500000, guid: 35bc2c0ec8f1aa24882423bfcf7216aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Item_panel: {fileID: 2001497631}
@@ -9567,6 +9584,7 @@ MonoBehaviour:
   MariaExp: {fileID: 1062006142}
   MariaPlusExp: {fileID: 1282748653}
   Lose_panel: {fileID: 1209780870}
+  TornadoEffect: {fileID: 644790841}
   PDamage: {fileID: 517921618}
   EDamage: {fileID: 928592179}
   num1: {fileID: 2001497629}
@@ -9580,7 +9598,7 @@ MonoBehaviour:
   MP2: {fileID: 1092953735}
   HP3: {fileID: 103573373}
   MP3: {fileID: 624090305}
-  HPE4: {fileID: 1870066342}
+  HPBE1: {fileID: 1870066342}
   EXPP1: {fileID: 398300636}
   EXPP2: {fileID: 805084275}
   EXPP3: {fileID: 1062006144}
@@ -9597,14 +9615,19 @@ MonoBehaviour:
   a1: 0
   a2: 0
   a3: 0
-  aE4: 0
+  aBE1: 0
   stop: 0
+  show1: 0
   show2: 0
   show3: 0
-  E4Hit: 0
+  BE1Hit: 0
   P2Available: 0
   P3Availabel: 0
   UseItemIndex: 0
+  BE1ANum: 0
+  TurnIndex: 0
+  BossSkillCharge: 0
+  BossSkillEngage: 0
 --- !u!1 &1671904382
 GameObject:
   m_ObjectHideFlags: 0
@@ -10425,8 +10448,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1670761288}
-        m_TargetAssemblyTypeName: BSInfernoScorpion1, Assembly-CSharp
+      - m_Target: {fileID: 1670761289}
+        m_TargetAssemblyTypeName: BSManaGuardian1, Assembly-CSharp
         m_MethodName: PressSkillP2
         m_Mode: 1
         m_Arguments:
@@ -10487,7 +10510,7 @@ GameObject:
   - component: {fileID: 1870066343}
   - component: {fileID: 1870066342}
   m_Layer: 5
-  m_Name: HPE4 (Legacy)
+  m_Name: HPE1 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10965,7 +10988,7 @@ PrefabInstance:
     - target: {fileID: 1155455705445324658, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1670761288}
+      objectReference: {fileID: 0}
     - target: {fileID: 1155455705445324658, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UseMP
@@ -11065,19 +11088,19 @@ PrefabInstance:
     - target: {fileID: 1155455705760714363, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1670761288}
+      objectReference: {fileID: 1670761289}
     - target: {fileID: 1155455705760714363, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CloseItemPanel
       objectReference: {fileID: 0}
     - target: {fileID: 1155455705760714363, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BSInfernoScorpion1, Assembly-CSharp
+      value: BSManaGuardian1, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1155455706362756293, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1670761288}
+      objectReference: {fileID: 0}
     - target: {fileID: 1155455706362756293, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UseEP
@@ -11089,7 +11112,7 @@ PrefabInstance:
     - target: {fileID: 1155455706385581359, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1670761288}
+      objectReference: {fileID: 0}
     - target: {fileID: 1155455706385581359, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UseB
@@ -11101,7 +11124,7 @@ PrefabInstance:
     - target: {fileID: 1155455706448458142, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1670761288}
+      objectReference: {fileID: 0}
     - target: {fileID: 1155455706448458142, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UseHP
@@ -11256,6 +11279,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2006806410}
   - component: {fileID: 2006806409}
+  - component: {fileID: 2006806412}
+  - component: {fileID: 2006806411}
   m_Layer: 0
   m_Name: Mana guardian battle 1
   m_TagString: Untagged
@@ -11328,8 +11353,44 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2006806411
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006806408}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8cb70d060336bf48870dc11318e9074, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2006806412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006806408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817b2d51dbaf6d54eb80d25ef321abff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animanaguardian: {fileID: 2006806411}
+  yes_ManaGuardianAttack: 0
+  yes_ManaGuardianSkillCharge: 0
+  yes_ManaGuardianSkill: 0
 --- !u!1 &2022835994
 GameObject:
   m_ObjectHideFlags: 0
@@ -11414,8 +11475,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1670761288}
-        m_TargetAssemblyTypeName: BSInfernoScorpion1, Assembly-CSharp
+      - m_Target: {fileID: 1670761289}
+        m_TargetAssemblyTypeName: BSManaGuardian1, Assembly-CSharp
         m_MethodName: PressSkillP3
         m_Mode: 1
         m_Arguments:
@@ -11845,7 +11906,7 @@ GameObject:
   - component: {fileID: 2106192505}
   - component: {fileID: 2106192506}
   m_Layer: 5
-  m_Name: HPE4Bar
+  m_Name: HPE1Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

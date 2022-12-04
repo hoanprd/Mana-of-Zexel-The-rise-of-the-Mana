@@ -284,6 +284,10 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("ManaGateToInfernoDesert"))
         {
             MapController.ManaGateToInfernoDesert = true;
+            ManaSlimeTrigger1.despawn = false;
+            ManaSlimeTrigger2.despawn = false;
+            ManaSlimeTrigger3.despawn = false;
+            ManaSlimeTrigger4.despawn = false;
             MapIndex = 3;
             SceneManager.LoadScene("Inferno desert");
         }
@@ -344,6 +348,10 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("ManaGateToManaDimension"))
         {
             MapController.ManaGateToManaDimension = true;
+            ManaSlimeTrigger1.despawn = false;
+            ManaSlimeTrigger2.despawn = false;
+            ManaSlimeTrigger3.despawn = false;
+            ManaSlimeTrigger4.despawn = false;
             MapIndex = 6;
             SceneManager.LoadScene("Mana dimension");
         }

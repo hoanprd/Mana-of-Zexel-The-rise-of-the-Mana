@@ -5,10 +5,11 @@ using System.Threading;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class BSInfernoScorpion1 : MonoBehaviour
+public class BSManaSlime1 : MonoBehaviour
 {
     PlayerBattle pb;
-    InfernoScorpionBattle ISB;
+    ManaSlimeBattle MSB;
+
     public GameObject Item_panel;
     public GameObject showr2;
     public GameObject P1_panel;
@@ -35,12 +36,11 @@ public class BSInfernoScorpion1 : MonoBehaviour
     public Text MP2;
     public Text HP3;
     public Text MP3;
-    public Text HPE4;
+    public Text HPE5;
     public Text EXPP1;
     public Text EXPP2;
     public Text EXPP3;
     public Text Money;
-    //public Text ManaGemItem;
     public Text LevelP1;
     public Text LevelP2;
     public Text LevelP3;
@@ -50,32 +50,40 @@ public class BSInfernoScorpion1 : MonoBehaviour
     public GameObject lu3;
     public GameObject HPMP;
     public GameObject NB;
-    public int a1, a2, a3, aE4;
+    public int a1, a2, a3, aE5;
     public int stop = 0;
     private int dem = 0;
     private int dem_turn = 1;
     private int once = 0;
-    private int show1 = 0;
+    public int show1 = 0;
     public int show2 = 0;
     public int show3 = 0;
-    public int E4Hit;
+    public int E5Hit;
     public bool P2Available, P3Availabel;
     public int UseItemIndex;
+
     // Start is called before the first frame update
     void Start()
     {
-        //gb = FindObjectOfType<Global>();
         pb = FindObjectOfType<PlayerBattle>();
-        ISB = FindObjectOfType<InfernoScorpionBattle>();
+        MSB = FindObjectOfType<ManaSlimeBattle>();
         a1 = Global.SpeedP1 / 10;
         a2 = Global.SpeedP2 / 10;
         a3 = Global.SpeedP3 / 10;
-        aE4 = Global.SpeedE4 / 10;
+        aE5 = Global.SpeedE5 / 10;
+
+        if (Global.CurHPP1 <= 0)
+            a1 = 0;
+        if (Global.CurHPP2 <= 0)
+            a2 = 0;
+        if (Global.CurHPP3 <= 0)
+            a3 = 0;
 
         if (CutscenesController.cus12 == 0)
         {
             MariaStatus.SetActive(false);
             MariaBar.SetActive(false);
+            a3 = 0;
             HP3.text = "";
             MP3.text = "";
             P3Availabel = false;
@@ -98,78 +106,85 @@ public class BSInfernoScorpion1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckE4Die();
+        CheckE5Die();
         CheckP1P2P3Die();
         CheckP1Die();
         CheckP2Die();
         CheckP3Die();
         UpdateUIText();
 
-        if (Global.SpeedP2 >= Global.SpeedE4)
+        if (a2 > 0 && Global.CurHPP2 > 0)
         {
-            if(a2 > 0 && Global.CurHPP2 > 0)
-            {
-                CheckE4Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-                if(show2 == 0)
-                    ShowP2Panel(true);
-                else
-                    ShowP2Panel(false);
-            }
-            else if (aE4 > 0 && Global.HPE4 > 0)
-            {
-                CheckE4Die();
-                ShowP1Panel(false);
+            CheckE5Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP3Die();
+            CheckP1P2P3Die();
+            if (show2 == 0)
+                ShowP2Panel(true);
+            else
                 ShowP2Panel(false);
+        }
+        else if (a1 > 0 && Global.CurHPP1 > 0)
+        {
+            CheckE5Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP3Die();
+            CheckP1P2P3Die();
+            UseItemIndex = 1;
+            if (show1 == 0)
+                ShowP1Panel(true);
+            else
+                ShowP1Panel(false);
+        }
+        else if (a3 > 0 && Global.CurHPP3 > 0 && P3Availabel == true)
+        {
+            CheckE5Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP3Die();
+            CheckP1P2P3Die();
+            UseItemIndex = 3;
+            if (show3 == 0)
+                ShowP3Panel(true);
+            else
                 ShowP3Panel(false);
-                if (dem == 2)
-                {
-                    ISB.yes_InfernoScorpion = 1;
-                    dem -= 1;
-                    EDamage.color = Color.red;
-                    EDamage.text = "-" + Global.DamageE4;
-                    Invoke("delayE4", 1f);
-                    Invoke("delayeE4attack2", 2f);
-                }
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-            }
-            else if (a1 > 0 && Global.CurHPP1 > 0)
+        }
+        else if (aE5 > 0 && Global.HPE5 > 0)
+        {
+            CheckE5Die();
+            ShowP1Panel(false);
+            ShowP2Panel(false);
+            ShowP3Panel(false);
+            if (dem == 1)
             {
-                CheckE4Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-                UseItemIndex = 1;
-                if (show1 == 0)
-                    ShowP1Panel(true);
-                else
-                    ShowP1Panel(false);
+                MSB.yes_ManaSlime = 1;
+                EDamage.color = Color.red;
+                EDamage.text = "-" + Global.DamageE5;
+                Invoke("delayE5", 1f);
+                dem = 0;
             }
-            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Availabel == true)
-            {
-                CheckE4Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP3Die();
-                CheckP1P2P3Die();
-                UseItemIndex = 3;
-                if (show3 == 0)
-                    ShowP3Panel(true);
-                else
-                    ShowP3Panel(false);
-            }
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
         }
 
-        if (a1 == 0 && a2 == 0 && a3 == 0 && aE4 == 0)
+        if (a1 == 0 && a2 == 0 && a3 == 0 && aE5 == 0)
         {
-            a1 = Global.SpeedP1 / 10;
-            a2 = Global.SpeedP2 / 10;
-            a3 = Global.SpeedP3 / 10;
-            aE4 = Global.SpeedBE4 / 10;
+            if (CutscenesController.cus12 == 0)
+            {
+                a1 = Global.SpeedP1 / 10;
+                a2 = Global.SpeedP2 / 10;
+                aE5 = Global.SpeedE5 / 10;
+            }
+            else
+            {
+                a1 = Global.SpeedP1 / 10;
+                a2 = Global.SpeedP2 / 10;
+                a3 = Global.SpeedP3 / 10;
+                aE5 = Global.SpeedE5 / 10;
+            }
         }
     }
 
@@ -187,14 +202,14 @@ public class BSInfernoScorpion1 : MonoBehaviour
             MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
         }
 
-        HPE4.text = "HP: " + Global.HPE4.ToString();
+        HPE5.text = "HP: " + Global.HPE5.ToString();
 
         NumTurn.text = "Turn " + dem_turn.ToString();
 
-        if (Global.HPE4 < 0)
+        if (Global.HPE5 < 0)
         {
-            Global.HPE4 = 0;
-            HPE4.text = "HP: " + Global.HPE4.ToString();
+            Global.HPE5 = 0;
+            HPE5.text = "HP: " + Global.HPE5.ToString();
         }
         else if (Global.CurHPP1 < 0)
         {
@@ -212,8 +227,8 @@ public class BSInfernoScorpion1 : MonoBehaviour
             HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
         }
 
-        if (Global.HPE2 <= 0)
-            HPE4.text = "HP: 0";
+        if (Global.HPE5 <= 0)
+            HPE5.text = "HP: 0";
         if (Global.CurHPP1 <= 0)
             HP1.text = "HP: 0";
         if (Global.CurHPP2 <= 0)
@@ -250,7 +265,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP1;
         Invoke("delayP1PressAttack", 1f);
-        dem = 2;
+        dem = 1;
     }
     public void PressAttackP2()
     {
@@ -259,7 +274,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP2;
         Invoke("delayP2PressAttack", 1f);
-        dem = 2;
+        dem = 1;
     }
     public void PressAttackP3()
     {
@@ -268,7 +283,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP3;
         Invoke("delayP3PressAttack", 1f);
-        dem = 2;
+        dem = 1;
     }
     public void PressSkill()
     {
@@ -280,7 +295,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
             Invoke("delayP1PressSkill", 1f);
-            dem = 2;
+            dem = 1;
         }
     }
     public void PressSkillP2()
@@ -293,7 +308,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
             Invoke("delayP2PressSkill", 1f);
-            dem = 2;
+            dem = 1;
         }
     }
     public void PressSkillP3()
@@ -307,7 +322,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
             showr1.text = "HP +" + HealAmount;
             Invoke("delayshowr", 2f);
             Invoke("delayP3PressSkill", 1f);
-            dem = 2;
+            dem = 1;
         }
     }
     public void PressItem()
@@ -464,7 +479,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
         if (ContainerController.Bom > 0)
         {
             Item_panel.SetActive(false);
-            Global.HPE4 -= 200;
+            Global.HPE5 -= 200;
             if (UseItemIndex == 1)
             {
                 a1 -= 1;
@@ -489,6 +504,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
             Invoke("delayshowr", 2f);
         }
     }
+
     public void CloseItemPanel()
     {
         if (UseItemIndex == 1)
@@ -503,12 +519,11 @@ public class BSInfernoScorpion1 : MonoBehaviour
     }
     public void PressRun()
     {
-        SceneManager.LoadScene("Inferno desert");
+        SceneManager.LoadScene("Mana gate");
     }
     public void PressBackToTheMap2()
     {
-        //ContainerController.ManaGem += 1;
-        SceneManager.LoadScene("Inferno desert");
+        SceneManager.LoadScene("Mana gate");
     }
     public void CheckP1Die()
     {
@@ -555,16 +570,14 @@ public class BSInfernoScorpion1 : MonoBehaviour
             }
         }
     }
-    public void CheckE4Die()
+    public void CheckE5Die()
     {
-        if (Global.HPE4 <= 0)
+        if (Global.HPE5 <= 0)
         {
             ShowP1Panel(false);
             ShowP2Panel(false);
-            ShowP3Panel(false);
             UpdateUIText();
             stop = 1;
-
             LevelP1.text = "Level " + Global.LevelP1;
             EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
 
@@ -582,110 +595,95 @@ public class BSInfernoScorpion1 : MonoBehaviour
             }
 
             Money.text = Global.Zen + " ";
-            //ManaGemItem.text = "Mana Gem +1";
 
-            Invoke("delayCheckE4Die1", 1f);
+            Invoke("delayCheckE5Die1", 1f);
             if (once == 0)
             {
-                Invoke("delayCheckE4Die2", 2f);
+                Invoke("delayCheckE5Die2", 2f);
                 once = 1;
             }
         }
     }
-    void delayE4()
+    void delayE5()
     {
-        CheckE4Die();
+        CheckE5Die();
         ShowP1Panel(false);
-        ShowP2Panel(false);
-        ShowP3Panel(false);
-        E4AttackTarget();
-        EDamage.text = "";
 
-        aE4 -= 1;
+        E5AttackTarget();
+
+        EDamage.text = "";
+        aE5 -= 1;
         dem_turn += 1;
     }
-
-    void E4AttackTarget()
+    void E5AttackTarget()
     {
         if (CutscenesController.cus12 == 0)
-            E4Hit = Random.Range(1, 3);
+            E5Hit = Random.Range(1, 3);
         else if (CutscenesController.cus12 == 1)
-            E4Hit = Random.Range(1, 4);
+            E5Hit = Random.Range(1, 4);
 
-        if (E4Hit == 1 && Global.CurHPP1 > 0)
-            Global.CurHPP1 -= Global.DamageE4;
-        else if (E4Hit == 1 && Global.CurHPP1 <= 0)
-            E4AttackTarget();
-        else if (E4Hit == 2 && Global.CurHPP2 > 0)
-            Global.CurHPP2 -= Global.DamageE4;
-        else if (E4Hit == 2 && Global.CurHPP2 <= 0)
-            E4AttackTarget();
-        else if (E4Hit == 3 && Global.CurHPP3 > 0)
-            Global.CurHPP3 -= Global.DamageE4;
-        else if (E4Hit == 3 && Global.CurHPP3 <= 0)
-            E4AttackTarget();
-    }
-
-    void delayeE4attack2()
-    {
-        if (dem == 1)
-        {
-            ISB.yes_InfernoScorpion = 1;
-            dem -= 1;
-            EDamage.color = Color.red;
-            EDamage.text = "-" + Global.DamageE4;
-            Invoke("delayE4", 1f);
-        }
+        if (E5Hit == 1 && Global.CurHPP1 > 0)
+            Global.CurHPP1 -= Global.DamageE5;
+        else if (E5Hit == 1 && Global.CurHPP1 <= 0)
+            E5AttackTarget();
+        else if (E5Hit == 2 && Global.CurHPP2 > 0)
+            Global.CurHPP2 -= Global.DamageE5;
+        else if (E5Hit == 2 && Global.CurHPP2 <= 0)
+            E5AttackTarget();
+        else if (E5Hit == 3 && Global.CurHPP3 > 0)
+            Global.CurHPP3 -= Global.DamageE5;
+        else if (E5Hit == 3 && Global.CurHPP3 <= 0)
+            E5AttackTarget();
     }
     void delayP1PressAttack()
     {
         ShowP1Panel(false);
-        Global.HPE4 -= Global.DamageP1;
+        Global.HPE5 -= Global.DamageP1;
         PDamage.text = "";
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
-        CheckE4Die();
+        CheckE5Die();
     }
     void delayP2PressAttack()
     {
         ShowP2Panel(false);
-        Global.HPE4 -= Global.DamageP2;
+        Global.HPE5 -= Global.DamageP2;
         PDamage.text = "";
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
-        CheckE4Die();
+        CheckE5Die();
     }
     void delayP3PressAttack()
     {
         ShowP3Panel(false);
-        Global.HPE4 -= Global.DamageP3;
+        Global.HPE5 -= Global.DamageP3;
         PDamage.text = "";
         a3 -= 1;
         show3 = 0;
         dem_turn += 1;
-        CheckE4Die();
+        CheckE5Die();
     }
     void delayP1PressSkill()
     {
         Global.CurMPP1 -= 20;
-        Global.HPE4 = Global.HPE4 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
+        Global.HPE5 = Global.HPE5 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
         PDamage.text = "";
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
-        CheckE4Die();
+        CheckE5Die();
     }
     void delayP2PressSkill()
     {
         Global.CurMPP2 -= 20;
-        Global.HPE4 = Global.HPE4 - (Global.DamageP2 + (Global.DamageP2 * 100 / 100));
+        Global.HPE5 = Global.HPE5 - (Global.DamageP2 + (Global.DamageP2 * 100 / 100));
         PDamage.text = "";
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
-        CheckE4Die();
+        CheckE5Die();
     }
     void delayP3PressSkill()
     {
@@ -725,12 +723,12 @@ public class BSInfernoScorpion1 : MonoBehaviour
     {
         SceneManager.LoadScene("Intro");
     }
-    void delayCheckE4Die1()
+    void delayCheckE5Die1()
     {
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }
-    void delayCheckE4Die2()
+    void delayCheckE5Die2()
     {
         if (Global.LevelP1 < 30)
         {

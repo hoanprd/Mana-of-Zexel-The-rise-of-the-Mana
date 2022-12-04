@@ -13,6 +13,7 @@ public class HPMPBarController : MonoBehaviour
     public Slider MPP3Slider;
     public Slider HPESlider;
     public static int EIndex;
+    public int once = 0;
 
     void Start()
     {
@@ -30,6 +31,16 @@ public class HPMPBarController : MonoBehaviour
             HPESlider.maxValue = Global.HPE3;
         else if (EIndex == 4)
             HPESlider.maxValue = Global.HPE4;
+        else if (EIndex == 5)
+            HPESlider.maxValue = Global.HPE5;
+        else if (EIndex == 6)
+            HPESlider.maxValue = Global.HPE6;
+        else if (EIndex == 7)
+            HPESlider.maxValue = Global.HPE7;
+        else if (EIndex == 8)
+            HPESlider.maxValue = Global.HPE8;
+        else if (EIndex == 11)
+            HPESlider.maxValue = Global.HPBE1;
         else if (EIndex == 14)
             HPESlider.maxValue = Global.HPBE4;
         else
@@ -44,6 +55,13 @@ public class HPMPBarController : MonoBehaviour
         MPP2Slider.value = Global.CurMPP2;
         HPP3Slider.value = Global.CurHPP3;
         MPP3Slider.value = Global.CurMPP3;
+
+        if (EIndex == 11 && once == 0)
+        {
+            once = 1;
+            HPESlider.maxValue = Global.HPBE1;
+        }
+
         if (EIndex == 1)
             HPESlider.value = Global.HPE1;
         else if (EIndex == 2)
@@ -52,6 +70,16 @@ public class HPMPBarController : MonoBehaviour
             HPESlider.value = Global.HPE3;
         else if (EIndex == 4)
             HPESlider.value = Global.HPE4;
+        else if (EIndex == 5)
+            HPESlider.value = Global.HPE5;
+        else if (EIndex == 6)
+            HPESlider.value = Global.HPE6;
+        else if (EIndex == 7)
+            HPESlider.value = Global.HPE7;
+        else if (EIndex == 8)
+            HPESlider.value = Global.HPE8;
+        else if (EIndex == 11)
+            HPESlider.value = Global.HPBE1;
         else if (EIndex == 14)
             HPESlider.value = Global.HPBE4;
         else

@@ -804,17 +804,17 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (Global.LevelP1 < 30)
         {
-            Global.CurEXPP1 += 40;
+            Global.CurEXPP1 += 360;
         }
         if (Global.LevelP2 < 30)
         {
-            Global.CurEXPP2 += 40;
+            Global.CurEXPP2 += 360;
         }
         if (Global.LevelP3 < 30 && P3Availabel == true)
         {
-            Global.CurEXPP3 += 40;
+            Global.CurEXPP3 += 360;
         }
-        Global.Zen += 40;
+        Global.Zen += 360;
         while (Global.CurEXPP1 >= Global.MaxEXPP1)
         {
             lu.SetActive(true);
