@@ -39,6 +39,10 @@ public class HPMPBarController : MonoBehaviour
             HPESlider.maxValue = Global.HPE7;
         else if (EIndex == 8)
             HPESlider.maxValue = Global.HPE8;
+        else if (EIndex == 9)
+            HPESlider.maxValue = Global.HPE9;
+        else if (EIndex == 10)
+            HPESlider.maxValue = Global.HPE10;
         else if (EIndex == 11)
             HPESlider.maxValue = Global.HPBE1;
         else if (EIndex == 14)
@@ -78,6 +82,10 @@ public class HPMPBarController : MonoBehaviour
             HPESlider.value = Global.HPE7;
         else if (EIndex == 8)
             HPESlider.value = Global.HPE8;
+        else if (EIndex == 9)
+            HPESlider.value = Global.HPE9;
+        else if (EIndex == 10)
+            HPESlider.value = Global.HPE10;
         else if (EIndex == 11)
             HPESlider.value = Global.HPBE1;
         else if (EIndex == 14)

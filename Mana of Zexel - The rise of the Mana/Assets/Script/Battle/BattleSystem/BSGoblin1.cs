@@ -11,6 +11,7 @@ public class BSGoblin1 : MonoBehaviour
     PlayerBattle pb;
     GoblinBattle GB;
     public GameObject Item_panel;
+    public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
     public GameObject showr2;
     public GameObject P1_panel;
     public GameObject P2_panel;
@@ -164,10 +165,19 @@ public class BSGoblin1 : MonoBehaviour
 
         if (a1 == 0 && a2 == 0 && a3 == 0 && aE2 == 0)
         {
-            a1 = Global.SpeedP1 / 10;
-            a2 = Global.SpeedP2 / 10;
-            a3 = Global.SpeedP3 / 10;
-            aE2 = Global.SpeedBE4 / 10;
+            if (CutscenesController.cus12 == 0)
+            {
+                a1 = Global.SpeedP1 / 10;
+                a2 = Global.SpeedP2 / 10;
+                aE2 = Global.SpeedE2 / 10;
+            }
+            else
+            {
+                a1 = Global.SpeedP1 / 10;
+                a2 = Global.SpeedP2 / 10;
+                a3 = Global.SpeedP3 / 10;
+                aE2 = Global.SpeedE2 / 10;
+            }
         }
     }
 
@@ -332,31 +342,18 @@ public class BSGoblin1 : MonoBehaviour
 
             if (UseItemIndex == 1)
             {
-                a1 -= 1;
-                Global.CurHPP1 += 50;
-                if (Global.CurHPP1 > Global.MaxHPP1)
-                {
-                    Global.CurHPP1 = Global.MaxHPP1;
-                }
-                show1 = 0;
+                HPHealingEffP1.SetActive(true);
             }
             else if (UseItemIndex == 3)
             {
-                a3 -= 1;
-                Global.CurHPP3 += 50;
-                if (Global.CurHPP3 > Global.MaxHPP3)
-                {
-                    Global.CurHPP3 = Global.MaxHPP3;
-                }
-                show3 = 0;
+                HPHealingEffP3.SetActive(true);
             }
 
+            HPHealingEffP1.SetActive(true);
             showr2.SetActive(true);
             showr1.text = "HP +50";
             ContainerController.HealPotion -= 1;
-            dem = 3;
-            dem_turn += 1;
-            Invoke("delayshowr", 2f);
+            Invoke("delayUseHP", 2f);
         }
         else
         {
@@ -373,31 +370,18 @@ public class BSGoblin1 : MonoBehaviour
 
             if (UseItemIndex == 1)
             {
-                a1 -= 1;
-                Global.CurMPP1 += 30;
-                if (Global.CurMPP1 > Global.MaxMPP1)
-                {
-                    Global.CurMPP1 = Global.MaxMPP1;
-                }
-                show1 = 0;
+                MPHealingEffP1.SetActive(true);
             }
             else if (UseItemIndex == 3)
             {
-                a3 -= 1;
-                Global.CurMPP3 += 30;
-                if (Global.CurMPP3 > Global.MaxMPP3)
-                {
-                    Global.CurMPP3 = Global.MaxMPP3;
-                }
-                show3 = 0;
+                MPHealingEffP3.SetActive(true);
             }
 
+            MPHealingEffP1.SetActive(true);
             showr2.SetActive(true);
             showr1.text = "MP +30";
             ContainerController.ManaPotion -= 1;
-            dem = 3;
-            dem_turn += 1;
-            Invoke("delayshowr", 2f);
+            Invoke("delayUseMP", 2f);
         }
         else
         {
@@ -414,41 +398,17 @@ public class BSGoblin1 : MonoBehaviour
 
             if (UseItemIndex == 1)
             {
-                a1 -= 1;
-                Global.CurHPP1 += 50;
-                Global.CurMPP1 += 30;
-                if (Global.CurHPP1 > Global.MaxHPP1)
-                {
-                    Global.CurHPP1 = Global.MaxHPP1;
-                }
-                if (Global.CurMPP1 > Global.MaxMPP1)
-                {
-                    Global.CurMPP1 = Global.MaxMPP1;
-                }
-                show1 = 0;
+                EPHealingEffP1.SetActive(true);
             }
             else if (UseItemIndex == 3)
             {
-                a3 -= 1;
-                Global.CurHPP3 += 50;
-                Global.CurMPP3 += 30;
-                if (Global.CurHPP3 > Global.MaxHPP3)
-                {
-                    Global.CurHPP3 = Global.MaxHPP3;
-                }
-                if (Global.CurMPP3 > Global.MaxMPP3)
-                {
-                    Global.CurMPP3 = Global.MaxMPP3;
-                }
-                show3 = 0;
+                EPHealingEffP3.SetActive(true);
             }
 
+            ContainerController.ElixirPotion -= 1;
             showr2.SetActive(true);
             showr1.text = "MP +50 MP +30";
-            ContainerController.ElixirPotion -= 1;
-            dem_turn += 1;
-            dem = 3;
-            Invoke("delayshowr", 2f);
+            Invoke("delayUseEP", 2f);
         }
         else
         {
@@ -462,23 +422,11 @@ public class BSGoblin1 : MonoBehaviour
         if (ContainerController.Bom > 0)
         {
             Item_panel.SetActive(false);
-            Global.HPE2 -= 200;
-            if (UseItemIndex == 1)
-            {
-                a1 -= 1;
-                show1 = 0;
-            }
-            else if (UseItemIndex == 3)
-            {
-                a3 -= 1;
-                show3 = 0;
-            }
+            BomEff.SetActive(true);
             ContainerController.Bom -= 1;
             PDamage.color = Color.red;
             PDamage.text = "-200";
-            dem_turn += 1;
-            dem = 3;
-            Invoke("delayshowr", 2f);
+            Invoke("delayUseBom", 2f);
         }
         else
         {
@@ -801,9 +749,138 @@ public class BSGoblin1 : MonoBehaviour
         Money.text = Global.Zen + " ";
         NB.SetActive(true);
     }
+
+    void delayUseHP()
+    {
+        if (UseItemIndex == 1)
+        {
+            HPHealingEffP1.SetActive(false);
+            a1 -= 1;
+            Global.CurHPP1 += 50;
+            if (Global.CurHPP1 > Global.MaxHPP1)
+            {
+                Global.CurHPP1 = Global.MaxHPP1;
+            }
+            show1 = 0;
+        }
+        else if (UseItemIndex == 3)
+        {
+            HPHealingEffP3.SetActive(false);
+            a3 -= 1;
+            Global.CurHPP3 += 50;
+            if (Global.CurHPP3 > Global.MaxHPP3)
+            {
+                Global.CurHPP3 = Global.MaxHPP3;
+            }
+            show3 = 0;
+        }
+
+        showr2.SetActive(true);
+        showr1.text = "";
+        dem = 1;
+        dem_turn += 1;
+    }
+
+    void delayUseMP()
+    {
+        if (UseItemIndex == 1)
+        {
+            MPHealingEffP1.SetActive(false);
+            a1 -= 1;
+            Global.CurMPP1 += 30;
+            if (Global.CurMPP1 > Global.MaxMPP1)
+            {
+                Global.CurMPP1 = Global.MaxMPP1;
+            }
+            show1 = 0;
+        }
+        else if (UseItemIndex == 3)
+        {
+            MPHealingEffP3.SetActive(false);
+            a3 -= 1;
+            Global.CurMPP3 += 30;
+            if (Global.CurMPP3 > Global.MaxMPP3)
+            {
+                Global.CurMPP3 = Global.MaxMPP3;
+            }
+            show3 = 0;
+        }
+
+        showr2.SetActive(true);
+        showr1.text = "";
+        dem = 1;
+        dem_turn += 1;
+    }
+
+    void delayUseEP()
+    {
+        if (UseItemIndex == 1)
+        {
+            EPHealingEffP1.SetActive(false);
+            a1 -= 1;
+            Global.CurHPP1 += 50;
+            Global.CurMPP1 += 30;
+            if (Global.CurHPP1 > Global.MaxHPP1)
+            {
+                Global.CurHPP1 = Global.MaxHPP1;
+            }
+            if (Global.CurMPP1 > Global.MaxMPP1)
+            {
+                Global.CurMPP1 = Global.MaxMPP1;
+            }
+            show1 = 0;
+        }
+        else if (UseItemIndex == 3)
+        {
+            EPHealingEffP3.SetActive(false);
+            a3 -= 1;
+            Global.CurHPP3 += 50;
+            Global.CurMPP3 += 30;
+            if (Global.CurHPP3 > Global.MaxHPP3)
+            {
+                Global.CurHPP3 = Global.MaxHPP3;
+            }
+            if (Global.CurMPP3 > Global.MaxMPP3)
+            {
+                Global.CurMPP3 = Global.MaxMPP3;
+            }
+            show3 = 0;
+        }
+
+        showr2.SetActive(true);
+        showr1.text = "";
+        dem_turn += 1;
+        dem = 1;
+    }
+
+    void delayUseBom()
+    {
+        Global.HPE2 -= 200;
+        BomEff.SetActive(false);
+        if (UseItemIndex == 1)
+        {
+            a1 -= 1;
+            show1 = 0;
+        }
+        else if (UseItemIndex == 3)
+        {
+            a3 -= 1;
+            show3 = 0;
+        }
+        PDamage.text = "";
+        dem = 1;
+        dem_turn += 1;
+    }
+
     void delayshowr()
     {
-        PDamage.text = "";
+        HPHealingEffP1.SetActive(false);
+        HPHealingEffP3.SetActive(false);
+        MPHealingEffP1.SetActive(false);
+        MPHealingEffP3.SetActive(false);
+        EPHealingEffP1.SetActive(false);
+        EPHealingEffP3.SetActive(false);
+        ReinEff.SetActive(false);
         showr2.SetActive(false);
     }
 }

@@ -52,7 +52,7 @@ public class MenuController : MonoBehaviour
         CutscenesController.cus9 = 0;
         CutscenesController.cus10 = 0;
         CutscenesController.cus11 = 0;
-        CutscenesController.cus12 = 0;
+        CutscenesController.cus12 = 1;
 
         //Set quest
         GlobalQuest.KillGoblinQuest = 0;
@@ -143,11 +143,11 @@ public class MenuController : MonoBehaviour
         ContainerController.DriedLeaves = 0;
         ContainerController.PureWater = 0;
         ContainerController.ManaGem = 0;
-        ContainerController.HealPotion = 0;
-        ContainerController.ManaPotion = 0;
-        ContainerController.ElixirPotion = 0;
+        ContainerController.HealPotion = 10;
+        ContainerController.ManaPotion = 10;
+        ContainerController.ElixirPotion = 10;
         ContainerController.Iron = 0;
-        ContainerController.Bom = 0;
+        ContainerController.Bom = 10;
 
         MapController.WishingHillToZexelTown = false;
         MapController.ZexelTownToTavern = false;
@@ -169,6 +169,8 @@ public class MenuController : MonoBehaviour
         //SceneManager.LoadScene("Wishing forest");
         //SceneManager.LoadScene("Mana gate");
         //SceneManager.LoadScene("BSManaGuardian 1");
+        //SceneManager.LoadScene("BSGolemn 1");
+        //SceneManager.LoadScene("BSIceFang 1");
     }
     public void PressLoadGame()
     {
