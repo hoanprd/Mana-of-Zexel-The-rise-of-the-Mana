@@ -37,7 +37,7 @@ public class BSFireFang1 : MonoBehaviour
     public Text MP2;
     public Text HP3;
     public Text MP3;
-    public Text HPE7;
+    public Text HPE6;
     public Text EXPP1;
     public Text EXPP2;
     public Text EXPP3;
@@ -52,7 +52,7 @@ public class BSFireFang1 : MonoBehaviour
     public GameObject lu3;
     public GameObject HPMP;
     public GameObject NB;
-    public int a1, a2, a3, aE7;
+    public int a1, a2, a3, aE6;
     public int stop = 0;
     private int dem = 0;
     private int dem_turn = 1;
@@ -60,7 +60,7 @@ public class BSFireFang1 : MonoBehaviour
     private int show1 = 0;
     public int show2 = 0;
     public int show3 = 0;
-    public int E7Hit;
+    public int E6Hit;
     public bool P2Available, P3Availabel;
     public int UseItemIndex;
     // Start is called before the first frame update
@@ -71,7 +71,7 @@ public class BSFireFang1 : MonoBehaviour
         a1 = Global.SpeedP1 / 10;
         a2 = Global.SpeedP2 / 10;
         a3 = Global.SpeedP3 / 10;
-        aE7 = Global.SpeedE7 / 10;
+        aE6 = Global.SpeedE6 / 10;
 
         if (CutscenesController.cus12 == 0)
         {
@@ -100,18 +100,18 @@ public class BSFireFang1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckE7Die();
+        CheckE6Die();
         CheckP1P2P3Die();
         CheckP1Die();
         CheckP2Die();
         CheckP3Die();
         UpdateUIText();
 
-        if (Global.SpeedP2 >= Global.SpeedE7)
+        if (Global.SpeedP2 >= Global.SpeedE6)
         {
             if(a2 > 0 && Global.CurHPP2 > 0)
             {
-                CheckE7Die();
+                CheckE6Die();
                 CheckP1Die();
                 CheckP2Die();
                 CheckP1P2P3Die();
@@ -122,7 +122,7 @@ public class BSFireFang1 : MonoBehaviour
             }
             else if (a1 > 0 && Global.CurHPP1 > 0)
             {
-                CheckE7Die();
+                CheckE6Die();
                 CheckP1Die();
                 CheckP2Die();
                 CheckP1P2P3Die();
@@ -132,9 +132,9 @@ public class BSFireFang1 : MonoBehaviour
                 else
                     ShowP1Panel(false);
             }
-            else if (aE7 > 0 && Global.HPE7 > 0)
+            else if (aE6 > 0 && Global.HPE6 > 0)
             {
-                CheckE7Die();
+                CheckE6Die();
                 ShowP1Panel(false);
                 ShowP2Panel(false);
                 ShowP3Panel(false);
@@ -143,9 +143,9 @@ public class BSFireFang1 : MonoBehaviour
                     FFB.yes_FireFang = 1;
                     dem -= 1;
                     EDamage.color = Color.red;
-                    EDamage.text = "-" + Global.DamageE7;
-                    Invoke("delayE7", 1f);
-                    Invoke("delayeE7attack2", 2f);
+                    EDamage.text = "-" + Global.DamageE6;
+                    Invoke("delayE6", 1f);
+                    Invoke("delayeE6attack2", 2f);
                 }
                 CheckP1Die();
                 CheckP2Die();
@@ -153,7 +153,7 @@ public class BSFireFang1 : MonoBehaviour
             }
             else if (a3 > 0 && Global.CurHPP3 > 0 && P3Availabel == true)
             {
-                CheckE7Die();
+                CheckE6Die();
                 CheckP1Die();
                 CheckP2Die();
                 CheckP3Die();
@@ -166,20 +166,20 @@ public class BSFireFang1 : MonoBehaviour
             }
         }
 
-        if (a1 == 0 && a2 == 0 && a3 == 0 && aE7 == 0)
+        if (a1 == 0 && a2 == 0 && a3 == 0 && aE6 == 0)
         {
             if (CutscenesController.cus12 == 0)
             {
                 a1 = Global.SpeedP1 / 10;
                 a2 = Global.SpeedP2 / 10;
-                aE7 = Global.SpeedE7 / 10;
+                aE6 = Global.SpeedE6 / 10;
             }
             else
             {
                 a1 = Global.SpeedP1 / 10;
                 a2 = Global.SpeedP2 / 10;
                 a3 = Global.SpeedP3 / 10;
-                aE7 = Global.SpeedE7 / 10;
+                aE6 = Global.SpeedE6 / 10;
             }
         }
     }
@@ -198,14 +198,14 @@ public class BSFireFang1 : MonoBehaviour
             MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
         }
 
-        HPE7.text = "HP: " + Global.HPE7.ToString();
+        HPE6.text = "HP: " + Global.HPE6.ToString();
 
         NumTurn.text = "Turn " + dem_turn.ToString();
 
-        if (Global.HPE7 < 0)
+        if (Global.HPE6 < 0)
         {
-            Global.HPE7 = 0;
-            HPE7.text = "HP: " + Global.HPE7.ToString();
+            Global.HPE6 = 0;
+            HPE6.text = "HP: " + Global.HPE6.ToString();
         }
         else if (Global.CurHPP1 < 0)
         {
@@ -224,7 +224,7 @@ public class BSFireFang1 : MonoBehaviour
         }
 
         if (Global.HPE2 <= 0)
-            HPE7.text = "HP: 0";
+            HPE6.text = "HP: 0";
         if (Global.CurHPP1 <= 0)
             HP1.text = "HP: 0";
         if (Global.CurHPP2 <= 0)
@@ -504,9 +504,9 @@ public class BSFireFang1 : MonoBehaviour
             }
         }
     }
-    public void CheckE7Die()
+    public void CheckE6Die()
     {
-        if (Global.HPE7 <= 0)
+        if (Global.HPE6 <= 0)
         {
             ShowP1Panel(false);
             ShowP2Panel(false);
@@ -533,108 +533,108 @@ public class BSFireFang1 : MonoBehaviour
             Money.text = Global.Zen + " ";
             //ManaGemItem.text = "Mana Gem +1";
 
-            Invoke("delayCheckE7Die1", 1f);
+            Invoke("delayCheckE6Die1", 1f);
             if (once == 0)
             {
-                Invoke("delayCheckE7Die2", 2f);
+                Invoke("delayCheckE6Die2", 2f);
                 once = 1;
             }
         }
     }
-    void delayE7()
+    void delayE6()
     {
-        CheckE7Die();
+        CheckE6Die();
         ShowP1Panel(false);
         ShowP2Panel(false);
         ShowP3Panel(false);
-        E7AttackTarget();
+        E6AttackTarget();
         EDamage.text = "";
 
-        aE7 -= 1;
+        aE6 -= 1;
         dem_turn += 1;
     }
 
-    void E7AttackTarget()
+    void E6AttackTarget()
     {
         if (CutscenesController.cus12 == 0)
-            E7Hit = Random.Range(1, 3);
+            E6Hit = Random.Range(1, 3);
         else if (CutscenesController.cus12 == 1)
-            E7Hit = Random.Range(1, 4);
+            E6Hit = Random.Range(1, 4);
 
-        if (E7Hit == 1 && Global.CurHPP1 > 0)
-            Global.CurHPP1 -= Global.DamageE7;
-        else if (E7Hit == 1 && Global.CurHPP1 <= 0)
-            E7AttackTarget();
-        else if (E7Hit == 2 && Global.CurHPP2 > 0)
-            Global.CurHPP2 -= Global.DamageE7;
-        else if (E7Hit == 2 && Global.CurHPP2 <= 0)
-            E7AttackTarget();
-        else if (E7Hit == 3 && Global.CurHPP3 > 0)
-            Global.CurHPP3 -= Global.DamageE7;
-        else if (E7Hit == 3 && Global.CurHPP3 <= 0)
-            E7AttackTarget();
+        if (E6Hit == 1 && Global.CurHPP1 > 0)
+            Global.CurHPP1 -= Global.DamageE6;
+        else if (E6Hit == 1 && Global.CurHPP1 <= 0)
+            E6AttackTarget();
+        else if (E6Hit == 2 && Global.CurHPP2 > 0)
+            Global.CurHPP2 -= Global.DamageE6;
+        else if (E6Hit == 2 && Global.CurHPP2 <= 0)
+            E6AttackTarget();
+        else if (E6Hit == 3 && Global.CurHPP3 > 0)
+            Global.CurHPP3 -= Global.DamageE6;
+        else if (E6Hit == 3 && Global.CurHPP3 <= 0)
+            E6AttackTarget();
     }
 
-    void delayeE7attack2()
+    void delayeE6attack2()
     {
         if (dem == 1)
         {
             FFB.yes_FireFang = 1;
             dem -= 1;
             EDamage.color = Color.red;
-            EDamage.text = "-" + Global.DamageE7;
-            Invoke("delayE7", 1f);
+            EDamage.text = "-" + Global.DamageE6;
+            Invoke("delayE6", 1f);
         }
     }
     void delayP1PressAttack()
     {
         ShowP1Panel(false);
-        Global.HPE7 -= Global.DamageP1;
+        Global.HPE6 -= Global.DamageP1;
         PDamage.text = "";
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
-        CheckE7Die();
+        CheckE6Die();
     }
     void delayP2PressAttack()
     {
         ShowP2Panel(false);
-        Global.HPE7 -= Global.DamageP2;
+        Global.HPE6 -= Global.DamageP2;
         PDamage.text = "";
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
-        CheckE7Die();
+        CheckE6Die();
     }
     void delayP3PressAttack()
     {
         ShowP3Panel(false);
-        Global.HPE7 -= Global.DamageP3;
+        Global.HPE6 -= Global.DamageP3;
         PDamage.text = "";
         a3 -= 1;
         show3 = 0;
         dem_turn += 1;
-        CheckE7Die();
+        CheckE6Die();
     }
     void delayP1PressSkill()
     {
         Global.CurMPP1 -= 20;
-        Global.HPE7 = Global.HPE7 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
+        Global.HPE6 = Global.HPE6 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
         PDamage.text = "";
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
-        CheckE7Die();
+        CheckE6Die();
     }
     void delayP2PressSkill()
     {
         Global.CurMPP2 -= 20;
-        Global.HPE7 = Global.HPE7 - (Global.DamageP2 + (Global.DamageP2 * 100 / 100));
+        Global.HPE6 = Global.HPE6 - (Global.DamageP2 + (Global.DamageP2 * 100 / 100));
         PDamage.text = "";
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
-        CheckE7Die();
+        CheckE6Die();
     }
     void delayP3PressSkill()
     {
@@ -674,12 +674,12 @@ public class BSFireFang1 : MonoBehaviour
     {
         SceneManager.LoadScene("Intro");
     }
-    void delayCheckE7Die1()
+    void delayCheckE6Die1()
     {
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }
-    void delayCheckE7Die2()
+    void delayCheckE6Die2()
     {
         if (Global.LevelP1 < 30)
         {
@@ -869,7 +869,7 @@ public class BSFireFang1 : MonoBehaviour
 
     void delayUseBom()
     {
-        Global.HPE7 -= 200;
+        Global.HPE6 -= 200;
         BomEff.SetActive(false);
         if (UseItemIndex == 1)
         {

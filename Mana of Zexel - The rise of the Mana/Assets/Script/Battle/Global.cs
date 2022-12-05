@@ -27,6 +27,7 @@ public class Global : MonoBehaviour
     public static int HPE8, DamageE8, SpeedE8;
     public static int HPE9, DamageE9, SpeedE9;
     public static int HPE10, DamageE10, SpeedE10;
+    public static int HPE11, DamageE11, SpeedE11;
 
     public static int HPBE1, DamageBE1, SpeedBE1;
     public static int HPBE2, DamageBE2, SpeedBE2;
@@ -63,25 +64,29 @@ public class Global : MonoBehaviour
         DamageE5 = 80;
         SpeedE5 = 10;
 
-        HPE6 = 1400;
-        DamageE6 = 120;
-        SpeedE6 = 10;
+        HPE6 = 1500;
+        DamageE6 = 160;
+        SpeedE6 = 20;
 
-        HPE7 = 1500;
-        DamageE7 = 160;
-        SpeedE7 = 20;
+        HPE7 = 2000;
+        DamageE7 = 180;
+        SpeedE7 = 10;
 
-        HPE8 = 2000;
+        HPE8 = 2200;
         DamageE8 = 100;
         SpeedE8 = 30;
 
         HPE9 = 2600;
-        DamageE9 = 180;
-        SpeedE9 = 30;
+        DamageE9 = 160;
+        SpeedE9 = 10;
 
-        HPE10 = 3400;
-        DamageE10 = 240;
+        HPE10 = 3600;
+        DamageE10 = 220;
         SpeedE10 = 20;
+
+        HPE11 = 4000;
+        DamageE11 = 260;
+        SpeedE11 = 20;
 
         //Boss
         HPBE1 = 2000;
@@ -93,7 +98,7 @@ public class Global : MonoBehaviour
         SpeedBE2 = 30;
 
         HPBE3 = 10000;
-        DamageBE3 = 360;
+        DamageBE3 = 260;
         SpeedBE3 = 10;
 
         HPBE4 = 8000;
