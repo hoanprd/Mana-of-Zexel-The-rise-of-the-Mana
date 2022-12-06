@@ -5,10 +5,10 @@ using System.Threading;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class BSGoblin1 : MonoBehaviour
+public class BSInfernoBeast1 : MonoBehaviour
 {
     PlayerBattle pb;
-    GoblinBattle GB;
+    InfernoBeastBattle IBB;
 
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
@@ -37,11 +37,12 @@ public class BSGoblin1 : MonoBehaviour
     public Text MP2;
     public Text HP3;
     public Text MP3;
-    public Text HPE2;
+    public Text HPBE2;
     public Text EXPP1;
     public Text EXPP2;
     public Text EXPP3;
     public Text Money;
+    //public Text ManaGemItem;
     public Text LevelP1;
     public Text LevelP2;
     public Text LevelP3;
@@ -51,26 +52,31 @@ public class BSGoblin1 : MonoBehaviour
     public GameObject lu3;
     public GameObject HPMP;
     public GameObject NB;
-    public int a1, a2, a3, aE2;
+    public int a1, a2, a3, aBE2;
     public int stop = 0;
     private int dem = 0;
     private int dem_turn = 1;
     private int once = 0;
-    private int show1 = 0;
+    public int show1 = 0;
     public int show2 = 0;
     public int show3 = 0;
-    public int E2Hit;
+    public int BE2Hit;
     public bool P2Available, P3Availabel;
     public int UseItemIndex;
+    public int BE2ANum, TurnIndex, BossSkillCharge, BossSkillEngage, BossSkillBreak, BeforeBreakSkillDamageCal, AfterBreakDamageCal, BreakDamageCal, BreakDamageIndex;
+
     // Start is called before the first frame update
     void Start()
     {
         pb = FindObjectOfType<PlayerBattle>();
-        GB = FindObjectOfType<GoblinBattle>();
+        IBB = FindObjectOfType<InfernoBeastBattle>();
         a1 = Global.SpeedP1 / 10;
         a2 = Global.SpeedP2 / 10;
         a3 = Global.SpeedP3 / 10;
-        aE2 = Global.SpeedE2 / 10;
+        aBE2 = Global.SpeedBE2 / 10;
+        HPMPBarController.EIndex = 11;
+        BreakDamageIndex = 0;
+        BossSkillCharge = 0;
 
         if (CutscenesController.cus12 == 0)
         {
@@ -79,6 +85,7 @@ public class BSGoblin1 : MonoBehaviour
             HP3.text = "";
             MP3.text = "";
             P3Availabel = false;
+            a3 = 0;
         }
         else
         {
@@ -98,28 +105,61 @@ public class BSGoblin1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckE2Die();
+        CheckBE2Die();
         CheckP1P2P3Die();
         CheckP1Die();
         CheckP2Die();
         CheckP3Die();
         UpdateUIText();
-        if (Global.SpeedP2 >= Global.SpeedE2)
+
+        if (Global.SpeedP2 >= Global.SpeedBE2)
         {
             if(a2 > 0 && Global.CurHPP2 > 0)
             {
-                CheckE2Die();
+                CheckBE2Die();
                 CheckP1Die();
                 CheckP2Die();
                 CheckP1P2P3Die();
-                if (show2 == 0)
+                TurnIndex = 2;
+                if(show2 == 0)
                     ShowP2Panel(true);
                 else
                     ShowP2Panel(false);
             }
+            else if (aBE2 > 0 && Global.HPBE2 > 0)
+            {
+                CheckBE2Die();
+                ShowP1Panel(false);
+                ShowP2Panel(false);
+                ShowP3Panel(false);
+                if (dem == 3)
+                {
+                    BE2Action();
+
+                    if (BossSkillCharge == 1)
+                    {
+                        dem = 0;
+                    }
+                    else
+                    {
+                        dem -= 1;
+                    }
+
+                    EDamage.color = Color.red;
+                    if (BE2ANum <= 4)
+                        EDamage.text = "-" + Global.DamageBE2;
+
+                    Invoke("delayBE2", 1f);
+                    Invoke("delayBE2attack2", 2f);
+                    Invoke("delayBE2attack3", 4f);
+                }
+                CheckP1Die();
+                CheckP2Die();
+                CheckP1P2P3Die();
+            }
             else if (a1 > 0 && Global.CurHPP1 > 0)
             {
-                CheckE2Die();
+                CheckBE2Die();
                 CheckP1Die();
                 CheckP2Die();
                 CheckP1P2P3Die();
@@ -131,7 +171,7 @@ public class BSGoblin1 : MonoBehaviour
             }
             else if (a3 > 0 && Global.CurHPP3 > 0 && P3Availabel == true)
             {
-                CheckE2Die();
+                CheckBE2Die();
                 CheckP1Die();
                 CheckP2Die();
                 CheckP3Die();
@@ -142,40 +182,22 @@ public class BSGoblin1 : MonoBehaviour
                 else
                     ShowP3Panel(false);
             }
-            else if (aE2 > 0 && Global.HPE2 > 0)
-            {
-                CheckE2Die();
-                ShowP1Panel(false);
-                ShowP2Panel(false);
-                ShowP3Panel(false);
-                if (dem == 1)
-                {
-                    GB.yes_goblin = 1;
-                    EDamage.color = Color.red;
-                    EDamage.text = "-" + Global.DamageE2;
-                    Invoke("delayE2", 1f);
-                    dem = 0;
-                }
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-            }
         }
 
-        if (a1 == 0 && a2 == 0 && a3 == 0 && aE2 == 0)
+        if (a1 == 0 && a2 == 0 && a3 == 0 && aBE2 == 0)
         {
             if (CutscenesController.cus12 == 0)
             {
                 a1 = Global.SpeedP1 / 10;
                 a2 = Global.SpeedP2 / 10;
-                aE2 = Global.SpeedE2 / 10;
+                aBE2 = Global.SpeedBE2 / 10;
             }
             else
             {
                 a1 = Global.SpeedP1 / 10;
                 a2 = Global.SpeedP2 / 10;
                 a3 = Global.SpeedP3 / 10;
-                aE2 = Global.SpeedE2 / 10;
+                aBE2 = Global.SpeedBE2 / 10;
             }
         }
     }
@@ -194,14 +216,14 @@ public class BSGoblin1 : MonoBehaviour
             MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
         }
 
-        HPE2.text = "HP: " + Global.HPE2.ToString();
+        HPBE2.text = "HP: " + Global.HPBE2.ToString();
 
         NumTurn.text = "Turn " + dem_turn.ToString();
 
-        if (Global.HPE2 < 0)
+        if (Global.HPBE2 < 0)
         {
-            Global.HPE2 = 0;
-            HPE2.text = "HP: " + Global.HPE2.ToString();
+            Global.HPBE2 = 0;
+            HPBE2.text = "HP: " + Global.HPBE2.ToString();
         }
         else if (Global.CurHPP1 < 0)
         {
@@ -220,7 +242,7 @@ public class BSGoblin1 : MonoBehaviour
         }
 
         if (Global.HPE2 <= 0)
-            HPE2.text = "HP: 0";
+            HPBE2.text = "HP: 0";
         if (Global.CurHPP1 <= 0)
             HP1.text = "HP: 0";
         if (Global.CurHPP2 <= 0)
@@ -257,7 +279,7 @@ public class BSGoblin1 : MonoBehaviour
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP1;
         Invoke("delayP1PressAttack", 1f);
-        dem = 1;
+        dem = 3;
     }
     public void PressAttackP2()
     {
@@ -266,7 +288,7 @@ public class BSGoblin1 : MonoBehaviour
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP2;
         Invoke("delayP2PressAttack", 1f);
-        dem = 1;
+        dem = 3;
     }
     public void PressAttackP3()
     {
@@ -275,7 +297,7 @@ public class BSGoblin1 : MonoBehaviour
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP3;
         Invoke("delayP3PressAttack", 1f);
-        dem = 1;
+        dem = 3;
     }
     public void PressSkill()
     {
@@ -287,7 +309,7 @@ public class BSGoblin1 : MonoBehaviour
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
             Invoke("delayP1PressSkill", 1f);
-            dem = 1;
+            dem = 3;
         }
     }
     public void PressSkillP2()
@@ -300,7 +322,7 @@ public class BSGoblin1 : MonoBehaviour
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
             Invoke("delayP2PressSkill", 1f);
-            dem = 1;
+            dem = 3;
         }
     }
     public void PressSkillP3()
@@ -314,7 +336,7 @@ public class BSGoblin1 : MonoBehaviour
             showr1.text = "HP +" + HealAmount;
             Invoke("delayshowr", 2f);
             Invoke("delayP3PressSkill", 1f);
-            dem = 1;
+            dem = 3;
         }
     }
     public void PressItem()
@@ -446,17 +468,51 @@ public class BSGoblin1 : MonoBehaviour
     }
     public void PressRun()
     {
-        SceneManager.LoadScene("Zexel town");
+        SceneManager.LoadScene("Alta inferno");
     }
     public void PressBackToTheMap2()
     {
-        if(CutscenesController.cus6 == 1 && CutscenesController.cus7 == 0)
+        //ContainerController.ManaGem += 10;
+        SceneManager.LoadScene("Alta inferno");
+    }
+
+    public void BE2Action()
+    {
+        if (BossSkillCharge == 1)
         {
-            GlobalQuest.KillGoblinQuest += 1;
-            if (GlobalQuest.KillGoblinQuest > 4)
-                GlobalQuest.KillGoblinQuest = 4;
+            AfterBreakDamageCal = Global.HPBE2;
+            BreakDamageCal = BeforeBreakSkillDamageCal - AfterBreakDamageCal;
+
+            if (BreakDamageCal >= 400)
+            {
+                PDamage.color = Color.red;
+                PDamage.text = "Skill break!";
+            }
+            else
+            {
+                IBB.yes_InfernoBeastSkill = 1;
+                int DamgeCal = Global.DamageBE2 + Global.DamageBE2 * 300 / 100;
+                EDamage.color = Color.red;
+                EDamage.text = "-" + DamgeCal;
+            }
         }
-        SceneManager.LoadScene("Zexel town");
+        else
+        {
+            BE2ANum = Random.Range(1, 11);
+            if (BE2ANum <= 2)
+            {
+                IBB.yes_InfernoBeastAttack1 = 1;
+            }
+            else if (BE2ANum == 3 || BE2ANum == 4)
+            {
+                IBB.yes_InfernoBeastAttack2 = 1;
+            }
+            else
+            {
+                IBB.yes_InfernoBeastSkillCharge = 1;
+                BossSkillCharge = 1;
+            }
+        }
     }
     public void CheckP1Die()
     {
@@ -503,14 +559,16 @@ public class BSGoblin1 : MonoBehaviour
             }
         }
     }
-    public void CheckE2Die()
+    public void CheckBE2Die()
     {
-        if (Global.HPE2 <= 0)
+        if (Global.HPBE2 <= 0)
         {
             ShowP1Panel(false);
             ShowP2Panel(false);
+            ShowP3Panel(false);
             UpdateUIText();
             stop = 1;
+
             LevelP1.text = "Level " + Global.LevelP1;
             EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
 
@@ -528,96 +586,187 @@ public class BSGoblin1 : MonoBehaviour
             }
 
             Money.text = Global.Zen + " ";
+            //ManaGemItem.text = "Mana Gem +10";
 
-            Invoke("delayCheckE2Die1", 1f);
+            Invoke("delayCheckBE2Die1", 1f);
             if (once == 0)
             {
-                Invoke("delayCheckE2Die2", 2f);
+                Invoke("delayCheckBE2Die2", 2f);
                 once = 1;
             }
         }
     }
-    void delayE2()
+    void delayBE2()
     {
-        CheckE2Die();
+        CheckBE2Die();
         ShowP1Panel(false);
-        E2AttackTarget();
-        EDamage.text = "";
+        ShowP2Panel(false);
+        ShowP3Panel(false);
 
-        aE2 -= 1;
-        dem_turn += 1;
+        if (BossSkillCharge == 1)
+        {
+            if (BossSkillEngage == 1)
+            {
+                AfterBreakDamageCal = Global.HPBE2;
+                BreakDamageCal = BeforeBreakSkillDamageCal - AfterBreakDamageCal;
+
+                if (BreakDamageCal >= 400)
+                {
+                    BreakDamageCal = 0;
+                    BeforeBreakSkillDamageCal = 0;
+                    AfterBreakDamageCal = 0;
+                    BreakDamageIndex = 0;
+                    BossSkillCharge = 0;
+                    BossSkillEngage = 0;
+                }
+                else
+                {
+                    Global.CurHPP1 -= Global.DamageBE2 + (Global.DamageBE2 * 300 / 100);
+                    Global.CurHPP2 -= Global.DamageBE2 + (Global.DamageBE2 * 300 / 100);
+                    Global.CurHPP3 -= Global.DamageBE2 + (Global.DamageBE2 * 300 / 100);
+                    BossSkillCharge = 0;
+                    BossSkillEngage = 0;
+                }
+            }
+            else
+            {
+                if (BreakDamageIndex == 0)
+                {
+                    BeforeBreakSkillDamageCal = Global.HPBE2;
+                    BreakDamageIndex = 1;
+                }
+                BossSkillEngage = 1;
+            }
+
+            EDamage.text = "";
+            PDamage.text = "";
+            dem = 0;
+            aBE2 = 0;
+            dem_turn += 1;
+        }
+        else
+        {
+            BE2AttackTarget();
+            EDamage.text = "";
+
+            aBE2 -= 1;
+            dem_turn += 1;
+        }
     }
 
-    void E2AttackTarget()
+    void BE2AttackTarget()
     {
         if (CutscenesController.cus12 == 0)
-            E2Hit = Random.Range(1, 3);
+            BE2Hit = Random.Range(1, 3);
         else if (CutscenesController.cus12 == 1)
-            E2Hit = Random.Range(1, 4);
+            BE2Hit = Random.Range(1, 4);
 
-        if (E2Hit == 1 && Global.CurHPP1 > 0)
-            Global.CurHPP1 -= Global.DamageE2;
-        else if (E2Hit == 1 && Global.CurHPP1 <= 0)
-            E2AttackTarget();
-        else if (E2Hit == 2 && Global.CurHPP2 > 0)
-            Global.CurHPP2 -= Global.DamageE2;
-        else if (E2Hit == 2 && Global.CurHPP2 <= 0)
-            E2AttackTarget();
-        else if (E2Hit == 3 && Global.CurHPP3 > 0)
-            Global.CurHPP3 -= Global.DamageE2;
-        else if (E2Hit == 3 && Global.CurHPP3 <= 0)
-            E2AttackTarget();
+        if (BE2Hit == 1 && Global.CurHPP1 > 0)
+        {
+            if (BE2ANum <= 6)
+            {
+                Global.CurHPP1 -= Global.DamageBE2;
+            }
+        }
+        else if (BE2Hit == 1 && Global.CurHPP1 <= 0)
+            BE2AttackTarget();
+        else if (BE2Hit == 2 && Global.CurHPP2 > 0)
+        {
+            if (BE2ANum <= 6)
+            {
+                Global.CurHPP2 -= Global.DamageBE2;
+            }
+        }
+        else if (BE2Hit == 2 && Global.CurHPP2 <= 0)
+            BE2AttackTarget();
+        else if (BE2Hit == 3 && Global.CurHPP3 > 0)
+        {
+            if (BE2ANum <= 6)
+            {
+                Global.CurHPP3 -= Global.DamageBE2;
+            }
+        }
+        else if (BE2Hit == 3 && Global.CurHPP3 <= 0)
+            BE2AttackTarget();
+    }
+
+    void delayBE2attack2()
+    {
+        if (dem == 2)
+        {
+            IBB.yes_InfernoBeastAttack1 = 1;
+            dem -= 1;
+
+            EDamage.color = Color.red;
+            EDamage.text = "-" + Global.DamageBE2;
+
+            Invoke("delayBE2", 1f);
+        }
+    }
+
+    void delayBE2attack3()
+    {
+        if (dem == 1)
+        {
+            IBB.yes_InfernoBeastAttack2 = 1;
+            dem -= 1;
+
+            EDamage.color = Color.red;
+            EDamage.text = "-" + Global.DamageBE2;
+
+            Invoke("delayBE2", 1f);
+        }
     }
 
     void delayP1PressAttack()
     {
         ShowP1Panel(false);
-        Global.HPE2 -= Global.DamageP1;
+        Global.HPBE2 -= Global.DamageP1;
         PDamage.text = "";
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
-        CheckE2Die();
+        CheckBE2Die();
     }
     void delayP2PressAttack()
     {
         ShowP2Panel(false);
-        Global.HPE2 -= Global.DamageP2;
+        Global.HPBE2 -= Global.DamageP2;
         PDamage.text = "";
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
-        CheckE2Die();
+        CheckBE2Die();
     }
     void delayP3PressAttack()
     {
         ShowP3Panel(false);
-        Global.HPE2 -= Global.DamageP3;
+        Global.HPBE2 -= Global.DamageP3;
         PDamage.text = "";
         a3 -= 1;
         show3 = 0;
         dem_turn += 1;
-        CheckE2Die();
+        CheckBE2Die();
     }
     void delayP1PressSkill()
     {
         Global.CurMPP1 -= 20;
-        Global.HPE2 = Global.HPE2 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
+        Global.HPBE2 = Global.HPBE2 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
         PDamage.text = "";
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
-        CheckE2Die();
+        CheckBE2Die();
     }
     void delayP2PressSkill()
     {
         Global.CurMPP2 -= 20;
-        Global.HPE2 = Global.HPE2 - (Global.DamageP2 + (Global.DamageP2 * 100 / 100));
+        Global.HPBE2 = Global.HPBE2 - (Global.DamageP2 + (Global.DamageP2 * 100 / 100));
         PDamage.text = "";
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
-        CheckE2Die();
+        CheckBE2Die();
     }
     void delayP3PressSkill()
     {
@@ -657,26 +806,26 @@ public class BSGoblin1 : MonoBehaviour
     {
         SceneManager.LoadScene("Intro");
     }
-    void delayCheckE2Die1()
+    void delayCheckBE2Die1()
     {
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }
-    void delayCheckE2Die2()
+    void delayCheckBE2Die2()
     {
         if (Global.LevelP1 < 30)
         {
-            Global.CurEXPP1 += 20;
+            Global.CurEXPP1 += 120;
         }
         if (Global.LevelP2 < 30)
         {
-            Global.CurEXPP2 += 20;
+            Global.CurEXPP2 += 120;
         }
         if (Global.LevelP3 < 30 && P3Availabel == true)
         {
-            Global.CurEXPP3 += 20;
+            Global.CurEXPP3 += 120;
         }
-        Global.Zen += 20;
+        Global.Zen += 120;
         while (Global.CurEXPP1 >= Global.MaxEXPP1)
         {
             lu.SetActive(true);
@@ -746,7 +895,6 @@ public class BSGoblin1 : MonoBehaviour
         Money.text = Global.Zen + " ";
         NB.SetActive(true);
     }
-
     void delayUseHP()
     {
         if (UseItemIndex == 1)
@@ -774,7 +922,7 @@ public class BSGoblin1 : MonoBehaviour
 
         showr2.SetActive(true);
         showr1.text = "";
-        dem = 1;
+        dem = 3;
         dem_turn += 1;
     }
 
@@ -805,7 +953,7 @@ public class BSGoblin1 : MonoBehaviour
 
         showr2.SetActive(true);
         showr1.text = "";
-        dem = 1;
+        dem = 3;
         dem_turn += 1;
     }
 
@@ -847,12 +995,12 @@ public class BSGoblin1 : MonoBehaviour
         showr2.SetActive(true);
         showr1.text = "";
         dem_turn += 1;
-        dem = 1;
+        dem = 3;
     }
 
     void delayUseBom()
     {
-        Global.HPE2 -= 200;
+        Global.HPBE2 -= 200;
         BomEff.SetActive(false);
         if (UseItemIndex == 1)
         {
@@ -865,7 +1013,7 @@ public class BSGoblin1 : MonoBehaviour
             show3 = 0;
         }
         PDamage.text = "";
-        dem = 1;
+        dem = 3;
         dem_turn += 1;
     }
 

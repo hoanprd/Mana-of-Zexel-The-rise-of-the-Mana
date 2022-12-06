@@ -359,7 +359,6 @@ public class BSIronGolemn1 : MonoBehaviour
                 HPHealingEffP3.SetActive(true);
             }
 
-            HPHealingEffP1.SetActive(true);
             showr2.SetActive(true);
             showr1.text = "HP +50";
             ContainerController.HealPotion -= 1;
@@ -387,7 +386,6 @@ public class BSIronGolemn1 : MonoBehaviour
                 MPHealingEffP3.SetActive(true);
             }
 
-            MPHealingEffP1.SetActive(true);
             showr2.SetActive(true);
             showr1.text = "MP +30";
             ContainerController.ManaPotion -= 1;

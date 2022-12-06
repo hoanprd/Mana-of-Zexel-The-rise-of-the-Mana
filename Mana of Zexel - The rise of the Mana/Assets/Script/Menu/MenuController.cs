@@ -52,7 +52,7 @@ public class MenuController : MonoBehaviour
         CutscenesController.cus9 = 0;
         CutscenesController.cus10 = 0;
         CutscenesController.cus11 = 0;
-        CutscenesController.cus12 = 1;
+        CutscenesController.cus12 = 0;
 
         //Set quest
         GlobalQuest.KillGoblinQuest = 0;
@@ -83,11 +83,7 @@ public class MenuController : MonoBehaviour
         Global.MaxHPP1 = 1000;
         Global.CurMPP1 = 500;
         Global.MaxMPP1 = 500;
-        Global.DamageP1 = 10;
-        Global.SpeedP1 = 20;
-        Global.LevelP1 = 1;
-        Global.MaxEXPP1 = 40;
-        Global.CurEXPP1 = 0;*/
+        Global.DamageP1 = 10;*/
 
         //Set Alia
         Global.CurHPP2 = 60;
@@ -106,11 +102,7 @@ public class MenuController : MonoBehaviour
         Global.MaxHPP2 = 6000;
         Global.CurMPP2 = 320;
         Global.MaxMPP2 = 320;
-        Global.DamageP2 = 50;
-        Global.SpeedP2 = 30;
-        Global.LevelP2 = 2;
-        Global.MaxEXPP2 = 80;
-        Global.CurEXPP2 = 0;*/
+        Global.DamageP2 = 100;*/
 
         //Set Maria
         Global.CurHPP3 = 235;
@@ -130,10 +122,7 @@ public class MenuController : MonoBehaviour
         Global.CurMPP3 = 850;
         Global.MaxMPP3 = 850;
         Global.DamageP3 = 60;
-        Global.SpeedP3 = 15;
-        Global.LevelP3 = 5;
-        Global.MaxEXPP3 = 200;
-        Global.CurEXPP3 = 0;*/
+        Global.SpeedP3 = 15;*/
 
         //Set Zen
         Global.Zen = 0;
@@ -171,6 +160,7 @@ public class MenuController : MonoBehaviour
         //SceneManager.LoadScene("BSManaGuardian 1");
         //SceneManager.LoadScene("BSGolemn 1");
         //SceneManager.LoadScene("BSIceFang 1");
+        //SceneManager.LoadScene("BSInfernoBeast 1");
     }
     public void PressLoadGame()
     {
