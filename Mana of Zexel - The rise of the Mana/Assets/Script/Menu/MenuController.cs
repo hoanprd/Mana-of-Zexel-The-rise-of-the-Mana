@@ -53,6 +53,8 @@ public class MenuController : MonoBehaviour
         CutscenesController.cus10 = 0;
         CutscenesController.cus11 = 0;
         CutscenesController.cus12 = 0;
+        CutscenesController.cus50 = 0;
+        CutscenesController.cus51 = 0;
 
         //Set quest
         GlobalQuest.KillGoblinQuest = 0;
@@ -161,6 +163,8 @@ public class MenuController : MonoBehaviour
         //SceneManager.LoadScene("BSGolemn 1");
         //SceneManager.LoadScene("BSIceFang 1");
         //SceneManager.LoadScene("BSInfernoBeast 1");
+        //SceneManager.LoadScene("BSBlueManaSlime 1");
+        //SceneManager.LoadScene("BSManaDragon 1");
     }
     public void PressLoadGame()
     {

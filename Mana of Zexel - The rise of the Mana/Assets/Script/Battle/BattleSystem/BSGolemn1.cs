@@ -14,14 +14,23 @@ public class BSGolemn1 : MonoBehaviour
     public GameObject showr2;
     public GameObject P1_panel;
     public GameObject P2_panel;
+    public GameObject P3_panel;
+
     public GameObject MariaStatus;
     public GameObject MariaBar;
-    public GameObject P3_panel;
-    public GameObject Win_panel;
     public GameObject MariaName;
     public GameObject MariaLevel;
     public GameObject MariaExp;
     public GameObject MariaPlusExp;
+
+    public GameObject AliaStatus;
+    public GameObject AliaBar;
+    public GameObject AliaName;
+    public GameObject AliaLevel;
+    public GameObject AliaExp;
+    public GameObject AliaPlusExp;
+
+    public GameObject Win_panel;
     public GameObject Lose_panel;
     public Text PDamage;
     public Text EDamage;
@@ -60,7 +69,7 @@ public class BSGolemn1 : MonoBehaviour
     public int show2 = 0;
     public int show3 = 0;
     public int E3Hit;
-    public bool P2Available, P3Availabel;
+    public bool P2Available, P3Available;
     public int UseItemIndex;
     // Start is called before the first frame update
     void Start()
@@ -79,13 +88,29 @@ public class BSGolemn1 : MonoBehaviour
             a3 = 0;
             HP3.text = "";
             MP3.text = "";
-            P3Availabel = false;
+            P3Available = false;
         }
         else
         {
             MariaStatus.SetActive(true);
             MariaBar.SetActive(true);
-            P3Availabel = true;
+            P3Available = true;
+        }
+
+        if (CutscenesController.cus50 == 1 && CutscenesController.cus51 == 0)
+        {
+            AliaStatus.SetActive(false);
+            AliaBar.SetActive(false);
+            a2 = 0;
+            HP2.text = "";
+            MP2.text = "";
+            P2Available = false;
+        }
+        else
+        {
+            AliaStatus.SetActive(true);
+            AliaBar.SetActive(true);
+            P2Available = true;
         }
 
         if (Global.CurHPP1 > 0)
@@ -108,7 +133,7 @@ public class BSGolemn1 : MonoBehaviour
 
         if (Global.SpeedP2 >= Global.SpeedE3)
         {
-            if(a2 > 0 && Global.CurHPP2 > 0)
+            if(a2 > 0 && Global.CurHPP2 > 0 && P2Available == true)
             {
                 CheckE3Die();
                 CheckP1Die();
@@ -150,7 +175,7 @@ public class BSGolemn1 : MonoBehaviour
                 CheckP2Die();
                 CheckP1P2P3Die();
             }
-            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Availabel == true)
+            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true)
             {
                 CheckE3Die();
                 CheckP1Die();
@@ -167,11 +192,17 @@ public class BSGolemn1 : MonoBehaviour
 
         if (a1 == 0 && a2 == 0 && a3 == 0 && aE3 == 0)
         {
-            if (CutscenesController.cus12 == 0)
+            if (P3Available == false)
             {
                 a1 = Global.SpeedP1 / 10;
                 a2 = Global.SpeedP2 / 10;
                 aE3 = Global.SpeedE3 / 10;
+            }
+            else if (P2Available == false)
+            {
+                a1 = Global.SpeedP1 / 10;
+                a3 = Global.SpeedP3 / 10;
+                aE3 = Global.SpeedE9 / 10;
             }
             else
             {
@@ -188,10 +219,13 @@ public class BSGolemn1 : MonoBehaviour
         HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
         MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
 
-        HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
-        MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
+        if (P2Available == true)
+        {
+            HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
+            MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
+        }
 
-        if (P3Availabel == true)
+        if (P3Available == true)
         {
             HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
             MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
@@ -482,9 +516,18 @@ public class BSGolemn1 : MonoBehaviour
     }
     public void CheckP1P2P3Die()
     {
-        if (CutscenesController.cus12 == 0)
+        if (P3Available == false)
         {
             if (Global.CurHPP1 <= 0 && Global.CurHPP2 <= 0)
+            {
+                UpdateUIText();
+                Invoke("delayCheckP1P2P3Die1", 1f);
+                Invoke("delayCheckP1P2P3Die2", 2f);
+            }
+        }
+        else if (P2Available == false)
+        {
+            if (Global.CurHPP1 <= 0 && Global.CurHPP3 <= 0)
             {
                 UpdateUIText();
                 Invoke("delayCheckP1P2P3Die1", 1f);
@@ -514,10 +557,17 @@ public class BSGolemn1 : MonoBehaviour
             LevelP1.text = "Level " + Global.LevelP1;
             EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
 
-            LevelP2.text = "Level " + Global.LevelP2;
-            EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
+            if (P2Available == true)
+            {
+                AliaName.SetActive(true);
+                AliaLevel.SetActive(true);
+                AliaExp.SetActive(true);
+                AliaPlusExp.SetActive(true);
+                LevelP2.text = "Level " + Global.LevelP2;
+                EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
+            }
 
-            if (P3Availabel == true)
+            if (P3Available == true)
             {
                 MariaName.SetActive(true);
                 MariaLevel.SetActive(true);
@@ -553,10 +603,18 @@ public class BSGolemn1 : MonoBehaviour
 
     void E3AttackTarget()
     {
-        if (CutscenesController.cus12 == 0)
+        if (P3Available == false && P2Available == true)
             E3Hit = Random.Range(1, 3);
-        else if (CutscenesController.cus12 == 1)
+        else if (P3Available == true && P2Available == true)
             E3Hit = Random.Range(1, 4);
+        else if (P3Available == true && P2Available == false)
+        {
+            E3Hit = Random.Range(1, 4);
+            while (E3Hit == 2)
+            {
+                E3Hit = Random.Range(1, 4);
+            }
+        }
 
         if (E3Hit == 1 && Global.CurHPP1 > 0)
             Global.CurHPP1 -= Global.DamageE3;
@@ -682,11 +740,11 @@ public class BSGolemn1 : MonoBehaviour
         {
             Global.CurEXPP1 += 40;
         }
-        if (Global.LevelP2 < 30)
+        if (Global.LevelP2 < 30 && P2Available == true)
         {
             Global.CurEXPP2 += 40;
         }
-        if (Global.LevelP3 < 30 && P3Availabel == true)
+        if (Global.LevelP3 < 30 && P3Available == true)
         {
             Global.CurEXPP3 += 40;
         }

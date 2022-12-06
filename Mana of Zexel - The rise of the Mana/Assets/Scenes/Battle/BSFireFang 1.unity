@@ -6982,7 +6982,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 30
-      m_TileSpriteIndex: 28
+      m_TileSpriteIndex: 30
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6992,7 +6992,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 29
-      m_TileSpriteIndex: 27
+      m_TileSpriteIndex: 29
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -7162,7 +7162,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 28
-      m_TileSpriteIndex: 26
+      m_TileSpriteIndex: 28
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -7172,7 +7172,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 27
-      m_TileSpriteIndex: 25
+      m_TileSpriteIndex: 27
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -7441,6 +7441,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -2016656943, guid: 83f77b5c59255d14191f6a508b3781dd, type: 3}
   - m_RefCount: 1
@@ -7449,10 +7453,6 @@ Tilemap:
     m_Data: {fileID: 1124967025, guid: 83f77b5c59255d14191f6a508b3781dd, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 4068007, guid: 83f77b5c59255d14191f6a508b3781dd, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 1362769004, guid: 83f77b5c59255d14191f6a508b3781dd, type: 3}
   - m_RefCount: 1
@@ -10573,14 +10573,20 @@ MonoBehaviour:
   showr2: {fileID: 608130032}
   P1_panel: {fileID: 1285538563}
   P2_panel: {fileID: 1847688984}
+  P3_panel: {fileID: 340793041}
   MariaStatus: {fileID: 1931134583}
   MariaBar: {fileID: 893792390}
-  P3_panel: {fileID: 340793041}
-  Win_panel: {fileID: 1799614299}
   MariaName: {fileID: 174886653}
   MariaLevel: {fileID: 631896229}
   MariaExp: {fileID: 1062006142}
   MariaPlusExp: {fileID: 1282748653}
+  AliaStatus: {fileID: 2082233349}
+  AliaBar: {fileID: 1148782936}
+  AliaName: {fileID: 1431729188}
+  AliaLevel: {fileID: 2102838899}
+  AliaExp: {fileID: 805084273}
+  AliaPlusExp: {fileID: 1435586186}
+  Win_panel: {fileID: 1799614299}
   Lose_panel: {fileID: 1209780870}
   PDamage: {fileID: 517921618}
   EDamage: {fileID: 928592179}
@@ -10595,12 +10601,11 @@ MonoBehaviour:
   MP2: {fileID: 1092953735}
   HP3: {fileID: 103573373}
   MP3: {fileID: 624090305}
-  HPE7: {fileID: 1870066342}
+  HPE6: {fileID: 0}
   EXPP1: {fileID: 398300636}
   EXPP2: {fileID: 805084275}
   EXPP3: {fileID: 1062006144}
   Money: {fileID: 1881686467}
-  ManaGemItem: {fileID: 0}
   LevelP1: {fileID: 914543294}
   LevelP2: {fileID: 2102838901}
   LevelP3: {fileID: 631896231}
@@ -10613,13 +10618,13 @@ MonoBehaviour:
   a1: 0
   a2: 0
   a3: 0
-  aE7: 0
+  aE6: 0
   stop: 0
   show2: 0
   show3: 0
-  E7Hit: 0
+  E6Hit: 0
   P2Available: 0
-  P3Availabel: 0
+  P3Available: 0
   UseItemIndex: 0
 --- !u!1 &1671904382
 GameObject:

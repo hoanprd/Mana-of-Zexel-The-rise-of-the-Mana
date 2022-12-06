@@ -44,9 +44,17 @@ public class HPMPBarController : MonoBehaviour
         else if (EIndex == 10)
             HPESlider.maxValue = Global.HPE10;
         else if (EIndex == 11)
+            HPESlider.maxValue = Global.HPE11;
+        else if (EIndex == 21)
             HPESlider.maxValue = Global.HPBE1;
-        else if (EIndex == 14)
+        else if (EIndex == 22)
+            HPESlider.maxValue = Global.HPBE2;
+        else if (EIndex == 23)
+            HPESlider.maxValue = Global.HPBE3;
+        else if (EIndex == 24)
             HPESlider.maxValue = Global.HPBE4;
+        else if (EIndex == 25)
+            HPESlider.maxValue = Global.HPBE5;
         else
             HPESlider.maxValue = Global.HPE1;
     }
@@ -59,12 +67,6 @@ public class HPMPBarController : MonoBehaviour
         MPP2Slider.value = Global.CurMPP2;
         HPP3Slider.value = Global.CurHPP3;
         MPP3Slider.value = Global.CurMPP3;
-
-        if (EIndex == 11 && once == 0)
-        {
-            once = 1;
-            HPESlider.maxValue = Global.HPBE1;
-        }
 
         if (EIndex == 1)
             HPESlider.value = Global.HPE1;
@@ -87,9 +89,17 @@ public class HPMPBarController : MonoBehaviour
         else if (EIndex == 10)
             HPESlider.value = Global.HPE10;
         else if (EIndex == 11)
+            HPESlider.value = Global.HPE11;
+        else if (EIndex == 21)
             HPESlider.value = Global.HPBE1;
-        else if (EIndex == 14)
+        else if (EIndex == 22)
+            HPESlider.value = Global.HPBE2;
+        else if (EIndex == 23)
+            HPESlider.value = Global.HPBE3;
+        else if (EIndex == 24)
             HPESlider.value = Global.HPBE4;
+        else if (EIndex == 25)
+            HPESlider.value = Global.HPBE5;
         else
             HPESlider.value = Global.HPE1;
     }
