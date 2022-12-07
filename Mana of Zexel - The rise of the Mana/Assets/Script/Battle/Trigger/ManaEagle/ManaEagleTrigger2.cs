@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class RedManaSlimeTrigger4 : MonoBehaviour
+public class ManaEagleTrigger2 : MonoBehaviour
 {
     public static bool despawn = false;
     private bool battle;
@@ -23,9 +23,9 @@ public class RedManaSlimeTrigger4 : MonoBehaviour
     {
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
-            HPMPBarController.EIndex = 7;
+            HPMPBarController.EIndex = 10;
             despawn = true;
-            SceneManager.LoadScene("BSRedManaSlime 1");
+            SceneManager.LoadScene("BSFireFang 1");
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

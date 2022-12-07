@@ -25,7 +25,7 @@ public class RedManaSlimeTrigger2 : MonoBehaviour
         {
             HPMPBarController.EIndex = 7;
             despawn = true;
-            SceneManager.LoadScene("BSBlueManaSlime 1");
+            SceneManager.LoadScene("BSRedManaSlime 1");
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

@@ -68,13 +68,25 @@ public class PlayerBattle : MonoBehaviour
         {
             ani.SetBool("p1dead", true);
         }
+        else
+        {
+            ani.SetBool("p1dead", false);
+        }
         if(dead2 == 1)
         {
             anip2.SetBool("p2dead", true);
         }
-        if(dead3 == 1)
+        else
+        {
+            anip2.SetBool("p2dead", false);
+        }
+        if (dead3 == 1)
         {
             anip3.SetBool("p3dead", true);
+        }
+        else
+        {
+            anip3.SetBool("p3dead", false);
         }
     }
 

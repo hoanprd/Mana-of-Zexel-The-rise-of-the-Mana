@@ -52,7 +52,7 @@ public class MenuController : MonoBehaviour
         CutscenesController.cus9 = 0;
         CutscenesController.cus10 = 0;
         CutscenesController.cus11 = 0;
-        CutscenesController.cus12 = 0;
+        CutscenesController.cus12 = 1;
         CutscenesController.cus50 = 0;
         CutscenesController.cus51 = 0;
 
@@ -139,6 +139,7 @@ public class MenuController : MonoBehaviour
         ContainerController.ElixirPotion = 10;
         ContainerController.Iron = 0;
         ContainerController.Bom = 10;
+        ContainerController.ReincarnationLife = 10;
 
         MapController.WishingHillToZexelTown = false;
         MapController.ZexelTownToTavern = false;
@@ -156,7 +157,7 @@ public class MenuController : MonoBehaviour
         SynthesizeSystem.ManaFireSynthesize = 0;
         SynthesizeSystem.ManaIceSynthesize = 0;
 
-        SceneManager.LoadScene("Cutscenes");
+        //SceneManager.LoadScene("Cutscenes");
         //SceneManager.LoadScene("Wishing forest");
         //SceneManager.LoadScene("Mana gate");
         //SceneManager.LoadScene("BSManaGuardian 1");
@@ -165,6 +166,7 @@ public class MenuController : MonoBehaviour
         //SceneManager.LoadScene("BSInfernoBeast 1");
         //SceneManager.LoadScene("BSBlueManaSlime 1");
         //SceneManager.LoadScene("BSManaDragon 1");
+        SceneManager.LoadScene("BSManaEagle 1");
     }
     public void PressLoadGame()
     {
