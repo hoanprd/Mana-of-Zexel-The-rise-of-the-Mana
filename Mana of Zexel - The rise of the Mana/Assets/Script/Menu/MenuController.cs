@@ -73,7 +73,7 @@ public class MenuController : MonoBehaviour
         Global.MaxHPP1 = 100;
         Global.CurMPP1 = 50;
         Global.MaxMPP1 = 50;
-        Global.DamageP1 = 100;
+        Global.DamageP1 = 10;
         Global.SpeedP1 = 20;
         Global.LevelP1 = 1;
         Global.MaxEXPP1 = 40;
@@ -81,11 +81,15 @@ public class MenuController : MonoBehaviour
 
         Global.PlusPointP1 = 1;
 
-        /*Global.CurHPP1 = 1000;
-        Global.MaxHPP1 = 1000;
-        Global.CurMPP1 = 500;
-        Global.MaxMPP1 = 500;
-        Global.DamageP1 = 10;*/
+        Global.CurHPP1 = 1200;
+        Global.MaxHPP1 = 1200;
+        Global.CurMPP1 = 170;
+        Global.MaxMPP1 = 170;
+        Global.DamageP1 = 410;
+        Global.SpeedP1 = 30;
+        Global.LevelP1 = 30;
+        Global.MaxEXPP1 = 40;
+        Global.CurEXPP1 = 0;
 
         //Set Alia
         Global.CurHPP2 = 60;
@@ -100,11 +104,15 @@ public class MenuController : MonoBehaviour
 
         Global.PlusPointP2 = 2;
 
-        /*Global.CurHPP2 = 6000;
-        Global.MaxHPP2 = 6000;
-        Global.CurMPP2 = 320;
-        Global.MaxMPP2 = 320;
-        Global.DamageP2 = 100;*/
+        Global.CurHPP2 = 840;
+        Global.MaxHPP2 = 840;
+        Global.CurMPP2 = 121;
+        Global.MaxMPP2 = 121;
+        Global.DamageP2 = 450;
+        Global.SpeedP2 = 40;
+        Global.LevelP2 = 30;
+        Global.MaxEXPP2 = 80;
+        Global.CurEXPP2 = 0;
 
         //Set Maria
         Global.CurHPP3 = 235;
@@ -119,12 +127,15 @@ public class MenuController : MonoBehaviour
 
         Global.PlusPointP3 = 5;
 
-        /*Global.CurHPP3 = 2350;
-        Global.MaxHPP3 = 2350;
-        Global.CurMPP3 = 850;
-        Global.MaxMPP3 = 850;
-        Global.DamageP3 = 60;
-        Global.SpeedP3 = 15;*/
+        Global.CurHPP3 = 1360;
+        Global.MaxHPP3 = 1360;
+        Global.CurMPP3 = 220;
+        Global.MaxMPP3 = 220;
+        Global.DamageP3 = 410;
+        Global.SpeedP3 = 20;
+        Global.LevelP3 = 30;
+        Global.MaxEXPP3 = 200;
+        Global.CurEXPP3 = 0;
 
         //Set Zen
         Global.Zen = 0;
@@ -166,7 +177,8 @@ public class MenuController : MonoBehaviour
         //SceneManager.LoadScene("BSInfernoBeast 1");
         //SceneManager.LoadScene("BSBlueManaSlime 1");
         //SceneManager.LoadScene("BSManaDragon 1");
-        SceneManager.LoadScene("BSManaEagle 1");
+        //SceneManager.LoadScene("BSManaEagle 1");
+        SceneManager.LoadScene("BSSicxalon 1");
     }
     public void PressLoadGame()
     {

@@ -5,10 +5,10 @@ using System.Threading;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class BSManaDragon1 : MonoBehaviour
+public class BSSicxalon1 : MonoBehaviour
 {
     PlayerBattle pb;
-    ManaDragonBattle MDB;
+    SicxalonBattle SB;
 
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
@@ -35,6 +35,7 @@ public class BSManaDragon1 : MonoBehaviour
     public GameObject Lose_panel;
     public Text PDamage;
     public Text EDamage;
+    public Text EDamage2;
     public Text num1;
     public Text num2;
     public Text num3;
@@ -47,7 +48,7 @@ public class BSManaDragon1 : MonoBehaviour
     public Text MP2;
     public Text HP3;
     public Text MP3;
-    public Text HPBE3;
+    public Text HPBE5;
     public Text EXPP1;
     public Text EXPP2;
     public Text EXPP3;
@@ -62,7 +63,8 @@ public class BSManaDragon1 : MonoBehaviour
     public GameObject lu3;
     public GameObject HPMP;
     public GameObject NB;
-    public int a1, a2, a3, aBE3;
+    public GameObject SicxalonManaAttack;
+    public int a1, a2, a3, aBE5;
     public int stop = 0;
     private int dem = 0;
     private int dem_turn = 1;
@@ -70,20 +72,20 @@ public class BSManaDragon1 : MonoBehaviour
     public int show1 = 0;
     public int show2 = 0;
     public int show3 = 0;
-    public int BE3Hit;
+    public int BE5Hit;
     public bool P2Available, P3Available;
     public int UseItemIndex;
-    public int BE3ANum, TurnIndex, BossSkillCharge, BossSkillEngage, BossSkillBreak, BeforeBreakSkillDamageCal, AfterBreakDamageCal, BreakDamageCal, BreakDamageIndex;
+    public int BE5ANum, TurnIndex, BossSkillCharge, BossSkillEngage, BossSkillBreak, BeforeBreakSkillDamageCal, AfterBreakDamageCal, BreakDamageCal, BreakDamageIndex;
 
     // Start is called before the first frame update
     void Start()
     {
         pb = FindObjectOfType<PlayerBattle>();
-        MDB = FindObjectOfType<ManaDragonBattle>();
+        SB = FindObjectOfType<SicxalonBattle>();
         a1 = Global.SpeedP1 / 10;
         a2 = Global.SpeedP2 / 10;
         a3 = Global.SpeedP3 / 10;
-        aBE3 = Global.SpeedBE3 / 10;
+        aBE5 = Global.SpeedBE5 / 10;
         HPMPBarController.EIndex = 11;
         BreakDamageIndex = 0;
         BossSkillCharge = 0;
@@ -131,18 +133,18 @@ public class BSManaDragon1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckBE3Die();
+        CheckBE5Die();
         CheckP1P2P3Die();
         CheckP1Die();
         CheckP2Die();
         CheckP3Die();
         UpdateUIText();
 
-        if (Global.SpeedP2 >= Global.SpeedBE3)
+        if (Global.SpeedP2 >= Global.SpeedBE5)
         {
             if(a2 > 0 && Global.CurHPP2 > 0 && P2Available == true)
             {
-                CheckBE3Die();
+                CheckBE5Die();
                 CheckP1Die();
                 CheckP2Die();
                 CheckP1P2P3Die();
@@ -154,7 +156,7 @@ public class BSManaDragon1 : MonoBehaviour
             }
             else if (a1 > 0 && Global.CurHPP1 > 0)
             {
-                CheckBE3Die();
+                CheckBE5Die();
                 CheckP1Die();
                 CheckP2Die();
                 CheckP1P2P3Die();
@@ -166,7 +168,7 @@ public class BSManaDragon1 : MonoBehaviour
             }
             else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true)
             {
-                CheckBE3Die();
+                CheckBE5Die();
                 CheckP1Die();
                 CheckP2Die();
                 CheckP3Die();
@@ -177,15 +179,15 @@ public class BSManaDragon1 : MonoBehaviour
                 else
                     ShowP3Panel(false);
             }
-            else if (aBE3 > 0 && Global.HPBE3 > 0)
+            else if (aBE5 > 0 && Global.HPBE5 > 0)
             {
-                CheckBE3Die();
+                CheckBE5Die();
                 ShowP1Panel(false);
                 ShowP2Panel(false);
                 ShowP3Panel(false);
                 if (dem == 1)
                 {
-                    BE3Action();
+                    BE5Action();
 
                     if (BossSkillCharge == 1)
                     {
@@ -197,10 +199,18 @@ public class BSManaDragon1 : MonoBehaviour
                     }
 
                     EDamage.color = Color.red;
-                    if (BE3ANum <= 5)
-                        EDamage.text = "-" + Global.DamageBE3;
+                    EDamage2.color = Color.blue;
+                    if (BE5ANum <= 3)
+                        EDamage.text = "-" + Global.DamageBE5;
+                    else if (BE5ANum > 3 && BE5ANum <= 5)
+                    {
+                        EDamage.text = "-" + Global.DamageBE5;
+                        EDamage2.text = "- 50";
+                    }
+                    else if (BE5ANum == 6)
+                        EDamage.text = "-999999";
 
-                    Invoke("delayBE3", 1f);
+                    Invoke("delayBE5", 1f);
                 }
                 CheckP1Die();
                 CheckP2Die();
@@ -208,26 +218,26 @@ public class BSManaDragon1 : MonoBehaviour
             }
         }
 
-        if (a1 == 0 && a2 == 0 && a3 == 0 && aBE3 == 0)
+        if (a1 == 0 && a2 == 0 && a3 == 0 && aBE5 == 0)
         {
             if (CutscenesController.cus12 == 0)
             {
                 a1 = Global.SpeedP1 / 10;
                 a2 = Global.SpeedP2 / 10;
-                aBE3 = Global.SpeedBE3 / 10;
+                aBE5 = Global.SpeedBE5 / 10;
             }
             else if (P2Available == false)
             {
                 a1 = Global.SpeedP1 / 10;
                 a3 = Global.SpeedP3 / 10;
-                aBE3 = Global.SpeedBE3 / 10;
+                aBE5 = Global.SpeedBE5 / 10;
             }
             else
             {
                 a1 = Global.SpeedP1 / 10;
                 a2 = Global.SpeedP2 / 10;
                 a3 = Global.SpeedP3 / 10;
-                aBE3 = Global.SpeedBE3 / 10;
+                aBE5 = Global.SpeedBE5 / 10;
             }
         }
     }
@@ -249,14 +259,14 @@ public class BSManaDragon1 : MonoBehaviour
             MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
         }
 
-        HPBE3.text = "HP: " + Global.HPBE3.ToString();
+        HPBE5.text = "HP: " + Global.HPBE5.ToString();
 
         NumTurn.text = "Turn " + dem_turn.ToString();
 
-        if (Global.HPBE3 < 0)
+        if (Global.HPBE5 < 0)
         {
-            Global.HPBE3 = 0;
-            HPBE3.text = "HP: " + Global.HPBE3.ToString();
+            Global.HPBE5 = 0;
+            HPBE5.text = "HP: " + Global.HPBE5.ToString();
         }
         else if (Global.CurHPP1 < 0)
         {
@@ -274,8 +284,24 @@ public class BSManaDragon1 : MonoBehaviour
             HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
         }
 
+        if (Global.CurMPP1 < 0)
+        {
+            Global.CurMPP1 = 0;
+            MP1.text = "HP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
+        }
+        else if (Global.CurMPP2 < 0)
+        {
+            Global.CurMPP2 = 0;
+            MP2.text = "HP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
+        }
+        else if (Global.CurMPP3 < 0)
+        {
+            Global.CurMPP3 = 0;
+            MP3.text = "HP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
+        }
+
         if (Global.HPE2 <= 0)
-            HPBE3.text = "HP: 0";
+            HPBE5.text = "HP: 0";
         if (Global.CurHPP1 <= 0)
             HP1.text = "HP: 0";
         if (Global.CurHPP2 <= 0)
@@ -386,6 +412,7 @@ public class BSManaDragon1 : MonoBehaviour
         num2.text = ContainerController.ManaPotion + "";
         num3.text = ContainerController.ElixirPotion + "";
         num4.text = ContainerController.Bom + "";
+        num9.text = ContainerController.ReincarnationLife + "";
         Item_panel.SetActive(true);
     }
     public void UseHP()
@@ -518,48 +545,53 @@ public class BSManaDragon1 : MonoBehaviour
     }
     public void PressRun()
     {
-        SceneManager.LoadScene("Mana cliff");
+        SceneManager.LoadScene("Cutscenes");
     }
     public void PressBackToTheMap2()
     {
         //ContainerController.ManaGem += 10;
-        SceneManager.LoadScene("Mana cliff");
+        SceneManager.LoadScene("Cutscenes");
     }
 
-    public void BE3Action()
+    public void BE5Action()
     {
         if (BossSkillCharge == 1)
         {
-            AfterBreakDamageCal = Global.HPBE3;
+            AfterBreakDamageCal = Global.HPBE5;
             BreakDamageCal = BeforeBreakSkillDamageCal - AfterBreakDamageCal;
 
-            if (BreakDamageCal >= 400)
+            if (BreakDamageCal >= 4000)
             {
                 PDamage.color = Color.red;
                 PDamage.text = "Skill break!";
             }
             else
             {
-                MDB.yes_ManaDragonSkill = 1;
-                int DamgeCal = Global.DamageBE3 + Global.DamageBE3 * 300 / 100;
+                SB.yes_SicxalonSkill1 = 1;
+                SicxalonManaAttack.SetActive(true);
+                int DamgeCal = Global.DamageBE5 + Global.DamageBE5 * 300 / 100;
                 EDamage.color = Color.red;
                 EDamage.text = "-" + DamgeCal;
             }
         }
         else
         {
-            BE3ANum = Random.Range(1, 11);
-            if (BE3ANum <= 3)
+            BE5ANum = Random.Range(1, 11);
+            if (BE5ANum <= 3)
             {
-                MDB.yes_ManaDragonAttack1 = 1;
+                SB.yes_SicxalonAttack1 = 1;
             }
-            else if (BE3ANum == 4 || BE3ANum == 5)
+            else if (BE5ANum == 4 || BE5ANum == 5)
             {
-                MDB.yes_ManaDragonAttack2 = 1;
+                SB.yes_SicxalonAttack2 = 1;
+            }
+            else if (BE5ANum == 6)
+            {
+                SB.yes_SicxalonSkill2 = 1;
             }
             else
             {
-                MDB.yes_ManaDragonSkillCharge = 1;
+                SB.yes_SicxalonSkillCharge = 1;
                 BossSkillCharge = 1;
             }
         }
@@ -618,9 +650,9 @@ public class BSManaDragon1 : MonoBehaviour
             }
         }
     }
-    public void CheckBE3Die()
+    public void CheckBE5Die()
     {
-        if (Global.HPBE3 <= 0)
+        if (Global.HPBE5 <= 0)
         {
             ShowP1Panel(false);
             ShowP2Panel(false);
@@ -652,19 +684,18 @@ public class BSManaDragon1 : MonoBehaviour
             }
 
             Money.text = Global.Zen + " ";
-            //ManaGemItem.text = "Mana Gem +10";
 
-            Invoke("delayCheckBE3Die1", 1f);
+            Invoke("delayCheckBE5Die1", 1f);
             if (once == 0)
             {
-                Invoke("delayCheckBE3Die2", 2f);
+                Invoke("delayCheckBE5Die2", 2f);
                 once = 1;
             }
         }
     }
-    void delayBE3()
+    void delayBE5()
     {
-        CheckBE3Die();
+        CheckBE5Die();
         ShowP1Panel(false);
         ShowP2Panel(false);
         ShowP3Panel(false);
@@ -673,10 +704,10 @@ public class BSManaDragon1 : MonoBehaviour
         {
             if (BossSkillEngage == 1)
             {
-                AfterBreakDamageCal = Global.HPBE3;
+                AfterBreakDamageCal = Global.HPBE5;
                 BreakDamageCal = BeforeBreakSkillDamageCal - AfterBreakDamageCal;
 
-                if (BreakDamageCal >= 400)
+                if (BreakDamageCal >= 4000)
                 {
                     BreakDamageCal = 0;
                     BeforeBreakSkillDamageCal = 0;
@@ -687,18 +718,19 @@ public class BSManaDragon1 : MonoBehaviour
                 }
                 else
                 {
-                    Global.CurHPP1 -= Global.DamageBE3 + (Global.DamageBE3 * 300 / 100);
-                    Global.CurHPP2 -= Global.DamageBE3 + (Global.DamageBE3 * 300 / 100);
-                    Global.CurHPP3 -= Global.DamageBE3 + (Global.DamageBE3 * 300 / 100);
+                    Global.CurHPP1 -= Global.DamageBE5 + (Global.DamageBE5 * 300 / 100);
+                    Global.CurHPP2 -= Global.DamageBE5 + (Global.DamageBE5 * 300 / 100);
+                    Global.CurHPP3 -= Global.DamageBE5 + (Global.DamageBE5 * 300 / 100);
                     BossSkillCharge = 0;
                     BossSkillEngage = 0;
+                    SicxalonManaAttack.SetActive(false);
                 }
             }
             else
             {
                 if (BreakDamageIndex == 0)
                 {
-                    BeforeBreakSkillDamageCal = Global.HPBE3;
+                    BeforeBreakSkillDamageCal = Global.HPBE5;
                     BreakDamageIndex = 1;
                 }
                 BossSkillEngage = 1;
@@ -707,130 +739,142 @@ public class BSManaDragon1 : MonoBehaviour
             EDamage.text = "";
             PDamage.text = "";
             dem = 0;
-            aBE3 = 0;
+            aBE5 = 0;
             dem_turn += 1;
         }
         else
         {
-            BE3AttackTarget();
+            BE5AttackTarget();
             EDamage.text = "";
 
-            aBE3 -= 1;
+            aBE5 -= 1;
             dem_turn += 1;
         }
     }
 
-    void BE3AttackTarget()
+    void BE5AttackTarget()
     {
         if (P3Available == false && P2Available == true)
-            BE3Hit = Random.Range(1, 3);
+            BE5Hit = Random.Range(1, 3);
         else if (P3Available == true && P2Available == true)
-            BE3Hit = Random.Range(1, 4);
+            BE5Hit = Random.Range(1, 4);
         else if (P3Available == true && P2Available == false)
         {
-            BE3Hit = Random.Range(1, 4);
-            while (BE3Hit == 2)
+            BE5Hit = Random.Range(1, 4);
+            while (BE5Hit == 2)
             {
-                BE3Hit = Random.Range(1, 4);
+                BE5Hit = Random.Range(1, 4);
             }
         }
 
-        if (BE3Hit == 1 && Global.CurHPP1 > 0)
+        if (BE5Hit == 1 && Global.CurHPP1 > 0)
         {
-            if (BE3ANum <= 3)
+            if (BE5ANum <= 3)
             {
-                Global.CurHPP1 -= Global.DamageBE3;
+                Global.CurHPP1 -= Global.DamageBE5;
             }
-            else if (BE3ANum <= 5)
+            else if (BE5ANum == 4 || BE5ANum == 5)
             {
-                Global.CurMPP1 -= 30;
-                if (Global.CurMPP1 < 0)
-                    Global.CurMPP1 = 0;
+                Global.CurHPP1 -= Global.DamageBE5;
+                Global.CurMPP1 -= 50;
+            }
+            else if (BE5ANum == 6)
+            {
+                Global.CurHPP1 = 0;
+                Global.CurMPP1 = 0;
             }
         }
-        else if (BE3Hit == 1 && Global.CurHPP1 <= 0)
-            BE3AttackTarget();
-        else if (BE3Hit == 2 && Global.CurHPP2 > 0)
+        else if (BE5Hit == 1 && Global.CurHPP1 <= 0)
+            BE5AttackTarget();
+        else if (BE5Hit == 2 && Global.CurHPP2 > 0)
         {
-            if (BE3ANum <= 3)
+            if (BE5ANum <= 3)
             {
-                Global.CurHPP2 -= Global.DamageBE3;
+                Global.CurHPP2 -= Global.DamageBE5;
             }
-            else if (BE3ANum <= 5)
+            else if (BE5ANum == 4 || BE5ANum == 5)
             {
-                Global.CurMPP2 -= 30;
-                if (Global.CurMPP2 < 0)
-                    Global.CurMPP2 = 0;
+                Global.CurHPP2 -= Global.DamageBE5;
+                Global.CurMPP2 -= 50;
+            }
+            else if (BE5ANum == 6)
+            {
+                Global.CurHPP2 = 0;
+                Global.CurMPP2 = 0;
             }
         }
-        else if (BE3Hit == 2 && Global.CurHPP2 <= 0)
-            BE3AttackTarget();
-        else if (BE3Hit == 3 && Global.CurHPP3 > 0)
+        else if (BE5Hit == 2 && Global.CurHPP2 <= 0)
+            BE5AttackTarget();
+        else if (BE5Hit == 3 && Global.CurHPP3 > 0)
         {
-            if (BE3ANum <= 3)
+            if (BE5ANum <= 3)
             {
-                Global.CurHPP3 -= Global.DamageBE3;
+                Global.CurHPP3 -= Global.DamageBE5;
             }
-            else if (BE3ANum <= 5)
+            else if (BE5ANum == 4 || BE5ANum == 5)
             {
-                Global.CurMPP3 -= 30;
-                if (Global.CurMPP3 < 0)
-                    Global.CurMPP3 = 0;
+                Global.CurHPP3 -= Global.DamageBE5;
+                Global.CurMPP3 -= 50;
+            }
+            else if (BE5ANum == 6)
+            {
+                Global.CurHPP3 = 0;
+                Global.CurMPP3 = 0;
             }
         }
-        else if (BE3Hit == 3 && Global.CurHPP3 <= 0)
-            BE3AttackTarget();
+        else if (BE5Hit == 3 && Global.CurHPP3 <= 0)
+            BE5AttackTarget();
     }
 
     void delayP1PressAttack()
     {
         ShowP1Panel(false);
-        Global.HPBE3 -= Global.DamageP1;
+        Global.HPBE5 -= Global.DamageP1;
         PDamage.text = "";
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
-        CheckBE3Die();
+        CheckBE5Die();
     }
     void delayP2PressAttack()
     {
         ShowP2Panel(false);
-        Global.HPBE3 -= Global.DamageP2;
+        Global.HPBE5 -= Global.DamageP2;
         PDamage.text = "";
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
-        CheckBE3Die();
+        CheckBE5Die();
     }
     void delayP3PressAttack()
     {
         ShowP3Panel(false);
-        Global.HPBE3 -= Global.DamageP3;
+        Global.HPBE5 -= Global.DamageP3;
         PDamage.text = "";
         a3 -= 1;
         show3 = 0;
         dem_turn += 1;
-        CheckBE3Die();
+        CheckBE5Die();
     }
     void delayP1PressSkill()
     {
         Global.CurMPP1 -= 20;
-        Global.HPBE3 = Global.HPBE3 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
+        Global.HPBE5 = Global.HPBE5 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
         PDamage.text = "";
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
-        CheckBE3Die();
+        CheckBE5Die();
     }
     void delayP2PressSkill()
     {
         Global.CurMPP2 -= 20;
-        Global.HPBE3 = Global.HPBE3 - (Global.DamageP2 + (Global.DamageP2 * 100 / 100));
+        Global.HPBE5 = Global.HPBE5 - (Global.DamageP2 + (Global.DamageP2 * 100 / 100));
         PDamage.text = "";
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
-        CheckBE3Die();
+        CheckBE5Die();
     }
     void delayP3PressSkill()
     {
@@ -870,12 +914,12 @@ public class BSManaDragon1 : MonoBehaviour
     {
         SceneManager.LoadScene("Intro");
     }
-    void delayCheckBE3Die1()
+    void delayCheckBE5Die1()
     {
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }
-    void delayCheckBE3Die2()
+    void delayCheckBE5Die2()
     {
         if (Global.LevelP1 < 30)
         {
@@ -1064,7 +1108,7 @@ public class BSManaDragon1 : MonoBehaviour
 
     void delayUseBom()
     {
-        Global.HPBE3 -= 200;
+        Global.HPBE5 -= 200;
         BomEff.SetActive(false);
         if (UseItemIndex == 1)
         {
