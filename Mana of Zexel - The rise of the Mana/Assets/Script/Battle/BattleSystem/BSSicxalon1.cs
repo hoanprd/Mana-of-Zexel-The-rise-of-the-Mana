@@ -40,7 +40,10 @@ public class BSSicxalon1 : MonoBehaviour
     public Text num2;
     public Text num3;
     public Text num4;
-    public Text num9;
+    public Text num5;
+    public Text num6;
+    public Text num7;
+    public Text num8;
     public Text showr1;
     public Text HP1;
     public Text MP1;
@@ -166,26 +169,13 @@ public class BSSicxalon1 : MonoBehaviour
                 else
                     ShowP1Panel(false);
             }
-            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true)
-            {
-                CheckBE5Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP3Die();
-                CheckP1P2P3Die();
-                UseItemIndex = 3;
-                if (show3 == 0)
-                    ShowP3Panel(true);
-                else
-                    ShowP3Panel(false);
-            }
             else if (aBE5 > 0 && Global.HPBE5 > 0)
             {
                 CheckBE5Die();
                 ShowP1Panel(false);
                 ShowP2Panel(false);
                 ShowP3Panel(false);
-                if (dem == 1)
+                if (dem == 2)
                 {
                     BE5Action();
 
@@ -207,14 +197,28 @@ public class BSSicxalon1 : MonoBehaviour
                         EDamage.text = "-" + Global.DamageBE5;
                         EDamage2.text = "- 50";
                     }
-                    else if (BE5ANum == 6)
+                    else if (BE5ANum == 6 || BE5ANum == 7)
                         EDamage.text = "-999999";
 
                     Invoke("delayBE5", 1f);
+                    Invoke("delayBE5attack2", 3f);
                 }
                 CheckP1Die();
                 CheckP2Die();
                 CheckP1P2P3Die();
+            }
+            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true)
+            {
+                CheckBE5Die();
+                CheckP1Die();
+                CheckP2Die();
+                CheckP3Die();
+                CheckP1P2P3Die();
+                UseItemIndex = 3;
+                if (show3 == 0)
+                    ShowP3Panel(true);
+                else
+                    ShowP3Panel(false);
             }
         }
 
@@ -239,6 +243,16 @@ public class BSSicxalon1 : MonoBehaviour
                 a3 = Global.SpeedP3 / 10;
                 aBE5 = Global.SpeedBE5 / 10;
             }
+        }
+        FixBug();
+    }
+
+    public void FixBug()
+    {
+        if (a1 == 0 && a3 != 0 && Global.CurHPP3 <= 0)
+        {
+            a3 = 0;
+            aBE5 = 0;
         }
     }
 
@@ -338,7 +352,7 @@ public class BSSicxalon1 : MonoBehaviour
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP1;
         Invoke("delayP1PressAttack", 1f);
-        dem = 1;
+        dem = 2;
     }
     public void PressAttackP2()
     {
@@ -347,7 +361,7 @@ public class BSSicxalon1 : MonoBehaviour
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP2;
         Invoke("delayP2PressAttack", 1f);
-        dem = 1;
+        dem = 2;
     }
     public void PressAttackP3()
     {
@@ -356,7 +370,7 @@ public class BSSicxalon1 : MonoBehaviour
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP3;
         Invoke("delayP3PressAttack", 1f);
-        dem = 1;
+        dem = 2;
     }
     public void PressSkill()
     {
@@ -368,7 +382,7 @@ public class BSSicxalon1 : MonoBehaviour
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
             Invoke("delayP1PressSkill", 1f);
-            dem = 1;
+            dem = 2;
         }
     }
     public void PressSkillP2()
@@ -381,7 +395,7 @@ public class BSSicxalon1 : MonoBehaviour
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
             Invoke("delayP2PressSkill", 1f);
-            dem = 1;
+            dem = 2;
         }
     }
     public void PressSkillP3()
@@ -395,7 +409,7 @@ public class BSSicxalon1 : MonoBehaviour
             showr1.text = "HP +" + HealAmount;
             Invoke("delayshowr", 2f);
             Invoke("delayP3PressSkill", 1f);
-            dem = 1;
+            dem = 2;
         }
     }
     public void PressItem()
@@ -412,7 +426,10 @@ public class BSSicxalon1 : MonoBehaviour
         num2.text = ContainerController.ManaPotion + "";
         num3.text = ContainerController.ElixirPotion + "";
         num4.text = ContainerController.Bom + "";
-        num9.text = ContainerController.ReincarnationLife + "";
+        num5.text = ContainerController.HoliHP + "";
+        num6.text = ContainerController.HoliMP + "";
+        num7.text = ContainerController.UltraBom + "";
+        num8.text = ContainerController.ReincarnationLife + "";
         Item_panel.SetActive(true);
     }
     public void UseHP()
@@ -515,6 +532,81 @@ public class BSSicxalon1 : MonoBehaviour
         }
     }
 
+    public void UseHoliHP()
+    {
+        if (ContainerController.HoliHP > 0)
+        {
+            Item_panel.SetActive(false);
+
+            if (UseItemIndex == 1)
+            {
+                HPHealingEffP1.SetActive(true);
+            }
+            else if (UseItemIndex == 3)
+            {
+                HPHealingEffP3.SetActive(true);
+            }
+
+            showr2.SetActive(true);
+            showr1.text = "HP +200";
+            ContainerController.HoliHP -= 1;
+            Invoke("delayUseHoliHP", 2f);
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough item";
+            Invoke("delayshowr", 2f);
+        }
+    }
+
+    public void UseHoliMP()
+    {
+        if (ContainerController.HoliMP > 0)
+        {
+            Item_panel.SetActive(false);
+
+            if (UseItemIndex == 1)
+            {
+                MPHealingEffP1.SetActive(true);
+            }
+            else if (UseItemIndex == 3)
+            {
+                MPHealingEffP3.SetActive(true);
+            }
+
+            showr2.SetActive(true);
+            showr1.text = "MP +80";
+            ContainerController.HoliMP -= 1;
+            Invoke("delayUseHoliMP", 2f);
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough item";
+            Invoke("delayshowr", 2f);
+        }
+    }
+
+    public void UseUltraBom()
+    {
+        if (ContainerController.UltraBom > 0)
+        {
+            Item_panel.SetActive(false);
+            BomEff.SetActive(true);
+            ContainerController.UltraBom -= 1;
+            PDamage.color = Color.red;
+            PDamage.text = "-500";
+            Invoke("delayUseUltraBom", 2f);
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough item";
+            Invoke("delayshowr", 2f);
+        }
+    }
+
     public void UseRL()
     {
         if (ContainerController.ReincarnationLife > 0)
@@ -585,7 +677,7 @@ public class BSSicxalon1 : MonoBehaviour
             {
                 SB.yes_SicxalonAttack2 = 1;
             }
-            else if (BE5ANum == 6)
+            else if (BE5ANum == 6 || BE5ANum == 7)
             {
                 SB.yes_SicxalonSkill2 = 1;
             }
@@ -596,6 +688,24 @@ public class BSSicxalon1 : MonoBehaviour
             }
         }
     }
+
+    public void BE5Action2()
+    {
+        BE5ANum = Random.Range(1, 11);
+        if (BE5ANum <= 4)
+        {
+            SB.yes_SicxalonAttack1 = 1;
+        }
+        else if (BE5ANum == 5 || BE5ANum == 6 || BE5ANum == 7)
+        {
+            SB.yes_SicxalonAttack2 = 1;
+        }
+        else if (BE5ANum >= 8)
+        {
+            SB.yes_SicxalonSkill2 = 1;
+        }
+    }
+
     public void CheckP1Die()
     {
         if(Global.CurHPP1 <= 0)
@@ -738,6 +848,7 @@ public class BSSicxalon1 : MonoBehaviour
 
             EDamage.text = "";
             PDamage.text = "";
+            EDamage2.text = "";
             dem = 0;
             aBE5 = 0;
             dem_turn += 1;
@@ -746,6 +857,7 @@ public class BSSicxalon1 : MonoBehaviour
         {
             BE5AttackTarget();
             EDamage.text = "";
+            EDamage2.text = "";
 
             aBE5 -= 1;
             dem_turn += 1;
@@ -778,7 +890,7 @@ public class BSSicxalon1 : MonoBehaviour
                 Global.CurHPP1 -= Global.DamageBE5;
                 Global.CurMPP1 -= 50;
             }
-            else if (BE5ANum == 6)
+            else if (BE5ANum == 6 || BE5ANum == 7)
             {
                 Global.CurHPP1 = 0;
                 Global.CurMPP1 = 0;
@@ -797,7 +909,7 @@ public class BSSicxalon1 : MonoBehaviour
                 Global.CurHPP2 -= Global.DamageBE5;
                 Global.CurMPP2 -= 50;
             }
-            else if (BE5ANum == 6)
+            else if (BE5ANum == 6 || BE5ANum == 7)
             {
                 Global.CurHPP2 = 0;
                 Global.CurMPP2 = 0;
@@ -816,7 +928,7 @@ public class BSSicxalon1 : MonoBehaviour
                 Global.CurHPP3 -= Global.DamageBE5;
                 Global.CurMPP3 -= 50;
             }
-            else if (BE5ANum == 6)
+            else if (BE5ANum == 6 || BE5ANum == 7)
             {
                 Global.CurHPP3 = 0;
                 Global.CurMPP3 = 0;
@@ -824,6 +936,148 @@ public class BSSicxalon1 : MonoBehaviour
         }
         else if (BE5Hit == 3 && Global.CurHPP3 <= 0)
             BE5AttackTarget();
+    }
+
+    public void BE5AttackTarget2()
+    {
+        if (P3Available == false && P2Available == true)
+            BE5Hit = Random.Range(1, 3);
+        else if (P3Available == true && P2Available == true)
+            BE5Hit = Random.Range(1, 4);
+        else if (P3Available == true && P2Available == false)
+        {
+            BE5Hit = Random.Range(1, 4);
+            while (BE5Hit == 2)
+            {
+                BE5Hit = Random.Range(1, 4);
+            }
+        }
+
+        if (BE5Hit == 1 && Global.CurHPP1 > 0)
+        {
+            if (BE5ANum <= 4)
+            {
+                Global.CurHPP1 -= Global.DamageBE5;
+                EDamage.text = "";
+                EDamage2.text = "";
+
+                aBE5 -= 1;
+                dem_turn += 1;
+            }
+            else if (BE5ANum == 5 || BE5ANum == 6 || BE5ANum == 7)
+            {
+                Global.CurHPP1 -= Global.DamageBE5;
+                Global.CurMPP1 -= 50;
+                EDamage.text = "";
+                EDamage2.text = "";
+
+                aBE5 -= 1;
+                dem_turn += 1;
+            }
+            else if (BE5ANum >= 8)
+            {
+                Global.CurHPP1 = 0;
+                Global.CurMPP1 = 0;
+                EDamage.text = "";
+                EDamage2.text = "";
+
+                aBE5 -= 1;
+                dem_turn += 1;
+            }
+        }
+        else if (BE5Hit == 1 && Global.CurHPP1 <= 0)
+            BE5AttackTarget2();
+        else if (BE5Hit == 2 && Global.CurHPP2 > 0)
+        {
+            if (BE5ANum <= 4)
+            {
+                Global.CurHPP2 -= Global.DamageBE5;
+                EDamage.text = "";
+                EDamage2.text = "";
+
+                aBE5 -= 1;
+                dem_turn += 1;
+            }
+            else if (BE5ANum == 5 || BE5ANum == 6 || BE5ANum == 7)
+            {
+                Global.CurHPP2 -= Global.DamageBE5;
+                Global.CurMPP2 -= 50;
+                EDamage.text = "";
+                EDamage2.text = "";
+
+                aBE5 -= 1;
+                dem_turn += 1;
+            }
+            else if (BE5ANum >= 8)
+            {
+                Global.CurHPP2 = 0;
+                Global.CurMPP2 = 0;
+                EDamage.text = "";
+                EDamage2.text = "";
+
+                aBE5 -= 1;
+                dem_turn += 1;
+            }
+        }
+        else if (BE5Hit == 2 && Global.CurHPP2 <= 0)
+            BE5AttackTarget2();
+        else if (BE5Hit == 3 && Global.CurHPP3 > 0)
+        {
+            if (BE5ANum <= 4)
+            {
+                Global.CurHPP3 -= Global.DamageBE5;
+                EDamage.text = "";
+                EDamage2.text = "";
+
+                aBE5 -= 1;
+                dem_turn += 1;
+            }
+            else if (BE5ANum == 5 || BE5ANum == 6 || BE5ANum == 7)
+            {
+                Global.CurHPP3 -= Global.DamageBE5;
+                Global.CurMPP3 -= 50;
+                EDamage.text = "";
+                EDamage2.text = "";
+
+                aBE5 -= 1;
+                dem_turn += 1;
+            }
+            else if (BE5ANum >= 8)
+            {
+                Global.CurHPP3 = 0;
+                Global.CurMPP3 = 0;
+                EDamage.text = "";
+                EDamage2.text = "";
+
+                aBE5 -= 1;
+                dem_turn += 1;
+            }
+        }
+        else if (BE5Hit == 3 && Global.CurHPP3 <= 0)
+            BE5AttackTarget2();
+    }
+
+    void delayBE5attack2()
+    {
+        if (dem == 1)
+        {
+            BE5Action2();
+            dem -= 1;
+
+            EDamage.color = Color.red;
+            EDamage2.color = Color.blue;
+            if (BE5ANum <= 4)
+                EDamage.text = "-" + Global.DamageBE5;
+            else if (BE5ANum > 4 && BE5ANum <= 7)
+            {
+                EDamage.text = "-" + Global.DamageBE5;
+                EDamage2.text = "- 50";
+            }
+            else if (BE5ANum > 7)
+                EDamage.text = "-999999";
+
+            Invoke("BE5AttackTarget2", 2f);
+        }
     }
 
     void delayP1PressAttack()
@@ -1030,7 +1284,7 @@ public class BSSicxalon1 : MonoBehaviour
 
         showr2.SetActive(true);
         showr1.text = "";
-        dem = 1;
+        dem = 2;
         dem_turn += 1;
     }
 
@@ -1061,7 +1315,7 @@ public class BSSicxalon1 : MonoBehaviour
 
         showr2.SetActive(true);
         showr1.text = "";
-        dem = 1;
+        dem = 2;
         dem_turn += 1;
     }
 
@@ -1103,7 +1357,7 @@ public class BSSicxalon1 : MonoBehaviour
         showr2.SetActive(true);
         showr1.text = "";
         dem_turn += 1;
-        dem = 1;
+        dem = 2;
     }
 
     void delayUseBom()
@@ -1121,7 +1375,88 @@ public class BSSicxalon1 : MonoBehaviour
             show3 = 0;
         }
         PDamage.text = "";
-        dem = 1;
+        dem = 2;
+        dem_turn += 1;
+    }
+
+    void delayUseHoliHP()
+    {
+        if (UseItemIndex == 1)
+        {
+            HPHealingEffP1.SetActive(false);
+            a1 -= 1;
+            Global.CurHPP1 += 200;
+            if (Global.CurHPP1 > Global.MaxHPP1)
+            {
+                Global.CurHPP1 = Global.MaxHPP1;
+            }
+            show1 = 0;
+        }
+        else if (UseItemIndex == 3)
+        {
+            HPHealingEffP3.SetActive(false);
+            a3 -= 1;
+            Global.CurHPP3 += 200;
+            if (Global.CurHPP3 > Global.MaxHPP3)
+            {
+                Global.CurHPP3 = Global.MaxHPP3;
+            }
+            show3 = 0;
+        }
+
+        showr2.SetActive(true);
+        showr1.text = "";
+        dem = 2;
+        dem_turn += 1;
+    }
+
+    void delayUseHoliMP()
+    {
+        if (UseItemIndex == 1)
+        {
+            MPHealingEffP1.SetActive(false);
+            a1 -= 1;
+            Global.CurMPP1 += 80;
+            if (Global.CurMPP1 > Global.MaxMPP1)
+            {
+                Global.CurMPP1 = Global.MaxMPP1;
+            }
+            show1 = 0;
+        }
+        else if (UseItemIndex == 3)
+        {
+            MPHealingEffP3.SetActive(false);
+            a3 -= 1;
+            Global.CurMPP3 += 80;
+            if (Global.CurMPP3 > Global.MaxMPP3)
+            {
+                Global.CurMPP3 = Global.MaxMPP3;
+            }
+            show3 = 0;
+        }
+
+        showr2.SetActive(true);
+        showr1.text = "";
+        dem = 2;
+        dem_turn += 1;
+    }
+
+    void delayUseUltraBom()
+    {
+        Global.HPBE5 -= 500;
+        BomEff.SetActive(false);
+        if (UseItemIndex == 1)
+        {
+            a1 -= 1;
+            show1 = 0;
+        }
+        else if (UseItemIndex == 3)
+        {
+            a3 -= 1;
+            show3 = 0;
+        }
+        PDamage.text = "";
+        dem = 2;
         dem_turn += 1;
     }
 
@@ -1164,7 +1499,7 @@ public class BSSicxalon1 : MonoBehaviour
             show3 = 0;
         }
 
-        dem = 1;
+        dem = 2;
         dem_turn += 1;
     }
 

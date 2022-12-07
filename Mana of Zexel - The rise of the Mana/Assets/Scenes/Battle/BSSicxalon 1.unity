@@ -515,6 +515,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124701615}
   m_CullTransparentMesh: 1
+--- !u!114 &150589564 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8505838261263403787, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+  m_PrefabInstance: {fileID: 2001497624}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &150589565 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2513644589008118972, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+  m_PrefabInstance: {fileID: 2001497624}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &150589566 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8921780306301585609, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+  m_PrefabInstance: {fileID: 2001497624}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &168245243
 GameObject:
   m_ObjectHideFlags: 0
@@ -10331,7 +10364,10 @@ MonoBehaviour:
   num2: {fileID: 2001497628}
   num3: {fileID: 2001497627}
   num4: {fileID: 2001497626}
-  num9: {fileID: 2001497625}
+  num5: {fileID: 150589566}
+  num6: {fileID: 150589565}
+  num7: {fileID: 150589564}
+  num8: {fileID: 2001497625}
   showr1: {fileID: 608130031}
   HP1: {fileID: 472662271}
   MP1: {fileID: 1686432034}
@@ -11837,6 +11873,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2110691886}
     m_Modifications:
+    - target: {fileID: 172516772406540299, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1670761285}
+    - target: {fileID: 172516772406540299, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UseHoliHP
+      objectReference: {fileID: 0}
+    - target: {fileID: 172516772406540299, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BSSicxalon1, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 796270842375072290, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1670761285}
+    - target: {fileID: 796270842375072290, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UseHoliMP
+      objectReference: {fileID: 0}
+    - target: {fileID: 796270842375072290, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BSSicxalon1, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1155455705445324658, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -11986,6 +12046,18 @@ PrefabInstance:
       value: UseHP
       objectReference: {fileID: 0}
     - target: {fileID: 1155455706448458142, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BSSicxalon1, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855495607324333717, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1670761285}
+    - target: {fileID: 1855495607324333717, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UseUltraBom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855495607324333717, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: BSSicxalon1, Assembly-CSharp
       objectReference: {fileID: 0}

@@ -21,6 +21,10 @@ public class BSThief : MonoBehaviour
     public Text num2;
     public Text num3;
     public Text num4;
+    public Text num5;
+    public Text num6;
+    public Text num7;
+    public Text num8;
     public Text showr1;
     public Text HP1;
     public Text MP1;
@@ -158,6 +162,10 @@ public class BSThief : MonoBehaviour
         num2.text = ContainerController.ManaPotion + "";
         num3.text = ContainerController.ElixirPotion + "";
         num4.text = ContainerController.Bom + "";
+        num5.text = ContainerController.HoliHP + "";
+        num6.text = ContainerController.HoliMP + "";
+        num7.text = ContainerController.UltraBom + "";
+        num8.text = ContainerController.ReincarnationLife + "";
         Item_panel.SetActive(true);
     }
     public void UseHP()
@@ -275,6 +283,35 @@ public class BSThief : MonoBehaviour
             Invoke("delayshowr", 2f);
         }
     }
+
+    public void UseHoliHP()
+    {
+        showr2.SetActive(true);
+        showr1.text = "Not enough item";
+        Invoke("delayshowr", 2f);
+    }
+
+    public void UseHoliMP()
+    {
+        showr2.SetActive(true);
+        showr1.text = "Not enough item";
+        Invoke("delayshowr", 2f);
+    }
+
+    public void UseUltraBom()
+    {
+        showr2.SetActive(true);
+        showr1.text = "Not enough item";
+        Invoke("delayshowr", 2f);
+    }
+
+    public void UseRL()
+    {
+        showr2.SetActive(true);
+        showr1.text = "Not enough item";
+        Invoke("delayshowr", 2f);
+    }
+
     public void CloseItemPanel()
     {
         show = 0;

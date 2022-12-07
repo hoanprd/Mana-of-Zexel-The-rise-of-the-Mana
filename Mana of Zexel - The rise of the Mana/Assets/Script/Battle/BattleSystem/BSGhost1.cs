@@ -5,24 +5,33 @@ using System.Threading;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class BSInfernoBeast1 : MonoBehaviour
+public class BSGhost1 : MonoBehaviour
 {
     PlayerBattle pb;
-    InfernoBeastBattle IBB;
+    GhostBattle GB;
 
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
     public GameObject showr2;
     public GameObject P1_panel;
     public GameObject P2_panel;
+    public GameObject P3_panel;
+
     public GameObject MariaStatus;
     public GameObject MariaBar;
-    public GameObject P3_panel;
-    public GameObject Win_panel;
     public GameObject MariaName;
     public GameObject MariaLevel;
     public GameObject MariaExp;
     public GameObject MariaPlusExp;
+
+    public GameObject AliaStatus;
+    public GameObject AliaBar;
+    public GameObject AliaName;
+    public GameObject AliaLevel;
+    public GameObject AliaExp;
+    public GameObject AliaPlusExp;
+
+    public GameObject Win_panel;
     public GameObject Lose_panel;
     public Text PDamage;
     public Text EDamage;
@@ -41,7 +50,7 @@ public class BSInfernoBeast1 : MonoBehaviour
     public Text MP2;
     public Text HP3;
     public Text MP3;
-    public Text HPBE2;
+    public Text HPE11;
     public Text EXPP1;
     public Text EXPP2;
     public Text EXPP3;
@@ -56,46 +65,58 @@ public class BSInfernoBeast1 : MonoBehaviour
     public GameObject lu3;
     public GameObject HPMP;
     public GameObject NB;
-    public int a1, a2, a3, aBE2;
+    public int a1, a2, a3, aE11;
     public int stop = 0;
     private int dem = 0;
     private int dem_turn = 1;
     private int once = 0;
-    public int show1 = 0;
+    private int show1 = 0;
     public int show2 = 0;
     public int show3 = 0;
-    public int BE2Hit;
-    public bool P2Available, P3Availabel;
+    public int E11Hit;
+    public bool P2Available, P3Available;
     public int UseItemIndex;
-    public int BE2ANum, TurnIndex, BossSkillCharge, BossSkillEngage, BossSkillBreak, BeforeBreakSkillDamageCal, AfterBreakDamageCal, BreakDamageCal, BreakDamageIndex;
 
     // Start is called before the first frame update
     void Start()
     {
         pb = FindObjectOfType<PlayerBattle>();
-        IBB = FindObjectOfType<InfernoBeastBattle>();
+        GB = FindObjectOfType<GhostBattle>();
         a1 = Global.SpeedP1 / 10;
         a2 = Global.SpeedP2 / 10;
         a3 = Global.SpeedP3 / 10;
-        aBE2 = Global.SpeedBE2 / 10;
-        HPMPBarController.EIndex = 11;
-        BreakDamageIndex = 0;
-        BossSkillCharge = 0;
+        aE11 = Global.SpeedE11 / 10;
 
         if (CutscenesController.cus12 == 0)
         {
             MariaStatus.SetActive(false);
             MariaBar.SetActive(false);
+            a3 = 0;
             HP3.text = "";
             MP3.text = "";
-            P3Availabel = false;
-            a3 = 0;
+            P3Available = false;
         }
         else
         {
             MariaStatus.SetActive(true);
             MariaBar.SetActive(true);
-            P3Availabel = true;
+            P3Available = true;
+        }
+
+        if (CutscenesController.cus50 == 1 && CutscenesController.cus51 == 0)
+        {
+            AliaStatus.SetActive(false);
+            AliaBar.SetActive(false);
+            a2 = 0;
+            HP2.text = "";
+            MP2.text = "";
+            P2Available = false;
+        }
+        else
+        {
+            AliaStatus.SetActive(true);
+            AliaBar.SetActive(true);
+            P2Available = true;
         }
 
         if (Global.CurHPP1 > 0)
@@ -109,61 +130,29 @@ public class BSInfernoBeast1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckBE2Die();
+        CheckE11Die();
         CheckP1P2P3Die();
         CheckP1Die();
         CheckP2Die();
         CheckP3Die();
         UpdateUIText();
 
-        if (Global.SpeedP2 >= Global.SpeedBE2)
+        if (Global.SpeedP2 >= Global.SpeedE11)
         {
-            if(a2 > 0 && Global.CurHPP2 > 0)
+            if(a2 > 0 && Global.CurHPP2 > 0 && P2Available == true)
             {
-                CheckBE2Die();
+                CheckE11Die();
                 CheckP1Die();
                 CheckP2Die();
                 CheckP1P2P3Die();
-                TurnIndex = 2;
                 if(show2 == 0)
                     ShowP2Panel(true);
                 else
                     ShowP2Panel(false);
             }
-            else if (aBE2 > 0 && Global.HPBE2 > 0)
-            {
-                CheckBE2Die();
-                ShowP1Panel(false);
-                ShowP2Panel(false);
-                ShowP3Panel(false);
-                if (dem == 3)
-                {
-                    BE2Action();
-
-                    if (BossSkillCharge == 1)
-                    {
-                        dem = 0;
-                    }
-                    else
-                    {
-                        dem -= 1;
-                    }
-
-                    EDamage.color = Color.red;
-                    if (BE2ANum <= 4)
-                        EDamage.text = "-" + Global.DamageBE2;
-
-                    Invoke("delayBE2", 1f);
-                    Invoke("delayBE2attack2", 2f);
-                    Invoke("delayBE2attack3", 4f);
-                }
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-            }
             else if (a1 > 0 && Global.CurHPP1 > 0)
             {
-                CheckBE2Die();
+                CheckE11Die();
                 CheckP1Die();
                 CheckP2Die();
                 CheckP1P2P3Die();
@@ -173,9 +162,28 @@ public class BSInfernoBeast1 : MonoBehaviour
                 else
                     ShowP1Panel(false);
             }
-            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Availabel == true)
+            else if (aE11 > 0 && Global.HPE11 > 0)
             {
-                CheckBE2Die();
+                CheckE11Die();
+                ShowP1Panel(false);
+                ShowP2Panel(false);
+                ShowP3Panel(false);
+                if (dem == 2)
+                {
+                    GB.yes_Ghost = 1;
+                    dem -= 1;
+                    EDamage.color = Color.red;
+                    EDamage.text = "-" + Global.DamageE11;
+                    Invoke("delayE11", 1f);
+                    Invoke("delayeE11attack2", 2f);
+                }
+                CheckP1Die();
+                CheckP2Die();
+                CheckP1P2P3Die();
+            }
+            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true)
+            {
+                CheckE11Die();
                 CheckP1Die();
                 CheckP2Die();
                 CheckP3Die();
@@ -188,20 +196,26 @@ public class BSInfernoBeast1 : MonoBehaviour
             }
         }
 
-        if (a1 == 0 && a2 == 0 && a3 == 0 && aBE2 == 0)
+        if (a1 == 0 && a2 == 0 && a3 == 0 && aE11 == 0)
         {
-            if (CutscenesController.cus12 == 0)
+            if (P3Available == false)
             {
                 a1 = Global.SpeedP1 / 10;
                 a2 = Global.SpeedP2 / 10;
-                aBE2 = Global.SpeedBE2 / 10;
+                aE11 = Global.SpeedE11 / 10;
+            }
+            else if (P2Available == false)
+            {
+                a1 = Global.SpeedP1 / 10;
+                a3 = Global.SpeedP3 / 10;
+                aE11 = Global.SpeedE11 / 10;
             }
             else
             {
                 a1 = Global.SpeedP1 / 10;
                 a2 = Global.SpeedP2 / 10;
                 a3 = Global.SpeedP3 / 10;
-                aBE2 = Global.SpeedBE2 / 10;
+                aE11 = Global.SpeedE11 / 10;
             }
         }
     }
@@ -211,23 +225,26 @@ public class BSInfernoBeast1 : MonoBehaviour
         HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
         MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
 
-        HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
-        MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
+        if (P2Available == true)
+        {
+            HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
+            MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
+        }
 
-        if (P3Availabel == true)
+        if (P3Available == true)
         {
             HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
             MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
         }
 
-        HPBE2.text = "HP: " + Global.HPBE2.ToString();
+        HPE11.text = "HP: " + Global.HPE11.ToString();
 
         NumTurn.text = "Turn " + dem_turn.ToString();
 
-        if (Global.HPBE2 < 0)
+        if (Global.HPE11 < 0)
         {
-            Global.HPBE2 = 0;
-            HPBE2.text = "HP: " + Global.HPBE2.ToString();
+            Global.HPE11 = 0;
+            HPE11.text = "HP: " + Global.HPE11.ToString();
         }
         else if (Global.CurHPP1 < 0)
         {
@@ -246,7 +263,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         }
 
         if (Global.HPE2 <= 0)
-            HPBE2.text = "HP: 0";
+            HPE11.text = "HP: 0";
         if (Global.CurHPP1 <= 0)
             HP1.text = "HP: 0";
         if (Global.CurHPP2 <= 0)
@@ -283,16 +300,16 @@ public class BSInfernoBeast1 : MonoBehaviour
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP1;
         Invoke("delayP1PressAttack", 1f);
-        dem = 3;
+        dem = 2;
     }
     public void PressAttackP2()
     {
         pb.yes3 = 1;
         show2 = 1;
         PDamage.color = Color.red;
-        PDamage.text = "-" + Global.DamageP2;
+        PDamage.text = "Miss";
         Invoke("delayP2PressAttack", 1f);
-        dem = 3;
+        dem = 2;
     }
     public void PressAttackP3()
     {
@@ -301,7 +318,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP3;
         Invoke("delayP3PressAttack", 1f);
-        dem = 3;
+        dem = 2;
     }
     public void PressSkill()
     {
@@ -309,11 +326,10 @@ public class BSInfernoBeast1 : MonoBehaviour
         {
             pb.yes2 = 1;
             show1 = 1;
-            int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 100 / 100);
             PDamage.color = Color.red;
-            PDamage.text = "-" + DamgeCal;
+            PDamage.text = "Miss";
             Invoke("delayP1PressSkill", 1f);
-            dem = 3;
+            dem = 2;
         }
     }
     public void PressSkillP2()
@@ -322,11 +338,10 @@ public class BSInfernoBeast1 : MonoBehaviour
         {
             pb.yes4 = 1;
             show2 = 1;
-            int DamgeCal = Global.DamageP2 + (Global.DamageP2 * 100 / 100);
             PDamage.color = Color.red;
-            PDamage.text = "-" + DamgeCal;
+            PDamage.text = "Miss";
             Invoke("delayP2PressSkill", 1f);
-            dem = 3;
+            dem = 2;
         }
     }
     public void PressSkillP3()
@@ -340,7 +355,7 @@ public class BSInfernoBeast1 : MonoBehaviour
             showr1.text = "HP +" + HealAmount;
             Invoke("delayshowr", 2f);
             Invoke("delayP3PressSkill", 1f);
-            dem = 3;
+            dem = 2;
         }
     }
     public void PressItem()
@@ -499,11 +514,11 @@ public class BSInfernoBeast1 : MonoBehaviour
 
             if (UseItemIndex == 1)
             {
-                HPHealingEffP1.SetActive(true);
+                MPHealingEffP1.SetActive(true);
             }
             else if (UseItemIndex == 3)
             {
-                HPHealingEffP3.SetActive(true);
+                MPHealingEffP3.SetActive(true);
             }
 
             showr2.SetActive(true);
@@ -569,51 +584,12 @@ public class BSInfernoBeast1 : MonoBehaviour
     }
     public void PressRun()
     {
-        SceneManager.LoadScene("Alta inferno");
+        SceneManager.LoadScene("Mana cliff");
     }
     public void PressBackToTheMap2()
     {
-        //ContainerController.ManaGem += 10;
-        SceneManager.LoadScene("Alta inferno");
-    }
-
-    public void BE2Action()
-    {
-        if (BossSkillCharge == 1)
-        {
-            AfterBreakDamageCal = Global.HPBE2;
-            BreakDamageCal = BeforeBreakSkillDamageCal - AfterBreakDamageCal;
-
-            if (BreakDamageCal >= 400)
-            {
-                PDamage.color = Color.red;
-                PDamage.text = "Skill break!";
-            }
-            else
-            {
-                IBB.yes_InfernoBeastSkill = 1;
-                int DamgeCal = Global.DamageBE2 + Global.DamageBE2 * 300 / 100;
-                EDamage.color = Color.red;
-                EDamage.text = "-" + DamgeCal;
-            }
-        }
-        else
-        {
-            BE2ANum = Random.Range(1, 11);
-            if (BE2ANum <= 2)
-            {
-                IBB.yes_InfernoBeastAttack1 = 1;
-            }
-            else if (BE2ANum == 3 || BE2ANum == 4)
-            {
-                IBB.yes_InfernoBeastAttack2 = 1;
-            }
-            else
-            {
-                IBB.yes_InfernoBeastSkillCharge = 1;
-                BossSkillCharge = 1;
-            }
-        }
+        //ContainerController.ManaGem += 1;
+        SceneManager.LoadScene("Mana cliff");
     }
     public void CheckP1Die()
     {
@@ -641,9 +617,18 @@ public class BSInfernoBeast1 : MonoBehaviour
     }
     public void CheckP1P2P3Die()
     {
-        if (CutscenesController.cus12 == 0)
+        if (P3Available == false)
         {
             if (Global.CurHPP1 <= 0 && Global.CurHPP2 <= 0)
+            {
+                UpdateUIText();
+                Invoke("delayCheckP1P2P3Die1", 1f);
+                Invoke("delayCheckP1P2P3Die2", 2f);
+            }
+        }
+        else if (P2Available == false)
+        {
+            if (Global.CurHPP1 <= 0 && Global.CurHPP3 <= 0)
             {
                 UpdateUIText();
                 Invoke("delayCheckP1P2P3Die1", 1f);
@@ -660,9 +645,9 @@ public class BSInfernoBeast1 : MonoBehaviour
             }
         }
     }
-    public void CheckBE2Die()
+    public void CheckE11Die()
     {
-        if (Global.HPBE2 <= 0)
+        if (Global.HPE11 <= 0)
         {
             ShowP1Panel(false);
             ShowP2Panel(false);
@@ -673,10 +658,17 @@ public class BSInfernoBeast1 : MonoBehaviour
             LevelP1.text = "Level " + Global.LevelP1;
             EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
 
-            LevelP2.text = "Level " + Global.LevelP2;
-            EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
+            if (P2Available == true)
+            {
+                AliaName.SetActive(true);
+                AliaLevel.SetActive(true);
+                AliaExp.SetActive(true);
+                AliaPlusExp.SetActive(true);
+                LevelP2.text = "Level " + Global.LevelP2;
+                EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
+            }
 
-            if (P3Availabel == true)
+            if (P3Available == true)
             {
                 MariaName.SetActive(true);
                 MariaLevel.SetActive(true);
@@ -687,187 +679,115 @@ public class BSInfernoBeast1 : MonoBehaviour
             }
 
             Money.text = Global.Zen + " ";
-            //ManaGemItem.text = "Mana Gem +10";
+            //ManaGemItem.text = "Mana Gem +1";
 
-            Invoke("delayCheckBE2Die1", 1f);
+            Invoke("delayCheckE11Die1", 1f);
             if (once == 0)
             {
-                Invoke("delayCheckBE2Die2", 2f);
+                Invoke("delayCheckE11Die2", 2f);
                 once = 1;
             }
         }
     }
-    void delayBE2()
+    void delayE11()
     {
-        CheckBE2Die();
+        CheckE11Die();
         ShowP1Panel(false);
         ShowP2Panel(false);
         ShowP3Panel(false);
+        E11AttackTarget();
+        EDamage.text = "";
 
-        if (BossSkillCharge == 1)
-        {
-            if (BossSkillEngage == 1)
-            {
-                AfterBreakDamageCal = Global.HPBE2;
-                BreakDamageCal = BeforeBreakSkillDamageCal - AfterBreakDamageCal;
-
-                if (BreakDamageCal >= 400)
-                {
-                    BreakDamageCal = 0;
-                    BeforeBreakSkillDamageCal = 0;
-                    AfterBreakDamageCal = 0;
-                    BreakDamageIndex = 0;
-                    BossSkillCharge = 0;
-                    BossSkillEngage = 0;
-                }
-                else
-                {
-                    Global.CurHPP1 -= Global.DamageBE2 + (Global.DamageBE2 * 300 / 100);
-                    Global.CurHPP2 -= Global.DamageBE2 + (Global.DamageBE2 * 300 / 100);
-                    Global.CurHPP3 -= Global.DamageBE2 + (Global.DamageBE2 * 300 / 100);
-                    BossSkillCharge = 0;
-                    BossSkillEngage = 0;
-                }
-            }
-            else
-            {
-                if (BreakDamageIndex == 0)
-                {
-                    BeforeBreakSkillDamageCal = Global.HPBE2;
-                    BreakDamageIndex = 1;
-                }
-                BossSkillEngage = 1;
-            }
-
-            EDamage.text = "";
-            PDamage.text = "";
-            dem = 0;
-            aBE2 = 0;
-            dem_turn += 1;
-        }
-        else
-        {
-            BE2AttackTarget();
-            EDamage.text = "";
-
-            aBE2 -= 1;
-            dem_turn += 1;
-        }
+        aE11 -= 1;
+        dem_turn += 1;
     }
 
-    void BE2AttackTarget()
+    void E11AttackTarget()
     {
-        if (CutscenesController.cus12 == 0)
-            BE2Hit = Random.Range(1, 3);
-        else if (CutscenesController.cus12 == 1)
-            BE2Hit = Random.Range(1, 4);
+        if (P3Available == false && P2Available == true)
+            E11Hit = Random.Range(1, 3);
+        else if (P3Available == true && P2Available == true)
+            E11Hit = Random.Range(1, 4);
+        else if (P3Available == true && P2Available == false)
+        {
+            E11Hit = Random.Range(1, 4);
+            while (E11Hit == 2)
+            {
+                E11Hit = Random.Range(1, 4);
+            }
+        }
 
-        if (BE2Hit == 1 && Global.CurHPP1 > 0)
-        {
-            if (BE2ANum <= 6)
-            {
-                Global.CurHPP1 -= Global.DamageBE2;
-            }
-        }
-        else if (BE2Hit == 1 && Global.CurHPP1 <= 0)
-            BE2AttackTarget();
-        else if (BE2Hit == 2 && Global.CurHPP2 > 0)
-        {
-            if (BE2ANum <= 6)
-            {
-                Global.CurHPP2 -= Global.DamageBE2;
-            }
-        }
-        else if (BE2Hit == 2 && Global.CurHPP2 <= 0)
-            BE2AttackTarget();
-        else if (BE2Hit == 3 && Global.CurHPP3 > 0)
-        {
-            if (BE2ANum <= 6)
-            {
-                Global.CurHPP3 -= Global.DamageBE2;
-            }
-        }
-        else if (BE2Hit == 3 && Global.CurHPP3 <= 0)
-            BE2AttackTarget();
+        if (E11Hit == 1 && Global.CurHPP1 > 0)
+            Global.CurHPP1 -= Global.DamageE11;
+        else if (E11Hit == 1 && Global.CurHPP1 <= 0)
+            E11AttackTarget();
+        else if (E11Hit == 2 && Global.CurHPP2 > 0)
+            Global.CurHPP2 -= Global.DamageE11;
+        else if (E11Hit == 2 && Global.CurHPP2 <= 0)
+            E11AttackTarget();
+        else if (E11Hit == 3 && Global.CurHPP3 > 0)
+            Global.CurHPP3 -= Global.DamageE11;
+        else if (E11Hit == 3 && Global.CurHPP3 <= 0)
+            E11AttackTarget();
     }
 
-    void delayBE2attack2()
-    {
-        if (dem == 2)
-        {
-            IBB.yes_InfernoBeastAttack1 = 1;
-            dem -= 1;
-
-            EDamage.color = Color.red;
-            EDamage.text = "-" + Global.DamageBE2;
-
-            Invoke("delayBE2", 1f);
-        }
-    }
-
-    void delayBE2attack3()
+    void delayeE11attack2()
     {
         if (dem == 1)
         {
-            IBB.yes_InfernoBeastAttack2 = 1;
+            GB.yes_Ghost = 1;
             dem -= 1;
-
             EDamage.color = Color.red;
-            EDamage.text = "-" + Global.DamageBE2;
-
-            Invoke("delayBE2", 1f);
+            EDamage.text = "-" + Global.DamageE11;
+            Invoke("delayE11", 1f);
         }
     }
-
     void delayP1PressAttack()
     {
         ShowP1Panel(false);
-        Global.HPBE2 -= Global.DamageP1;
+        Global.HPE11 -= Global.DamageP1;
         PDamage.text = "";
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
-        CheckBE2Die();
+        CheckE11Die();
     }
     void delayP2PressAttack()
     {
         ShowP2Panel(false);
-        Global.HPBE2 -= Global.DamageP2;
         PDamage.text = "";
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
-        CheckBE2Die();
+        CheckE11Die();
     }
     void delayP3PressAttack()
     {
         ShowP3Panel(false);
-        Global.HPBE2 -= Global.DamageP3;
+        Global.HPE11 -= Global.DamageP3;
         PDamage.text = "";
         a3 -= 1;
         show3 = 0;
         dem_turn += 1;
-        CheckBE2Die();
+        CheckE11Die();
     }
     void delayP1PressSkill()
     {
         Global.CurMPP1 -= 20;
-        Global.HPBE2 = Global.HPBE2 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
         PDamage.text = "";
         a1 -= 1;
         show1 = 0;
         dem_turn += 1;
-        CheckBE2Die();
+        CheckE11Die();
     }
     void delayP2PressSkill()
     {
         Global.CurMPP2 -= 20;
-        Global.HPBE2 = Global.HPBE2 - (Global.DamageP2 + (Global.DamageP2 * 100 / 100));
         PDamage.text = "";
         a2 -= 1;
         show2 = 0;
         dem_turn += 1;
-        CheckBE2Die();
+        CheckE11Die();
     }
     void delayP3PressSkill()
     {
@@ -907,26 +827,26 @@ public class BSInfernoBeast1 : MonoBehaviour
     {
         SceneManager.LoadScene("Intro");
     }
-    void delayCheckBE2Die1()
+    void delayCheckE11Die1()
     {
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }
-    void delayCheckBE2Die2()
+    void delayCheckE11Die2()
     {
         if (Global.LevelP1 < 30)
         {
-            Global.CurEXPP1 += 120;
+            Global.CurEXPP1 += 40;
         }
-        if (Global.LevelP2 < 30)
+        if (Global.LevelP2 < 30 && P3Available == true)
         {
-            Global.CurEXPP2 += 120;
+            Global.CurEXPP2 += 40;
         }
-        if (Global.LevelP3 < 30 && P3Availabel == true)
+        if (Global.LevelP3 < 30 && P3Available == true)
         {
-            Global.CurEXPP3 += 120;
+            Global.CurEXPP3 += 40;
         }
-        Global.Zen += 120;
+        Global.Zen += 40;
         while (Global.CurEXPP1 >= Global.MaxEXPP1)
         {
             lu.SetActive(true);
@@ -996,6 +916,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         Money.text = Global.Zen + " ";
         NB.SetActive(true);
     }
+
     void delayUseHP()
     {
         if (UseItemIndex == 1)
@@ -1023,7 +944,7 @@ public class BSInfernoBeast1 : MonoBehaviour
 
         showr2.SetActive(true);
         showr1.text = "";
-        dem = 3;
+        dem = 2;
         dem_turn += 1;
     }
 
@@ -1054,7 +975,7 @@ public class BSInfernoBeast1 : MonoBehaviour
 
         showr2.SetActive(true);
         showr1.text = "";
-        dem = 3;
+        dem = 2;
         dem_turn += 1;
     }
 
@@ -1096,12 +1017,12 @@ public class BSInfernoBeast1 : MonoBehaviour
         showr2.SetActive(true);
         showr1.text = "";
         dem_turn += 1;
-        dem = 3;
+        dem = 2;
     }
 
     void delayUseBom()
     {
-        Global.HPBE2 -= 200;
+        Global.HPE11 -= 200;
         BomEff.SetActive(false);
         if (UseItemIndex == 1)
         {
@@ -1114,7 +1035,7 @@ public class BSInfernoBeast1 : MonoBehaviour
             show3 = 0;
         }
         PDamage.text = "";
-        dem = 3;
+        dem = 2;
         dem_turn += 1;
     }
 
@@ -1145,7 +1066,7 @@ public class BSInfernoBeast1 : MonoBehaviour
 
         showr2.SetActive(true);
         showr1.text = "";
-        dem = 3;
+        dem = 2;
         dem_turn += 1;
     }
 
@@ -1176,13 +1097,13 @@ public class BSInfernoBeast1 : MonoBehaviour
 
         showr2.SetActive(true);
         showr1.text = "";
-        dem = 3;
+        dem = 2;
         dem_turn += 1;
     }
 
     void delayUseUltraBom()
     {
-        Global.HPE10 -= 500;
+        Global.HPE11 -= 500;
         BomEff.SetActive(false);
         if (UseItemIndex == 1)
         {
@@ -1195,7 +1116,7 @@ public class BSInfernoBeast1 : MonoBehaviour
             show3 = 0;
         }
         PDamage.text = "";
-        dem = 3;
+        dem = 2;
         dem_turn += 1;
     }
 
@@ -1238,7 +1159,7 @@ public class BSInfernoBeast1 : MonoBehaviour
             show3 = 0;
         }
 
-        dem = 3;
+        dem = 2;
         dem_turn += 1;
     }
 

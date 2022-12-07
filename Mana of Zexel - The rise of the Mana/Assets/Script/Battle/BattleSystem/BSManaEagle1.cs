@@ -39,7 +39,10 @@ public class BSManaEagle1 : MonoBehaviour
     public Text num2;
     public Text num3;
     public Text num4;
-    public Text num9;
+    public Text num5;
+    public Text num6;
+    public Text num7;
+    public Text num8;
     public Text showr1;
     public Text HP1;
     public Text MP1;
@@ -369,7 +372,10 @@ public class BSManaEagle1 : MonoBehaviour
         num2.text = ContainerController.ManaPotion + "";
         num3.text = ContainerController.ElixirPotion + "";
         num4.text = ContainerController.Bom + "";
-        num9.text = ContainerController.ReincarnationLife + "";
+        num5.text = ContainerController.HoliHP + "";
+        num6.text = ContainerController.HoliMP + "";
+        num7.text = ContainerController.UltraBom + "";
+        num8.text = ContainerController.ReincarnationLife + "";
         Item_panel.SetActive(true);
     }
     public void UseHP()
@@ -463,6 +469,81 @@ public class BSManaEagle1 : MonoBehaviour
             PDamage.color = Color.red;
             PDamage.text = "-200";
             Invoke("delayUseBom", 2f);
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough item";
+            Invoke("delayshowr", 2f);
+        }
+    }
+
+    public void UseHoliHP()
+    {
+        if (ContainerController.HoliHP > 0)
+        {
+            Item_panel.SetActive(false);
+
+            if (UseItemIndex == 1)
+            {
+                HPHealingEffP1.SetActive(true);
+            }
+            else if (UseItemIndex == 3)
+            {
+                HPHealingEffP3.SetActive(true);
+            }
+
+            showr2.SetActive(true);
+            showr1.text = "HP +200";
+            ContainerController.HoliHP -= 1;
+            Invoke("delayUseHoliHP", 2f);
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough item";
+            Invoke("delayshowr", 2f);
+        }
+    }
+
+    public void UseHoliMP()
+    {
+        if (ContainerController.HoliMP > 0)
+        {
+            Item_panel.SetActive(false);
+
+            if (UseItemIndex == 1)
+            {
+                MPHealingEffP1.SetActive(true);
+            }
+            else if (UseItemIndex == 3)
+            {
+                MPHealingEffP3.SetActive(true);
+            }
+
+            showr2.SetActive(true);
+            showr1.text = "MP +80";
+            ContainerController.HoliMP -= 1;
+            Invoke("delayUseHoliMP", 2f);
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough item";
+            Invoke("delayshowr", 2f);
+        }
+    }
+
+    public void UseUltraBom()
+    {
+        if (ContainerController.UltraBom > 0)
+        {
+            Item_panel.SetActive(false);
+            BomEff.SetActive(true);
+            ContainerController.UltraBom -= 1;
+            PDamage.color = Color.red;
+            PDamage.text = "-500";
+            Invoke("delayUseUltraBom", 2f);
         }
         else
         {
@@ -942,6 +1023,87 @@ public class BSManaEagle1 : MonoBehaviour
     void delayUseBom()
     {
         Global.HPE10 -= 200;
+        BomEff.SetActive(false);
+        if (UseItemIndex == 1)
+        {
+            a1 -= 1;
+            show1 = 0;
+        }
+        else if (UseItemIndex == 3)
+        {
+            a3 -= 1;
+            show3 = 0;
+        }
+        PDamage.text = "";
+        dem = 2;
+        dem_turn += 1;
+    }
+
+    void delayUseHoliHP()
+    {
+        if (UseItemIndex == 1)
+        {
+            HPHealingEffP1.SetActive(false);
+            a1 -= 1;
+            Global.CurHPP1 += 200;
+            if (Global.CurHPP1 > Global.MaxHPP1)
+            {
+                Global.CurHPP1 = Global.MaxHPP1;
+            }
+            show1 = 0;
+        }
+        else if (UseItemIndex == 3)
+        {
+            HPHealingEffP3.SetActive(false);
+            a3 -= 1;
+            Global.CurHPP3 += 200;
+            if (Global.CurHPP3 > Global.MaxHPP3)
+            {
+                Global.CurHPP3 = Global.MaxHPP3;
+            }
+            show3 = 0;
+        }
+
+        showr2.SetActive(true);
+        showr1.text = "";
+        dem = 2;
+        dem_turn += 1;
+    }
+
+    void delayUseHoliMP()
+    {
+        if (UseItemIndex == 1)
+        {
+            MPHealingEffP1.SetActive(false);
+            a1 -= 1;
+            Global.CurMPP1 += 80;
+            if (Global.CurMPP1 > Global.MaxMPP1)
+            {
+                Global.CurMPP1 = Global.MaxMPP1;
+            }
+            show1 = 0;
+        }
+        else if (UseItemIndex == 3)
+        {
+            MPHealingEffP3.SetActive(false);
+            a3 -= 1;
+            Global.CurMPP3 += 80;
+            if (Global.CurMPP3 > Global.MaxMPP3)
+            {
+                Global.CurMPP3 = Global.MaxMPP3;
+            }
+            show3 = 0;
+        }
+
+        showr2.SetActive(true);
+        showr1.text = "";
+        dem = 2;
+        dem_turn += 1;
+    }
+
+    void delayUseUltraBom()
+    {
+        Global.HPE10 -= 500;
         BomEff.SetActive(false);
         if (UseItemIndex == 1)
         {
