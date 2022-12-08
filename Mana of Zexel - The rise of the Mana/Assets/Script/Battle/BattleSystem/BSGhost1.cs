@@ -584,12 +584,12 @@ public class BSGhost1 : MonoBehaviour
     }
     public void PressRun()
     {
-        SceneManager.LoadScene("Mana cliff");
+        SceneManager.LoadScene("Zexel temple");
     }
     public void PressBackToTheMap2()
     {
         //ContainerController.ManaGem += 1;
-        SceneManager.LoadScene("Mana cliff");
+        SceneManager.LoadScene("Zexel temple");
     }
     public void CheckP1Die()
     {

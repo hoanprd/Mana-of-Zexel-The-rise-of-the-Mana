@@ -955,7 +955,7 @@ public class BSSicxalon1 : MonoBehaviour
 
         if (BE5Hit == 1 && Global.CurHPP1 > 0)
         {
-            if (BE5ANum <= 4)
+            if (BE5ANum <= 5)
             {
                 Global.CurHPP1 -= Global.DamageBE5;
                 EDamage.text = "";
@@ -964,7 +964,7 @@ public class BSSicxalon1 : MonoBehaviour
                 aBE5 -= 1;
                 dem_turn += 1;
             }
-            else if (BE5ANum == 5 || BE5ANum == 6 || BE5ANum == 7)
+            else if (BE5ANum >= 6 && BE5ANum <= 9)
             {
                 Global.CurHPP1 -= Global.DamageBE5;
                 Global.CurMPP1 -= 50;
@@ -974,7 +974,7 @@ public class BSSicxalon1 : MonoBehaviour
                 aBE5 -= 1;
                 dem_turn += 1;
             }
-            else if (BE5ANum >= 8)
+            else if (BE5ANum == 10)
             {
                 Global.CurHPP1 = 0;
                 Global.CurMPP1 = 0;
@@ -989,7 +989,7 @@ public class BSSicxalon1 : MonoBehaviour
             BE5AttackTarget2();
         else if (BE5Hit == 2 && Global.CurHPP2 > 0)
         {
-            if (BE5ANum <= 4)
+            if (BE5ANum <= 5)
             {
                 Global.CurHPP2 -= Global.DamageBE5;
                 EDamage.text = "";
@@ -998,7 +998,7 @@ public class BSSicxalon1 : MonoBehaviour
                 aBE5 -= 1;
                 dem_turn += 1;
             }
-            else if (BE5ANum == 5 || BE5ANum == 6 || BE5ANum == 7)
+            else if (BE5ANum >= 6 && BE5ANum <= 9)
             {
                 Global.CurHPP2 -= Global.DamageBE5;
                 Global.CurMPP2 -= 50;
@@ -1008,7 +1008,7 @@ public class BSSicxalon1 : MonoBehaviour
                 aBE5 -= 1;
                 dem_turn += 1;
             }
-            else if (BE5ANum >= 8)
+            else if (BE5ANum == 10)
             {
                 Global.CurHPP2 = 0;
                 Global.CurMPP2 = 0;
@@ -1023,7 +1023,7 @@ public class BSSicxalon1 : MonoBehaviour
             BE5AttackTarget2();
         else if (BE5Hit == 3 && Global.CurHPP3 > 0)
         {
-            if (BE5ANum <= 4)
+            if (BE5ANum <= 5)
             {
                 Global.CurHPP3 -= Global.DamageBE5;
                 EDamage.text = "";
@@ -1032,7 +1032,7 @@ public class BSSicxalon1 : MonoBehaviour
                 aBE5 -= 1;
                 dem_turn += 1;
             }
-            else if (BE5ANum == 5 || BE5ANum == 6 || BE5ANum == 7)
+            else if (BE5ANum >= 6 && BE5ANum <= 9)
             {
                 Global.CurHPP3 -= Global.DamageBE5;
                 Global.CurMPP3 -= 50;
@@ -1042,7 +1042,7 @@ public class BSSicxalon1 : MonoBehaviour
                 aBE5 -= 1;
                 dem_turn += 1;
             }
-            else if (BE5ANum >= 8)
+            else if (BE5ANum == 10)
             {
                 Global.CurHPP3 = 0;
                 Global.CurMPP3 = 0;
@@ -1066,14 +1066,14 @@ public class BSSicxalon1 : MonoBehaviour
 
             EDamage.color = Color.red;
             EDamage2.color = Color.blue;
-            if (BE5ANum <= 4)
+            if (BE5ANum <= 5)
                 EDamage.text = "-" + Global.DamageBE5;
-            else if (BE5ANum > 4 && BE5ANum <= 7)
+            else if (BE5ANum >= 6 && BE5ANum <= 9)
             {
                 EDamage.text = "-" + Global.DamageBE5;
                 EDamage2.text = "- 50";
             }
-            else if (BE5ANum > 7)
+            else if (BE5ANum == 10)
                 EDamage.text = "-999999";
 
             Invoke("BE5AttackTarget2", 2f);
