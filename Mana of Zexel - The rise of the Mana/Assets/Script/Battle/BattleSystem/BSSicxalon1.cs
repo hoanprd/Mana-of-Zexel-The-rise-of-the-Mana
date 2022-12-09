@@ -33,6 +33,13 @@ public class BSSicxalon1 : MonoBehaviour
 
     public GameObject Win_panel;
     public GameObject Lose_panel;
+
+    public GameObject SkillChargeSign;
+    public Text P1TurnStatus;
+    public Text P2TurnStatus;
+    public Text P3TurnStatus;
+    public Text BE5TurnStatus;
+
     public Text PDamage;
     public Text EDamage;
     public Text EDamage2;
@@ -322,6 +329,11 @@ public class BSSicxalon1 : MonoBehaviour
             HP2.text = "HP: 0";
         if (Global.CurHPP3 <= 0)
             HP3.text = "HP: 0";
+
+        P1TurnStatus.text = a1 + "";
+        P2TurnStatus.text = a2 + "";
+        P3TurnStatus.text = a3 + "";
+        BE5TurnStatus.text = aBE5 + "";
     }
 
     public void ShowP1Panel(bool isshow)
@@ -684,7 +696,10 @@ public class BSSicxalon1 : MonoBehaviour
             else
             {
                 SB.yes_SicxalonSkillCharge = 1;
+                PDamage.color = Color.red;
+                PDamage.text = "Skill charge!";
                 BossSkillCharge = 1;
+                SkillChargeSign.SetActive(true);
             }
         }
     }
@@ -692,15 +707,15 @@ public class BSSicxalon1 : MonoBehaviour
     public void BE5Action2()
     {
         BE5ANum = Random.Range(1, 11);
-        if (BE5ANum <= 4)
+        if (BE5ANum <= 5)
         {
             SB.yes_SicxalonAttack1 = 1;
         }
-        else if (BE5ANum == 5 || BE5ANum == 6 || BE5ANum == 7)
+        else if (BE5ANum > 5 && BE5ANum <= 9)
         {
             SB.yes_SicxalonAttack2 = 1;
         }
-        else if (BE5ANum >= 8)
+        else if (BE5ANum == 10)
         {
             SB.yes_SicxalonSkill2 = 1;
         }
@@ -825,6 +840,7 @@ public class BSSicxalon1 : MonoBehaviour
                     BreakDamageIndex = 0;
                     BossSkillCharge = 0;
                     BossSkillEngage = 0;
+                    SkillChargeSign.SetActive(false);
                 }
                 else
                 {
@@ -834,6 +850,7 @@ public class BSSicxalon1 : MonoBehaviour
                     BossSkillCharge = 0;
                     BossSkillEngage = 0;
                     SicxalonManaAttack.SetActive(false);
+                    SkillChargeSign.SetActive(false);
                 }
             }
             else

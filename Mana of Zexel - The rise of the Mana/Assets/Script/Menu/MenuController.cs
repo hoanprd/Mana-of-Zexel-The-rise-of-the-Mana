@@ -172,15 +172,6 @@ public class MenuController : MonoBehaviour
         SynthesizeSystem.ManaIceSynthesize = 0;
 
         SceneManager.LoadScene("Cutscenes");
-        //SceneManager.LoadScene("Wishing forest");
-        //SceneManager.LoadScene("Mana gate");
-        //SceneManager.LoadScene("BSManaGuardian 1");
-        //SceneManager.LoadScene("BSGolemn 1");
-        //SceneManager.LoadScene("BSIceFang 1");
-        //SceneManager.LoadScene("BSInfernoBeast 1");
-        //SceneManager.LoadScene("BSBlueManaSlime 1");
-        //SceneManager.LoadScene("BSManaDragon 1");
-        //SceneManager.LoadScene("BSManaEagle 1");
         //SceneManager.LoadScene("BSSicxalon 1");
     }
     public void PressLoadGame()
