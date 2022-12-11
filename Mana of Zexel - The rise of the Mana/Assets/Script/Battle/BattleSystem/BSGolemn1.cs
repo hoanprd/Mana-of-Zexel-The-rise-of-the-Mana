@@ -32,6 +32,14 @@ public class BSGolemn1 : MonoBehaviour
 
     public GameObject Win_panel;
     public GameObject Lose_panel;
+
+    public GameObject P2TurnStatusObject;
+    public GameObject P3TurnStatusObject;
+    public Text P1TurnStatus;
+    public Text P2TurnStatus;
+    public Text P3TurnStatus;
+    public Text E3TurnStatus;
+
     public Text PDamage;
     public Text EDamage;
     public Text num1;
@@ -93,6 +101,7 @@ public class BSGolemn1 : MonoBehaviour
             HP3.text = "";
             MP3.text = "";
             P3Available = false;
+            P3TurnStatusObject.SetActive(false);
         }
         else
         {
@@ -109,6 +118,7 @@ public class BSGolemn1 : MonoBehaviour
             HP2.text = "";
             MP2.text = "";
             P2Available = false;
+            P2TurnStatusObject.SetActive(false);
         }
         else
         {
@@ -268,6 +278,13 @@ public class BSGolemn1 : MonoBehaviour
             HP2.text = "HP: 0";
         if (Global.CurHPP3 <= 0)
             HP3.text = "HP: 0";
+
+        P1TurnStatus.text = a1 + "";
+        if (P2Available == true)
+            P2TurnStatus.text = a2 + "";
+        if (P3Available == true)
+            P3TurnStatus.text = a3 + "";
+        E3TurnStatus.text = aE3 + "";
     }
 
     public void ShowP1Panel(bool isshow)

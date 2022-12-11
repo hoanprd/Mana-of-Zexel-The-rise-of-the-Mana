@@ -14,15 +14,24 @@ public class BSManaGuardian1 : MonoBehaviour
     public GameObject showr2;
     public GameObject P1_panel;
     public GameObject P2_panel;
+    public GameObject P3_panel;
+
     public GameObject MariaStatus;
     public GameObject MariaBar;
-    public GameObject P3_panel;
-    public GameObject Win_panel;
     public GameObject MariaName;
     public GameObject MariaLevel;
     public GameObject MariaExp;
     public GameObject MariaPlusExp;
+
+    public GameObject Win_panel;
     public GameObject Lose_panel;
+
+    public GameObject SkillChargeSign;
+    public Text P1TurnStatus;
+    public Text P2TurnStatus;
+    public Text P3TurnStatus;
+    public Text BE1TurnStatus;
+
     public GameObject TornadoEffect;
     public Text PDamage;
     public Text EDamage;
@@ -252,6 +261,11 @@ public class BSManaGuardian1 : MonoBehaviour
             HP2.text = "HP: 0";
         if (Global.CurHPP3 <= 0)
             HP3.text = "HP: 0";
+
+        P1TurnStatus.text = a1 + "";
+        P2TurnStatus.text = a2 + "";
+        P3TurnStatus.text = a3 + "";
+        BE1TurnStatus.text = aBE1 + "";
     }
 
     public void ShowP1Panel(bool isshow)
@@ -607,6 +621,7 @@ public class BSManaGuardian1 : MonoBehaviour
             {
                 MGB.yes_ManaGuardianSkillCharge = 1;
                 BossSkillCharge = 1;
+                SkillChargeSign.SetActive(true);
             }
         }
     }
@@ -714,6 +729,7 @@ public class BSManaGuardian1 : MonoBehaviour
                     BreakDamageIndex = 0;
                     BossSkillCharge = 0;
                     BossSkillEngage = 0;
+                    SkillChargeSign.SetActive(false);
                 }
                 else
                 {
@@ -723,6 +739,7 @@ public class BSManaGuardian1 : MonoBehaviour
                     BossSkillCharge = 0;
                     TornadoEffect.SetActive(false);
                     BossSkillEngage = 0;
+                    SkillChargeSign.SetActive(false);
                 }
             }
             else

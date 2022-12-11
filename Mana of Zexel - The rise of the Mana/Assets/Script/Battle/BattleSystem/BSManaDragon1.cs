@@ -33,6 +33,12 @@ public class BSManaDragon1 : MonoBehaviour
 
     public GameObject Win_panel;
     public GameObject Lose_panel;
+
+    public GameObject SkillChargeSign;
+    public Text P1TurnStatus;
+    public Text P3TurnStatus;
+    public Text BE3TurnStatus;
+
     public Text PDamage;
     public Text EDamage;
     public Text num1;
@@ -285,6 +291,10 @@ public class BSManaDragon1 : MonoBehaviour
             HP2.text = "HP: 0";
         if (Global.CurHPP3 <= 0)
             HP3.text = "HP: 0";
+
+        P1TurnStatus.text = a1 + "";
+        P3TurnStatus.text = a3 + "";
+        BE3TurnStatus.text = aBE3 + "";
     }
 
     public void ShowP1Panel(bool isshow)
@@ -644,6 +654,7 @@ public class BSManaDragon1 : MonoBehaviour
             {
                 MDB.yes_ManaDragonSkillCharge = 1;
                 BossSkillCharge = 1;
+                SkillChargeSign.SetActive(true);
             }
         }
     }
@@ -767,6 +778,7 @@ public class BSManaDragon1 : MonoBehaviour
                     BreakDamageIndex = 0;
                     BossSkillCharge = 0;
                     BossSkillEngage = 0;
+                    SkillChargeSign.SetActive(false);
                 }
                 else
                 {
@@ -775,6 +787,7 @@ public class BSManaDragon1 : MonoBehaviour
                     Global.CurHPP3 -= Global.DamageBE3 + (Global.DamageBE3 * 300 / 100);
                     BossSkillCharge = 0;
                     BossSkillEngage = 0;
+                    SkillChargeSign.SetActive(false);
                 }
             }
             else

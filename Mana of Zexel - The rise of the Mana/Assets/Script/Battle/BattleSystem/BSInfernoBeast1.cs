@@ -13,17 +13,27 @@ public class BSInfernoBeast1 : MonoBehaviour
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
     public GameObject showr2;
+
     public GameObject P1_panel;
     public GameObject P2_panel;
+    public GameObject P3_panel;
+
     public GameObject MariaStatus;
     public GameObject MariaBar;
-    public GameObject P3_panel;
-    public GameObject Win_panel;
     public GameObject MariaName;
     public GameObject MariaLevel;
     public GameObject MariaExp;
     public GameObject MariaPlusExp;
+
+    public GameObject Win_panel;
     public GameObject Lose_panel;
+
+    public GameObject SkillChargeSign;
+    public Text P1TurnStatus;
+    public Text P2TurnStatus;
+    public Text P3TurnStatus;
+    public Text BE2TurnStatus;
+
     public Text PDamage;
     public Text EDamage;
     public Text num1;
@@ -253,6 +263,11 @@ public class BSInfernoBeast1 : MonoBehaviour
             HP2.text = "HP: 0";
         if (Global.CurHPP3 <= 0)
             HP3.text = "HP: 0";
+
+        P1TurnStatus.text = a1 + "";
+        P2TurnStatus.text = a2 + "";
+        P3TurnStatus.text = a3 + "";
+        BE2TurnStatus.text = aBE2 + "";
     }
 
     public void ShowP1Panel(bool isshow)
@@ -612,6 +627,7 @@ public class BSInfernoBeast1 : MonoBehaviour
             {
                 IBB.yes_InfernoBeastSkillCharge = 1;
                 BossSkillCharge = 1;
+                SkillChargeSign.SetActive(true);
             }
         }
     }
@@ -719,6 +735,7 @@ public class BSInfernoBeast1 : MonoBehaviour
                     BreakDamageIndex = 0;
                     BossSkillCharge = 0;
                     BossSkillEngage = 0;
+                    SkillChargeSign.SetActive(false);
                 }
                 else
                 {
@@ -727,6 +744,7 @@ public class BSInfernoBeast1 : MonoBehaviour
                     Global.CurHPP3 -= Global.DamageBE2 + (Global.DamageBE2 * 300 / 100);
                     BossSkillCharge = 0;
                     BossSkillEngage = 0;
+                    SkillChargeSign.SetActive(false);
                 }
             }
             else
