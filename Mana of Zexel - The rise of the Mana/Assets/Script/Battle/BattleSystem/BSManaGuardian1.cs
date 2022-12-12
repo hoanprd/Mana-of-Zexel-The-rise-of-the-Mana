@@ -16,13 +16,6 @@ public class BSManaGuardian1 : MonoBehaviour
     public GameObject P2_panel;
     public GameObject P3_panel;
 
-    public GameObject MariaStatus;
-    public GameObject MariaBar;
-    public GameObject MariaName;
-    public GameObject MariaLevel;
-    public GameObject MariaExp;
-    public GameObject MariaPlusExp;
-
     public GameObject Win_panel;
     public GameObject Lose_panel;
 
@@ -74,7 +67,6 @@ public class BSManaGuardian1 : MonoBehaviour
     public int show2 = 0;
     public int show3 = 0;
     public int BE1Hit;
-    public bool P2Available, P3Availabel;
     public int UseItemIndex;
     public int BE1ANum, TurnIndex, BossSkillCharge, BossSkillEngage, BossSkillBreak, BeforeBreakSkillDamageCal, AfterBreakDamageCal, BreakDamageCal, BreakDamageIndex;
 
@@ -90,22 +82,6 @@ public class BSManaGuardian1 : MonoBehaviour
         HPMPBarController.EIndex = 11;
         BreakDamageIndex = 0;
         BossSkillCharge = 0;
-
-        if (CutscenesController.cus12 == 0)
-        {
-            MariaStatus.SetActive(false);
-            MariaBar.SetActive(false);
-            HP3.text = "";
-            MP3.text = "";
-            P3Availabel = false;
-            a3 = 0;
-        }
-        else
-        {
-            MariaStatus.SetActive(true);
-            MariaBar.SetActive(true);
-            P3Availabel = true;
-        }
 
         if (Global.CurHPP1 > 0)
             pb.dead1 = 0;
@@ -125,75 +101,72 @@ public class BSManaGuardian1 : MonoBehaviour
         CheckP3Die();
         UpdateUIText();
 
-        if (Global.SpeedP2 >= Global.SpeedBE1)
+        if (a2 > 0 && Global.CurHPP2 > 0)
         {
-            if(a2 > 0 && Global.CurHPP2 > 0)
-            {
-                CheckBE1Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-                TurnIndex = 2;
-                if(show2 == 0)
-                    ShowP2Panel(true);
-                else
-                    ShowP2Panel(false);
-            }
-            else if (a1 > 0 && Global.CurHPP1 > 0)
-            {
-                CheckBE1Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-                UseItemIndex = 1;
-                if (show1 == 0)
-                    ShowP1Panel(true);
-                else
-                    ShowP1Panel(false);
-            }
-            else if (aBE1 > 0 && Global.HPBE1 > 0)
-            {
-                CheckBE1Die();
-                ShowP1Panel(false);
+            CheckBE1Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+            TurnIndex = 2;
+            if (show2 == 0)
+                ShowP2Panel(true);
+            else
                 ShowP2Panel(false);
-                ShowP3Panel(false);
-                if (dem == 2)
-                {
-                    BE1Action();
-
-                    if (BossSkillCharge == 1)
-                    {
-                        dem = 0;
-                    }
-                    else
-                    {
-                        dem -= 1;
-                    }
-
-                    EDamage.color = Color.red;
-                    if (BE1ANum <= 6)
-                        EDamage.text = "-" + Global.DamageBE1;
-
-                    Invoke("delayBE1", 1f);
-                    Invoke("delayBE1attack2", 2f);
-                }
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-            }
-            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Availabel == true)
+        }
+        else if (a1 > 0 && Global.CurHPP1 > 0)
+        {
+            CheckBE1Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+            UseItemIndex = 1;
+            if (show1 == 0)
+                ShowP1Panel(true);
+            else
+                ShowP1Panel(false);
+        }
+        else if (aBE1 > 0 && Global.HPBE1 > 0)
+        {
+            CheckBE1Die();
+            ShowP1Panel(false);
+            ShowP2Panel(false);
+            ShowP3Panel(false);
+            if (dem == 2)
             {
-                CheckBE1Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP3Die();
-                CheckP1P2P3Die();
-                UseItemIndex = 3;
-                if (show3 == 0)
-                    ShowP3Panel(true);
+                BE1Action();
+
+                if (BossSkillCharge == 1)
+                {
+                    dem = 0;
+                }
                 else
-                    ShowP3Panel(false);
+                {
+                    dem -= 1;
+                }
+
+                EDamage.color = Color.red;
+                if (BE1ANum <= 6)
+                    EDamage.text = "-" + Global.DamageBE1;
+
+                Invoke("delayBE1", 1f);
+                Invoke("delayBE1attack2", 2f);
             }
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+        }
+        else if (a3 > 0 && Global.CurHPP3 > 0)
+        {
+            CheckBE1Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP3Die();
+            CheckP1P2P3Die();
+            UseItemIndex = 3;
+            if (show3 == 0)
+                ShowP3Panel(true);
+            else
+                ShowP3Panel(false);
         }
 
         if (a1 == 0 && a2 == 0 && a3 == 0 && aBE1 == 0)
@@ -222,11 +195,8 @@ public class BSManaGuardian1 : MonoBehaviour
         HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
         MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
 
-        if (P3Availabel == true)
-        {
-            HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
-            MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
-        }
+        HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
+        MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
 
         HPBE1.text = "HP: " + Global.HPBE1.ToString();
 
@@ -686,15 +656,8 @@ public class BSManaGuardian1 : MonoBehaviour
             LevelP2.text = "Level " + Global.LevelP2;
             EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
 
-            if (P3Availabel == true)
-            {
-                MariaName.SetActive(true);
-                MariaLevel.SetActive(true);
-                MariaExp.SetActive(true);
-                MariaPlusExp.SetActive(true);
-                LevelP3.text = "Level " + Global.LevelP3;
-                EXPP3.text = Global.CurEXPP3 + "/" + Global.MaxEXPP3;
-            }
+            LevelP3.text = "Level " + Global.LevelP3;
+            EXPP3.text = Global.CurEXPP3 + "/" + Global.MaxEXPP3;
 
             Money.text = Global.Zen + " ";
             //ManaGemItem.text = "Mana Gem +10";
@@ -770,10 +733,7 @@ public class BSManaGuardian1 : MonoBehaviour
 
     void BE1AttackTarget()
     {
-        if (CutscenesController.cus12 == 0)
-            BE1Hit = Random.Range(1, 3);
-        else if (CutscenesController.cus12 == 1)
-            BE1Hit = Random.Range(1, 4);
+        BE1Hit = Random.Range(1, 4);
 
         if (BE1Hit == 1 && Global.CurHPP1 > 0)
         {
@@ -921,7 +881,7 @@ public class BSManaGuardian1 : MonoBehaviour
         {
             Global.CurEXPP2 += 120;
         }
-        if (Global.LevelP3 < 30 && P3Availabel == true)
+        if (Global.LevelP3 < 30)
         {
             Global.CurEXPP3 += 120;
         }

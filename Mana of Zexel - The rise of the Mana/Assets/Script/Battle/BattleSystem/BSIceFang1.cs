@@ -146,64 +146,61 @@ public class BSIceFang1 : MonoBehaviour
         CheckP3Die();
         UpdateUIText();
 
-        if (Global.SpeedP2 >= Global.SpeedE8)
+        if (a2 > 0 && Global.CurHPP2 > 0 && P2Available == true)
         {
-            if(a2 > 0 && Global.CurHPP2 > 0 && P2Available == true)
-            {
-                CheckE8Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-                if(show2 == 0)
-                    ShowP2Panel(true);
-                else
-                    ShowP2Panel(false);
-            }
-            else if (aE8 > 0 && Global.HPE8 > 0)
-            {
-                CheckE8Die();
-                ShowP1Panel(false);
+            CheckE8Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+            if (show2 == 0)
+                ShowP2Panel(true);
+            else
                 ShowP2Panel(false);
+        }
+        else if (aE8 > 0 && Global.HPE8 > 0)
+        {
+            CheckE8Die();
+            ShowP1Panel(false);
+            ShowP2Panel(false);
+            ShowP3Panel(false);
+            if (dem == 3)
+            {
+                IFB.yes_IceFang = 1;
+                dem -= 1;
+                EDamage.color = Color.red;
+                EDamage.text = "-" + Global.DamageE8;
+                Invoke("delayE8", 1f);
+                Invoke("delayE8attack2", 2f);
+                Invoke("delayE8attack3", 4f);
+            }
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+        }
+        else if (a1 > 0 && Global.CurHPP1 > 0)
+        {
+            CheckE8Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+            UseItemIndex = 1;
+            if (show1 == 0)
+                ShowP1Panel(true);
+            else
+                ShowP1Panel(false);
+        }
+        else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true)
+        {
+            CheckE8Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP3Die();
+            CheckP1P2P3Die();
+            UseItemIndex = 3;
+            if (show3 == 0)
+                ShowP3Panel(true);
+            else
                 ShowP3Panel(false);
-                if (dem == 3)
-                {
-                    IFB.yes_IceFang = 1;
-                    dem -= 1;
-                    EDamage.color = Color.red;
-                    EDamage.text = "-" + Global.DamageE8;
-                    Invoke("delayE8", 1f);
-                    Invoke("delayE8attack2", 2f);
-                    Invoke("delayE8attack3", 4f);
-                }
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-            }
-            else if (a1 > 0 && Global.CurHPP1 > 0)
-            {
-                CheckE8Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-                UseItemIndex = 1;
-                if (show1 == 0)
-                    ShowP1Panel(true);
-                else
-                    ShowP1Panel(false);
-            }
-            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true)
-            {
-                CheckE8Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP3Die();
-                CheckP1P2P3Die();
-                UseItemIndex = 3;
-                if (show3 == 0)
-                    ShowP3Panel(true);
-                else
-                    ShowP3Panel(false);
-            }
         }
 
         if (a1 == 0 && a2 == 0 && a3 == 0 && aE8 == 0)

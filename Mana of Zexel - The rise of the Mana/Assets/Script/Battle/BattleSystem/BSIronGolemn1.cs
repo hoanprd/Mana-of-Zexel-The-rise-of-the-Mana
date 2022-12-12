@@ -147,69 +147,66 @@ public class BSIronGolemn1 : MonoBehaviour
         CheckP3Die();
         UpdateUIText();
 
-        if (Global.SpeedP2 >= Global.SpeedBE4)
+        if (a2 > 0 && Global.CurHPP2 > 0 && P2Available == true)
         {
-            if(a2 > 0 && Global.CurHPP2 > 0 && P2Available == true)
-            {
-                CheckBE4Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-                TurnIndex = 2;
-                if(show2 == 0)
-                    ShowP2Panel(true);
-                else
-                    ShowP2Panel(false);
-            }
-            else if (a1 > 0 && Global.CurHPP1 > 0)
-            {
-                CheckBE4Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-                UseItemIndex = 1;
-                if (show1 == 0)
-                    ShowP1Panel(true);
-                else
-                    ShowP1Panel(false);
-            }
-            else if (aBE4 > 0 && Global.HPBE4 > 0)
-            {
-                CheckBE4Die();
-                ShowP1Panel(false);
+            CheckBE4Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+            TurnIndex = 2;
+            if (show2 == 0)
+                ShowP2Panel(true);
+            else
                 ShowP2Panel(false);
-                ShowP3Panel(false);
-                if (dem == 3)
-                {
-                    BE4Action();
-                    dem -= 1;
-                    int DamgeCal = Global.DamageBE4 + (Global.DamageBE4 * 100) / 100;
-                    EDamage.color = Color.red;
-                    if (BE4ANum <= 7)
-                        EDamage.text = "-" + Global.DamageBE4;
-                    else
-                        EDamage.text = "-" + DamgeCal;
-                    Invoke("delayBE4", 1f);
-                    Invoke("delayBE4attack2", 2f);
-                    Invoke("delayBE4attack3", 4f);
-                }
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-            }
-            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true)
+        }
+        else if (a1 > 0 && Global.CurHPP1 > 0)
+        {
+            CheckBE4Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+            UseItemIndex = 1;
+            if (show1 == 0)
+                ShowP1Panel(true);
+            else
+                ShowP1Panel(false);
+        }
+        else if (aBE4 > 0 && Global.HPBE4 > 0)
+        {
+            CheckBE4Die();
+            ShowP1Panel(false);
+            ShowP2Panel(false);
+            ShowP3Panel(false);
+            if (dem == 3)
             {
-                CheckBE4Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP3Die();
-                CheckP1P2P3Die();
-                UseItemIndex = 3;
-                if (show3 == 0)
-                    ShowP3Panel(true);
+                BE4Action();
+                dem -= 1;
+                int DamgeCal = Global.DamageBE4 + (Global.DamageBE4 * 100) / 100;
+                EDamage.color = Color.red;
+                if (BE4ANum <= 7)
+                    EDamage.text = "-" + Global.DamageBE4;
                 else
-                    ShowP3Panel(false);
+                    EDamage.text = "-" + DamgeCal;
+                Invoke("delayBE4", 1f);
+                Invoke("delayBE4attack2", 2f);
+                Invoke("delayBE4attack3", 4f);
             }
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+        }
+        else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true)
+        {
+            CheckBE4Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP3Die();
+            CheckP1P2P3Die();
+            UseItemIndex = 3;
+            if (show3 == 0)
+                ShowP3Panel(true);
+            else
+                ShowP3Panel(false);
         }
 
         if (a1 == 0 && a2 == 0 && a3 == 0 && aBE4 == 0)

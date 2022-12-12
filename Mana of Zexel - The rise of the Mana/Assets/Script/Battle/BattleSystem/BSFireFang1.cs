@@ -147,63 +147,60 @@ public class BSFireFang1 : MonoBehaviour
         CheckP3Die();
         UpdateUIText();
 
-        if (Global.SpeedP2 >= Global.SpeedE6)
+        if (a2 > 0 && Global.CurHPP2 > 0 && P2Available == true)
         {
-            if(a2 > 0 && Global.CurHPP2 > 0 && P2Available == true)
-            {
-                CheckE6Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-                if(show2 == 0)
-                    ShowP2Panel(true);
-                else
-                    ShowP2Panel(false);
-            }
-            else if (a1 > 0 && Global.CurHPP1 > 0)
-            {
-                CheckE6Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-                UseItemIndex = 1;
-                if (show1 == 0)
-                    ShowP1Panel(true);
-                else
-                    ShowP1Panel(false);
-            }
-            else if (aE6 > 0 && Global.HPE6 > 0)
-            {
-                CheckE6Die();
-                ShowP1Panel(false);
+            CheckE6Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+            if (show2 == 0)
+                ShowP2Panel(true);
+            else
                 ShowP2Panel(false);
-                ShowP3Panel(false);
-                if (dem == 2)
-                {
-                    FFB.yes_FireFang = 1;
-                    dem -= 1;
-                    EDamage.color = Color.red;
-                    EDamage.text = "-" + Global.DamageE6;
-                    Invoke("delayE6", 1f);
-                    Invoke("delayeE6attack2", 2f);
-                }
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-            }
-            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true)
+        }
+        else if (a1 > 0 && Global.CurHPP1 > 0)
+        {
+            CheckE6Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+            UseItemIndex = 1;
+            if (show1 == 0)
+                ShowP1Panel(true);
+            else
+                ShowP1Panel(false);
+        }
+        else if (aE6 > 0 && Global.HPE6 > 0)
+        {
+            CheckE6Die();
+            ShowP1Panel(false);
+            ShowP2Panel(false);
+            ShowP3Panel(false);
+            if (dem == 2)
             {
-                CheckE6Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP3Die();
-                CheckP1P2P3Die();
-                UseItemIndex = 3;
-                if (show3 == 0)
-                    ShowP3Panel(true);
-                else
-                    ShowP3Panel(false);
+                FFB.yes_FireFang = 1;
+                dem -= 1;
+                EDamage.color = Color.red;
+                EDamage.text = "-" + Global.DamageE6;
+                Invoke("delayE6", 1f);
+                Invoke("delayeE6attack2", 2f);
             }
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+        }
+        else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true)
+        {
+            CheckE6Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP3Die();
+            CheckP1P2P3Die();
+            UseItemIndex = 3;
+            if (show3 == 0)
+                ShowP3Panel(true);
+            else
+                ShowP3Panel(false);
         }
 
         if (a1 == 0 && a2 == 0 && a3 == 0 && aE6 == 0)

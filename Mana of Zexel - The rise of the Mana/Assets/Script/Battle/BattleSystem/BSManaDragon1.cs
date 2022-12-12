@@ -17,13 +17,6 @@ public class BSManaDragon1 : MonoBehaviour
     public GameObject P2_panel;
     public GameObject P3_panel;
 
-    public GameObject MariaStatus;
-    public GameObject MariaBar;
-    public GameObject MariaName;
-    public GameObject MariaLevel;
-    public GameObject MariaExp;
-    public GameObject MariaPlusExp;
-
     public GameObject AliaStatus;
     public GameObject AliaBar;
     public GameObject AliaName;
@@ -80,7 +73,7 @@ public class BSManaDragon1 : MonoBehaviour
     public int show2 = 0;
     public int show3 = 0;
     public int BE3Hit;
-    public bool P2Available, P3Available;
+    public bool P2Available;
     public int UseItemIndex;
     public int BE3ANum, TurnIndex, BossSkillCharge, BossSkillEngage, BossSkillBreak, BeforeBreakSkillDamageCal, AfterBreakDamageCal, BreakDamageCal, BreakDamageIndex;
 
@@ -96,22 +89,6 @@ public class BSManaDragon1 : MonoBehaviour
         HPMPBarController.EIndex = 11;
         BreakDamageIndex = 0;
         BossSkillCharge = 0;
-
-        if (CutscenesController.cus12 == 0)
-        {
-            MariaStatus.SetActive(false);
-            MariaBar.SetActive(false);
-            HP3.text = "";
-            MP3.text = "";
-            P3Available = false;
-            a3 = 0;
-        }
-        else
-        {
-            MariaStatus.SetActive(true);
-            MariaBar.SetActive(true);
-            P3Available = true;
-        }
 
         if (CutscenesController.cus50 == 1 && CutscenesController.cus51 == 0)
         {
@@ -147,85 +124,76 @@ public class BSManaDragon1 : MonoBehaviour
         CheckP3Die();
         UpdateUIText();
 
-        if (Global.SpeedP2 >= Global.SpeedBE3)
+        if (a2 > 0 && Global.CurHPP2 > 0 && P2Available == true)
         {
-            if(a2 > 0 && Global.CurHPP2 > 0 && P2Available == true)
-            {
-                CheckBE3Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-                TurnIndex = 2;
-                if(show2 == 0)
-                    ShowP2Panel(true);
-                else
-                    ShowP2Panel(false);
-            }
-            else if (a1 > 0 && Global.CurHPP1 > 0)
-            {
-                CheckBE3Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-                UseItemIndex = 1;
-                if (show1 == 0)
-                    ShowP1Panel(true);
-                else
-                    ShowP1Panel(false);
-            }
-            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true)
-            {
-                CheckBE3Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP3Die();
-                CheckP1P2P3Die();
-                UseItemIndex = 3;
-                if (show3 == 0)
-                    ShowP3Panel(true);
-                else
-                    ShowP3Panel(false);
-            }
-            else if (aBE3 > 0 && Global.HPBE3 > 0)
-            {
-                CheckBE3Die();
-                ShowP1Panel(false);
+            CheckBE3Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+            TurnIndex = 2;
+            if (show2 == 0)
+                ShowP2Panel(true);
+            else
                 ShowP2Panel(false);
+        }
+        else if (a1 > 0 && Global.CurHPP1 > 0)
+        {
+            CheckBE3Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+            UseItemIndex = 1;
+            if (show1 == 0)
+                ShowP1Panel(true);
+            else
+                ShowP1Panel(false);
+        }
+        else if (a3 > 0 && Global.CurHPP3 > 0)
+        {
+            CheckBE3Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP3Die();
+            CheckP1P2P3Die();
+            UseItemIndex = 3;
+            if (show3 == 0)
+                ShowP3Panel(true);
+            else
                 ShowP3Panel(false);
-                if (dem == 1)
+        }
+        else if (aBE3 > 0 && Global.HPBE3 > 0)
+        {
+            CheckBE3Die();
+            ShowP1Panel(false);
+            ShowP2Panel(false);
+            ShowP3Panel(false);
+            if (dem == 1)
+            {
+                BE3Action();
+
+                if (BossSkillCharge == 1)
                 {
-                    BE3Action();
-
-                    if (BossSkillCharge == 1)
-                    {
-                        dem = 0;
-                    }
-                    else
-                    {
-                        dem -= 1;
-                    }
-
-                    EDamage.color = Color.red;
-                    if (BE3ANum <= 5)
-                        EDamage.text = "-" + Global.DamageBE3;
-
-                    Invoke("delayBE3", 1f);
+                    dem = 0;
                 }
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
+                else
+                {
+                    dem -= 1;
+                }
+
+                EDamage.color = Color.red;
+                if (BE3ANum <= 5)
+                    EDamage.text = "-" + Global.DamageBE3;
+
+                Invoke("delayBE3", 1f);
             }
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
         }
 
         if (a1 == 0 && a2 == 0 && a3 == 0 && aBE3 == 0)
         {
-            if (CutscenesController.cus12 == 0)
-            {
-                a1 = Global.SpeedP1 / 10;
-                a2 = Global.SpeedP2 / 10;
-                aBE3 = Global.SpeedBE3 / 10;
-            }
-            else if (P2Available == false)
+            if (P2Available == false)
             {
                 a1 = Global.SpeedP1 / 10;
                 a3 = Global.SpeedP3 / 10;
@@ -252,11 +220,8 @@ public class BSManaDragon1 : MonoBehaviour
             MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
         }
 
-        if (P3Available == true)
-        {
-            HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
-            MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
-        }
+        HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
+        MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
 
         HPBE3.text = "HP: " + Global.HPBE3.ToString();
 
@@ -684,16 +649,7 @@ public class BSManaDragon1 : MonoBehaviour
     }
     public void CheckP1P2P3Die()
     {
-        if (P3Available == false)
-        {
-            if (Global.CurHPP1 <= 0 && Global.CurHPP2 <= 0)
-            {
-                UpdateUIText();
-                Invoke("delayCheckP1P2P3Die1", 1f);
-                Invoke("delayCheckP1P2P3Die2", 2f);
-            }
-        }
-        else if (P2Available == false)
+        if (P2Available == false)
         {
             if (Global.CurHPP1 <= 0 && Global.CurHPP3 <= 0)
             {
@@ -735,15 +691,8 @@ public class BSManaDragon1 : MonoBehaviour
                 EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
             }
 
-            if (P3Available == true)
-            {
-                MariaName.SetActive(true);
-                MariaLevel.SetActive(true);
-                MariaExp.SetActive(true);
-                MariaPlusExp.SetActive(true);
-                LevelP3.text = "Level " + Global.LevelP3;
-                EXPP3.text = Global.CurEXPP3 + "/" + Global.MaxEXPP3;
-            }
+            LevelP3.text = "Level " + Global.LevelP3;
+            EXPP3.text = Global.CurEXPP3 + "/" + Global.MaxEXPP3;
 
             Money.text = Global.Zen + " ";
             //ManaGemItem.text = "Mana Gem +10";
@@ -818,11 +767,7 @@ public class BSManaDragon1 : MonoBehaviour
 
     void BE3AttackTarget()
     {
-        if (P3Available == false && P2Available == true)
-            BE3Hit = Random.Range(1, 3);
-        else if (P3Available == true && P2Available == true)
-            BE3Hit = Random.Range(1, 4);
-        else if (P3Available == true && P2Available == false)
+        if (P2Available == false)
         {
             BE3Hit = Random.Range(1, 4);
             while (BE3Hit == 2)
@@ -981,7 +926,7 @@ public class BSManaDragon1 : MonoBehaviour
         {
             Global.CurEXPP2 += 120;
         }
-        if (Global.LevelP3 < 30 && P3Available == true)
+        if (Global.LevelP3 < 30)
         {
             Global.CurEXPP3 += 120;
         }

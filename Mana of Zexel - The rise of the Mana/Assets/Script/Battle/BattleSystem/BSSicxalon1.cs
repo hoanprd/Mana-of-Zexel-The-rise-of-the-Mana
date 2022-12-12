@@ -17,20 +17,6 @@ public class BSSicxalon1 : MonoBehaviour
     public GameObject P2_panel;
     public GameObject P3_panel;
 
-    public GameObject MariaStatus;
-    public GameObject MariaBar;
-    public GameObject MariaName;
-    public GameObject MariaLevel;
-    public GameObject MariaExp;
-    public GameObject MariaPlusExp;
-
-    public GameObject AliaStatus;
-    public GameObject AliaBar;
-    public GameObject AliaName;
-    public GameObject AliaLevel;
-    public GameObject AliaExp;
-    public GameObject AliaPlusExp;
-
     public GameObject Win_panel;
     public GameObject Lose_panel;
 
@@ -83,7 +69,6 @@ public class BSSicxalon1 : MonoBehaviour
     public int show2 = 0;
     public int show3 = 0;
     public int BE5Hit;
-    public bool P2Available, P3Available;
     public int UseItemIndex;
     public int BE5ANum, TurnIndex, BossSkillCharge, BossSkillEngage, BossSkillBreak, BeforeBreakSkillDamageCal, AfterBreakDamageCal, BreakDamageCal, BreakDamageIndex;
 
@@ -99,38 +84,6 @@ public class BSSicxalon1 : MonoBehaviour
         HPMPBarController.EIndex = 11;
         BreakDamageIndex = 0;
         BossSkillCharge = 0;
-
-        if (CutscenesController.cus12 == 0)
-        {
-            MariaStatus.SetActive(false);
-            MariaBar.SetActive(false);
-            HP3.text = "";
-            MP3.text = "";
-            P3Available = false;
-            a3 = 0;
-        }
-        else
-        {
-            MariaStatus.SetActive(true);
-            MariaBar.SetActive(true);
-            P3Available = true;
-        }
-
-        if (CutscenesController.cus50 == 1 && CutscenesController.cus51 == 0)
-        {
-            AliaStatus.SetActive(false);
-            AliaBar.SetActive(false);
-            a2 = 0;
-            HP2.text = "";
-            MP2.text = "";
-            P2Available = false;
-        }
-        else
-        {
-            AliaStatus.SetActive(true);
-            AliaBar.SetActive(true);
-            P2Available = true;
-        }
 
         if (Global.CurHPP1 > 0)
             pb.dead1 = 0;
@@ -150,106 +103,88 @@ public class BSSicxalon1 : MonoBehaviour
         CheckP3Die();
         UpdateUIText();
 
-        if (Global.SpeedP2 >= Global.SpeedBE5)
+        if (a2 > 0 && Global.CurHPP2 > 0)
         {
-            if(a2 > 0 && Global.CurHPP2 > 0 && P2Available == true)
-            {
-                CheckBE5Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-                TurnIndex = 2;
-                if(show2 == 0)
-                    ShowP2Panel(true);
-                else
-                    ShowP2Panel(false);
-            }
-            else if (a1 > 0 && Global.CurHPP1 > 0)
-            {
-                CheckBE5Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-                UseItemIndex = 1;
-                if (show1 == 0)
-                    ShowP1Panel(true);
-                else
-                    ShowP1Panel(false);
-            }
-            else if (aBE5 > 0 && Global.HPBE5 > 0)
-            {
-                CheckBE5Die();
-                ShowP1Panel(false);
+            CheckBE5Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+            TurnIndex = 2;
+            if (show2 == 0)
+                ShowP2Panel(true);
+            else
                 ShowP2Panel(false);
-                ShowP3Panel(false);
-                if (dem == 2)
-                {
-                    BE5Action();
-
-                    if (BossSkillCharge == 1)
-                    {
-                        dem = 0;
-                    }
-                    else
-                    {
-                        dem -= 1;
-                    }
-
-                    EDamage.color = Color.red;
-                    EDamage2.color = Color.blue;
-                    if (BE5ANum <= 3)
-                        EDamage.text = "-" + Global.DamageBE5;
-                    else if (BE5ANum > 3 && BE5ANum <= 5)
-                    {
-                        EDamage.text = "-" + Global.DamageBE5;
-                        EDamage2.text = "- 50";
-                    }
-                    else if (BE5ANum == 6 || BE5ANum == 7)
-                        EDamage.text = "-999999";
-
-                    Invoke("delayBE5", 1f);
-                    Invoke("delayBE5attack2", 3f);
-                }
-                CheckP1Die();
-                CheckP2Die();
-                CheckP1P2P3Die();
-            }
-            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true)
+        }
+        else if (a1 > 0 && Global.CurHPP1 > 0)
+        {
+            CheckBE5Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+            UseItemIndex = 1;
+            if (show1 == 0)
+                ShowP1Panel(true);
+            else
+                ShowP1Panel(false);
+        }
+        else if (aBE5 > 0 && Global.HPBE5 > 0)
+        {
+            CheckBE5Die();
+            ShowP1Panel(false);
+            ShowP2Panel(false);
+            ShowP3Panel(false);
+            if (dem == 2)
             {
-                CheckBE5Die();
-                CheckP1Die();
-                CheckP2Die();
-                CheckP3Die();
-                CheckP1P2P3Die();
-                UseItemIndex = 3;
-                if (show3 == 0)
-                    ShowP3Panel(true);
+                BE5Action();
+
+                if (BossSkillCharge == 1)
+                {
+                    dem = 0;
+                }
                 else
-                    ShowP3Panel(false);
+                {
+                    dem -= 1;
+                }
+
+                EDamage.color = Color.red;
+                EDamage2.color = Color.blue;
+                if (BE5ANum <= 3)
+                    EDamage.text = "-" + Global.DamageBE5;
+                else if (BE5ANum > 3 && BE5ANum <= 5)
+                {
+                    EDamage.text = "-" + Global.DamageBE5;
+                    EDamage2.text = "- 50";
+                }
+                else if (BE5ANum == 6 || BE5ANum == 7)
+                    EDamage.text = "-999999";
+
+                Invoke("delayBE5", 1f);
+                Invoke("delayBE5attack2", 3f);
             }
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+        }
+        else if (a3 > 0 && Global.CurHPP3 > 0)
+        {
+            CheckBE5Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP3Die();
+            CheckP1P2P3Die();
+            UseItemIndex = 3;
+            if (show3 == 0)
+                ShowP3Panel(true);
+            else
+                ShowP3Panel(false);
         }
 
         if (a1 == 0 && a2 == 0 && a3 == 0 && aBE5 == 0)
         {
-            if (CutscenesController.cus12 == 0)
-            {
-                a1 = Global.SpeedP1 / 10;
-                a2 = Global.SpeedP2 / 10;
-                aBE5 = Global.SpeedBE5 / 10;
-            }
-            else if (P2Available == false)
-            {
-                a1 = Global.SpeedP1 / 10;
-                a3 = Global.SpeedP3 / 10;
-                aBE5 = Global.SpeedBE5 / 10;
-            }
-            else
-            {
-                a1 = Global.SpeedP1 / 10;
-                a2 = Global.SpeedP2 / 10;
-                a3 = Global.SpeedP3 / 10;
-                aBE5 = Global.SpeedBE5 / 10;
-            }
+            a1 = Global.SpeedP1 / 10;
+            a2 = Global.SpeedP2 / 10;
+            a3 = Global.SpeedP3 / 10;
+            aBE5 = Global.SpeedBE5 / 10;
         }
         FixBug();
     }
@@ -268,17 +203,11 @@ public class BSSicxalon1 : MonoBehaviour
         HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
         MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
 
-        if (P2Available == true)
-        {
-            HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
-            MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
-        }
+        HP2.text = "HP: " + Global.CurHPP2.ToString() + "/" + Global.MaxHPP2;
+        MP2.text = "MP: " + Global.CurMPP2.ToString() + "/" + Global.MaxMPP2;
 
-        if (P3Available == true)
-        {
-            HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
-            MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
-        }
+        HP3.text = "HP: " + Global.CurHPP3.ToString() + "/" + Global.MaxHPP3;
+        MP3.text = "MP: " + Global.CurMPP3.ToString() + "/" + Global.MaxMPP3;
 
         HPBE5.text = "HP: " + Global.HPBE5.ToString();
 
@@ -747,32 +676,11 @@ public class BSSicxalon1 : MonoBehaviour
     }
     public void CheckP1P2P3Die()
     {
-        if (P3Available == false)
+        if (Global.CurHPP1 <= 0 && Global.CurHPP2 <= 0 && Global.CurHPP3 <= 0)
         {
-            if (Global.CurHPP1 <= 0 && Global.CurHPP2 <= 0)
-            {
-                UpdateUIText();
-                Invoke("delayCheckP1P2P3Die1", 1f);
-                Invoke("delayCheckP1P2P3Die2", 2f);
-            }
-        }
-        else if (P2Available == false)
-        {
-            if (Global.CurHPP1 <= 0 && Global.CurHPP3 <= 0)
-            {
-                UpdateUIText();
-                Invoke("delayCheckP1P2P3Die1", 1f);
-                Invoke("delayCheckP1P2P3Die2", 2f);
-            }
-        }
-        else
-        {
-            if (Global.CurHPP1 <= 0 && Global.CurHPP2 <= 0 && Global.CurHPP3 <= 0)
-            {
-                UpdateUIText();
-                Invoke("delayCheckP1P2P3Die1", 1f);
-                Invoke("delayCheckP1P2P3Die2", 2f);
-            }
+            UpdateUIText();
+            Invoke("delayCheckP1P2P3Die1", 1f);
+            Invoke("delayCheckP1P2P3Die2", 2f);
         }
     }
     public void CheckBE5Die()
@@ -788,25 +696,11 @@ public class BSSicxalon1 : MonoBehaviour
             LevelP1.text = "Level " + Global.LevelP1;
             EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
 
-            if (P2Available == true)
-            {
-                AliaName.SetActive(true);
-                AliaLevel.SetActive(true);
-                AliaExp.SetActive(true);
-                AliaPlusExp.SetActive(true);
-                LevelP2.text = "Level " + Global.LevelP2;
-                EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
-            }
+            LevelP2.text = "Level " + Global.LevelP2;
+            EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
 
-            if (P3Available == true)
-            {
-                MariaName.SetActive(true);
-                MariaLevel.SetActive(true);
-                MariaExp.SetActive(true);
-                MariaPlusExp.SetActive(true);
-                LevelP3.text = "Level " + Global.LevelP3;
-                EXPP3.text = Global.CurEXPP3 + "/" + Global.MaxEXPP3;
-            }
+            LevelP3.text = "Level " + Global.LevelP3;
+            EXPP3.text = Global.CurEXPP3 + "/" + Global.MaxEXPP3;
 
             Money.text = Global.Zen + " ";
 
@@ -883,18 +777,7 @@ public class BSSicxalon1 : MonoBehaviour
 
     void BE5AttackTarget()
     {
-        if (P3Available == false && P2Available == true)
-            BE5Hit = Random.Range(1, 3);
-        else if (P3Available == true && P2Available == true)
-            BE5Hit = Random.Range(1, 4);
-        else if (P3Available == true && P2Available == false)
-        {
-            BE5Hit = Random.Range(1, 4);
-            while (BE5Hit == 2)
-            {
-                BE5Hit = Random.Range(1, 4);
-            }
-        }
+        BE5Hit = Random.Range(1, 4);
 
         if (BE5Hit == 1 && Global.CurHPP1 > 0)
         {
@@ -957,18 +840,7 @@ public class BSSicxalon1 : MonoBehaviour
 
     public void BE5AttackTarget2()
     {
-        if (P3Available == false && P2Available == true)
-            BE5Hit = Random.Range(1, 3);
-        else if (P3Available == true && P2Available == true)
-            BE5Hit = Random.Range(1, 4);
-        else if (P3Available == true && P2Available == false)
-        {
-            BE5Hit = Random.Range(1, 4);
-            while (BE5Hit == 2)
-            {
-                BE5Hit = Random.Range(1, 4);
-            }
-        }
+        BE5Hit = Random.Range(1, 4);
 
         if (BE5Hit == 1 && Global.CurHPP1 > 0)
         {
@@ -1196,11 +1068,11 @@ public class BSSicxalon1 : MonoBehaviour
         {
             Global.CurEXPP1 += 120;
         }
-        if (Global.LevelP2 < 30 && P2Available == true)
+        if (Global.LevelP2 < 30)
         {
             Global.CurEXPP2 += 120;
         }
-        if (Global.LevelP3 < 30 && P3Available == true)
+        if (Global.LevelP3 < 30)
         {
             Global.CurEXPP3 += 120;
         }
