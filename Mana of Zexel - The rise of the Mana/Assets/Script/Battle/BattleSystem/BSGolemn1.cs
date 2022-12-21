@@ -603,7 +603,16 @@ public class BSGolemn1 : MonoBehaviour
     public void PressBackToTheMap2()
     {
         ContainerController.ManaGem += 1;
-        SceneManager.LoadScene("Wishing forest");
+        if (CutscenesController.cus20 == 0 && CutscenesController.cus19 == 1)
+            CutscenesTrigger.GolemnKill += 1;
+
+        if (CutscenesTrigger.GolemnKill >= 2)
+        {
+            CutscenesTrigger.GolemnKill = 0;
+            SceneManager.LoadScene("Cutscenes");
+        }
+        else
+            SceneManager.LoadScene("Wishing forest");
     }
     public void CheckP1Die()
     {

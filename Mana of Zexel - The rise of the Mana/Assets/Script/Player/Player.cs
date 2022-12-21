@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public GameObject show2;
     public Text show3;
     public GameObject show4;
-    private bool heal, tqz, mqz;
+    private bool heal, tqz, mqz, klener;
     public static int MapIndex;
     Vector2 movement;
 
@@ -91,6 +91,15 @@ public class Player : MonoBehaviour
                 }
             }
         }
+
+        if (klener && Input.GetKeyDown(KeyCode.Space))
+        {
+            if (CutscenesController.cus19 == 0 && CutscenesController.cus18 == 1 && ContainerController.HealPotion > 1 && ContainerController.ManaCurtain > 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }    
+        }
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         animator.SetFloat("Horizontal", movement.x);
@@ -141,6 +150,15 @@ public class Player : MonoBehaviour
             GoblinTrigger4.despawn = false;
             if (CutscenesController.cus4 == 0)
                 SceneManager.LoadScene("Cutscenes");
+            else if (CutscenesController.cus16 == 0 && CutscenesController.cus15 == 1 && ContainerController.String >= 2)
+            {
+                ContainerController.String -= 4;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus17 == 0 && CutscenesController.cus16 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
             else
                 SceneManager.LoadScene("Tavern");
         }
@@ -149,6 +167,10 @@ public class Player : MonoBehaviour
             MapController.TavernToZexelTown = true;
             if (CutscenesController.cus7 == 1 && CutscenesController.cus8 == 0)
                 SceneManager.LoadScene("Cutscenes");
+            else if (CutscenesController.cus18 == 0 && CutscenesController.cus17 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
             else
                 SceneManager.LoadScene("Zexel town");
         }
@@ -463,6 +485,23 @@ public class Player : MonoBehaviour
             mqz = false;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Klener"))
+        {
+            klener = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            klener = false;
+        }
+    }
+
     void delay1()
     {
         show2.SetActive(false);
