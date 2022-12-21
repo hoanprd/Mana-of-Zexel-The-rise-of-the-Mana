@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
 
         if (klener && Input.GetKeyDown(KeyCode.Space))
         {
-            if (CutscenesController.cus19 == 0 && CutscenesController.cus18 == 1 && ContainerController.HealPotion > 1 && ContainerController.ManaCurtain > 1)
+            if (CutscenesController.cus19 == 0 && CutscenesController.cus18 == 1 && ContainerController.HealPotion > 1 && ContainerController.ManaCloth > 1)
             {
                 SceneManager.LoadScene("Cutscenes");
             }    

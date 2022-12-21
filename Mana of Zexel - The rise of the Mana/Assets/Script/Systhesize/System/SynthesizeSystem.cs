@@ -28,6 +28,10 @@ public class SynthesizeSystem : MonoBehaviour
     public Text num16;
     public Text num17;
     public Text num18;
+    public Text num19;
+    public Text num20;
+    public Text num21;
+    public Text num22;
     public Text showr1;
     public Slider ManaSynSlider;
     public Text ManaSynText;
@@ -68,7 +72,11 @@ public class SynthesizeSystem : MonoBehaviour
         num15.text = ContainerController.Porridge + "";
         num16.text = "4/" + ContainerController.String + "";
         num17.text = "2/" + ContainerController.ManaGem + "";
-        num18.text = ContainerController.ManaCurtain + "";
+        num18.text = ContainerController.ManaCloth + "";
+        num19.text = "2/" + ContainerController.Iron;
+        num20.text = "3/" + ContainerController.Wood;
+        num21.text = "2/" + ContainerController.ManaCloth;
+        num22.text = ContainerController.ManaShield + "";
 
         ManaSynSlider.value = ManaSynthesize;
         ManaFireSynSlider.value = ManaFireSynthesize;
