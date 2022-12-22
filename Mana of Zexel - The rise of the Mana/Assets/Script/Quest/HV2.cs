@@ -32,7 +32,7 @@ public class HV2 : MonoBehaviour
             GlobalQuest.HelpVillagerStop1 = 2;
             GlobalQuest.HelpVillagerStop2 = 2;
             GlobalQuest.HelpVillagerStop3 = 2;
-            SceneManager.LoadScene(9);
+            SceneManager.LoadScene("Cutscenes");
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

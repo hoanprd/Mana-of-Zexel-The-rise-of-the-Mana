@@ -39,11 +39,11 @@ public class HubController : MonoBehaviour
     public Text num2;
     public Text num3;
     public Text num4;
-    public Text num5;
+    public Text num5, num6, num7;
     public Text numi1;
     public Text numi2;
     public Text numi3;
-    public Text numi4;
+    public Text numi4, numi5, numi6, numi7, numi8;
     public int ShowLevelP1, ShowLevelP2, ShowLevelP3, ShowHPP1, ShowHPP2, ShowHPP3, ShowMPP1, ShowMPP2, ShowMPP3, ShowZen;
     public GameObject ShowVayneDetailPanel, ShowAliaDetailPanel, ShowMariaDetailPanel;
     public GameObject DShowLevelP1, DShowAttackP1, DShowHPP1, DShowMPP1, DShowSpeedP1, DShowLevelP2, DShowAttackP2, DShowHPP2, DShowMPP2, DShowSpeedP2, DShowLevelP3, DShowAttackP3, DShowHPP3, DShowMPP3, DShowSpeedP3;
@@ -208,17 +208,39 @@ public class HubController : MonoBehaviour
             QT.text = "Go to wishing forest to find Maria, she may know Dante infomation. Wishing forest is in the southwest of the Zexel town";
         else if (CutscenesController.cus12 == 0)
             QT.text = "Collect 3 mana gems to give to Maria. Mana gem can be found by defeating the golems south of the forest of wishes";
+        else if (CutscenesController.cus13 == 0)
+            QT.text = "Let's go back to the tavern to decipher the information";
+        else if (CutscenesController.cus14 == 0)
+            QT.text = "Something drove the golems away, find out the cause in the east wishing hill";
+        else if (CutscenesController.cus15 == 0)
+            QT.text = "Something drove the golems away, find out the cause in the east wishing hill";
+        else if (CutscenesController.cus16 == 0)
+            QT.text = "Collect threads and mana gems for Maria to create an alchemy tool to stop the iron golem";
+        else if (CutscenesController.cus17 == 0)
+            QT.text = "Let's go back to the tavern to decipher the information";
+        else if (CutscenesController.cus18 == 0)
+            QT.text = "Get information around town about the zexel temple";
+        else if (CutscenesController.cus19 == 0)
+            QT.text = "Let's make a heal potion and a mana cloth to help Klener";
+        else if (CutscenesController.cus20 == 0)
+            QT.text = "Let's go to the wishing forest and defeat some golems";
 
         num1.text = ContainerController.DriedLeaves + "";
         num2.text = ContainerController.MorningDrop + "";
         num3.text = ContainerController.PureWater + "";
         num4.text = ContainerController.Iron + "";
         num5.text = ContainerController.ManaGem + "";
+        num6.text = ContainerController.String + "";
+        num7.text = ContainerController.Wood + "";
 
         numi1.text = ContainerController.HealPotion + "";
         numi2.text = ContainerController.ManaPotion + "";
         numi3.text = ContainerController.ElixirPotion + "";
         numi4.text = ContainerController.Bom + "";
+        numi5.text = ContainerController.HoliHP + "";
+        numi6.text = ContainerController.HoliMP + "";
+        numi7.text = ContainerController.UltraBom + "";
+        numi8.text = ContainerController.ReincarnationLife + "";
     }
     public void Back1()
     {

@@ -21,7 +21,7 @@ public class CutscenesTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Cutscene"))
+        if (collision.CompareTag("Player"))
         {
             if (CutscenesController.cus13 == 0 && CutscenesController.cus12 == 1 && Player.MapIndex == 2)
             {
