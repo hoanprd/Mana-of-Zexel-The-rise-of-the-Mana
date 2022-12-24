@@ -5,7 +5,7 @@ using UnityEngine;
 public class CutscenesController : MonoBehaviour
 {
     public GameObject C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20;
-    public static int cus1, cus2, cus3, cus4, cus5, cus6, cus7, cus8, cus9, cus10, cus11, cus12, cus13, cus14, cus15, cus16, cus17, cus18, cus19, cus20, cus50, cus51;
+    public static int cus1, cus2, cus3, cus4, cus5, cus6, cus7, cus8, cus9, cus10, cus11, cus12, cus13, cus14, cus15, cus16, cus17, cus18, cus19, cus20, cus21, cus22, cus23, cus24, cus25, cus50, cus51;
 
     void Start()
     {
