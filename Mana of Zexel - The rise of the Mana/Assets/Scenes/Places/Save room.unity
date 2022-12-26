@@ -2206,7 +2206,7 @@ GameObject:
   - component: {fileID: 275501018}
   - component: {fileID: 275501017}
   m_Layer: 5
-  m_Name: SynthesizeButton6 (Legacy)
+  m_Name: SynthesizeButton9 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14218,11 +14218,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d51c72ab802ebbb43a66612928e82675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spanel1: {fileID: 9111093752496241417}
-  spanel2: {fileID: 9111093751682382092}
+  Slide:
+  - {fileID: 9111093752496241417}
+  - {fileID: 9111093751682382092}
+  - {fileID: 533446245}
   showr2: {fileID: 325909097}
   ManaSynPanel: {fileID: 1637482316}
   SynDetailPanel: {fileID: 493209395}
+  RBHideSlide2: {fileID: 9111093751609121519}
+  RBHideSlide3: {fileID: 1624966746}
   num1: {fileID: 9111093753042694542}
   num2: {fileID: 9111093751504432856}
   num3: {fileID: 9111093753262412700}
@@ -14253,6 +14257,7 @@ MonoBehaviour:
   ManaIceSynSlider: {fileID: 938697143}
   ManaIceSynText: {fileID: 558946584}
   SynDetailPanelText: {fileID: 879115423}
+  SlideIndex: 1
 --- !u!114 &1481781483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15566,7 +15571,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1624966749}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1481781482}
+        m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
+        m_MethodName: RightButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1624966749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16063,7 +16080,7 @@ GameObject:
   - component: {fileID: 1749406295}
   - component: {fileID: 1749406294}
   m_Layer: 5
-  m_Name: SynthesizeButton5 (Legacy)
+  m_Name: SynthesizeButton8 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17197,7 +17214,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: LeftButton2
+        m_MethodName: LeftButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17258,7 +17275,7 @@ GameObject:
   - component: {fileID: 1972754130}
   - component: {fileID: 1972754129}
   m_Layer: 5
-  m_Name: SynthesizeButton4 (Legacy)
+  m_Name: SynthesizeButton7 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17331,7 +17348,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: SynthesizeButton4
+        m_MethodName: SynthesizeButton7
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19509,7 +19526,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9111093751609121516}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1481781482}
+        m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
+        m_MethodName: RightButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &9111093751609121518
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19544,7 +19573,7 @@ GameObject:
   - component: {fileID: 9111093751609121516}
   - component: {fileID: 9111093751609121517}
   m_Layer: 5
-  m_Name: RightButtonSlide3 (Legacy)
+  m_Name: RightButtonSlide2 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20311,7 +20340,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: SynthesizeButton2
+        m_MethodName: SynthesizeButton5
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20873,7 +20902,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: RightButton1
+        m_MethodName: RightButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21380,7 +21409,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9111093752574782074}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1481781482}
+        m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
+        m_MethodName: SynthesizeButton6
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &9111093752574782076
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21665,7 +21706,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: LeftButton2
+        m_MethodName: LeftButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21709,7 +21750,7 @@ GameObject:
   - component: {fileID: 9111093752670350868}
   - component: {fileID: 9111093752670350869}
   m_Layer: 5
-  m_Name: LeftButtonSlide3 (Legacy)
+  m_Name: LeftButtonSlide2 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

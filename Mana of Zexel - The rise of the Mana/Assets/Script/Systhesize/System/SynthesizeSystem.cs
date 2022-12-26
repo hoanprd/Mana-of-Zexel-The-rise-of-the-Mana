@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class SynthesizeSystem : MonoBehaviour
 {
-    public GameObject spanel1;
-    public GameObject spanel2;
+    public GameObject[] Slide;
     public GameObject showr2;
     public GameObject ManaSynPanel;
     public GameObject SynDetailPanel;
+    public GameObject RBHideSlide2, RBHideSlide3;
     public Text num1;
     public Text num2;
     public Text num3;
@@ -43,6 +43,7 @@ public class SynthesizeSystem : MonoBehaviour
     public static int ManaSynthesize;
     public static int ManaFireSynthesize;
     public static int ManaIceSynthesize;
+    public int SlideIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,17 @@ public class SynthesizeSystem : MonoBehaviour
         ManaSynSlider.maxValue = 100;
         ManaFireSynSlider.maxValue = 100;
         ManaIceSynSlider.maxValue = 100;
+
+        if (CutscenesController.cus12 == 0)
+        {
+            RBHideSlide2.SetActive(false);
+        }
+        if (CutscenesController.cus20 == 0)
+        {
+            RBHideSlide3.SetActive(false);
+        }
+
+        SlideIndex = 0;
     }
 
     // Update is called once per frame
@@ -89,8 +101,13 @@ public class SynthesizeSystem : MonoBehaviour
     
     public void BackButton()
     {
-        spanel1.SetActive(false);
-        spanel2.SetActive(false);
+        SlideIndex = 0;
+        for (int i = 0; i < Slide.Length; i++)
+        {
+            Slide[i].SetActive(false);
+        }
+
+        ManaSynPanel.SetActive(false);
     }
 
     public void OpenManaSynPanel()
@@ -210,6 +227,12 @@ public class SynthesizeSystem : MonoBehaviour
             showr1.text = "Success";
             Invoke("delay1", 1f);
         }
+        else if (ContainerController.HealPotion == 4)
+        {
+            showr2.SetActive(true);
+            showr1.text = "Item limit reached!";
+            Invoke("delay1", 1f);
+        }
         else
         {
             showr2.SetActive(true);
@@ -227,6 +250,12 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.ManaPotion += 1;
             showr2.SetActive(true);
             showr1.text = "Success";
+            Invoke("delay1", 1f);
+        }
+        else if (ContainerController.ManaPotion == 4)
+        {
+            showr2.SetActive(true);
+            showr1.text = "Item limit reached!";
             Invoke("delay1", 1f);
         }
         else
@@ -248,6 +277,12 @@ public class SynthesizeSystem : MonoBehaviour
             showr1.text = "Success";
             Invoke("delay1", 1f);
         }
+        else if (ContainerController.ElixirPotion == 4)
+        {
+            showr2.SetActive(true);
+            showr1.text = "Item limit reached!";
+            Invoke("delay1", 1f);
+        }
         else
         {
             showr2.SetActive(true);
@@ -267,6 +302,12 @@ public class SynthesizeSystem : MonoBehaviour
             showr1.text = "Success";
             Invoke("delay1", 1f);
         }
+        else if (ContainerController.Bom == 4)
+        {
+            showr2.SetActive(true);
+            showr1.text = "Item limit reached!";
+            Invoke("delay1", 1f);
+        }
         else
         {
             showr2.SetActive(true);
@@ -275,16 +316,129 @@ public class SynthesizeSystem : MonoBehaviour
         }
     }
 
-    public void RightButton1()
+    public void SynthesizeButton5()
     {
-        spanel1.SetActive(false);
-        spanel2.SetActive(true);
+        if (ContainerController.Wheat > 0 && ContainerController.PureWater > 0)
+        {
+            ContainerController.Wheat -= 1;
+            ContainerController.PureWater -= 1;
+            ContainerController.Porridge += 1;
+            showr2.SetActive(true);
+            showr1.text = "Success";
+            Invoke("delay1", 1f);
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough material";
+            Invoke("delay1", 1f);
+        }
     }
-    public void LeftButton2()
+
+    public void SynthesizeButton6()
     {
-        spanel2.SetActive(false);
-        spanel1.SetActive(true);
+        if (ContainerController.String > 0 && ContainerController.ManaGem > 0)
+        {
+            ContainerController.String -= 1;
+            ContainerController.ManaGem -= 1;
+            ContainerController.ManaCloth += 1;
+            showr2.SetActive(true);
+            showr1.text = "Success";
+            Invoke("delay1", 1f);
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough material";
+            Invoke("delay1", 1f);
+        }
     }
+
+    public void SynthesizeButton7()
+    {
+        if (ContainerController.Iron > 0 && ContainerController.Wood > 0 && ContainerController.ManaCloth > 0)
+        {
+            ContainerController.Iron -= 1;
+            ContainerController.Wood -= 1;
+            ContainerController.ManaCloth -= 1;
+            ContainerController.ManaShield += 1;
+            showr2.SetActive(true);
+            showr1.text = "Success";
+            Invoke("delay1", 1f);
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough material";
+            Invoke("delay1", 1f);
+        }
+    }
+
+    public void SynthesizeButton8()
+    {
+        if (ContainerController.Iron > 0 && ContainerController.ManaGem > 0)
+        {
+            ContainerController.Iron -= 1;
+            ContainerController.ManaGem -= 1;
+            ContainerController.Bom += 1;
+            showr2.SetActive(true);
+            showr1.text = "Success";
+            Invoke("delay1", 1f);
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough material";
+            Invoke("delay1", 1f);
+        }
+    }
+
+    public void SynthesizeButton9()
+    {
+        if (ContainerController.Iron > 0 && ContainerController.Wood > 0 && ContainerController.ManaCloth > 0)
+        {
+            ContainerController.Iron -= 1;
+            ContainerController.Wood -= 1;
+            ContainerController.ManaCloth -= 1;
+            ContainerController.ManaShield += 1;
+            showr2.SetActive(true);
+            showr1.text = "Success";
+            Invoke("delay1", 1f);
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough material";
+            Invoke("delay1", 1f);
+        }
+    }
+
+    public void RightButton()
+    {
+        SlideIndex += 1;
+        ShowSlide(SlideIndex);
+    }
+    public void LeftButton()
+    {
+        SlideIndex -= 1;
+        ShowSlide(SlideIndex);
+    }
+
+    void ShowSlide(int index)
+    {
+        for (int i = 0; i < Slide.Length; i++)
+        {
+            if (i == index)
+            {
+                Slide[i].SetActive(true);
+            }
+            else
+            {
+                Slide[i].SetActive(false);
+            }
+        }
+    }
+
     void delay1()
     {
         showr2.SetActive(false);

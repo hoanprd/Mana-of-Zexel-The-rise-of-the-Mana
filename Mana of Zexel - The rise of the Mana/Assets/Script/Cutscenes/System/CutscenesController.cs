@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CutscenesController : MonoBehaviour
 {
-    public GameObject C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20;
-    public static int cus1, cus2, cus3, cus4, cus5, cus6, cus7, cus8, cus9, cus10, cus11, cus12, cus13, cus14, cus15, cus16, cus17, cus18, cus19, cus20, cus21, cus22, cus23, cus24, cus25, cus50, cus51;
+    public GameObject C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24, C25, C26, C27, C28, C29, C30;
+    public static int cus1, cus2, cus3, cus4, cus5, cus6, cus7, cus8, cus9, cus10, cus11, cus12, cus13, cus14, cus15, cus16, cus17, cus18, cus19, cus20, cus21, cus22, cus23, cus24, cus25, cus26, cus27, cus28, cus29, cus30, cus50, cus51;
 
     void Start()
     {
@@ -49,5 +49,25 @@ public class CutscenesController : MonoBehaviour
             C19.SetActive(true);
         else if (cus20 == 0)
             C20.SetActive(true);
+        else if (cus21 == 0)
+            C21.SetActive(true);
+        else if (cus22 == 0)
+            C22.SetActive(true);
+        else if (cus23 == 0)
+            C23.SetActive(true);
+        else if (cus24 == 0)
+            C24.SetActive(true);
+        else if (cus25 == 0)
+            C25.SetActive(true);
+        else if (cus26 == 0)
+            C26.SetActive(true);
+        else if (cus27 == 0)
+            C27.SetActive(true);
+        else if (cus28 == 0)
+            C28.SetActive(true);
+        else if (cus29 == 0)
+            C29.SetActive(true);
+        else if (cus30 == 0)
+            C30.SetActive(true);
     }
 }
