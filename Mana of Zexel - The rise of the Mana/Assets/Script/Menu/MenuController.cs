@@ -31,6 +31,8 @@ public class MenuController : MonoBehaviour
     }
     public void PressStartNewGame()
     {
+        //Set date
+        DateController.StartGlobalTime = true;
         //SetMapIndex
         Player.MapIndex = 0;
         //Set weapon
