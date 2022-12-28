@@ -35,12 +35,14 @@ public class DateController : MonoBehaviour
         PHour.text = GlobalPHour + "";
         DownHour.text = GlobalDownHour + "";
 
-        //CheckDayNightChange();
+        CheckDayNightChange();
     }
 
     // Update is called once per frame
     void Update()
     {
+        CheckDayNightChange();
+
         if (GlobalTime < 5)
             GlobalTime += Time.deltaTime;
         else if (GlobalTime >= 5)
@@ -97,12 +99,12 @@ public class DateController : MonoBehaviour
 
     void CheckDayNightChange()
     {
-        if (GlobalDayNight == 0 && Player.MapIndex == 0)
+        if ((GlobalDayNight == 0 && GlobalPHour >= 6) || (GlobalDayNight == 1 && GlobalPHour < 6) && Player.MapIndex == 0)
         {
             WHDay.SetActive(true);
             WHNight.SetActive(false);
         }
-        else if (GlobalDayNight == 1 && Player.MapIndex == 0)
+        else if ((GlobalDayNight == 1 && GlobalPHour >= 6) || (GlobalDayNight == 0 && GlobalPHour < 6) && Player.MapIndex == 0)
         {
             WHDay.SetActive(false);
             WHNight.SetActive(true);
