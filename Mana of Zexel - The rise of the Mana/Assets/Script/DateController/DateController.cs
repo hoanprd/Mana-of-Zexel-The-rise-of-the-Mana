@@ -110,23 +110,23 @@ public class DateController : MonoBehaviour
             WHNight.SetActive(true);
         }
 
-        if (GlobalDayNight == 0 && Player.MapIndex == 6)
+        if ((GlobalDayNight == 0 && GlobalPHour >= 6) || (GlobalDayNight == 1 && GlobalPHour < 6) && Player.MapIndex == 6)
         {
             MDDay.SetActive(true);
             MDNight.SetActive(false);
         }
-        else if (GlobalDayNight == 1 && Player.MapIndex == 6)
+        else if ((GlobalDayNight == 1 && GlobalPHour >= 6) || (GlobalDayNight == 0 && GlobalPHour < 6) && Player.MapIndex == 6)
         {
             MDDay.SetActive(false);
             MDNight.SetActive(true);
         }
 
-        if (GlobalDayNight == 0 && Player.MapIndex == 12)
+        if ((GlobalDayNight == 0 && GlobalPHour >= 6) || (GlobalDayNight == 1 && GlobalPHour < 6) && Player.MapIndex == 12)
         {
             MCDay.SetActive(true);
             MCNight.SetActive(false);
         }
-        else if (GlobalDayNight == 1 && Player.MapIndex == 12)
+        else if ((GlobalDayNight == 1 && GlobalPHour >= 6) || (GlobalDayNight == 0 && GlobalPHour < 6) && Player.MapIndex == 12)
         {
             MCDay.SetActive(false);
             MCNight.SetActive(true);
