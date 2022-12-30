@@ -160,7 +160,7 @@ public class Cus30 : MonoBehaviour
         else if (tang >= 28)
         {
             CutscenesController.cus30 = 1;
-            SceneManager.LoadScene("WeaponStore");
+            SceneManager.LoadScene("Save room");
         }
     }
     public void Pressnext()
@@ -170,6 +170,6 @@ public class Cus30 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus30 = 1;
-        SceneManager.LoadScene("WeaponStore");
+        SceneManager.LoadScene("Save room");
     }
 }
