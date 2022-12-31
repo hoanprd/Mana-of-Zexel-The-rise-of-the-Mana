@@ -79,11 +79,11 @@ public class HubController : MonoBehaviour
             {
                 MapText[i].text = "Wishing forest";
             }
-            else if (i == 3)
+            else if (i == 3 && CutscenesController.cus35 == 1)
             {
                 MapText[i].text = "Inferno desert";
             }
-            else if (i == 4)
+            else if (i == 4 && CutscenesController.cus41 == 1)
             {
                 MapText[i].text = "Zexel gate";
             }
@@ -224,6 +224,36 @@ public class HubController : MonoBehaviour
             QT.text = "Let's make a heal potion and a mana cloth to help Klener";
         else if (CutscenesController.cus20 == 0)
             QT.text = "Let's go to the wishing forest and defeat some golems";
+        else if (CutscenesController.cus21 == 0)
+            QT.text = "Let's go back to the town's tavern";
+        else if (CutscenesController.cus22 == 0)
+            QT.text = "Craft a mana shield using alchemy to give to Klener";
+        else if (CutscenesController.cus23 == 0)
+            QT.text = "Let's make Vayne's unique porridge";
+        else if (CutscenesController.cus24 == 0)
+            QT.text = "Vayne is tired, go back to the save room to rest";
+        else if (CutscenesController.cus25 == 0)
+            QT.text = "Let's make a bomb on request Maria";
+        else if (CutscenesController.cus26 == 0)
+            QT.text = "Keep looking for information about the Zexel temple around town";
+        else if (CutscenesController.cus27 == 0)
+            QT.text = "Let's go to the blacksmith shop of Zexel town in the south";
+        else if (CutscenesController.cus28 == 0)
+            QT.text = "Let's collect Heerium some iron and mana gem . Iron: 0/3\nMana gem: 0/2";
+        else if (CutscenesController.cus29 == 0)
+            QT.text = "Let's go back to the tavern to prepare some equipment and wait for the weapon made by Heerium";
+        else if (CutscenesController.cus30 == 0)
+            QT.text = "Let's go back to the tavern to prepare some equipment and wait for the weapon made by Heerium";
+        else if (CutscenesController.cus31 == 0)
+            QT.text = "Prepare some missing equipment to continue the journey";
+        else if (CutscenesController.cus32 == 0)
+            QT.text = "Maria remembered a grocery store owner on the west side of town near a tavern";
+        else if (CutscenesController.cus33 == 0)
+            QT.text = "Let's collect some items for Orina. Mana string: 0/2\nIron: 0/3\n Wood: 0/2";
+        else if (CutscenesController.cus34 == 0)
+            QT.text = "Let's make our way to the inferno desert west of Zexel town";
+        else if (CutscenesController.cus35 == 0)
+            QT.text = "Let's make our way to the inferno desert west of Zexel town";
 
         num1.text = ContainerController.DriedLeaves + "";
         num2.text = ContainerController.MorningDrop + "";
