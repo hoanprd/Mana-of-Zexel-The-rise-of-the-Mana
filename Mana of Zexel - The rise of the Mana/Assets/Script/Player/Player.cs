@@ -97,7 +97,11 @@ public class Player : MonoBehaviour
             if (CutscenesController.cus19 == 0 && CutscenesController.cus18 == 1 && ContainerController.HealPotion > 1 && ContainerController.ManaCloth > 1)
             {
                 SceneManager.LoadScene("Cutscenes");
-            }    
+            }
+            else if (CutscenesController.cus22 == 0 && CutscenesController.cus21 == 1 && ContainerController.ManaShield > 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
         }
 
         movement.x = Input.GetAxisRaw("Horizontal");
@@ -159,6 +163,14 @@ public class Player : MonoBehaviour
             {
                 SceneManager.LoadScene("Cutscenes");
             }
+            else if (CutscenesController.cus21 == 0 && CutscenesController.cus20 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus30 == 0 && CutscenesController.cus29 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
             else
                 SceneManager.LoadScene("Tavern");
         }
@@ -179,13 +191,28 @@ public class Player : MonoBehaviour
             MapController.TavernToSaveRoom = true;
             if (CutscenesController.cus5 == 0)
                 SceneManager.LoadScene("Cutscenes");
+            else if (CutscenesController.cus24 == 0 && CutscenesController.cus23 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
             else
                 SceneManager.LoadScene("Save room");
         }
         if (collision.CompareTag("SaveRoomToTavern"))
         {
             MapController.SaveRoomToTavern = true;
-            SceneManager.LoadScene("Tavern");
+            if (CutscenesController.cus23 == 0 && CutscenesController.cus22 == 1 && CutscenesTrigger.PorridgeSyn == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus31 == 0 && CutscenesController.cus30 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+            {
+                SceneManager.LoadScene("Tavern");
+            }
         }
         if (collision.CompareTag("ZexelTownToGroceryStore") && CutscenesController.cus19 == 1)
         {
@@ -194,7 +221,16 @@ public class Player : MonoBehaviour
             GoblinTrigger2.despawn = false;
             GoblinTrigger3.despawn = false;
             GoblinTrigger4.despawn = false;
-            SceneManager.LoadScene("GroceryStore");
+            if (CutscenesController.cus32 == 0 && CutscenesController.cus31 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus33 == 0 && CutscenesController.cus32 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+                SceneManager.LoadScene("GroceryStore");
         }
         if (collision.CompareTag("GroceryStoreToZexelTown"))
         {
@@ -208,12 +244,26 @@ public class Player : MonoBehaviour
             GoblinTrigger2.despawn = false;
             GoblinTrigger3.despawn = false;
             GoblinTrigger4.despawn = false;
-            SceneManager.LoadScene("WeaponStore");
+            if (CutscenesController.cus27 == 0 && CutscenesController.cus26 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus28 == 0 && CutscenesController.cus27 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+                SceneManager.LoadScene("WeaponStore");
         }
         if (collision.CompareTag("WeaponStoreToZexelTown"))
         {
             MapController.WeaponStoreToZexelTown = true;
-            SceneManager.LoadScene("Zexel town");
+            if (CutscenesController.cus29 == 0 && CutscenesController.cus28 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+                SceneManager.LoadScene("Zexel town");
         }
         if (collision.CompareTag("ZexelTownToWishingForest"))
         {
@@ -259,7 +309,12 @@ public class Player : MonoBehaviour
             GoblinTrigger3.despawn = false;
             GoblinTrigger4.despawn = false;
             MapIndex = 3;
-            SceneManager.LoadScene("Inferno desert");
+            if (CutscenesController.cus35 == 0 && CutscenesController.cus34 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+                SceneManager.LoadScene("Inferno desert");
         }
         if (collision.CompareTag("InfernoDesertToZexelTown"))
         {

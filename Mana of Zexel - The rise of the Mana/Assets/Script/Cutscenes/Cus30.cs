@@ -160,6 +160,7 @@ public class Cus30 : MonoBehaviour
         else if (tang >= 28)
         {
             CutscenesController.cus30 = 1;
+            MapController.TavernToSaveRoom = true;
             SceneManager.LoadScene("Save room");
         }
     }
@@ -170,6 +171,7 @@ public class Cus30 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus30 = 1;
+        MapController.TavernToSaveRoom = true;
         SceneManager.LoadScene("Save room");
     }
 }

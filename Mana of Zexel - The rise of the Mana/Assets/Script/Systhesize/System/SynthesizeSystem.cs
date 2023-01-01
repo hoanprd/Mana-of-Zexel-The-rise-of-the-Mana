@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SynthesizeSystem : MonoBehaviour
 {
@@ -43,7 +44,7 @@ public class SynthesizeSystem : MonoBehaviour
     public static int ManaSynthesize;
     public static int ManaFireSynthesize;
     public static int ManaIceSynthesize;
-    public int SlideIndex = 0;
+    public int SlideIndex = 0, SynBugStop = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -217,7 +218,7 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton1()
     {
-        if (ContainerController.DriedLeaves > 0 && ContainerController.PureWater > 0)
+        if (ContainerController.DriedLeaves > 0 && ContainerController.PureWater > 0 && ContainerController.HealPotion < 4)
         {
             ContainerController.DriedLeaves -= 1;
             ContainerController.PureWater -= 1;
@@ -243,7 +244,7 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton2()
     {
-        if (ContainerController.MorningDrop > 0 && ContainerController.PureWater > 0)
+        if (ContainerController.MorningDrop > 0 && ContainerController.PureWater > 0 && ContainerController.ManaPotion < 4)
         {
             ContainerController.MorningDrop -= 1;
             ContainerController.PureWater -= 1;
@@ -268,7 +269,7 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton3()
     {
-        if (ContainerController.HealPotion > 0 && ContainerController.ManaPotion > 0)
+        if (ContainerController.HealPotion > 0 && ContainerController.ManaPotion > 0 && ContainerController.ElixirPotion < 4)
         {
             ContainerController.HealPotion -= 1;
             ContainerController.ManaPotion -= 1;
@@ -293,7 +294,17 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton4()
     {
-        if (ContainerController.Iron > 0 && ContainerController.ManaGem > 0)
+        if (ContainerController.Iron > 0 && ContainerController.ManaGem > 0 && CutscenesController.cus25 == 0 && CutscenesController.cus24 == 1 && SynBugStop == 0)
+        {
+            SynBugStop = 1;
+            ContainerController.Iron -= 1;
+            ContainerController.ManaGem -= 1;
+            ContainerController.Bom += 1;
+            showr2.SetActive(true);
+            showr1.text = "Success";
+            Invoke("delay1", 1f);
+        }
+        else if (ContainerController.Iron > 0 && ContainerController.ManaGem > 0 && ContainerController.Bom < 4)
         {
             ContainerController.Iron -= 1;
             ContainerController.ManaGem -= 1;
@@ -442,5 +453,10 @@ public class SynthesizeSystem : MonoBehaviour
     void delay1()
     {
         showr2.SetActive(false);
+        if (CutscenesController.cus25 == 0 && CutscenesController.cus24 == 1)
+        {
+            ContainerController.Bom -= 1;
+            SceneManager.LoadScene("Cutscenes");
+        }
     }
 }

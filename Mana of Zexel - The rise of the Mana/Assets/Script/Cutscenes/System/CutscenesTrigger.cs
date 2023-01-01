@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CutscenesTrigger : MonoBehaviour
 {
+    public static int PorridgeSyn, BomSyn;
     public static int GolemnKill;
 
     // Start is called before the first frame update
@@ -28,6 +29,14 @@ public class CutscenesTrigger : MonoBehaviour
                 SceneManager.LoadScene("Cutscenes");
             }
             else if (CutscenesController.cus15 == 0 && CutscenesController.cus14 == 1 && Player.MapIndex == 2)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus26 == 0 && CutscenesController.cus25 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus34 == 0 && CutscenesController.cus33 == 1)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
