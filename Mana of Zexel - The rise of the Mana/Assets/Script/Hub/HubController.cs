@@ -249,11 +249,21 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus32 == 0)
             QT.text = "Maria remembered a grocery store owner on the west side of town near a tavern";
         else if (CutscenesController.cus33 == 0)
-            QT.text = "Let's collect some items for Orina. Mana string: 0/2\nIron: 0/3\n Wood: 0/2";
+            QT.text = "Let's collect some items for Orina. Mana string: 2\nIron: 3\n Wood: 2";
         else if (CutscenesController.cus34 == 0)
             QT.text = "Let's make our way to the inferno desert west of Zexel town";
         else if (CutscenesController.cus35 == 0)
             QT.text = "Let's make our way to the inferno desert west of Zexel town";
+        else if (CutscenesController.cus36 == 0)
+            QT.text = "Let's make our way to the inferno desert west of Zexel town";
+        else if (CutscenesController.cus37 == 0)
+            QT.text = "Help Jesca find her home and protect her from dangerous monsters, there is a village in the southwest of the desert";
+        else if (CutscenesController.cus38 == 0)
+            QT.text = "Head north of the desert to find the gate of Zexel";
+        else if (CutscenesController.cus39 == 0)
+            QT.text = "Alia has been poisoned, go back to Zexel town's pub to find an antidote";
+        else if (CutscenesController.cus40 == 0)
+            QT.text = "Collect the poisonous tail of the inferno scorpion to make an antidote for Alia";
 
         num1.text = ContainerController.DriedLeaves + "";
         num2.text = ContainerController.MorningDrop + "";
