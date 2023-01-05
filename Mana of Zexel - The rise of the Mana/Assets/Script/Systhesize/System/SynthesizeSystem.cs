@@ -424,6 +424,35 @@ public class SynthesizeSystem : MonoBehaviour
         }
     }
 
+    public void SynthesizeButton10()
+    {
+        if (ContainerController.ScorpionVenom > 0 && ContainerController.ElixirPotion > 0 && CutscenesController.cus40 == 0 && CutscenesController.cus39 == 1 && SynBugStop == 0)
+        {
+            SynBugStop = 1;
+            ContainerController.ScorpionVenom -= 1;
+            ContainerController.ElixirPotion -= 1;
+            ContainerController.VenomKiller += 1;
+            showr2.SetActive(true);
+            showr1.text = "Success";
+            Invoke("delay1", 1f);
+        }
+        else if (ContainerController.ScorpionVenom > 0 && ContainerController.ElixirPotion > 0)
+        {
+            ContainerController.ScorpionVenom -= 1;
+            ContainerController.ElixirPotion -= 1;
+            ContainerController.VenomKiller += 1;
+            showr2.SetActive(true);
+            showr1.text = "Success";
+            Invoke("delay1", 1f);
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough material";
+            Invoke("delay1", 1f);
+        }
+    }
+
     public void RightButton()
     {
         SlideIndex += 1;
@@ -456,6 +485,11 @@ public class SynthesizeSystem : MonoBehaviour
         if (CutscenesController.cus25 == 0 && CutscenesController.cus24 == 1)
         {
             ContainerController.Bom -= 1;
+            SceneManager.LoadScene("Cutscenes");
+        }
+        if (CutscenesController.cus40 == 0 && CutscenesController.cus39 == 1)
+        {
+            ContainerController.VenomKiller -= 1;
             SceneManager.LoadScene("Cutscenes");
         }
     }

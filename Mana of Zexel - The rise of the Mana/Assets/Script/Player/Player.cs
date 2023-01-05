@@ -171,6 +171,10 @@ public class Player : MonoBehaviour
             {
                 SceneManager.LoadScene("Cutscenes");
             }
+            else if (CutscenesController.cus39 == 0 && CutscenesController.cus38 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
             else
                 SceneManager.LoadScene("Tavern");
         }

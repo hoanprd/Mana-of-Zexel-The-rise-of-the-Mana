@@ -40,6 +40,14 @@ public class CutscenesTrigger : MonoBehaviour
             {
                 SceneManager.LoadScene("Cutscenes");
             }
+            else if (CutscenesController.cus37 == 0 && CutscenesController.cus36 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus38 == 0 && CutscenesController.cus37 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
         }
     }
 }

@@ -8,11 +8,16 @@ public class WeaponStoreController : MonoBehaviour
     public GameObject WeaponStorePanel;
     public bool IsActived = false;
     public Text InShock1, InShock2, InShock3, InShock4, InShock5, InShock6, InShock7, InShock8, InShock9, InShock10, InShock11, InShock12, InShock13, InShock14, InShock15;
+    public Transform MainPanel;
+    public GameObject[] WeaponPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        for (int i = 0; i < WeaponPrefab.Length; i++)
+        {
+            Instantiate(WeaponPrefab[i], MainPanel);
+        }
     }
 
     // Update is called once per frame

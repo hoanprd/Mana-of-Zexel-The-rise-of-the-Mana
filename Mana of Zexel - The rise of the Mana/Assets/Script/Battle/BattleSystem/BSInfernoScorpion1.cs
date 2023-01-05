@@ -602,8 +602,13 @@ public class BSInfernoScorpion1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
-        //ContainerController.ManaGem += 1;
-        SceneManager.LoadScene("Inferno desert");
+        ContainerController.ScorpionVenom += 1;
+        if (CutscenesController.cus36 == 0 && CutscenesController.cus35 == 1)
+        {
+            SceneManager.LoadScene("Cutscenes");
+        }
+        else
+            SceneManager.LoadScene("Inferno desert");
     }
     public void CheckP1Die()
     {
