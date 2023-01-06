@@ -73,6 +73,25 @@ public class MenuController : MonoBehaviour
         CutscenesController.cus28 = 0;
         CutscenesController.cus29 = 0;
         CutscenesController.cus30 = 0;
+        CutscenesController.cus31 = 0;
+        CutscenesController.cus32 = 0;
+        CutscenesController.cus33 = 0;
+        CutscenesController.cus34 = 0;
+        CutscenesController.cus35 = 0;
+        CutscenesController.cus36 = 0;
+        CutscenesController.cus37 = 0;
+        CutscenesController.cus38 = 0;
+        CutscenesController.cus39 = 0;
+        CutscenesController.cus40 = 0;
+        CutscenesController.cus41 = 0;
+        CutscenesController.cus42 = 0;
+        CutscenesController.cus43 = 0;
+        CutscenesController.cus44 = 0;
+        CutscenesController.cus45 = 0;
+        CutscenesController.cus46 = 0;
+        CutscenesController.cus47 = 0;
+        CutscenesController.cus48 = 0;
+        CutscenesController.cus49 = 0;
         CutscenesController.cus50 = 0;
         CutscenesController.cus51 = 0;
 

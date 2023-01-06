@@ -329,7 +329,17 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton5()
     {
-        if (ContainerController.Wheat > 0 && ContainerController.PureWater > 0)
+        if (ContainerController.Wheat > 0 && ContainerController.PureWater > 0 && CutscenesController.cus48 == 0 && CutscenesController.cus47 == 1 && SynBugStop == 0)
+        {
+            SynBugStop = 1;
+            ContainerController.Wheat -= 1;
+            ContainerController.PureWater -= 1;
+            ContainerController.Porridge += 1;
+            showr2.SetActive(true);
+            showr1.text = "Success";
+            Invoke("delay1", 1f);
+        }
+        else if (ContainerController.Wheat > 0 && ContainerController.PureWater > 0)
         {
             ContainerController.Wheat -= 1;
             ContainerController.PureWater -= 1;
@@ -490,6 +500,11 @@ public class SynthesizeSystem : MonoBehaviour
         if (CutscenesController.cus40 == 0 && CutscenesController.cus39 == 1)
         {
             ContainerController.VenomKiller -= 1;
+            SceneManager.LoadScene("Cutscenes");
+        }
+        if (CutscenesController.cus48 == 0 && CutscenesController.cus47 == 1)
+        {
+            ContainerController.Porridge -= 1;
             SceneManager.LoadScene("Cutscenes");
         }
     }

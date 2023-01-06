@@ -264,6 +264,26 @@ public class HubController : MonoBehaviour
             QT.text = "Alia has been poisoned, go back to Zexel town's pub to find an antidote";
         else if (CutscenesController.cus40 == 0)
             QT.text = "Collect the poisonous tail of the inferno scorpion to make an antidote for Alia";
+        else if (CutscenesController.cus41 == 0)
+            QT.text = "Let's proceed to Zexel gate in the north inferno desert";
+        else if (CutscenesController.cus42 == 0)
+            QT.text = "Let's go back to the tavern in Zexel town to find information";
+        else if (CutscenesController.cus43 == 0)
+            QT.text = "Let's go to Orina's grocery store to find the solution to open the Zexel Gate";
+        else if (CutscenesController.cus44 == 0)
+            QT.text = "Defeat some scorpions in the inferno desert to get their venom";
+        else if (CutscenesController.cus45 == 0)
+            QT.text = "Return to Orina's grocery store to complete the assigned quest";
+        else if (CutscenesController.cus46 == 0)
+            QT.text = "Let's go back to the town's tavern";
+        else if (CutscenesController.cus47 == 0)
+            QT.text = "Let's make Vayne's unique porridge";
+        else if (CutscenesController.cus48 == 0)
+            QT.text = "Let's make Vayne's unique porridge";
+        else if (CutscenesController.cus49 == 0)
+            QT.text = "Help Klener destroy and collect scorpion venom in the inferno desert";
+        else if (CutscenesController.cus50 == 0)
+            QT.text = "Let's go to the place of mana gods in the south inferno desert";
 
         num1.text = ContainerController.DriedLeaves + "";
         num2.text = ContainerController.MorningDrop + "";

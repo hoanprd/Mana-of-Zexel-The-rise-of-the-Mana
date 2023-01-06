@@ -86,7 +86,6 @@ public class BSInfernoScorpion1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //gb = FindObjectOfType<Global>();
         pb = FindObjectOfType<PlayerBattle>();
         ISB = FindObjectOfType<InfernoScorpionBattle>();
         a1 = Global.SpeedP1 / 10;
@@ -607,6 +606,14 @@ public class BSInfernoScorpion1 : MonoBehaviour
         {
             SceneManager.LoadScene("Cutscenes");
         }
+        else if (CutscenesController.cus44 == 0 && CutscenesController.cus43 == 1 && CutscenesTrigger.InfernoScorpionKill >= 3)
+        {
+            SceneManager.LoadScene("Cutscenes");
+        }
+        else if (CutscenesController.cus49 == 0 && CutscenesController.cus48 == 1 && CutscenesTrigger.InfernoScorpionKillP2 >= 3)
+        {
+            SceneManager.LoadScene("Cutscenes");
+        }
         else
             SceneManager.LoadScene("Inferno desert");
     }
@@ -673,6 +680,15 @@ public class BSInfernoScorpion1 : MonoBehaviour
             ShowP3Panel(false);
             UpdateUIText();
             stop = 1;
+
+            if (CutscenesController.cus44 == 0 && CutscenesController.cus43 == 1)
+            {
+                CutscenesTrigger.InfernoScorpionKill += 1;
+            }
+            if (CutscenesController.cus49 == 0 && CutscenesController.cus48 == 1)
+            {
+                CutscenesTrigger.InfernoScorpionKillP2 += 1;
+            }
 
             LevelP1.text = "Level " + Global.LevelP1;
             EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;

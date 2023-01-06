@@ -175,6 +175,10 @@ public class Player : MonoBehaviour
             {
                 SceneManager.LoadScene("Cutscenes");
             }
+            else if (CutscenesController.cus42 == 0 && CutscenesController.cus41 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
             else
                 SceneManager.LoadScene("Tavern");
         }
@@ -196,6 +200,10 @@ public class Player : MonoBehaviour
             if (CutscenesController.cus5 == 0)
                 SceneManager.LoadScene("Cutscenes");
             else if (CutscenesController.cus24 == 0 && CutscenesController.cus23 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus47 == 0 && CutscenesController.cus46 == 1)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
@@ -233,13 +241,26 @@ public class Player : MonoBehaviour
             {
                 SceneManager.LoadScene("Cutscenes");
             }
+            else if (CutscenesController.cus43 == 0 && CutscenesController.cus42 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus45 == 0 && CutscenesController.cus44 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
             else
                 SceneManager.LoadScene("GroceryStore");
         }
         if (collision.CompareTag("GroceryStoreToZexelTown"))
         {
             MapController.GroceryStoreToZexelTown = true;
-            SceneManager.LoadScene("Zexel town");
+            if (CutscenesController.cus46 == 0 && CutscenesController.cus45 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+                SceneManager.LoadScene("Zexel town");
         }
         if (collision.CompareTag("ZexelTownToWeaponStore") && CutscenesController.cus20 == 1)
         {
@@ -342,7 +363,12 @@ public class Player : MonoBehaviour
             InfernoScorpionTrigger5.despawn = false;
             InfernoScorpionTrigger6.despawn = false;
             MapIndex = 4;
-            SceneManager.LoadScene("Zexel gate");
+            if (CutscenesController.cus41 == 0 && CutscenesController.cus40 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+                SceneManager.LoadScene("Zexel gate");
         }
         if (collision.CompareTag("ZexelGateToInfernoDesert"))
         {
@@ -360,7 +386,12 @@ public class Player : MonoBehaviour
             InfernoScorpionTrigger5.despawn = false;
             InfernoScorpionTrigger6.despawn = false;
             MapIndex = 5;
-            SceneManager.LoadScene("Mana gate");
+            if (CutscenesController.cus50 == 0 && CutscenesController.cus49 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+                SceneManager.LoadScene("Mana gate");
         }
         if (collision.CompareTag("ManaGateToInfernoDesert"))
         {
