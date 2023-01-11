@@ -552,12 +552,12 @@ public class BSManaGuardian1 : MonoBehaviour
     }
     public void PressRun()
     {
-        SceneManager.LoadScene("Mana gate");
+        //SceneManager.LoadScene("Mana gate");
     }
     public void PressBackToTheMap2()
     {
         //ContainerController.ManaGem += 10;
-        SceneManager.LoadScene("Mana gate");
+        SceneManager.LoadScene("Cutscenes");
     }
 
     public void BE1Action()

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class ContainerController : MonoBehaviour
 {
-    public static int DriedLeaves, PureWater, MorningDrop, Wheat, String, Iron, ManaGem, Wood, ScorpionVenom, ManaLiquid, GoldenFeather, IceLeather, HealPotion, ManaPotion, ElixirPotion, Bom, Porridge, ManaCloth, ManaShield, VenomKiller, HoliHP, HoliMP, UltraBom, ReincarnationLife;
+    public static int DriedLeaves, PureWater, MorningDrop, Wheat, String, Iron, ManaGem, Wood, ScorpionVenom, ManaLiquid, GuardianFeather, GoldenFeather, IceLeather, HealPotion, ManaPotion, ElixirPotion, Bom, Porridge, ManaCloth, ManaShield, VenomKiller, ManaNecklace, ManaGenerator, HoliHP, HoliMP, UltraBom, ReincarnationLife;
 }

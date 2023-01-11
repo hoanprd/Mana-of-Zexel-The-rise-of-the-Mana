@@ -416,14 +416,22 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton9()
     {
-        if (ContainerController.Iron > 0 && ContainerController.Wood > 0 && ContainerController.ManaCloth > 0)
+        if (ContainerController.String > 0 && ContainerController.ManaGem > 0 && ContainerController.GuardianFeather > 0 && CutscenesController.cus54 == 0 && CutscenesController.cus53 == 1 && SynBugStop == 0)
         {
-            ContainerController.Iron -= 1;
-            ContainerController.Wood -= 1;
-            ContainerController.ManaCloth -= 1;
-            ContainerController.ManaShield += 1;
+            SynBugStop = 1;
+            ManaSynthesize -= 20;
+            ContainerController.String -= 1;
+            ContainerController.ManaGem -= 1;
+            ContainerController.GuardianFeather -= 1;
+            ContainerController.ManaNecklace += 1;
             showr2.SetActive(true);
             showr1.text = "Success";
+            Invoke("delay1", 1f);
+        }
+        else if (ContainerController.String > 0 && ContainerController.ManaGem > 0 && ContainerController.GuardianFeather > 0 && CutscenesController.cus54 == 0 && CutscenesController.cus53 == 0)
+        {
+            showr2.SetActive(true);
+            showr1.text = "You can't systhesize this item yet!";
             Invoke("delay1", 1f);
         }
         else
@@ -436,23 +444,21 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton10()
     {
-        if (ContainerController.ScorpionVenom > 0 && ContainerController.ElixirPotion > 0 && CutscenesController.cus40 == 0 && CutscenesController.cus39 == 1 && SynBugStop == 0)
+        if (ContainerController.Iron > 0 && ContainerController.Wood > 0 && ContainerController.ManaGem > 0 && ManaSynthesize >= 80)
         {
-            SynBugStop = 1;
-            ContainerController.ScorpionVenom -= 1;
-            ContainerController.ElixirPotion -= 1;
-            ContainerController.VenomKiller += 1;
+            ManaSynthesize -= 80;
+            ContainerController.Iron -= 4;
+            ContainerController.Wood -= 2;
+            ContainerController.ManaGem -= 4;
+            ContainerController.ManaGenerator += 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
         }
-        else if (ContainerController.ScorpionVenom > 0 && ContainerController.ElixirPotion > 0)
+        else if (ContainerController.Iron > 0 && ContainerController.Wood > 0 && ContainerController.ManaGem > 0 && ManaSynthesize < 80)
         {
-            ContainerController.ScorpionVenom -= 1;
-            ContainerController.ElixirPotion -= 1;
-            ContainerController.VenomKiller += 1;
             showr2.SetActive(true);
-            showr1.text = "Success";
+            showr1.text = "You don't have enough mana to synthesize this item!";
             Invoke("delay1", 1f);
         }
         else
@@ -505,6 +511,11 @@ public class SynthesizeSystem : MonoBehaviour
         if (CutscenesController.cus48 == 0 && CutscenesController.cus47 == 1)
         {
             ContainerController.Porridge -= 1;
+            SceneManager.LoadScene("Cutscenes");
+        }
+        if (CutscenesController.cus54 == 0 && CutscenesController.cus53 == 1)
+        {
+            ContainerController.ManaNecklace -= 1;
             SceneManager.LoadScene("Cutscenes");
         }
     }
