@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public GameObject show2;
     public Text show3;
     public GameObject show4;
-    private bool heal, tqz, mqz, klener;
+    private bool heal, tqz, mqz, klener, ManaGenerator, FireManaGenerator, IceManaGenerator;
     public static int MapIndex;
     Vector2 movement;
 
@@ -102,6 +102,30 @@ public class Player : MonoBehaviour
             {
                 SceneManager.LoadScene("Cutscenes");
             }
+        }
+
+        if (ManaGenerator && Input.GetKeyDown(KeyCode.Space))
+        {
+            SynthesizeSystem.ManaSynthesize = 100;
+            show2.SetActive(true);
+            show1.text = "Mana restore!";
+            Invoke("delay1", 2f);
+        }
+
+        if (FireManaGenerator && Input.GetKeyDown(KeyCode.Space))
+        {
+            SynthesizeSystem.ManaSynthesize = 100;
+            show2.SetActive(true);
+            show1.text = "Fire mana restore!";
+            Invoke("delay1", 2f);
+        }
+
+        if (IceManaGenerator && Input.GetKeyDown(KeyCode.Space))
+        {
+            SynthesizeSystem.ManaSynthesize = 100;
+            show2.SetActive(true);
+            show1.text = "Ice mana restore!";
+            Invoke("delay1", 2f);
         }
 
         movement.x = Input.GetAxisRaw("Horizontal");
@@ -727,13 +751,43 @@ public class Player : MonoBehaviour
         {
             klener = true;
         }
+
+        if (collision.gameObject.CompareTag("ManaGenerator"))
+        {
+            ManaGenerator = true;
+        }
+
+        if (collision.gameObject.CompareTag("FireManaGenerator"))
+        {
+            FireManaGenerator = true;
+        }
+
+        if (collision.gameObject.CompareTag("IceManaGenerator"))
+        {
+            IceManaGenerator = true;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Klener"))
         {
             klener = false;
+        }
+
+        if (collision.gameObject.CompareTag("ManaGenerator"))
+        {
+            ManaGenerator = false;
+        }
+
+        if (collision.gameObject.CompareTag("FireManaGenerator"))
+        {
+            FireManaGenerator = false;
+        }
+
+        if (collision.gameObject.CompareTag("IceManaGenerator"))
+        {
+            IceManaGenerator = false;
         }
     }
 

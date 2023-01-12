@@ -87,19 +87,19 @@ public class HubController : MonoBehaviour
             {
                 MapText[i].text = "Zexel gate";
             }
-            else if (i == 5)
+            else if (i == 5 && CutscenesController.cus50 == 1)
             {
                 MapText[i].text = "Mana gate";
             }
-            else if (i == 6)
+            else if (i == 6 && CutscenesController.cus52 == 1)
             {
                 MapText[i].text = "Mana dimension";
             }
-            else if (i == 7)
+            else if (i == 7 && CutscenesController.cus54 == 1)
             {
                 MapText[i].text = "Mana temple";
             }
-            else if (i == 8)
+            else if (i == 8 && CutscenesController.cus58 == 1)
             {
                 MapText[i].text = "Inferno volcano";
             }
@@ -284,6 +284,26 @@ public class HubController : MonoBehaviour
             QT.text = "Help Klener destroy and collect scorpion venom in the inferno desert";
         else if (CutscenesController.cus50 == 0)
             QT.text = "Let's go to the place of mana gods in the south inferno desert";
+        else if (CutscenesController.cus51 == 0)
+            QT.text = "Continue deep into the land of mana gate";
+        else if (CutscenesController.cus52 == 0)
+            QT.text = "Continue deep into the land of mana gate";
+        else if (CutscenesController.cus53 == 0)
+            QT.text = "Continue deep into the land of mana dimension";
+        else if (CutscenesController.cus54 == 0)
+            QT.text = "Let's synthesize a jewelry that can absorb mana for Alia";
+        else if (CutscenesController.cus55 == 0)
+            QT.text = "Continue deep into the land of mana dimension to find mana temple";
+        else if (CutscenesController.cus56 == 0)
+            QT.text = "Let's go back to the tavern in Zexel town";
+        else if (CutscenesController.cus57 == 0)
+            QT.text = "Let's make a mana generator and receiver and place it at the mana gate";
+        else if (CutscenesController.cus58 == 0)
+            QT.text = "Let's go back to the tavern in Zexel town";
+        else if (CutscenesController.cus59 == 0)
+            QT.text = "Head to the inferno volcano to the west of the inferno desert";
+        else if (CutscenesController.cus60 == 0)
+            QT.text = "Search the village and ask about the villagers there";
 
         num1.text = ContainerController.DriedLeaves + "";
         num2.text = ContainerController.MorningDrop + "";
