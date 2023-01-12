@@ -303,7 +303,17 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus59 == 0)
             QT.text = "Head to the inferno volcano to the west of the inferno desert";
         else if (CutscenesController.cus60 == 0)
-            QT.text = "Search the village and ask about the villagers there";
+            QT.text = "Search the village in inferno volcano and ask about the villagers there";
+        else if (CutscenesController.cus61 == 0)
+            QT.text = "Let's head southwest of the inferno volcano to see if the village chief wants to meet or not";
+        else if (CutscenesController.cus62 == 0)
+            QT.text = "Let's collect some minerals and return to Heerium's blacksmith shop. Need: 4";
+        else if (CutscenesController.cus63 == 0)
+            QT.text = "Head to the inferno ice to the west of the inferno desert";
+        else if (CutscenesController.cus64 == 0)
+            QT.text = "Head to the inferno ice to the west of the inferno desert";
+        else if (CutscenesController.cus65 == 0)
+            QT.text = "Search the village in inferno ice and ask about the villagers there";
 
         num1.text = ContainerController.DriedLeaves + "";
         num2.text = ContainerController.MorningDrop + "";

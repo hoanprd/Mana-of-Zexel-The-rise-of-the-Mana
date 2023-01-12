@@ -339,6 +339,16 @@ public class Player : MonoBehaviour
                 GoblinTrigger4.despawn = false;
                 SceneManager.LoadScene("Cutscenes");
             }
+            else if (CutscenesController.cus62 == 0 && CutscenesController.cus61 == 1 && ContainerController.FireOre >= 4)
+            {
+                MapController.ZexelTownToWeaponStore = true;
+                GoblinTrigger1.despawn = false;
+                GoblinTrigger2.despawn = false;
+                GoblinTrigger3.despawn = false;
+                GoblinTrigger4.despawn = false;
+                ContainerController.FireOre -= 4;
+                SceneManager.LoadScene("Cutscenes");
+            }
             else
             {
                 MapController.ZexelTownToWeaponStore = true;
@@ -352,6 +362,11 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("WeaponStoreToZexelTown"))
         {
             if (CutscenesController.cus29 == 0 && CutscenesController.cus28 == 1)
+            {
+                MapController.WeaponStoreToZexelTown = true;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus63 == 0 && CutscenesController.cus62 == 1)
             {
                 MapController.WeaponStoreToZexelTown = true;
                 SceneManager.LoadScene("Cutscenes");
@@ -566,6 +581,18 @@ public class Player : MonoBehaviour
                 show2.SetActive(true);
                 show1.text = "You can go to this area yet!";
                 Invoke("delay1", 2f);
+            }
+            else if (CutscenesController.cus64 == 0 && CutscenesController.cus63 == 1)
+            {
+                MapController.InfernoDesertToInfernoIce = true;
+                InfernoScorpionTrigger1.despawn = false;
+                InfernoScorpionTrigger2.despawn = false;
+                InfernoScorpionTrigger3.despawn = false;
+                InfernoScorpionTrigger4.despawn = false;
+                InfernoScorpionTrigger5.despawn = false;
+                InfernoScorpionTrigger6.despawn = false;
+                MapIndex = 9;
+                SceneManager.LoadScene("Cutscenes");
             }
             else
             {
