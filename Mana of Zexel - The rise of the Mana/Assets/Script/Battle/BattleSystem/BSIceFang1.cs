@@ -604,7 +604,11 @@ public class BSIceFang1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
-        //ContainerController.ManaGem += 1;
+        ContainerController.IceLeather += 1;
+        if (CutscenesController.cus67 == 0 && CutscenesController.cus66 == 1)
+        {
+            CutscenesTrigger.IceFangKill += 1;
+        }
         SceneManager.LoadScene("Inferno ice");
     }
     public void CheckP1Die()

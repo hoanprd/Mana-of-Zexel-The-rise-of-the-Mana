@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public GameObject show2;
     public Text show3;
     public GameObject show4;
-    private bool heal, tqz, mqz, klener, ManaGenerator, FireManaGenerator, IceManaGenerator;
+    private bool heal, tqz, mqz, alasaqz, klener, ManaGenerator, FireManaGenerator, IceManaGenerator;
     public static int MapIndex;
     Vector2 movement;
 
@@ -89,6 +89,30 @@ public class Player : MonoBehaviour
                     show1.text = "You don't have enough 3 mana gem!";
                     Invoke("delay1", 2f);
                 }
+            }
+        }
+        if (alasaqz && Input.GetKeyDown(KeyCode.Space))
+        {
+            if (CutscenesController.cus67 == 0 && CutscenesController.cus66 == 1 && CutscenesTrigger.IceFangKill >= 4)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus67 == 0 && CutscenesController.cus66 == 1 && CutscenesTrigger.IceFangKill < 4)
+            {
+                show2.SetActive(true);
+                show1.text = "The number of ice fangs is still not enough. Remain: " + CutscenesTrigger.IceFangKill;
+                Invoke("delay1", 2f);
+            }
+
+            if (CutscenesController.cus70 == 0 && CutscenesController.cus69 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus70 == 0 && CutscenesController.cus69 == 0 && CutscenesController.cus68 == 0)
+            {
+                show2.SetActive(true);
+                show1.text = "You still haven't found the ice crystal";
+                Invoke("delay1", 2f);
             }
         }
 
@@ -707,9 +731,26 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("InfernoIceToInsideIceCave"))
         {
-            MapController.InfernoIceToInsideIceCave = true;
-            MapIndex = 9;
-            SceneManager.LoadScene("InsideIceCave");
+            if (CutscenesController.cus68 == 0 && CutscenesController.cus67 == 1)
+            {
+                MapController.InfernoIceToInsideIceCave = true;
+                IceFangTrigger1.despawn = false;
+                IceFangTrigger2.despawn = false;
+                IceFangTrigger3.despawn = false;
+                IceFangTrigger4.despawn = false;
+                MapIndex = 9;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+            {
+                MapController.InfernoIceToInsideIceCave = true;
+                IceFangTrigger1.despawn = false;
+                IceFangTrigger2.despawn = false;
+                IceFangTrigger3.despawn = false;
+                IceFangTrigger4.despawn = false;
+                MapIndex = 9;
+                SceneManager.LoadScene("InsideIceCave");
+            }
         }
         if (collision.CompareTag("InsideIceCaveToInfernoIce"))
         {
@@ -754,6 +795,10 @@ public class Player : MonoBehaviour
         {
             mqz = true;
         }
+        if (collision.CompareTag("AlasaQZ"))
+        {
+            alasaqz = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -769,6 +814,10 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("MQZ"))
         {
             mqz = false;
+        }
+        if (collision.CompareTag("AlasaQZ"))
+        {
+            alasaqz = false;
         }
     }
 

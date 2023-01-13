@@ -314,6 +314,16 @@ public class HubController : MonoBehaviour
             QT.text = "Head to the inferno ice to the west of the inferno desert";
         else if (CutscenesController.cus65 == 0)
             QT.text = "Search the village in inferno ice and ask about the villagers there";
+        else if (CutscenesController.cus66 == 0)
+            QT.text = "Head south to inferno ice to meet the village chief there";
+        else if (CutscenesController.cus67 == 0)
+            QT.text = "Kill the wolves at east of inferno ice and report back when you're done. Progress: " + CutscenesTrigger.IceFangKill + "/4";
+        else if (CutscenesController.cus68 == 0)
+            QT.text = "Enter the ice cave south of the village of inferno ice";
+        else if (CutscenesController.cus69 == 0)
+            QT.text = "Let's go deeper in the cave and find ice crystals";
+        else if (CutscenesController.cus70 == 0)
+            QT.text = "Go back and report to the village chief inferno ice";
 
         num1.text = ContainerController.DriedLeaves + "";
         num2.text = ContainerController.MorningDrop + "";
