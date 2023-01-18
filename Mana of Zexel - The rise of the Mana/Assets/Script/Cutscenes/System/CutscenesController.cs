@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CutscenesController : MonoBehaviour
 {
-    public GameObject C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24, C25, C26, C27, C28, C29, C30, C31, C32, C33, C34, C35, C36, C37, C38, C39, C40, C41, C42, C43, C44, C45, C46, C47, C48, C49, C50, C51, C52, C53, C54, C55, C56, C57, C58, C59, C60, C61, C62, C63, C64, C65, C66, C67, C68, C69, C70, C85, C86, C105;
-    public static int cus1, cus2, cus3, cus4, cus5, cus6, cus7, cus8, cus9, cus10, cus11, cus12, cus13, cus14, cus15, cus16, cus17, cus18, cus19, cus20, cus21, cus22, cus23, cus24, cus25, cus26, cus27, cus28, cus29, cus30, cus31, cus32, cus33, cus34, cus35, cus36, cus37, cus38, cus39, cus40, cus41, cus42, cus43, cus44, cus45, cus46, cus47, cus48, cus49, cus50, cus51, cus52, cus53, cus54, cus55, cus56, cus57, cus58, cus59, cus60, cus61, cus62, cus63, cus64, cus65, cus66, cus67, cus68, cus69, cus70, cus85, cus86, cus105;
+    public GameObject C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24, C25, C26, C27, C28, C29, C30, C31, C32, C33, C34, C35, C36, C37, C38, C39, C40, C41, C42, C43, C44, C45, C46, C47, C48, C49, C50, C51, C52, C53, C54, C55, C56, C57, C58, C59, C60, C61, C62, C63, C64, C65, C66, C67, C68, C69, C70, C71, C72, C73, C74, C75, C76, C77, C78, C79, C80, C85, C86, C105;
+    public static int cus1, cus2, cus3, cus4, cus5, cus6, cus7, cus8, cus9, cus10, cus11, cus12, cus13, cus14, cus15, cus16, cus17, cus18, cus19, cus20, cus21, cus22, cus23, cus24, cus25, cus26, cus27, cus28, cus29, cus30, cus31, cus32, cus33, cus34, cus35, cus36, cus37, cus38, cus39, cus40, cus41, cus42, cus43, cus44, cus45, cus46, cus47, cus48, cus49, cus50, cus51, cus52, cus53, cus54, cus55, cus56, cus57, cus58, cus59, cus60, cus61, cus62, cus63, cus64, cus65, cus66, cus67, cus68, cus69, cus70, cus71, cus72, cus73, cus74, cus75, cus76, cus77, cus78, cus79, cus80, cus85, cus86, cus105;
 
     void Start()
     {
@@ -149,5 +149,25 @@ public class CutscenesController : MonoBehaviour
             C69.SetActive(true);
         else if (cus70 == 0)
             C70.SetActive(true);
+        else if (cus71 == 0)
+            C71.SetActive(true);
+        else if (cus72 == 0)
+            C72.SetActive(true);
+        else if (cus73 == 0)
+            C73.SetActive(true);
+        else if (cus74 == 0)
+            C74.SetActive(true);
+        else if (cus75 == 0)
+            C75.SetActive(true);
+        else if (cus76 == 0)
+            C76.SetActive(true);
+        else if (cus77 == 0)
+            C77.SetActive(true);
+        else if (cus78 == 0)
+            C78.SetActive(true);
+        else if (cus79 == 0)
+            C79.SetActive(true);
+        else if (cus80 == 0)
+            C80.SetActive(true);
     }
 }

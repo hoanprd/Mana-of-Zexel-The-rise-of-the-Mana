@@ -324,6 +324,16 @@ public class HubController : MonoBehaviour
             QT.text = "Let's go deeper in the cave and find ice crystals";
         else if (CutscenesController.cus70 == 0)
             QT.text = "Go back and report to the village chief inferno ice";
+        else if (CutscenesController.cus71 == 0)
+            QT.text = "Go to the village of inferno volcano and talk to the village chief how to get the Zexel fire core";
+        else if (CutscenesController.cus72 == 0)
+            QT.text = "Go inside the cave of the inferno volcano";
+        else if (CutscenesController.cus73 == 0)
+            QT.text = "Go deep inside the cave of the inferno volcano";
+        else if (CutscenesController.cus74 == 0)
+            QT.text = "Let's return to the pub of Zexel town to find a solution to the eruption of the volcano";
+        else if (CutscenesController.cus75 == 0)
+            QT.text = "Let's synthesize a copy of Zexel's fire energy core";
 
         num1.text = ContainerController.DriedLeaves + "";
         num2.text = ContainerController.MorningDrop + "";
