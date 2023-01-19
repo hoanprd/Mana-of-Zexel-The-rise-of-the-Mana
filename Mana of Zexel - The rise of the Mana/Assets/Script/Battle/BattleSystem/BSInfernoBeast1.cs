@@ -550,7 +550,12 @@ public class BSInfernoBeast1 : MonoBehaviour
     public void PressBackToTheMap2()
     {
         //ContainerController.ManaGem += 10;
-        SceneManager.LoadScene("Alta inferno");
+        if (CutscenesController.cus80 == 0 && CutscenesController.cus79 == 1)
+        {
+            SceneManager.LoadScene("Cutscenes");
+        }
+        else
+            SceneManager.LoadScene("Alta inferno");
     }
 
     public void BE2Action()

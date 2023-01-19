@@ -114,10 +114,19 @@ public class Player : MonoBehaviour
                 show1.text = "You still haven't found the ice crystal";
                 Invoke("delay1", 2f);
             }
+
+            if (CutscenesController.cus78 == 0 && CutscenesController.cus77 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
         }
         if (asilaqz && Input.GetKeyDown(KeyCode.Space))
         {
             if (CutscenesController.cus71 == 0 && CutscenesController.cus70 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus77 == 0 && CutscenesController.cus76 == 1)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
