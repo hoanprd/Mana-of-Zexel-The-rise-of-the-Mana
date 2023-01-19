@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public GameObject show2;
     public Text show3;
     public GameObject show4;
-    private bool heal, tqz, mqz, alasaqz, klener, ManaGenerator, FireManaGenerator, IceManaGenerator;
+    private bool heal, tqz, mqz, alasaqz, asilaqz, klener, ManaGenerator, FireManaGenerator, IceManaGenerator;
     public static int MapIndex;
     Vector2 movement;
 
@@ -113,6 +113,13 @@ public class Player : MonoBehaviour
                 show2.SetActive(true);
                 show1.text = "You still haven't found the ice crystal";
                 Invoke("delay1", 2f);
+            }
+        }
+        if (asilaqz && Input.GetKeyDown(KeyCode.Space))
+        {
+            if (CutscenesController.cus71 == 0 && CutscenesController.cus70 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
             }
         }
 
@@ -232,6 +239,10 @@ public class Player : MonoBehaviour
                 SceneManager.LoadScene("Cutscenes");
             }
             else if (CutscenesController.cus58 == 0 && CutscenesController.cus59 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus74 == 0 && CutscenesController.cus73 == 1)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
@@ -707,9 +718,32 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("InfernoVolcanoToInsideVolcanoCave"))
         {
-            MapController.InfernoVolcanoToInsideVolcanoCave = true;
-            MapIndex = 8;
-            SceneManager.LoadScene("InsideVolcanoCave");
+            if (CutscenesController.cus71 == 0)
+            {
+                show2.SetActive(true);
+                show1.text = "You can go to this area yet!";
+                Invoke("delay1", 2f);
+            }
+            else if (CutscenesController.cus72 == 0 && CutscenesController.cus71 == 1)
+            {
+                MapController.InfernoVolcanoToInsideVolcanoCave = true;
+                FireFangTrigger1.despawn = false;
+                FireFangTrigger2.despawn = false;
+                FireFangTrigger3.despawn = false;
+                FireFangTrigger4.despawn = false;
+                MapIndex = 8;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+            {
+                MapController.InfernoVolcanoToInsideVolcanoCave = true;
+                FireFangTrigger1.despawn = false;
+                FireFangTrigger2.despawn = false;
+                FireFangTrigger3.despawn = false;
+                FireFangTrigger4.despawn = false;
+                MapIndex = 8;
+                SceneManager.LoadScene("InsideVolcanoCave");
+            }
         }
         if (collision.CompareTag("InsideVolcanoCaveToInfernoVolcano"))
         {
@@ -731,7 +765,13 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("InfernoIceToInsideIceCave"))
         {
-            if (CutscenesController.cus68 == 0 && CutscenesController.cus67 == 1)
+            if (CutscenesController.cus67 == 0)
+            {
+                show2.SetActive(true);
+                show1.text = "You can go to this area yet!";
+                Invoke("delay1", 2f);
+            }
+            else if (CutscenesController.cus68 == 0 && CutscenesController.cus67 == 1)
             {
                 MapController.InfernoIceToInsideIceCave = true;
                 IceFangTrigger1.despawn = false;
@@ -799,6 +839,10 @@ public class Player : MonoBehaviour
         {
             alasaqz = true;
         }
+        if (collision.CompareTag("AsilaQZ"))
+        {
+            asilaqz = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -818,6 +862,10 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("AlasaQZ"))
         {
             alasaqz = false;
+        }
+        if (collision.CompareTag("AsilaQZ"))
+        {
+            asilaqz = false;
         }
     }
 

@@ -947,8 +947,9 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton19()
     {
-        if (ContainerController.ManaCoreFireZexel > 0 && ContainerController.RedManaCrystal >= 2 && ContainerController.RedLiquidCatalyst >= 2 && ManaFireSynthesize >= 20)
+        if (ContainerController.ManaCoreFireZexel > 0 && ContainerController.RedManaCrystal >= 2 && ContainerController.RedLiquidCatalyst >= 2 && ManaFireSynthesize >= 20 && SynBugStop == 0)
         {
+            SynBugStop = 1;
             ManaFireSynthesize -= 20;
             ContainerController.RedManaCrystal -= 2;
             ContainerController.RedLiquidCatalyst -= 2;
@@ -1138,6 +1139,10 @@ public class SynthesizeSystem : MonoBehaviour
         if (CutscenesController.cus54 == 0 && CutscenesController.cus53 == 1)
         {
             ContainerController.ManaNecklace -= 1;
+            SceneManager.LoadScene("Cutscenes");
+        }
+        if (CutscenesController.cus75 == 0 && CutscenesController.cus74 == 1)
+        {
             SceneManager.LoadScene("Cutscenes");
         }
     }

@@ -334,6 +334,16 @@ public class HubController : MonoBehaviour
             QT.text = "Let's return to the pub of Zexel town to find a solution to the eruption of the volcano";
         else if (CutscenesController.cus75 == 0)
             QT.text = "Let's synthesize a copy of Zexel's fire energy core";
+        else if (CutscenesController.cus76 == 0)
+            QT.text = "Let's go deep inside the volcanic cave to proceed to place Vayne's fire mana energy core";
+        else if (CutscenesController.cus77 == 0)
+            QT.text = "Go to the village chief Asila in the inferno volcano village to understand the conflict going on";
+        else if (CutscenesController.cus78 == 0)
+            QT.text = "Go to the village chief Alasa in the village of inferno ice to convince him of the restoration of the land of alta inferno to remove the conflict";
+        else if (CutscenesController.cus79 == 0)
+            QT.text = "Bring four elixir potions to alta inferno to proceed with the revival of the land";
+        else if (CutscenesController.cus80 == 0)
+            QT.text = "";
 
         num1.text = ContainerController.DriedLeaves + "";
         num2.text = ContainerController.MorningDrop + "";
