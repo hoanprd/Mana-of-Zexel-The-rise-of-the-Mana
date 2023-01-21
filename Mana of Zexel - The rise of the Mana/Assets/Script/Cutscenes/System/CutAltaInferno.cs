@@ -13,13 +13,21 @@ public class CutAltaInferno : MonoBehaviour
         {
             LiveGround.SetActive(false);
             DeadGround.SetActive(true);
-            CutTrigger2.SetActive(false);
         }
 
         if (CutscenesController.cus79 == 1)
         {
             LiveGround.SetActive(true);
             DeadGround.SetActive(false);
+        }
+
+        if (CutscenesController.cus79 == 0)
+        {
+            CutTrigger2.SetActive(false);
+        }
+
+        if (CutscenesController.cus79 == 1)
+        {
             Destroy(CutTrigger1);
         }
     }

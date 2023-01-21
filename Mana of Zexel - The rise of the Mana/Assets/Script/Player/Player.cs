@@ -255,6 +255,14 @@ public class Player : MonoBehaviour
             {
                 SceneManager.LoadScene("Cutscenes");
             }
+            else if (CutscenesController.cus83 == 0 && CutscenesController.cus82 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus89 == 0 && CutscenesController.cus88 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
             else
                 SceneManager.LoadScene("Tavern");
         }
@@ -500,6 +508,18 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("InfernoDesertToZexelGate"))
         {
             if (CutscenesController.cus41 == 0 && CutscenesController.cus40 == 1)
+            {
+                MapController.InfernoDesertToZexelGate = true;
+                InfernoScorpionTrigger1.despawn = false;
+                InfernoScorpionTrigger2.despawn = false;
+                InfernoScorpionTrigger3.despawn = false;
+                InfernoScorpionTrigger4.despawn = false;
+                InfernoScorpionTrigger5.despawn = false;
+                InfernoScorpionTrigger6.despawn = false;
+                MapIndex = 4;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus87 == 0 && CutscenesController.cus86 == 1)
             {
                 MapController.InfernoDesertToZexelGate = true;
                 InfernoScorpionTrigger1.despawn = false;
@@ -821,9 +841,18 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("ZexelGateToZexelTemple"))
         {
-            MapController.ZexelGateToZexelTemple = true;
-            MapIndex = 11;
-            SceneManager.LoadScene("Zexel temple");
+            if (CutscenesController.cus88 == 0 && CutscenesController.cus87 == 1)
+            {
+                MapController.ZexelGateToZexelTemple = true;
+                MapIndex = 11;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+            {
+                MapController.ZexelGateToZexelTemple = true;
+                MapIndex = 11;
+                SceneManager.LoadScene("Zexel temple");
+            }
         }
         if (collision.CompareTag("ZexelTempleToZexelGate"))
         {

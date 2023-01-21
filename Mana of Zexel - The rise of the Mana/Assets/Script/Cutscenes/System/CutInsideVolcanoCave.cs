@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CutInsideVolcanoCave : MonoBehaviour
 {
-    public GameObject CutTrigger1, CutTrigger2, ManaCoreFireZexel, ManaCoreFireBroken, ManaCoreFireVayne;
+    public GameObject CutTrigger1, CutTrigger2, CutTrigger3, ManaCoreFireZexel, ManaCoreFireBroken, ManaCoreFireVayne;
 
     // Start is called before the first frame update
     void Start()
@@ -32,10 +32,18 @@ public class CutInsideVolcanoCave : MonoBehaviour
         {
             CutTrigger2.SetActive(false);
         }
+        if (CutscenesController.cus76 == 0)
+        {
+            CutTrigger3.SetActive(false);
+        }
 
         if (CutscenesController.cus73 == 1)
         {
             Destroy(CutTrigger1);
+        }
+        if (CutscenesController.cus76 == 1)
+        {
+            Destroy(CutTrigger2);
         }
     }
 }

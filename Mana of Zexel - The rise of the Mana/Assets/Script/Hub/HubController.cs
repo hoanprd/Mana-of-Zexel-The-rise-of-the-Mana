@@ -344,6 +344,26 @@ public class HubController : MonoBehaviour
             QT.text = "Bring four elixir potions to alta inferno to proceed with the revival of the land";
         else if (CutscenesController.cus80 == 0)
             QT.text = "";
+        else if (CutscenesController.cus81 == 0)
+            QT.text = "Find the village chief Alasa who is deep in the ice cave in inferno ice";
+        else if (CutscenesController.cus82 == 0)
+            QT.text = "Let's clone Zexel's ice mana core and replace it in the ice cave inferno ice";
+        else if (CutscenesController.cus83 == 0)
+            QT.text = "Let's go back to Mr.'s tavern. Lance in Zexel town, Vayne has an idea";
+        else if (CutscenesController.cus84 == 0)
+            QT.text = "Synthesize generators and collectors of elemental mana and place them in two caves in the land of inferno volcano, inferno ice";
+        else if (CutscenesController.cus85 == 0)
+            QT.text = "Synthesize generators and collectors of elemental mana and place them in two caves in the land of inferno volcano, inferno ice";
+        else if (CutscenesController.cus86 == 0)
+            QT.text = "Go to the mana temple to find the gods about Zexel's two mana cores";
+        else if (CutscenesController.cus87 == 0)
+            QT.text = "Let's proceed to Zexel gate and proceed to open the gate";
+        else if (CutscenesController.cus88 == 0)
+            QT.text = "Let's go inside the temple of Zexel";
+        else if (CutscenesController.cus89 == 0)
+            QT.text = "Hurry back to Mr. Lance to find a way to heal Alia's wound";
+        else if (CutscenesController.cus90 == 0)
+            QT.text = "Head to the village southwest of the inferno desert to find a healer who can eliminate dark magic";
 
         num1.text = ContainerController.DriedLeaves + "";
         num2.text = ContainerController.MorningDrop + "";

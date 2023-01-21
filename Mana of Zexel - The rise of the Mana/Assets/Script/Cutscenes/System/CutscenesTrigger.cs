@@ -88,6 +88,32 @@ public class CutscenesTrigger : MonoBehaviour
             {
                 SceneManager.LoadScene("Cutscenes");
             }
+            else if (CutscenesController.cus81 == 0 && CutscenesController.cus80 == 1 && Player.MapIndex == 9)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus82 == 0 && CutscenesController.cus81 == 1 && ContainerController.ManaCoreIceVayne > 0 && Player.MapIndex == 9)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus84 == 0 && CutscenesController.cus83 == 1 && ContainerController.FireManaGenerator > 0 && Player.MapIndex == 9)
+            {
+                CutscenesController.cus84FIndex = 1;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus85 == 0 && CutscenesController.cus83 == 1 && ContainerController.IceManaGenerator > 0 && Player.MapIndex == 9)
+            {
+                CutscenesController.cus85FIndex = 1;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus86 == 0 && CutscenesController.cus85 == 1 && Player.MapIndex == 7)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus90 == 0 && CutscenesController.cus89 == 1 && Player.MapIndex == 3)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
         }
     }
 }

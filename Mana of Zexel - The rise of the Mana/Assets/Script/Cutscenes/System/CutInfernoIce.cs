@@ -18,7 +18,7 @@ public class CutInfernoIce : MonoBehaviour
         {
             Destroy(CutTrigger1);
         }
-        else if (CutscenesController.cus66 == 1)
+        if (CutscenesController.cus66 == 1)
         {
             Destroy(CutTrigger2);
         }
