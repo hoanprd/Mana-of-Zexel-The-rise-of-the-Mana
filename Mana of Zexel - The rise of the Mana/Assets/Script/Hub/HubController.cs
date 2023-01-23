@@ -364,6 +364,26 @@ public class HubController : MonoBehaviour
             QT.text = "Hurry back to Mr. Lance to find a way to heal Alia's wound";
         else if (CutscenesController.cus90 == 0)
             QT.text = "Head to the village southwest of the inferno desert to find a healer who can eliminate dark magic";
+        else if (CutscenesController.cus91 == 0)
+            QT.text = "Let's take Mrs. Meru back to the tavern in Zexel town";
+        else if (CutscenesController.cus92 == 0)
+            QT.text = "Let's collect the ingredients for Mrs. Meru to make the potion. Nature grass: 4, Red mana slime: 4, Blue mana slime: 4, Scorpion venom: 4";
+        else if (CutscenesController.cus93 == 0)
+            QT.text = "Go to Orina's grocery store to inquire about dragon mana scales information";
+        else if (CutscenesController.cus94 == 0)
+            QT.text = "Head to the mana cliff southwest of the inferno desert village to search for the mana dragon";
+        else if (CutscenesController.cus95 == 0)
+            QT.text = "";
+        else if (CutscenesController.cus96 == 0)
+            QT.text = "Let's return to the tavern in Zexel town with the mana dragon scales collected";
+        else if (CutscenesController.cus97 == 0)
+            QT.text = "Let's take a walk around town waiting for Alia to get better";
+        else if (CutscenesController.cus98 == 0)
+            QT.text = "Let's go back to the tavern to take a break";
+        else if (CutscenesController.cus99 == 0)
+            QT.text = "Let's escort Mrs. Meru back to the village inferno desert";
+        else if (CutscenesController.cus100 == 0)
+            QT.text = "Let's escort Mrs. Meru back to the village inferno desert";
 
         num1.text = ContainerController.DriedLeaves + "";
         num2.text = ContainerController.MorningDrop + "";

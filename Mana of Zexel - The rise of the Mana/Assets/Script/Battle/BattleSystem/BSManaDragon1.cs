@@ -581,7 +581,12 @@ public class BSManaDragon1 : MonoBehaviour
     public void PressBackToTheMap2()
     {
         //ContainerController.ManaGem += 10;
-        SceneManager.LoadScene("Mana cliff");
+        if (CutscenesController.cus95 == 0 && CutscenesController.cus94 == 1)
+        {
+            SceneManager.LoadScene("Cutscenes");
+        }
+        else
+            SceneManager.LoadScene("Mana cliff");
     }
 
     public void BE3Action()

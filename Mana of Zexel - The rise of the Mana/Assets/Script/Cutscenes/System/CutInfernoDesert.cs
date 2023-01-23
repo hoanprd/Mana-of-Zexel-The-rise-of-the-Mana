@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CutInfernoDesert : MonoBehaviour
 {
-    public GameObject CutTrigger1, CutTrigger2, CutTrigger3;
+    public GameObject CutTrigger1, CutTrigger2, CutTrigger3, CutTrigger4;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +16,10 @@ public class CutInfernoDesert : MonoBehaviour
         if (CutscenesController.cus38 == 0)
         {
             CutTrigger3.SetActive(false);
+        }
+        if (CutscenesController.cus90 == 0)
+        {
+            CutTrigger4.SetActive(false);
         }
 
         if (CutscenesController.cus37 == 1)
@@ -29,6 +33,10 @@ public class CutInfernoDesert : MonoBehaviour
         if (CutscenesController.cus90 == 1)
         {
             Destroy(CutTrigger3);
+        }
+        if (CutscenesController.cus100 == 1)
+        {
+            Destroy(CutTrigger4);
         }
     }
 }
