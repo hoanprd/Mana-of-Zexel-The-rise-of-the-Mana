@@ -269,6 +269,10 @@ public class Player : MonoBehaviour
             }
             else if (CutscenesController.cus92 == 0 && CutscenesController.cus91 == 1 && ContainerController.NatureGrass >= 4 && ContainerController.RedManaSlimeBall >= 4 && ContainerController.BlueManaSlimeBall >= 4 && ContainerController.ScorpionVenom >= 4)
             {
+                ContainerController.NatureGrass -= 4;
+                ContainerController.RedManaSlimeBall -= 4;
+                ContainerController.BlueManaSlimeBall -= 4;
+                ContainerController.VenomKiller -= 4;
                 SceneManager.LoadScene("Cutscenes");
             }
             else if (CutscenesController.cus96 == 0 && CutscenesController.cus95 == 1)
@@ -276,6 +280,10 @@ public class Player : MonoBehaviour
                 SceneManager.LoadScene("Cutscenes");
             }
             else if (CutscenesController.cus98 == 0 && CutscenesController.cus97 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus101 == 0 && CutscenesController.cus100 == 1)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
@@ -377,6 +385,15 @@ public class Player : MonoBehaviour
                 GoblinTrigger4.despawn = false;
                 SceneManager.LoadScene("Cutscenes");
             }
+            else if (CutscenesController.cus104 == 0 && CutscenesController.cus103 == 1)
+            {
+                MapController.ZexelTownToGroceryStore = true;
+                GoblinTrigger1.despawn = false;
+                GoblinTrigger2.despawn = false;
+                GoblinTrigger3.despawn = false;
+                GoblinTrigger4.despawn = false;
+                SceneManager.LoadScene("Cutscenes");
+            }
             else
             {
                 MapController.ZexelTownToGroceryStore = true;
@@ -428,6 +445,29 @@ public class Player : MonoBehaviour
                 GoblinTrigger3.despawn = false;
                 GoblinTrigger4.despawn = false;
                 ContainerController.FireOre -= 4;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus102 == 0 && CutscenesController.cus101 == 1)
+            {
+                MapController.ZexelTownToWeaponStore = true;
+                GoblinTrigger1.despawn = false;
+                GoblinTrigger2.despawn = false;
+                GoblinTrigger3.despawn = false;
+                GoblinTrigger4.despawn = false;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus103 == 0 && CutscenesController.cus102 == 1 && ContainerController.FireOre >= 3 && ContainerController.RedManaCrystal >= 3 && ContainerController.IceOre >= 3 && ContainerController.BlueManaCrystal >= 3 && ContainerController.ManaDust >= 3)
+            {
+                ContainerController.FireOre -= 3;
+                ContainerController.RedManaCrystal -= 3;
+                ContainerController.IceOre -= 3;
+                ContainerController.BlueManaCrystal -= 3;
+                ContainerController.ManaDust -= 3;
+                MapController.ZexelTownToWeaponStore = true;
+                GoblinTrigger1.despawn = false;
+                GoblinTrigger2.despawn = false;
+                GoblinTrigger3.despawn = false;
+                GoblinTrigger4.despawn = false;
                 SceneManager.LoadScene("Cutscenes");
             }
             else
@@ -492,12 +532,24 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("WishingForestToZexelTown"))
         {
-            MapController.WishingForestToZexelTown = true;
-            GolemnTrigger1.despawn = false;
-            GolemnTrigger2.despawn = false;
-            GolemnTrigger3.despawn = false;
-            MapIndex = 1;
-            SceneManager.LoadScene("Zexel town");
+            if (CutscenesController.cus105 == 0 && CutscenesController.cus104 == 1)
+            {
+                MapController.WishingForestToZexelTown = true;
+                GolemnTrigger1.despawn = false;
+                GolemnTrigger2.despawn = false;
+                GolemnTrigger3.despawn = false;
+                MapIndex = 1;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+            {
+                MapController.WishingForestToZexelTown = true;
+                GolemnTrigger1.despawn = false;
+                GolemnTrigger2.despawn = false;
+                GolemnTrigger3.despawn = false;
+                MapIndex = 1;
+                SceneManager.LoadScene("Zexel town");
+            }
         }
         if (collision.CompareTag("ZexelTownToInfernoDesert"))
         {
@@ -534,15 +586,30 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("InfernoDesertToZexelTown"))
         {
-            MapController.InfernoDesertToZexelTown = true;
-            InfernoScorpionTrigger1.despawn = false;
-            InfernoScorpionTrigger2.despawn = false;
-            InfernoScorpionTrigger3.despawn = false;
-            InfernoScorpionTrigger4.despawn = false;
-            InfernoScorpionTrigger5.despawn = false;
-            InfernoScorpionTrigger6.despawn = false;
-            MapIndex = 1;
-            SceneManager.LoadScene("Zexel town");
+            if (CutscenesController.cus108 == 1 && CutscenesController.cus107 == 1)
+            {
+                MapController.InfernoDesertToZexelTown = true;
+                InfernoScorpionTrigger1.despawn = false;
+                InfernoScorpionTrigger2.despawn = false;
+                InfernoScorpionTrigger3.despawn = false;
+                InfernoScorpionTrigger4.despawn = false;
+                InfernoScorpionTrigger5.despawn = false;
+                InfernoScorpionTrigger6.despawn = false;
+                MapIndex = 1;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+            {
+                MapController.InfernoDesertToZexelTown = true;
+                InfernoScorpionTrigger1.despawn = false;
+                InfernoScorpionTrigger2.despawn = false;
+                InfernoScorpionTrigger3.despawn = false;
+                InfernoScorpionTrigger4.despawn = false;
+                InfernoScorpionTrigger5.despawn = false;
+                InfernoScorpionTrigger6.despawn = false;
+                MapIndex = 1;
+                SceneManager.LoadScene("Zexel town");
+            }
         }
         if (collision.CompareTag("InfernoDesertToZexelGate"))
         {
@@ -673,9 +740,26 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("InfernoVolcanoToInfernoDesert"))
         {
-            MapController.InfernoVolcanoToInfernoDesert = true;
-            MapIndex = 3;
-            SceneManager.LoadScene("Inferno desert");
+            if (CutscenesController.cus107 == 0 && CutscenesController.cus106 == 1)
+            {
+                FireFangTrigger1.despawn = false;
+                FireFangTrigger2.despawn = false;
+                FireFangTrigger3.despawn = false;
+                FireFangTrigger4.despawn = false;
+                MapController.InfernoVolcanoToInfernoDesert = true;
+                MapIndex = 3;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+            {
+                FireFangTrigger1.despawn = false;
+                FireFangTrigger2.despawn = false;
+                FireFangTrigger3.despawn = false;
+                FireFangTrigger4.despawn = false;
+                MapController.InfernoVolcanoToInfernoDesert = true;
+                MapIndex = 3;
+                SceneManager.LoadScene("Inferno desert");
+            }
         }
         if (collision.CompareTag("InfernoDesertToInfernoIce"))
         {

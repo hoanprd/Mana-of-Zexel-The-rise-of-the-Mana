@@ -554,6 +554,10 @@ public class BSInfernoBeast1 : MonoBehaviour
         {
             SceneManager.LoadScene("Cutscenes");
         }
+        else if (CutscenesController.cus106 == 0 && CutscenesController.cus105 == 1)
+        {
+            SceneManager.LoadScene("Cutscenes");
+        }
         else
             SceneManager.LoadScene("Alta inferno");
     }

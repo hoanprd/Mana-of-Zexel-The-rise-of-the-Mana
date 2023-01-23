@@ -384,6 +384,26 @@ public class HubController : MonoBehaviour
             QT.text = "Let's escort Mrs. Meru back to the village inferno desert";
         else if (CutscenesController.cus100 == 0)
             QT.text = "Let's escort Mrs. Meru back to the village inferno desert";
+        else if (CutscenesController.cus101 == 0)
+            QT.text = "Let's return to the tavern in Zexel town to rest and discuss the next strategy";
+        else if (CutscenesController.cus102 == 0)
+            QT.text = "The whole party wants to become stronger so stop by the Heerium to buy new equipment";
+        else if (CutscenesController.cus103 == 0)
+            QT.text = "Find the materials needed so that Heerium can craft powerful new equipment. Fire ore: 3, Red mana crystal: 3, Ice ore: 3, Blue mana crystal: 3, Mana dust: 3";
+        else if (CutscenesController.cus104 == 0)
+            QT.text = "Stop by Orina's place to find out new items";
+        else if (CutscenesController.cus105 == 0)
+            QT.text = "Defeat the iron golem in the wishing forest to test your team's new strength";
+        else if (CutscenesController.cus106 == 0)
+            QT.text = "The inferno beast is back in alta inferno, go there and stop its destruction";
+        else if (CutscenesController.cus107 == 0)
+            QT.text = "Let's return to Zexel town to prepare for the battle with Zane";
+        else if (CutscenesController.cus108 == 0)
+            QT.text = "Let's return to Zexel town to prepare for the battle with Zane";
+        else if (CutscenesController.cus109 == 0)
+            QT.text = "Defeat all the monsters and protect the people of Zexel town";
+        else if (CutscenesController.cus110 == 0)
+            QT.text = "Come to the mana temple to hear the messages of the mana gods";
 
         num1.text = ContainerController.DriedLeaves + "";
         num2.text = ContainerController.MorningDrop + "";

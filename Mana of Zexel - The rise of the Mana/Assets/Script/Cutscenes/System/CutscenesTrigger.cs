@@ -122,6 +122,10 @@ public class CutscenesTrigger : MonoBehaviour
             {
                 SceneManager.LoadScene("Cutscenes");
             }
+            else if (CutscenesController.cus110 == 0 && CutscenesController.cus109 == 1 && Player.MapIndex == 7)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
         }
     }
 }
