@@ -48,13 +48,31 @@ public class Global : MonoBehaviour
         DamageE1 = 10;
         SpeedE1 = 10;
 
-        HPE2 = 200;
-        DamageE2 = 20;
-        SpeedE2 = 10;
+        if (CutscenesController.cus108 == 1 && CutscenesController.cus109 == 0)
+        {
+            HPE2 = 2200;
+            DamageE2 = 200;
+            SpeedE2 = 10;
+        }
+        else
+        {
+            HPE2 = 200;
+            DamageE2 = 20;
+            SpeedE2 = 10;
+        }
 
-        HPE3 = 300;
-        DamageE3 = 40;
-        SpeedE3 = 20;
+        if (CutscenesController.cus108 == 1 && CutscenesController.cus109 == 0 && Player.MapIndex == 1)
+        {
+            HPE3 = 3000;
+            DamageE3 = 240;
+            SpeedE3 = 20;
+        }
+        else
+        {
+            HPE3 = 300;
+            DamageE3 = 40;
+            SpeedE3 = 20;
+        }
 
         HPE4 = 600;
         DamageE4 = 60;

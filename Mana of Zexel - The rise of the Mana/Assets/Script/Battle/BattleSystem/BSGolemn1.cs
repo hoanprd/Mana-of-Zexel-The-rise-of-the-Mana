@@ -604,17 +604,30 @@ public class BSGolemn1 : MonoBehaviour
     {
         ContainerController.ManaGem += 1;
 
-        if (CutscenesController.cus20 == 0 && CutscenesController.cus19 == 1)
-            CutscenesTrigger.GolemnKill += 1;
-
         if (CutscenesController.cus14 == 0 && CutscenesController.cus13 == 1)
         {
             SceneManager.LoadScene("Cutscenes");
         }
-        else if (CutscenesTrigger.GolemnKill >= 2)
+        else if (CutscenesController.cus20 == 0 && CutscenesController.cus19 == 1)
         {
-            CutscenesTrigger.GolemnKill = 0;
-            SceneManager.LoadScene("Cutscenes");
+            CutscenesTrigger.GolemnKill += 1;
+            if (CutscenesTrigger.GolemnKill == 2)
+            {
+                //CutscenesTrigger.GolemnKill = 0;
+                SceneManager.LoadScene("Cutscenes");
+            }
+        }
+        else if (CutscenesController.cus108 == 1 && CutscenesController.cus109 == 0)
+        {
+            CutscenesTrigger.GolemnKillP2 += 1;
+            if (CutscenesTrigger.GoblinKillP2 == 2 && CutscenesTrigger.GolemnKillP2 == 2)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+            {
+                SceneManager.LoadScene("Zexel town");
+            }
         }
         else
             SceneManager.LoadScene("Wishing forest");

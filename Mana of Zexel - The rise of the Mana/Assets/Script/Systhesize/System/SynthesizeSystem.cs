@@ -629,6 +629,10 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.Wheat -= 1;
             ContainerController.PureWater -= 1;
             ContainerController.Porridge += 1;
+            if (CutscenesController.cus23 == 0 && CutscenesController.cus22 == 1)
+            {
+                CutscenesTrigger.PorridgeSyn = 1;
+            }
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);

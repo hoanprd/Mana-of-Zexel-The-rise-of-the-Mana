@@ -608,7 +608,17 @@ public class BSGoblin1 : MonoBehaviour
             if (GlobalQuest.KillGoblinQuest > 4)
                 GlobalQuest.KillGoblinQuest = 4;
         }
-        SceneManager.LoadScene("Zexel town");
+
+        if (CutscenesController.cus108 == 1 && CutscenesController.cus109 == 0)
+        {
+            CutscenesTrigger.GoblinKillP2 += 1;
+            if (CutscenesTrigger.GoblinKillP2 == 2 && CutscenesTrigger.GolemnKillP2 == 2)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+        }
+        else
+            SceneManager.LoadScene("Zexel town");
     }
     public void CheckP1Die()
     {
