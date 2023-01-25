@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SplashController : MonoBehaviour
+public class EpilogueController : MonoBehaviour
 {
     bool ta = true;
     float ct;
@@ -24,7 +24,7 @@ public class SplashController : MonoBehaviour
         }
         if (ct < 0)
         {
-            SceneManager.LoadScene("Loading");
+            SceneManager.LoadScene("Splash");
         }
     }
 }

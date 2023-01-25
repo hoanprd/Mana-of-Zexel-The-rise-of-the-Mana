@@ -25,7 +25,7 @@ public class cdOuttro : MonoBehaviour
         }
         if (ct < 0)
         {
-            SceneManager.LoadScene("Splash");
+            SceneManager.LoadScene("Cutscenes");
         }
     }
     public void SkipTimer()

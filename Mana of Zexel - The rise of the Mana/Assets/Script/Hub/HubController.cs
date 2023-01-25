@@ -103,19 +103,19 @@ public class HubController : MonoBehaviour
             {
                 MapText[i].text = "Inferno volcano";
             }
-            else if (i == 9)
+            else if (i == 9 && CutscenesController.cus64 == 1)
             {
                 MapText[i].text = "Inferno ice";
             }
-            else if (i == 10)
+            else if (i == 10 && CutscenesController.cus79 == 1)
             {
                 MapText[i].text = "Alta inferno";
             }
-            else if (i == 11)
+            else if (i == 11 && CutscenesController.cus88 == 1)
             {
                 MapText[i].text = "Zexel temple";
             }
-            else if (i == 12)
+            else if (i == 12 && CutscenesController.cus94 == 1)
             {
                 MapText[i].text = "Mana Cllif";
             }
@@ -404,6 +404,16 @@ public class HubController : MonoBehaviour
             QT.text = "Defeat all the monsters and protect the people of Zexel town";
         else if (CutscenesController.cus110 == 0)
             QT.text = "Come to the mana temple to hear the messages of the mana gods";
+        else if (CutscenesController.cus111 == 0)
+            QT.text = "Let's go inside the temple of Zexel";
+        else if (CutscenesController.cus112 == 0)
+            QT.text = "Enter the room of truth located on the right hand side of the temple of Zexel";
+        else if (CutscenesController.cus113 == 0)
+            QT.text = "Zane is behind the main door of the temple of Zexel, stop his evil plot and prepare for the final battle";
+        else if (CutscenesController.cus114 == 0)
+            QT.text = "";
+        else if (CutscenesController.cus115 == 0)
+            QT.text = "";
 
         num1.text = ContainerController.DriedLeaves + "";
         num2.text = ContainerController.MorningDrop + "";
