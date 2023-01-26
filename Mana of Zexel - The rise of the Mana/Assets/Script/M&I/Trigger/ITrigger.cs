@@ -22,11 +22,9 @@ public class ITrigger : MonoBehaviour
         {
             show2.SetActive(true);
             show1.text = "Iron +1";
-            //PlayerPrefs.SetInt("SI", PlayerPrefs.GetInt("SI") + 1);
             ContainerController.Iron += 1;
             once = 1;
             Invoke("delay1", 1f);
-            Debug.Log(PlayerPrefs.GetInt("SDL"));
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,6 +32,8 @@ public class ITrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             pick = true;
+            show2.SetActive(true);
+            show1.text = "Press Space to pick up!";
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -41,6 +41,10 @@ public class ITrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             pick = false;
+            if (once == 0)
+            {
+                show2.SetActive(false);
+            }
         }
     }
     void delay1()

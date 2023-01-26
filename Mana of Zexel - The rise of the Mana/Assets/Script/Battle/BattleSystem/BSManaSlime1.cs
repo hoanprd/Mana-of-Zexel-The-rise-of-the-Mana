@@ -611,6 +611,7 @@ public class BSManaSlime1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
+        ContainerController.ManaLiquid += 1;
         SceneManager.LoadScene("Mana gate");
     }
     public void CheckP1Die()

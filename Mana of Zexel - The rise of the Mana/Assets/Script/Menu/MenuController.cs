@@ -94,6 +94,71 @@ public class MenuController : MonoBehaviour
         CutscenesController.cus49 = 0;
         CutscenesController.cus50 = 0;
         CutscenesController.cus51 = 0;
+        CutscenesController.cus52 = 0;
+        CutscenesController.cus53 = 0;
+        CutscenesController.cus54 = 0;
+        CutscenesController.cus55 = 0;
+        CutscenesController.cus56 = 0;
+        CutscenesController.cus57 = 0;
+        CutscenesController.cus58 = 0;
+        CutscenesController.cus59 = 0;
+        CutscenesController.cus60 = 0;
+        CutscenesController.cus61 = 0;
+        CutscenesController.cus62 = 0;
+        CutscenesController.cus63 = 0;
+        CutscenesController.cus64 = 0;
+        CutscenesController.cus65 = 0;
+        CutscenesController.cus66 = 0;
+        CutscenesController.cus67 = 0;
+        CutscenesController.cus68 = 0;
+        CutscenesController.cus69 = 0;
+        CutscenesController.cus70 = 0;
+        CutscenesController.cus71 = 0;
+        CutscenesController.cus72 = 0;
+        CutscenesController.cus73 = 0;
+        CutscenesController.cus74 = 0;
+        CutscenesController.cus75 = 0;
+        CutscenesController.cus76 = 0;
+        CutscenesController.cus77 = 0;
+        CutscenesController.cus78 = 0;
+        CutscenesController.cus79 = 0;
+        CutscenesController.cus80 = 0;
+        CutscenesController.cus81 = 0;
+        CutscenesController.cus82 = 0;
+        CutscenesController.cus83 = 0;
+        CutscenesController.cus84 = 0;
+        CutscenesController.cus85 = 0;
+        CutscenesController.cus86 = 0;
+        CutscenesController.cus87 = 0;
+        CutscenesController.cus88 = 0;
+        CutscenesController.cus89 = 0;
+        CutscenesController.cus90 = 0;
+        CutscenesController.cus91 = 0;
+        CutscenesController.cus92 = 0;
+        CutscenesController.cus93 = 0;
+        CutscenesController.cus94 = 0;
+        CutscenesController.cus95 = 0;
+        CutscenesController.cus96 = 0;
+        CutscenesController.cus97 = 0;
+        CutscenesController.cus98 = 0;
+        CutscenesController.cus99 = 0;
+        CutscenesController.cus100 = 0;
+        CutscenesController.cus101 = 0;
+        CutscenesController.cus102 = 0;
+        CutscenesController.cus103 = 0;
+        CutscenesController.cus104 = 0;
+        CutscenesController.cus105 = 0;
+        CutscenesController.cus106 = 0;
+        CutscenesController.cus107 = 0;
+        CutscenesController.cus108 = 0;
+        CutscenesController.cus109 = 0;
+        CutscenesController.cus110 = 0;
+        CutscenesController.cus111 = 0;
+        CutscenesController.cus112 = 0;
+        CutscenesController.cus113 = 0;
+        CutscenesController.cus114 = 0;
+        CutscenesController.cus115 = 0;
+
 
         //Set quest
         GlobalQuest.KillGoblinQuest = 0;
@@ -101,6 +166,14 @@ public class MenuController : MonoBehaviour
         GlobalQuest.HelpVillagerStop2 = 0;
         GlobalQuest.HelpVillagerStop3 = 0;
         GlobalQuest.HelpVillagerDone = 0;
+        CutscenesTrigger.PorridgeSyn = 0;
+        CutscenesTrigger.BomSyn = 0;
+        CutscenesTrigger.GolemnKill = 0;
+        CutscenesTrigger.InfernoScorpionKill = 0;
+        CutscenesTrigger.InfernoScorpionKillP2 = 0;
+        CutscenesTrigger.IceFangKill = 0;
+        CutscenesTrigger.GoblinKillP2 = 0;
+        CutscenesTrigger.GolemnKillP2 = 0;
 
         //Set point
         PlayerPrefs.SetFloat("x", 2);
@@ -184,6 +257,8 @@ public class MenuController : MonoBehaviour
         ContainerController.DriedLeaves = 0;
         ContainerController.PureWater = 0;
         ContainerController.ManaGem = 0;
+
+        //Set item
         ContainerController.HealPotion = 10;
         ContainerController.ManaPotion = 10;
         ContainerController.ElixirPotion = 10;

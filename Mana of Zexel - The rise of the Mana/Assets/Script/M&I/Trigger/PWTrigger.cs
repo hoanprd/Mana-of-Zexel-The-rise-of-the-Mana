@@ -22,11 +22,9 @@ public class PWTrigger : MonoBehaviour
         {
             show2.SetActive(true);
             show1.text = "Pure water +1";
-            //PlayerPrefs.SetInt("SPW", PlayerPrefs.GetInt("SPW") + 1);
             ContainerController.PureWater += 1;
             once = 1;
             Invoke("delay1", 1f);
-            Debug.Log(PlayerPrefs.GetInt("SMD"));
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -34,6 +32,8 @@ public class PWTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             pick = true;
+            show2.SetActive(true);
+            show1.text = "Press Space to pick up!";
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -41,6 +41,10 @@ public class PWTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             pick = false;
+            if (once == 0)
+            {
+                show2.SetActive(false);
+            }
         }
     }
     void delay1()

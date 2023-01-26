@@ -10,7 +10,9 @@ public class SynthesizeSystem : MonoBehaviour
     public GameObject showr2;
     public GameObject ManaSynPanel;
     public GameObject SynDetailPanel;
-    public GameObject RBHideSlide2, RBHideSlide3;
+    public GameObject RBHideSlide1, RBHideSlide2, RBHideSlide3, RBHideSlide4, RBHideSlide5, RBHideSlide6, RBHideSlide7, RBHideSlide8;
+    public GameObject[] Hide1, Hide2, Hide3, Hide4, Hide5;
+
     public Text num1;
     public Text num2;
     public Text num3;
@@ -45,6 +47,8 @@ public class SynthesizeSystem : MonoBehaviour
     public Text num53, num54, num55, num56, num57, num58, num59, num60, num61;
     public Text num62, num63, num64, num65, num66, num67, num68, num69, num70, num71, num72, num73;
     public Text num74, num75, num76, num77, num78, num79, num80, num81, num82, num83, num84, num85;
+    public Text num86, num87, num88, num89, num90, num91, num92, num93, num94, num95, num96, num97;
+    public Text num98, num99, num100, num101;
 
     public Text showr1;
     public Slider ManaSynSlider;
@@ -68,11 +72,63 @@ public class SynthesizeSystem : MonoBehaviour
 
         if (CutscenesController.cus12 == 0)
         {
+            RBHideSlide1.SetActive(false);
+        }
+        if (CutscenesController.cus21 == 0)
+        {
             RBHideSlide2.SetActive(false);
         }
-        if (CutscenesController.cus20 == 0)
+        if (CutscenesController.cus56 == 0)
         {
             RBHideSlide3.SetActive(false);
+        }
+        if (CutscenesController.cus59 == 0)
+        {
+            RBHideSlide4.SetActive(false);
+        }
+        if (CutscenesController.cus72 == 0)
+        {
+            RBHideSlide5.SetActive(false);
+        }
+        if (CutscenesController.cus74 == 0)
+        {
+            RBHideSlide6.SetActive(false);
+        }
+        if (CutscenesController.cus83 == 0)
+        {
+            RBHideSlide7.SetActive(false);
+        }
+        if (CutscenesController.cus104 == 0)
+        {
+            RBHideSlide8.SetActive(false);
+        }
+        if (CutscenesController.cus18 == 0)
+        {
+            for (int i = 0; i < Hide1.Length; i++)
+            {
+                Hide1[i].SetActive(false);
+            }
+        }
+        if (CutscenesController.cus39 == 0)
+        {
+            for (int i = 0; i < Hide2.Length; i++)
+            {
+                Hide2[i].SetActive(false);
+            }
+        }
+        if (CutscenesController.cus53 == 0)
+        {
+            for (int i = 0; i < Hide3.Length; i++)
+            {
+                Hide3[i].SetActive(false);
+            }
+        }
+        if (CutscenesController.cus81 == 0)
+        {
+            for (int i = 0; i < Hide4.Length; i++)
+            {
+                Hide4[i].SetActive(false);
+            }
         }
 
         SlideIndex = 0;
@@ -166,6 +222,22 @@ public class SynthesizeSystem : MonoBehaviour
         num83.text = "4/" + ContainerController.GoldenFeather;
         num84.text = "2/" + ContainerController.Wheat;
         num85.text = "" + ContainerController.PowderOfLife;
+        num86.text = "2/" + ContainerController.HealPotion;
+        num87.text = "1/" + ContainerController.BaxiataGem;
+        num88.text = "2/" + ContainerController.RedLiquidCatalyst;
+        num89.text = "" + ContainerController.HoliHP;
+        num90.text = "2/" + ContainerController.ManaPotion;
+        num91.text = "1/" + ContainerController.BaxiataGem;
+        num92.text = "2/" + ContainerController.BlueLiquidCatalyst;
+        num93.text = "" + ContainerController.HoliMP;
+        num94.text = "2/" + ContainerController.ElixirPotion;
+        num95.text = "2/" + ContainerController.ManaLiquidCatalyst;
+        num96.text = "1/" + ContainerController.PowderOfLife;
+        num97.text = "" + ContainerController.ReincarnationLife;
+        num98.text = "2/" + ContainerController.Bom;
+        num99.text = "1/" + ContainerController.PhotonriaGem;
+        num100.text = "1/" + ContainerController.PureObsidian;
+        num101.text = "" + ContainerController.UltraBom;
 
         ManaSynSlider.value = ManaSynthesize;
         ManaFireSynSlider.value = ManaFireSynthesize;
@@ -493,6 +565,30 @@ public class SynthesizeSystem : MonoBehaviour
     public void PowderOfLifeDetail()
     {
         SynDetailPanelText.text = "Powder of life\n\n\nA powder that can give life if it is further prepared";
+        SynDetailPanel.SetActive(true);
+    }
+
+    public void HoliHPDetail()
+    {
+        SynDetailPanelText.text = "Powder of life\n\n\nA liquid that can restore vitality very quickly";
+        SynDetailPanel.SetActive(true);
+    }
+
+    public void HoliMPDetail()
+    {
+        SynDetailPanelText.text = "Powder of life\n\n\nA liquid that can restore mana very quickly";
+        SynDetailPanel.SetActive(true);
+    }
+
+    public void ReincarnationLifeDetail()
+    {
+        SynDetailPanelText.text = "Reincarnation life\n\n\nItem that can revive the dead before a certain amount of time";
+        SynDetailPanel.SetActive(true);
+    }
+
+    public void UltraBomDetail()
+    {
+        SynDetailPanelText.text = "Ultra bom\n\n\nThe bomb has tremendous power through processing minerals containing mana";
         SynDetailPanel.SetActive(true);
     }
 
@@ -1096,15 +1192,153 @@ public class SynthesizeSystem : MonoBehaviour
         }
     }
 
+    public void SynthesizeButton25()
+    {
+        if (ContainerController.HealPotion >= 2 && ContainerController.BaxiataGem >= 1 && ContainerController.RedLiquidCatalyst >= 2 && ManaFireSynthesize >= 40)
+        {
+            ManaFireSynthesize -= 40;
+            ContainerController.HealPotion -= 2;
+            ContainerController.BaxiataGem -= 1;
+            ContainerController.RedLiquidCatalyst -= 2;
+            ContainerController.HoliHP += 1;
+            showr2.SetActive(true);
+            showr1.text = "Success";
+            Invoke("delay1", 1f);
+        }
+        else if (ContainerController.HealPotion >= 2 && ContainerController.BaxiataGem >= 1 && ContainerController.RedLiquidCatalyst >= 2 && ManaFireSynthesize < 40)
+        {
+            showr2.SetActive(true);
+            showr1.text = "You don't have enough mana to synthesize this item!";
+            Invoke("delay1", 1f);
+        }
+        else if (ContainerController.HealPotion >= 2 && ContainerController.BaxiataGem >= 1 && ContainerController.RedLiquidCatalyst >= 2 && ManaFireSynthesize >= 40 && ContainerController.HoliHP >= 4)
+        {
+            showr2.SetActive(true);
+            showr1.text = "Item limit has been reached!";
+            Invoke("delay1", 1f);
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough material";
+            Invoke("delay1", 1f);
+        }
+    }
+
+    public void SynthesizeButton26()
+    {
+        if (ContainerController.ManaPotion >= 2 && ContainerController.BaxiataGem >= 1 && ContainerController.BlueLiquidCatalyst >= 2 && ManaSynthesize >= 40)
+        {
+            ManaIceSynthesize -= 40;
+            ContainerController.ManaPotion -= 2;
+            ContainerController.BaxiataGem -= 1;
+            ContainerController.BlueLiquidCatalyst -= 2;
+            ContainerController.HoliMP += 1;
+            showr2.SetActive(true);
+            showr1.text = "Success";
+            Invoke("delay1", 1f);
+        }
+        else if (ContainerController.ManaPotion >= 2 && ContainerController.BaxiataGem >= 1 && ContainerController.BlueLiquidCatalyst >= 2 && ManaIceSynthesize < 40)
+        {
+            showr2.SetActive(true);
+            showr1.text = "You don't have enough mana to synthesize this item!";
+            Invoke("delay1", 1f);
+        }
+        else if (ContainerController.ManaPotion >= 2 && ContainerController.BaxiataGem >= 1 && ContainerController.BlueLiquidCatalyst >= 2 && ManaIceSynthesize >= 40 && ContainerController.HoliMP >= 4)
+        {
+            showr2.SetActive(true);
+            showr1.text = "Item limit has been reached!";
+            Invoke("delay1", 1f);
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough material";
+            Invoke("delay1", 1f);
+        }
+    }
+
+    public void SynthesizeButton27()
+    {
+        if (ContainerController.ElixirPotion >= 2 && ContainerController.ManaLiquid >= 2 && ContainerController.PowderOfLife >= 1 && ManaSynthesize >= 50)
+        {
+            ManaSynthesize -= 50;
+            ContainerController.ElixirPotion -= 2;
+            ContainerController.ManaLiquid -= 2;
+            ContainerController.PowderOfLife -= 1;
+            ContainerController.ReincarnationLife += 1;
+            showr2.SetActive(true);
+            showr1.text = "Success";
+            Invoke("delay1", 1f);
+        }
+        else if (ContainerController.ElixirPotion >= 2 && ContainerController.ManaLiquid >= 2 && ContainerController.PowderOfLife >= 1 && ManaSynthesize < 50)
+        {
+            showr2.SetActive(true);
+            showr1.text = "You don't have enough mana to synthesize this item!";
+            Invoke("delay1", 1f);
+        }
+        else if (ContainerController.ElixirPotion >= 2 && ContainerController.ManaLiquid >= 2 && ContainerController.PowderOfLife >= 1 && ManaSynthesize >= 50 && ContainerController.ReincarnationLife >= 4)
+        {
+            showr2.SetActive(true);
+            showr1.text = "Item limit has been reached!";
+            Invoke("delay1", 1f);
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough material";
+            Invoke("delay1", 1f);
+        }
+    }
+
+    public void SynthesizeButton28()
+    {
+        if (ContainerController.Bom >= 2 && ContainerController.PhotonriaGem >= 1 && ContainerController.PureObsidian >= 1 && ManaSynthesize >= 50)
+        {
+            ManaSynthesize -= 50;
+            ContainerController.Bom -= 2;
+            ContainerController.PhotonriaGem -= 1;
+            ContainerController.PureObsidian -= 1;
+            ContainerController.UltraBom += 1;
+            showr2.SetActive(true);
+            showr1.text = "Success";
+            Invoke("delay1", 1f);
+        }
+        else if (ContainerController.Bom >= 2 && ContainerController.PhotonriaGem >= 1 && ContainerController.PureObsidian >= 1 && ManaSynthesize < 50)
+        {
+            showr2.SetActive(true);
+            showr1.text = "You don't have enough mana to synthesize this item!";
+            Invoke("delay1", 1f);
+        }
+        else if (ContainerController.Bom >= 2 && ContainerController.PhotonriaGem >= 1 && ContainerController.PureObsidian >= 1 && ManaSynthesize >= 50 && ContainerController.ReincarnationLife >= 4)
+        {
+            showr2.SetActive(true);
+            showr1.text = "Item limit has been reached!";
+            Invoke("delay1", 1f);
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough material";
+            Invoke("delay1", 1f);
+        }
+    }
+
     public void RightButton()
     {
-        SlideIndex += 1;
-        ShowSlide(SlideIndex);
+        if (SlideIndex != 9)
+        {
+            SlideIndex += 1;
+            ShowSlide(SlideIndex);
+        }
     }
     public void LeftButton()
     {
-        SlideIndex -= 1;
-        ShowSlide(SlideIndex);
+        if (SlideIndex != 0)
+        {
+            SlideIndex -= 1;
+            ShowSlide(SlideIndex);
+        }
     }
 
     void ShowSlide(int index)

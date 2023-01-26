@@ -611,6 +611,7 @@ public class BSBlueManaSlime1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
+        ContainerController.BlueManaSlimeBall += 1;
         SceneManager.LoadScene("InsideIceCave");
     }
     public void CheckP1Die()

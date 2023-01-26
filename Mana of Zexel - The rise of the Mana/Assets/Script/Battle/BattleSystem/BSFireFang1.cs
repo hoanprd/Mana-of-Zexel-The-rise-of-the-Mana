@@ -604,7 +604,7 @@ public class BSFireFang1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
-        //ContainerController.ManaGem += 1;
+        ContainerController.GoldenFeather += 1;
         SceneManager.LoadScene("Inferno volcano");
     }
     public void CheckP1Die()

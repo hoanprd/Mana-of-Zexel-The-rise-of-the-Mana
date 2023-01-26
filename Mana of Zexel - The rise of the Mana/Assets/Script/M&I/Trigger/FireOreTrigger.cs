@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MDTrigger : MonoBehaviour
+public class FireOreTrigger : MonoBehaviour
 {
     public Text show1;
     public GameObject show2;
     private bool pick;
     private int once=0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +22,8 @@ public class MDTrigger : MonoBehaviour
         if (pick && Input.GetKeyDown(KeyCode.Space) && once == 0)
         {
             show2.SetActive(true);
-            show1.text = "Morning drop +1";
-            ContainerController.MorningDrop += 1;
+            show1.text = "Fire ore +1";
+            ContainerController.FireOre += 1;
             once = 1;
             Invoke("delay1", 1f);
         }
