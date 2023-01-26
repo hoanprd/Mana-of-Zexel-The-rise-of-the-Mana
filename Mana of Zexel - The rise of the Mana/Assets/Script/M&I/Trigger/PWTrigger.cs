@@ -7,6 +7,7 @@ public class PWTrigger : MonoBehaviour
 {
     public Text show1;
     public GameObject show2;
+
     private bool pick;
     private int once = 0;
     // Start is called before the first frame update

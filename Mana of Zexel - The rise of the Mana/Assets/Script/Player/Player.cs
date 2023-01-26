@@ -553,7 +553,13 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("ZexelTownToInfernoDesert"))
         {
-            if (CutscenesController.cus35 == 0 && CutscenesController.cus34 == 1)
+            if (CutscenesController.cus34 == 0)
+            {
+                show2.SetActive(true);
+                show1.text = "You can go to this area yet!";
+                Invoke("delay1", 2f);
+            }
+            else if (CutscenesController.cus35 == 0 && CutscenesController.cus34 == 1)
             {
                 MapController.ZexelTownToInfernoDesert = true;
                 GoblinTrigger1.despawn = false;
@@ -613,7 +619,13 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("InfernoDesertToZexelGate"))
         {
-            if (CutscenesController.cus41 == 0 && CutscenesController.cus40 == 1)
+            if (CutscenesController.cus40 == 0)
+            {
+                show2.SetActive(true);
+                show1.text = "You can go to this area yet!";
+                Invoke("delay1", 2f);
+            }
+            else if (CutscenesController.cus41 == 0 && CutscenesController.cus40 == 1)
             {
                 MapController.InfernoDesertToZexelGate = true;
                 InfernoScorpionTrigger1.despawn = false;
@@ -658,7 +670,13 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("InfernoDesertToManaGate"))
         {
-            if (CutscenesController.cus50 == 0 && CutscenesController.cus49 == 1)
+            if (CutscenesController.cus49 == 0)
+            {
+                show2.SetActive(true);
+                show1.text = "You can go to this area yet!";
+                Invoke("delay1", 2f);
+            }
+            else if (CutscenesController.cus50 == 0 && CutscenesController.cus49 == 1)
             {
                 MapController.InfernoDesertToManaGate = true;
                 InfernoScorpionTrigger1.despawn = false;
@@ -802,15 +820,24 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("InfernoDesertToManaCliff"))
         {
-            MapController.InfernoDesertToManaCliff = true;
-            InfernoScorpionTrigger1.despawn = false;
-            InfernoScorpionTrigger2.despawn = false;
-            InfernoScorpionTrigger3.despawn = false;
-            InfernoScorpionTrigger4.despawn = false;
-            InfernoScorpionTrigger5.despawn = false;
-            InfernoScorpionTrigger6.despawn = false;
-            MapIndex = 12;
-            SceneManager.LoadScene("Mana cliff");
+            if (CutscenesController.cus93 == 0)
+            {
+                show2.SetActive(true);
+                show1.text = "You can go to this area yet!";
+                Invoke("delay1", 2f);
+            }
+            else
+            {
+                MapController.InfernoDesertToManaCliff = true;
+                InfernoScorpionTrigger1.despawn = false;
+                InfernoScorpionTrigger2.despawn = false;
+                InfernoScorpionTrigger3.despawn = false;
+                InfernoScorpionTrigger4.despawn = false;
+                InfernoScorpionTrigger5.despawn = false;
+                InfernoScorpionTrigger6.despawn = false;
+                MapIndex = 12;
+                SceneManager.LoadScene("Mana cliff");
+            }
         }
         if (collision.CompareTag("ManaCliffToInfernoDesert"))
         {
@@ -870,13 +897,7 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("InfernoVolcanoToInsideVolcanoCave"))
         {
-            if (CutscenesController.cus71 == 0)
-            {
-                show2.SetActive(true);
-                show1.text = "You can go to this area yet!";
-                Invoke("delay1", 2f);
-            }
-            else if (CutscenesController.cus72 == 0 && CutscenesController.cus71 == 1)
+            if (CutscenesController.cus72 == 0 && CutscenesController.cus71 == 1)
             {
                 MapController.InfernoVolcanoToInsideVolcanoCave = true;
                 FireFangTrigger1.despawn = false;
@@ -905,9 +926,22 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("InfernoVolcanoToAltaInferno"))
         {
-            MapController.InfernoVolcanoToAltaInferno = true;
-            MapIndex = 10;
-            SceneManager.LoadScene("Alta inferno");
+            if (CutscenesController.cus78 == 0)
+            {
+                show2.SetActive(true);
+                show1.text = "You can go to this area yet!";
+                Invoke("delay1", 2f);
+            }
+            else
+            {
+                MapController.InfernoVolcanoToAltaInferno = true;
+                FireFangTrigger1.despawn = false;
+                FireFangTrigger2.despawn = false;
+                FireFangTrigger3.despawn = false;
+                FireFangTrigger4.despawn = false;
+                MapIndex = 10;
+                SceneManager.LoadScene("Alta inferno");
+            }
         }
         if (collision.CompareTag("AltaInfernoToInfernoVolcano"))
         {
@@ -917,13 +951,7 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("InfernoIceToInsideIceCave"))
         {
-            if (CutscenesController.cus67 == 0)
-            {
-                show2.SetActive(true);
-                show1.text = "You can go to this area yet!";
-                Invoke("delay1", 2f);
-            }
-            else if (CutscenesController.cus68 == 0 && CutscenesController.cus67 == 1)
+            if (CutscenesController.cus68 == 0 && CutscenesController.cus67 == 1)
             {
                 MapController.InfernoIceToInsideIceCave = true;
                 IceFangTrigger1.despawn = false;
@@ -952,9 +980,22 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("InfernoIceToAltaInferno"))
         {
-            MapController.InfernoIceToAltaInferno = true;
-            MapIndex = 10;
-            SceneManager.LoadScene("Alta inferno");
+            if (CutscenesController.cus78 == 0)
+            {
+                show2.SetActive(true);
+                show1.text = "You can go to this area yet!";
+                Invoke("delay1", 2f);
+            }
+            else
+            {
+                MapController.InfernoIceToAltaInferno = true;
+                IceFangTrigger1.despawn = false;
+                IceFangTrigger2.despawn = false;
+                IceFangTrigger3.despawn = false;
+                IceFangTrigger4.despawn = false;
+                MapIndex = 10;
+                SceneManager.LoadScene("Alta inferno");
+            }
         }
         if (collision.CompareTag("AltaInfernoToInfernoIce"))
         {
