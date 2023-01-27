@@ -604,7 +604,7 @@ public class BSIceFang1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
-        ContainerController.IceLeather += 1;
+        ContainerController.IceLeatherPick = 1;
         if (CutscenesController.cus67 == 0 && CutscenesController.cus66 == 1)
         {
             CutscenesTrigger.IceFangKill += 1;

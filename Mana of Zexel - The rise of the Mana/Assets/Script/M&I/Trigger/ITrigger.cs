@@ -22,7 +22,7 @@ public class ITrigger : MonoBehaviour
         {
             show2.SetActive(true);
             show1.text = "Iron +1";
-            ContainerController.Iron += 1;
+            ContainerController.IronPick = 1;
             once = 1;
             Invoke("delay1", 1f);
         }

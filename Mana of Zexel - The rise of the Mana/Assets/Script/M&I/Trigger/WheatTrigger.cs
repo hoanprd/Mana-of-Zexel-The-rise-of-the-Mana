@@ -23,7 +23,7 @@ public class WheatTrigger : MonoBehaviour
         {
             show2.SetActive(true);
             show1.text = "Wheat +1";
-            ContainerController.Wheat += 1;
+            ContainerController.WheatPick = 1;
             once = 1;
             Invoke("delay1", 1f);
         }
@@ -51,7 +51,6 @@ public class WheatTrigger : MonoBehaviour
     void delay1()
     {
         show2.SetActive(false);
-        Destroy(gameObject);
         once = 0;
     }
 }

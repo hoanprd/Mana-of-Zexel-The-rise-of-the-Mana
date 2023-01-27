@@ -23,7 +23,7 @@ public class NatureGrassTrigger : MonoBehaviour
         {
             show2.SetActive(true);
             show1.text = "Nature grass +1";
-            ContainerController.NatureGrass += 1;
+            ContainerController.NatureGrassPick = 1;
             once = 1;
             Invoke("delay1", 1f);
         }

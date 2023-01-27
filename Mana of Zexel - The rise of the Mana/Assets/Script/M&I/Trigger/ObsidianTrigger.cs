@@ -23,7 +23,7 @@ public class ObsidianTrigger : MonoBehaviour
         {
             show2.SetActive(true);
             show1.text = "Obsidian +1";
-            ContainerController.Obsidian += 1;
+            ContainerController.ObsidianPick = 1;
             once = 1;
             Invoke("delay1", 1f);
         }

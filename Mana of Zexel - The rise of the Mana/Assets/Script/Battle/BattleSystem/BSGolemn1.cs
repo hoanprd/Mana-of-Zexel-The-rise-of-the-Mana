@@ -602,7 +602,7 @@ public class BSGolemn1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
-        ContainerController.ManaGem += 1;
+        ContainerController.ManaGemPick = 1;
 
         if (CutscenesController.cus14 == 0 && CutscenesController.cus13 == 1)
         {

@@ -9,6 +9,7 @@ public class DLTrigger : MonoBehaviour
     public GameObject show2;
     private bool pick;
     private int once=0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class DLTrigger : MonoBehaviour
         {
             show2.SetActive(true);
             show1.text = "Dried leaves +1";
-            ContainerController.DriedLeaves += 1;
+            ContainerController.DriedLeavesPick = 1;
             once = 1;
             Invoke("delay1", 1f);
         }

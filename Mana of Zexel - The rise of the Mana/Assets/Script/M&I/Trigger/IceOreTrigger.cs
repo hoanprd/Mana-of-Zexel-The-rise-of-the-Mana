@@ -23,7 +23,7 @@ public class IceOreTrigger : MonoBehaviour
         {
             show2.SetActive(true);
             show1.text = "Ice ore +1";
-            ContainerController.IceOre += 1;
+            ContainerController.IceOrePick = 1;
             once = 1;
             Invoke("delay1", 1f);
         }

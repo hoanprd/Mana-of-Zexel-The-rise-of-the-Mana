@@ -22,7 +22,8 @@ public class MDTrigger : MonoBehaviour
         {
             show2.SetActive(true);
             show1.text = "Morning drop +1";
-            ContainerController.MorningDrop += 1;
+            //ContainerController.MorningDrop += 1;
+            ContainerController.MorningDropPick = 1;
             once = 1;
             Invoke("delay1", 1f);
         }

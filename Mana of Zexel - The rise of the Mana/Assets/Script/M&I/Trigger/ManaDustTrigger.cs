@@ -23,7 +23,7 @@ public class ManaDustTrigger : MonoBehaviour
         {
             show2.SetActive(true);
             show1.text = "Mana dust +1";
-            ContainerController.ManaDust += 1;
+            ContainerController.ManaDustPick = 1;
             once = 1;
             Invoke("delay1", 1f);
         }

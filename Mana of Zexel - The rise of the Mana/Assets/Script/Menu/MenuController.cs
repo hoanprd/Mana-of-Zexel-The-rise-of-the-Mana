@@ -257,12 +257,12 @@ public class MenuController : MonoBehaviour
         ContainerController.DriedLeaves = 0;
         ContainerController.PureWater = 0;
         ContainerController.ManaGem = 0;
+        ContainerController.Iron = 0;
 
         //Set item
-        ContainerController.HealPotion = 10;
-        ContainerController.ManaPotion = 10;
-        ContainerController.ElixirPotion = 10;
-        ContainerController.Iron = 0;
+        ContainerController.HealPotion = 0;
+        ContainerController.ManaPotion = 0;
+        ContainerController.ElixirPotion = 0;
         ContainerController.Bom = 10;
         ContainerController.HoliHP = 4;
         ContainerController.HoliMP = 4;

@@ -12,17 +12,8 @@ public class HubController : MonoBehaviour
     public Text[] MapText;
     public GameObject info;
     public GameObject quest;
-    public GameObject bag;
+    //public GameObject bag;
     public GameObject esc;
-    public GameObject showDL;
-    public GameObject showMD;
-    public GameObject showPW;
-    public GameObject showI;
-    public GameObject showMG;
-    public GameObject showHP;
-    public GameObject showMP;
-    public GameObject showEP;
-    public GameObject showB;
     public GameObject MariaInfo;
     public Text LevelP1;
     public Text HPP1;
@@ -35,15 +26,8 @@ public class HubController : MonoBehaviour
     public Text MPP3;
     public Text Zen;
     public Text QT;
-    public Text num1;
-    public Text num2;
-    public Text num3;
-    public Text num4;
-    public Text num5, num6, num7;
-    public Text numi1;
-    public Text numi2;
-    public Text numi3;
-    public Text numi4, numi5, numi6, numi7, numi8;
+    //public Text num1, num2, num3, num4, num5, num6, num7;
+    //public Text numi1, numi2, numi3, numi4, numi5, numi6, numi7, numi8;
     public int ShowLevelP1, ShowLevelP2, ShowLevelP3, ShowHPP1, ShowHPP2, ShowHPP3, ShowMPP1, ShowMPP2, ShowMPP3, ShowZen;
     public GameObject ShowVayneDetailPanel, ShowAliaDetailPanel, ShowMariaDetailPanel;
     public GameObject DShowLevelP1, DShowAttackP1, DShowHPP1, DShowMPP1, DShowSpeedP1, DShowLevelP2, DShowAttackP2, DShowHPP2, DShowMPP2, DShowSpeedP2, DShowLevelP3, DShowAttackP3, DShowHPP3, DShowMPP3, DShowSpeedP3;
@@ -53,11 +37,18 @@ public class HubController : MonoBehaviour
     public GameObject ShowVayneWeaponEquip, ShowVayneArmorEquip, ShowAliaWeaponEquip, ShowAliaArmorEquip, ShowMariaWeaponEquip, ShowMariaArmorEquip;
     public GameObject[] VayneWI, VayneAI, AliaWI, AliaAI, MariaWI, MariaAI;
     public GameObject VayneW1, VayneW2, VayneW3, VayneA1, VayneA2, VayneA3, AliaW1, AliaW2, AliaW3, AliaA1, AliaA2, AliaA3, MariaW1, MariaW2, MariaW3, MariaA1, MariaA2, MariaA3;
+    public GameObject Bag;
+    public GameObject TimePanel, HubPanel;
 
     // Start is called before the first frame update
     void Start()
     {
         mc = FindObjectOfType<MenuController>();
+        if (ContainerController.stop != 1)
+        {
+            ContainerController.stop = 1;
+            Instantiate(Bag);
+        }
 
         //Map detail
         for (int i = 0; i < MapArrow.Length; i++)
@@ -155,6 +146,17 @@ public class HubController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ContainerController.BagStatus == 1)
+        {
+            TimePanel.SetActive(false);
+            HubPanel.SetActive(false);
+        }
+        else if (ContainerController.BagStatus == 0)
+        {
+            TimePanel.SetActive(true);
+            HubPanel.SetActive(true);
+        }
+
         if (Input.GetKeyDown(KeyCode.M))
         {
             map.SetActive(true);
@@ -171,10 +173,10 @@ public class HubController : MonoBehaviour
         {
             quest.SetActive(true);
         }
-        else if (Input.GetKeyDown(KeyCode.B))
+        /*else if (Input.GetKeyDown(KeyCode.B))
         {
-            bag.SetActive(true);
-        }
+            Bag.SetActive(true);
+        }*/
 
         LevelP1.text = "Level " + ShowLevelP1;
         HPP1.text = "HP: " + ShowHPP1;
@@ -415,7 +417,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus115 == 0)
             QT.text = "";
 
-        num1.text = ContainerController.DriedLeaves + "";
+        /*num1.text = ContainerController.DriedLeaves + "";
         num2.text = ContainerController.MorningDrop + "";
         num3.text = ContainerController.PureWater + "";
         num4.text = ContainerController.Iron + "";
@@ -430,7 +432,7 @@ public class HubController : MonoBehaviour
         numi5.text = ContainerController.HoliHP + "";
         numi6.text = ContainerController.HoliMP + "";
         numi7.text = ContainerController.UltraBom + "";
-        numi8.text = ContainerController.ReincarnationLife + "";
+        numi8.text = ContainerController.ReincarnationLife + "";*/
     }
     public void Back1()
     {
@@ -444,10 +446,10 @@ public class HubController : MonoBehaviour
     {
         quest.SetActive(false);
     }
-    public void Back4()
+    /*public void Back4()
     {
-        bag.SetActive(false);
-    }
+        Bag.SetActive(false);
+    }*/
 
     public void OpenVaynePanel()
     {

@@ -603,7 +603,7 @@ public class SynthesizeSystem : MonoBehaviour
         {
             ContainerController.DriedLeaves -= 1;
             ContainerController.PureWater -= 1;
-            ContainerController.HealPotion += 1;
+            ContainerController.HealPotionPick = 1;
 
             showr2.SetActive(true);
             showr1.text = "Success";
@@ -629,7 +629,7 @@ public class SynthesizeSystem : MonoBehaviour
         {
             ContainerController.MorningDrop -= 1;
             ContainerController.PureWater -= 1;
-            ContainerController.ManaPotion += 1;
+            ContainerController.ManaPotionPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -654,7 +654,7 @@ public class SynthesizeSystem : MonoBehaviour
         {
             ContainerController.HealPotion -= 1;
             ContainerController.ManaPotion -= 1;
-            ContainerController.ElixirPotion += 1;
+            ContainerController.ElixirPotionPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -680,7 +680,7 @@ public class SynthesizeSystem : MonoBehaviour
             SynBugStop = 1;
             ContainerController.Iron -= 1;
             ContainerController.ManaGem -= 1;
-            ContainerController.Bom += 1;
+            ContainerController.BomPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -715,7 +715,7 @@ public class SynthesizeSystem : MonoBehaviour
             SynBugStop = 1;
             ContainerController.Wheat -= 1;
             ContainerController.PureWater -= 1;
-            ContainerController.Porridge += 1;
+            ContainerController.PorridgePick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -747,7 +747,7 @@ public class SynthesizeSystem : MonoBehaviour
         {
             ContainerController.String -= 1;
             ContainerController.ManaGem -= 1;
-            ContainerController.ManaCloth += 1;
+            ContainerController.ManaClothPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -767,7 +767,7 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.Iron -= 1;
             ContainerController.Wood -= 1;
             ContainerController.ManaCloth -= 1;
-            ContainerController.ManaShield += 1;
+            ContainerController.ManaShieldPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -786,7 +786,7 @@ public class SynthesizeSystem : MonoBehaviour
         {
             ContainerController.ScorpionVenom -= 2;
             ContainerController.ElixirPotion -= 2;
-            ContainerController.VenomKiller += 1;
+            ContainerController.VenomKillerPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -808,7 +808,7 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.String -= 1;
             ContainerController.ManaGem -= 1;
             ContainerController.GuardianFeather -= 1;
-            ContainerController.ManaNecklace += 1;
+            ContainerController.ManaNecklacePick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -835,7 +835,7 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.Iron -= 4;
             ContainerController.Wood -= 2;
             ContainerController.ManaGem -= 4;
-            ContainerController.ManaGenerator += 1;
+            ContainerController.ManaGeneratorPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -860,7 +860,7 @@ public class SynthesizeSystem : MonoBehaviour
         {
             ContainerController.Iron -= 1;
             ContainerController.ManaOre -= 2;
-            ContainerController.Baxiata += 1;
+            ContainerController.BaxiataPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -881,7 +881,7 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.ManaCrystal -= 2;
             ContainerController.InfernoSand -= 1;
             ContainerController.Baxiata -= 2;
-            ContainerController.BaxiataGem += 1;
+            ContainerController.BaxiataGemPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -907,7 +907,7 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.FireOre -= 2;
             ContainerController.IceOre -= 2;
             ContainerController.Baxiata -= 1;
-            ContainerController.Photonria += 1;
+            ContainerController.PhotonriaPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -948,7 +948,7 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.RedManaCrystal -= 2;
             ContainerController.BlueManaCrystal -= 2;
             ContainerController.Photonria -= 2;
-            ContainerController.PhotonriaGem += 1;
+            ContainerController.PhotonriaGemPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -974,7 +974,7 @@ public class SynthesizeSystem : MonoBehaviour
             ManaSynthesize -= 20;
             ContainerController.ManaLiquid -= 2;
             ContainerController.PureWater -= 2;
-            ContainerController.ManaLiquidCatalyst += 1;
+            ContainerController.ManaLiquidCatalystPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -1000,7 +1000,7 @@ public class SynthesizeSystem : MonoBehaviour
             ManaSynthesize -= 20;
             ContainerController.RedManaSlimeBall -= 2;
             ContainerController.PureWater -= 2;
-            ContainerController.RedLiquidCatalyst += 1;
+            ContainerController.RedLiquidCatalystPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -1026,7 +1026,7 @@ public class SynthesizeSystem : MonoBehaviour
             ManaSynthesize -= 20;
             ContainerController.BlueManaSlimeBall -= 2;
             ContainerController.PureWater -= 2;
-            ContainerController.BlueLiquidCatalyst += 1;
+            ContainerController.BlueLiquidCatalystPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -1053,7 +1053,7 @@ public class SynthesizeSystem : MonoBehaviour
             ManaFireSynthesize -= 20;
             ContainerController.RedManaCrystal -= 2;
             ContainerController.RedLiquidCatalyst -= 2;
-            ContainerController.ManaCoreFireVayne += 1;
+            ContainerController.ManaCoreFireVaynePick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -1079,7 +1079,7 @@ public class SynthesizeSystem : MonoBehaviour
             ManaIceSynthesize -= 20;
             ContainerController.BlueManaCrystal -= 2;
             ContainerController.BlueLiquidCatalyst -= 2;
-            ContainerController.ManaCoreIceVayne += 1;
+            ContainerController.ManaCoreIceVaynePick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -1105,7 +1105,7 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.Obsidian -= 2;
             ContainerController.GoldenFeather -= 2;
             ContainerController.Rock -= 1;
-            ContainerController.PureObsidian += 1;
+            ContainerController.PureObsidianPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -1126,7 +1126,7 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.Iron -= 4;
             ContainerController.Wood -= 2;
             ContainerController.RedManaCrystal -= 4;
-            ContainerController.FireManaGenerator += 1;
+            ContainerController.FireManaGeneratorPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -1153,7 +1153,7 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.Iron -= 4;
             ContainerController.Wood -= 2;
             ContainerController.BlueManaCrystal -= 4;
-            ContainerController.IceManaGenerator += 1;
+            ContainerController.IceManaGeneratorPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -1179,7 +1179,7 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.NatureGrass -= 4;
             ContainerController.GoldenFeather -= 4;
             ContainerController.Wheat -= 2;
-            ContainerController.PowderOfLife += 1;
+            ContainerController.PowderOfLifePick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -1200,7 +1200,7 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.HealPotion -= 2;
             ContainerController.BaxiataGem -= 1;
             ContainerController.RedLiquidCatalyst -= 2;
-            ContainerController.HoliHP += 1;
+            ContainerController.HoliHPPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -1233,7 +1233,7 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.ManaPotion -= 2;
             ContainerController.BaxiataGem -= 1;
             ContainerController.BlueLiquidCatalyst -= 2;
-            ContainerController.HoliMP += 1;
+            ContainerController.HoliMPPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -1266,7 +1266,7 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.ElixirPotion -= 2;
             ContainerController.ManaLiquid -= 2;
             ContainerController.PowderOfLife -= 1;
-            ContainerController.ReincarnationLife += 1;
+            ContainerController.ReincarnationLifePick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
@@ -1299,7 +1299,7 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.Bom -= 2;
             ContainerController.PhotonriaGem -= 1;
             ContainerController.PureObsidian -= 1;
-            ContainerController.UltraBom += 1;
+            ContainerController.UltraBomPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);

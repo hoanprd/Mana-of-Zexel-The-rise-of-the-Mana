@@ -601,7 +601,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
-        ContainerController.ScorpionVenom += 1;
+        ContainerController.ScorpionVenomPick = 1;
         if (CutscenesController.cus36 == 0 && CutscenesController.cus35 == 1)
         {
             SceneManager.LoadScene("Cutscenes");

@@ -23,7 +23,7 @@ public class ManaOreTrigger : MonoBehaviour
         {
             show2.SetActive(true);
             show1.text = "Mana ore +1";
-            ContainerController.ManaOre += 1;
+            ContainerController.ManaOrePick = 1;
             once = 1;
             Invoke("delay1", 1f);
         }

@@ -23,7 +23,7 @@ public class ManaCrystalTrigger : MonoBehaviour
         {
             show2.SetActive(true);
             show1.text = "Mana crystal +1";
-            ContainerController.ManaCrystal += 1;
+            ContainerController.ManaCrystalPick = 1;
             once = 1;
             Invoke("delay1", 1f);
         }

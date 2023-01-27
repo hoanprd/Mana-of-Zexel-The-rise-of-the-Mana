@@ -23,7 +23,7 @@ public class FireOreTrigger : MonoBehaviour
         {
             show2.SetActive(true);
             show1.text = "Fire ore +1";
-            ContainerController.FireOre += 1;
+            ContainerController.FireOrePick = 1;
             once = 1;
             Invoke("delay1", 1f);
         }

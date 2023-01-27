@@ -23,7 +23,7 @@ public class InfernoSandTrigger : MonoBehaviour
         {
             show2.SetActive(true);
             show1.text = "Inferno sand +1";
-            ContainerController.InfernoSand += 1;
+            ContainerController.InfernoSandPick = 1;
             once = 1;
             Invoke("delay1", 1f);
         }
