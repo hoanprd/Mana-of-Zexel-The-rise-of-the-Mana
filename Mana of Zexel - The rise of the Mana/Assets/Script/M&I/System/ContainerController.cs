@@ -20,10 +20,11 @@ public class ContainerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B) && HubController.BusyHub == false)
         {
             BagPanel.SetActive(true);
             BagStatus = 1;
+            HubController.BusyHub = true;
         }
 
         if (DriedLeavesPick == 1)
@@ -818,5 +819,6 @@ public class ContainerController : MonoBehaviour
     {
         BagPanel.SetActive(false);
         BagStatus = 0;
+        HubController.BusyHub = false;
     }
 }

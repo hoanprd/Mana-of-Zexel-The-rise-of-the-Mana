@@ -12,7 +12,6 @@ public class HubController : MonoBehaviour
     public Text[] MapText;
     public GameObject info;
     public GameObject quest;
-    //public GameObject bag;
     public GameObject esc;
     public GameObject MariaInfo;
     public Text LevelP1;
@@ -26,9 +25,8 @@ public class HubController : MonoBehaviour
     public Text MPP3;
     public Text Zen;
     public Text QT;
-    //public Text num1, num2, num3, num4, num5, num6, num7;
-    //public Text numi1, numi2, numi3, numi4, numi5, numi6, numi7, numi8;
     public int ShowLevelP1, ShowLevelP2, ShowLevelP3, ShowHPP1, ShowHPP2, ShowHPP3, ShowMPP1, ShowMPP2, ShowMPP3, ShowZen;
+    public static bool BusyHub;
     public GameObject ShowVayneDetailPanel, ShowAliaDetailPanel, ShowMariaDetailPanel;
     public GameObject DShowLevelP1, DShowAttackP1, DShowHPP1, DShowMPP1, DShowSpeedP1, DShowLevelP2, DShowAttackP2, DShowHPP2, DShowMPP2, DShowSpeedP2, DShowLevelP3, DShowAttackP3, DShowHPP3, DShowMPP3, DShowSpeedP3;
     public GameObject PointPlusP1, AttackPointPlusLvP1, HPPointPlusLvP1, MPPointPlusLvP1, SpeedPointPlusLvP1, AttackPointPlusInfoP1, HPPointPlusInfoP1, MPPointPlusInfoP1, SpeedPointPlusInfoP1;
@@ -44,6 +42,9 @@ public class HubController : MonoBehaviour
     void Start()
     {
         mc = FindObjectOfType<MenuController>();
+
+        BusyHub = false;
+
         if (ContainerController.stop != 1)
         {
             ContainerController.stop = 1;
@@ -157,26 +158,26 @@ public class HubController : MonoBehaviour
             HubPanel.SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M) && BusyHub == false)
         {
             map.SetActive(true);
+            BusyHub = true;
         }
-        else if (Input.GetKeyDown(KeyCode.I))
+        else if (Input.GetKeyDown(KeyCode.I) && BusyHub == false)
         {
             info.SetActive(true);
+            BusyHub = true;
         }
-        else if (Input.GetKeyDown(KeyCode.Escape))
+        else if (Input.GetKeyDown(KeyCode.Escape) && BusyHub == false)
         {
             esc.SetActive(true);
+            BusyHub = true;
         }
-        else if (Input.GetKeyDown(KeyCode.Q))
+        else if (Input.GetKeyDown(KeyCode.Q) && BusyHub == false)
         {
             quest.SetActive(true);
+            BusyHub = true;
         }
-        /*else if (Input.GetKeyDown(KeyCode.B))
-        {
-            Bag.SetActive(true);
-        }*/
 
         LevelP1.text = "Level " + ShowLevelP1;
         HPP1.text = "HP: " + ShowHPP1;
@@ -416,40 +417,22 @@ public class HubController : MonoBehaviour
             QT.text = "";
         else if (CutscenesController.cus115 == 0)
             QT.text = "";
-
-        /*num1.text = ContainerController.DriedLeaves + "";
-        num2.text = ContainerController.MorningDrop + "";
-        num3.text = ContainerController.PureWater + "";
-        num4.text = ContainerController.Iron + "";
-        num5.text = ContainerController.ManaGem + "";
-        num6.text = ContainerController.String + "";
-        num7.text = ContainerController.Wood + "";
-
-        numi1.text = ContainerController.HealPotion + "";
-        numi2.text = ContainerController.ManaPotion + "";
-        numi3.text = ContainerController.ElixirPotion + "";
-        numi4.text = ContainerController.Bom + "";
-        numi5.text = ContainerController.HoliHP + "";
-        numi6.text = ContainerController.HoliMP + "";
-        numi7.text = ContainerController.UltraBom + "";
-        numi8.text = ContainerController.ReincarnationLife + "";*/
     }
     public void Back1()
     {
         map.SetActive(false);
+        BusyHub = false;
     }
     public void Back2()
     {
         info.SetActive(false);
+        BusyHub = false;
     }
     public void Back3()
     {
         quest.SetActive(false);
+        BusyHub = false;
     }
-    /*public void Back4()
-    {
-        Bag.SetActive(false);
-    }*/
 
     public void OpenVaynePanel()
     {
@@ -1912,6 +1895,7 @@ public class HubController : MonoBehaviour
     public void BackToGame()
     {
         esc.SetActive(false);
+        BusyHub = false;
     }
 
     public void ExitGame()
