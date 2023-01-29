@@ -616,6 +616,10 @@ public class BSGolemn1 : MonoBehaviour
                 //CutscenesTrigger.GolemnKill = 0;
                 SceneManager.LoadScene("Cutscenes");
             }
+            else
+            {
+                SceneManager.LoadScene("Wishing forest");
+            }
         }
         else if (CutscenesController.cus108 == 1 && CutscenesController.cus109 == 0)
         {

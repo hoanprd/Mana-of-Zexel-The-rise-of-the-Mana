@@ -95,7 +95,7 @@ public class Cus35 : MonoBehaviour
         else if (tang >= 15)
         {
             CutscenesController.cus35 = 1;
-            SceneManager.LoadScene("Inferno desert");
+            SceneManager.LoadScene("BSInfernoScorpion 1");
         }
     }
     public void Pressnext()
@@ -105,6 +105,6 @@ public class Cus35 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus35 = 1;
-        SceneManager.LoadScene("Inferno desert");
+        SceneManager.LoadScene("BSInfernoScorpion 1");
     }
 }

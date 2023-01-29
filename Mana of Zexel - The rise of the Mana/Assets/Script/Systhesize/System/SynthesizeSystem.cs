@@ -62,6 +62,7 @@ public class SynthesizeSystem : MonoBehaviour
     public static int ManaFireSynthesize;
     public static int ManaIceSynthesize;
     public int SlideIndex = 0, SynBugStop = 0;
+    public bool BomCut, VenomKillerCut, PorridgeCut, ManaNecklaceCut, ManaFireCoreVayneCut;
 
     // Start is called before the first frame update
     void Start()
@@ -69,6 +70,12 @@ public class SynthesizeSystem : MonoBehaviour
         ManaSynSlider.maxValue = 100;
         ManaFireSynSlider.maxValue = 100;
         ManaIceSynSlider.maxValue = 100;
+
+        BomCut = false;
+        VenomKillerCut = false;
+        PorridgeCut = false;
+        ManaNecklaceCut = false;
+        ManaFireCoreVayneCut = false;
 
         if (CutscenesController.cus12 == 0)
         {
@@ -139,22 +146,24 @@ public class SynthesizeSystem : MonoBehaviour
     {
         num1.text = "1/" + ContainerController.DriedLeaves;
         num2.text = "1/" + ContainerController.PureWater;
-        num3.text = "1/" + ContainerController.MorningDrop + "";
-        num4.text = "1/" + ContainerController.PureWater + "";
+        num3.text = "1/" + ContainerController.MorningDrop;
+        num4.text = "1/" + ContainerController.PureWater;
         num5.text = ContainerController.HealPotion + "";
         num6.text = ContainerController.ManaPotion + "";
-        num7.text = "1/" + ContainerController.HealPotion + "";
-        num8.text = "1/" + ContainerController.ManaPotion + "";
+        num7.text = "1/" + ContainerController.HealPotion;
+        num8.text = "1/" + ContainerController.ManaPotion;
         num9.text = ContainerController.ElixirPotion + "";
-        num10.text = "2/" + ContainerController.Iron + "";
-        num11.text = "2/" + ContainerController.ManaGem + "";
+
+        num10.text = "2/" + ContainerController.Iron;
+        num11.text = "2/" + ContainerController.ManaGem ;
         num12.text = ContainerController.Bom + "";
-        num13.text = "3/" + ContainerController.Wheat + "";
-        num14.text = "2/" + ContainerController.PureWater + "";
+        num13.text = "3/" + ContainerController.Wheat;
+        num14.text = "2/" + ContainerController.PureWater;
         num15.text = ContainerController.Porridge + "";
-        num16.text = "4/" + ContainerController.String + "";
-        num17.text = "2/" + ContainerController.ManaGem + "";
+        num16.text = "4/" + ContainerController.String;
+        num17.text = "2/" + ContainerController.ManaGem;
         num18.text = ContainerController.ManaCloth + "";
+
         num19.text = "2/" + ContainerController.Iron;
         num20.text = "3/" + ContainerController.Wood;
         num21.text = "2/" + ContainerController.ManaCloth;
@@ -166,6 +175,7 @@ public class SynthesizeSystem : MonoBehaviour
         num27.text = "1/" + ContainerController.ManaGem;
         num28.text = "1/" + ContainerController.GuardianFeather;
         num29.text = "" + ContainerController.ManaNecklace;
+
         num30.text = "4/" + ContainerController.Iron;
         num31.text = "2/" + ContainerController.Wood;
         num32.text = "4/" + ContainerController.ManaGem;
@@ -177,6 +187,7 @@ public class SynthesizeSystem : MonoBehaviour
         num38.text = "1/" + ContainerController.InfernoSand;
         num39.text = "2/" + ContainerController.Baxiata;
         num40.text = "" + ContainerController.BaxiataGem;
+
         num41.text = "2/" + ContainerController.FireOre;
         num42.text = "2/" + ContainerController.IceOre;
         num43.text = "1/" + ContainerController.Baxiata;
@@ -675,26 +686,27 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton4()
     {
-        if (ContainerController.Iron > 0 && ContainerController.ManaGem > 0 && CutscenesController.cus25 == 0 && CutscenesController.cus24 == 1 && SynBugStop == 0)
+        if (ContainerController.Iron >= 2 && ContainerController.ManaGem >= 2 && CutscenesController.cus25 == 0 && CutscenesController.cus24 == 1 && SynBugStop == 0)
         {
             SynBugStop = 1;
-            ContainerController.Iron -= 1;
-            ContainerController.ManaGem -= 1;
+            BomCut = true;
+            ContainerController.Iron -= 2;
+            ContainerController.ManaGem -= 2;
             ContainerController.BomPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
         }
-        else if (ContainerController.Iron > 0 && ContainerController.ManaGem > 0 && ContainerController.Bom < 4)
+        else if (ContainerController.Iron >= 0 && ContainerController.ManaGem >= 0 && ContainerController.Bom < 4)
         {
-            ContainerController.Iron -= 1;
-            ContainerController.ManaGem -= 1;
-            ContainerController.Bom += 1;
+            ContainerController.Iron -= 2;
+            ContainerController.ManaGem -= 2;
+            ContainerController.BomPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
         }
-        else if (ContainerController.Bom == 4)
+        else if (ContainerController.Bom >= 4)
         {
             showr2.SetActive(true);
             showr1.text = "Item limit reached!";
@@ -710,21 +722,22 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton5()
     {
-        if (ContainerController.Wheat > 0 && ContainerController.PureWater > 0 && CutscenesController.cus48 == 0 && CutscenesController.cus47 == 1 && SynBugStop == 0)
+        if (ContainerController.Wheat >= 3 && ContainerController.PureWater >= 2 && CutscenesController.cus48 == 0 && CutscenesController.cus47 == 1 && SynBugStop == 0)
         {
             SynBugStop = 1;
-            ContainerController.Wheat -= 1;
-            ContainerController.PureWater -= 1;
+            PorridgeCut = true;
+            ContainerController.Wheat -= 3;
+            ContainerController.PureWater -= 2;
             ContainerController.PorridgePick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
         }
-        else if (ContainerController.Wheat > 0 && ContainerController.PureWater > 0)
+        else if (ContainerController.Wheat >= 3 && ContainerController.PureWater >= 2)
         {
-            ContainerController.Wheat -= 1;
-            ContainerController.PureWater -= 1;
-            ContainerController.Porridge += 1;
+            ContainerController.Wheat -= 3;
+            ContainerController.PureWater -= 2;
+            ContainerController.PorridgePick = 1;
             if (CutscenesController.cus23 == 0 && CutscenesController.cus22 == 1)
             {
                 CutscenesTrigger.PorridgeSyn = 1;
@@ -743,10 +756,10 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton6()
     {
-        if (ContainerController.String > 0 && ContainerController.ManaGem > 0)
+        if (ContainerController.String >= 4 && ContainerController.ManaGem >= 2)
         {
-            ContainerController.String -= 1;
-            ContainerController.ManaGem -= 1;
+            ContainerController.String -= 4;
+            ContainerController.ManaGem -= 2;
             ContainerController.ManaClothPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
@@ -762,11 +775,11 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton7()
     {
-        if (ContainerController.Iron > 0 && ContainerController.Wood > 0 && ContainerController.ManaCloth > 0)
+        if (ContainerController.Iron >= 2 && ContainerController.Wood >= 3 && ContainerController.ManaCloth >= 2)
         {
-            ContainerController.Iron -= 1;
-            ContainerController.Wood -= 1;
-            ContainerController.ManaCloth -= 1;
+            ContainerController.Iron -= 2;
+            ContainerController.Wood -= 3;
+            ContainerController.ManaCloth -= 2;
             ContainerController.ManaShieldPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
@@ -782,7 +795,18 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton8()
     {
-        if (ContainerController.ScorpionVenom >= 2 && ContainerController.ElixirPotion >= 2)
+        if (ContainerController.ScorpionVenom >= 2 && ContainerController.ElixirPotion >= 2 && CutscenesController.cus40 == 0 && CutscenesController.cus39 == 1 && SynBugStop == 0)
+        {
+            SynBugStop = 1;
+            VenomKillerCut = true;
+            ContainerController.ScorpionVenom -= 2;
+            ContainerController.ElixirPotion -= 2;
+            ContainerController.VenomKillerPick = 1;
+            showr2.SetActive(true);
+            showr1.text = "Success";
+            Invoke("delay1", 1f);
+        }
+        else if (ContainerController.ScorpionVenom >= 2 && ContainerController.ElixirPotion >= 2)
         {
             ContainerController.ScorpionVenom -= 2;
             ContainerController.ElixirPotion -= 2;
@@ -805,6 +829,7 @@ public class SynthesizeSystem : MonoBehaviour
         {
             SynBugStop = 1;
             ManaSynthesize -= 20;
+            ManaNecklaceCut = true;
             ContainerController.String -= 1;
             ContainerController.ManaGem -= 1;
             ContainerController.GuardianFeather -= 1;
@@ -1051,6 +1076,7 @@ public class SynthesizeSystem : MonoBehaviour
         {
             SynBugStop = 1;
             ManaFireSynthesize -= 20;
+            ManaNecklaceCut = true;
             ContainerController.RedManaCrystal -= 2;
             ContainerController.RedLiquidCatalyst -= 2;
             ContainerController.ManaCoreFireVaynePick = 1;
@@ -1359,27 +1385,27 @@ public class SynthesizeSystem : MonoBehaviour
     void delay1()
     {
         showr2.SetActive(false);
-        if (CutscenesController.cus25 == 0 && CutscenesController.cus24 == 1)
+        if (CutscenesController.cus25 == 0 && CutscenesController.cus24 == 1 && BomCut == true)
         {
             ContainerController.Bom -= 1;
             SceneManager.LoadScene("Cutscenes");
         }
-        if (CutscenesController.cus40 == 0 && CutscenesController.cus39 == 1)
+        if (CutscenesController.cus40 == 0 && CutscenesController.cus39 == 1 && VenomKillerCut == true)
         {
             ContainerController.VenomKiller -= 1;
             SceneManager.LoadScene("Cutscenes");
         }
-        if (CutscenesController.cus48 == 0 && CutscenesController.cus47 == 1)
+        if (CutscenesController.cus48 == 0 && CutscenesController.cus47 == 1 && PorridgeCut == true)
         {
             ContainerController.Porridge -= 1;
             SceneManager.LoadScene("Cutscenes");
         }
-        if (CutscenesController.cus54 == 0 && CutscenesController.cus53 == 1)
+        if (CutscenesController.cus54 == 0 && CutscenesController.cus53 == 1 && ManaNecklaceCut == true)
         {
             ContainerController.ManaNecklace -= 1;
             SceneManager.LoadScene("Cutscenes");
         }
-        if (CutscenesController.cus75 == 0 && CutscenesController.cus74 == 1)
+        if (CutscenesController.cus75 == 0 && CutscenesController.cus74 == 1 && ManaFireCoreVayneCut == true)
         {
             SceneManager.LoadScene("Cutscenes");
         }

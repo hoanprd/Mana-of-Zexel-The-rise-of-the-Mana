@@ -67,7 +67,7 @@ public class Cus29 : MonoBehaviour
             NameTagText.text = "Vayne";
             dia.text = "Uhm!";
         }
-        else if (tang >= 19)
+        else if (tang >= 10)
         {
             CutscenesController.cus29 = 1;
             SceneManager.LoadScene("Zexel town");
