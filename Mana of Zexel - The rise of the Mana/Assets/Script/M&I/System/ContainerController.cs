@@ -9,17 +9,40 @@ public class ContainerController : MonoBehaviour
     public GameObject BagPanel, DriedLeavesObject, PureWaterObject, MorningDropObject, WheatObject, WoodObject, StringObject, IronObject, ManaGemObject, ScorpionVenomObject, InfernoSandObject, ManaLiquidObject, ManaOreObject, ManaCrystalObject, FireOreObject, GoldenFeatherObject, RedManaCrystalObject, ObsidianObject, RedManaSlimeBallObject, IceOreObject, IceLeatherObject, BlueManaCrystalObject, BlueManaSlimeBallObject, NatureGrassObject, ManaDustObject, RockObject, GuardianFeatherObject, IceCrystalObject, ManaCoreFireZexelObject, ManaCoreIceZexelObject;
     public GameObject HealPotionObject, ManaPotionObject, ElixirPotionObject, BomObject, PorridgeObject, ManaClothObject, ManaShieldObject, VenomKillerObject, ManaNecklaceObject, ManaGeneratorObject, BaxiataObject, BaxiataGemObject, PhotonriaObject, PhotonriaGemObject, ManaLiquidCatalystObject, RedLiquidCatalystObject, BlueLiquidCatalystObject, ManaCoreFireVayneObject, ManaCoreIceVayneObject, PureObsidianObject, FireManaGeneratorObject, IceManaGeneratorObject, PowderOfLifeObject, HoliHPObject, HoliMPObject, UltraBomObject, ReincarnationLifeObject, FireOfPeaceObject;
     public Transform MateBagList, ItemBagList;
+    public GameObject[] LoadGameMaterial, LoadGameItem;
     public static int stop, BagStatus;
     public static int DriedLeavesPick, MorningDropPick, PureWaterPick, WheatPick, StringPick, WoodPick, IronPick, ManaGemPick, ScorpionVenomPick, InfernoSandPick, ManaLiquidPick, ManaOrePick, ManaCrystalPick, FireOrePick, GoldenFeatherPick, RedManaCrystalPick, ObsidianPick, RedManaSlimeBallPick, IceOrePick, IceLeatherPick, BlueManaCrystalPick, BlueManaSlimeBallPick, NatureGrassPick, ManaDustPick, RockPick, GuardianFeatherPick, IceCrystalPick, ManaCoreFireZexelPick, ManaCoreIceZexelPick;
     public static int HealPotionPick, ManaPotionPick, ElixirPotionPick, BomPick, PorridgePick, ManaClothPick, ManaShieldPick, VenomKillerPick, ManaNecklacePick, ManaGeneratorPick, BaxiataPick, BaxiataGemPick, PhotonriaPick, PhotonriaGemPick, ManaLiquidCatalystPick, RedLiquidCatalystPick, BlueLiquidCatalystPick, ManaCoreFireVaynePick, ManaCoreIceVaynePick, PureObsidianPick, FireManaGeneratorPick, IceManaGeneratorPick, PowderOfLifePick, HoliHPPick, HoliMPPick, UltraBomPick, ReincarnationLifePick, FireOfPeacePick;
+    public static bool DestroyBag;
 
     private void Start()
     {
         DontDestroyOnLoad(this);
+        DestroyBag = false;
+
+        if (MenuController.LoadGameCheck == true)
+        {
+            for (int i = 0; i < LoadGameMaterial.Length; i++)
+            {
+                Instantiate(LoadGameMaterial[i], MateBagList);
+            }
+
+            for (int i = 0; i < LoadGameItem.Length; i++)
+            {
+                Instantiate(LoadGameItem[i], ItemBagList);
+            }
+
+            MenuController.LoadGameCheck = false;
+        }
     }
 
     void Update()
     {
+        if (DestroyBag == true)
+        {
+            Destroy(gameObject);
+        }
+
         if (Input.GetKeyDown(KeyCode.B) && HubController.BusyHub == false)
         {
             BagPanel.SetActive(true);

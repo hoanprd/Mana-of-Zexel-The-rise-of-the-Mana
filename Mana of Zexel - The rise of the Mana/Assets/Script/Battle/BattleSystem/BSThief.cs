@@ -45,6 +45,9 @@ public class BSThief : MonoBehaviour
     {
         pb = FindObjectOfType<PlayerBattle>();
         tb = FindObjectOfType<ThiefBattle>();
+
+        HubController.BusyHub = true;
+
         a1 = Global.SpeedP1 / 10;
         aE1 = Global.SpeedE1 / 10;
     }
@@ -323,6 +326,7 @@ public class BSThief : MonoBehaviour
     }
     public void PressBackToTheMap()
     {
+        HubController.BusyHub = false;
         SceneManager.LoadScene("Cutscenes");
     }
     public void CheckP1Die()

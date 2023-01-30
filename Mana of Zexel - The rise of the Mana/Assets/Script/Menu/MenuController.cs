@@ -6,14 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    public GameObject LoadGamePanel;
+    public GameObject LoadGamePanel, SettingPanel, GameSetting, GraphicSetting, SoundSetting, GameSettingButton, GraphicSettingButton, SoundSettingButton;
+    public Text DifficultChooseText, PlotLangueChooseText;
     public Text showdata1;
     public Text showdata2;
     public Text showdata3;
+
+    public static bool LoadGameCheck;
+
     void Start()
     {
-        
+        LoadGameCheck = false;
     }
+
     void Update()
     {
         if (PlayerPrefs.GetInt("SaveGameD1") == 1)
@@ -296,6 +301,8 @@ public class MenuController : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("SaveGameD1") == 1)
         {
+            LoadGameCheck = true;
+
             Player.MapIndex = 1;
 
             CutscenesController.cus1 = PlayerPrefs.GetInt("Savecus1D1");
@@ -381,6 +388,8 @@ public class MenuController : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("SaveGameD2") == 1)
         {
+            LoadGameCheck = true;
+
             Player.MapIndex = 1;
 
             CutscenesController.cus1 = PlayerPrefs.GetInt("Savecus1D2");
@@ -468,6 +477,8 @@ public class MenuController : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("SaveGameD3") == 1)
         {
+            LoadGameCheck = true;
+
             Player.MapIndex = 1;
 
             //Set cut
@@ -568,6 +579,78 @@ public class MenuController : MonoBehaviour
     {
         LoadGamePanel.SetActive(false);
     }
+
+    public void SettingPanelOpen()
+    {
+        SettingPanel.SetActive(true);
+
+        GameSetting.SetActive(true);
+        GraphicSetting.SetActive(false);
+        SoundSetting.SetActive(false);
+
+        GameSettingButton.GetComponent<Image>().color = Color.green;
+        GraphicSettingButton.GetComponent<Image>().color = Color.white;
+        SoundSettingButton.GetComponent<Image>().color = Color.white;
+    }
+
+    public void GameSettingOn()
+    {
+        GameSetting.SetActive(true);
+        GraphicSetting.SetActive(false);
+        SoundSetting.SetActive(false);
+
+        GameSettingButton.GetComponent<Image>().color = Color.green;
+        GraphicSettingButton.GetComponent<Image>().color = Color.white;
+        SoundSettingButton.GetComponent<Image>().color = Color.white;
+    }
+
+    public void GameDiffucltL()
+    {
+        DifficultChooseText.text = "Normal";
+    }
+
+    public void GameDiffucltR()
+    {
+        DifficultChooseText.text = "Hard";
+    }
+
+    public void GamePlotLangueL()
+    {
+        PlotLangueChooseText.text = "English";
+    }
+
+    public void GamePlotLangueR()
+    {
+        PlotLangueChooseText.text = "Vietnamese";
+    }
+
+    public void GraphicSettingOn()
+    {
+        GameSetting.SetActive(false);
+        GraphicSetting.SetActive(true);
+        SoundSetting.SetActive(false);
+
+        GameSettingButton.GetComponent<Image>().color = Color.white;
+        GraphicSettingButton.GetComponent<Image>().color = Color.green;
+        SoundSettingButton.GetComponent<Image>().color = Color.white;
+    }
+
+    public void SoundSettingOn()
+    {
+        GameSetting.SetActive(false);
+        GraphicSetting.SetActive(false);
+        SoundSetting.SetActive(true);
+
+        GameSettingButton.GetComponent<Image>().color = Color.white;
+        GraphicSettingButton.GetComponent<Image>().color = Color.white;
+        SoundSettingButton.GetComponent<Image>().color = Color.green;
+    }
+
+    public void SettingPanelClose()
+    {
+        SettingPanel.SetActive(false);
+    }
+
     public void PressExit()
     {
         Application.Quit();

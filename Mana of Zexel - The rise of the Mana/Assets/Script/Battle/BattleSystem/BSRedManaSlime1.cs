@@ -89,6 +89,9 @@ public class BSRedManaSlime1 : MonoBehaviour
     {
         pb = FindObjectOfType<PlayerBattle>();
         RMSB = FindObjectOfType<RedManaSlimeBattle>();
+
+        HubController.BusyHub = true;
+
         a1 = Global.SpeedP1 / 10;
         a2 = Global.SpeedP2 / 10;
         a3 = Global.SpeedP3 / 10;
@@ -607,11 +610,13 @@ public class BSRedManaSlime1 : MonoBehaviour
     }
     public void PressRun()
     {
+        HubController.BusyHub = false;
         SceneManager.LoadScene("InsideVolcanoCave");
     }
     public void PressBackToTheMap2()
     {
-        ContainerController.RedManaSlimeBall += 1;
+        ContainerController.RedManaSlimeBallPick = 1;
+        HubController.BusyHub = false;
         SceneManager.LoadScene("InsideVolcanoCave");
     }
     public void CheckP1Die()
@@ -645,6 +650,8 @@ public class BSRedManaSlime1 : MonoBehaviour
             if (Global.CurHPP1 <= 0 && Global.CurHPP2 <= 0)
             {
                 UpdateUIText();
+                ContainerController.DestroyBag = true;
+                ContainerController.stop = 0;
                 Invoke("delayCheckP1P2P3Die1", 1f);
                 Invoke("delayCheckP1P2P3Die2", 2f);
             }
@@ -654,6 +661,8 @@ public class BSRedManaSlime1 : MonoBehaviour
             if (Global.CurHPP1 <= 0 && Global.CurHPP3 <= 0)
             {
                 UpdateUIText();
+                ContainerController.DestroyBag = true;
+                ContainerController.stop = 0;
                 Invoke("delayCheckP1P2P3Die1", 1f);
                 Invoke("delayCheckP1P2P3Die2", 2f);
             }
@@ -663,6 +672,8 @@ public class BSRedManaSlime1 : MonoBehaviour
             if (Global.CurHPP1 <= 0 && Global.CurHPP2 <= 0 && Global.CurHPP3 <= 0)
             {
                 UpdateUIText();
+                ContainerController.DestroyBag = true;
+                ContainerController.stop = 0;
                 Invoke("delayCheckP1P2P3Die1", 1f);
                 Invoke("delayCheckP1P2P3Die2", 2f);
             }
