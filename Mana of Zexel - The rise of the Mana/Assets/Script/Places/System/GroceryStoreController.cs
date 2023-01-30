@@ -77,6 +77,7 @@ public class GroceryStoreController : MonoBehaviour
             stop = true;
             ContainerController.StringPick = 1;
             MessageText.text = "Thanks for shopping";
+            StartCoroutine(DelayBuy());
         }
     }
 
@@ -87,6 +88,7 @@ public class GroceryStoreController : MonoBehaviour
             stop = true;
             ContainerController.WoodPick = 1;
             MessageText.text = "Thanks for shopping";
+            StartCoroutine(DelayBuy());
         }
     }
 
@@ -97,6 +99,7 @@ public class GroceryStoreController : MonoBehaviour
             stop = true;
             ContainerController.IronPick = 1;
             MessageText.text = "Thanks for shopping";
+            StartCoroutine(DelayBuy());
         }
     }
 
@@ -107,6 +110,7 @@ public class GroceryStoreController : MonoBehaviour
             stop = true;
             ContainerController.ManaGemPick = 1;
             MessageText.text = "Thanks for shopping";
+            StartCoroutine(DelayBuy());
         }
     }
 
@@ -117,6 +121,7 @@ public class GroceryStoreController : MonoBehaviour
             stop = true;
             ContainerController.InfernoSandPick = 1;
             MessageText.text = "Thanks for shopping";
+            StartCoroutine(DelayBuy());
         }
     }
 
@@ -127,6 +132,7 @@ public class GroceryStoreController : MonoBehaviour
             stop = true;
             ContainerController.ManaLiquidPick = 1;
             MessageText.text = "Thanks for shopping";
+            StartCoroutine(DelayBuy());
         }
     }
 
@@ -137,6 +143,7 @@ public class GroceryStoreController : MonoBehaviour
             stop = true;
             ContainerController.GoldenFeatherPick = 1;
             MessageText.text = "Thanks for shopping";
+            StartCoroutine(DelayBuy());
         }
     }
 
@@ -147,6 +154,7 @@ public class GroceryStoreController : MonoBehaviour
             stop = true;
             ContainerController.IceLeatherPick = 1;
             MessageText.text = "Thanks for shopping";
+            StartCoroutine(DelayBuy());
         }
     }
 

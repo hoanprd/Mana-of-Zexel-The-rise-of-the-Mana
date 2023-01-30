@@ -168,7 +168,21 @@ public class Player : MonoBehaviour
             Invoke("delay1", 2f);
         }
 
-        movement.x = Input.GetAxisRaw("Horizontal");
+        if (HubController.BusyHub == false)
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+            if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+            {
+                animator.SetFloat("LastX", Input.GetAxisRaw("Horizontal"));
+                animator.SetFloat("LastY", Input.GetAxisRaw("Vertical"));
+            }
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+        }
+
+        /*movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
@@ -177,12 +191,16 @@ public class Player : MonoBehaviour
             animator.SetFloat("LastX", Input.GetAxisRaw("Horizontal"));
             animator.SetFloat("LastY", Input.GetAxisRaw("Vertical"));
         }
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+        animator.SetFloat("Speed", movement.sqrMagnitude);*/
     }
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * move_speed * Time.fixedDeltaTime);
+        if (HubController.BusyHub == false)
+        {
+            rb.MovePosition(rb.position + movement * move_speed * Time.fixedDeltaTime);
+        }
+        //rb.MovePosition(rb.position + movement * move_speed * Time.fixedDeltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
