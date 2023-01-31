@@ -14,7 +14,7 @@ public class Iron : MonoBehaviour
 
         if (ContainerController.Iron <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

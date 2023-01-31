@@ -14,7 +14,7 @@ public class Obsidian : MonoBehaviour
 
         if (ContainerController.Obsidian <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

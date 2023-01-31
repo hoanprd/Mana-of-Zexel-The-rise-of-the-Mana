@@ -14,7 +14,7 @@ public class RedManaSlimeBall : MonoBehaviour
 
         if (ContainerController.RedManaSlimeBall <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

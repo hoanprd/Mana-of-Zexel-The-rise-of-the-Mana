@@ -14,7 +14,7 @@ public class DriedLeaves : MonoBehaviour
 
         if (ContainerController.DriedLeaves <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

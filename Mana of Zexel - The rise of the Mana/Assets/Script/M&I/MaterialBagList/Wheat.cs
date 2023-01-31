@@ -14,7 +14,7 @@ public class Wheat : MonoBehaviour
 
         if (ContainerController.Wheat <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

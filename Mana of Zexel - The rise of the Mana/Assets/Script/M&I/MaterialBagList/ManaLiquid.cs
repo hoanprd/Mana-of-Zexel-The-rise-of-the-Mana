@@ -14,7 +14,7 @@ public class ManaLiquid : MonoBehaviour
 
         if (ContainerController.ManaLiquid <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

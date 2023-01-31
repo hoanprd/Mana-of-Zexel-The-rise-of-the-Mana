@@ -14,7 +14,7 @@ public class ScorpionVenom : MonoBehaviour
 
         if (ContainerController.ScorpionVenom <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

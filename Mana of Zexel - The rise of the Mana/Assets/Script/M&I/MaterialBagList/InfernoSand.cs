@@ -14,7 +14,7 @@ public class InfernoSand : MonoBehaviour
 
         if (ContainerController.InfernoSand <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

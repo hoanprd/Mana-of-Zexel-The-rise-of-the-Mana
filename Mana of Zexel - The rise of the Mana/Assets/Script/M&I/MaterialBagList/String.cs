@@ -14,7 +14,7 @@ public class String : MonoBehaviour
 
         if (ContainerController.String <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

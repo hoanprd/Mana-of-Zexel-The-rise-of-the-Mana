@@ -14,7 +14,7 @@ public class RedManaCrystal : MonoBehaviour
 
         if (ContainerController.RedManaCrystal <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

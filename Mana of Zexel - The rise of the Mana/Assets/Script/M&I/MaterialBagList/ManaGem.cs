@@ -14,7 +14,7 @@ public class ManaGem : MonoBehaviour
 
         if (ContainerController.ManaGem <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

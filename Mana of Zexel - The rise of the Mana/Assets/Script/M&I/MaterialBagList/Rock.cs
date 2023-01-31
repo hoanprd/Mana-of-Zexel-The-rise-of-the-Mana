@@ -14,7 +14,7 @@ public class Rock : MonoBehaviour
 
         if (ContainerController.Rock <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

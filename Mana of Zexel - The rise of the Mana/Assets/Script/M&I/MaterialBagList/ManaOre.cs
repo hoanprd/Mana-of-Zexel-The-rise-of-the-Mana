@@ -14,7 +14,7 @@ public class ManaOre : MonoBehaviour
 
         if (ContainerController.ManaOre <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

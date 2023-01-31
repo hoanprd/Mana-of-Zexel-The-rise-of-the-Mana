@@ -14,7 +14,7 @@ public class NatureGrass : MonoBehaviour
 
         if (ContainerController.NatureGrass <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

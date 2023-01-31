@@ -14,7 +14,7 @@ public class PureWater : MonoBehaviour
 
         if (ContainerController.PureWater <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

@@ -14,7 +14,7 @@ public class MorningDrop : MonoBehaviour
 
         if (ContainerController.MorningDrop <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

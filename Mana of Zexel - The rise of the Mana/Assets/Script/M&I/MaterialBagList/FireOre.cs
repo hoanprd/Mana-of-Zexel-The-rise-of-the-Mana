@@ -14,7 +14,7 @@ public class FireOre : MonoBehaviour
 
         if (ContainerController.FireOre <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

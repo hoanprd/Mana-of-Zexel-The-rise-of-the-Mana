@@ -14,7 +14,7 @@ public class GoldenFeather : MonoBehaviour
 
         if (ContainerController.GoldenFeather <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

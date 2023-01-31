@@ -14,7 +14,7 @@ public class IceOre : MonoBehaviour
 
         if (ContainerController.IceOre <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

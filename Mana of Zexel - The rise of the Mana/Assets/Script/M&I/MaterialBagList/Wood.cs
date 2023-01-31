@@ -14,7 +14,7 @@ public class Wood : MonoBehaviour
 
         if (ContainerController.Wood <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

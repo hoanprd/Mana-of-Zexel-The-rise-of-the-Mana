@@ -14,7 +14,7 @@ public class ManaCrystal : MonoBehaviour
 
         if (ContainerController.ManaCrystal <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

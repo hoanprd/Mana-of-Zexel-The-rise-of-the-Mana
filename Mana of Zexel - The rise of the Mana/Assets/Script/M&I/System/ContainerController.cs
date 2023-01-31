@@ -8,8 +8,13 @@ public class ContainerController : MonoBehaviour
     public static int DriedLeaves, PureWater, MorningDrop, Wheat, String, Iron, ManaGem, Wood, ScorpionVenom, InfernoSand, ManaLiquid, ManaOre, ManaCrystal, GuardianFeather, FireOre, GoldenFeather, RedManaCrystal, Obsidian, IceOre, IceLeather, BlueManaCrystal, RedManaSlimeBall, BlueManaSlimeBall, ManaCoreFireZexel, ManaCoreIceZexel, Rock, NatureGrass, ManaDust, IceCrystal, HealPotion, ManaPotion, ElixirPotion, Bom, Porridge, ManaCloth, ManaShield, VenomKiller, ManaNecklace, ManaGenerator, Baxiata, BaxiataGem, Photonria, PhotonriaGem, ManaLiquidCatalyst, RedLiquidCatalyst, BlueLiquidCatalyst, ManaCoreFireVayne, ManaCoreIceVayne, PureObsidian, FireManaGenerator, IceManaGenerator, PowderOfLife, HoliHP, HoliMP, UltraBom, ReincarnationLife, FireOfPeace;
     public GameObject BagPanel, DriedLeavesObject, PureWaterObject, MorningDropObject, WheatObject, WoodObject, StringObject, IronObject, ManaGemObject, ScorpionVenomObject, InfernoSandObject, ManaLiquidObject, ManaOreObject, ManaCrystalObject, FireOreObject, GoldenFeatherObject, RedManaCrystalObject, ObsidianObject, RedManaSlimeBallObject, IceOreObject, IceLeatherObject, BlueManaCrystalObject, BlueManaSlimeBallObject, NatureGrassObject, ManaDustObject, RockObject, GuardianFeatherObject, IceCrystalObject, ManaCoreFireZexelObject, ManaCoreIceZexelObject;
     public GameObject HealPotionObject, ManaPotionObject, ElixirPotionObject, BomObject, PorridgeObject, ManaClothObject, ManaShieldObject, VenomKillerObject, ManaNecklaceObject, ManaGeneratorObject, BaxiataObject, BaxiataGemObject, PhotonriaObject, PhotonriaGemObject, ManaLiquidCatalystObject, RedLiquidCatalystObject, BlueLiquidCatalystObject, ManaCoreFireVayneObject, ManaCoreIceVayneObject, PureObsidianObject, FireManaGeneratorObject, IceManaGeneratorObject, PowderOfLifeObject, HoliHPObject, HoliMPObject, UltraBomObject, ReincarnationLifeObject, FireOfPeaceObject;
+    public GameObject SynSuccessPanel, CloseSSP;
     public Transform MateBagList, ItemBagList;
     public GameObject[] LoadGameMaterial, LoadGameItem;
+    public GameObject[] ItemSynImage;
+
+    public int SynItemIndex;
+    public bool CSSPButtonActive;
     public static int stop, BagStatus;
     public static int DriedLeavesPick, MorningDropPick, PureWaterPick, WheatPick, StringPick, WoodPick, IronPick, ManaGemPick, ScorpionVenomPick, InfernoSandPick, ManaLiquidPick, ManaOrePick, ManaCrystalPick, FireOrePick, GoldenFeatherPick, RedManaCrystalPick, ObsidianPick, RedManaSlimeBallPick, IceOrePick, IceLeatherPick, BlueManaCrystalPick, BlueManaSlimeBallPick, NatureGrassPick, ManaDustPick, RockPick, GuardianFeatherPick, IceCrystalPick, ManaCoreFireZexelPick, ManaCoreIceZexelPick;
     public static int HealPotionPick, ManaPotionPick, ElixirPotionPick, BomPick, PorridgePick, ManaClothPick, ManaShieldPick, VenomKillerPick, ManaNecklacePick, ManaGeneratorPick, BaxiataPick, BaxiataGemPick, PhotonriaPick, PhotonriaGemPick, ManaLiquidCatalystPick, RedLiquidCatalystPick, BlueLiquidCatalystPick, ManaCoreFireVaynePick, ManaCoreIceVaynePick, PureObsidianPick, FireManaGeneratorPick, IceManaGeneratorPick, PowderOfLifePick, HoliHPPick, HoliMPPick, UltraBomPick, ReincarnationLifePick, FireOfPeacePick;
@@ -19,6 +24,7 @@ public class ContainerController : MonoBehaviour
     {
         DontDestroyOnLoad(this);
         DestroyBag = false;
+        CSSPButtonActive = false;
 
         if (MenuController.LoadGameCheck == true)
         {
@@ -45,9 +51,12 @@ public class ContainerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B) && HubController.BusyHub == false)
         {
-            BagPanel.SetActive(true);
-            BagStatus = 1;
-            HubController.BusyHub = true;
+            OpenBag();
+        }
+
+        if (CSSPButtonActive == false)
+        {
+            CloseSSP.SetActive(false);
         }
 
         if (DriedLeavesPick == 1)
@@ -448,6 +457,12 @@ public class ContainerController : MonoBehaviour
         {
             HealPotionPick = 0;
 
+            SynItemIndex = 0;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
+
             if (HealPotion <= 0)
             {
                 HealPotion += 1;
@@ -461,6 +476,12 @@ public class ContainerController : MonoBehaviour
         if (ManaPotionPick == 1)
         {
             ManaPotionPick = 0;
+
+            SynItemIndex = 1;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
 
             if (ManaPotion <= 0)
             {
@@ -476,6 +497,12 @@ public class ContainerController : MonoBehaviour
         {
             ElixirPotionPick = 0;
 
+            SynItemIndex = 2;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
+
             if (ElixirPotion <= 0)
             {
                 ElixirPotion += 1;
@@ -489,6 +516,12 @@ public class ContainerController : MonoBehaviour
         if (BomPick == 1)
         {
             BomPick = 0;
+
+            SynItemIndex = 3;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
 
             if (Bom <= 0)
             {
@@ -504,6 +537,12 @@ public class ContainerController : MonoBehaviour
         {
             PorridgePick = 0;
 
+            SynItemIndex = 4;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
+
             if (Porridge <= 0)
             {
                 Porridge += 1;
@@ -517,6 +556,12 @@ public class ContainerController : MonoBehaviour
         if (ManaClothPick == 1)
         {
             ManaClothPick = 0;
+
+            SynItemIndex = 5;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
 
             if (ManaCloth <= 0)
             {
@@ -532,6 +577,12 @@ public class ContainerController : MonoBehaviour
         {
             ManaShieldPick = 0;
 
+            SynItemIndex = 6;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
+
             if (ManaShield <= 0)
             {
                 ManaShield += 1;
@@ -545,6 +596,12 @@ public class ContainerController : MonoBehaviour
         if (VenomKillerPick == 1)
         {
             VenomKillerPick = 0;
+
+            SynItemIndex = 7;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
 
             if (VenomKiller <= 0)
             {
@@ -560,6 +617,12 @@ public class ContainerController : MonoBehaviour
         {
             ManaNecklacePick = 0;
 
+            SynItemIndex = 8;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
+
             if (ManaNecklace <= 0)
             {
                 ManaNecklace += 1;
@@ -573,6 +636,12 @@ public class ContainerController : MonoBehaviour
         if (ManaGeneratorPick == 1)
         {
             ManaGeneratorPick = 0;
+
+            SynItemIndex = 9;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
 
             if (ManaGenerator <= 0)
             {
@@ -588,6 +657,12 @@ public class ContainerController : MonoBehaviour
         {
             BaxiataPick = 0;
 
+            SynItemIndex = 10;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
+
             if (Baxiata <= 0)
             {
                 Baxiata += 1;
@@ -601,6 +676,12 @@ public class ContainerController : MonoBehaviour
         if (BaxiataGemPick == 1)
         {
             BaxiataGemPick = 0;
+
+            SynItemIndex = 11;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
 
             if (BaxiataGem <= 0)
             {
@@ -616,6 +697,12 @@ public class ContainerController : MonoBehaviour
         {
             PhotonriaPick = 0;
 
+            SynItemIndex = 12;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
+
             if (Photonria <= 0)
             {
                 Photonria += 1;
@@ -629,6 +716,12 @@ public class ContainerController : MonoBehaviour
         if (PhotonriaGemPick == 1)
         {
             PhotonriaGemPick = 0;
+
+            SynItemIndex = 13;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
 
             if (PhotonriaGem <= 0)
             {
@@ -644,6 +737,12 @@ public class ContainerController : MonoBehaviour
         {
             ManaLiquidCatalystPick = 0;
 
+            SynItemIndex = 14;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
+
             if (ManaLiquidCatalyst <= 0)
             {
                 ManaLiquidCatalyst += 1;
@@ -657,6 +756,12 @@ public class ContainerController : MonoBehaviour
         if (RedLiquidCatalystPick == 1)
         {
             RedLiquidCatalystPick = 0;
+
+            SynItemIndex = 15;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
 
             if (RedLiquidCatalyst <= 0)
             {
@@ -672,6 +777,12 @@ public class ContainerController : MonoBehaviour
         {
             BlueLiquidCatalystPick = 0;
 
+            SynItemIndex = 16;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
+
             if (BlueLiquidCatalyst <= 0)
             {
                 BlueLiquidCatalyst += 1;
@@ -685,6 +796,12 @@ public class ContainerController : MonoBehaviour
         if (ManaCoreFireVaynePick == 1)
         {
             ManaCoreFireVaynePick = 0;
+
+            SynItemIndex = 17;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
 
             if (ManaCoreFireVayne <= 0)
             {
@@ -700,6 +817,12 @@ public class ContainerController : MonoBehaviour
         {
             ManaCoreIceVaynePick = 0;
 
+            SynItemIndex = 18;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
+
             if (ManaCoreIceVayne <= 0)
             {
                 ManaCoreIceVayne += 1;
@@ -713,6 +836,12 @@ public class ContainerController : MonoBehaviour
         if (PureObsidianPick == 1)
         {
             PureObsidianPick = 0;
+
+            SynItemIndex = 19;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
 
             if (PureObsidian <= 0)
             {
@@ -728,6 +857,12 @@ public class ContainerController : MonoBehaviour
         {
             FireManaGeneratorPick = 0;
 
+            SynItemIndex = 20;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
+
             if (FireManaGenerator <= 0)
             {
                 FireManaGenerator += 1;
@@ -741,6 +876,12 @@ public class ContainerController : MonoBehaviour
         if (IceManaGeneratorPick == 1)
         {
             IceManaGeneratorPick = 0;
+
+            SynItemIndex = 21;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
 
             if (IceManaGenerator <= 0)
             {
@@ -756,6 +897,12 @@ public class ContainerController : MonoBehaviour
         {
             PowderOfLifePick = 0;
 
+            SynItemIndex = 22;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
+
             if (PowderOfLife <= 0)
             {
                 PowderOfLife += 1;
@@ -769,6 +916,12 @@ public class ContainerController : MonoBehaviour
         if (HoliHPPick == 1)
         {
             HoliHPPick = 0;
+
+            SynItemIndex = 23;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
 
             if (HoliHP <= 0)
             {
@@ -784,6 +937,12 @@ public class ContainerController : MonoBehaviour
         {
             HoliMPPick = 0;
 
+            SynItemIndex = 24;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
+
             if (HoliMP <= 0)
             {
                 HoliMP += 1;
@@ -798,6 +957,12 @@ public class ContainerController : MonoBehaviour
         {
             UltraBomPick = 0;
 
+            SynItemIndex = 25;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
+
             if (UltraBom <= 0)
             {
                 UltraBom += 1;
@@ -811,6 +976,12 @@ public class ContainerController : MonoBehaviour
         if (ReincarnationLifePick == 1)
         {
             ReincarnationLifePick = 0;
+
+            SynItemIndex = 26;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
 
             if (ReincarnationLife <= 0)
             {
@@ -838,10 +1009,48 @@ public class ContainerController : MonoBehaviour
         }
     }
 
+    public void OpenBag()
+    {
+        BagPanel.SetActive(true);
+        BagStatus = 1;
+        HubController.BusyHub = true;
+    }
+
+    public void OpenSynSuccessImage()
+    {
+        for (int i = 0; i < ItemSynImage.Length; i++)
+        {
+            if (SynItemIndex == i)
+            {
+                ItemSynImage[i].SetActive(true);
+            }
+            else
+            {
+                ItemSynImage[i].SetActive(false);
+            }
+        }
+    }
+
     public void Back4()
     {
         BagPanel.SetActive(false);
         BagStatus = 0;
         HubController.BusyHub = false;
+    }
+
+    public void CloseSynSuccessPanel()
+    {
+        CSSPButtonActive = false;
+        Back4();
+        SynSuccessPanel.SetActive(false);
+    }
+
+    IEnumerator WaitToCloseSSP()
+    {
+        yield return new WaitForSeconds(0.5f);
+        CSSPButtonActive = true;
+
+        yield return new WaitForSeconds(0.5f);
+        CloseSSP.SetActive(true);
     }
 }

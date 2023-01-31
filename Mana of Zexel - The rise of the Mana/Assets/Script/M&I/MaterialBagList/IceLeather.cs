@@ -14,7 +14,7 @@ public class IceLeather : MonoBehaviour
 
         if (ContainerController.IceLeather <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

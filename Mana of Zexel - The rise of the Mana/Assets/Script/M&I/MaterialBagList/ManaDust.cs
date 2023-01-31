@@ -14,7 +14,7 @@ public class ManaDust : MonoBehaviour
 
         if (ContainerController.ManaDust <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }
