@@ -367,7 +367,7 @@ public class Player : MonoBehaviour
                 GoblinTrigger4.despawn = false;
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus33 == 0 && CutscenesController.cus32 == 1)
+            else if (CutscenesController.cus33 == 0 && CutscenesController.cus32 == 1 && ContainerController.String >= 2 && ContainerController.Iron >= 3 && ContainerController.Wood >= 2)
             {
                 MapController.ZexelTownToGroceryStore = true;
                 GoblinTrigger1.despawn = false;

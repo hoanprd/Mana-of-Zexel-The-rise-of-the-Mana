@@ -65,6 +65,7 @@ public class Cus102 : MonoBehaviour
         else if (tang >= 9)
         {
             CutscenesController.cus102 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("WeaponStore");
         }
     }
@@ -75,6 +76,7 @@ public class Cus102 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus102 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("WeaponStore");
     }
 }

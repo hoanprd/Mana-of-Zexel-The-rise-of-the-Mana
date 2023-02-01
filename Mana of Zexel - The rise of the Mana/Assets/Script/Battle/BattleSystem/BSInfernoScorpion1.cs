@@ -112,7 +112,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
             P3Available = true;
         }
 
-        if (CutscenesController.cus50 == 1 && CutscenesController.cus51 == 0)
+        if (CutscenesController.cus88 == 1 && CutscenesController.cus98 == 0)
         {
             AliaStatus.SetActive(false);
             AliaBar.SetActive(false);
@@ -613,13 +613,29 @@ public class BSInfernoScorpion1 : MonoBehaviour
         {
             SceneManager.LoadScene("Cutscenes");
         }
-        else if (CutscenesController.cus44 == 0 && CutscenesController.cus43 == 1 && CutscenesTrigger.InfernoScorpionKill >= 3)
+        else if (CutscenesController.cus44 == 0 && CutscenesController.cus43 == 1)
         {
-            SceneManager.LoadScene("Cutscenes");
+            if (CutscenesTrigger.InfernoScorpionKill >= 3)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+            {
+                CutscenesTrigger.InfernoScorpionKill += 1;
+                SceneManager.LoadScene("Inferno desert");
+            }
         }
-        else if (CutscenesController.cus49 == 0 && CutscenesController.cus48 == 1 && CutscenesTrigger.InfernoScorpionKillP2 >= 3)
+        else if (CutscenesController.cus49 == 0 && CutscenesController.cus48 == 1)
         {
-            SceneManager.LoadScene("Cutscenes");
+            if (CutscenesTrigger.InfernoScorpionKillP2 >= 3)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+            {
+                CutscenesTrigger.InfernoScorpionKillP2 += 1;
+                SceneManager.LoadScene("Inferno desert");
+            }
         }
         else
             SceneManager.LoadScene("Inferno desert");
@@ -693,15 +709,6 @@ public class BSInfernoScorpion1 : MonoBehaviour
             ShowP3Panel(false);
             UpdateUIText();
             stop = 1;
-
-            if (CutscenesController.cus44 == 0 && CutscenesController.cus43 == 1)
-            {
-                CutscenesTrigger.InfernoScorpionKill += 1;
-            }
-            if (CutscenesController.cus49 == 0 && CutscenesController.cus48 == 1)
-            {
-                CutscenesTrigger.InfernoScorpionKillP2 += 1;
-            }
 
             LevelP1.text = "Level " + Global.LevelP1;
             EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;

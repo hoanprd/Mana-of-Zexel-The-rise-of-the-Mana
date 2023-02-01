@@ -505,6 +505,7 @@ public class Cus114 : MonoBehaviour
         else if (tang >= 97)
         {
             CutscenesController.cus114 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Outtro");
         }
     }
@@ -515,6 +516,7 @@ public class Cus114 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus114 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Outtro");
     }
 }

@@ -195,6 +195,7 @@ public class Cus41 : MonoBehaviour
         else if (tang >= 35)
         {
             CutscenesController.cus41 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Zexel gate");
         }
     }
@@ -205,6 +206,7 @@ public class Cus41 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus41 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Zexel gate");
     }
 }

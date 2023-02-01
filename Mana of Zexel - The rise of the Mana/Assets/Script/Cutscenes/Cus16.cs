@@ -208,6 +208,7 @@ public class Cus16 : MonoBehaviour
         else if (tang >= 37)
         {
             CutscenesController.cus16 = 1;
+            ContainerController.LoadingOpen = true;
             MapController.ZexelTownToTavern = false;
             MapController.ZexelTownToWishingForest = true;
             SceneManager.LoadScene("Wishing forest");
@@ -220,6 +221,7 @@ public class Cus16 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus16 = 1;
+        ContainerController.LoadingOpen = true;
         MapController.ZexelTownToTavern = false;
         MapController.ZexelTownToWishingForest = true;
         SceneManager.LoadScene("Wishing forest");

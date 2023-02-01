@@ -105,6 +105,7 @@ public class Cus53 : MonoBehaviour
         else if (tang >= 17)
         {
             CutscenesController.cus53 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Mana dimension");
         }
     }
@@ -115,6 +116,7 @@ public class Cus53 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus53 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Mana dimension");
     }
 }

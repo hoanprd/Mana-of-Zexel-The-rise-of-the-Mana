@@ -110,6 +110,7 @@ public class Cus106 : MonoBehaviour
         else if (tang >= 18)
         {
             CutscenesController.cus106 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Alta inferno");
         }
     }
@@ -120,6 +121,7 @@ public class Cus106 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus106 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Alta inferno");
     }
 }

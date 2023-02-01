@@ -240,6 +240,7 @@ public class Cus101 : MonoBehaviour
         else if (tang >= 44)
         {
             CutscenesController.cus101 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Tavern");
         }
     }
@@ -250,6 +251,7 @@ public class Cus101 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus101 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Tavern");
     }
 }

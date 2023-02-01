@@ -115,6 +115,7 @@ public class Cus56 : MonoBehaviour
         else if (tang >= 19)
         {
             CutscenesController.cus56 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Tavern");
         }
     }
@@ -125,6 +126,7 @@ public class Cus56 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus56 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Tavern");
     }
 }

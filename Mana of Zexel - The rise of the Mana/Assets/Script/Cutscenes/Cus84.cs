@@ -55,6 +55,8 @@ public class Cus84 : MonoBehaviour
         else if (tang >= 7)
         {
             CutscenesController.cus84 = 1;
+            ContainerController.FireManaGenerator -= 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("InsideVolcanoCave");
         }
     }
@@ -65,6 +67,8 @@ public class Cus84 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus84 = 1;
+        ContainerController.FireManaGenerator -= 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("InsideVolcanoCave");
     }
 }

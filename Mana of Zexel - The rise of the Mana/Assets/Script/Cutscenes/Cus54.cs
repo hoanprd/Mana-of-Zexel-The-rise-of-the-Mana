@@ -100,6 +100,7 @@ public class Cus54 : MonoBehaviour
         else if (tang >= 16)
         {
             CutscenesController.cus54 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Save room");
         }
     }
@@ -110,6 +111,7 @@ public class Cus54 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus54 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Save room");
     }
 }

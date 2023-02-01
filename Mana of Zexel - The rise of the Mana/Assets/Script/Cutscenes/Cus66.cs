@@ -155,6 +155,7 @@ public class Cus66 : MonoBehaviour
         else if (tang >= 25)
         {
             CutscenesController.cus66 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Inferno ice");
         }
     }
@@ -165,6 +166,7 @@ public class Cus66 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus66 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Inferno ice");
     }
 }

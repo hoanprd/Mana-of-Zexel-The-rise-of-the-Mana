@@ -230,6 +230,7 @@ public class Cus88 : MonoBehaviour
         else if (tang >= 42)
         {
             CutscenesController.cus88 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Zexel temple");
         }
     }
@@ -240,6 +241,7 @@ public class Cus88 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus88 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Zexel temple");
     }
 }

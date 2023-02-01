@@ -115,6 +115,7 @@ public class Cus110 : MonoBehaviour
         else if (tang >= 19)
         {
             CutscenesController.cus110 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Mana temple");
         }
     }
@@ -125,6 +126,7 @@ public class Cus110 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus110 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Mana temple");
     }
 }

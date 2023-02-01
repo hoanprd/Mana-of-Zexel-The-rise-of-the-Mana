@@ -85,6 +85,7 @@ public class Cus105 : MonoBehaviour
         else if (tang >= 13)
         {
             CutscenesController.cus105 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Zexel town");
         }
     }
@@ -95,6 +96,7 @@ public class Cus105 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus105 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Zexel town");
     }
 }

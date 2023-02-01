@@ -120,6 +120,8 @@ public class Cus82 : MonoBehaviour
         else if (tang >= 20)
         {
             CutscenesController.cus82 = 1;
+            ContainerController.ManaCoreIceVayne -= 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("InsideIceCave");
         }
     }
@@ -130,6 +132,8 @@ public class Cus82 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus82 = 1;
+        ContainerController.ManaCoreIceVayne -= 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("InsideIceCave");
     }
 }

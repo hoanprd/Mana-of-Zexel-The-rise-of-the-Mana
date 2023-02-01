@@ -65,6 +65,8 @@ public class Cus51 : MonoBehaviour
         else if (tang >= 9)
         {
             CutscenesController.cus51 = 1;
+            ContainerController.LoadingOpen = true;
+            HPMPBarController.EIndex = 21;
             SceneManager.LoadScene("BSManaGuardian 1");
         }
     }
@@ -75,6 +77,8 @@ public class Cus51 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus51 = 1;
+        ContainerController.LoadingOpen = true;
+        HPMPBarController.EIndex = 21;
         SceneManager.LoadScene("BSManaGuardian 1");
     }
 }

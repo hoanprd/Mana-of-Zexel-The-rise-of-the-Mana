@@ -116,6 +116,7 @@ public class Cus23 : MonoBehaviour
         {
             CutscenesController.cus23 = 1;
             ContainerController.Porridge -= 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Tavern");
         }
     }
@@ -127,6 +128,7 @@ public class Cus23 : MonoBehaviour
     {
         CutscenesController.cus23 = 1;
         ContainerController.Porridge -= 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Tavern");
     }
 }

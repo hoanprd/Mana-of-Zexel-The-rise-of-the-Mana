@@ -80,6 +80,7 @@ public class Cus94 : MonoBehaviour
         else if (tang >= 12)
         {
             CutscenesController.cus94 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Mana cliff");
         }
     }
@@ -90,6 +91,7 @@ public class Cus94 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus94 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Mana cliff");
     }
 }

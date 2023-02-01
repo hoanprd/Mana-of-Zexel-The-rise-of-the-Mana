@@ -112,7 +112,7 @@ public class BSGoblin1 : MonoBehaviour
             P3Available = true;
         }
 
-        if (CutscenesController.cus50 == 1 && CutscenesController.cus51 == 0)
+        if (CutscenesController.cus88 == 1 && CutscenesController.cus98 == 0)
         {
             AliaStatus.SetActive(false);
             AliaBar.SetActive(false);

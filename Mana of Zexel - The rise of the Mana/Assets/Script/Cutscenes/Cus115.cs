@@ -55,6 +55,7 @@ public class Cus115 : MonoBehaviour
         else if (tang >= 7)
         {
             CutscenesController.cus115 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Epilogue");
         }
     }
@@ -65,6 +66,7 @@ public class Cus115 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus115 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Epilogue");
     }
 }

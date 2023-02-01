@@ -10,7 +10,7 @@ public class IceManaGeneratorController : MonoBehaviour
     {
         if (CutscenesController.cus86 == 0)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 

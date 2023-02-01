@@ -145,6 +145,7 @@ public class Cus45 : MonoBehaviour
         else if (tang >= 27)
         {
             CutscenesController.cus45 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("GroceryStore");
         }
     }
@@ -155,6 +156,7 @@ public class Cus45 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus45 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("GroceryStore");
     }
 }

@@ -55,6 +55,7 @@ public class Cus59 : MonoBehaviour
         else if (tang >= 7)
         {
             CutscenesController.cus59 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Inferno volcano");
         }
     }
@@ -65,6 +66,7 @@ public class Cus59 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus59 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Inferno volcano");
     }
 }

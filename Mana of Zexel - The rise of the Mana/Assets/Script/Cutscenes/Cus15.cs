@@ -110,6 +110,7 @@ public class Cus15 : MonoBehaviour
         else if (tang >= 18)
         {
             CutscenesController.cus15 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Wishing forest");
         }
     }
@@ -120,6 +121,7 @@ public class Cus15 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus15 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Wishing forest");
     }
 }

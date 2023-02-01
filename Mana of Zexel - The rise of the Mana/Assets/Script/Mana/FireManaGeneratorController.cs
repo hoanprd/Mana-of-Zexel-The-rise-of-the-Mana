@@ -10,7 +10,7 @@ public class FireManaGeneratorController : MonoBehaviour
     {
         if (CutscenesController.cus85 == 0)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 

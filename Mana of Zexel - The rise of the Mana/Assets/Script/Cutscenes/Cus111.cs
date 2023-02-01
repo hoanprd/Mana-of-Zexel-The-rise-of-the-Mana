@@ -65,6 +65,7 @@ public class Cus111 : MonoBehaviour
         else if (tang >= 9)
         {
             CutscenesController.cus111 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Zexel temple");
         }
     }
@@ -75,6 +76,7 @@ public class Cus111 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus111 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Zexel temple");
     }
 }

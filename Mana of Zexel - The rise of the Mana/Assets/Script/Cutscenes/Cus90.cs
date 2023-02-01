@@ -115,6 +115,7 @@ public class Cus90 : MonoBehaviour
         else if (tang >= 19)
         {
             CutscenesController.cus90 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Inferno desert");
         }
     }
@@ -125,6 +126,7 @@ public class Cus90 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus90 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Inferno desert");
     }
 }

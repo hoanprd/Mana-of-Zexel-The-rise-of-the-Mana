@@ -90,6 +90,7 @@ public class Cus57 : MonoBehaviour
         else if (tang >= 14)
         {
             CutscenesController.cus57 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Mana gate");
         }
     }
@@ -100,6 +101,7 @@ public class Cus57 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus57 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Mana gate");
     }
 }

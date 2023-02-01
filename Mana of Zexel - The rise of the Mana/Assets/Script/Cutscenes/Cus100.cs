@@ -95,6 +95,7 @@ public class Cus100 : MonoBehaviour
         else if (tang >= 15)
         {
             CutscenesController.cus100 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Inferno desert");
         }
     }
@@ -105,6 +106,7 @@ public class Cus100 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus100 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Inferno desert");
     }
 }

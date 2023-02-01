@@ -160,6 +160,7 @@ public class Cus30 : MonoBehaviour
         else if (tang >= 28)
         {
             CutscenesController.cus30 = 1;
+            ContainerController.LoadingOpen = true;
             MapController.TavernToSaveRoom = true;
             MapController.ZexelTownToTavern = false;
             SceneManager.LoadScene("Save room");
@@ -172,6 +173,7 @@ public class Cus30 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus30 = 1;
+        ContainerController.LoadingOpen = true;
         MapController.TavernToSaveRoom = true;
         MapController.ZexelTownToTavern = false;
         SceneManager.LoadScene("Save room");

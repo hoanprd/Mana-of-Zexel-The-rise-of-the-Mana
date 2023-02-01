@@ -106,7 +106,8 @@ public class Cus7 : MonoBehaviour
         {
             CutscenesController.cus7 = 1;
             Global.Zen += 100;
-            SceneManager.LoadScene(5);
+            ContainerController.LoadingOpen = true;
+            SceneManager.LoadScene("Tavern");
         }
     }
     public void Pressnext()
@@ -116,6 +117,7 @@ public class Cus7 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus7 = 1;
+        ContainerController.LoadingOpen = true;
         if (tang >=17)
             SceneManager.LoadScene("Tavern");
         else

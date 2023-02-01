@@ -253,7 +253,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus32 == 0)
             QT.text = "Maria remembered a grocery store owner on the west side of town near a tavern";
         else if (CutscenesController.cus33 == 0)
-            QT.text = "Let's collect some items for Orina. Mana string: 2\nIron: 3\n Wood: 2";
+            QT.text = "Let's collect some items for Orina. String: 2\nIron: 3\n Wood: 2";
         else if (CutscenesController.cus34 == 0)
             QT.text = "Let's make our way to the inferno desert west of Zexel town";
         else if (CutscenesController.cus35 == 0)

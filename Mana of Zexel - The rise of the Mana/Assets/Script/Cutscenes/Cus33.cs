@@ -140,6 +140,7 @@ public class Cus33 : MonoBehaviour
         else if (tang >= 24)
         {
             CutscenesController.cus33 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("GroceryStore");
         }
     }
@@ -150,6 +151,7 @@ public class Cus33 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus33 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("GroceryStore");
     }
 }

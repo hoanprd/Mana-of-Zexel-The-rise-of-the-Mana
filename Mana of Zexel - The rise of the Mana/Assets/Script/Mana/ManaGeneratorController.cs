@@ -10,7 +10,7 @@ public class ManaGeneratorController : MonoBehaviour
     {
         if (CutscenesController.cus57 == 0)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 

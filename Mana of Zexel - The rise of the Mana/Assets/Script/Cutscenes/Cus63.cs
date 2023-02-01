@@ -85,6 +85,8 @@ public class Cus63 : MonoBehaviour
         else if (tang >= 13)
         {
             CutscenesController.cus63 = 1;
+            ContainerController.LoadingOpen = true;
+            ContainerController.FireOfPeacePick = 1;
             SceneManager.LoadScene("Zexel town");
         }
     }
@@ -95,6 +97,8 @@ public class Cus63 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus63 = 1;
+        ContainerController.LoadingOpen = true;
+        ContainerController.FireOfPeacePick = 1;
         SceneManager.LoadScene("Zexel town");
     }
 }

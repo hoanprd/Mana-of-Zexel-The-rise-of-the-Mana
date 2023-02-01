@@ -155,6 +155,7 @@ public class Cus113 : MonoBehaviour
         else if (tang >= 27)
         {
             CutscenesController.cus113 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("BSSicxalon 1");
         }
     }
@@ -165,6 +166,7 @@ public class Cus113 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus113 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("BSSicxalon 1");
     }
 }

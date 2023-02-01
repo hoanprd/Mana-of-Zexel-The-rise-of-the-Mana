@@ -205,6 +205,9 @@ public class Cus73 : MonoBehaviour
         else if (tang >= 37)
         {
             CutscenesController.cus73 = 1;
+            ContainerController.LoadingOpen = true;
+            ContainerController.IceCrystal -= 1;
+            ContainerController.FireOfPeace -= 1;
             SceneManager.LoadScene("InsideVolcanoCave");
         }
     }
@@ -215,6 +218,9 @@ public class Cus73 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus73 = 1;
+        ContainerController.LoadingOpen = true;
+        ContainerController.IceCrystal -= 1;
+        ContainerController.FireOfPeace -= 1;
         SceneManager.LoadScene("InsideVolcanoCave");
     }
 }

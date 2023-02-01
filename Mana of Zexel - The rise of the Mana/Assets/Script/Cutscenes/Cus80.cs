@@ -245,6 +245,7 @@ public class Cus80 : MonoBehaviour
         else if (tang >= 45)
         {
             CutscenesController.cus80 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Alta inferno");
         }
     }
@@ -255,6 +256,7 @@ public class Cus80 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus80 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Alta inferno");
     }
 }

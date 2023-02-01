@@ -120,6 +120,7 @@ public class Cus27 : MonoBehaviour
         else if (tang >= 20)
         {
             CutscenesController.cus27 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("WeaponStore");
         }
     }
@@ -130,6 +131,7 @@ public class Cus27 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus27 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("WeaponStore");
     }
 }

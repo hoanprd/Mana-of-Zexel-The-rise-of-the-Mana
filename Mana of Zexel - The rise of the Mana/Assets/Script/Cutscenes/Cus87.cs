@@ -90,6 +90,7 @@ public class Cus87 : MonoBehaviour
         else if (tang >= 14)
         {
             CutscenesController.cus87 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Zexel gate");
         }
     }
@@ -100,6 +101,7 @@ public class Cus87 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus87 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Zexel gate");
     }
 }

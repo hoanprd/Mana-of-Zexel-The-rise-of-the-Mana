@@ -65,6 +65,7 @@ public class Cus13 : MonoBehaviour
         else if (tang >= 9)
         {
             CutscenesController.cus13 = 1;
+            ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("BSGolemn 1");
         }
     }
@@ -75,6 +76,7 @@ public class Cus13 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus13 = 1;
+        ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("BSGolemn 1");
     }
 }

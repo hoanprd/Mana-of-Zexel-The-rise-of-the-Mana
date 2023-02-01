@@ -115,6 +115,7 @@ public class Cus48 : MonoBehaviour
         else if (tang >= 19)
         {
             CutscenesController.cus48 = 1;
+            ContainerController.LoadingOpen = true;
             MapController.SaveRoomToTavern = true;
             SceneManager.LoadScene("Tavern");
         }
@@ -126,6 +127,7 @@ public class Cus48 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus48 = 1;
+        ContainerController.LoadingOpen = true;
         MapController.SaveRoomToTavern = true;
         SceneManager.LoadScene("Tavern");
     }
