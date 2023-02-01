@@ -606,6 +606,7 @@ public class BSGoblin1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
+        ContainerController.LoadingOpen = true;
         HubController.BusyHub = false;
 
         if (CutscenesController.cus6 == 1 && CutscenesController.cus7 == 0)

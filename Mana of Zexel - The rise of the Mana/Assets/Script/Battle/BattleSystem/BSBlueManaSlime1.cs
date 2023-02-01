@@ -615,6 +615,7 @@ public class BSBlueManaSlime1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
+        ContainerController.LoadingOpen = true;
         ContainerController.BlueManaSlimeBallPick = 1;
         HubController.BusyHub = false;
         SceneManager.LoadScene("InsideIceCave");

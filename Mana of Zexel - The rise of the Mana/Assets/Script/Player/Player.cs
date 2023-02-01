@@ -446,8 +446,10 @@ public class Player : MonoBehaviour
                 GoblinTrigger4.despawn = false;
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus28 == 0 && CutscenesController.cus27 == 1)
+            else if (CutscenesController.cus28 == 0 && CutscenesController.cus27 == 1 && ContainerController.Iron >= 3 && ContainerController.ManaGem >= 2)
             {
+                ContainerController.Iron -= 3;
+                ContainerController.ManaGem -= 2;
                 MapController.ZexelTownToWeaponStore = true;
                 GoblinTrigger1.despawn = false;
                 GoblinTrigger2.despawn = false;

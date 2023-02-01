@@ -553,6 +553,7 @@ public class BSInfernoBeast1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
+        ContainerController.LoadingOpen = true;
         HubController.BusyHub = false;
 
         if (CutscenesController.cus80 == 0 && CutscenesController.cus79 == 1)

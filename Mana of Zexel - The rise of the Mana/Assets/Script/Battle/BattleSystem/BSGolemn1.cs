@@ -606,6 +606,7 @@ public class BSGolemn1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
+        ContainerController.LoadingOpen = true;
         ContainerController.ManaGemPick = 1;
         HubController.BusyHub = false;
 

@@ -8,7 +8,7 @@ public class ContainerController : MonoBehaviour
     public static int DriedLeaves, PureWater, MorningDrop, Wheat, String, Iron, ManaGem, Wood, ScorpionVenom, InfernoSand, ManaLiquid, ManaOre, ManaCrystal, GuardianFeather, FireOre, GoldenFeather, RedManaCrystal, Obsidian, IceOre, IceLeather, BlueManaCrystal, RedManaSlimeBall, BlueManaSlimeBall, ManaCoreFireZexel, ManaCoreIceZexel, Rock, NatureGrass, ManaDust, IceCrystal, HealPotion, ManaPotion, ElixirPotion, Bom, Porridge, ManaCloth, ManaShield, VenomKiller, ManaNecklace, ManaGenerator, Baxiata, BaxiataGem, Photonria, PhotonriaGem, ManaLiquidCatalyst, RedLiquidCatalyst, BlueLiquidCatalyst, ManaCoreFireVayne, ManaCoreIceVayne, PureObsidian, FireManaGenerator, IceManaGenerator, PowderOfLife, HoliHP, HoliMP, UltraBom, ReincarnationLife, FireOfPeace;
     public GameObject BagPanel, DriedLeavesObject, PureWaterObject, MorningDropObject, WheatObject, WoodObject, StringObject, IronObject, ManaGemObject, ScorpionVenomObject, InfernoSandObject, ManaLiquidObject, ManaOreObject, ManaCrystalObject, FireOreObject, GoldenFeatherObject, RedManaCrystalObject, ObsidianObject, RedManaSlimeBallObject, IceOreObject, IceLeatherObject, BlueManaCrystalObject, BlueManaSlimeBallObject, NatureGrassObject, ManaDustObject, RockObject, GuardianFeatherObject, IceCrystalObject, ManaCoreFireZexelObject, ManaCoreIceZexelObject;
     public GameObject HealPotionObject, ManaPotionObject, ElixirPotionObject, BomObject, PorridgeObject, ManaClothObject, ManaShieldObject, VenomKillerObject, ManaNecklaceObject, ManaGeneratorObject, BaxiataObject, BaxiataGemObject, PhotonriaObject, PhotonriaGemObject, ManaLiquidCatalystObject, RedLiquidCatalystObject, BlueLiquidCatalystObject, ManaCoreFireVayneObject, ManaCoreIceVayneObject, PureObsidianObject, FireManaGeneratorObject, IceManaGeneratorObject, PowderOfLifeObject, HoliHPObject, HoliMPObject, UltraBomObject, ReincarnationLifeObject, FireOfPeaceObject;
-    public GameObject SynSuccessPanel, CloseSSP;
+    public GameObject SynSuccessPanel, LoadingPanel, CloseSSP;
     public Transform MateBagList, ItemBagList;
     public GameObject[] LoadGameMaterial, LoadGameItem;
     public GameObject[] ItemSynImage;
@@ -18,13 +18,14 @@ public class ContainerController : MonoBehaviour
     public static int stop, BagStatus;
     public static int DriedLeavesPick, MorningDropPick, PureWaterPick, WheatPick, StringPick, WoodPick, IronPick, ManaGemPick, ScorpionVenomPick, InfernoSandPick, ManaLiquidPick, ManaOrePick, ManaCrystalPick, FireOrePick, GoldenFeatherPick, RedManaCrystalPick, ObsidianPick, RedManaSlimeBallPick, IceOrePick, IceLeatherPick, BlueManaCrystalPick, BlueManaSlimeBallPick, NatureGrassPick, ManaDustPick, RockPick, GuardianFeatherPick, IceCrystalPick, ManaCoreFireZexelPick, ManaCoreIceZexelPick;
     public static int HealPotionPick, ManaPotionPick, ElixirPotionPick, BomPick, PorridgePick, ManaClothPick, ManaShieldPick, VenomKillerPick, ManaNecklacePick, ManaGeneratorPick, BaxiataPick, BaxiataGemPick, PhotonriaPick, PhotonriaGemPick, ManaLiquidCatalystPick, RedLiquidCatalystPick, BlueLiquidCatalystPick, ManaCoreFireVaynePick, ManaCoreIceVaynePick, PureObsidianPick, FireManaGeneratorPick, IceManaGeneratorPick, PowderOfLifePick, HoliHPPick, HoliMPPick, UltraBomPick, ReincarnationLifePick, FireOfPeacePick;
-    public static bool DestroyBag;
+    public static bool DestroyBag, LoadingOpen;
 
     private void Start()
     {
         DontDestroyOnLoad(this);
         DestroyBag = false;
         CSSPButtonActive = false;
+        LoadingOpen = false;
 
         if (MenuController.LoadGameCheck == true)
         {
@@ -52,6 +53,14 @@ public class ContainerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B) && HubController.BusyHub == false)
         {
             OpenBag();
+        }
+
+        if (LoadingOpen == true)
+        {
+            LoadingOpen = false;
+            LoadingPanel.SetActive(true);
+            OpenBag();
+            StartCoroutine(WaitToLoadingPanel());
         }
 
         if (CSSPButtonActive == false)
@@ -1052,5 +1061,12 @@ public class ContainerController : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         CloseSSP.SetActive(true);
+    }
+
+    IEnumerator WaitToLoadingPanel()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Back4();
+        LoadingPanel.SetActive(false);
     }
 }

@@ -559,6 +559,7 @@ public class BSManaGuardian1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
+        ContainerController.LoadingOpen = true;
         HubController.BusyHub = false;
         SceneManager.LoadScene("Cutscenes");
     }

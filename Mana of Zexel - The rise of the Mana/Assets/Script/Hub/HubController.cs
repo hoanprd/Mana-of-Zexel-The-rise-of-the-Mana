@@ -128,7 +128,7 @@ public class HubController : MonoBehaviour
         ShowLevelP3 = Global.LevelP3;
         ShowHPP3 = Global.CurHPP3;
         ShowMPP3 = Global.CurMPP3;
-        ShowZen = Global.Zen;
+        //ShowZen = Global.Zen;
         
         if (CutscenesController.cus12 == 0)
         {
@@ -191,6 +191,7 @@ public class HubController : MonoBehaviour
         HPP3.text = "HP: " + ShowHPP3;
         MPP3.text = "MP: " + ShowMPP3;
 
+        ShowZen = Global.Zen;
         Zen.text = ShowZen + " ";
 
         if (CutscenesController.cus3 == 0)
@@ -242,7 +243,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus27 == 0)
             QT.text = "Let's go to the blacksmith shop of Zexel town in the south";
         else if (CutscenesController.cus28 == 0)
-            QT.text = "Let's collect Heerium some iron and mana gem . Iron: 0/3\nMana gem: 0/2";
+            QT.text = "Let's collect Heerium some iron and mana gem . Iron: 3\nMana gem: 2";
         else if (CutscenesController.cus29 == 0)
             QT.text = "Let's go back to the tavern to prepare some equipment and wait for the weapon made by Heerium";
         else if (CutscenesController.cus30 == 0)

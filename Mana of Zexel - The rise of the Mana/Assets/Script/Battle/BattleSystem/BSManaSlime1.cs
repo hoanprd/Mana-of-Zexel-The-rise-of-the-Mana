@@ -615,6 +615,7 @@ public class BSManaSlime1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
+        ContainerController.LoadingOpen = true;
         ContainerController.ManaLiquidPick = 1;
         HubController.BusyHub = false;
         SceneManager.LoadScene("Mana gate");

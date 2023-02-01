@@ -614,6 +614,7 @@ public class BSIronGolemn1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
+        ContainerController.LoadingOpen = true;
         ContainerController.IronPick = 1;
         ContainerController.ManaGemPick = 1;
         HubController.BusyHub = false;

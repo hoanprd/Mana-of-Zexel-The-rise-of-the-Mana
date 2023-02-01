@@ -586,6 +586,7 @@ public class BSSicxalon1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
+        ContainerController.LoadingOpen = true;
         HubController.BusyHub = false;
         SceneManager.LoadScene("Cutscenes");
     }

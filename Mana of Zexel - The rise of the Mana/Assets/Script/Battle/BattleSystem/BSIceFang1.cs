@@ -608,8 +608,10 @@ public class BSIceFang1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
+        ContainerController.LoadingOpen = true;
         ContainerController.IceLeatherPick = 1;
         HubController.BusyHub = false;
+
         if (CutscenesController.cus67 == 0 && CutscenesController.cus66 == 1)
         {
             CutscenesTrigger.IceFangKill += 1;

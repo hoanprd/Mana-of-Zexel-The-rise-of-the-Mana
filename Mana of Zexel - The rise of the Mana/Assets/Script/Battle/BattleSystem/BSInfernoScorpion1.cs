@@ -605,6 +605,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
+        ContainerController.LoadingOpen = true;
         ContainerController.ScorpionVenomPick = 1;
         HubController.BusyHub = false;
 

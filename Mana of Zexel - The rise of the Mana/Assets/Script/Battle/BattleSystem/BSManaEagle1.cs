@@ -606,6 +606,7 @@ public class BSManaEagle1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
+        ContainerController.LoadingOpen = true;
         HubController.BusyHub = false;
         SceneManager.LoadScene("Mana cliff");
     }

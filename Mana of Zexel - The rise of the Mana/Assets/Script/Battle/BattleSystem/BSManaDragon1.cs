@@ -584,6 +584,7 @@ public class BSManaDragon1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
+        ContainerController.LoadingOpen = true;
         HubController.BusyHub = false;
 
         if (CutscenesController.cus95 == 0 && CutscenesController.cus94 == 1)

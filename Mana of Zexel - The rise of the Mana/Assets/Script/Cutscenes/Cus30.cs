@@ -161,6 +161,7 @@ public class Cus30 : MonoBehaviour
         {
             CutscenesController.cus30 = 1;
             MapController.TavernToSaveRoom = true;
+            MapController.ZexelTownToTavern = false;
             SceneManager.LoadScene("Save room");
         }
     }
@@ -172,6 +173,7 @@ public class Cus30 : MonoBehaviour
     {
         CutscenesController.cus30 = 1;
         MapController.TavernToSaveRoom = true;
+        MapController.ZexelTownToTavern = false;
         SceneManager.LoadScene("Save room");
     }
 }

@@ -615,6 +615,7 @@ public class BSRedManaSlime1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
+        ContainerController.LoadingOpen = true;
         ContainerController.RedManaSlimeBallPick = 1;
         HubController.BusyHub = false;
         SceneManager.LoadScene("InsideVolcanoCave");

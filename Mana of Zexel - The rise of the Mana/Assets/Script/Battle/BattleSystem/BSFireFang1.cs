@@ -608,6 +608,7 @@ public class BSFireFang1 : MonoBehaviour
     }
     public void PressBackToTheMap2()
     {
+        ContainerController.LoadingOpen = true;
         ContainerController.GoldenFeatherPick = 1;
         HubController.BusyHub = false;
         SceneManager.LoadScene("Inferno volcano");
