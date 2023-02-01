@@ -348,10 +348,25 @@ public class BSThief : MonoBehaviour
             HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
             MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
             HPE1.text = "HP: " + Global.HPE1.ToString();
-            stop = 1;
-            LevelP1.text = "Level " + Global.LevelP1;
-            EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
-            Money.text = Global.Zen + " ";
+
+            if (stop == 0)
+            {
+                stop = 1;
+
+                if (Global.LevelP1 < 30)
+                {
+                    LevelP1.text = "Level " + Global.LevelP1;
+                    EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
+                }
+                else
+                {
+                    LevelP1.text = "Level Max";
+                    EXPP1.text = "MAX";
+                }
+
+                Money.text = Global.Zen + "";
+            }
+
             Invoke("delayCheckE1Die1", 1f);
             if (once == 0)
             {

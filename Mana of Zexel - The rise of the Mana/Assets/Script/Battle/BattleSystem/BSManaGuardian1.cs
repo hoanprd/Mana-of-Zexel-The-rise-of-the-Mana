@@ -48,7 +48,7 @@ public class BSManaGuardian1 : MonoBehaviour
     public Text EXPP2;
     public Text EXPP3;
     public Text Money;
-    //public Text ManaGemItem;
+    public Text GuardianFeatherItem;
     public Text LevelP1;
     public Text LevelP2;
     public Text LevelP3;
@@ -656,19 +656,47 @@ public class BSManaGuardian1 : MonoBehaviour
             ShowP2Panel(false);
             ShowP3Panel(false);
             UpdateUIText();
-            stop = 1;
 
-            LevelP1.text = "Level " + Global.LevelP1;
-            EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
+            if (stop == 0)
+            {
+                stop = 1;
 
-            LevelP2.text = "Level " + Global.LevelP2;
-            EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
+                if (Global.LevelP1 < 30)
+                {
+                    LevelP1.text = "Level " + Global.LevelP1;
+                    EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
+                }
+                else
+                {
+                    LevelP1.text = "Level Max";
+                    EXPP1.text = "MAX";
+                }
 
-            LevelP3.text = "Level " + Global.LevelP3;
-            EXPP3.text = Global.CurEXPP3 + "/" + Global.MaxEXPP3;
+                if (Global.LevelP2 < 30)
+                {
+                    LevelP2.text = "Level " + Global.LevelP2;
+                    EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
+                }
+                else
+                {
+                    LevelP2.text = "Level Max";
+                    EXPP2.text = "MAX";
+                }
 
-            Money.text = Global.Zen + " ";
-            //ManaGemItem.text = "Mana Gem +10";
+                if (Global.LevelP3 < 30)
+                {
+                    LevelP3.text = "Level " + Global.LevelP3;
+                    EXPP3.text = Global.CurEXPP3 + "/" + Global.MaxEXPP3;
+                }
+                else
+                {
+                    LevelP3.text = "Level Max";
+                    EXPP3.text = "MAX";
+                }
+
+                Money.text = Global.Zen + " ";
+                GuardianFeatherItem.text = "Guardian feather +1";
+            }
 
             Invoke("delayCheckBE1Die1", 1f);
             if (once == 0)

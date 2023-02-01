@@ -62,7 +62,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
     public Text EXPP2;
     public Text EXPP3;
     public Text Money;
-    //public Text ManaGemItem;
+    public Text ScorpionVenomItem;
     public Text LevelP1;
     public Text LevelP2;
     public Text LevelP3;
@@ -708,33 +708,63 @@ public class BSInfernoScorpion1 : MonoBehaviour
             ShowP2Panel(false);
             ShowP3Panel(false);
             UpdateUIText();
-            stop = 1;
 
-            LevelP1.text = "Level " + Global.LevelP1;
-            EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
-
-            if (P2Available == true)
+            if (stop == 0)
             {
-                AliaName.SetActive(true);
-                AliaLevel.SetActive(true);
-                AliaExp.SetActive(true);
-                AliaPlusExp.SetActive(true);
-                LevelP2.text = "Level " + Global.LevelP2;
-                EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
-            }
+                stop = 1;
 
-            if (P3Available == true)
-            {
-                MariaName.SetActive(true);
-                MariaLevel.SetActive(true);
-                MariaExp.SetActive(true);
-                MariaPlusExp.SetActive(true);
-                LevelP3.text = "Level " + Global.LevelP3;
-                EXPP3.text = Global.CurEXPP3 + "/" + Global.MaxEXPP3;
-            }
+                if (Global.LevelP1 < 30)
+                {
+                    LevelP1.text = "Level " + Global.LevelP1;
+                    EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
+                }
+                else
+                {
+                    LevelP1.text = "Level Max";
+                    EXPP1.text = "MAX";
+                }
 
-            Money.text = Global.Zen + " ";
-            //ManaGemItem.text = "Mana Gem +1";
+                if (P2Available == true)
+                {
+                    AliaName.SetActive(true);
+                    AliaLevel.SetActive(true);
+                    AliaExp.SetActive(true);
+                    AliaPlusExp.SetActive(true);
+
+                    if (Global.LevelP2 < 30)
+                    {
+                        LevelP2.text = "Level " + Global.LevelP2;
+                        EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
+                    }
+                    else
+                    {
+                        LevelP2.text = "Level Max";
+                        EXPP2.text = "MAX";
+                    }
+                }
+
+                if (P3Available == true)
+                {
+                    MariaName.SetActive(true);
+                    MariaLevel.SetActive(true);
+                    MariaExp.SetActive(true);
+                    MariaPlusExp.SetActive(true);
+
+                    if (Global.LevelP3 < 30)
+                    {
+                        LevelP3.text = "Level " + Global.LevelP3;
+                        EXPP3.text = Global.CurEXPP3 + "/" + Global.MaxEXPP3;
+                    }
+                    else
+                    {
+                        LevelP3.text = "Level Max";
+                        EXPP3.text = "MAX";
+                    }
+                }
+
+                Money.text = Global.Zen + " ";
+                ScorpionVenomItem.text = "Scorpion venom +1";
+            }
 
             Invoke("delayCheckE4Die1", 1f);
             if (once == 0)
