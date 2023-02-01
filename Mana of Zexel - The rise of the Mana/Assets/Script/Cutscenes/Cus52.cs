@@ -86,6 +86,7 @@ public class Cus52 : MonoBehaviour
         {
             CutscenesController.cus52 = 1;
             ContainerController.LoadingOpen = true;
+            ContainerController.GuardianFeatherPick = 1;
             SceneManager.LoadScene("Mana gate");
         }
     }
@@ -97,6 +98,7 @@ public class Cus52 : MonoBehaviour
     {
         CutscenesController.cus52 = 1;
         ContainerController.LoadingOpen = true;
+        ContainerController.GuardianFeatherPick = 1;
         SceneManager.LoadScene("Mana gate");
     }
 }

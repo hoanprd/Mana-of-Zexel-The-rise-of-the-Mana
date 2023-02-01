@@ -206,6 +206,8 @@ public class HubController : MonoBehaviour
             QT.text = "There are a few goblins destroying the village southwest of zexel town. Let's beat them. Process: " + GlobalQuest.KillGoblinQuest.ToString() + "/4";
         else if (CutscenesController.cus7 == 0 && GlobalQuest.KillGoblinQuest == 4)
             QT.text = "There are a few goblins destroying the village southwest of zexel town. Let's beat them. Process: " + GlobalQuest.KillGoblinQuest.ToString() + "/4" + " Go back to the tavern to report the situation to Mr. Lance";
+        else if (CutscenesController.cus8 == 0)
+            QT.text = "Take a walk around Zexel town to find more information";
         else if (CutscenesController.cus9 == 0)
             QT.text = "Synthesize elixir by mixing heal potion and mana potion. Then give that to the villagers whose crops are broken. Process: " + GlobalQuest.HelpVillagerDone.ToString() + "/3";
         else if (CutscenesController.cus11 == 0)
