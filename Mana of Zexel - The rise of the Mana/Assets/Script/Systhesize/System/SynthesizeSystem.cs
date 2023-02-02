@@ -795,7 +795,13 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton8()
     {
-        if (ContainerController.ScorpionVenom >= 2 && ContainerController.ElixirPotion >= 2 && CutscenesController.cus40 == 0 && CutscenesController.cus39 == 1 && SynBugStop == 0)
+        if (ContainerController.ScorpionVenom <= 4 && ContainerController.ElixirPotion >= 2 && CutscenesController.cus45 == 0 && CutscenesController.cus44 == 1)
+        {
+            showr2.SetActive(true);
+            showr1.text = "You need to keep a small number of inferno scorpion tails to give Orina";
+            Invoke("delay1", 1f);
+        }
+        else if (ContainerController.ScorpionVenom >= 2 && ContainerController.ElixirPotion >= 2 && CutscenesController.cus40 == 0 && CutscenesController.cus39 == 1 && SynBugStop == 0)
         {
             SynBugStop = 1;
             VenomKillerCut = true;

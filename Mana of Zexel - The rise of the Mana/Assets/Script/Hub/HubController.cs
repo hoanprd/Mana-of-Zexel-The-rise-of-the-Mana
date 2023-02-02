@@ -194,6 +194,10 @@ public class HubController : MonoBehaviour
         ShowZen = Global.Zen;
         Zen.text = ShowZen + " ";
 
+        ShowP1Equip();
+        ShowP2Equip();
+        ShowP3Equip();
+
         if (CutscenesController.cus3 == 0)
         {
             QT.text = "Go to the Zexel town on the west side of the Wishing hill";

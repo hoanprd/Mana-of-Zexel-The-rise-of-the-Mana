@@ -82,7 +82,7 @@ public class BSManaGuardian1 : MonoBehaviour
         a2 = Global.SpeedP2 / 10;
         a3 = Global.SpeedP3 / 10;
         aBE1 = Global.SpeedBE1 / 10;
-        HPMPBarController.EIndex = 11;
+
         BreakDamageIndex = 0;
         BossSkillCharge = 0;
 

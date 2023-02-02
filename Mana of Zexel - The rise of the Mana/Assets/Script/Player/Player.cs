@@ -265,7 +265,7 @@ public class Player : MonoBehaviour
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus58 == 0 && CutscenesController.cus59 == 1)
+            else if (CutscenesController.cus58 == 0 && CutscenesController.cus57 == 1)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
@@ -374,6 +374,9 @@ public class Player : MonoBehaviour
                 GoblinTrigger2.despawn = false;
                 GoblinTrigger3.despawn = false;
                 GoblinTrigger4.despawn = false;
+                ContainerController.String -= 2;
+                ContainerController.Iron -= 3;
+                ContainerController.Wood -= 2;
                 SceneManager.LoadScene("Cutscenes");
             }
             else if (CutscenesController.cus43 == 0 && CutscenesController.cus42 == 1)
@@ -388,6 +391,7 @@ public class Player : MonoBehaviour
             else if (CutscenesController.cus45 == 0 && CutscenesController.cus44 == 1)
             {
                 MapController.ZexelTownToGroceryStore = true;
+                ContainerController.ScorpionVenom -= 3;
                 GoblinTrigger1.despawn = false;
                 GoblinTrigger2.despawn = false;
                 GoblinTrigger3.despawn = false;

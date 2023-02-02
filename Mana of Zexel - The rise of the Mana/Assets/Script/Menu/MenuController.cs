@@ -287,16 +287,17 @@ public class MenuController : MonoBehaviour
 
         //Set ManaSynthesize
         SynthesizeSystem.ManaSynthesize = 100;
-        SynthesizeSystem.ManaFireSynthesize = 0;
-        SynthesizeSystem.ManaIceSynthesize = 0;
+        SynthesizeSystem.ManaFireSynthesize = 100;
+        SynthesizeSystem.ManaIceSynthesize = 100;
 
         SceneManager.LoadScene("Cutscenes");
-        //SceneManager.LoadScene("BSSicxalon 1");
     }
+
     public void PressLoadGame()
     {
         LoadGamePanel.SetActive(true);
     }
+
     public void PressLoadGameData1()
     {
         if (PlayerPrefs.GetInt("SaveGameD1") == 1)
