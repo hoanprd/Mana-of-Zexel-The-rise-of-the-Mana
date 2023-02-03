@@ -137,6 +137,13 @@ public class SynthesizeSystem : MonoBehaviour
                 Hide4[i].SetActive(false);
             }
         }
+        if (CutscenesController.cus112 == 0)
+        {
+            for (int i = 0; i < Hide5.Length; i++)
+            {
+                Hide5[i].SetActive(false);
+            }
+        }
 
         SlideIndex = 0;
     }
@@ -602,6 +609,11 @@ public class SynthesizeSystem : MonoBehaviour
         SynDetailPanelText.text = "Ultra bom\n\n\nThe bomb has tremendous power through processing minerals containing mana";
         SynDetailPanel.SetActive(true);
     }
+    public void OmnipotentBoundaryDetail()
+    {
+        SynDetailPanelText.text = "Omnipotent boundary\n\n\nAn extremely powerful barrier to prevent monsters from attacking";
+        SynDetailPanel.SetActive(true);
+    }
 
     public void CloseSynDetailPanel()
     {
@@ -953,26 +965,6 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton14()
     {
-        if (ContainerController.GoldenFeather >= 4 && ContainerController.IceLeather >= 4 && ContainerController.ManaCloth >= 2)
-        {
-            ContainerController.GoldenFeather -= 4;
-            ContainerController.IceLeather -= 4;
-            ContainerController.ManaCloth -= 2;
-            //ContainerController.Photonria += 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
-        }
-        else
-        {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
-        }
-    }
-
-    public void SynthesizeButton15()
-    {
         if (ContainerController.RedManaCrystal >= 2 && ContainerController.BlueManaCrystal >= 2 && ContainerController.Photonria >= 2 && ManaSynthesize >= 40)
         {
             ManaSynthesize -= 40;
@@ -998,7 +990,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
     }
 
-    public void SynthesizeButton16()
+    public void SynthesizeButton15()
     {
         if (ContainerController.ManaLiquid >= 2 && ContainerController.PureWater >= 2 && ManaSynthesize >= 20)
         {
@@ -1024,7 +1016,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
     }
 
-    public void SynthesizeButton17()
+    public void SynthesizeButton16()
     {
         if (ContainerController.RedManaSlimeBall >= 2 && ContainerController.PureWater >= 2 && ManaSynthesize >= 20)
         {
@@ -1050,7 +1042,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
     }
 
-    public void SynthesizeButton18()
+    public void SynthesizeButton17()
     {
         if (ContainerController.BlueManaSlimeBall >= 2 && ContainerController.PureWater >= 2 && ManaSynthesize >= 20)
         {
@@ -1076,7 +1068,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
     }
 
-    public void SynthesizeButton19()
+    public void SynthesizeButton18()
     {
         if (ContainerController.ManaCoreFireZexel > 0 && ContainerController.RedManaCrystal >= 2 && ContainerController.RedLiquidCatalyst >= 2 && ManaFireSynthesize >= 20 && SynBugStop == 0)
         {
@@ -1104,7 +1096,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
     }
 
-    public void SynthesizeButton20()
+    public void SynthesizeButton19()
     {
         if (ContainerController.ManaCoreIceZexel > 0 && ContainerController.BlueManaCrystal >= 2 && ContainerController.BlueLiquidCatalyst >= 2 && ManaIceSynthesize >= 20)
         {
@@ -1130,7 +1122,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
     }
 
-    public void SynthesizeButton21()
+    public void SynthesizeButton20()
     {
         if (ContainerController.Obsidian >= 2 && ContainerController.GoldenFeather >= 3 && ContainerController.Rock >= 2)
         {
@@ -1150,7 +1142,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
     }
 
-    public void SynthesizeButton22()
+    public void SynthesizeButton21()
     {
         if (ContainerController.Iron >= 4 && ContainerController.Wood >= 2 && ContainerController.RedManaCrystal >= 4 && ManaSynthesize >= 80)
         {
@@ -1177,7 +1169,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
     }
 
-    public void SynthesizeButton23()
+    public void SynthesizeButton22()
     {
         if (ContainerController.Iron >= 4 && ContainerController.Wood >= 2 && ContainerController.BlueManaCrystal >= 4 && ManaSynthesize >= 80)
         {
@@ -1204,7 +1196,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
     }
 
-    public void SynthesizeButton24()
+    public void SynthesizeButton23()
     {
         if (ContainerController.NatureGrass >= 4 && ContainerController.GoldenFeather >= 4 && ContainerController.Wheat >= 2)
         {
@@ -1224,7 +1216,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
     }
 
-    public void SynthesizeButton25()
+    public void SynthesizeButton24()
     {
         if (ContainerController.HealPotion >= 2 && ContainerController.BaxiataGem >= 1 && ContainerController.RedLiquidCatalyst >= 2 && ManaFireSynthesize >= 40)
         {
@@ -1257,7 +1249,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
     }
 
-    public void SynthesizeButton26()
+    public void SynthesizeButton25()
     {
         if (ContainerController.ManaPotion >= 2 && ContainerController.BaxiataGem >= 1 && ContainerController.BlueLiquidCatalyst >= 2 && ManaSynthesize >= 40)
         {
@@ -1290,7 +1282,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
     }
 
-    public void SynthesizeButton27()
+    public void SynthesizeButton26()
     {
         if (ContainerController.ElixirPotion >= 2 && ContainerController.ManaLiquid >= 2 && ContainerController.PowderOfLife >= 1 && ManaSynthesize >= 50)
         {
@@ -1323,7 +1315,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
     }
 
-    public void SynthesizeButton28()
+    public void SynthesizeButton27()
     {
         if (ContainerController.Bom >= 2 && ContainerController.PhotonriaGem >= 1 && ContainerController.PureObsidian >= 1 && ManaSynthesize >= 50)
         {
@@ -1356,7 +1348,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
     }
 
-    public void SynthesizeButton29()
+    public void SynthesizeButton28()
     {
         if (ContainerController.GoldenFeather >= 4 && ContainerController.IceLeather >= 4 && ContainerController.ManaCloth >= 2 && ManaSynthesize >= 100 && CutscenesController.cus113 == 0 && CutscenesController.cus112 == 1 && SynBugStop == 0)
         {
