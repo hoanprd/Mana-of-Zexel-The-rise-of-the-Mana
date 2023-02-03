@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Cus113 : MonoBehaviour
+public class Cus118 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
@@ -25,77 +25,77 @@ public class Cus113 : MonoBehaviour
         {
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
-            dia.text = "Barrier operation protect everyone in this town.";
+            dia.text = "Zane! We have something to do with you!";
         }
         else if (tang == 2)
         {
-            NameTagText.text = "";
-            dia.text = "Glowinggggggggggggggg...";
+            NameTagText.text = "Zane";
+            dia.text = "Oh, is the little one getting better? I'm surprised.";
         }
         else if (tang == 3)
         {
             NameTagText.text = "Maria";
-            dia.text = "With this we can have some peace of mind.";
+            dia.text = "We will return you both capital and interest for harming innocent people.";
         }
         else if (tang == 4)
         {
-            NameTagText.text = "Vayne";
-            dia.text = "That's right! But we are not allowed to rest yet, there is still an inferno desert village in need of protection.";
+            NameTagText.text = "Zane";
+            dia.text = "Hahahahaha... it's too late... look at the resurrected Sicxalon.";
         }
         else if (tang == 5)
         {
-            NameTagText.text = "Mr. Lance";
-            dia.text = "Maria!";
+            NameTagText.text = "Maria";
+            dia.text = "What monster is that!";
         }
         else if (tang == 6)
         {
-            NameTagText.text = "Maria";
-            dia.text = "Father? Why are you going out like this, it's dangerous here!";
+            NameTagText.text = "Zane";
+            dia.text = "Those two alchemists! You don't know how to use mana, this monster is what shows you the power of mana.";
         }
         else if (tang == 7)
         {
-            NameTagText.text = "Mr. Lance";
-            dia.text = "I'm just a little worried, I don't want you to be in danger like this.";
+            NameTagText.text = "Zane";
+            dia.text = "I can use mana to make this monster invade the world hahahaha...";
         }
         else if (tang == 8)
         {
             NameTagText.text = "Maria";
-            dia.text = "... I've decided, if I stay weak, I won't be able to protect anyone.";
+            dia.text = "Zane! Why do you want to invade the world like that! You can live a peaceful life with your mother Orina.";
         }
         else if (tang == 9)
         {
-            NameTagText.text = "Mr. Lance";
-            dia.text = "But you're my only relative, if something happens... we'll know what to do.";
+            NameTagText.text = "Zane";
+            dia.text = "So you met my mother, is she still alive? Perhaps she already told you something about me, so I don't need to explain it anymore.";
         }
         else if (tang == 10)
         {
-            NameTagText.text = "Maria";
-            dia.text = "I rarely see you worrying about me like this, after all, I have Vayne and Alia, we will definitely return safely.";
+            NameTagText.text = "Alia";
+            dia.text = "Hey Zane you think you'll be happy after taking revenge on this world?";
         }
         else if (tang == 11)
         {
-            NameTagText.text = "Maria";
-            dia.text = "We're going to deal with some things now, don't worry.";
+            NameTagText.text = "Zane";
+            dia.text = "Hahaha... that's right... good question! If you were me from the past then you would understand the pain I went through with this world.";
         }
         else if (tang == 12)
         {
-            NameTagText.text = "Mr. Lance";
-            dia.text = "Promise me you'll come back.";
+            NameTagText.text = "Zane";
+            dia.text = "Stupid people and mana too. They have destroyed my way of life, I will take their way back.";
         }
         else if (tang == 13)
         {
-            NameTagText.text = "Maria";
-            dia.text = "It's too much for me to act like you're going to war. I promise to return to my father.";
+            NameTagText.text = "Zane";
+            dia.text = "I won't let anyone suffer like me. A life hated by the world, I will destroy it!!!";
         }
         else if (tang == 14)
         {
-            NameTagText.text = "Mr. Lance";
-            dia.text = "Good luck.";
+            NameTagText.text = "Vayne";
+            dia.text = "If you live only by hatred, you will never understand the meaning of life. If you think I still hold grudges, then you are wrong, I came here to fight for them, not for personal selfishness.";
         }
         else if (tang == 15)
         {
-            NameTagText.text = "Maria";
-            dia.text = "Uhm, let's go Vayne, Alia, we're starting to be the heroes of the world.";
+            NameTagText.text = "Vayne";
+            dia.text = "I don't care how miserable you live, all I know will defeat you, that's all.";
         }
         else if (tang == 16)
         {
@@ -171,9 +171,7 @@ public class Cus113 : MonoBehaviour
         {
             CutscenesController.cus113 = 1;
             ContainerController.LoadingOpen = true;
-            MapController.TavernToSaveRoom = false;
-            MapController.WishingForestToZexelTown = true;
-            SceneManager.LoadScene("Zexel town");
+            SceneManager.LoadScene("BSSicxalon 1");
         }
     }
     public void Pressnext()
@@ -184,8 +182,6 @@ public class Cus113 : MonoBehaviour
     {
         CutscenesController.cus113 = 1;
         ContainerController.LoadingOpen = true;
-        MapController.TavernToSaveRoom = false;
-        MapController.WishingForestToZexelTown = true;
-        SceneManager.LoadScene("Zexel town");
+        SceneManager.LoadScene("BSSicxalon 1");
     }
 }

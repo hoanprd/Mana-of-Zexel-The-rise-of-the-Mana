@@ -24,29 +24,34 @@ public class Cus108 : MonoBehaviour
         if (tang == 1)
         {
             NameTag.SetActive(true);
-            NameTagText.text = "Vayne";
-            dia.text = "!!! The town is being attacked by monsters...";
+            NameTagText.text = "Inferno desert villager";
+            dia.text = "The monster has entered the village! Everyone, please run away!";
         }
         else if (tang == 2)
         {
-            NameTagText.text = "Maria";
-            dia.text = "It's not okay, everyone in town is like my father.";
+            NameTagText.text = "Vayne";
+            dia.text = "It's the inferno scorpion monsters, they want to invade this village?";
         }
         else if (tang == 3)
         {
-            NameTagText.text = "Alia";
-            dia.text = "Hurry up we have to defeat them.";
+            NameTagText.text = "Maria";
+            dia.text = "Looks like something happened to them, especially the earthquake just now that drove them crazy.";
         }
         else if (tang == 4)
         {
-            NameTagText.text = "Vayne";
-            dia.text = "Those monsters don't get around anymore.";
+            NameTagText.text = "Alia";
+            dia.text = "We have to help them, we can't stand by.";
         }
-        else if (tang >= 5)
+        else if (tang == 5)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "Be careful, Alia! That monster is more ferocious than usual, can't be subjective.";
+        }
+        else if (tang >= 6)
         {
             CutscenesController.cus108 = 1;
             ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Zexel town");
+            SceneManager.LoadScene("BSInfernoScorpion 1");
         }
     }
     public void Pressnext()
@@ -57,6 +62,6 @@ public class Cus108 : MonoBehaviour
     {
         CutscenesController.cus108 = 1;
         ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("Zexel town");
+        SceneManager.LoadScene("BSInfernoScorpion 1");
     }
 }

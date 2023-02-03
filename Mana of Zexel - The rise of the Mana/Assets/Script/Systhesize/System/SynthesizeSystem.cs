@@ -62,7 +62,7 @@ public class SynthesizeSystem : MonoBehaviour
     public static int ManaFireSynthesize;
     public static int ManaIceSynthesize;
     public int SlideIndex = 0, SynBugStop = 0;
-    public bool BomCut, VenomKillerCut, PorridgeCut, ManaNecklaceCut, ManaFireCoreVayneCut;
+    public bool BomCut, VenomKillerCut, PorridgeCut, ManaNecklaceCut, ManaFireCoreVayneCut, OmnipotentBoundaryCut;
 
     // Start is called before the first frame update
     void Start()
@@ -1356,6 +1356,48 @@ public class SynthesizeSystem : MonoBehaviour
         }
     }
 
+    public void SynthesizeButton29()
+    {
+        if (ContainerController.GoldenFeather >= 4 && ContainerController.IceLeather >= 4 && ContainerController.ManaCloth >= 2 && ManaSynthesize >= 100 && CutscenesController.cus113 == 0 && CutscenesController.cus112 == 1 && SynBugStop == 0)
+        {
+            if (ContainerController.OmnipotentBoundary == 1)
+            {
+                SynBugStop = 1;
+            }
+            OmnipotentBoundaryCut = true;
+            ManaSynthesize -= 100;
+            ContainerController.GoldenFeather -= 4;
+            ContainerController.IceLeather -= 4;
+            ContainerController.ManaCloth -= 2;
+            ContainerController.OmnipotentBoundaryPick = 1;
+            showr2.SetActive(true);
+            showr1.text = "Success";
+            Invoke("delay1", 1f);
+        }
+        else if (ContainerController.GoldenFeather >= 4 && ContainerController.IceLeather >= 4 && ContainerController.ManaCloth >= 2 && ManaSynthesize >= 100)
+        {
+            ContainerController.GoldenFeather -= 4;
+            ContainerController.IceLeather -= 4;
+            ContainerController.ManaCloth -= 2;
+            ContainerController.OmnipotentBoundaryPick = 1;
+            showr2.SetActive(true);
+            showr1.text = "Success";
+            Invoke("delay1", 1f);
+        }
+        else if (ContainerController.GoldenFeather >= 4 && ContainerController.IceLeather >= 4 && ContainerController.ManaCloth >= 2 && ManaSynthesize < 100)
+        {
+            showr2.SetActive(true);
+            showr1.text = "You don't have enough mana to synthesize this item!";
+            Invoke("delay1", 1f);
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough material";
+            Invoke("delay1", 1f);
+        }
+    }
+
     public void RightButton()
     {
         if (SlideIndex != 9)
@@ -1412,6 +1454,10 @@ public class SynthesizeSystem : MonoBehaviour
             SceneManager.LoadScene("Cutscenes");
         }
         if (CutscenesController.cus75 == 0 && CutscenesController.cus74 == 1 && ManaFireCoreVayneCut == true)
+        {
+            SceneManager.LoadScene("Cutscenes");
+        }
+        if (CutscenesController.cus113 == 0 && CutscenesController.cus112 == 1 && ContainerController.OmnipotentBoundary >= 2 && OmnipotentBoundaryCut == true)
         {
             SceneManager.LoadScene("Cutscenes");
         }

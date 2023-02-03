@@ -122,19 +122,31 @@ public class CutscenesTrigger : MonoBehaviour
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus110 == 0 && CutscenesController.cus109 == 1 && Player.MapIndex == 7)
+            else if (CutscenesController.cus108 == 0 && CutscenesController.cus107 == 1 && Player.MapIndex == 3)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus111 == 0 && CutscenesController.cus110 == 1 && Player.MapIndex == 11)
+            else if (CutscenesController.cus110 == 0 && CutscenesController.cus109 == 1 && Player.MapIndex == 12)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus112 == 0 && CutscenesController.cus111 == 1 && Player.MapIndex == 11)
+            else if (CutscenesController.cus114 == 0 && CutscenesController.cus113 == 1 && Player.MapIndex == 3)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus113 == 0 && CutscenesController.cus112 == 1 && Player.MapIndex == 11)
+            else if (CutscenesController.cus115 == 0 && CutscenesController.cus114 == 1 && Player.MapIndex == 7)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus116 == 0 && CutscenesController.cus115 == 1 && Player.MapIndex == 11)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus117 == 0 && CutscenesController.cus116 == 1 && Player.MapIndex == 11)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus118 == 0 && CutscenesController.cus117 == 1 && Player.MapIndex == 11)
             {
                 SceneManager.LoadScene("Cutscenes");
             }

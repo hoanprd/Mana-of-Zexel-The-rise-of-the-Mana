@@ -24,114 +24,59 @@ public class Cus112 : MonoBehaviour
         if (tang == 1)
         {
             NameTag.SetActive(true);
-            NameTagText.text = "";
-            dia.text = "Glowinggggggg...";
+            NameTagText.text = "Vayne";
+            dia.text = "Looks like the monster just now is the last one to deal with.";
         }
         else if (tang == 2)
         {
-            NameTagText.text = "Vayne";
-            dia.text = "Another Zexel illusion. After all, she wants to show us something.";
+            NameTagText.text = "Alia";
+            dia.text = "Why did they attack inside the town so suddenly, they don't dare to go deep into the town these days.";
         }
         else if (tang == 3)
         {
-            NameTagText.text = "Zexel";
-            dia.text = "Dear everyone, it seems fate has arranged according to what I predicted.";
+            NameTagText.text = "Maria";
+            dia.text = "Something provoked them. Surely the earthquake just now had something to do with this.";
         }
         else if (tang == 4)
         {
-            NameTagText.text = "Zexel";
-            dia.text = "Long ago after the battle between me and Sicxalon ended, I had a peaceful life.";
+            NameTagText.text = "Mr. Lance";
+            dia.text = "Maria, are you all right?";
         }
         else if (tang == 5)
         {
-            NameTagText.text = "Zexel";
-            dia.text = "But I know well that the peace will crumble someday like now. That's why I hope future generations don't make the same mistake I did.";
+            NameTagText.text = "Maria";
+            dia.text = "I'm fine, you are fine dad! Phuhhh...";
         }
         else if (tang == 6)
         {
-            NameTagText.text = "Maria";
-            dia.text = "Zexel's mistake?";
+            NameTagText.text = "Klener";
+            dia.text = "Thank you, Vayne, the people have been safely evacuated.";
         }
         else if (tang == 7)
         {
-            NameTagText.text = "Zexel";
-            dia.text = "I have a family, my beloved daughter Alia. I was not able to fulfill the role of a mother completely.";
+            NameTagText.text = "Alia";
+            dia.text = "Will the material monsters come if we're absent? We can't keep this going.";
         }
         else if (tang == 8)
         {
-            NameTagText.text = "Zexel";
-            dia.text = "In order to prolong the seal of Sicxalon, I must sacrifice my life in this temple. Since I didn't want her to live a lonely life, I gave her the option of hibernation for her.";
+            NameTagText.text = "Vayne";
+            dia.text = "I'll use the barrier to stop them.";
         }
         else if (tang == 9)
         {
-            NameTagText.text = "Zexel";
-            dia.text = "I want it to have a new life once it wakes up. A life where she doesn't need me. I'm sorry Alia!";
+            NameTagText.text = "Maria";
+            dia.text = "If it's the barrier I used, it won't be strong enough to hold them back.";
         }
         else if (tang == 10)
         {
-            NameTagText.text = "Alia";
-            dia.text = "This... I... have started to remember! Memories of my mother are flooding back...";
-        }
-        else if (tang == 11)
-        {
             NameTagText.text = "Vayne";
-            dia.text = "What? Is Alia really Zexel's daughter?";
+            dia.text = "Don't worry I will upgrade the barrier stronger to protect the town of Zexel and the village in the inferno desert. Make sure to give us enough time to get rid of Zane.";
         }
-        else if (tang == 12)
-        {
-            NameTagText.text = "Maria";
-            dia.text = "If so, that would clear up a lot of questions.";
-        }
-        else if (tang == 13)
-        {
-            NameTagText.text = "Zexel";
-            dia.text = "I implore the chosen ones to save this world, defeat Sicxalon completely and don't make your future suffer like me.";
-        }
-        else if (tang == 14)
-        {
-            NameTagText.text = "Vayne";
-            dia.text = "... So that's the whole truth...";
-        }
-        else if (tang == 15)
-        {
-            NameTagText.text = "Alia";
-            dia.text = "That day, I woke up and fought with the temple intruders Vayne and Zane's father.";
-        }
-        else if (tang == 16)
-        {
-            NameTagText.text = "Alia";
-            dia.text = "That's when I lost the battle and lost my memory. And Maria saved me.";
-        }
-        else if (tang == 17)
-        {
-            NameTagText.text = "Vayne";
-            dia.text = "... You don't have to worry about that anymore Alia. I've got you and new friends, I've created a new life for myself and have no regrets about the past.";
-        }
-        else if (tang == 18)
-        {
-            NameTagText.text = "Alia";
-            dia.text = "That's right... I still have everyone around.";
-        }
-        else if (tang == 19)
-        {
-            NameTagText.text = "Maria";
-            dia.text = "Surely if your mother saw you now, she would be happy too.";
-        }
-        else if (tang == 20)
-        {
-            NameTagText.text = "";
-            dia.text = "Rrrrrrroommmmmmm...";
-        }
-        else if (tang == 21)
-        {
-            NameTagText.text = "Vayne";
-            dia.text = "Let's go guys, I can feel Zane's dark energy at the temple's main gate!";
-        }
-        else if (tang >= 22)
+        else if (tang >= 11)
         {
             CutscenesController.cus112 = 1;
             ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Zexel temple");
+            SceneManager.LoadScene("Zexel town");
         }
     }
     public void Pressnext()
@@ -142,6 +87,6 @@ public class Cus112 : MonoBehaviour
     {
         CutscenesController.cus112 = 1;
         ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("Zexel temple");
+        SceneManager.LoadScene("Zexel town");
     }
 }

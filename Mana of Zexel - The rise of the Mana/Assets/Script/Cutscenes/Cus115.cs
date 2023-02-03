@@ -24,39 +24,99 @@ public class Cus115 : MonoBehaviour
         if (tang == 1)
         {
             NameTag.SetActive(true);
-            NameTagText.text = "";
-            dia.text = "Glowinggggggg...";
+            NameTagText.text = "Mana elf";
+            dia.text = "Thanks everyone for coming, maybe we don't have much time left.";
         }
         else if (tang == 2)
         {
-            NameTagText.text = "Zexel";
-            dia.text = "Remember one more thing. Unity is the key to victory.";
+            NameTagText.text = "Vayne";
+            dia.text = "Looks like this has something to do with the magician Zane.";
         }
         else if (tang == 3)
         {
-            NameTagText.text = "Zexel";
-            dia.text = "I used to be with my friends.";
+            NameTagText.text = "Mana elf";
+            dia.text = "That's right, he's trying to break the seal of Sicxalon. If Sicxalon was released, once again everyone and humans and mana would be in danger.";
         }
         else if (tang == 4)
         {
-            NameTagText.text = "Zexel";
-            dia.text = "Especially the older sister that I respect a lot.";
+            NameTagText.text = "Alia";
+            dia.text = "Then we'll go to the temple and give him a lesson.";
         }
         else if (tang == 5)
         {
-            NameTagText.text = "Zexel";
-            dia.text = "An alchemist with red hair named Maria helped me win the battle with Sicxalon.";
+            NameTagText.text = "Mana light";
+            dia.text = "Wait young lady, we called you come to give this.";
         }
         else if (tang == 6)
         {
-            NameTagText.text = "";
-            dia.text = "To be countinute...";
+            NameTagText.text = "Mana elf";
+            dia.text = "This is the key to unlock the secret that you all need to know is that girl Alia.";
         }
-        else if (tang >= 7)
+        else if (tang == 7)
         {
-            CutscenesController.cus115 = 1;
+            NameTagText.text = "Mana elf";
+            dia.text = "This is also Zexel's last wish to wish everyone good luck.";
+        }
+        else if (tang == 8)
+        {
+            NameTagText.text = "Maria";
+            dia.text = "Are you gods already know the end result of this war?";
+        }
+        else if (tang == 9)
+        {
+            NameTagText.text = "Mana rock";
+            dia.text = "Looks like it is, but we won't tell you in advance though.";
+        }
+        else if (tang == 10)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "... So all of this is well known to you?";
+        }
+        else if (tang == 11)
+        {
+            NameTagText.text = "Mana elf";
+            dia.text = "We have our own reasons for doing that. Please forgive us.";
+        }
+        else if (tang == 12)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "It's just us and Zexel who are chosen to protect this peace?";
+        }
+        else if (tang == 13)
+        {
+            NameTagText.text = "Mana elf";
+            dia.text = "Not really, before Zexel's generation there was another chosen one. However, that time has not yet come.";
+        }
+        else if (tang == 14)
+        {
+            NameTagText.text = "Maria";
+            dia.text = "You mean someone else got here before Zexel.";
+        }
+        else if (tang == 15)
+        {
+            NameTagText.text = "Klener";
+            dia.text = "That's right, that person was the first mortal to come into contact with the gods, the first alchemist of this world.";
+        }
+        else if (tang == 16)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "The world's first alchemít is nothing more than a myth. Does that person really exist?";
+        }
+        else if (tang == 17)
+        {
+            NameTagText.text = "Mana elf";
+            dia.text = "History is only partially true, the rest only people of that era know the truth. However, your immediate task is to prevent Zane from resurrecting Sicxalon.";
+        }
+        else if (tang == 18)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "We got it.";
+        }
+        else if (tang >= 19)
+        {
+            CutscenesController.cus110 = 1;
             ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Epilogue");
+            SceneManager.LoadScene("Mana temple");
         }
     }
     public void Pressnext()
@@ -65,8 +125,8 @@ public class Cus115 : MonoBehaviour
     }
     public void Pressskip()
     {
-        CutscenesController.cus115 = 1;
+        CutscenesController.cus110 = 1;
         ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("Epilogue");
+        SceneManager.LoadScene("Mana temple");
     }
 }

@@ -24,84 +24,59 @@ public class Cus109 : MonoBehaviour
         if (tang == 1)
         {
             NameTag.SetActive(true);
-            NameTagText.text = "Vayne";
-            dia.text = "Looks like the monster just now is the last one to deal with.";
+            NameTagText.text = "Alia";
+            dia.text = "Unbelievable, that scorpion is stronger than the ones we used to hit.";
         }
         else if (tang == 2)
         {
-            NameTagText.text = "Alia";
-            dia.text = "Why did they attack inside the town so suddenly, they don't dare to go deep into the town these days.";
+            NameTagText.text = "Vayne";
+            dia.text = "It's probably driven them mad since the earthquake.";
         }
         else if (tang == 3)
         {
-            NameTagText.text = "Maria";
-            dia.text = "Something provoked them. Surely the earthquake just now had something to do with this.";
+            NameTagText.text = "Meru";
+            dia.text = "Jesca! Where are you! Jessica!";
         }
         else if (tang == 4)
         {
-            NameTagText.text = "Mr. Lance";
-            dia.text = "Maria, are you all right?";
+            NameTagText.text = "Maria";
+            dia.text = "Mrs. Meru? Are you still okay?";
         }
         else if (tang == 5)
         {
-            NameTagText.text = "Maria";
-            dia.text = "I'm fine, you are fine dad! Phuhhh...";
+            NameTagText.text = "Meru";
+            dia.text = "It's Vayne's group, I've lost Jesca.";
         }
         else if (tang == 6)
         {
-            NameTagText.text = "Klener";
-            dia.text = "Thank you, Vayne, the people have been safely evacuated.";
+            NameTagText.text = "Vayne";
+            dia.text = "Do you remember the last time you saw Jesca?";
         }
         else if (tang == 7)
         {
-            NameTagText.text = "Vayne";
-            dia.text = "Luckily no one was hurt... There's someone up there...";
+            NameTagText.text = "Meru";
+            dia.text = "I lost her near the mana cliff southwest of this village.";
         }
         else if (tang == 8)
         {
-            NameTagText.text = "Mana guardian";
-            dia.text = "Looks like everyone cleaned up the monsters before I got there.";
+            NameTagText.text = "Alia";
+            dia.text = "Maybe she's there, let us help you find it.";
         }
         else if (tang == 9)
         {
-            NameTagText.text = "Alia";
-            dia.text = "As a mana guardian, why are you here?";
+            NameTagText.text = "Meru";
+            dia.text = "Thank you guys so much!";
         }
         else if (tang == 10)
         {
-            NameTagText.text = "Mana guardian";
-            dia.text = "The mana gods want to meet those people. Please come over there.";
+            NameTagText.text = "Alia";
+            dia.text = "Let's go guys, Jesca needs our help.";
         }
-        else if (tang == 11)
-        {
-            NameTagText.text = "Maria";
-            dia.text = "Vayne...";
-        }
-        else if (tang == 12)
-        {
-            NameTagText.text = "Vayne";
-            dia.text = "Uhm, we got it and we'll be right there.";
-        }
-        else if (tang == 13)
-        {
-            NameTagText.text = "Maria";
-            dia.text = "Dad, please go to a safe place, we will be back soon.";
-        }
-        else if (tang == 14)
-        {
-            NameTagText.text = "Vayne";
-            dia.text = "Klener I'm counting on you here!";
-        }
-        else if (tang == 15)
-        {
-            NameTagText.text = "Klener";
-            dia.text = "Of course, I'll protect everyone.";
-        }
-        else if (tang >= 16)
+        else if (tang >= 11)
         {
             CutscenesController.cus109 = 1;
             ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Zexel town");
+            SceneManager.LoadScene("Inferno desert");
         }
     }
     public void Pressnext()
@@ -112,6 +87,6 @@ public class Cus109 : MonoBehaviour
     {
         CutscenesController.cus109 = 1;
         ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("Zexel town");
+        SceneManager.LoadScene("Inferno desert");
     }
 }

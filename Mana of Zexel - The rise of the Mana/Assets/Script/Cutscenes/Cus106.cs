@@ -35,7 +35,7 @@ public class Cus106 : MonoBehaviour
         else if (tang == 3)
         {
             NameTagText.text = "Maria";
-            dia.text = "It's gone.";
+            dia.text = "It's unconscious.";
         }
         else if (tang == 4)
         {
@@ -94,15 +94,105 @@ public class Cus106 : MonoBehaviour
         }
         else if (tang == 15)
         {
-            NameTagText.text = "Shan";
-            dia.text = "Good luck to you guys.";
+            NameTagText.text = "";
+            dia.text = "Blinkkkkkk...";
         }
         else if (tang == 16)
         {
-            NameTagText.text = "Vayne";
-            dia.text = "Uhm, nothing more we're going back to Zexel town..";
+            NameTagText.text = "Maria";
+            dia.text = "That monster is gone, what happened?";
         }
         else if (tang == 17)
+        {
+            NameTagText.text = "Zane";
+            dia.text = "Hahaha, looks like you've become stronger than before. It seem the girl who was severely injured by me has already recovered.";
+        }
+        else if (tang == 18)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "Zane! What are you doing here?";
+        }
+        else if (tang == 19)
+        {
+            NameTagText.text = "Zane";
+            dia.text = "Just visiting this inferno monster for a bit, thanks to you guys defeating me I can easily absorb it.";
+        }
+        else if (tang == 20)
+        {
+            NameTagText.text = "Shan";
+            dia.text = "You bastard! What is your goal after all?";
+        }
+        else if (tang == 21)
+        {
+            NameTagText.text = "Zane";
+            dia.text = "Oh, you're the kid who wants revenge on your parents, isn't it? I'm just helping you do it.";
+        }
+        else if (tang == 22)
+        {
+            NameTagText.text = "Alia";
+            dia.text = "Stop joking around Zane, we don't have time to listen to your jokes like that.";
+        }
+        else if (tang == 23)
+        {
+            NameTagText.text = "Zane";
+            dia.text = "Hahaha, you still haven't experienced what my nightmare is like. When everyone in this world hates you.";
+        }
+        else if (tang == 24)
+        {
+            NameTagText.text = "Maria";
+            dia.text = "What do you mean?";
+        }
+        else if (tang == 25)
+        {
+            NameTagText.text = "Zane";
+            dia.text = "A time when magicians were hated and hunted to death. I'm one of the lucky ones to be alive, so I'm just giving back to this world my pain.";
+        }
+        else if (tang == 26)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "It's pointless, that era is over, what's the point of holding a grudge in your heart?";
+        }
+        else if (tang == 27)
+        {
+            NameTagText.text = "Zane";
+            dia.text = "You ask yourself Vayne, do you hold a grudge against me?";
+        }
+        else if (tang == 28)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "... I...";
+        }
+        else if (tang == 29)
+        {
+            NameTagText.text = "Zane";
+            dia.text = "Anyway, the conversation was interesting. I should just get back to my work.";
+        }
+        else if (tang == 30)
+        {
+            NameTagText.text = "";
+            dia.text = "Blinkkkkkkk...";
+        }
+        else if (tang == 31)
+        {
+            NameTagText.text = "Maria";
+            dia.text = "We're not going to leave him alone in this.";
+        }
+        else if (tang == 32)
+        {
+            NameTagText.text = "Alia";
+            dia.text = "Definitely give him a lesson.";
+        }
+        else if (tang == 33)
+        {
+            NameTagText.text = "Shan";
+            dia.text = "Good luck to you guys.";
+        }
+        else if (tang == 34)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "Uhm, nothing more we're going back to Zexel town.";
+        }
+        else if (tang == 35)
         {
             NameTagText.text = "Shan";
             dia.text = "Goodbye!";

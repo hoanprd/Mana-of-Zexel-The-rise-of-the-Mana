@@ -24,49 +24,29 @@ public class Cus111 : MonoBehaviour
         if (tang == 1)
         {
             NameTag.SetActive(true);
-            NameTagText.text = "";
-            dia.text = "Glowinggggg...";
+            NameTagText.text = "Vayne";
+            dia.text = "!!! The town is being attacked by monsters...";
         }
         else if (tang == 2)
         {
             NameTagText.text = "Maria";
-            dia.text = "Is this light... an illusion of Zexel?";
+            dia.text = "It's not okay, everyone in town is like my father.";
         }
         else if (tang == 3)
         {
-            NameTagText.text = "Zexel";
-            dia.text = "Welcome, you must have the key to the room of truth to get through here, I hope you all go further to the east of the temple to reach the room of truth.";
+            NameTagText.text = "Alia";
+            dia.text = "Hurry up we have to defeat them.";
         }
         else if (tang == 4)
         {
             NameTagText.text = "Vayne";
-            dia.text = "Gone... Zexel wants us to go to the room of truth.";
+            dia.text = "Those monsters don't get around anymore.";
         }
-        else if (tang == 5)
-        {
-            NameTagText.text = "";
-            dia.text = "Rrroommmmm...";
-        }
-        else if (tang == 6)
-        {
-            NameTagText.text = "Alia";
-            dia.text = "Another earthquake!";
-        }
-        else if (tang == 7)
-        {
-            NameTagText.text = "Maria";
-            dia.text = "Looks like we don't have much time, let's hurry to the room of truth.";
-        }
-        else if (tang == 8)
-        {
-            NameTagText.text = "Alia";
-            dia.text = "... (This feeling feels very familiar but what is it?)";
-        }
-        else if (tang >= 9)
+        else if (tang >= 5)
         {
             CutscenesController.cus111 = 1;
             ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Zexel temple");
+            SceneManager.LoadScene("Zexel town");
         }
     }
     public void Pressnext()
@@ -77,6 +57,6 @@ public class Cus111 : MonoBehaviour
     {
         CutscenesController.cus111 = 1;
         ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("Zexel temple");
+        SceneManager.LoadScene("Zexel town");
     }
 }

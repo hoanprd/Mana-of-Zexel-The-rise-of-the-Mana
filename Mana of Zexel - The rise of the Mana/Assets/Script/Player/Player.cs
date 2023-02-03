@@ -616,7 +616,7 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("InfernoDesertToZexelTown"))
         {
-            if (CutscenesController.cus108 == 1 && CutscenesController.cus107 == 1)
+            if (CutscenesController.cus111 == 0 && CutscenesController.cus110 == 1)
             {
                 MapController.InfernoDesertToZexelTown = true;
                 InfernoScorpionTrigger1.despawn = false;

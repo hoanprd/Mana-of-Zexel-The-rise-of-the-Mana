@@ -74,10 +74,25 @@ public class Cus107 : MonoBehaviour
         }
         else if (tang == 11)
         {
-            NameTagText.text = "Vayne";
-            dia.text = "We should get back to Zexel town soon before something bad happens.";
+            NameTagText.text = "Inferno desert villager";
+            dia.text = "Save us! Save us!";
         }
-        else if (tang >= 12)
+        else if (tang == 12)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "Is there a cry for help from the inferno desert village?";
+        }
+        else if (tang == 13)
+        {
+            NameTagText.text = "Maria";
+            dia.text = "Looks like there's something there.";
+        }
+        else if (tang == 14)
+        {
+            NameTagText.text = "Alia";
+            dia.text = "It's not okay, Mrs. Meru and Jesca might be in danger. We have to go there.";
+        }
+        else if (tang >= 15)
         {
             CutscenesController.cus107 = 1;
             ContainerController.LoadingOpen = true;
