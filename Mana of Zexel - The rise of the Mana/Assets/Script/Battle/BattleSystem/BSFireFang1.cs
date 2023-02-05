@@ -12,6 +12,7 @@ public class BSFireFang1 : MonoBehaviour
 
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
+    public GameObject VayneSkill2Effect, VayneSkill3Effect, MariaSkill3Effect;
     public GameObject showr2;
     public GameObject P1_panel;
     public GameObject P2_panel;
@@ -30,6 +31,9 @@ public class BSFireFang1 : MonoBehaviour
     public GameObject AliaLevel;
     public GameObject AliaExp;
     public GameObject AliaPlusExp;
+
+    public GameObject ChooseVayneSkillPanel, ChooseAliaSkillPanel, ChooseMariaSkillPanel;
+    public GameObject VayneSkill2Hide, VayneSkill3Hide, AliaSkill2Hide, AliaSkill3Hide, MariaSkill2Hide, MariaSkill3Hide;
 
     public GameObject Win_panel;
     public GameObject Lose_panel;
@@ -83,7 +87,7 @@ public class BSFireFang1 : MonoBehaviour
     public int show3 = 0;
     public int E6Hit;
     public bool P2Available, P3Available;
-    public int UseItemIndex;
+    public int UseItemIndex, ChooseSkillIndex;
 
     // Start is called before the first frame update
     void Start()
@@ -92,6 +96,31 @@ public class BSFireFang1 : MonoBehaviour
         FFB = FindObjectOfType<FireFangBattle>();
 
         HubController.BusyHub = true;
+
+        if (Global.LevelP1 < 10)
+        {
+            VayneSkill2Hide.SetActive(false);
+        }
+        if (Global.LevelP1 < 20)
+        {
+            VayneSkill3Hide.SetActive(false);
+        }
+        if (Global.LevelP2 < 10)
+        {
+            AliaSkill2Hide.SetActive(false);
+        }
+        if (Global.LevelP2 < 20)
+        {
+            AliaSkill3Hide.SetActive(false);
+        }
+        if (Global.LevelP3 < 10)
+        {
+            MariaSkill2Hide.SetActive(false);
+        }
+        if (Global.LevelP3 < 20)
+        {
+            MariaSkill3Hide.SetActive(false);
+        }
 
         a1 = Global.SpeedP1 / 10;
         a2 = Global.SpeedP2 / 10;
@@ -337,10 +366,18 @@ public class BSFireFang1 : MonoBehaviour
         Invoke("delayP3PressAttack", 1f);
         dem = 2;
     }
-    public void PressSkill()
+
+    public void PressSkillVayne()
+    {
+        ChooseVayneSkillPanel.SetActive(true);
+    }
+
+    public void PressSkillP11()
     {
         if (Global.CurMPP1 >= 20)
         {
+            CloseChooseSkillVayne();
+            ChooseSkillIndex = 1;
             pb.yes2 = 1;
             show1 = 1;
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 100 / 100);
@@ -349,24 +386,146 @@ public class BSFireFang1 : MonoBehaviour
             Invoke("delayP1PressSkill", 1f);
             dem = 2;
         }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough mana";
+            Invoke("delayshowr", 2f);
+        }
     }
-    public void PressSkillP2()
+
+    public void PressSkillP12()
+    {
+        if (Global.CurMPP1 >= 50)
+        {
+            CloseChooseSkillVayne();
+            VayneSkill2Effect.SetActive(true);
+            ChooseSkillIndex = 2;
+            pb.yes7 = 1;
+            show1 = 1;
+            int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 200 / 100);
+            PDamage.color = Color.red;
+            PDamage.text = "-" + DamgeCal;
+            Invoke("delayP1PressSkill", 1f);
+            dem = 2;
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough mana";
+            Invoke("delayshowr", 2f);
+        }
+    }
+
+    public void PressSkillP13()
+    {
+        if (Global.CurMPP1 >= 100)
+        {
+            CloseChooseSkillVayne();
+            VayneSkill3Effect.SetActive(true);
+            ChooseSkillIndex = 3;
+            pb.yes8 = 1;
+            show1 = 1;
+            int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 300 / 100);
+            PDamage.color = Color.red;
+            PDamage.text = "-" + DamgeCal;
+            Invoke("delayP1PressSkill", 1f);
+            dem = 2;
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough mana";
+            Invoke("delayshowr", 2f);
+        }
+    }
+    public void CloseChooseSkillVayne()
+    {
+        ChooseVayneSkillPanel.SetActive(false);
+    }
+
+    public void PressSkillAlia()
+    {
+        ChooseAliaSkillPanel.SetActive(true);
+    }
+    public void PressSkillP21()
     {
         if (Global.CurMPP2 >= 20)
         {
+            CloseChooseSkillAlia();
+            ChooseSkillIndex = 1;
             pb.yes4 = 1;
             show2 = 1;
             int DamgeCal = Global.DamageP2 + (Global.DamageP2 * 100 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP2PressSkill", 1f);
+            Invoke("delayP2PressSkill", 2f);
             dem = 2;
         }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough mana";
+            Invoke("delayshowr", 2f);
+        }
     }
-    public void PressSkillP3()
+    public void PressSkillP22()
+    {
+        if (Global.CurMPP2 >= 50)
+        {
+            CloseChooseSkillAlia();
+            ChooseSkillIndex = 2;
+            pb.yes9 = 1;
+            show2 = 1;
+            int DamgeCal = Global.DamageP2 + (Global.DamageP2 * 100 / 100);
+            PDamage.color = Color.red;
+            PDamage.text = "-" + DamgeCal;
+            Invoke("delayP2PressSkill", 2f);
+            dem = 2;
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough mana";
+            Invoke("delayshowr", 2f);
+        }
+    }
+    public void PressSkillP23()
+    {
+        if (Global.CurMPP2 >= 100)
+        {
+            CloseChooseSkillAlia();
+            ChooseSkillIndex = 3;
+            pb.yes10 = 1;
+            show2 = 1;
+            int DamgeCal = Global.DamageP2 + (Global.DamageP2 * 100 / 100);
+            PDamage.color = Color.red;
+            PDamage.text = "-" + DamgeCal;
+            Invoke("delayP2PressSkill", 2.2f);
+            dem = 2;
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough mana";
+            Invoke("delayshowr", 2f);
+        }
+    }
+    public void CloseChooseSkillAlia()
+    {
+        ChooseAliaSkillPanel.SetActive(false);
+    }
+
+    public void PressSkillMaria()
+    {
+        ChooseMariaSkillPanel.SetActive(true);
+    }
+    public void PressSkillP31()
     {
         if (Global.CurMPP3 >= 40)
         {
+            CloseChooseSkillMaria();
+            ChooseSkillIndex = 1;
             pb.yes6 = 1;
             show3 = 1;
             int HealAmount = Global.DamageP3 * 20 / 100;
@@ -376,7 +535,62 @@ public class BSFireFang1 : MonoBehaviour
             Invoke("delayP3PressSkill", 1f);
             dem = 2;
         }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough mana";
+            Invoke("delayshowr", 2f);
+        }
     }
+    public void PressSkillP32()
+    {
+        if (Global.CurMPP3 >= 80)
+        {
+            CloseChooseSkillMaria();
+            ChooseSkillIndex = 2;
+            pb.yes11 = 1;
+            show3 = 1;
+            int HealAmount = Global.DamageP3 * 20 / 100;
+            showr2.SetActive(true);
+            showr1.text = "MP +" + HealAmount;
+            Invoke("delayshowr", 2f);
+            Invoke("delayP3PressSkill", 1f);
+            dem = 2;
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough mana";
+            Invoke("delayshowr", 2f);
+        }
+    }
+    public void PressSkillP33()
+    {
+        if (Global.CurMPP3 >= 120)
+        {
+            CloseChooseSkillMaria();
+            MariaSkill3Effect.SetActive(true);
+            ChooseSkillIndex = 3;
+            pb.yes12 = 1;
+            show3 = 1;
+            int DamgeCal = Global.DamageP3 + (Global.DamageP3 * 300 / 100);
+            PDamage.color = Color.red;
+            PDamage.text = "-" + DamgeCal;
+            Invoke("delayP3PressSkill", 1f);
+            dem = 2;
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough mana";
+            Invoke("delayshowr", 2f);
+        }
+    }
+    public void CloseChooseSkillMaria()
+    {
+        ChooseMariaSkillPanel.SetActive(false);
+    }
+
     public void PressItem()
     {
         if (UseItemIndex == 1)
@@ -830,55 +1044,148 @@ public class BSFireFang1 : MonoBehaviour
         dem_turn += 1;
         CheckE6Die();
     }
+
     void delayP1PressSkill()
     {
-        Global.CurMPP1 -= 20;
-        Global.HPE6 = Global.HPE6 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
-        PDamage.text = "";
-        a1 -= 1;
-        show1 = 0;
-        dem_turn += 1;
-        CheckE6Die();
+        if (ChooseSkillIndex == 1)
+        {
+            Global.CurMPP1 -= 20;
+            Global.HPE6 = Global.HPE6 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
+            PDamage.text = "";
+            a1 -= 1;
+            show1 = 0;
+            dem_turn += 1;
+            CheckE6Die();
+        }
+        else if (ChooseSkillIndex == 2)
+        {
+            VayneSkill2Effect.SetActive(false);
+            Global.CurMPP1 -= 50;
+            Global.HPE6 = Global.HPE6 - (Global.DamageP1 + (Global.DamageP1 * 200 / 100));
+            PDamage.text = "";
+            a1 -= 1;
+            show1 = 0;
+            dem_turn += 1;
+            CheckE6Die();
+        }
+        else if (ChooseSkillIndex == 3)
+        {
+            VayneSkill3Effect.SetActive(false);
+            Global.CurMPP1 -= 100;
+            Global.HPE6 = Global.HPE6 - (Global.DamageP1 + (Global.DamageP1 * 300 / 100));
+            PDamage.text = "";
+            a1 -= 1;
+            show1 = 0;
+            dem_turn += 1;
+            CheckE6Die();
+        }
     }
     void delayP2PressSkill()
     {
-        Global.CurMPP2 -= 20;
-        Global.HPE6 = Global.HPE6 - (Global.DamageP2 + (Global.DamageP2 * 100 / 100));
-        PDamage.text = "";
-        a2 -= 1;
-        show2 = 0;
-        dem_turn += 1;
-        CheckE6Die();
+        if (ChooseSkillIndex == 1)
+        {
+            Global.CurMPP2 -= 20;
+            Global.HPE6 = Global.HPE6 - (Global.DamageP2 + (Global.DamageP2 * 100 / 100));
+            PDamage.text = "";
+            a2 -= 1;
+            show2 = 0;
+            dem_turn += 1;
+            CheckE6Die();
+        }
+        else if (ChooseSkillIndex == 2)
+        {
+            Global.CurMPP2 -= 50;
+            Global.HPE6 = Global.HPE6 - (Global.DamageP2 + (Global.DamageP2 * 200 / 100));
+            PDamage.text = "";
+            a2 -= 1;
+            show2 = 0;
+            dem_turn += 1;
+            CheckE6Die();
+        }
+        else if (ChooseSkillIndex == 3)
+        {
+            Global.CurMPP2 -= 100;
+            Global.HPE6 = Global.HPE6 - (Global.DamageP2 + (Global.DamageP2 * 300 / 100));
+            PDamage.text = "";
+            a2 -= 1;
+            show2 = 0;
+            dem_turn += 1;
+            CheckE6Die();
+        }
     }
     void delayP3PressSkill()
     {
-        Global.CurMPP3 -= 40;
-        int HealAmount = Global.DamageP3 * 20 / 100;
-        int CheckMaxhealP1 = Global.MaxHPP1 - Global.CurHPP1;
-        int CheckMaxhealP2 = Global.MaxHPP2 - Global.CurHPP2;
+        if (ChooseSkillIndex == 1)
+        {
+            Global.CurMPP3 -= 40;
+            int HealAmount = Global.DamageP3 * 20 / 100;
+            int CheckMaxhealP1 = Global.MaxHPP1 - Global.CurHPP1;
+            int CheckMaxhealP2 = Global.MaxHPP2 - Global.CurHPP2;
 
-        if ((HealAmount < CheckMaxhealP1) && (Global.CurHPP1 > 0))
-        {
-            Global.CurHPP1 += HealAmount;
-        }
-        else if ((HealAmount >= CheckMaxhealP1) && (Global.CurHPP1 > 0))
-        {
-            Global.CurHPP1 = Global.MaxHPP1;
-        }
-        if ((HealAmount < CheckMaxhealP2) && (Global.CurHPP2 > 0))
-        {
-            Global.CurHPP2 += HealAmount;
-        }
-        else if ((HealAmount >= CheckMaxhealP2) && (Global.CurHPP2 > 0))
-        {
-            Global.CurHPP2 = Global.MaxHPP2;
-        }
+            if ((HealAmount < CheckMaxhealP1) && (Global.CurHPP1 > 0))
+            {
+                Global.CurHPP1 += HealAmount;
+            }
+            else if ((HealAmount >= CheckMaxhealP1) && (Global.CurHPP1 > 0))
+            {
+                Global.CurHPP1 = Global.MaxHPP1;
+            }
+            if ((HealAmount < CheckMaxhealP2) && (Global.CurHPP2 > 0))
+            {
+                Global.CurHPP2 += HealAmount;
+            }
+            else if ((HealAmount >= CheckMaxhealP2) && (Global.CurHPP2 > 0))
+            {
+                Global.CurHPP2 = Global.MaxHPP2;
+            }
 
-        UpdateUIText();
-        a3 -= 1;
-        show3 = 0;
-        dem_turn += 1;
+            UpdateUIText();
+            a3 -= 1;
+            show3 = 0;
+            dem_turn += 1;
+        }
+        else if (ChooseSkillIndex == 2)
+        {
+            Global.CurMPP3 -= 80;
+            int HealAmount = Global.DamageP3 * 20 / 100;
+            int CheckMaxhealP1 = Global.MaxMPP1 - Global.CurMPP1;
+            int CheckMaxhealP2 = Global.MaxMPP2 - Global.CurMPP2;
+
+            if ((HealAmount < CheckMaxhealP1) && (Global.CurHPP1 > 0))
+            {
+                Global.CurMPP1 += HealAmount;
+            }
+            else if ((HealAmount >= CheckMaxhealP1) && (Global.CurHPP1 > 0))
+            {
+                Global.CurMPP1 = Global.MaxMPP1;
+            }
+            if ((HealAmount < CheckMaxhealP2) && (Global.CurHPP2 > 0))
+            {
+                Global.CurMPP2 += HealAmount;
+            }
+            else if ((HealAmount >= CheckMaxhealP2) && (Global.CurHPP2 > 0))
+            {
+                Global.CurMPP2 = Global.MaxMPP2;
+            }
+
+            UpdateUIText();
+            a3 -= 1;
+            show3 = 0;
+            dem_turn += 1;
+        }
+        else if (ChooseSkillIndex == 3)
+        {
+            MariaSkill3Effect.SetActive(false);
+            Global.CurMPP3 -= 120;
+            Global.HPE6 = Global.HPE6 - (Global.DamageP3 + (Global.DamageP3 * 300 / 100));
+            PDamage.text = "";
+            a3 -= 1;
+            show3 = 0;
+            dem_turn += 1;
+            CheckE6Die();
+        }
     }
+
     void delayCheckP1P2P3Die1()
     {
         HPMP.SetActive(false);

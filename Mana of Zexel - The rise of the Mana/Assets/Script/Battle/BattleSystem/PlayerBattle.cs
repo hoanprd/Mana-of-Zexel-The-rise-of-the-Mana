@@ -51,9 +51,7 @@ public class PlayerBattle : MonoBehaviour
         }
         if (yes8 == 1)
         {
-            P1.position = new Vector2(P1.position.x + 5f, P1.position.y);
             ani.SetTrigger("p1skill3");
-            Invoke("delayP1", 1.2f);
             yes8 = 0;
         }
 
@@ -61,7 +59,7 @@ public class PlayerBattle : MonoBehaviour
         {
             P2.position = new Vector2(P2.position.x + 8f, P2.position.y - 1.5f);
             anip2.SetTrigger("p2attack");
-            Invoke("delayP2", 2f);
+            Invoke("delayP2", 1f);
             yes3 = 0;
         }
         if(yes4 == 1)

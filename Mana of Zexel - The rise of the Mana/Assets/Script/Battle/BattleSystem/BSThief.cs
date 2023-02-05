@@ -35,11 +35,15 @@ public class BSThief : MonoBehaviour
     public GameObject lu;
     public GameObject HPMP;
     public GameObject NB;
+    public GameObject ChooseVayneSkillPanel;
+    public GameObject VayneSkill2Hide, VayneSkill3Hide;
     public int a1, aE1;
     public int stop=0;
     private int dem=0;
     private int once = 0;
     private int show = 0;
+    public int UseItemIndex, ChooseSkillIndex;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +51,11 @@ public class BSThief : MonoBehaviour
         tb = FindObjectOfType<ThiefBattle>();
 
         HubController.BusyHub = true;
+
+        if (Global.LevelP1 < 10)
+        {
+            VayneSkill2Hide.SetActive(false);
+        }
 
         a1 = Global.SpeedP1 / 10;
         aE1 = Global.SpeedE1 / 10;
@@ -144,20 +153,37 @@ public class BSThief : MonoBehaviour
         Invoke("delayP1PressAttack", 1f);
         dem = 1;
     }
-    public void PressSkill()
+    public void PressSkillVayne()
     {
-        if(Global.CurMPP1 >= 20)
+        ChooseVayneSkillPanel.SetActive(true);
+    }
+
+    public void PressSkillP11()
+    {
+        if (Global.CurMPP1 >= 20)
         {
+            CloseChooseSkillVayne();
+            ChooseSkillIndex = 1;
             pb.yes2 = 1;
             show = 1;
-            ShowP1Panel(false);
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 100 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
             Invoke("delayP1PressSkill", 1f);
-            dem = 1;
+            dem = 3;
+        }
+        else
+        {
+            showr2.SetActive(true);
+            showr1.text = "Not enough mana";
+            Invoke("delayshowr", 2f);
         }
     }
+    public void CloseChooseSkillVayne()
+    {
+        ChooseVayneSkillPanel.SetActive(false);
+    }
+
     public void PressItem()
     {
         show = 1;
@@ -408,7 +434,7 @@ public class BSThief : MonoBehaviour
     }
     void delayP1PressSkill()
     {
-        //Run P1 animation attack skill
+        CloseChooseSkillVayne();
         ShowP1Panel(false);
         Global.CurMPP1 -= 20;
         Global.HPE1 = Global.HPE1 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));
