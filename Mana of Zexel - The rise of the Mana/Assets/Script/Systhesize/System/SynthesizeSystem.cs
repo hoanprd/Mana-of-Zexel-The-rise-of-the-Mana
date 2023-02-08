@@ -48,7 +48,7 @@ public class SynthesizeSystem : MonoBehaviour
     public Text num62, num63, num64, num65, num66, num67, num68, num69, num70, num71, num72, num73;
     public Text num74, num75, num76, num77, num78, num79, num80, num81, num82, num83, num84, num85;
     public Text num86, num87, num88, num89, num90, num91, num92, num93, num94, num95, num96, num97;
-    public Text num98, num99, num100, num101;
+    public Text num98, num99, num100, num101, num102, num103, num104, num105;
 
     public Text showr1;
     public Slider ManaSynSlider;
@@ -256,6 +256,10 @@ public class SynthesizeSystem : MonoBehaviour
         num99.text = "1/" + ContainerController.PhotonriaGem;
         num100.text = "1/" + ContainerController.PureObsidian;
         num101.text = "" + ContainerController.UltraBom;
+        num102.text = "4/" + ContainerController.ManaEagleFeather;
+        num103.text = "2/" + ContainerController.IceLeather;
+        num104.text = "2" + ContainerController.ManaCloth;
+        num105.text = "" + ContainerController.OmnipotentBoundary;
 
         ManaSynSlider.value = ManaSynthesize;
         ManaFireSynSlider.value = ManaFireSynthesize;
@@ -445,6 +449,12 @@ public class SynthesizeSystem : MonoBehaviour
     public void NatureGrassDetail()
     {
         SynDetailPanelText.text = "Nature grass\n\n\nA natural herb that can make special medicines can be found in alta inferno";
+        SynDetailPanel.SetActive(true);
+    }
+
+    public void ManaEagleFeatherDetail()
+    {
+        SynDetailPanelText.text = "Mana eagle feather\n\n\nThe type of feathers that can be obtained by defeating the eagle on the mana cliff";
         SynDetailPanel.SetActive(true);
     }
 
@@ -1350,7 +1360,7 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton28()
     {
-        if (ContainerController.GoldenFeather >= 4 && ContainerController.IceLeather >= 4 && ContainerController.ManaCloth >= 2 && ManaSynthesize >= 100 && CutscenesController.cus113 == 0 && CutscenesController.cus112 == 1 && SynBugStop == 0)
+        if (ContainerController.ManaEagleFeather >= 4 && ContainerController.IceLeather >= 2 && ContainerController.ManaCloth >= 2 && ManaSynthesize >= 100 && CutscenesController.cus113 == 0 && CutscenesController.cus112 == 1 && SynBugStop == 0)
         {
             if (ContainerController.OmnipotentBoundary == 1)
             {
@@ -1358,7 +1368,7 @@ public class SynthesizeSystem : MonoBehaviour
             }
             OmnipotentBoundaryCut = true;
             ManaSynthesize -= 100;
-            ContainerController.GoldenFeather -= 4;
+            ContainerController.ManaEagleFeather -= 4;
             ContainerController.IceLeather -= 4;
             ContainerController.ManaCloth -= 2;
             ContainerController.OmnipotentBoundaryPick = 1;
@@ -1366,9 +1376,9 @@ public class SynthesizeSystem : MonoBehaviour
             showr1.text = "Success";
             Invoke("delay1", 1f);
         }
-        else if (ContainerController.GoldenFeather >= 4 && ContainerController.IceLeather >= 4 && ContainerController.ManaCloth >= 2 && ManaSynthesize >= 100)
+        else if (ContainerController.ManaEagleFeather >= 4 && ContainerController.IceLeather >= 2 && ContainerController.ManaCloth >= 2 && ManaSynthesize >= 100)
         {
-            ContainerController.GoldenFeather -= 4;
+            ContainerController.ManaEagleFeather -= 4;
             ContainerController.IceLeather -= 4;
             ContainerController.ManaCloth -= 2;
             ContainerController.OmnipotentBoundaryPick = 1;
@@ -1376,7 +1386,7 @@ public class SynthesizeSystem : MonoBehaviour
             showr1.text = "Success";
             Invoke("delay1", 1f);
         }
-        else if (ContainerController.GoldenFeather >= 4 && ContainerController.IceLeather >= 4 && ContainerController.ManaCloth >= 2 && ManaSynthesize < 100)
+        else if (ContainerController.ManaEagleFeather >= 4 && ContainerController.IceLeather >= 2 && ContainerController.ManaCloth >= 2 && ManaSynthesize < 100)
         {
             showr2.SetActive(true);
             showr1.text = "You don't have enough mana to synthesize this item!";

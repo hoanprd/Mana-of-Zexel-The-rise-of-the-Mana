@@ -67,7 +67,7 @@ public class BSManaEagle1 : MonoBehaviour
     public Text EXPP2;
     public Text EXPP3;
     public Text Money;
-    //public Text ManaGemItem;
+    public Text ManaEagleFeatherItem;
     public Text LevelP1;
     public Text LevelP2;
     public Text LevelP3;
@@ -820,6 +820,8 @@ public class BSManaEagle1 : MonoBehaviour
     {
         ContainerController.LoadingOpen = true;
         HubController.BusyHub = false;
+
+        ContainerController.ManaEagleFeatherPick = 1;
         SceneManager.LoadScene("Mana cliff");
     }
     public void CheckP1Die()
@@ -945,6 +947,7 @@ public class BSManaEagle1 : MonoBehaviour
                 }
 
                 Money.text = Global.Zen + " ";
+                ManaEagleFeatherItem.text = "Mana eagle feather +1";
             }
 
             Invoke("delayCheckE10Die1", 1f);

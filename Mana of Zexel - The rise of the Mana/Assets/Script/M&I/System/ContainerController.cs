@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class ContainerController : MonoBehaviour
 {
-    public static int DriedLeaves, PureWater, MorningDrop, Wheat, String, Iron, ManaGem, Wood, ScorpionVenom, InfernoSand, ManaLiquid, ManaOre, ManaCrystal, GuardianFeather, FireOre, GoldenFeather, RedManaCrystal, Obsidian, IceOre, IceLeather, BlueManaCrystal, RedManaSlimeBall, BlueManaSlimeBall, ManaCoreFireZexel, ManaCoreIceZexel, Rock, NatureGrass, ManaDust, IceCrystal, HealPotion, ManaPotion, ElixirPotion, Bom, Porridge, ManaCloth, ManaShield, VenomKiller, ManaNecklace, ManaGenerator, Baxiata, BaxiataGem, Photonria, PhotonriaGem, ManaLiquidCatalyst, RedLiquidCatalyst, BlueLiquidCatalyst, ManaCoreFireVayne, ManaCoreIceVayne, PureObsidian, FireManaGenerator, IceManaGenerator, PowderOfLife, HoliHP, HoliMP, UltraBom, ReincarnationLife, FireOfPeace, OmnipotentBoundary;
-    public GameObject BagPanel, DriedLeavesObject, PureWaterObject, MorningDropObject, WheatObject, WoodObject, StringObject, IronObject, ManaGemObject, ScorpionVenomObject, InfernoSandObject, ManaLiquidObject, ManaOreObject, ManaCrystalObject, FireOreObject, GoldenFeatherObject, RedManaCrystalObject, ObsidianObject, RedManaSlimeBallObject, IceOreObject, IceLeatherObject, BlueManaCrystalObject, BlueManaSlimeBallObject, NatureGrassObject, ManaDustObject, RockObject, GuardianFeatherObject, IceCrystalObject, ManaCoreFireZexelObject, ManaCoreIceZexelObject;
+    public static int DriedLeaves, PureWater, MorningDrop, Wheat, String, Iron, ManaGem, Wood, ScorpionVenom, InfernoSand, ManaLiquid, ManaOre, ManaCrystal, GuardianFeather, FireOre, GoldenFeather, RedManaCrystal, Obsidian, IceOre, IceLeather, BlueManaCrystal, RedManaSlimeBall, BlueManaSlimeBall, ManaCoreFireZexel, ManaCoreIceZexel, Rock, NatureGrass, ManaDust, ManaEagleFeather, IceCrystal, HealPotion, ManaPotion, ElixirPotion, Bom, Porridge, ManaCloth, ManaShield, VenomKiller, ManaNecklace, ManaGenerator, Baxiata, BaxiataGem, Photonria, PhotonriaGem, ManaLiquidCatalyst, RedLiquidCatalyst, BlueLiquidCatalyst, ManaCoreFireVayne, ManaCoreIceVayne, PureObsidian, FireManaGenerator, IceManaGenerator, PowderOfLife, HoliHP, HoliMP, UltraBom, ReincarnationLife, FireOfPeace, OmnipotentBoundary;
+    public GameObject BagPanel, DriedLeavesObject, PureWaterObject, MorningDropObject, WheatObject, WoodObject, StringObject, IronObject, ManaGemObject, ScorpionVenomObject, InfernoSandObject, ManaLiquidObject, ManaOreObject, ManaCrystalObject, FireOreObject, GoldenFeatherObject, RedManaCrystalObject, ObsidianObject, RedManaSlimeBallObject, IceOreObject, IceLeatherObject, BlueManaCrystalObject, BlueManaSlimeBallObject, NatureGrassObject, ManaDustObject, RockObject, GuardianFeatherObject, ManaEagleFeatherObject, IceCrystalObject, ManaCoreFireZexelObject, ManaCoreIceZexelObject;
     public GameObject HealPotionObject, ManaPotionObject, ElixirPotionObject, BomObject, PorridgeObject, ManaClothObject, ManaShieldObject, VenomKillerObject, ManaNecklaceObject, ManaGeneratorObject, BaxiataObject, BaxiataGemObject, PhotonriaObject, PhotonriaGemObject, ManaLiquidCatalystObject, RedLiquidCatalystObject, BlueLiquidCatalystObject, ManaCoreFireVayneObject, ManaCoreIceVayneObject, PureObsidianObject, FireManaGeneratorObject, IceManaGeneratorObject, PowderOfLifeObject, HoliHPObject, HoliMPObject, UltraBomObject, ReincarnationLifeObject, FireOfPeaceObject, OmnipotentBoundaryObject;
     public GameObject SynSuccessPanel, LoadingPanel, CloseSSP;
     public Transform MateBagList, ItemBagList;
@@ -16,7 +16,7 @@ public class ContainerController : MonoBehaviour
     public int SynItemIndex;
     public bool CSSPButtonActive;
     public static int stop, BagStatus;
-    public static int DriedLeavesPick, MorningDropPick, PureWaterPick, WheatPick, StringPick, WoodPick, IronPick, ManaGemPick, ScorpionVenomPick, InfernoSandPick, ManaLiquidPick, ManaOrePick, ManaCrystalPick, FireOrePick, GoldenFeatherPick, RedManaCrystalPick, ObsidianPick, RedManaSlimeBallPick, IceOrePick, IceLeatherPick, BlueManaCrystalPick, BlueManaSlimeBallPick, NatureGrassPick, ManaDustPick, RockPick, GuardianFeatherPick, IceCrystalPick, ManaCoreFireZexelPick, ManaCoreIceZexelPick;
+    public static int DriedLeavesPick, MorningDropPick, PureWaterPick, WheatPick, StringPick, WoodPick, IronPick, ManaGemPick, ScorpionVenomPick, InfernoSandPick, ManaLiquidPick, ManaOrePick, ManaCrystalPick, FireOrePick, GoldenFeatherPick, RedManaCrystalPick, ObsidianPick, RedManaSlimeBallPick, IceOrePick, IceLeatherPick, BlueManaCrystalPick, BlueManaSlimeBallPick, NatureGrassPick, ManaDustPick, RockPick, GuardianFeatherPick, IceCrystalPick, ManaEagleFeatherPick, ManaCoreFireZexelPick, ManaCoreIceZexelPick;
     public static int HealPotionPick, ManaPotionPick, ElixirPotionPick, BomPick, PorridgePick, ManaClothPick, ManaShieldPick, VenomKillerPick, ManaNecklacePick, ManaGeneratorPick, BaxiataPick, BaxiataGemPick, PhotonriaPick, PhotonriaGemPick, ManaLiquidCatalystPick, RedLiquidCatalystPick, BlueLiquidCatalystPick, ManaCoreFireVaynePick, ManaCoreIceVaynePick, PureObsidianPick, FireManaGeneratorPick, IceManaGeneratorPick, PowderOfLifePick, HoliHPPick, HoliMPPick, UltraBomPick, ReincarnationLifePick, FireOfPeacePick, OmnipotentBoundaryPick;
     public static bool DestroyBag, LoadingOpen;
 
@@ -430,6 +430,20 @@ public class ContainerController : MonoBehaviour
             else
             {
                 IceCrystal += 1;
+            }
+        }
+        if (ManaEagleFeatherPick == 1)
+        {
+            ManaEagleFeatherPick = 0;
+
+            if (ManaEagleFeather <= 0)
+            {
+                ManaEagleFeather += 1;
+                Instantiate(ManaEagleFeatherObject, MateBagList);
+            }
+            else
+            {
+                ManaEagleFeather += 1;
             }
         }
         if (ManaCoreFireZexelPick == 1)
