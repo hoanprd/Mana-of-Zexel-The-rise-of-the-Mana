@@ -59,7 +59,7 @@ public class MenuController : MonoBehaviour
         CutscenesController.cus9 = 0;
         CutscenesController.cus10 = 0;
         CutscenesController.cus11 = 0;
-        CutscenesController.cus12 = 1;
+        CutscenesController.cus12 = 0;
         CutscenesController.cus13 = 0;
         CutscenesController.cus14 = 0;
         CutscenesController.cus15 = 0;
@@ -135,7 +135,7 @@ public class MenuController : MonoBehaviour
         CutscenesController.cus85 = 0;
         CutscenesController.cus86 = 0;
         CutscenesController.cus87 = 0;
-        CutscenesController.cus88 = 1;
+        CutscenesController.cus88 = 0;
         CutscenesController.cus89 = 0;
         CutscenesController.cus90 = 0;
         CutscenesController.cus91 = 0;
@@ -145,7 +145,7 @@ public class MenuController : MonoBehaviour
         CutscenesController.cus95 = 0;
         CutscenesController.cus96 = 0;
         CutscenesController.cus97 = 0;
-        CutscenesController.cus98 = 1;
+        CutscenesController.cus98 = 0;
         CutscenesController.cus99 = 0;
         CutscenesController.cus100 = 0;
         CutscenesController.cus101 = 0;

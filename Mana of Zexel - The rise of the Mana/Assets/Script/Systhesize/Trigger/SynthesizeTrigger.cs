@@ -8,6 +8,7 @@ public class SynthesizeTrigger : MonoBehaviour
     public GameObject spanel1;
     private bool pick;
     //private int once = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +20,8 @@ public class SynthesizeTrigger : MonoBehaviour
     {
         if (pick && Input.GetKeyDown(KeyCode.Space))
         {
-            //once = 1;
+            HubController.BusyHub = true;
             spanel1.SetActive(true);
-            Invoke("delay1", 1f);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -37,10 +37,5 @@ public class SynthesizeTrigger : MonoBehaviour
         {
             pick = false;
         }
-    }
-    void delay1()
-    {
-        //Destroy(gameObject);
-        //once = 0;
     }
 }

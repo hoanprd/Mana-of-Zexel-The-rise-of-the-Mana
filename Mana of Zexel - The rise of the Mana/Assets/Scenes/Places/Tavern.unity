@@ -1278,6 +1278,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 1455677027431896759, guid: 4d6b3f869355b4c4d847c798e74a19ad, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d6b3f869355b4c4d847c798e74a19ad, type: 3}
 --- !u!1 &520931668
@@ -5278,6 +5282,7 @@ GameObject:
   - component: {fileID: 1212062037}
   - component: {fileID: 1212062036}
   - component: {fileID: 1212062039}
+  - component: {fileID: 1212062040}
   m_Layer: 0
   m_Name: Klener normal 1
   m_TagString: Klener
@@ -5463,6 +5468,19 @@ PolygonCollider2D:
       - {x: 0.41428572, y: 0.057142857}
       - {x: 0.42857143, y: 0.028571429}
       - {x: 0.44285715, y: 0.042857144}
+--- !u!114 &1212062040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212062035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e7811f297f5e5488fcd5a7158a6173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Klener: {fileID: 1212062035}
 --- !u!1 &1252355575
 GameObject:
   m_ObjectHideFlags: 0
@@ -9610,6 +9628,10 @@ PrefabInstance:
     - target: {fileID: 5385559138661095497, guid: ffb1a8dcf9b5fe948aaeffa86a600261, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385559138661095497, guid: ffb1a8dcf9b5fe948aaeffa86a600261, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5385559138661095498, guid: ffb1a8dcf9b5fe948aaeffa86a600261, type: 3}
       propertyPath: m_SortingOrder

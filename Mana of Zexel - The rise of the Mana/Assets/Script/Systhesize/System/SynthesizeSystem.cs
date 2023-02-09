@@ -279,6 +279,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
 
         ManaSynPanel.SetActive(false);
+        HubController.BusyHub = false;
     }
 
     public void OpenManaSynPanel()

@@ -6,12 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class IronGolemnTrigger : MonoBehaviour
 {
+    public GameObject IronGolemn;
     public static bool despawn = false;
     private bool battle;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (CutscenesController.cus14 == 0)
+        {
+            IronGolemn.SetActive(false);
+        }
+
         if (despawn == true)
         {
             Destroy(gameObject);
