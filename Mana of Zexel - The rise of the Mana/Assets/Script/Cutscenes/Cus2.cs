@@ -9,10 +9,9 @@ public class Cus2 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
-    public GameObject va2;
-    public GameObject va3;
     public GameObject NameTag;
     private int tang=0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +45,6 @@ public class Cus2 : MonoBehaviour
         else if (tang == 5)
         {
             va1.SetActive(false);
-            va2.SetActive(true);
             NameTagText.text = "???";
             dia.text = "I don't think so. Hya! ";
         }
@@ -57,8 +55,6 @@ public class Cus2 : MonoBehaviour
         }
         else if (tang == 7)
         {
-            va2.SetActive(false);
-            va3.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "What?";
         }
