@@ -9,6 +9,7 @@ public class Cus15 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAR1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -29,16 +30,20 @@ public class Cus15 : MonoBehaviour
         }
         else if (tang == 2)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "... Impossible! How could such a large monster appear in a forest like this!";
         }
         else if (tang == 3)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "It's really big, it looks like a solid giant block.";
         }
         else if (tang == 4)
         {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "It's an iron golemn. Usually iron golems are close to extinction because there is no food source of iron.";
         }
@@ -54,6 +59,8 @@ public class Cus15 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "What is it that we have three people is still not enough?";
         }
@@ -69,6 +76,8 @@ public class Cus15 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Don't worry we'll find another way to fix it.";
         }

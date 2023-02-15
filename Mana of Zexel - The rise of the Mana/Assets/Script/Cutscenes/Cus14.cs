@@ -9,6 +9,7 @@ public class Cus14 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAR1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus14 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Finally at peace, what's wrong with the golems, usually we only get attacked when we invade their territory.";
         }
         else if (tang == 2)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Could it be that their territory is this whole forest?";
         }
         else if (tang == 3)
         {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Normally the golemns would disperse in the deep corners of the forest, not in the middle of the forest like this, unless?";
         }
@@ -44,11 +49,15 @@ public class Cus14 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Are they looking for another territory?";
         }
         else if (tang == 6)
         {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "That's right and not just that! Their old territory is having problems as if it was taken by someone.";
         }
@@ -69,6 +78,8 @@ public class Cus14 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "You don't care about your father's information, Vayne?";
         }
@@ -79,6 +90,8 @@ public class Cus14 : MonoBehaviour
         }
         else if (tang == 12)
         {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Okay, if you two agree to follow, let's head to the east of the forest.";
         }

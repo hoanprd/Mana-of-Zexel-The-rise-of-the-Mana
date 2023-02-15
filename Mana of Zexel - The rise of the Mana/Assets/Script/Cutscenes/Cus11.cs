@@ -9,7 +9,7 @@ public class Cus11 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
-    public GameObject VayneVAL1, VayneVAR1, AliaDAL1, AliaVAR1, MariaVAL1;
+    public GameObject VayneVAL1, VayneVAR1, AliaDAL1, AliaVAR1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -74,7 +74,7 @@ public class Cus11 : MonoBehaviour
         {
             VayneVAL1.SetActive(false);
             AliaVAR1.SetActive(false);
-            MariaVAL1.SetActive(true);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Alright, let's talk in the house. In addition to this should not be outside for too long.";
         }

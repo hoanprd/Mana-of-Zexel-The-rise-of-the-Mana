@@ -9,6 +9,7 @@ public class Cus17 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaDAL1, AliaVAR1, MariaVAL1, MariaVAR1, MrLanceVAL1, MrLanceVAR1, KlenerVAL1, KlenerVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus17 : MonoBehaviour
     {
         if (tang == 1)
         {
+            MrLanceVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "Is everyone back? What's going on, why are you in such a hurry?";
         }
         else if (tang == 2)
         {
+            KlenerVAR1.SetActive(true);
             NameTagText.text = "Klener";
             dia.text = "Sir! Vayne's party had just stopped the iron golemn from entering the wishing forest.";
         }
@@ -39,6 +42,8 @@ public class Cus17 : MonoBehaviour
         }
         else if (tang == 4)
         {
+            KlenerVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "You don't have to worry, we're almost done with it.";
         }
@@ -59,6 +64,8 @@ public class Cus17 : MonoBehaviour
         }
         else if (tang == 8)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Mr. Lance, if you don't mind can you help me read the information you wrote about my father?";
         }
@@ -79,6 +86,8 @@ public class Cus17 : MonoBehaviour
         }
         else if (tang == 12)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "... Father! Don't ask like that in front of everyone...";
         }
@@ -89,21 +98,29 @@ public class Cus17 : MonoBehaviour
         }
         else if (tang == 14)
         {
+            MrLanceVAL1.SetActive(false);
+            KlenerVAL1.SetActive(true);
             NameTagText.text = "Klener";
             dia.text = "...";
         }
         else if (tang == 15)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "...";
         }
         else if (tang == 16)
         {
+            KlenerVAL1.SetActive(false);
+            AliaDAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "...";
         }
         else if (tang == 17)
         {
+            AliaDAL1.SetActive(false);
+            MrLanceVAL1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "It's okay, it's okay, I can still read it like that! Haha.";
         }
@@ -119,6 +136,8 @@ public class Cus17 : MonoBehaviour
         }
         else if (tang == 20)
         {
+            MrLanceVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Temple of Zexel?";
         }
@@ -129,6 +148,8 @@ public class Cus17 : MonoBehaviour
         }
         else if (tang == 22)
         {
+            MariaVAL1.SetActive(false);
+            MrLanceVAL1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "Looks like you're new so you haven't heard of Zexel's origins.";
         }
@@ -154,11 +175,15 @@ public class Cus17 : MonoBehaviour
         }
         else if (tang == 27)
         {
+            MrLanceVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "That sounds surprising, right Vayne? I wish I could meet her too!";
         }
         else if (tang == 28)
         {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Looks like I haven't been to that place yet.";
         }
@@ -174,11 +199,15 @@ public class Cus17 : MonoBehaviour
         }
         else if (tang == 31)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Mr. Lance do you have any information about that temple?";
         }
         else if (tang == 32)
         {
+            AliaVAR1.SetActive(false);
+            MrLanceVAR1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "What we do know is that the temple is far from town and north of the inferno desert.";
         }
@@ -199,6 +228,8 @@ public class Cus17 : MonoBehaviour
         }
         else if (tang == 36)
         {
+            MrLanceVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "I heard about that desert land that was once inhabited by a tribe, for some reason that tribe lost its habitat and suffered a sandstorm that buried the entire civilization in it. sand.";
         }
@@ -209,6 +240,8 @@ public class Cus17 : MonoBehaviour
         }
         else if (tang == 38)
         {
+            MariaVAR1.SetActive(false);
+            MrLanceVAR1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "If that's the case, you need to be mentally prepared. You can ask the merchants around town to get more information.";
         }

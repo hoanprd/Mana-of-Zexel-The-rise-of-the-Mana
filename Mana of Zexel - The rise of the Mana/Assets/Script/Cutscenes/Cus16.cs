@@ -10,6 +10,7 @@ public class Cus16 : MonoBehaviour
     public Text dia;
     public GameObject va1;
     public GameObject va2;
+    public GameObject VayneVAL1, VayneVAR1, AliaDAL1, AliaVAR1, MariaVAL1, MariaVAR1, KlenerVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -24,12 +25,14 @@ public class Cus16 : MonoBehaviour
     {
         if (tang == 1)
         {
+            MariaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Okay! This is enough to make a barrier to stop that golemn!";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "I'm counting on you.";
         }
@@ -40,6 +43,8 @@ public class Cus16 : MonoBehaviour
         }
         else if (tang == 4)
         {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Everything is fine, I think Vayne is still good to use.";
         }
@@ -50,6 +55,8 @@ public class Cus16 : MonoBehaviour
         }
         else if (tang == 6)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "I also have some of my mana preloaded.";
         }
@@ -60,16 +67,20 @@ public class Cus16 : MonoBehaviour
         }
         else if (tang == 8)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 9)
         {
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Done! This is what helps us lock the golemn's feet for a while.";
         }
         else if (tang == 10)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Just that simple? This thing looks like a cloth.";
         }
@@ -80,6 +91,8 @@ public class Cus16 : MonoBehaviour
         }
         else if (tang == 12)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "I get it! Usually the golems will have a source of mana in them, if we combine the mana and resist them they can't advance.";
         }
@@ -90,6 +103,8 @@ public class Cus16 : MonoBehaviour
         }
         else if (tang == 14)
         {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Come on show me how it works!";
         }
@@ -102,21 +117,27 @@ public class Cus16 : MonoBehaviour
         {
             va1.SetActive(false);
             va2.SetActive(true);
+            MariaVAL1.SetActive(false);
+            AliaVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 17)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "It really worked!";
         }
         else if (tang == 18)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "The golemn looks more scared!";
         }
         else if (tang == 19)
         {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "This is also just a temporary form, after a while this curtain will expire!";
         }
@@ -157,6 +178,8 @@ public class Cus16 : MonoBehaviour
         }
         else if (tang == 27)
         {
+            MariaVAR1.SetActive(false);
+            KlenerVAR1.SetActive(true);
             NameTagText.text = "Klener";
             dia.text = "Oh is that guy Vayne?";
         }
@@ -168,10 +191,12 @@ public class Cus16 : MonoBehaviour
         else if (tang == 29)
         {
             NameTagText.text = "Klener";
-            dia.text = "I'm Mr.'s town bodyguard named Klener. Here's Lance, I'm here to give an update on the golems who've been revolting lately.";
+            dia.text = "I'm Mr. Lance town bodyguard named Klener. Here's Lance, I'm here to give an update on the golems who've been revolting lately.";
         }
         else if (tang == 30)
         {
+            VayneVAL1.SetActive(false);
+            AliaDAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Brother Klener doesn't have to worry because Vayne and Maria are done with it.";
         }
@@ -182,6 +207,8 @@ public class Cus16 : MonoBehaviour
         }
         else if (tang == 32)
         {
+            AliaDAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "It's okay, the iron golemn won't dare to go deep into the town.";
         }
@@ -192,6 +219,8 @@ public class Cus16 : MonoBehaviour
         }
         else if (tang == 34)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "We'll find out later, now we should get back before the other monsters attack.";
         }
@@ -202,6 +231,8 @@ public class Cus16 : MonoBehaviour
         }
         else if (tang == 36)
         {
+            KlenerVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Klener is serious too!";
         }

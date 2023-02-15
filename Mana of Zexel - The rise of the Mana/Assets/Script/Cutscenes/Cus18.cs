@@ -9,6 +9,7 @@ public class Cus18 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAR1, KlenerVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus18 : MonoBehaviour
     {
         if (tang == 1)
         {
+            KlenerVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Klener";
             dia.text = "Vayne! If you don't mind, could you help me with something?";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "What's your problem, Klener?";
         }
