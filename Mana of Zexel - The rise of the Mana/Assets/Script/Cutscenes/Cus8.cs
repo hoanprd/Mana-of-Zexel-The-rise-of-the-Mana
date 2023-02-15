@@ -9,6 +9,7 @@ public class Cus8 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAR1, AliaVAL1;
     public GameObject NameTag;
     private int tang=0;
     // Start is called before the first frame update
@@ -43,6 +44,7 @@ public class Cus8 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "... The villagers look very sad. I have never seen such a tragic scene.";
         }
@@ -53,6 +55,7 @@ public class Cus8 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "You mean using alchemy to help them?";
         }

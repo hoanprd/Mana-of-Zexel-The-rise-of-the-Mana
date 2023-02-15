@@ -9,6 +9,7 @@ public class Cus2 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAR1;
     public GameObject NameTag;
     private int tang=0;
 
@@ -29,6 +30,7 @@ public class Cus2 : MonoBehaviour
         }
         else if (tang == 2)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Don't look down on a alchemist like me.";
         }
@@ -60,6 +62,7 @@ public class Cus2 : MonoBehaviour
         }
         else if (tang == 8)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "???";
             dia.text = "That's right, run and find another job to do.";
         }

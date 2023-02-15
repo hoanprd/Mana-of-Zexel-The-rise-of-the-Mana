@@ -9,6 +9,7 @@ public class Cus4 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaDAL1, MrLanceVAR1;
     public GameObject NameTag;
     private int tang=0;
 

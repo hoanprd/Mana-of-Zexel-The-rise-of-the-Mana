@@ -9,7 +9,7 @@ public class Cus6 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
-    public GameObject va2;
+    public GameObject VayneVAL1, AliaVAR1, MrLanceVAR1, KlenerVAR1;
     public GameObject NameTag;
     private int tang=0;
 
@@ -24,12 +24,14 @@ public class Cus6 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Mr. Lance I've already made the healing potion.";
         }
         else if (tang == 2)
         {
+            MrLanceVAR1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "Amazing, you're faster than I thought.";
         }
@@ -55,13 +57,15 @@ public class Cus6 : MonoBehaviour
         }
         else if (tang == 7)
         {
-            va1.SetActive(false);
-            va2.SetActive(true);
+            MrLanceVAR1.SetActive(false);
+            KlenerVAR1.SetActive(true);
             NameTagText.text = "Klener";
             dia.text = "Emergency! Sir Lance, the goblins had gathered in a swarm southwest of town. We need urgent help!";
         }
         else if (tang == 8)
         {
+            KlenerVAR1.SetActive(false);
+            MrLanceVAR1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "... It's difficult. We really lack resources.";
         }
@@ -72,16 +76,21 @@ public class Cus6 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Hey let me join you, Vayne!";
         }
         else if (tang == 11)
         {
+            AliaVAR1.SetActive(false);
+            MrLanceVAR1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "I really appreciate you both, thank you and good luck out there.";
         }
         else if (tang == 12)
         {
+            MrLanceVAR1.SetActive(true);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Okay let's go Vayne!";
         }

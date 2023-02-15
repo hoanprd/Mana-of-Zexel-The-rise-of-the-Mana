@@ -9,7 +9,7 @@ public class Cus11 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
-    public GameObject VayneVAL1, VayneVAR1, AliaDAR1, MariaDAL1;
+    public GameObject VayneVAL1, VayneVAR1, AliaDAL1, AliaVAR1, MariaVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -31,7 +31,7 @@ public class Cus11 : MonoBehaviour
         }
         else if (tang == 2)
         {
-            AliaDAR1.SetActive(true);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Do you think that is the old house of Mr. Lance?";
         }
@@ -73,7 +73,8 @@ public class Cus11 : MonoBehaviour
         else if (tang == 10)
         {
             VayneVAL1.SetActive(false);
-            MariaDAL1.SetActive(true);
+            AliaVAR1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Alright, let's talk in the house. In addition to this should not be outside for too long.";
         }
@@ -94,8 +95,8 @@ public class Cus11 : MonoBehaviour
         }
         else if (tang == 14)
         {
-            AliaDAR1.SetActive(false);
-            VayneVAR1.SetActive(true);
+            AliaVAR1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Hi Maria, my name is Vayne, an alchemist from Zorth. I need you to check the books of someone who has been to Mr. Lance 1 year ago.";
         }
@@ -141,8 +142,8 @@ public class Cus11 : MonoBehaviour
         }
         else if (tang == 23)
         {
-            VayneVAR1.SetActive(false);
-            AliaDAR1.SetActive(true);
+            VayneVAL1.SetActive(false);
+            AliaDAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Then it's fine for the two of us to just kill those golems.";
         }

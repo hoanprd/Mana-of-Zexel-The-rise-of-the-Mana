@@ -9,6 +9,7 @@ public class Cus9 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAR1;
     public GameObject NameTag;
     private int tang=0;
 
@@ -23,6 +24,7 @@ public class Cus9 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "It worked! My potion has revived the field!";
@@ -44,6 +46,7 @@ public class Cus9 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "It really worked! Someday I have to try alchemy too!";
         }

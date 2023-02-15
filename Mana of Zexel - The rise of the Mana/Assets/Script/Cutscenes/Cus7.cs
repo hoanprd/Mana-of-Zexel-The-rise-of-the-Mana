@@ -9,6 +9,7 @@ public class Cus7 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MrLanceVAR1;
     public GameObject NameTag;
     private int tang=0;
 
@@ -23,12 +24,14 @@ public class Cus7 : MonoBehaviour
     {
         if (tang == 1)
         {
+            AliaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Mr. Lance, we've taken the goblins down.";
         }
         else if (tang == 2)
         {
+            MrLanceVAR1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "I don't know how to thank you both enough. You two did a great job! I will reward you two with 100 Zen.";
         }
@@ -39,6 +42,8 @@ public class Cus7 : MonoBehaviour
         }
         else if (tang == 4)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Anyway, did you find out my father's information Mr. Lance?";
         }
@@ -54,6 +59,8 @@ public class Cus7 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "You mean Maria's current residence?";
         }
@@ -64,11 +71,15 @@ public class Cus7 : MonoBehaviour
         }
         else if (tang == 9)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "What a hardworking person like her.";
         }
         else if (tang == 10)
         {
+            MrLanceVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Of course Vayne! She's very good, compared to her, you're just a chicken!";
         }
@@ -84,6 +95,8 @@ public class Cus7 : MonoBehaviour
         }
         else if (tang == 13)
         {
+            AliaVAR1.SetActive(false);
+            MrLanceVAR1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "Be careful you two! That forest is very dangerous!";
         }
@@ -94,11 +107,14 @@ public class Cus7 : MonoBehaviour
         }
         else if (tang == 15)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Ok!";
         }
         else if (tang == 16)
         {
+            AliaVAL1.SetActive(false);
             NameTagText.text = "Mr. Lance";
             dia.text = "Those two are so passionate, hehe. Good luck both.";
         }
