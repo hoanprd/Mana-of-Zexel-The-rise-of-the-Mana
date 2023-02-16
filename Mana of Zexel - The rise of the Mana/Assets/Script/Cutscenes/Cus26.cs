@@ -9,6 +9,7 @@ public class Cus26 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, KlenerVAL1, KlenerVAR1, HeeriumVAL1, HeeriumVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus26 : MonoBehaviour
     {
         if (tang == 1)
         {
+            AliaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Okay! Let's go!";
         }
         else if (tang == 2)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "The plan is to just keep asking the people in town, Vayne?";
         }
         else if (tang == 3)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "I don't know either, but let's keep it that way for now.";
         }
@@ -44,11 +49,15 @@ public class Cus26 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAR1.SetActive(false);
+            KlenerVAL1.SetActive(true);
             NameTagText.text = "Klener";
             dia.text = "Hohhhhh! Uncle Heeriummmm!";
         }
         else if (tang == 6)
         {
+            HeeriumVAR1.SetActive(true);
             NameTagText.text = "Heerium";
             dia.text = "Ohh! It's Klener! I haven't seen you visit my blacksmith shop these days hahaha!";
         }
@@ -84,11 +93,15 @@ public class Cus26 : MonoBehaviour
         }
         else if (tang == 13)
         {
+            KlenerVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Hi Klener! Looks like you're talking to someone close?";
         }
         else if (tang == 14)
         {
+            HeeriumVAR1.SetActive(false);
+            KlenerVAR1.SetActive(true);
             NameTagText.text = "Klener";
             dia.text = "That's right! This is Heerium, he is the only blacksmith in this town!";
         }
@@ -99,6 +112,8 @@ public class Cus26 : MonoBehaviour
         }
         else if (tang == 16)
         {
+            KlenerVAR1.SetActive(false);
+            HeeriumVAR1.SetActive(true);
             NameTagText.text = "Heerium";
             dia.text = "Hahaha! I feel honored, you are the one who saved the field from the goblins that destroyed it back in the day, right?";
         }
@@ -109,11 +124,15 @@ public class Cus26 : MonoBehaviour
         }
         else if (tang == 18)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Uncle Heerium is still as funny as when we first met, right?";
         }
         else if (tang == 19)
         {
+            AliaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Optimism is who he is.";
         }
@@ -124,6 +143,8 @@ public class Cus26 : MonoBehaviour
         }
         else if (tang == 21)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "That's not it, Heerium! We are just companions!";
         }
@@ -154,6 +175,8 @@ public class Cus26 : MonoBehaviour
         }
         else if (tang == 27)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Okay! Just let me!";
         }

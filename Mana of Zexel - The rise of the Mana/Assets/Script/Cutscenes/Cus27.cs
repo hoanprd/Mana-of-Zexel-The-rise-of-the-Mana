@@ -9,6 +9,7 @@ public class Cus27 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAR1, AliaVAR1, MariaVAR1, HeeriumVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,6 +24,7 @@ public class Cus27 : MonoBehaviour
     {
         if (tang == 1)
         {
+            HeeriumVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Heerium";
             dia.text = "Hahaha! Welcome to Heerium's blacksmith shop!";
@@ -39,16 +41,21 @@ public class Cus27 : MonoBehaviour
         }
         else if (tang == 4)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "...";
         }
         else if (tang == 5)
         {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "...";
         }
         else if (tang == 6)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "... Yes! Interesting too!";
         }
@@ -64,6 +71,8 @@ public class Cus27 : MonoBehaviour
         }
         else if (tang == 9)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "... Uncle Heerium! If so, do you sell weapons to alchemy?";
         }
@@ -79,6 +88,8 @@ public class Cus27 : MonoBehaviour
         }
         else if (tang == 12)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "So can you make a weapon for me? Like the iron shoes I wear are weapons!";
         }
@@ -89,6 +100,8 @@ public class Cus27 : MonoBehaviour
         }
         else if (tang == 14)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "If so, can you make me a weapon that is a staff that can accumulate mana?";
         }

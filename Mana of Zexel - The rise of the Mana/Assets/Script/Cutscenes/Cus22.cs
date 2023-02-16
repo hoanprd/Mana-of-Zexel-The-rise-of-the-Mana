@@ -9,6 +9,7 @@ public class Cus22 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, KlenerVAL1, KlenerVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus22 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Klener! The shield that accompanies you for your next journey is complete!";
         }
         else if (tang == 2)
         {
+            KlenerVAR1.SetActive(true);
             NameTagText.text = "Klener";
             dia.text = "That fast! Unbelievable.";
         }
@@ -59,16 +62,22 @@ public class Cus22 : MonoBehaviour
         }
         else if (tang == 8)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "So tired! Been wandering around town all day with no information about that temple.";
         }
         else if (tang == 9)
         {
+            KlenerVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "We still have time so stay calm.";
         }
         else if (tang == 10)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Oh! You two are back! Let's take a break after all, it's been a long day.";
         }
@@ -84,11 +93,15 @@ public class Cus22 : MonoBehaviour
         }
         else if (tang == 13)
         {
+            AliaVAL1.SetActive(false);
+            KlenerVAL1.SetActive(true);
             NameTagText.text = "Klener";
             dia.text = "... Right... That's right!";
         }
         else if (tang == 14)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Huh? Why does this Klener look so confused as if something awkward just happened?";
         }
@@ -99,11 +112,15 @@ public class Cus22 : MonoBehaviour
         }
         else if (tang == 16)
         {
+            KlenerVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "... Heh?";
         }
         else if (tang == 17)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "I admit I'm hungry! Hey Mr. Lance if you don't mind,...";
         }
@@ -119,6 +136,8 @@ public class Cus22 : MonoBehaviour
         }
         else if (tang == 20)
         {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Interesting isn't it?";
         }
@@ -134,16 +153,22 @@ public class Cus22 : MonoBehaviour
         }
         else if (tang == 23)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "It's not a problem to wait! Isn't that right, Maria, Klener?";
         }
         else if (tang == 24)
         {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Of course!";
         }
         else if (tang == 25)
         {
+            MariaVAR1.SetActive(false);
+            KlenerVAR1.SetActive(true);
             NameTagText.text = "Klener";
             dia.text = "...Uhm, I'm free too.";
         }

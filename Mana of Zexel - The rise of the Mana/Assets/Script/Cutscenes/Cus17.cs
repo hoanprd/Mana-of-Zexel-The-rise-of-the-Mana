@@ -9,7 +9,7 @@ public class Cus17 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
-    public GameObject VayneVAL1, VayneVAR1, AliaDAL1, AliaVAR1, MariaVAL1, MariaVAR1, MrLanceVAL1, MrLanceVAR1, KlenerVAL1, KlenerVAR1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, MrLanceVAL1, MrLanceVAR1, KlenerVAL1, KlenerVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -113,13 +113,13 @@ public class Cus17 : MonoBehaviour
         else if (tang == 16)
         {
             KlenerVAL1.SetActive(false);
-            AliaDAL1.SetActive(true);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "...";
         }
         else if (tang == 17)
         {
-            AliaDAL1.SetActive(false);
+            AliaVAL1.SetActive(false);
             MrLanceVAL1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "It's okay, it's okay, I can still read it like that! Haha.";

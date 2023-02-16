@@ -9,7 +9,7 @@ public class Cus13 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
-    public GameObject VayneVAL1, VayneVAR1, AliaDAL1, MariaVAR1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -24,7 +24,7 @@ public class Cus13 : MonoBehaviour
     {
         if (tang == 1)
         {
-            AliaDAL1.SetActive(true);
+            AliaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Heh? Do we owe any golems? Why are they gathered here?";
@@ -59,7 +59,7 @@ public class Cus13 : MonoBehaviour
         }
         else if (tang == 7)
         {
-            AliaDAL1.SetActive(false);
+            AliaVAL1.SetActive(false);
             VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Maria if you don't mind then...";

@@ -9,6 +9,7 @@ public class Cus23 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAR1, MariaVAL1, MariaVAR1, KlenerVAL1, KlenerVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus23 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Delicious food has arrived!";
         }
         else if (tang == 2)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Ahhh! Great, I'm so hungry!";
         }
@@ -39,31 +42,43 @@ public class Cus23 : MonoBehaviour
         }
         else if (tang == 4)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "... This just porridge?";
         }
         else if (tang == 5)
         {
+            AliaVAR1.SetActive(false);
+            KlenerVAR1.SetActive(true);
             NameTagText.text = "Klener";
             dia.text = "... Is this really just porridge?";
         }
         else if (tang == 6)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "It doesn't matter if it's porridge or not, everyone just taste it! It's very unusual!";
         }
         else if (tang == 7)
         {
+            KlenerVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "... Woah!";
         }
         else if (tang == 8)
         {
+            AliaVAR1.SetActive(false);
+            KlenerVAR1.SetActive(true);
             NameTagText.text = "Klener";
             dia.text = "... Huh?";
         }
         else if (tang == 9)
         {
+            KlenerVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "... It's just porridge! But wait, there is something very strange in this bowl of porridge, I feel like I am getting better than usual.";
         }
@@ -74,11 +89,15 @@ public class Cus23 : MonoBehaviour
         }
         else if (tang == 11)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "The feeling of eating is full of coffee!";
         }
         else if (tang == 12)
         {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "This feeling is having mana infused inside.";
         }

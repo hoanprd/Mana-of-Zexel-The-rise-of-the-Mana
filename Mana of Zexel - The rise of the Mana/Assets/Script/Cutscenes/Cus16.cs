@@ -10,7 +10,7 @@ public class Cus16 : MonoBehaviour
     public Text dia;
     public GameObject va1;
     public GameObject va2;
-    public GameObject VayneVAL1, VayneVAR1, AliaDAL1, AliaVAR1, MariaVAL1, MariaVAR1, KlenerVAR1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, KlenerVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -196,7 +196,7 @@ public class Cus16 : MonoBehaviour
         else if (tang == 30)
         {
             VayneVAL1.SetActive(false);
-            AliaDAL1.SetActive(true);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Brother Klener doesn't have to worry because Vayne and Maria are done with it.";
         }
@@ -207,7 +207,7 @@ public class Cus16 : MonoBehaviour
         }
         else if (tang == 32)
         {
-            AliaDAL1.SetActive(false);
+            AliaVAL1.SetActive(false);
             MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "It's okay, the iron golemn won't dare to go deep into the town.";

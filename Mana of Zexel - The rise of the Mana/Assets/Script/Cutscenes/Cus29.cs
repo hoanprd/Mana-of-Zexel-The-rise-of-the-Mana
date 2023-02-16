@@ -9,6 +9,7 @@ public class Cus29 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAR1, MariaVAR1, OrinaVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,6 +24,7 @@ public class Cus29 : MonoBehaviour
     {
         if (tang == 1)
         {
+            OrinaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "???";
             dia.text = "Are the kids still in there?";
@@ -34,11 +36,14 @@ public class Cus29 : MonoBehaviour
         }
         else if (tang == 3)
         {
-            NameTagText.text = "Maria";
+            OrinaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
+            NameTagText.text = "Vayne";
             dia.text = "???";
         }
         else if (tang == 4)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "What's wrong, Vayne?";
         }
@@ -59,6 +64,8 @@ public class Cus29 : MonoBehaviour
         }
         else if (tang == 8)
         {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "If there's nothing, we'll just keep going, if someone is following us, we'll lose our tail if we just follow us.";
         }

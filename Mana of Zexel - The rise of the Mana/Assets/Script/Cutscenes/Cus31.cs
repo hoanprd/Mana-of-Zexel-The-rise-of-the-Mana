@@ -9,6 +9,7 @@ public class Cus31 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus31 : MonoBehaviour
     {
         if (tang == 1)
         {
+            MariaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Vayne! I suddenly remembered someone who is quite important in finding information!";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Really? If so, who is that person?";
         }
@@ -49,6 +52,8 @@ public class Cus31 : MonoBehaviour
         }
         else if (tang == 6)
         {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Archeology? What's that? And hearing someone who knows almost everything sounds scary, doesn't it? It's like he's not an ordinary person!";
         }
@@ -59,6 +64,8 @@ public class Cus31 : MonoBehaviour
         }
         else if (tang == 8)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Maria never met her?";
         }
@@ -94,6 +101,9 @@ public class Cus31 : MonoBehaviour
         }
         else if (tang == 15)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Hey hey! Wait for me! Why doesn't anyone answer what an archaeologist is!";
         }

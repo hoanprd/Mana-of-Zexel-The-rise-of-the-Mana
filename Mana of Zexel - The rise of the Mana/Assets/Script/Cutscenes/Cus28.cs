@@ -9,6 +9,7 @@ public class Cus28 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, HeeriumVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus28 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Uncle Heerium! We're back with the ingredients you need!";
         }
         else if (tang == 2)
         {
+            HeeriumVAR1.SetActive(true);
             NameTagText.text = "Heerium";
             dia.text = "Very timely with this abundant source of iron, the weapon will be very good hahaha!";
         }
         else if (tang == 3)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Damn it! Remember to make a super powerful weapon for me!";
         }
@@ -44,6 +49,8 @@ public class Cus28 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Thank you! By the way, does Uncle Heerium know about Zexel temple?";
         }
@@ -54,6 +61,8 @@ public class Cus28 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Is that scary? Don't tell me that temple has not only monsters but also ghosts?";
         }
@@ -64,6 +73,8 @@ public class Cus28 : MonoBehaviour
         }
         else if (tang == 9)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "??? Could it be that that person is my father!";
         }
@@ -74,6 +85,8 @@ public class Cus28 : MonoBehaviour
         }
         else if (tang == 11)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Magician? Almost no mages have appeared since the war mages era.";
         }
@@ -84,16 +97,22 @@ public class Cus28 : MonoBehaviour
         }
         else if (tang == 13)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "I've never met a magician either!";
         }
         else if (tang == 14)
         {
+            HeeriumVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "What is a magician?";
         }
         else if (tang == 15)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "I just understood that they are quite similar to alchemists but they don't make tools from mana like alchemists, they use mana to fight is chanting magic.";
         }
@@ -104,6 +123,8 @@ public class Cus28 : MonoBehaviour
         }
         else if (tang == 17)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "There's only a small amount of magic, so my mom used to say that magicians and alchemists don't have a difference.";
         }
