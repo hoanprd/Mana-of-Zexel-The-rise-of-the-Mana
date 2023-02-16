@@ -9,6 +9,7 @@ public class Cus39 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, MariaVAL1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,6 +24,7 @@ public class Cus39 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Maria! Please taking care of Alia for me!";
@@ -34,6 +36,7 @@ public class Cus39 : MonoBehaviour
         }
         else if (tang == 3)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Do you have the recipe for the antidote?";
         }
@@ -49,6 +52,8 @@ public class Cus39 : MonoBehaviour
         }
         else if (tang == 6)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "I still have enough strength to fight Vayne!";
         }
@@ -59,6 +64,8 @@ public class Cus39 : MonoBehaviour
         }
         else if (tang == 8)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "You should rest, Maria and I will collect poison!";
         }
@@ -69,6 +76,8 @@ public class Cus39 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            AliaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "... Alia, you're so stubborn!";
         }

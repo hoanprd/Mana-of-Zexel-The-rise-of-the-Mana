@@ -9,6 +9,7 @@ public class Cus34 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, MariaVAL1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus34 : MonoBehaviour
     {
         if (tang == 1)
         {
+            MariaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Is everyone ready? Ahead is the inferno desert full of dangers!";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "I've been ready from the moment I came to this town!";
         }
         else if (tang == 3)
         {
+            MariaVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "I'm ready too! It's so exciting to be with a group of people like this!";
         }
@@ -49,16 +54,22 @@ public class Cus34 : MonoBehaviour
         }
         else if (tang == 6)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Hehe! You mean like it was fate that we met?";
         }
         else if (tang == 7)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "That's right! If it wasn't for fate, I'd be lying at home now, bored to death because I couldn't explore the world around me!";
         }
         else if (tang == 8)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "You guys are so... Anyway thank you all for letting me have this precious experience!";
         }
@@ -69,6 +80,8 @@ public class Cus34 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
             NameTagText.text = "All";
             dia.text = "Let's go!";
         }

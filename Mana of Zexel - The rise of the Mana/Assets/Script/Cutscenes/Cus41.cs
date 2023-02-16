@@ -9,6 +9,7 @@ public class Cus41 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, ZexelVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus41 : MonoBehaviour
     {
         if (tang == 1)
         {
+            MariaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Here it is! The Zexel Gate? It looks really big, not only that, I can feel something huge behind this gate.";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "That's right! A huge source of magic power. But the question is, how can we get through this gate?";
         }
         else if (tang == 3)
         {
+            MariaVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Don't worry, we can climb over it. Take a look here!";
         }
@@ -64,6 +69,8 @@ public class Cus41 : MonoBehaviour
         }
         else if (tang == 9)
         {
+            AliaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "This barrier isn't easy to break. I've never seen a barrier cover like this continuously.";
         }
@@ -89,110 +96,121 @@ public class Cus41 : MonoBehaviour
         }
         else if (tang == 14)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "Glowing....";
         }
         else if (tang == 15)
         {
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Is the gate reacting?";
         }
         else if (tang == 16)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Does it work! Who is that?";
         }
         else if (tang == 17)
         {
+            MariaVAL1.SetActive(false);
+            ZexelVAL1.SetActive(true);
             NameTagText.text = "???";
             dia.text = "...";
         }
         else if (tang == 18)
         {
-            NameTagText.text = "Maria";
-            dia.text = "That's what men deserve!";
-        }
-        else if (tang == 19)
-        {
-            NameTagText.text = "";
-            dia.text = "...";
-        }
-        else if (tang == 20)
-        {
             NameTagText.text = "Vayne";
             dia.text = "Who are you?";
         }
-        else if (tang == 21)
+        else if (tang == 19)
         {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "This woman...";
         }
-        else if (tang == 22)
+        else if (tang == 20)
         {
             NameTagText.text = "Zexel";
             dia.text = "Welcome! My name is Zexel, who is sleeping peacefully behind the gate inside the temple.";
         }
-        else if (tang == 23)
+        else if (tang == 21)
         {
             NameTagText.text = "Zexel";
             dia.text = "Only those who are worthy can pass through this gate.";
         }
-        else if (tang == 24)
+        else if (tang == 22)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "How worthy are these people to deserve?";
         }
-        else if (tang == 25)
+        else if (tang == 23)
         {
             NameTagText.text = "Zexel";
             dia.text = "To become worthy if and only if one can break the two polar opposites and bring back peace.";
         }
-        else if (tang == 26)
+        else if (tang == 24)
         {
+            ZexelVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Gone, what does that last sentence mean?";
         }
-        else if (tang == 27)
+        else if (tang == 25)
         {
             NameTagText.text = "Vayne";
             dia.text = "Are you kidding me? In the end, we don't know anything.";
         }
-        else if (tang == 28)
+        else if (tang == 26)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "(That woman, it feels so familiar in my heart...)";
+        }
+        else if (tang == 27)
+        {
+            VayneVAR1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "... Let's go back to town.";
+        }
+        else if (tang == 28)
+        {
+            AliaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
+            NameTagText.text = "Maria";
+            dia.text = "Do you have any ideas?";
         }
         else if (tang == 29)
         {
             NameTagText.text = "Vayne";
-            dia.text = "... Let's go back to town.";
+            dia.text = "I don't know but there's a way.";
         }
         else if (tang == 30)
         {
             NameTagText.text = "Maria";
-            dia.text = "Do you have any ideas?";
+            dia.text = "Okay, then we'll go home. Hey Alia, are you all right?";
         }
         else if (tang == 31)
         {
-            NameTagText.text = "Vayne";
-            dia.text = "I don't know but there's a way.";
+            MariaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
+            AliaVAL1.SetActive(true);
+            NameTagText.text = "Alia";
+            dia.text = "I'm fine! Wait for me!";
         }
         else if (tang == 32)
-        {
-            NameTagText.text = "Maria";
-            dia.text = "Okay, then we'll go home. Hey Alia, are you all right?";
-        }
-        else if (tang == 33)
-        {
-            NameTagText.text = "Alia";
-            dia.text = "Yes! Wait for me!";
-        }
-        else if (tang == 34)
         {
             NameTagText.text = "Alia";
             dia.text = "(Zexel? Not strange but very familiar?)";
         }
-        else if (tang >= 35)
+        else if (tang >= 33)
         {
             CutscenesController.cus41 = 1;
             ContainerController.LoadingOpen = true;

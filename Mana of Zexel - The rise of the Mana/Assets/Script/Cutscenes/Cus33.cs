@@ -9,6 +9,7 @@ public class Cus33 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAR1, MariaVAL1, OrinaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus33 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "We've already gathered what you asked for, Orina!";
         }
         else if (tang == 2)
         {
+            OrinaVAR1.SetActive(true);
             NameTagText.text = "Orina";
             dia.text = "Okay! Let me check it out!";
         }
@@ -129,11 +132,15 @@ public class Cus33 : MonoBehaviour
         }
         else if (tang == 22)
         {
+            VayneVAL1.SetActive(false);
+            OrinaVAR1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Is she really helping us...";
         }
         else if (tang == 23)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "I don't know either...";
         }

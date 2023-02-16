@@ -9,6 +9,7 @@ public class Cus38 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAR1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus38 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "We've come a long way to the north!";
         }
         else if (tang == 2)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Hummm... Look at Vayne the ground here is shallower than usual!";
         }
@@ -49,6 +52,8 @@ public class Cus38 : MonoBehaviour
         }
         else if (tang == 6)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "... Vay...ne!";
         }
@@ -69,6 +74,8 @@ public class Cus38 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Let me see!";
         }

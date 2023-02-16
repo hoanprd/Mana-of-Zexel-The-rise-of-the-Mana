@@ -9,6 +9,7 @@ public class Cus37 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAR1, AliaVAR1, MariaVAR1, JescaVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus37 : MonoBehaviour
     {
         if (tang == 1)
         {
+            JescaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Jesca";
             dia.text = "Ah! There is my village!";
         }
         else if (tang == 2)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Wow! To think there was a village in a desert like this!";
         }
         else if (tang == 3)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Doesn't it look hot around here?";
         }
@@ -49,6 +54,8 @@ public class Cus37 : MonoBehaviour
         }
         else if (tang == 6)
         {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Hey Jessica! Where is your house?";
         }
@@ -64,6 +71,8 @@ public class Cus37 : MonoBehaviour
         }
         else if (tang == 9)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Nothing! Next time I remember not to venture that far!";
         }
@@ -94,6 +103,8 @@ public class Cus37 : MonoBehaviour
         }
         else if (tang == 15)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "The gate? You mean the Zexel gate?";
         }
@@ -104,6 +115,8 @@ public class Cus37 : MonoBehaviour
         }
         else if (tang == 17)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Is the gate open only to the worthy?";
         }
@@ -119,6 +132,8 @@ public class Cus37 : MonoBehaviour
         }
         else if (tang == 20)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "You mean we have to do something to get through the gate?";
         }
@@ -139,6 +154,8 @@ public class Cus37 : MonoBehaviour
         }
         else if (tang == 24)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "No need! Today there is still plenty of time. See you soon, Jessica!";
         }
