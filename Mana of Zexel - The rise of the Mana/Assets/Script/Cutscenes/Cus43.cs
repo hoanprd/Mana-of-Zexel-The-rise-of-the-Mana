@@ -9,6 +9,7 @@ public class Cus43 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAL1, MariaVAR1, OrinaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,27 +24,35 @@ public class Cus43 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Orina! Is you at home?";
         }
         else if (tang == 2)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Where is she going again?";
         }
         else if (tang == 3)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Heh? Ahhhh... There are ghosts!!!";
         }
         else if (tang == 4)
         {
+            MariaVAR1.SetActive(false);
+            OrinaVAR1.SetActive(true);
             NameTagText.text = "Orina";
             dia.text = "Hey, it's me! Am I a ghost?";
         }
         else if (tang == 5)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "... Calm down Alia. Hey Orina, why do you like snooping behind people's backs?";
         }
@@ -64,6 +73,8 @@ public class Cus43 : MonoBehaviour
         }
         else if (tang == 9)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Go get some dangerous stuff for you again, Orina?";
         }
@@ -74,26 +85,36 @@ public class Cus43 : MonoBehaviour
         }
         else if (tang == 11)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Ehh... That is.. hehe.";
         }
         else if (tang == 12)
         {
+            OrinaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "It seems troublesome.";
         }
         else if (tang == 13)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Hey Orina, don't take advantage of people's kindness!";
         }
         else if (tang == 14)
         {
+            MariaVAR1.SetActive(false);
+            OrinaVAR1.SetActive(true);
             NameTagText.text = "Orina";
             dia.text = "Taking advantage? Do you not want me to help you open the Zexel portal?";
         }
         else if (tang == 15)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Alright! We'll go get the scorpion venom tail, as long as you promise to help us.";
         }
@@ -104,6 +125,8 @@ public class Cus43 : MonoBehaviour
         }
         else if (tang == 17)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "It's true that the stingy woman is evil.";
         }
@@ -114,6 +137,8 @@ public class Cus43 : MonoBehaviour
         }
         else if (tang == 19)
         {
+            OrinaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "All right, Alia! Let's go out of here.";
         }

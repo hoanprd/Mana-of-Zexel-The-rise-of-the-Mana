@@ -9,6 +9,7 @@ public class Cus46 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus46 : MonoBehaviour
     {
         if (tang == 1)
         {
+            AliaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "I wonder if she's serious? Ordinary people will think she's crazy!";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Hold on! If we don't come and try that mana land, we don't know if it's true or not.";
         }
         else if (tang == 3)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Anyway, the next trip is going to be a long one!";
         }
@@ -44,6 +49,8 @@ public class Cus46 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Hehe... In that case, we'll just go back and replenish.";
         }
@@ -59,6 +66,8 @@ public class Cus46 : MonoBehaviour
         }
         else if (tang == 8)
         {
+            AliaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "I like it too! If you don't mind, can you make one for me?";
         }
@@ -69,6 +78,8 @@ public class Cus46 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Yaaaaaaa... That's fine!";
         }
@@ -79,11 +90,15 @@ public class Cus46 : MonoBehaviour
         }
         else if (tang == 12)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Let's all go back to the tavern!";
         }
         else if (tang == 13)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
             NameTagText.text = "All";
             dia.text = "OK!";
         }

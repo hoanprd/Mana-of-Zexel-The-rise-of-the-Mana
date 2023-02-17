@@ -9,6 +9,7 @@ public class Cus48 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, MariaVAR1, KlenerVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus48 : MonoBehaviour
     {
         if (tang == 1)
         {
+            AliaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "It's true! After eating Vayne's porridge, there is nothing better than a refreshing rest!";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "That's great, if you've regained your strength, I'll head south to the inferno desert to find the whereabouts of the mana gods!";
         }
         else if (tang == 3)
         {
+            AliaVAL1.SetActive(false);
+            KlenerVAL1.SetActive(true);
             NameTagText.text = "Klener";
             dia.text = "Hey Vayne! Wait for me!";
         }
@@ -89,21 +94,29 @@ public class Cus48 : MonoBehaviour
         }
         else if (tang == 14)
         {
+            KlenerVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "If it's for the safety of the villagers, I'll be happy too.";
         }
         else if (tang == 15)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "I'll join too so I don't get bored.";
         }
         else if (tang == 16)
         {
+            AliaVAL1.SetActive(false);
+            KlenerVAL1.SetActive(true);
             NameTagText.text = "Klener";
             dia.text = "Thank you very much!";
         }
         else if (tang == 17)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Ah Klener! Be prepared to be on high alert because those monsters aren't as easy as the golems.";
         }

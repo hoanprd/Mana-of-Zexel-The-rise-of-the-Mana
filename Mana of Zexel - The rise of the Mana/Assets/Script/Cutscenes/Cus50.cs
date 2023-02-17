@@ -9,6 +9,7 @@ public class Cus50 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAR1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus50 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "This is... the land of mana?";
         }
         else if (tang == 2)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "This place is full of mana, I feel it very well.";
         }
         else if (tang == 3)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Everything around is strange, like we are in the fairy forest.";
         }
@@ -44,6 +49,8 @@ public class Cus50 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "You mean everything around has to be green right?";
         }
@@ -59,6 +66,8 @@ public class Cus50 : MonoBehaviour
         }
         else if (tang == 8)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "What... what are those?";
         }
@@ -69,16 +78,20 @@ public class Cus50 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAR1.SetActive(false);
             NameTagText.text = "???";
             dia.text = "Ergggggg";
         }
         else if (tang == 11)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "It's a slime.";
         }
         else if (tang == 12)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Slime? This is the first time I've encountered them, I've only seen them in books until now.";
         }
@@ -99,6 +112,8 @@ public class Cus50 : MonoBehaviour
         }
         else if (tang == 16)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Hey... Hey don't come near me... you look slimy, disgusting!";
         }

@@ -9,6 +9,7 @@ public class Cus42 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAR1, MrLanceVAL1, MrLanceVAR1, OrinaVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus42 : MonoBehaviour
     {
         if (tang == 1)
         {
+            MrLanceVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "Oh everyone! Haven't they all found the gate of Zexel yet? Looking so tired and sad!";
         }
         else if (tang == 2)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "We found it, but we can't open the gate because we're not worthy.";
         }
         else if (tang == 3)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "At that time, we received a message to open the gate without understanding anything.";
         }
@@ -54,6 +59,8 @@ public class Cus42 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Honestly, you always laugh at other people's pain.";
         }
@@ -69,6 +76,8 @@ public class Cus42 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "My father's friend? When my father left, he was alone. No wonder he made friends on the way here.";
         }
@@ -94,11 +103,15 @@ public class Cus42 : MonoBehaviour
         }
         else if (tang == 15)
         {
+            MrLanceVAL1.SetActive(false);
+            OrinaVAL1.SetActive(true);
             NameTagText.text = "Orina";
             dia.text = "Interesting isn't it? Did you guys find the Zexel portal?";
         }
         else if (tang == 16)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Yes, we found the gate but...";
         }
@@ -109,6 +122,8 @@ public class Cus42 : MonoBehaviour
         }
         else if (tang == 18)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "... That's right. But wait, Orina, what are you doing here?";
         }
@@ -119,6 +134,8 @@ public class Cus42 : MonoBehaviour
         }
         else if (tang == 20)
         {
+            VayneVAR1.SetActive(false);
+            MrLanceVAR1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "Excuse me, Orina, you can just leave it on the table for now.";
         }
@@ -129,6 +146,8 @@ public class Cus42 : MonoBehaviour
         }
         else if (tang == 22)
         {
+            MrLanceVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Really? If so, thank you in advance!";
         }
@@ -139,16 +158,22 @@ public class Cus42 : MonoBehaviour
         }
         else if (tang == 24)
         {
+            OrinaVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "I have a bad feeling about this.";
         }
         else if (tang == 25)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Me too! How does she know how to open the gate when she's never been there?";
         }
         else if (tang == 26)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Even so, as long as the gate is open, the problem is solved, let's go to Orina's place!";
         }

@@ -9,6 +9,7 @@ public class Cus47 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAR1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,6 +24,7 @@ public class Cus47 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "... Pheh... I thought it was going to be easy but it wasn't.";
@@ -44,6 +46,7 @@ public class Cus47 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "It's me. Every time I enter the room, it's like there's something on my mind?";
         }
@@ -139,6 +142,8 @@ public class Cus47 : MonoBehaviour
         }
         else if (tang == 24)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Hey Vayne, are you done with your specialty?";
         }
@@ -149,6 +154,8 @@ public class Cus47 : MonoBehaviour
         }
         else if (tang == 26)
         {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Looks like you two will need more time together.";
         }

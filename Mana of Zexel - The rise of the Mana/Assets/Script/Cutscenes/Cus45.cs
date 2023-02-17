@@ -9,6 +9,7 @@ public class Cus45 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, OrinaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus45 : MonoBehaviour
     {
         if (tang == 1)
         {
+            AliaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Hey Orina! We've got a bunch of scorpion tails! Are you satisfied?";
         }
         else if (tang == 2)
         {
+            OrinaVAR1.SetActive(true);
             NameTagText.text = "Orina";
             dia.text = "Hey, don't raise your voice like that!";
         }
         else if (tang == 3)
         {
+            OrinaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Alia, stop being like that, give her some respect.";
         }
@@ -44,11 +49,15 @@ public class Cus45 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            VayneVAR1.SetActive(false);
+            OrinaVAR1.SetActive(true);
             NameTagText.text = "Orina";
             dia.text = "It's not bad, you guys admit it's good.";
         }
         else if (tang == 6)
         {
+            AliaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "If so, tell us how to open the gate to Orina.";
         }
@@ -64,21 +73,29 @@ public class Cus45 : MonoBehaviour
         }
         else if (tang == 9)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "What... what?";
         }
         else if (tang == 10)
         {
+            OrinaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Are you kidding me?";
         }
         else if (tang == 11)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "...";
         }
         else if (tang == 12)
         {
+            AliaVAR1.SetActive(false);
+            OrinaVAR1.SetActive(true);
             NameTagText.text = "Orina";
             dia.text = "It's true that I don't know how to open the gate. But I know someone who can show you that gate. Those are the mana gods";
         }
@@ -94,6 +111,8 @@ public class Cus45 : MonoBehaviour
         }
         else if (tang == 15)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "So if the gods are real, where should we find them?";
         }
@@ -104,6 +123,8 @@ public class Cus45 : MonoBehaviour
         }
         else if (tang == 17)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Hey don't go around, we're impatient!";
         }
@@ -114,6 +135,8 @@ public class Cus45 : MonoBehaviour
         }
         else if (tang == 19)
         {
+            AliaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Are the gods really in that land?";
         }
@@ -124,6 +147,8 @@ public class Cus45 : MonoBehaviour
         }
         else if (tang == 21)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "... That sounds vague. From the existence of a mana god to another dimension.";
         }
@@ -142,7 +167,7 @@ public class Cus45 : MonoBehaviour
             NameTagText.text = "Orina";
             dia.text = "Uhm, good luck.";
         }
-        else if (tang >= 27)
+        else if (tang >= 25)
         {
             CutscenesController.cus45 = 1;
             ContainerController.LoadingOpen = true;

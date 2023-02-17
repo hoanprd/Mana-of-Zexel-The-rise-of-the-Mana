@@ -9,6 +9,7 @@ public class Cus44 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAL1, AliaVAR1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus44 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "This should be enough for Orina's request.";
         }
         else if (tang == 2)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "This job is dangerous. I wonder if she really helps us wholeheartedly?";
         }
         else if (tang == 3)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "She's really evil making us do dangerous things.";
         }
@@ -44,6 +49,8 @@ public class Cus44 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Come to think of it, what is she planning to use this for? She's not an apothecary like anyone else in town buys this.";
         }
@@ -59,6 +66,8 @@ public class Cus44 : MonoBehaviour
         }
         else if (tang == 8)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Let's hurry back before more monsters attack us!";
         }
