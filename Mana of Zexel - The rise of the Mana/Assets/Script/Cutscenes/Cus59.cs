@@ -9,6 +9,7 @@ public class Cus59 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus59 : MonoBehaviour
     {
         if (tang == 1)
         {
+            AliaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Incredibly hot! I feel like I'm walking on fire.";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "The ground is so hot here, even the air feels dry and thirsty.";
         }
         else if (tang == 3)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Let's quickly find the surrounding village before we become roast pigs.";
         }
@@ -44,6 +49,8 @@ public class Cus59 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Are you okay, Alia? All around us there are really dangerous times.";
         }

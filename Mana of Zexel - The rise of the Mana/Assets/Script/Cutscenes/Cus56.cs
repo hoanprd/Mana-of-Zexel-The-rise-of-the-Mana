@@ -9,6 +9,7 @@ public class Cus56 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAR1, AliaVAL1, MariaVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus56 : MonoBehaviour
     {
         if (tang == 1)
         {
+            MariaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Do you want to take a break, Vayne?";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Hmm...";
         }
         else if (tang == 3)
         {
+            MariaVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Vayne? Do you feel good?";
         }
@@ -44,6 +49,8 @@ public class Cus56 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            AliaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "I never thought about recovering quickly.";
         }
@@ -84,6 +91,8 @@ public class Cus56 : MonoBehaviour
         }
         else if (tang == 13)
         {
+            MariaVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Even though I don't understand anything, Vayne must have come up with something great.";
         }
@@ -109,7 +118,7 @@ public class Cus56 : MonoBehaviour
         }
         else if (tang == 18)
         {
-            NameTagText.text = "Maria";
+            NameTagText.text = "Vayne";
             dia.text = "Well... Well, I'll finish the machine to continue the main work.";
         }
         else if (tang >= 19)

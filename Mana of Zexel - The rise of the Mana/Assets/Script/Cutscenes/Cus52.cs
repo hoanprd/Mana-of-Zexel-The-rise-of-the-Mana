@@ -9,6 +9,7 @@ public class Cus52 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAR1, AliaVAR1, MariaVAR1, ManaGuardianVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus52 : MonoBehaviour
     {
         if (tang == 1)
         {
+            ManaGuardianVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Salin";
             dia.text = "Very good, humans, Salin here I have to give up to you.";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "We don't want to fight, we just want to meet the mana gods.";
         }
@@ -39,6 +42,7 @@ public class Cus52 : MonoBehaviour
         }
         else if (tang == 4)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Then we passed your test, right?";
         }
@@ -49,11 +53,15 @@ public class Cus52 : MonoBehaviour
         }
         else if (tang == 6)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Thank you very much.";
         }
         else if (tang == 7)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "You say destiny? That means you knew we were coming here?";
         }
@@ -64,6 +72,8 @@ public class Cus52 : MonoBehaviour
         }
         else if (tang == 9)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "So do gods really exist?";
         }
@@ -79,6 +89,8 @@ public class Cus52 : MonoBehaviour
         }
         else if (tang == 12)
         {
+            ManaGuardianVAL1.SetActive(false);
+            AliaVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "Guardian feather +1";
         }

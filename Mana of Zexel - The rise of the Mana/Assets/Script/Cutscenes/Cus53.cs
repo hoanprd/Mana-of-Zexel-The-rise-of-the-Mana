@@ -9,6 +9,7 @@ public class Cus53 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAR1, AliaVAL1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus53 : MonoBehaviour
     {
         if (tang == 1)
         {
+            AliaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "What a tired feeling!... It's annoying.";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Alia, what the matter? Is the poison just recurring?";
         }
@@ -39,6 +42,8 @@ public class Cus53 : MonoBehaviour
         }
         else if (tang == 4)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "You mean your body is upset inside, right?";
         }
@@ -54,6 +59,8 @@ public class Cus53 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Mana? That's right, Maria and I both have the ability to withstand a large amount of mana and Alia can't.";
         }
@@ -74,21 +81,29 @@ public class Cus53 : MonoBehaviour
         }
         else if (tang == 11)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "It seems so.";
         }
         else if (tang == 12)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "It's okay, I have a way, just create something that can suppress Alia's mana flow.";
         }
         else if (tang == 13)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Well, I never thought of that.";
         }
         else if (tang == 14)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "However, making it won't be as easy as it used to be because it will hurt your mana flow.";
         }

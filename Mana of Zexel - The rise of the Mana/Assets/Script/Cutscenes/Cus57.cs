@@ -9,6 +9,7 @@ public class Cus57 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAR1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,22 +24,26 @@ public class Cus57 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Okay, just put it here.";
         }
         else if (tang == 2)
         {
+            VayneVAL1.SetActive(false);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 3)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Okay! Done!";
         }
         else if (tang == 4)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Doesn't it seem to work? She didn't feel any mana in the machine.";
         }
@@ -64,6 +69,8 @@ public class Cus57 : MonoBehaviour
         }
         else if (tang == 9)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "So does this mean this is our safe place? If so, I don't have to worry about those tough slimes anymore.";
         }

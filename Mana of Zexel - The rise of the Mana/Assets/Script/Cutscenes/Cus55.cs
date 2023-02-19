@@ -9,6 +9,7 @@ public class Cus55 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, ManaElfVAL1, ManaElfVAR1, ManaStoneVAR1, ManaLightVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,27 +24,35 @@ public class Cus55 : MonoBehaviour
     {
         if (tang == 1)
         {
+            MariaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "I can feel the mana increasing in abundance.";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "That's...";
         }
         else if (tang == 3)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
+            ManaElfVAL1.SetActive(true);
             NameTagText.text = "???";
             dia.text = "Welcome heroes, we mana gods are waiting for you!";
         }
         else if (tang == 4)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Hero? Do we save the world or something?";
         }
         else if (tang == 5)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Please introduce ourself my name is Vayne, and this is Maria, both of us are alchemists, the other is Alia.";
         }
@@ -54,21 +63,29 @@ public class Cus55 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            ManaElfVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Admittedly these gods are humble.";
         }
         else if (tang == 8)
         {
-            NameTagText.text = "Mana rock";
+            VayneVAR1.SetActive(false);
+            ManaStoneVAR1.SetActive(true);
+            NameTagText.text = "Mana stone";
             dia.text = "We respect you because you will have a very important responsibility later.";
         }
         else if (tang == 9)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "You mean we're going to save the world?";
         }
         else if (tang == 10)
         {
+            ManaStoneVAR1.SetActive(false);
+            ManaLightVAR1.SetActive(true);
             NameTagText.text = "Mana light";
             dia.text = "Yes, it's only a matter of time now.";
         }
@@ -79,6 +96,8 @@ public class Cus55 : MonoBehaviour
         }
         else if (tang == 12)
         {
+            ManaLightVAR1.SetActive(false);
+            ManaElfVAR1.SetActive(true);
             NameTagText.text = "Mana elf";
             dia.text = "We know you came here to ask about it but the question is, after Vayne finds your father, what will you do next?";
         }
@@ -89,6 +108,8 @@ public class Cus55 : MonoBehaviour
         }
         else if (tang == 14)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "...";
         }
@@ -99,6 +120,8 @@ public class Cus55 : MonoBehaviour
         }
         else if (tang == 16)
         {
+            AliaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Then can you tell us about the Zexel Gate and how to open it?";
         }
@@ -109,6 +132,8 @@ public class Cus55 : MonoBehaviour
         }
         else if (tang == 18)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Avoid the bad guys? That means there's something inside the temple?";
         }
@@ -119,6 +144,8 @@ public class Cus55 : MonoBehaviour
         }
         else if (tang == 20)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Mana used to live with humans.";
         }
@@ -164,11 +191,15 @@ public class Cus55 : MonoBehaviour
         }
         else if (tang == 29)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Inferno volcano and ice? Those two lands I have never been to.";
         }
         else if (tang == 30)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Looks like Heerium might know about those two places, Vayne because I've heard him sell ingredients sourced from those lands.";
         }
@@ -179,6 +210,8 @@ public class Cus55 : MonoBehaviour
         }
         else if (tang == 32)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "We thank you for the above information.";
         }

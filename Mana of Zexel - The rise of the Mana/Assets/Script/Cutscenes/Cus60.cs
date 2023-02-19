@@ -9,6 +9,7 @@ public class Cus60 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, MariaVAL1, ShanVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus60 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "We've reached the village! Let's see, where should we find the village chief?";
         }
         else if (tang == 2)
         {
+            ShanVAR1.SetActive(true);
             NameTagText.text = "???";
             dia.text = "Heh? Are you guys from outside the village?";
         }
@@ -54,6 +57,8 @@ public class Cus60 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "... Please help us, we need to see the village chief and we don't have any bad intentions!";
         }
@@ -64,6 +69,8 @@ public class Cus60 : MonoBehaviour
         }
         else if (tang == 9)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "In that case, just ask the village chief first, right?";
         }
@@ -74,7 +81,7 @@ public class Cus60 : MonoBehaviour
         }
         else if (tang == 11)
         {
-            NameTagText.text = "Mr. Lance";
+            NameTagText.text = "Vayne";
             dia.text = "Thank you very much! Oh, what's your name?";
         }
         else if (tang == 12)

@@ -9,6 +9,7 @@ public class Cus58 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAR1, MariaVAL1, MariaVAR1, MrLanceVAL1, HeeriumVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus58 : MonoBehaviour
     {
         if (tang == 1)
         {
+            MrLanceVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "Are you still not thinking of sourcing from inferno ice or inferno volcano, Heerium?";
         }
         else if (tang == 2)
         {
+            HeeriumVAR1.SetActive(true);
             NameTagText.text = "Heerium";
             dia.text = "Wow! You know that it has been stopped exporting for more than a year, if I have someone to export there, I have imported a large quantity.";
         }
         else if (tang == 3)
         {
+            MrLanceVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Is it the Heerium? You still good isn't it?";
         }
@@ -54,6 +59,8 @@ public class Cus58 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Uncle Heerium, if I'm not mistaken I've heard you import goods from the land of inferno volcano and inferno ice, right?";
         }
@@ -74,11 +81,15 @@ public class Cus58 : MonoBehaviour
         }
         else if (tang == 11)
         {
+            MariaVAL1.SetActive(false);
+            MrLanceVAL1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "I advise you not to interfere too much in the private affairs of those two lands!";
         }
         else if (tang == 12)
         {
+            HeeriumVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Not to interfere in privacy? What do you mean?";
         }
@@ -89,6 +100,8 @@ public class Cus58 : MonoBehaviour
         }
         else if (tang == 14)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "What do you mean between them and us?";
         }
@@ -99,11 +112,15 @@ public class Cus58 : MonoBehaviour
         }
         else if (tang == 16)
         {
+            MrLanceVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "I see, in that case we just have to do what's necessary.";
         }
         else if (tang == 17)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "If so, what land do you consider before Vayne?";
         }
@@ -114,6 +131,8 @@ public class Cus58 : MonoBehaviour
         }
         else if (tang == 19)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Hehe, I foretell it will be hotter than the inferno desert.";
         }
@@ -129,6 +148,8 @@ public class Cus58 : MonoBehaviour
         }
         else if (tang == 22)
         {
+            AliaVAR1.SetActive(false);
+            HeeriumVAR1.SetActive(true);
             NameTagText.text = "Heerium";
             dia.text = "Good luck to you guys hahaha.";
         }

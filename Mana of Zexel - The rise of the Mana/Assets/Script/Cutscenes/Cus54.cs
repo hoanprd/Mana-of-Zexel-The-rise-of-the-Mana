@@ -9,6 +9,7 @@ public class Cus54 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAR1, MariaVAL1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,22 +24,28 @@ public class Cus54 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "It worked! This is the mana chain that helps Alia stabilize the flow of mana in her body.";
         }
         else if (tang == 2)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Granted, Vayne is really talented, being able to think and create interesting things like this.";
         }
         else if (tang == 3)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Just now you felt the mana in my body decrease right?";
         }
         else if (tang == 4)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "... That's right.";
         }
@@ -49,6 +56,8 @@ public class Cus54 : MonoBehaviour
         }
         else if (tang == 6)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Normally the human body will have a flow of mana inside, for real alchemists they will have a more stable flow than normal people so you and Vayne can absorb mana without any problems...";
         }
@@ -79,6 +88,8 @@ public class Cus54 : MonoBehaviour
         }
         else if (tang == 12)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "I'm fine, don't worry about me.";
         }
@@ -94,6 +105,8 @@ public class Cus54 : MonoBehaviour
         }
         else if (tang == 15)
         {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "You two are so optimistic and interesting.";
         }
