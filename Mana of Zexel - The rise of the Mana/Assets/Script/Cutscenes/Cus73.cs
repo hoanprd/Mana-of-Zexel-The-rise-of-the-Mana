@@ -8,7 +8,8 @@ public class Cus73 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1;
+    public GameObject va1, va2, FOP;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, AsilaVAL1, AsilaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,27 +24,35 @@ public class Cus73 : MonoBehaviour
     {
         if (tang == 1)
         {
+            AsilaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Asila";
             dia.text = "In front here is the core of fire energy. Come on, Vayne, find a way to get it out safely.";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Yes, count on me.";
         }
         else if (tang == 3)
         {
+            AsilaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
+            va1.SetActive(false);
+            va2.SetActive(true);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 4)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "It worked!";
         }
         else if (tang == 5)
         {
+            AsilaVAR1.SetActive(true);
             NameTagText.text = "Asila";
             dia.text = "Wait, you just put something in instead.";
         }
@@ -59,21 +68,27 @@ public class Cus73 : MonoBehaviour
         }
         else if (tang == 8)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "What's that? Could it be that the village chief Alasa would say this helps to get the fire core safely? He said he wanted to surprise the village chief Asila.";
         }
         else if (tang == 9)
         {
+            AliaVAL1.SetActive(false);
+            AsilaVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "Rrroooommmmmmmm...";
         }
         else if (tang == 10)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Earthquake?";
         }
         else if (tang == 11)
         {
+            AsilaVAR1.SetActive(true);
             NameTagText.text = "Asila";
             dia.text = "No, the volcano is unstable, it will erupt.";
         }
@@ -89,36 +104,48 @@ public class Cus73 : MonoBehaviour
         }
         else if (tang == 14)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Everyone we have to get out of here!";
         }
         else if (tang == 15)
         {
+            AsilaVAR1.SetActive(false);
+            MariaVAL1.SetActive(false);
             NameTagText.text = "";
             dia.text = "Rrroommmmm...";
         }
         else if (tang == 16)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "It's not good, the path is full of lava.";
         }
         else if (tang == 17)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "No, no, I don't want to die yet.";
         }
         else if (tang == 18)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAR1.SetActive(false);
+            FOP.SetActive(true);
             NameTagText.text = "";
             dia.text = "Glowinggggg...";
         }
         else if (tang == 19)
         {
+            FOP.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "What, Orina's flame is glowing again? No single...";
         }
         else if (tang == 20)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Vayne quickly use that flame instead of the ice crystal!";
         }
@@ -129,6 +156,8 @@ public class Cus73 : MonoBehaviour
         }
         else if (tang == 22)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "Chenggggggggggggggg...";
         }
@@ -139,26 +168,34 @@ public class Cus73 : MonoBehaviour
         }
         else if (tang == 24)
         {
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Is everyone okay?";
         }
         else if (tang == 25)
         {
+            AsilaVAR1.SetActive(true);
             NameTagText.text = "Asila";
             dia.text = "I'm fine.";
         }
         else if (tang == 26)
         {
+            MariaVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Vayne! Are you okay?";
         }
         else if (tang == 27)
         {
+            AsilaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Uhm, I'm fine. Orina's fire saved our lives.";
         }
         else if (tang == 28)
         {
+            AliaVAL1.SetActive(false);
+            AsilaVAL1.SetActive(true);
             NameTagText.text = "Asila";
             dia.text = "That flame, isn't it the flame from the inferno monster?";
         }
@@ -179,11 +216,15 @@ public class Cus73 : MonoBehaviour
         }
         else if (tang == 32)
         {
+            AsilaVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "... Surely there must be a way?";
         }
         else if (tang == 33)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Calm down we still have time to sort this out.";
         }
@@ -194,6 +235,8 @@ public class Cus73 : MonoBehaviour
         }
         else if (tang == 35)
         {
+            AliaVAL1.SetActive(false);
+            AsilaVAL1.SetActive(true);
             NameTagText.text = "Asila";
             dia.text = "... I hope you guys really have a way, if that's the case, then I will temporarily borrow the fire core to solve this problem.";
         }

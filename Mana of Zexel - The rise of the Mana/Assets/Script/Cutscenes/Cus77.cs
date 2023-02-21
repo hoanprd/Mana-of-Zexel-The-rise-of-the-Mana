@@ -9,6 +9,7 @@ public class Cus77 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAR1, AliaVAR1, MariaVAL1, MariaVAR1, AsilaVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,6 +24,7 @@ public class Cus77 : MonoBehaviour
     {
         if (tang == 1)
         {
+            AsilaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Asila";
             dia.text = "Alright! I will tell you what happened before and when our two villages were closed to the outside world.";
@@ -39,6 +41,7 @@ public class Cus77 : MonoBehaviour
         }
         else if (tang == 4)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Makes sense! Both villages use their strengths and weaknesses to help each other, but why are the two of them independent of each other?";
         }
@@ -54,6 +57,8 @@ public class Cus77 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Alta inferno? I have never heard of that land.";
         }
@@ -74,6 +79,8 @@ public class Cus77 : MonoBehaviour
         }
         else if (tang == 11)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "So the village you two had a conflict with.";
         }
@@ -84,11 +91,15 @@ public class Cus77 : MonoBehaviour
         }
         else if (tang == 13)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "So it is. This is difficult to resolve if one party has lost the trust of the other.";
         }
         else if (tang == 14)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "... So you will continue to live in isolation like this forever?";
         }
@@ -99,11 +110,15 @@ public class Cus77 : MonoBehaviour
         }
         else if (tang == 16)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Alia... this thing...";
         }
         else if (tang == 17)
         {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "You think there's no way, but in fact you're running away from it. Your brother must have felt as sad as you!";
         }
@@ -134,6 +149,8 @@ public class Cus77 : MonoBehaviour
         }
         else if (tang == 23)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "If so, we'll help you with this. We'll go there and tell your brother about the alta inferno reinstatement.";
         }
@@ -149,21 +166,29 @@ public class Cus77 : MonoBehaviour
         }
         else if (tang == 26)
         {
+            AsilaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Looks like you can think too, Alia!";
         }
         else if (tang == 27)
         {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Nothing! But we have to convince the village chief Alasa first.";
         }
         else if (tang == 28)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Uhm!";
         }
         else if (tang == 29)
         {
+            MariaVAL1.SetActive(false);
+            AsilaVAL1.SetActive(true);
             NameTagText.text = "Asila";
             dia.text = "I thank you as well as count on you. Please help me solve this troublesome conflict!";
         }

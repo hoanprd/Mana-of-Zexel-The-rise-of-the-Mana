@@ -9,6 +9,7 @@ public class Cus78 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAR1, MariaVAL1, MariaVAR1, ShanVAL1, AlasaVAL1, AlasaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus78 : MonoBehaviour
     {
         if (tang == 1)
         {
+            ShanVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Shan";
             dia.text = "Oh it your guys again! Is everything okay in the inferno volcano village?";
         }
         else if (tang == 2)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Hey Shan! Do you know what happened after we used your respected village chief Alasa's ice crystals?";
         }
@@ -39,11 +42,15 @@ public class Cus78 : MonoBehaviour
         }
         else if (tang == 4)
         {
+            ShanVAL1.SetActive(false);
+            AlasaVAL1.SetActive(true);
             NameTagText.text = "Alasa";
             dia.text = "What's so noisy? It your guys again?";
         }
         else if (tang == 5)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Alasa village chief, you took advantage of me to want to destroy your brother's village!";
         }
@@ -64,6 +71,8 @@ public class Cus78 : MonoBehaviour
         }
         else if (tang == 9)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "No, we're here to settle those two conflicts!";
         }
@@ -79,6 +88,8 @@ public class Cus78 : MonoBehaviour
         }
         else if (tang == 12)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "No, he did it so he wouldn't be taken advantage of by the bad guys outside the village!";
         }
@@ -99,6 +110,8 @@ public class Cus78 : MonoBehaviour
         }
         else if (tang == 16)
         {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Your brother is very sad about you, Asila entrusted us to prove him wrong by asking Vayne to revive the land of alta inferno for you Alasa!";
         }
@@ -109,6 +122,9 @@ public class Cus78 : MonoBehaviour
         }
         else if (tang == 18)
         {
+            AlasaVAL1.SetActive(false);
+            AliaVAR1.SetActive(false);
+            ShanVAL1.SetActive(true);
             NameTagText.text = "Shan";
             dia.text = "... (We seem to be better than I thought. If so...)";
         }
@@ -119,11 +135,14 @@ public class Cus78 : MonoBehaviour
         }
         else if (tang == 20)
         {
+            AlasaVAR1.SetActive(true);
             NameTagText.text = "Alasa";
             dia.text = "... But how are you planning to revive that land when it's a dead land.";
         }
         else if (tang == 21)
         {
+            ShanVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "You can trust us on this, we will handle the revival of the land ourselves.";
         }

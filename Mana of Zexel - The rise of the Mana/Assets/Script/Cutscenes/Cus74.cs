@@ -9,6 +9,7 @@ public class Cus74 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAR1, AliaVAL1, MariaVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus74 : MonoBehaviour
     {
         if (tang == 1)
         {
+            AliaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Vayne, do you have a way to deal with this? But I don't know anything then.";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "I'm really confused too.";
         }
         else if (tang == 3)
         {
+            AliaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "I think there's a way to deal with that volcano.";
         }
@@ -69,6 +74,8 @@ public class Cus74 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            MariaVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "I believe you will succeed, Vayne, as long as you have the heart, everything will go well.";
         }

@@ -9,6 +9,7 @@ public class Cus75 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,27 +24,33 @@ public class Cus75 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "...";
         }
         else if (tang == 2)
         {
+            VayneVAL1.SetActive(false);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 3)
         {
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Very similar... very similar to Zexel's fire core.";
         }
         else if (tang == 4)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "So Vayne succeeded?";
         }
         else if (tang == 5)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "If you want to know success or not, you have to try to know. I think it might work because I successfully extracted and split Zexel's and mine's fire energy cores in two.";
         }
@@ -59,6 +66,8 @@ public class Cus75 : MonoBehaviour
         }
         else if (tang == 8)
         {
+            MariaVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "In that case, let's go to the inferno volcano and replace Vayne's fire core! We don't have much time, right?";
         }

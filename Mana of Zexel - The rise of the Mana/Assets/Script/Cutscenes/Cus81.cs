@@ -9,6 +9,7 @@ public class Cus81 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAR1, MariaVAL1, AlasaVAL1, AlasaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus81 : MonoBehaviour
     {
         if (tang == 1)
         {
+            AlasaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Alasa";
             dia.text = "Ah Vayne! You're here, according to what I should do it seems to give you Zexel's ice energy core right?";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Yes sir, so the front energy core is Zexel's ice energy core? I can feel the mana source from it.";
         }
@@ -54,21 +57,29 @@ public class Cus81 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            AlasaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "You don't have to worry about this, village head Alasa, Vayne can easily clone Zexel's ice energy core like when he saved Asila's village from the volcanic eruption.";
         }
         else if (tang == 8)
         {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "That's right! Vayne is very good at these things!";
         }
         else if (tang == 9)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Come on guys, I'm not that good, it's all down to luck.";
         }
         else if (tang == 10)
         {
+            AliaVAR1.SetActive(false);
+            AlasaVAR1.SetActive(true);
             NameTagText.text = "Alasa";
             dia.text = "Can you really make a copy of the ice energy core?";
         }
