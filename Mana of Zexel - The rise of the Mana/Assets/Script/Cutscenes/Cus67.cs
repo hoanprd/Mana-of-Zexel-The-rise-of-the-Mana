@@ -9,6 +9,7 @@ public class Cus67 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, MariaVAR1, ShanVAL1, AlasaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus67 : MonoBehaviour
     {
         if (tang == 1)
         {
+            ShanVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Shan";
             dia.text = "Chief Alasa, the three of them have killed all the wolves at your request!";
         }
         else if (tang == 2)
         {
+            AlasaVAR1.SetActive(true);
             NameTagText.text = "Alasa";
             dia.text = "Is that so! The three of you are good too! However, that is just the start.";
         }
         else if (tang == 3)
         {
+            ShanVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "So what do we do next?";
         }
@@ -69,21 +74,29 @@ public class Cus67 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            VayneVAL1.SetActive(false);
+            ShanVAL1.SetActive(true);
             NameTagText.text = "Shan";
             dia.text = "I got it!";
         }
         else if (tang == 11)
         {
+            ShanVAL1.SetActive(false);
+            AlasaVAR1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Looks like this village chief likes to put us in danger.";
         }
         else if (tang == 12)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "May he have no ill will towards us.";
         }
         else if (tang == 13)
         {
+            AliaVAL1.SetActive(false);
+            ShanVAL1.SetActive(true);
             NameTagText.text = "Shan";
             dia.text = "Hey, you two, stop talking bad about the village chief and finish the quest first.";
         }
@@ -94,6 +107,8 @@ public class Cus67 : MonoBehaviour
         }
         else if (tang == 15)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "There's no need to be grumpy Shan, we're just wondering.";
         }

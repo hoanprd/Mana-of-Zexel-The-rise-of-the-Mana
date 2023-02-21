@@ -9,6 +9,7 @@ public class Cus71 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAR1, MariaVAL1, ShanVAL1, AsilaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,32 +24,40 @@ public class Cus71 : MonoBehaviour
     {
         if (tang == 1)
         {
+            ShanVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Shan";
             dia.text = "Everyone please wait outside, I will explain to Asila village chief.";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "I see, we'll wait.";
         }
         else if (tang == 3)
         {
+            ShanVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 4)
         {
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Hey, do you two feel something strange?";
         }
         else if (tang == 5)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Is there anything unusual, Maria?";
         }
         else if (tang == 6)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "... It's normal for me right now. Anyway, the village chief Alasa made it possible for us to get the fire core.";
         }
@@ -69,6 +78,8 @@ public class Cus71 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            MariaVAL1.SetActive(false);
+            ShanVAL1.SetActive(true);
             NameTagText.text = "Shan";
             dia.text = "There's good news for everyone, village chief Asila has already agreed to let you get the fire core.";
         }
@@ -84,11 +95,15 @@ public class Cus71 : MonoBehaviour
         }
         else if (tang == 13)
         {
+            VayneVAR1.SetActive(false);
+            AsilaVAR1.SetActive(true);
             NameTagText.text = "Asila";
             dia.text = "I pray that you can obtain the energy core without affecting the village.";
         }
         else if (tang == 14)
         {
+            ShanVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "We promise we won't trouble this village! And is the village chief really going to give us an energy core like that, after all, it's the treasure of this village.";
         }

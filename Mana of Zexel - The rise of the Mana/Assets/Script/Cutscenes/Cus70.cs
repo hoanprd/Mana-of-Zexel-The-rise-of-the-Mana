@@ -8,7 +8,8 @@ public class Cus70 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1;
+    public GameObject va1, FOP;
+    public GameObject VayneVAL1, VayneVAR1, MariaVAL1, ShanVAL1, AlasaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus70 : MonoBehaviour
     {
         if (tang == 1)
         {
+            ShanVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Shan";
             dia.text = "Alasa village chief, we have found the ice crystal!";
         }
         else if (tang == 2)
         {
+            AlasaVAR1.SetActive(true);
             NameTagText.text = "Alasa";
             dia.text = "Just in time! I've finished making this stick that holds this ice crystal.";
         }
@@ -39,6 +42,8 @@ public class Cus70 : MonoBehaviour
         }
         else if (tang == 4)
         {
+            ShanVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Will this prevent the village at the inferno volcano from being destroyed?";
         }
@@ -54,11 +59,15 @@ public class Cus70 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "... Surprise?";
         }
         else if (tang == 8)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "... Okay, if that's what you want, we'll keep quiet about the ice crystals.";
         }
@@ -74,16 +83,22 @@ public class Cus70 : MonoBehaviour
         }
         else if (tang == 11)
         {
+            VayneVAL1.SetActive(false);
+            AlasaVAR1.SetActive(false);
+            FOP.SetActive(true);
             NameTagText.text = "";
             dia.text = "Glowinggggggggggggggggg.............";
         }
         else if (tang == 12)
         {
+            FOP.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "(What! Is the thing Orina gave me that is glowing again?)";
         }
         else if (tang == 13)
         {
+            AlasaVAR1.SetActive(true);
             NameTagText.text = "Alasa";
             dia.text = "Any questions, Vayne?";
         }
@@ -94,16 +109,20 @@ public class Cus70 : MonoBehaviour
         }
         else if (tang == 15)
         {
+            VayneVAL1.SetActive(false);
+            AlasaVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 16)
         {
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Just now, was the glowing thing Orina's, Vayne?";
         }
         else if (tang == 17)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "That's right, it seems to react to ice crystals.";
         }

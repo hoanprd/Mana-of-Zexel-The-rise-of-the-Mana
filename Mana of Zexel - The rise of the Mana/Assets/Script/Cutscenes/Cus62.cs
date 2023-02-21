@@ -9,6 +9,7 @@ public class Cus62 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, MariaVAL1, HeeriumVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus62 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Hey Heerium! We brought some presents for this uncle!";
         }
         else if (tang == 2)
         {
+            HeeriumVAR1.SetActive(true);
             NameTagText.text = "Heerium";
             dia.text = "Oh yeah? Then thank you very much!";
         }
@@ -59,21 +62,29 @@ public class Cus62 : MonoBehaviour
         }
         else if (tang == 8)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "I'm afraid it will be the same in inferno ice, because the energy cores keep the people alive there.";
         }
         else if (tang == 9)
         {
+            HeeriumVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "That means we'll never be able to open the Zexel Gate.";
         }
         else if (tang == 10)
         {
+            MariaVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "It's a headache, we're still stuck anyway!";
         }
         else if (tang == 11)
         {
+            VayneVAR1.SetActive(false);
+            HeeriumVAR1.SetActive(true);
             NameTagText.text = "Heerium";
             dia.text = "It's hard to admit, no one wants to take away someone else's source of life.";
         }
@@ -84,6 +95,8 @@ public class Cus62 : MonoBehaviour
         }
         else if (tang == 13)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "But we can't get the core there...";
         }

@@ -9,6 +9,7 @@ public class Cus65 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAL1, AliaVAR1, MariaVAR1, ShanVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -29,16 +30,20 @@ public class Cus65 : MonoBehaviour
         }
         else if (tang == 2)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Howl, there are wolves nearby!";
         }
         else if (tang == 3)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "We have to hurry or else...";
         }
         else if (tang == 4)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "It's not okay... it's not okay! They... they've surrounded us!";
         }
@@ -49,16 +54,20 @@ public class Cus65 : MonoBehaviour
         }
         else if (tang == 6)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "Snikttttttttttttttttttt";
         }
         else if (tang == 7)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "That's...";
         }
         else if (tang == 8)
         {
+            ShanVAR1.SetActive(true);
             NameTagText.text = "Shan";
             dia.text = "It seems like everyone is having a hard time with the wolves in this land?";
         }
@@ -69,6 +78,8 @@ public class Cus65 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "You're not wearing anything else, Shan! Don't you feel cold?";
         }
@@ -84,6 +95,8 @@ public class Cus65 : MonoBehaviour
         }
         else if (tang == 13)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Yes... that's right! If you don't mind, we...";
         }
@@ -99,10 +112,15 @@ public class Cus65 : MonoBehaviour
         }
         else if (tang == 16)
         {
+            NameTagText.text = "Shan";
+            dia.text = "Don't ask too much if you don't want to freeze in this cold weather.";
+        }
+        else if (tang == 17)
+        {
             NameTagText.text = "Vayne";
             dia.text = "Okay, okay, we'll follow.";
         }
-        else if (tang >= 17)
+        else if (tang >= 18)
         {
             CutscenesController.cus65 = 1;
             ContainerController.LoadingOpen = true;

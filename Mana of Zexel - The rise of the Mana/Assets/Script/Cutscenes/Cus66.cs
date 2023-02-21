@@ -9,6 +9,7 @@ public class Cus66 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, ShanVAL1, AlasaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus66 : MonoBehaviour
     {
         if (tang == 1)
         {
+            ShanVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Shan";
             dia.text = "They have arrived, village chief!";
         }
         else if (tang == 2)
         {
+            AlasaVAR1.SetActive(true);
             NameTagText.text = "???";
             dia.text = "So these are the people you reported to me! Only three people?";
         }
         else if (tang == 3)
         {
+            ShanVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Hello! We are people from far away lands. I am an alchemist named Vayne, the other two are Alia and Maria.";
         }
@@ -44,6 +49,8 @@ public class Cus66 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "... Yes that's right!";
         }
@@ -59,6 +66,8 @@ public class Cus66 : MonoBehaviour
         }
         else if (tang == 8)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "... If so, you already know everything... if so...";
         }
@@ -139,20 +148,26 @@ public class Cus66 : MonoBehaviour
         }
         else if (tang == 24)
         {
+            VayneVAL1.SetActive(false);
+            ShanVAL1.SetActive(true);
             NameTagText.text = "Shan";
             dia.text = "I understand, village chief.";
         }
-        else if (tang == 24)
+        else if (tang == 25)
         {
+            ShanVAL1.SetActive(false);
+            AlasaVAR1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Doesn't this village chief appear to be more aggressive than the village chief in the inferno volcano?";
         }
-        else if (tang == 24)
+        else if (tang == 26)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Looks like it! But she had a feeling she couldn't trust him somehow.";
         }
-        else if (tang >= 25)
+        else if (tang >= 27)
         {
             CutscenesController.cus66 = 1;
             ContainerController.LoadingOpen = true;

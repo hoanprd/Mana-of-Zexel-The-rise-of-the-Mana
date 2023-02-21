@@ -9,6 +9,7 @@ public class Cus68 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, MariaVAL1, ShanVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus68 : MonoBehaviour
     {
         if (tang == 1)
         {
+            AliaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Oh my gosh! It's even colder in here! My hand... as if I can't feel it anymore...";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "I can feel an abundance of mana here.";
         }
         else if (tang == 3)
         {
+            AliaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Me too... it's cold to admit.";
         }
@@ -49,11 +54,15 @@ public class Cus68 : MonoBehaviour
         }
         else if (tang == 6)
         {
+            MariaVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "What! Slime? Those filthy things too...";
         }
         else if (tang == 7)
         {
+            VayneVAR1.SetActive(false);
+            ShanVAR1.SetActive(true);
             NameTagText.text = "Shan";
             dia.text = "Are you afraid of slimes?";
         }
@@ -64,6 +73,8 @@ public class Cus68 : MonoBehaviour
         }
         else if (tang == 9)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "By the way, Shan, usually people in the villages in the two regions of the inferno volcano and inferno ice often interact with each other?";
         }
