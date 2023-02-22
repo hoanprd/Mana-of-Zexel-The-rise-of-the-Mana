@@ -9,6 +9,7 @@ public class Cus100 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAR1, MariaVAL1, JescaVAL1, MeruVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,22 +24,26 @@ public class Cus100 : MonoBehaviour
     {
         if (tang == 1)
         {
+            JescaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Jesca";
             dia.text = "Oh grandma! You are back!";
         }
         else if (tang == 2)
         {
+            MeruVAR1.SetActive(true);
             NameTagText.text = "Meru";
             dia.text = "I'm back! Is my granddaughter at home well?";
         }
         else if (tang == 3)
         {
-            NameTagText.text = "Orina";
+            NameTagText.text = "Jesca";
             dia.text = "Of course it's fine, I also prepared some premixed medicine while you were away.";
         }
         else if (tang == 4)
         {
+            MeruVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "You're so good Jesca, do you want to be a great doctor like your grandmother?";
         }
@@ -54,11 +59,15 @@ public class Cus100 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            JescaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Too bad we'll have to go back to Zexel town, if given the chance I'll visit.";
         }
         else if (tang == 8)
         {
+            AliaVAR1.SetActive(false);
+            MeruVAR1.SetActive(true);
             NameTagText.text = "Meru";
             dia.text = "You guys better be careful. Wounds like that are hard to save.";
         }
@@ -69,6 +78,8 @@ public class Cus100 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "By the way, Mrs. Meru, what do you mean by calling the girl we met before a magician?";
         }
@@ -84,6 +95,8 @@ public class Cus100 : MonoBehaviour
         }
         else if (tang == 13)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "... Anyway, we thank you very much.";
         }

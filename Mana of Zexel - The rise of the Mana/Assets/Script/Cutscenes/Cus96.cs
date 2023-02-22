@@ -9,6 +9,7 @@ public class Cus96 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, MariaVAL1, MariaVAR1, MrLanceVAL1, MrLanceVAR1, MeruVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,22 +24,28 @@ public class Cus96 : MonoBehaviour
     {
         if (tang == 1)
         {
+            MrLanceVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "Are you two back? Alia is much better now.";
         }
         else if (tang == 2)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Well then, we brought back the dragon scales.";
         }
         else if (tang == 3)
         {
+            MrLanceVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Mrs. Meru, we're counting on you.";
         }
         else if (tang == 4)
         {
+            MariaVAR1.SetActive(false);
+            MeruVAR1.SetActive(true);
             NameTagText.text = "Meru";
             dia.text = "Unexpectedly, these are real mana dragon scales. Okay, it will take quite a while to make the antidote.";
         }
@@ -59,11 +66,15 @@ public class Cus96 : MonoBehaviour
         }
         else if (tang == 8)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "We should go out for a while and rest, Vayne. Alia will definitely be fine.";
         }
         else if (tang == 9)
         {
+            MeruVAR1.SetActive(false);
+            MrLanceVAR1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "Then let me make dinner for everyone.";
         }

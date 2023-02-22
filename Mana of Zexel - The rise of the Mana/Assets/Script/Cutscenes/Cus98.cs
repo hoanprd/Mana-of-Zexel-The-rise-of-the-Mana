@@ -9,6 +9,7 @@ public class Cus98 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAR1, AliaVAL1, MariaVAR1, MrLanceVAL1, MeruVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,6 +24,7 @@ public class Cus98 : MonoBehaviour
     {
         if (tang == 1)
         {
+            AliaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Vayne! Look at me, healthy like nothing ever happened hihi.";
@@ -34,6 +36,7 @@ public class Cus98 : MonoBehaviour
         }
         else if (tang == 3)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "I'm worried too, are you sure you're okay?";
         }
@@ -44,6 +47,8 @@ public class Cus98 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            MariaVAR1.SetActive(false);
+            MeruVAR1.SetActive(true);
             NameTagText.text = "Meru";
             dia.text = "Of course it's not completely fine. Don't get too cocky little girl, you may be in good shape but it still takes time to fully recover.";
         }
@@ -54,6 +59,8 @@ public class Cus98 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            MeruVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Alia I'm sorry for everything...";
         }
@@ -69,16 +76,22 @@ public class Cus98 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            AliaVAL1.SetActive(false);
+            MrLanceVAL1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "It's been a long wait, hasn't it? The food has arrived.";
         }
         else if (tang == 11)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Invite everyone to a meal.";
         }
         else if (tang == 12)
         {
+            MrLanceVAL1.SetActive(false);
+            MariaVAR1.SetActive(false);
             NameTagText.text = "All";
             dia.text = "Have a good meal everyone";
         }

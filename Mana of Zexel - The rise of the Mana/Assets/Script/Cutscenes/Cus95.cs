@@ -9,6 +9,7 @@ public class Cus95 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, MariaVAL1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -29,11 +30,13 @@ public class Cus95 : MonoBehaviour
         }
         else if (tang == 2)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Ha... ha... ha... Maria hold that dragon back!";
         }
         else if (tang == 3)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Come on Vayne!";
         }
@@ -44,6 +47,8 @@ public class Cus95 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "Senggggggggggggg...";
         }
@@ -54,11 +59,13 @@ public class Cus95 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "It flew away...";
         }
         else if (tang == 8)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Hehe... Luckily I got the dragon scales in time.";
         }

@@ -9,6 +9,7 @@ public class Cus92 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, MariaVAL1, MariaVAR1, MeruVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus92 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Mrs. Meru! We have already brought enough ingredients!";
         }
         else if (tang == 2)
         {
+            MeruVAR1.SetActive(true);
             NameTagText.text = "Meru";
             dia.text = "It's good, she's just passed the dangerous stage but this still can't stop the poison from spreading.";
         }
         else if (tang == 3)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Is Alia still in a coma? Is this situation really okay?";
         }
@@ -44,6 +49,8 @@ public class Cus92 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "But where can you get mana dragon scales?";
         }
@@ -54,6 +61,8 @@ public class Cus92 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Do we have no other choice?";
         }
@@ -69,21 +78,28 @@ public class Cus92 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Maria, let's go ask Orina, I think she'll know what to do.";
         }
         else if (tang == 11)
         {
+            MeruVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Oh, that's fine.";
         }
         else if (tang == 12)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAR1.SetActive(false);
             NameTagText.text = "Alia";
             dia.text = "Uhhh...";
         }
         else if (tang == 13)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Alia try harder, I still owe you this life...";
         }

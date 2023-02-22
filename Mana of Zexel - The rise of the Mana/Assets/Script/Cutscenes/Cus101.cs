@@ -9,6 +9,7 @@ public class Cus101 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus101 : MonoBehaviour
     {
         if (tang == 1)
         {
+            AliaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Looks like things are back to normal, right? Hey Vayne, if you don't mind, make me your specialty.";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Huh, you mean my masterpiece porridge?";
         }
@@ -39,21 +42,25 @@ public class Cus101 : MonoBehaviour
         }
         else if (tang == 4)
         {
-            NameTagText.text = "Maria";
+            NameTagText.text = "Vayne";
             dia.text = "Okay... okay... if you want, I'll do it.";
         }
         else if (tang == 5)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 6)
         {
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "You know what, Alia, during the time you were in a coma, Vayne was very worried about you.";
         }
         else if (tang == 7)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Uhm... At that time when Vayne was about to get hurt, I acted rationally so I blocked Vayne's attack.";
         }
@@ -89,21 +96,27 @@ public class Cus101 : MonoBehaviour
         }
         else if (tang == 14)
         {
+            MariaVAL1.SetActive(false);
+            AliaVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 15)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Hey Alia, here's your porridge request. Oh, Maria, I have a spare for her too!";
         }
         else if (tang == 16)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "I'm not hungry yet, maybe I should go out for a walk, you two stay and have a good time!";
         }
         else if (tang == 17)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Heh...";
         }
@@ -114,6 +127,8 @@ public class Cus101 : MonoBehaviour
         }
         else if (tang == 19)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "...";
         }
@@ -169,16 +184,20 @@ public class Cus101 : MonoBehaviour
         }
         else if (tang == 30)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 31)
         {
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "It's really comfortable outside. How are you two? Feeling all right?";
         }
         else if (tang == 32)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "We're fine. It's just a little sudden between you and Maria.";
         }
@@ -189,6 +208,8 @@ public class Cus101 : MonoBehaviour
         }
         else if (tang == 34)
         {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "... Eh... we already confessed to each other.";
         }
@@ -199,6 +220,8 @@ public class Cus101 : MonoBehaviour
         }
         else if (tang == 36)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Looks like our next target is Zane, we have to stop his schemes and stop him from harming others like Shan.";
         }
@@ -209,6 +232,8 @@ public class Cus101 : MonoBehaviour
         }
         else if (tang == 38)
         {
+            MariaVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Admittedly he's strong, if some of us get hit, it'll be just as hard as me.";
         }
@@ -229,6 +254,8 @@ public class Cus101 : MonoBehaviour
         }
         else if (tang == 42)
         {
+            AliaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "That's a good idea, then we can go over to Orina's to see if there are any more useful items in battle.";
         }

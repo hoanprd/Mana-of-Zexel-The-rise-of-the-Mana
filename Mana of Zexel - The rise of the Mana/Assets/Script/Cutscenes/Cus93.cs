@@ -9,6 +9,7 @@ public class Cus93 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, MariaVAL1, OrinaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus93 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Oh Orina! Are you here?";
         }
         else if (tang == 2)
         {
+            OrinaVAR1.SetActive(true);
             NameTagText.text = "Orina";
             dia.text = "Is something wrong?";
         }
         else if (tang == 3)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "We came here to inquire about something that absorbs magic like dragon mana scales.";
         }
@@ -44,6 +49,8 @@ public class Cus93 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Do you know where it is?";
         }
@@ -64,6 +71,8 @@ public class Cus93 : MonoBehaviour
         }
         else if (tang == 9)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Where exactly?";
         }
@@ -74,6 +83,8 @@ public class Cus93 : MonoBehaviour
         }
         else if (tang == 11)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "At least we can look around. As for dragons, I've never seen them in real life either.";
         }
@@ -84,6 +95,8 @@ public class Cus93 : MonoBehaviour
         }
         else if (tang == 13)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "A... cow? Does it really look like that?";
         }
@@ -94,6 +107,8 @@ public class Cus93 : MonoBehaviour
         }
         else if (tang == 15)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Thank you, Orina, if that's the case, here we go!";
         }
