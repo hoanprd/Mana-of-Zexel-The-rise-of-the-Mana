@@ -8,7 +8,8 @@ public class Cus88 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1;
+    public GameObject va1, va2;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, MariaVAL1, MariaVAR1, ZaneVAL1, ZaneVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,16 @@ public class Cus88 : MonoBehaviour
     {
         if (tang == 1)
         {
+            AliaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Is this the temple of Zexel? I feel...";
         }
         else if (tang == 2)
         {
+            va1.SetActive(false);
+            va2.SetActive(true);
+            AliaVAL1.SetActive(false);
             NameTagText.text = "???";
             dia.text = "Alia... Alia... Where are you?";
         }
@@ -39,11 +44,15 @@ public class Cus88 : MonoBehaviour
         }
         else if (tang == 4)
         {
+            va2.SetActive(false);
+            va1.SetActive(true);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "(What is this, just now...)";
         }
         else if (tang == 5)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Is something wrong, Alia?";
         }
@@ -54,6 +63,8 @@ public class Cus88 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "The air around here feels suffocating.";
         }
@@ -69,21 +80,27 @@ public class Cus88 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "Krakkkk... Krakkkk...";
         }
         else if (tang == 11)
         {
+            ZaneVAL1.SetActive(true);
             NameTagText.text = "???";
             dia.text = "Oh, I can't believe anyone can get in here!";
         }
         else if (tang == 12)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Who is that? This source of power...";
         }
         else if (tang == 13)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "I can feel the dark mana energy like Shan's. What the hell.";
         }
@@ -94,6 +111,8 @@ public class Cus88 : MonoBehaviour
         }
         else if (tang == 15)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "We are alchemists named Vayne and Maria, the other is our friend Alia.";
         }
@@ -104,11 +123,15 @@ public class Cus88 : MonoBehaviour
         }
         else if (tang == 17)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Zane? That was the name of the magician Shan had mentioned.";
         }
         else if (tang == 18)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "!!! It turned out that he was the guy who lured Shan to destroy two villages inferno volcano and inferno ice.";
         }
@@ -159,75 +182,78 @@ public class Cus88 : MonoBehaviour
         }
         else if (tang == 28)
         {
-            NameTagText.text = "Asila";
-            dia.text = "Shan, I... I'm sorry for ignoring this...";
-        }
-        else if (tang == 29)
-        {
             NameTagText.text = "Vayne";
             dia.text = "Hyaaaaaaa...";
         }
-        else if (tang == 30)
+        else if (tang == 29)
         {
             NameTagText.text = "Zane";
             dia.text = "You're too young, kid! Shield!";
         }
-        else if (tang == 31)
+        else if (tang == 30)
         {
             NameTagText.text = "Zane";
             dia.text = "Sengggggggggg....";
         }
-        else if (tang == 32)
+        else if (tang == 31)
         {
             NameTagText.text = "Vayne";
             dia.text = "I can't get through him.";
         }
-        else if (tang == 33)
+        else if (tang == 32)
         {
             NameTagText.text = "Zane";
             dia.text = "Die you brat with a milky mouth.";
         }
-        else if (tang == 34)
+        else if (tang == 33)
         {
+            ZaneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Vayne! Watch...";
         }
-        else if (tang == 35)
+        else if (tang == 34)
         {
             NameTagText.text = "Vayne";
             dia.text = "Alia!";
         }
-        else if (tang == 36)
+        else if (tang == 35)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
             NameTagText.text = "Alia";
             dia.text = "Ahhhhhhhhh...";
         }
-        else if (tang == 37)
+        else if (tang == 36)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Aliaaaaaa!";
         }
-        else if (tang == 38)
+        else if (tang == 37)
         {
+            ZaneVAR1.SetActive(true);
             NameTagText.text = "Zane";
             dia.text = "You're lucky that girl died for you. I'm busy with my own business, see you later.";
         }
-        else if (tang == 39)
+        else if (tang == 38)
         {
+            ZaneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Alia! It's not okay, that attack is a critical hit.";
         }
-        else if (tang == 40)
+        else if (tang == 39)
         {
             NameTagText.text = "Vayne";
             dia.text = "I'm sorry... Alia...";
         }
-        else if (tang == 41)
+        else if (tang == 40)
         {
             NameTagText.text = "Maria";
             dia.text = "Quickly bring her back to Mr. Lance go. She won't be able to withstand this attack for long.";
         }
-        else if (tang >= 42)
+        else if (tang >= 41)
         {
             CutscenesController.cus88 = 1;
             ContainerController.LoadingOpen = true;

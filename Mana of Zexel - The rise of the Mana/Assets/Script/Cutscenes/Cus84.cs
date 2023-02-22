@@ -9,6 +9,7 @@ public class Cus84 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAR1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus84 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Okay! Finished a machine at inferno volcano already.";
         }
         else if (tang == 2)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "We should get out of here, it's really hot in here. Don't you have a better place to put your phone, Vayne?";
         }
@@ -44,6 +47,8 @@ public class Cus84 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Wait for me and Maria!";
         }

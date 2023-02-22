@@ -8,7 +8,8 @@ public class Cus82 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1;
+    public GameObject va1, va2;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAR1, MariaVAL1, MariaVAR1, AlasaVAL1, AlasaVAR1, ShanVAL1, ShanVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,37 +24,49 @@ public class Cus82 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Let's get active my ice core.";
         }
         else if (tang == 2)
         {
+            va1.SetActive(false);
+            va2.SetActive(true);
+            VayneVAL1.SetActive(false);
             NameTagText.text = "";
             dia.text = "Glowing...";
         }
         else if (tang == 3)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Looks as good as new, village chief Alasa.";
         }
         else if (tang == 4)
         {
+            AlasaVAR1.SetActive(true);
             NameTagText.text = "Alasa";
             dia.text = "You are such a good alchemist. I think you can match the legendary alchemist Zexel hahaha.";
         }
         else if (tang == 5)
         {
+            VayneVAL1.SetActive(false);
+            ShanVAL1.SetActive(true);
             NameTagText.text = "Shan";
             dia.text = "Great, looks like you saved both of these villages, Vayne.";
         }
         else if (tang == 6)
         {
+            AlasaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Is that Shan? Are you awake already?";
         }
         else if (tang == 7)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "How are you, Shan? We're pretty worried about him, too.";
         }
@@ -64,6 +77,8 @@ public class Cus82 : MonoBehaviour
         }
         else if (tang == 9)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(false);
             NameTagText.text = "Maria";
             dia.text = "Dark magic is very scary, it can take over the hole in the user's heart.";
         }
@@ -74,11 +89,15 @@ public class Cus82 : MonoBehaviour
         }
         else if (tang == 11)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "It's okay, as long as we can help people, it's an honor!";
         }
         else if (tang == 12)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "By the way, Shan, do you know where that magician is?";
         }
@@ -94,6 +113,8 @@ public class Cus82 : MonoBehaviour
         }
         else if (tang == 15)
         {
+            ShanVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Then can we go, Vayne? I already have enough Zexel's two cores of fire and ice mana energy.";
         }
@@ -109,11 +130,15 @@ public class Cus82 : MonoBehaviour
         }
         else if (tang == 18)
         {
+            MariaVAL1.SetActive(false);
+            AlasaVAL1.SetActive(true);
             NameTagText.text = "Alasa";
             dia.text = "Goodbye, I wish everyone a safe journey!";
         }
         else if (tang == 19)
         {
+            VayneVAR1.SetActive(false);
+            ShanVAR1.SetActive(true);
             NameTagText.text = "Shan";
             dia.text = "Thank you everyone and see you soon!";
         }

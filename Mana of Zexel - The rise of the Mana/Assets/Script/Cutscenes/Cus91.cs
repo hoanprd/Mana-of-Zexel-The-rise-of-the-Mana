@@ -9,6 +9,7 @@ public class Cus91 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, MariaVAL1, MeruVAL1, MeruVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus91 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Madam Meru, here she is! Please save her!";
         }
         else if (tang == 2)
         {
+            MeruVAR1.SetActive(true);
             NameTagText.text = "Meru";
             dia.text = "I know, come on... this wound...";
         }
         else if (tang == 3)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Can you save her?";
         }
@@ -44,6 +49,8 @@ public class Cus91 : MonoBehaviour
         }
         else if (tang == 5)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Thank goodness, if so, how long will it take to heal, ma'am?";
         }
@@ -74,21 +81,28 @@ public class Cus91 : MonoBehaviour
         }
         else if (tang == 11)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "These things we can get quickly.";
         }
         else if (tang == 12)
         {
+            MeruVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Okay! In that case, let's go, Maria. Alia I will definitely help you as much as I can!";
         }
         else if (tang == 13)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 14)
         {
+            MeruVAL1.SetActive(true);
             NameTagText.text = "Meru";
             dia.text = "This little girl's wound... The person who caused it must be a cruel and inhumane guy... even if the two of them bring back the ingredients, there's still one important thing missing to make the antidote.";
         }

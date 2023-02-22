@@ -8,7 +8,8 @@ public class Cus87 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1;
+    public GameObject va1, va2, va3;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAR1, MariaVAL1, ZaneVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus87 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "We just need to put two mana cores like this?";
         }
         else if (tang == 2)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Still no response?";
         }
@@ -39,31 +42,41 @@ public class Cus87 : MonoBehaviour
         }
         else if (tang == 4)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "Glowinggggggggggggg...";
         }
         else if (tang == 5)
         {
+            va1.SetActive(false);
+            va2.SetActive(true);
             NameTagText.text = "";
             dia.text = "Rammmmmmmmmmmmmmm...";
         }
         else if (tang == 6)
         {
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "The door is open!";
         }
         else if (tang == 7)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Can we go in already?";
         }
         else if (tang == 8)
         {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Come on, maybe your father is waiting there, Vayne.";
         }
         else if (tang == 9)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Take it easy, be careful of traps and monsters around.";
         }
@@ -74,11 +87,16 @@ public class Cus87 : MonoBehaviour
         }
         else if (tang == 11)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 12)
         {
+            va2.SetActive(false);
+            va3.SetActive(true);
+            ZaneVAL1.SetActive(true);
             NameTagText.text = "???";
             dia.text = "I just felt something coming.";
         }

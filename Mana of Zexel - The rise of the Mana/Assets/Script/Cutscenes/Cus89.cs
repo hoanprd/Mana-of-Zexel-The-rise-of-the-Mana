@@ -9,6 +9,7 @@ public class Cus89 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, MariaVAL1, MariaVAR1, MrLanceVAL1, OrinaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -29,16 +30,20 @@ public class Cus89 : MonoBehaviour
         }
         else if (tang == 2)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Wait a minute, I'll create a cure.";
         }
         else if (tang == 3)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Come on Alia...";
         }
         else if (tang == 4)
         {
+            VayneVAL1.SetActive(false);
+            MrLanceVAL1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "What happened?";
         }
@@ -59,11 +64,14 @@ public class Cus89 : MonoBehaviour
         }
         else if (tang == 8)
         {
+            MrLanceVAL1.SetActive(false);
+            MariaVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 9)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Alia, hurry and drink!";
         }
@@ -84,6 +92,7 @@ public class Cus89 : MonoBehaviour
         }
         else if (tang == 13)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "This is a corrosive attack on the body, only magic can remove it from the body.";
         }
@@ -94,21 +103,27 @@ public class Cus89 : MonoBehaviour
         }
         else if (tang == 15)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAR1.SetActive(false);
             NameTagText.text = "Alia";
             dia.text = "Vayne...";
         }
         else if (tang == 16)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "I'm sorry... I was so angry... Damn, there must be a way!";
         }
         else if (tang == 17)
         {
+            OrinaVAR1.SetActive(true);
             NameTagText.text = "Orina";
             dia.text = "... This dark magic, must be that Zane guy.";
         }
         else if (tang == 18)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Orina? What is she doing here?";
         }
@@ -119,6 +134,8 @@ public class Cus89 : MonoBehaviour
         }
         else if (tang == 20)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Damn... it's my fault...";
         }

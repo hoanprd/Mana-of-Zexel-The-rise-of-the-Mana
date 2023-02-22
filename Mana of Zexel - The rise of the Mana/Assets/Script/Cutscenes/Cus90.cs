@@ -8,7 +8,8 @@ public class Cus90 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1;
+    public GameObject va1, va2;
+    public GameObject VayneVAL1, VayneVAR1, MariaVAL1, MariaVAR1, JescaVAL1, JescaVAR1, MeruVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus90 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Damn where is that doctor? I searched and couldn't find it.";
         }
         else if (tang == 2)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Try asking the villagers around?";
         }
@@ -39,6 +42,8 @@ public class Cus90 : MonoBehaviour
         }
         else if (tang == 4)
         {
+            VayneVAL1.SetActive(false);
+            JescaVAL1.SetActive(true);
             NameTagText.text = "Jesca";
             dia.text = "Huh? Was it Vayne and Maria?";
         }
@@ -54,6 +59,8 @@ public class Cus90 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Sister Alia is seriously injured by dark magic, I'm looking for a magic healer somewhere in this village. Do you know that person?";
         }
@@ -74,31 +81,41 @@ public class Cus90 : MonoBehaviour
         }
         else if (tang == 11)
         {
+            va1.SetActive(false);
+            va2.SetActive(true);
+            JescaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 12)
         {
+            MeruVAL1.SetActive(true);
             NameTagText.text = "???";
             dia.text = "Oh, so this is the group that rescued your grandson from those inferno scorpions? That is a pleasure.";
         }
         else if (tang == 13)
         {
+            JescaVAR1.SetActive(true);
             NameTagText.text = "Jesca";
             dia.text = "Everyone, this is Meru, she is my grandmother, the only and talented doctor in this village!";
         }
         else if (tang == 14)
         {
+            JescaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Ma'am, can you follow me back to Zexel town and help me heal my friend who got hit by a magician's attack?";
         }
         else if (tang == 15)
         {
-            NameTagText.text = "Jesca";
+            NameTagText.text = "Meru";
             dia.text = "Magician? Looks serious. All right, I'm grateful to you anyway, so I'll treat your friend. However, in terms of cost...";
         }
         else if (tang == 16)
         {
+            VayneVAR1.SetActive(false);
+            JescaVAR1.SetActive(true);
             NameTagText.text = "Jesca";
             dia.text = "Hey grandma, their friend is the only benefactor in my life!";
         }
@@ -109,6 +126,8 @@ public class Cus90 : MonoBehaviour
         }
         else if (tang == 18)
         {
+            JescaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Thank you very much!";
         }

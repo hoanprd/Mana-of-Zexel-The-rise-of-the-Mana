@@ -9,6 +9,7 @@ public class Cus83 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAR1, AliaVAR1, MariaVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus83 : MonoBehaviour
     {
         if (tang == 1)
         {
+            MariaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "It's been a long journey, isn't it?";
         }
         else if (tang == 2)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Yes, but I'm happy to have resolved the conflict between the two villages of inferno volcano and inferno ice.";
         }
@@ -39,6 +42,8 @@ public class Cus83 : MonoBehaviour
         }
         else if (tang == 4)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Well, I want to take advantage of the mana resources in the inferno volcano and inferno ice to restore the mana I spent quite a bit.";
         }
