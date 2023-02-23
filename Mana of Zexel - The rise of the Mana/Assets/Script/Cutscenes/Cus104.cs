@@ -9,6 +9,7 @@ public class Cus104 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAL1, MariaVAL1, MariaVAR1, OrinaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,27 +24,35 @@ public class Cus104 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Hey Orina! Are you here?";
         }
         else if (tang == 2)
         {
+            OrinaVAR1.SetActive(true);
             NameTagText.text = "Orina";
             dia.text = "Huh? Hey... hey... why don't you guys knock before entering?";
         }
         else if (tang == 3)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Even we knock on the door, you won't open it.";
         }
         else if (tang == 4)
         {
+            AliaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Hmm? Something Orina... how could she...";
         }
         else if (tang == 5)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "It's dark magic... Orina you're...";
         }
@@ -64,6 +73,8 @@ public class Cus104 : MonoBehaviour
         }
         else if (tang == 9)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "What happened Orina... surely your past has kept you hidden until now?";
         }
@@ -79,6 +90,8 @@ public class Cus104 : MonoBehaviour
         }
         else if (tang == 12)
         {
+            MariaVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "It's cruel... you have to endure such solitude all the time... it seems we're a little too wordy for you...";
         }
@@ -89,6 +102,8 @@ public class Cus104 : MonoBehaviour
         }
         else if (tang == 14)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Are you over 100 years old? Why is she still so young?";
         }
@@ -99,6 +114,8 @@ public class Cus104 : MonoBehaviour
         }
         else if (tang == 16)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "But you don't seem to have any malice towards people.";
         }
@@ -109,6 +126,8 @@ public class Cus104 : MonoBehaviour
         }
         else if (tang == 18)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Your son? Who is that?";
         }
@@ -129,11 +148,15 @@ public class Cus104 : MonoBehaviour
         }
         else if (tang == 22)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "What an ironic fate...";
         }
         else if (tang == 23)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Orina, we're going to beat Zane and bring him back here to make amends. I won't leave him alone either.";
         }
@@ -159,6 +182,8 @@ public class Cus104 : MonoBehaviour
         }
         else if (tang == 28)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "How did you get these things Orina?";
         }
@@ -169,21 +194,27 @@ public class Cus104 : MonoBehaviour
         }
         else if (tang == 30)
         {
+            MariaVAL1.SetActive(false);
+            OrinaVAR1.SetActive(false);
             NameTagText.text = "Villager";
             dia.text = "Danger, danger! Everyone go back to town, the iron golemn monster is coming!";
         }
         else if (tang == 31)
         {
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Don't tell me the iron golemn we stopped earlier broke Maria's barrier?";
         }
         else if (tang == 32)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Looks like we know who we should try the new powers we have, Vayne.";
         }
         else if (tang == 33)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Okay, let's give that iron golemn a fight.";
         }

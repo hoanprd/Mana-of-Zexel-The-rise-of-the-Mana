@@ -9,6 +9,7 @@ public class Cus103 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAR1, AliaVAR1, MariaVAR1, HeeriumVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,12 +24,14 @@ public class Cus103 : MonoBehaviour
     {
         if (tang == 1)
         {
+            HeeriumVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Heerium";
             dia.text = "You guys are back, have you found the ingredients?";
         }
         else if (tang == 2)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "It might take a while, but we managed to source those good quality ingredients.";
         }
@@ -39,6 +42,8 @@ public class Cus103 : MonoBehaviour
         }
         else if (tang == 4)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "By the way, Heerium, have you seen the merchants from the two villages of inferno volcano and inferno ice often come here?";
         }
@@ -54,6 +59,8 @@ public class Cus103 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Hehe... that's right, Heerium.";
         }
@@ -64,6 +71,8 @@ public class Cus103 : MonoBehaviour
         }
         else if (tang == 9)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "We're counting on you, Herium. Now let's go over to Orina's to see what's new.";
         }

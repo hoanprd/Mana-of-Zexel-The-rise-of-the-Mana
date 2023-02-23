@@ -9,6 +9,7 @@ public class Cus108 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -29,21 +30,27 @@ public class Cus108 : MonoBehaviour
         }
         else if (tang == 2)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "It's the inferno scorpion monsters, they want to invade this village?";
         }
         else if (tang == 3)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Looks like something happened to them, especially the earthquake just now that drove them crazy.";
         }
         else if (tang == 4)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "We have to help them, we can't stand by.";
         }
         else if (tang == 5)
         {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Be careful, Alia! That monster is more ferocious than usual, can't be subjective.";
         }

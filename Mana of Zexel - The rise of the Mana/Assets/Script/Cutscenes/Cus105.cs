@@ -9,6 +9,7 @@ public class Cus105 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAR1, MariaVAL1, ShanVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,22 +24,29 @@ public class Cus105 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Granted, we're much stronger than before!";
         }
         else if (tang == 2)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "That's right, with this we can fight the magician Zane!";
         }
         else if (tang == 3)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "We must not be complacent, though.";
         }
         else if (tang == 4)
         {
+            MariaVAL1.SetActive(false);
+            AliaVAR1.SetActive(false);
+            ShanVAL1.SetActive(true);
             NameTagText.text = "Shan";
             dia.text = "Hoh... phoo... Hoh... phoo...";
         }
@@ -49,6 +57,7 @@ public class Cus105 : MonoBehaviour
         }
         else if (tang == 6)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Is that person Shan? Why have you come this far?";
         }
@@ -59,6 +68,8 @@ public class Cus105 : MonoBehaviour
         }
         else if (tang == 8)
         {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "What's wrong, Shan? Calm down.";
         }
@@ -69,6 +80,8 @@ public class Cus105 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "So that monster hasn't given up yet. All right, we'll give it a full blow this time.";
         }
@@ -79,6 +92,8 @@ public class Cus105 : MonoBehaviour
         }
         else if (tang == 12)
         {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Don't worry, we're also excited about this new power and need some sandbags to fight!";
         }

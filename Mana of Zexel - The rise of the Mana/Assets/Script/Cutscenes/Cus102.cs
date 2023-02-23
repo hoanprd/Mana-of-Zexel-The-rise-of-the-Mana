@@ -9,6 +9,7 @@ public class Cus102 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAL1, HeeriumVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus102 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Uncle Heerium! We came to ask you for a favor.";
         }
         else if (tang == 2)
         {
+            HeeriumVAR1.SetActive(true);
             NameTagText.text = "Heerium";
             dia.text = "Oh, it's Vayne and the others. Is there something important to you to find me?";
         }
         else if (tang == 3)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "We need to upgrade our weapons to become stronger.";
         }
@@ -49,6 +54,8 @@ public class Cus102 : MonoBehaviour
         }
         else if (tang == 6)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Okay, just give me the list of ingredients so we can find them.";
         }

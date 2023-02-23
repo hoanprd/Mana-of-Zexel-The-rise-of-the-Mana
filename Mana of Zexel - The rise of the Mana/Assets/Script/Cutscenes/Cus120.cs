@@ -9,6 +9,7 @@ public class Cus120 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject ZexelVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -29,6 +30,7 @@ public class Cus120 : MonoBehaviour
         }
         else if (tang == 2)
         {
+            ZexelVAL1.SetActive(true);
             NameTagText.text = "Zexel";
             dia.text = "Remember one more thing. Unity is the key to victory.";
         }
@@ -49,6 +51,7 @@ public class Cus120 : MonoBehaviour
         }
         else if (tang == 6)
         {
+            ZexelVAL1.SetActive(false);
             NameTagText.text = "";
             dia.text = "To be countinute...";
         }

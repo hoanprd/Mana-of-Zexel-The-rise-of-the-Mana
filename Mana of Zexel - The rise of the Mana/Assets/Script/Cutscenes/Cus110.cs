@@ -9,6 +9,7 @@ public class Cus110 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAL1, MariaVAL1, JescaVAL1, JescaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,27 +24,33 @@ public class Cus110 : MonoBehaviour
     {
         if (tang == 1)
         {
+            JescaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Jesca";
             dia.text = "Ahhhhhhhhh!!!";
         }
         else if (tang == 2)
         {
+            JescaVAL1.SetActive(false);
             NameTagText.text = "Mana eagle";
             dia.text = "Wahhhh...";
         }
         else if (tang == 3)
         {
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Get away from that hideous eagle! Hyaaaa.";
         }
         else if (tang == 4)
         {
+            JescaVAR1.SetActive(true);
             NameTagText.text = "Jesca";
             dia.text = "It's Alia's sister!";
         }
         else if (tang == 5)
         {
+            AliaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Jesca, are you okay?";
         }
@@ -54,6 +61,8 @@ public class Cus110 : MonoBehaviour
         }
         else if (tang == 7)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "It good that you are fine! May you go back to the village, Mrs. Meru is worried about you!";
         }
