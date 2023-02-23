@@ -8,7 +8,8 @@ public class Cus119 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1;
+    public GameObject va1, va2, va3, va4, va5, va6, va7;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, MrLanceVAL1, KlenerVAL1, HeeriumVAL1, OrinaVAL1, ManaElfVAL1, ZaneVAL1, ZaneVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -29,16 +30,20 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 2)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "This monster is terrible if you destroy it, it will all explode.";
         }
         else if (tang == 3)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "What should we do, it has weakened a lot.";
         }
         else if (tang == 4)
         {
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "If we don't destroy it, there's only a way to seal it like my mother did.";
         }
@@ -49,11 +54,14 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 6)
         {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "What are you going to do, Vayne? Don't go near that monster!";
         }
         else if (tang == 7)
         {
+            MariaVAR1.SetActive(false);
             NameTagText.text = "Vayne";
             dia.text = "I will reincarnate it, it will definitely help the next generation.";
         }
@@ -64,21 +72,26 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 9)
         {
+            VayneVAL1.SetActive(false);
             NameTagText.text = "";
             dia.text = "Sengggggggggggggggg...";
         }
         else if (tang == 10)
         {
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "That's...";
         }
         else if (tang == 11)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "The soul of Sicxalon. I have succeeded!";
         }
         else if (tang == 12)
         {
+            MariaVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Well done, Vayne!";
         }
@@ -89,16 +102,20 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 14)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 15)
         {
+            ZaneVAL1.SetActive(true);
             NameTagText.text = "Zane";
             dia.text = "Bastard, how dare you... I can't lose like that.";
         }
         else if (tang == 16)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Shut up, you're no longer capable of fighting, give up, we're lucky we haven't hit you yet.";
         }
@@ -114,16 +131,22 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 19)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Stop it Zane!";
         }
         else if (tang == 20)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Mana shield!";
         }
         else if (tang == 21)
         {
+            ZaneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Sister Maria! What are you thinking of doing!";
         }
@@ -134,6 +157,8 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 23)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "No... can't leave you alone!";
         }
@@ -144,11 +169,15 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 25)
         {
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "... Sister Mariaa!!!";
         }
         else if (tang == 26)
         {
+            AliaVAL1.SetActive(false);
+            ZaneVAL1.SetActive(true);
             NameTagText.text = "Zane";
             dia.text = "You wants to die with me...";
         }
@@ -159,6 +188,8 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 28)
         {
+            ZaneVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "I'll take you out!";
         }
@@ -174,16 +205,20 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 31)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "Rrroommmmmmm...";
         }
         else if (tang == 32)
         {
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "No! The wall has fallen...";
         }
         else if (tang == 33)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Damn... we have to get out Maria...";
         }
@@ -204,16 +239,22 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 37)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "(I'm sorry and thank you Maria...)";
         }
         else if (tang == 38)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Hmm... looks like I can close my eyes peacefully, right?";
         }
         else if (tang == 39)
         {
+            ZaneVAR1.SetActive(true);
             NameTagText.text = "Zane";
             dia.text = "Nooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo";
         }
@@ -224,21 +265,29 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 41)
         {
+            va1.SetActive(false);
+            va2.SetActive(true);
+            MariaVAL1.SetActive(false);
+            ZaneVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "Bbbbbbbbbbbbbbbbbbbbbbbbooooooooooooooooooooooooooooommmmmmmmmmmmmmmmmmmmmmmmmmm...";
         }
         else if (tang == 42)
         {
+            va2.SetActive(false);
+            va3.SetActive(true);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 43)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Hoh phoh... Hoh phoh... Alia! Alia where are you!";
         }
         else if (tang == 44)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Huh... Vayne! I'm ok!";
         }
@@ -269,16 +318,22 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 50)
         {
+            va3.SetActive(false);
+            va4.SetActive(true);
+            VayneVAL1.SetActive(false);
+            AliaVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 51)
         {
+            ManaElfVAL1.SetActive(true);
             NameTagText.text = "Mana elf";
             dia.text = "This is Sicxalon's soul...";
         }
         else if (tang == 52)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "That's right! I hope you can transform this soul into someone who can help the world in the future, okay?";
         }
@@ -294,21 +349,29 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 55)
         {
+            va4.SetActive(false);
+            va5.SetActive(true);
+            ManaElfVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 56)
         {
+            KlenerVAL1.SetActive(true);
             NameTagText.text = "Klener";
             dia.text = "Vayne, Alia you two are back!";
         }
         else if (tang == 57)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Uhm...";
         }
         else if (tang == 58)
         {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "...";
         }
@@ -319,6 +382,8 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 60)
         {
+            KlenerVAL1.SetActive(false);
+            MrLanceVAL1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "Maria! She doesn't come back with us?";
         }
@@ -339,6 +404,8 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 64)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Mr. Lance please calm down... she made no senseless sacrifices, she saved the world... we will never forget her.";
         }
@@ -354,6 +421,8 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 67)
         {
+            MrLanceVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "...";
         }
@@ -369,11 +438,16 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 70)
         {
+            va5.SetActive(false);
+            va6.SetActive(true);
+            AliaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 71)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Everything is ready, maybe we should go.";
         }
@@ -389,31 +463,42 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 74)
         {
+            va6.SetActive(false);
+            va5.SetActive(true);
+            VayneVAL1.SetActive(false);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 75)
         {
+            KlenerVAL1.SetActive(true);
             NameTagText.text = "Klener";
             dia.text = "Vayne! Everyone is waiting for you to say goodbye!";
         }
         else if (tang == 76)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Wow, you know I'm leaving today?";
         }
         else if (tang == 77)
         {
+            KlenerVAL1.SetActive(false);
+            OrinaVAL1.SetActive(true);
             NameTagText.text = "Orina";
             dia.text = "It was Alia who told us everything.";
         }
         else if (tang == 78)
         {
+            OrinaVAL1.SetActive(false);
+            HeeriumVAL1.SetActive(true);
             NameTagText.text = "Heerium";
             dia.text = "Huhuhuhu... can't you stay here much longer!";
         }
         else if (tang == 79)
         {
+            HeeriumVAL1.SetActive(false);
+            MrLanceVAL1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "I have some presents for you along the way.";
         }
@@ -424,11 +509,15 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 81)
         {
+            MrLanceVAL1.SetActive(false);
+            KlenerVAL1.SetActive(true);
             NameTagText.text = "Klener";
             dia.text = "We need to thank you too, Vayne, you've protected this town. Not only that, it also helps the surrounding villages.";
         }
         else if (tang == 82)
         {
+            KlenerVAL1.SetActive(false);
+            MrLanceVAL1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "That's why I thank you on behalf of all of you for everything and stay safe, Vayne!";
         }
@@ -449,16 +538,21 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 86)
         {
+            MrLanceVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
             NameTagText.text = "All";
             dia.text = "Goodbye and see you soon!";
         }
         else if (tang == 87)
         {
+            va5.SetActive(false);
+            va7.SetActive(true);
             NameTagText.text = "";
             dia.text = "...";
         }
         else if (tang == 88)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "(Alia isn't planning to follow me.)";
         }
@@ -469,6 +563,7 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 90)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "I've been waiting for you for a while! Hihi!";
         }
@@ -499,6 +594,8 @@ public class Cus119 : MonoBehaviour
         }
         else if (tang == 96)
         {
+            VayneVAL1.SetActive(true);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "";
             dia.text = "The end.";
         }

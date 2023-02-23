@@ -9,6 +9,7 @@ public class Cus116 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, AliaVAL1, MariaVAL1, MariaVAR1, ZexelVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -29,36 +30,45 @@ public class Cus116 : MonoBehaviour
         }
         else if (tang == 2)
         {
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Is this light... an illusion of Zexel?";
         }
         else if (tang == 3)
         {
+            ZexelVAR1.SetActive(true);
             NameTagText.text = "Zexel";
             dia.text = "Welcome, you must have the key to the room of truth to get through here, I hope you all go further to the east of the temple to reach the room of truth.";
         }
         else if (tang == 4)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Gone... Zexel wants us to go to the room of truth.";
         }
         else if (tang == 5)
         {
+            VayneVAL1.SetActive(false);
+            ZexelVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "Rrroommmmm...";
         }
         else if (tang == 6)
         {
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Another earthquake!";
         }
         else if (tang == 7)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Looks like we don't have much time, let's hurry to the room of truth.";
         }
         else if (tang == 8)
         {
+            MariaVAR1.SetActive(false);
             NameTagText.text = "Alia";
             dia.text = "... (This feeling feels very familiar but what is it?)";
         }

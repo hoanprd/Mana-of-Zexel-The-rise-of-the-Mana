@@ -9,6 +9,7 @@ public class Cus117 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, MariaVAL1, MariaVAR1, ZexelVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -29,11 +30,13 @@ public class Cus117 : MonoBehaviour
         }
         else if (tang == 2)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Another Zexel illusion. After all, she wants to show us something.";
         }
         else if (tang == 3)
         {
+            ZexelVAR1.SetActive(true);
             NameTagText.text = "Zexel";
             dia.text = "Dear everyone, it seems fate has arranged according to what I predicted.";
         }
@@ -49,6 +52,8 @@ public class Cus117 : MonoBehaviour
         }
         else if (tang == 6)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Zexel's mistake?";
         }
@@ -69,16 +74,22 @@ public class Cus117 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            MariaVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "This... I... have started to remember! Memories of my mother are flooding back...";
         }
         else if (tang == 11)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "What? Is Alia really Zexel's daughter?";
         }
         else if (tang == 12)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "If so, that would clear up a lot of questions.";
         }
@@ -89,11 +100,16 @@ public class Cus117 : MonoBehaviour
         }
         else if (tang == 14)
         {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "... So that's the whole truth...";
         }
         else if (tang == 15)
         {
+            VayneVAL1.SetActive(false);
+            ZexelVAR1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "That day, I woke up and fought with the temple intruders Vayne and Zane's father.";
         }
@@ -104,6 +120,7 @@ public class Cus117 : MonoBehaviour
         }
         else if (tang == 17)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "... You don't have to worry about that anymore Alia. I've got you and new friends, I've created a new life for myself and have no regrets about the past.";
         }
@@ -114,16 +131,21 @@ public class Cus117 : MonoBehaviour
         }
         else if (tang == 19)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Surely if your mother saw you now, she would be happy too.";
         }
         else if (tang == 20)
         {
+            AliaVAL1.SetActive(false);
+            MariaVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "Rrrrrrroommmmmmm...";
         }
         else if (tang == 21)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Let's go guys, I can feel Zane's dark energy at the temple's main gate!";
         }

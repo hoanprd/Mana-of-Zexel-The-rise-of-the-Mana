@@ -8,7 +8,8 @@ public class Cus113 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1;
+    public GameObject va1, va2;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAR1, MariaVAL1, MariaVAR1, MrLanceVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,32 +24,44 @@ public class Cus113 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Barrier operation protect everyone in this town.";
         }
         else if (tang == 2)
         {
+            va1.SetActive(false);
+            va2.SetActive(true);
+            VayneVAL1.SetActive(false);
             NameTagText.text = "";
             dia.text = "Glowinggggggggggggggg...";
         }
         else if (tang == 3)
         {
+            va2.SetActive(false);
+            va1.SetActive(true);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "With this we can have some peace of mind.";
         }
         else if (tang == 4)
         {
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "That's right! But we are not allowed to rest yet, there is still an inferno desert village in need of protection.";
         }
         else if (tang == 5)
         {
+            MariaVAL1.SetActive(false);
+            MrLanceVAL1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "Maria!";
         }
         else if (tang == 6)
         {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Father? Why are you going out like this, it's dangerous here!";
         }
@@ -97,77 +110,7 @@ public class Cus113 : MonoBehaviour
             NameTagText.text = "Maria";
             dia.text = "Uhm, let's go Vayne, Alia, we're starting to be the heroes of the world.";
         }
-        else if (tang == 16)
-        {
-            NameTagText.text = "Zane";
-            dia.text = "Then my world won't contain you guys. Sicxalon show me your strength.";
-        }
-        else if (tang == 17)
-        {
-            NameTagText.text = "Sicxalon";
-            dia.text = "Gruuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh...";
-        }
-        else if (tang == 18)
-        {
-            NameTagText.text = "Vayne";
-            dia.text = "That monster's mana is terrible, did Zexel ever fight with this thing!";
-        }
-        else if (tang == 19)
-        {
-            NameTagText.text = "Zane";
-            dia.text = "What, kill them quickly, what are you waiting for!";
-        }
-        else if (tang == 20)
-        {
-            NameTagText.text = "Sicxalon";
-            dia.text = "Hmm.........";
-        }
-        else if (tang == 21)
-        {
-            NameTagText.text = "Zane";
-            dia.text = "No way... I've clearly mastered the sealing power... why can't I control it!";
-        }
-        else if (tang == 22)
-        {
-            NameTagText.text = "Maria";
-            dia.text = "Zane! Danger stay away from that monster!";
-        }
-        else if (tang == 23)
-        {
-            NameTagText.text = "Zane";
-            dia.text = "!!!";
-        }
-        else if (tang == 24)
-        {
-            NameTagText.text = "";
-            dia.text = "Sengggggggggggggg...";
-        }
-        else if (tang == 25)
-        {
-            NameTagText.text = "Zane";
-            dia.text = "There's no way... I was killed by the monster itself!";
-        }
-        else if (tang == 26)
-        {
-            NameTagText.text = "Alia";
-            dia.text = "That's what you get you villain.";
-        }
-        else if (tang == 27)
-        {
-            NameTagText.text = "Zane";
-            dia.text = "Damn... let's see how you guys deal with that monster.";
-        }
-        else if (tang == 28)
-        {
-            NameTagText.text = "Vayne";
-            dia.text = "We'll reincarnate it for you. Step aside and observe, we fight not for our selfishness but for our loved ones.";
-        }
-        else if (tang == 29)
-        {
-            NameTagText.text = "Vayne";
-            dia.text = "Come on everyone, the final battle must be won!";
-        }
-        else if (tang >= 30)
+        else if (tang >= 16)
         {
             CutscenesController.cus113 = 1;
             ContainerController.LoadingOpen = true;

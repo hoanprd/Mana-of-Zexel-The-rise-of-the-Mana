@@ -9,6 +9,7 @@ public class Cus118 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, ZaneVAL1, ZaneVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -23,17 +24,21 @@ public class Cus118 : MonoBehaviour
     {
         if (tang == 1)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Zane! We have something to do with you!";
         }
         else if (tang == 2)
         {
+            ZaneVAR1.SetActive(true);
             NameTagText.text = "Zane";
             dia.text = "Oh, is the little one getting better? I'm surprised.";
         }
         else if (tang == 3)
         {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "We will return you both capital and interest for harming innocent people.";
         }
@@ -69,6 +74,8 @@ public class Cus118 : MonoBehaviour
         }
         else if (tang == 10)
         {
+            MariaVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Hey Zane you think you'll be happy after taking revenge on this world?";
         }
@@ -89,6 +96,8 @@ public class Cus118 : MonoBehaviour
         }
         else if (tang == 14)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "If you live only by hatred, you will never understand the meaning of life. If you think I still hold grudges, then you are wrong, I came here to fight for them, not for personal selfishness.";
         }
@@ -104,31 +113,39 @@ public class Cus118 : MonoBehaviour
         }
         else if (tang == 17)
         {
+            VayneVAL1.SetActive(true);
+            ZaneVAR1.SetActive(false);
             NameTagText.text = "Sicxalon";
             dia.text = "Gruuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh...";
         }
         else if (tang == 18)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "That monster's mana is terrible, did Zexel ever fight with this thing!";
         }
         else if (tang == 19)
         {
+            ZaneVAR1.SetActive(true);
             NameTagText.text = "Zane";
             dia.text = "What, kill them quickly, what are you waiting for!";
         }
         else if (tang == 20)
         {
+            VayneVAL1.SetActive(false);
+            ZaneVAR1.SetActive(false);
             NameTagText.text = "Sicxalon";
             dia.text = "Hmm.........";
         }
         else if (tang == 21)
         {
+            ZaneVAL1.SetActive(true);
             NameTagText.text = "Zane";
             dia.text = "No way... I've clearly mastered the sealing power... why can't I control it!";
         }
         else if (tang == 22)
         {
+            MariaVAR1.SetActive(true);
             NameTagText.text = "Maria";
             dia.text = "Zane! Danger stay away from that monster!";
         }
@@ -139,16 +156,20 @@ public class Cus118 : MonoBehaviour
         }
         else if (tang == 24)
         {
+            ZaneVAL1.SetActive(false);
+            MariaVAR1.SetActive(false);
             NameTagText.text = "";
             dia.text = "Sengggggggggggggg...";
         }
         else if (tang == 25)
         {
+            ZaneVAL1.SetActive(true);
             NameTagText.text = "Zane";
             dia.text = "There's no way... I was killed by the monster itself!";
         }
         else if (tang == 26)
         {
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "That's what you get you villain.";
         }
@@ -159,6 +180,8 @@ public class Cus118 : MonoBehaviour
         }
         else if (tang == 28)
         {
+            AliaVAR1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "We'll reincarnate it for you. Step aside and observe, we fight not for our selfishness but for our loved ones.";
         }
