@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CutscenesTrigger : MonoBehaviour
 {
     public static int PorridgeSyn, BomSyn;
-    public static int GolemnKill, InfernoScorpionKill, InfernoScorpionKillP2, IceFangKill, GoblinKillP2, GolemnKillP2;
+    public static int GolemnKill, GolemnKillP2, GoblinKillP2, InfernoScorpionKill, InfernoScorpionKillP2, IceFangKill;
 
     // Start is called before the first frame update
     void Start()

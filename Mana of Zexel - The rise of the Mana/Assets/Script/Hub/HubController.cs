@@ -424,6 +424,16 @@ public class HubController : MonoBehaviour
             QT.text = "";
         else if (CutscenesController.cus115 == 0)
             QT.text = "";
+        else if (CutscenesController.cus116 == 0)
+            QT.text = "";
+        else if (CutscenesController.cus117 == 0)
+            QT.text = "";
+        else if (CutscenesController.cus118 == 0)
+            QT.text = "";
+        else if (CutscenesController.cus119 == 0)
+            QT.text = "";
+        else if (CutscenesController.cus120 == 0)
+            QT.text = "";
     }
     public void Back1()
     {
