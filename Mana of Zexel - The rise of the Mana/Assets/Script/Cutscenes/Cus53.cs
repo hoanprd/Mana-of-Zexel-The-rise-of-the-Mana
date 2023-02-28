@@ -8,10 +8,11 @@ public class Cus53 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1;
+    public GameObject[] TutorialImage;
+    public GameObject va1, TutorialPanel;
     public GameObject VayneVAR1, AliaVAL1, MariaVAR1;
     public GameObject NameTag;
-    private int tang = 0;
+    private int tang = 0, TuTang = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -119,9 +120,7 @@ public class Cus53 : MonoBehaviour
         }
         else if (tang >= 17)
         {
-            CutscenesController.cus53 = 1;
-            ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Mana dimension");
+            TutorialPanel.SetActive(true);
         }
     }
     public void Pressnext()
@@ -130,8 +129,43 @@ public class Cus53 : MonoBehaviour
     }
     public void Pressskip()
     {
-        CutscenesController.cus53 = 1;
-        ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("Mana dimension");
+        TutorialPanel.SetActive(true);
+    }
+
+    public void PressLTutorialButton()
+    {
+        if (TuTang > 0)
+            TuTang -= 1;
+
+        CheckTutorialStatus();
+    }
+
+    public void PressRTutorialButton()
+    {
+        TuTang += 1;
+
+        if (TuTang > 1)
+        {
+            CutscenesController.cus53 = 1;
+            ContainerController.LoadingOpen = true;
+            SceneManager.LoadScene("Mana dimension");
+        }
+
+        CheckTutorialStatus();
+    }
+
+    public void CheckTutorialStatus()
+    {
+        for (int i = 0; i < TutorialImage.Length; i++)
+        {
+            if (i == TuTang)
+            {
+                TutorialImage[i].SetActive(true);
+            }
+            else
+            {
+                TutorialImage[i].SetActive(false);
+            }
+        }
     }
 }

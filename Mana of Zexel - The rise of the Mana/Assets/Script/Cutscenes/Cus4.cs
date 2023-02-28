@@ -8,10 +8,11 @@ public class Cus4 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1;
-    public GameObject VayneVAL1, AliaDAL1, MrLanceVAR1;
+    public GameObject[] TutorialImage;
+    public GameObject va1, TutorialPanel;
+    public GameObject VayneVAL1, AliaVAL1, AliaVAR1, MrLanceVAR1;
     public GameObject NameTag;
-    private int tang=0;
+    private int tang = 0, TuTang = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -24,12 +25,14 @@ public class Cus4 : MonoBehaviour
     {
         if (tang == 1)
         {
+            AliaVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Hey Mr. Lance, I'm back.";
         }
         else if (tang == 2)
         {
+            MrLanceVAR1.SetActive(true);
             NameTagText.text = "Mr. Lance";
             dia.text = "Oh, it's Alia, what a fun day today.";
         }
@@ -50,6 +53,8 @@ public class Cus4 : MonoBehaviour
         }
         else if (tang == 6)
         {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "Hello! My name is Vayne, and I am an alchemist from Zorth.";
         }
@@ -115,14 +120,14 @@ public class Cus4 : MonoBehaviour
         }
         else if (tang == 19)
         {
+            MrLanceVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "Yeah, okay Vayne, my room's on the right front door.";
         }
         else if (tang >= 20)
         {
-            CutscenesController.cus4 = 1;
-            ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Tavern");
+            TutorialPanel.SetActive(true);
         }
     }
     public void Pressnext()
@@ -131,8 +136,43 @@ public class Cus4 : MonoBehaviour
     }
     public void Pressskip()
     {
-        CutscenesController.cus4 = 1;
-        ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("Tavern");
+        TutorialPanel.SetActive(true);
+    }
+
+    public void PressLTutorialButton()
+    {
+        if (TuTang > 0)
+            TuTang -= 1;
+
+        CheckTutorialStatus();
+    }
+
+    public void PressRTutorialButton()
+    {
+        TuTang += 1;
+
+        if (TuTang > 1)
+        {
+            CutscenesController.cus4 = 1;
+            ContainerController.LoadingOpen = true;
+            SceneManager.LoadScene("Tavern");
+        }
+
+        CheckTutorialStatus();
+    }
+
+    public void CheckTutorialStatus()
+    {
+        for (int i = 0; i < TutorialImage.Length; i++)
+        {
+            if (i == TuTang)
+            {
+                TutorialImage[i].SetActive(true);
+            }
+            else
+            {
+                TutorialImage[i].SetActive(false);
+            }
+        }
     }
 }

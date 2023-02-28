@@ -8,10 +8,11 @@ public class Cus2 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1;
+    public GameObject[] TutorialImage;
+    public GameObject va1, TutorialPanel;
     public GameObject VayneVAL1, AliaVAR1;
     public GameObject NameTag;
-    private int tang=0;
+    private int tang = 0, TuTang = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -128,17 +129,53 @@ public class Cus2 : MonoBehaviour
         }
         else if (tang >= 21)
         {
-            CutscenesController.cus2 = 1;
-            SceneManager.LoadScene("Wishing hill");
+            TutorialPanel.SetActive(true);
         }
     }
     public void Pressnext()
     {
         tang += 1;
     }
+
     public void Pressskip()
     {
-        CutscenesController.cus2 = 1;
-        SceneManager.LoadScene("Wishing hill");
+        TutorialPanel.SetActive(true);
+    }
+
+    public void PressLTutorialButton()
+    {
+        if (TuTang > 0)
+            TuTang -= 1;
+
+        CheckTutorialStatus();
+    }
+
+    public void PressRTutorialButton()
+    {
+        TuTang += 1;
+
+        if (TuTang > 2)
+        {
+            CutscenesController.cus2 = 1;
+            ContainerController.LoadingOpen = true;
+            SceneManager.LoadScene("Wishing hill");
+        }
+
+        CheckTutorialStatus();
+    }
+
+    public void CheckTutorialStatus()
+    {
+        for (int i = 0; i < TutorialImage.Length; i++)
+        {
+            if (i == TuTang)
+            {
+                TutorialImage[i].SetActive(true);
+            }
+            else
+            {
+                TutorialImage[i].SetActive(false);
+            }
+        }
     }
 }
