@@ -155,6 +155,7 @@ public class BSThief : MonoBehaviour
     }
     public void PressSkillVayne()
     {
+        show = 1;
         ChooseVayneSkillPanel.SetActive(true);
     }
 
@@ -182,6 +183,7 @@ public class BSThief : MonoBehaviour
     public void CloseChooseSkillVayne()
     {
         ChooseVayneSkillPanel.SetActive(false);
+        show = 0;
     }
 
     public void PressItem()

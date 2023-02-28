@@ -367,6 +367,7 @@ public class BSGoblin1 : MonoBehaviour
 
     public void PressSkillVayne()
     {
+        show1 = 1;
         ChooseVayneSkillPanel.SetActive(true);
     }
 
@@ -440,10 +441,12 @@ public class BSGoblin1 : MonoBehaviour
     public void CloseChooseSkillVayne()
     {
         ChooseVayneSkillPanel.SetActive(false);
+        show1 = 0;
     }
 
     public void PressSkillAlia()
     {
+        show2 = 1;
         ChooseAliaSkillPanel.SetActive(true);
     }
     public void PressSkillP21()
@@ -512,10 +515,12 @@ public class BSGoblin1 : MonoBehaviour
     public void CloseChooseSkillAlia()
     {
         ChooseAliaSkillPanel.SetActive(false);
+        show2 = 0;
     }
 
     public void PressSkillMaria()
     {
+        show3 = 1;
         ChooseMariaSkillPanel.SetActive(true);
     }
     public void PressSkillP31()
@@ -587,6 +592,7 @@ public class BSGoblin1 : MonoBehaviour
     public void CloseChooseSkillMaria()
     {
         ChooseMariaSkillPanel.SetActive(false);
+        show3 = 0;
     }
 
     public void PressItem()
