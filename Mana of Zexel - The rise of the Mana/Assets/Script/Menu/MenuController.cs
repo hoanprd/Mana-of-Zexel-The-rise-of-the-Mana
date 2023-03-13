@@ -279,6 +279,7 @@ public class MenuController : MonoBehaviour
         ContainerController.PureWater = 0;
         ContainerController.MorningDrop = 0;
         ContainerController.Wheat = 0;
+        ContainerController.Wood = 0;
         ContainerController.String = 0;
         ContainerController.Iron = 0;
         ContainerController.ManaGem = 0;
@@ -669,6 +670,7 @@ public class MenuController : MonoBehaviour
             ContainerController.PureWater = PlayerPrefs.GetInt("SavePureWaterD1");
             ContainerController.MorningDrop = PlayerPrefs.GetInt("SaveMorningDropD1");
             ContainerController.Wheat = PlayerPrefs.GetInt("SaveWheatD1");
+            ContainerController.Wood = PlayerPrefs.GetInt("SaveWoodD1");
             ContainerController.String = PlayerPrefs.GetInt("SaveStringD1");
             ContainerController.Iron = PlayerPrefs.GetInt("SaveIronD1");
             ContainerController.ManaGem = PlayerPrefs.GetInt("SaveManaGemD1");
@@ -1037,6 +1039,7 @@ public class MenuController : MonoBehaviour
             ContainerController.PureWater = PlayerPrefs.GetInt("SavePureWaterD2");
             ContainerController.MorningDrop = PlayerPrefs.GetInt("SaveMorningDropD2");
             ContainerController.Wheat = PlayerPrefs.GetInt("SaveWheatD2");
+            ContainerController.Wood = PlayerPrefs.GetInt("SaveWoodD2");
             ContainerController.String = PlayerPrefs.GetInt("SaveStringD2");
             ContainerController.Iron = PlayerPrefs.GetInt("SaveIronD2");
             ContainerController.ManaGem = PlayerPrefs.GetInt("SaveManaGemD2");
@@ -1406,6 +1409,7 @@ public class MenuController : MonoBehaviour
             ContainerController.PureWater = PlayerPrefs.GetInt("SavePureWaterD3");
             ContainerController.MorningDrop = PlayerPrefs.GetInt("SaveMorningDropD3");
             ContainerController.Wheat = PlayerPrefs.GetInt("SaveWheatD3");
+            ContainerController.Wood = PlayerPrefs.GetInt("SaveWoodD3");
             ContainerController.String = PlayerPrefs.GetInt("SaveStringD3");
             ContainerController.Iron = PlayerPrefs.GetInt("SaveIronD3");
             ContainerController.ManaGem = PlayerPrefs.GetInt("SaveManaGemD3");

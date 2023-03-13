@@ -290,9 +290,10 @@ public class SaveGameSystem : MonoBehaviour
         PlayerPrefs.SetInt("SavePureWaterD1", ContainerController.PureWater);
         PlayerPrefs.SetInt("SaveMorningDropD1", ContainerController.MorningDrop);
         PlayerPrefs.SetInt("SaveWheatD1", ContainerController.Wheat);
+        PlayerPrefs.SetInt("SaveWoodD1", ContainerController.Wood);
         PlayerPrefs.SetInt("SaveStringD1", ContainerController.String);
         PlayerPrefs.SetInt("SaveIronD1", ContainerController.Iron);
-        PlayerPrefs.SetInt("SaveMGD1", ContainerController.ManaGem);
+        PlayerPrefs.SetInt("SaveManaGemD1", ContainerController.ManaGem);
         PlayerPrefs.SetInt("SaveScorpionVenomD1", ContainerController.ScorpionVenom);
         PlayerPrefs.SetInt("SaveInfernoSandD1", ContainerController.InfernoSand);
         PlayerPrefs.SetInt("SaveManaLiquidD1", ContainerController.ManaLiquid);
@@ -614,9 +615,10 @@ public class SaveGameSystem : MonoBehaviour
         PlayerPrefs.SetInt("SavePureWaterD2", ContainerController.PureWater);
         PlayerPrefs.SetInt("SaveMorningDropD2", ContainerController.MorningDrop);
         PlayerPrefs.SetInt("SaveWheatD2", ContainerController.Wheat);
+        PlayerPrefs.SetInt("SaveWoodD2", ContainerController.Wood);
         PlayerPrefs.SetInt("SaveStringD2", ContainerController.String);
         PlayerPrefs.SetInt("SaveIronD2", ContainerController.Iron);
-        PlayerPrefs.SetInt("SaveMGD2", ContainerController.ManaGem);
+        PlayerPrefs.SetInt("SaveManaGemD2", ContainerController.ManaGem);
         PlayerPrefs.SetInt("SaveScorpionVenomD2", ContainerController.ScorpionVenom);
         PlayerPrefs.SetInt("SaveInfernoSandD2", ContainerController.InfernoSand);
         PlayerPrefs.SetInt("SaveManaLiquidD2", ContainerController.ManaLiquid);
@@ -938,9 +940,10 @@ public class SaveGameSystem : MonoBehaviour
         PlayerPrefs.SetInt("SavePureWaterD3", ContainerController.PureWater);
         PlayerPrefs.SetInt("SaveMorningDropD3", ContainerController.MorningDrop);
         PlayerPrefs.SetInt("SaveWheatD3", ContainerController.Wheat);
+        PlayerPrefs.SetInt("SaveWoodD3", ContainerController.Wood);
         PlayerPrefs.SetInt("SaveStringD3", ContainerController.String);
         PlayerPrefs.SetInt("SaveIronD3", ContainerController.Iron);
-        PlayerPrefs.SetInt("SaveMGD3", ContainerController.ManaGem);
+        PlayerPrefs.SetInt("SaveManaGemD3", ContainerController.ManaGem);
         PlayerPrefs.SetInt("SaveScorpionVenomD3", ContainerController.ScorpionVenom);
         PlayerPrefs.SetInt("SaveInfernoSandD3", ContainerController.InfernoSand);
         PlayerPrefs.SetInt("SaveManaLiquidD3", ContainerController.ManaLiquid);
