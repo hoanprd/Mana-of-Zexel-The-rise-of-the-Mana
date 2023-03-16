@@ -48,11 +48,13 @@ public class Cus77 : MonoBehaviour
         else if (tang == 5)
         {
             NameTagText.text = "Asila";
+            dia.fontSize = 28;
             dia.text = "That's right! We thought that when the whole village combined the territory like my parents did before, it would be difficult to manage, so I thought it would be best to split it up. At that time, we also exported goods from both sides to other villages. However, since I am the only one in charge of the export items, as my brother's duty, I don't want my brother to do as much work as I do. But Alasa disagrees.";
         }
         else if (tang == 6)
         {
             NameTagText.text = "Asila";
+            dia.fontSize = 30;
             dia.text = "However, Alasa wanted in return for the control of the land of alta inferno which is located to the west of both villages.";
         }
         else if (tang == 7)

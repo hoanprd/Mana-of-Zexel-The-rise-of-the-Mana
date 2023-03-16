@@ -56,6 +56,10 @@ public class BSThief : MonoBehaviour
         {
             VayneSkill2Hide.SetActive(false);
         }
+        if (Global.LevelP1 < 20)
+        {
+            VayneSkill3Hide.SetActive(false);
+        }
 
         a1 = Global.SpeedP1 / 10;
         aE1 = Global.SpeedE1 / 10;

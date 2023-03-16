@@ -137,6 +137,7 @@ public class BSThief1 : MonoBehaviour
         {
             MariaStatus.SetActive(false);
             MariaBar.SetActive(false);
+            a3 = 0;
             HP3.text = "";
             MP3.text = "";
             P3Available = false;

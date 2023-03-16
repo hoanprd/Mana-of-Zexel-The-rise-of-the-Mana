@@ -45,7 +45,7 @@ public class Global : MonoBehaviour
     {
         //Mob
         HPE1 = 100;
-        DamageE1 = 10;
+        DamageE1 = 100;
         SpeedE1 = 10;
 
         if (CutscenesController.cus111 == 1 && CutscenesController.cus112 == 0)
