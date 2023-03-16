@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public bool FootStepIndex;
     public float move_speed = 5f;
+    public int once = 0;
     public Rigidbody2D rb;
     public Animator animator;
     public Text show1;
@@ -15,6 +17,7 @@ public class Player : MonoBehaviour
     public GameObject show4;
     private bool heal, tqz, mqz, alasaqz, asilaqz, klener, ManaGenerator, FireManaGenerator, IceManaGenerator;
     public static int MapIndex;
+    public AudioSource FootStep;
     Vector2 movement;
 
     // Update is called once per frame
@@ -176,10 +179,26 @@ public class Player : MonoBehaviour
             animator.SetFloat("Vertical", movement.y);
             if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
             {
+                FootStepIndex = true;
                 animator.SetFloat("LastX", Input.GetAxisRaw("Horizontal"));
                 animator.SetFloat("LastY", Input.GetAxisRaw("Vertical"));
             }
+            else
+            {
+                FootStepIndex = false;
+            }
             animator.SetFloat("Speed", movement.sqrMagnitude);
+
+            if (FootStepIndex == true && once == 0)
+            {
+                once = 1;
+                FootStep.Play();
+            }
+            else if (FootStepIndex == false)
+            {
+                once = 0;
+                FootStep.Stop();
+            }
         }
 
         /*movement.x = Input.GetAxisRaw("Horizontal");
