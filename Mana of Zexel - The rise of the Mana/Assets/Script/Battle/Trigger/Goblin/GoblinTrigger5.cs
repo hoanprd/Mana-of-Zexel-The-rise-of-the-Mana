@@ -36,6 +36,7 @@ public class GoblinTrigger5 : MonoBehaviour
     {
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
+            ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 2;
             despawnGoblinTrigger5 = true;
             SceneManager.LoadScene("BSGoblin 1");

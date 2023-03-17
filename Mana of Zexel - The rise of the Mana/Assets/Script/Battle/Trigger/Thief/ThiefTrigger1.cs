@@ -23,6 +23,7 @@ public class ThiefTrigger1 : MonoBehaviour
     {
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
+            ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 1;
             despawn = true;
             SceneManager.LoadScene("BSThief 1");

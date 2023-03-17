@@ -23,6 +23,7 @@ public class InfernoScorpionTrigger1 : MonoBehaviour
     {
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
+            ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 4;
             despawn = true;
             SceneManager.LoadScene("BSInfernoScorpion 1");

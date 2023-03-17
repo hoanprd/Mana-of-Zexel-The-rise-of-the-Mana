@@ -23,6 +23,7 @@ public class BlueManaSlimeTrigger1 : MonoBehaviour
     {
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
+            ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 9;
             despawn = true;
             SceneManager.LoadScene("BSBlueManaSlime 1");

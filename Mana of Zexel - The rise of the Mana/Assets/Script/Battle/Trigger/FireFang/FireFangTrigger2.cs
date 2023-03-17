@@ -23,6 +23,7 @@ public class FireFangTrigger2 : MonoBehaviour
     {
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
+            ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 2;
             despawn = true;
             SceneManager.LoadScene("BSFireFang 1");

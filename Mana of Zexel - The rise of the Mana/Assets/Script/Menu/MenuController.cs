@@ -215,7 +215,7 @@ public class MenuController : MonoBehaviour
 
         Global.PlusPointP1 = 1;
 
-        /*Global.CurHPP1 = 1200;
+        Global.CurHPP1 = 1200;
         Global.MaxHPP1 = 1200;
         Global.CurMPP1 = 170;
         Global.MaxMPP1 = 170;
@@ -223,7 +223,7 @@ public class MenuController : MonoBehaviour
         Global.SpeedP1 = 30;
         Global.LevelP1 = 30;
         Global.MaxEXPP1 = 40;
-        Global.CurEXPP1 = 0;*/
+        Global.CurEXPP1 = 0;
 
         //Set Alia
         Global.CurHPP2 = 60;

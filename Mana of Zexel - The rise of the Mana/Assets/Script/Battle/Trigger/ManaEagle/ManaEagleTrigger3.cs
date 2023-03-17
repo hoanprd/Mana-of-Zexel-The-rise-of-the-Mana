@@ -23,6 +23,7 @@ public class ManaEagleTrigger3 : MonoBehaviour
     {
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
+            ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 10;
             despawn = true;
             SceneManager.LoadScene("BSFireFang 1");

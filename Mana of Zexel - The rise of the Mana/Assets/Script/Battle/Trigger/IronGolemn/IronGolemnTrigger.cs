@@ -29,6 +29,7 @@ public class IronGolemnTrigger : MonoBehaviour
     {
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
+            ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 24;
             despawn = true;
             SceneManager.LoadScene("BSIronGolemn 1");

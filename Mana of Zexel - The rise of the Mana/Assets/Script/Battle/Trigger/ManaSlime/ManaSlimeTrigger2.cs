@@ -23,6 +23,7 @@ public class ManaSlimeTrigger2 : MonoBehaviour
     {
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
+            ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 5;
             despawn = true;
             SceneManager.LoadScene("BSManaSlime 1");

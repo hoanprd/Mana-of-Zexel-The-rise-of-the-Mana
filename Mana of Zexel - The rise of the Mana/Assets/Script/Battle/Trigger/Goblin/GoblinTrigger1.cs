@@ -28,6 +28,7 @@ public class GoblinTrigger1 : MonoBehaviour
     {
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
+            ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 2;
             despawn = true;
             SceneManager.LoadScene("BSGoblin 1");

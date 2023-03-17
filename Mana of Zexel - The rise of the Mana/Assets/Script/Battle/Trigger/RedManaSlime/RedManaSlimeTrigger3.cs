@@ -23,6 +23,7 @@ public class RedManaSlimeTrigger3 : MonoBehaviour
     {
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
+            ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 7;
             despawn = true;
             SceneManager.LoadScene("BSRedManaSlime 1");

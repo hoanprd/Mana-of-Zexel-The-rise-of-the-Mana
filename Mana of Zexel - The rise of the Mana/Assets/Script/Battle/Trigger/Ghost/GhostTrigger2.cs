@@ -23,6 +23,7 @@ public class GhostTrigger2 : MonoBehaviour
     {
         if (battle && Input.GetKeyDown(KeyCode.Space))
         {
+            ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 11;
             despawn = true;
             SceneManager.LoadScene("BSGhost 1");
