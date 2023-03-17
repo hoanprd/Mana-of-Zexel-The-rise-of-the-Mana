@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     public bool FootStepIndex;
     public float move_speed = 5f;
-    public int once = 0;
+    public int OnceFootStep = 0;
     public Rigidbody2D rb;
     public Animator animator;
     public Text show1;
@@ -189,14 +189,14 @@ public class Player : MonoBehaviour
             }
             animator.SetFloat("Speed", movement.sqrMagnitude);
 
-            if (FootStepIndex == true && once == 0)
+            if (FootStepIndex == true && OnceFootStep == 0)
             {
-                once = 1;
+                OnceFootStep = 1;
                 FootStep.Play();
             }
             else if (FootStepIndex == false)
             {
-                once = 0;
+                OnceFootStep = 0;
                 FootStep.Stop();
             }
         }
