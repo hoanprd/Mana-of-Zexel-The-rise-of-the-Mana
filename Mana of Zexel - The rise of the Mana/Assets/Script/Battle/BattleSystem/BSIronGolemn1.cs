@@ -9,6 +9,9 @@ public class BSIronGolemn1 : MonoBehaviour
 {
     PlayerBattle pb;
     IronGolemnBattle IGB;
+
+    public AudioSource VayneAttackFX, AliaAttackFX, MariaAttackFX, VayneSkill1FX, VayneSkill2FX, VayneSkill3FX, AliaSkill1FX, AliaSkill2FX, AliaSkill3FX, MariaSkill1FX, MariaSkill2FX, MariaSkill3FX, EnemyAttack1FX, EnemySkill1FX, HealFX, ExplosionFX, OpenCloseFX;
+
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
     public GameObject VayneSkill2Effect, VayneSkill3Effect, MariaSkill3Effect;
@@ -347,6 +350,7 @@ public class BSIronGolemn1 : MonoBehaviour
     }
     public void PressAttack()
     {
+        VayneAttackFX.Play();
         pb.yes1 = 1;
         show1 = 1;
         PDamage.color = Color.red;
@@ -356,6 +360,7 @@ public class BSIronGolemn1 : MonoBehaviour
     }
     public void PressAttackP2()
     {
+        AliaAttackFX.Play();
         pb.yes3 = 1;
         show2 = 1;
         PDamage.color = Color.red;
@@ -365,6 +370,7 @@ public class BSIronGolemn1 : MonoBehaviour
     }
     public void PressAttackP3()
     {
+        MariaAttackFX.Play();
         pb.yes5 = 1;
         show3 = 1;
         PDamage.color = Color.red;
@@ -375,6 +381,7 @@ public class BSIronGolemn1 : MonoBehaviour
 
     public void PressSkillVayne()
     {
+        OpenCloseFX.Play();
         show1 = 1;
         ChooseVayneSkillPanel.SetActive(true);
     }
@@ -383,6 +390,7 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (Global.CurMPP1 >= 20)
         {
+            VayneSkill1FX.Play();
             CloseChooseSkillVayne();
             ChooseSkillIndex = 1;
             pb.yes2 = 1;
@@ -405,6 +413,7 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (Global.CurMPP1 >= 50)
         {
+            VayneSkill2FX.Play();
             CloseChooseSkillVayne();
             VayneSkill2Effect.SetActive(true);
             ChooseSkillIndex = 2;
@@ -428,6 +437,7 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (Global.CurMPP1 >= 100)
         {
+            VayneSkill3FX.Play();
             CloseChooseSkillVayne();
             VayneSkill3Effect.SetActive(true);
             ChooseSkillIndex = 3;
@@ -448,12 +458,14 @@ public class BSIronGolemn1 : MonoBehaviour
     }
     public void CloseChooseSkillVayne()
     {
+        OpenCloseFX.Play();
         ChooseVayneSkillPanel.SetActive(false);
         show1 = 0;
     }
 
     public void PressSkillAlia()
     {
+        OpenCloseFX.Play();
         show2 = 1;
         ChooseAliaSkillPanel.SetActive(true);
     }
@@ -461,6 +473,7 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (Global.CurMPP2 >= 20)
         {
+            AliaSkill1FX.Play();
             CloseChooseSkillAlia();
             ChooseSkillIndex = 1;
             pb.yes4 = 1;
@@ -482,6 +495,7 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (Global.CurMPP2 >= 50)
         {
+            AliaSkill2FX.Play();
             CloseChooseSkillAlia();
             ChooseSkillIndex = 2;
             pb.yes9 = 1;
@@ -503,6 +517,7 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (Global.CurMPP2 >= 100)
         {
+            AliaSkill3FX.Play();
             CloseChooseSkillAlia();
             ChooseSkillIndex = 3;
             pb.yes10 = 1;
@@ -522,12 +537,14 @@ public class BSIronGolemn1 : MonoBehaviour
     }
     public void CloseChooseSkillAlia()
     {
+        OpenCloseFX.Play();
         ChooseAliaSkillPanel.SetActive(false);
         show2 = 0;
     }
 
     public void PressSkillMaria()
     {
+        OpenCloseFX.Play();
         show3 = 1;
         ChooseMariaSkillPanel.SetActive(true);
     }
@@ -535,6 +552,7 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (Global.CurMPP3 >= 40)
         {
+            MariaSkill1FX.Play();
             CloseChooseSkillMaria();
             ChooseSkillIndex = 1;
             pb.yes6 = 1;
@@ -557,6 +575,7 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (Global.CurMPP3 >= 80)
         {
+            MariaSkill2FX.Play();
             CloseChooseSkillMaria();
             ChooseSkillIndex = 2;
             pb.yes11 = 1;
@@ -579,6 +598,7 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (Global.CurMPP3 >= 120)
         {
+            MariaSkill3FX.Play();
             CloseChooseSkillMaria();
             MariaSkill3Effect.SetActive(true);
             ChooseSkillIndex = 3;
@@ -599,12 +619,15 @@ public class BSIronGolemn1 : MonoBehaviour
     }
     public void CloseChooseSkillMaria()
     {
+        OpenCloseFX.Play();
         ChooseMariaSkillPanel.SetActive(false);
         show3 = 0;
     }
 
     public void PressItem()
     {
+        OpenCloseFX.Play();
+
         if (UseItemIndex == 1)
         {
             show1 = 1;
@@ -627,6 +650,8 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (ContainerController.HealPotion > 0)
         {
+            HealFX.Play();
+
             Item_panel.SetActive(false);
 
             if (UseItemIndex == 1)
@@ -654,6 +679,8 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (ContainerController.ManaPotion > 0)
         {
+            HealFX.Play();
+
             Item_panel.SetActive(false);
 
             if (UseItemIndex == 1)
@@ -681,6 +708,8 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (ContainerController.ElixirPotion > 0)
         {
+            HealFX.Play();
+
             Item_panel.SetActive(false);
 
             if (UseItemIndex == 1)
@@ -708,6 +737,8 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (ContainerController.Bom > 0)
         {
+            ExplosionFX.Play();
+
             Item_panel.SetActive(false);
             BomEff.SetActive(true);
             ContainerController.Bom -= 1;
@@ -727,6 +758,8 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (ContainerController.HoliHP > 0)
         {
+            HealFX.Play();
+
             Item_panel.SetActive(false);
 
             if (UseItemIndex == 1)
@@ -755,6 +788,8 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (ContainerController.HoliMP > 0)
         {
+            HealFX.Play();
+
             Item_panel.SetActive(false);
 
             if (UseItemIndex == 1)
@@ -783,6 +818,8 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (ContainerController.UltraBom > 0)
         {
+            ExplosionFX.Play();
+
             Item_panel.SetActive(false);
             BomEff.SetActive(true);
             ContainerController.UltraBom -= 1;
@@ -802,6 +839,8 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (ContainerController.ReincarnationLife > 0)
         {
+            HealFX.Play();
+
             Item_panel.SetActive(false);
             ReinEff.SetActive(true);
             ContainerController.ReincarnationLife -= 1;
@@ -817,6 +856,8 @@ public class BSIronGolemn1 : MonoBehaviour
 
     public void CloseItemPanel()
     {
+        OpenCloseFX.Play();
+
         if (UseItemIndex == 1)
         {
             show1 = 0;
@@ -846,10 +887,12 @@ public class BSIronGolemn1 : MonoBehaviour
         BE4ANum = Random.Range(0, 9);
         if (BE4ANum <= 7)
         {
+            EnemyAttack1FX.Play();
             IGB.yes_IronGolemnAttack = 1;
         }
         else
         {
+            EnemySkill1FX.Play();
             IGB.yes_IronGolemnSkill = 1;
         }
     }

@@ -9,6 +9,9 @@ public class BSThief : MonoBehaviour
 {
     PlayerBattle pb;
     ThiefBattle tb;
+
+    public AudioSource VayneAttackFX, VayneSkill1FX, VayneSkill2FX, VayneSkill3FX, OpenCloseFX;
+
     HPMPBarController bar;
     public GameObject Item_panel;
     public GameObject showr2;
@@ -149,6 +152,7 @@ public class BSThief : MonoBehaviour
     }
     public void PressAttack()
     {
+        VayneAttackFX.Play();
         pb.yes1 = 1;
         show = 1;
         ShowP1Panel(false);
@@ -159,6 +163,7 @@ public class BSThief : MonoBehaviour
     }
     public void PressSkillVayne()
     {
+        OpenCloseFX.Play();
         show = 1;
         ChooseVayneSkillPanel.SetActive(true);
     }
@@ -167,6 +172,7 @@ public class BSThief : MonoBehaviour
     {
         if (Global.CurMPP1 >= 20)
         {
+            VayneSkill1FX.Play();
             CloseChooseSkillVayne();
             ChooseSkillIndex = 1;
             pb.yes2 = 1;
@@ -186,12 +192,14 @@ public class BSThief : MonoBehaviour
     }
     public void CloseChooseSkillVayne()
     {
+        OpenCloseFX.Play();
         ChooseVayneSkillPanel.SetActive(false);
         show = 0;
     }
 
     public void PressItem()
     {
+        OpenCloseFX.Play();
         show = 1;
         num1.text = ContainerController.HealPotion + "";
         num2.text = ContainerController.ManaPotion + "";
@@ -234,7 +242,7 @@ public class BSThief : MonoBehaviour
     public void UseMP()
     {
         if (ContainerController.ManaPotion > 0)
-        {
+        {   
             Item_panel.SetActive(false);
             Global.CurMPP1 += 30;
             showr2.SetActive(true);
@@ -349,6 +357,7 @@ public class BSThief : MonoBehaviour
 
     public void CloseItemPanel()
     {
+        OpenCloseFX.Play();
         show = 0;
         Item_panel.SetActive(false);
     }

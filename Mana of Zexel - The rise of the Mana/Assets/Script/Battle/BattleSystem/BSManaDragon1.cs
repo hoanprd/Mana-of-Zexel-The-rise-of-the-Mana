@@ -10,6 +10,8 @@ public class BSManaDragon1 : MonoBehaviour
     PlayerBattle pb;
     ManaDragonBattle MDB;
 
+    public AudioSource VayneAttackFX, AliaAttackFX, MariaAttackFX, VayneSkill1FX, VayneSkill2FX, VayneSkill3FX, AliaSkill1FX, AliaSkill2FX, AliaSkill3FX, MariaSkill1FX, MariaSkill2FX, MariaSkill3FX, EnemyAttack1FX, EnemyAttack2FX, EnemySkillChargeFX, EnemySkill1FX, HealFX, ExplosionFX, OpenCloseFX;
+
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
     public GameObject VayneSkill2Effect, VayneSkill3Effect, MariaSkill3Effect;

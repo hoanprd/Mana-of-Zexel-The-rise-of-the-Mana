@@ -104,6 +104,6 @@ public class HPMPBarController : MonoBehaviour
         else
             HPESlider.value = Global.HPE1;
 
-        Debug.Log(EIndex);
+        //Debug.Log(EIndex);
     }
 }
