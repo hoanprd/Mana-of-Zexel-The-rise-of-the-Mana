@@ -4360,7 +4360,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Save & Back
+  m_Text: Close
 --- !u!222 &172652467
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4556,8 +4556,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1627484337}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+      - m_Target: {fileID: 1862224792}
+        m_TargetAssemblyTypeName: GameSettingController, Assembly-CSharp
         m_MethodName: GamePlotLangueR
         m_Mode: 1
         m_Arguments:
@@ -4690,8 +4690,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1627484337}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+      - m_Target: {fileID: 1862224792}
+        m_TargetAssemblyTypeName: GameSettingController, Assembly-CSharp
         m_MethodName: GameDiffucltR
         m_Mode: 1
         m_Arguments:
@@ -6499,8 +6499,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGMSlider: {fileID: 585606663}
   FXSlider: {fileID: 220218127}
-  BGMSound: []
-  FXSound: []
+  BGMSound:
+  - {fileID: 429730745}
+  FXSound:
+  - {fileID: 517612700}
 --- !u!1 &585606661
 GameObject:
   m_ObjectHideFlags: 0
@@ -9221,8 +9223,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1627484337}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+      - m_Target: {fileID: 1862224792}
+        m_TargetAssemblyTypeName: GameSettingController, Assembly-CSharp
         m_MethodName: GamePlotLangueL
         m_Mode: 1
         m_Arguments:
@@ -10004,6 +10006,8 @@ MonoBehaviour:
   showdata1: {fileID: 1428397134}
   showdata2: {fileID: 1906790719}
   showdata3: {fileID: 10287112}
+  MenuBGM: {fileID: 429730745}
+  ClickFX: {fileID: 517612700}
 --- !u!1 &1628148165
 GameObject:
   m_ObjectHideFlags: 0
@@ -10693,6 +10697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1862224791}
+  - component: {fileID: 1862224792}
   m_Layer: 0
   m_Name: GameSettingController
   m_TagString: Untagged
@@ -10715,6 +10720,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1862224792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862224790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ba95804e93a5574f8ae75131e40bbf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DifficultChooseText: {fileID: 1359980173}
+  PlotLangueChooseText: {fileID: 932071005}
 --- !u!1 &1880111947
 GameObject:
   m_ObjectHideFlags: 0
@@ -11574,8 +11593,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1627484337}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+      - m_Target: {fileID: 1862224792}
+        m_TargetAssemblyTypeName: GameSettingController, Assembly-CSharp
         m_MethodName: GameDiffucltL
         m_Mode: 1
         m_Arguments:

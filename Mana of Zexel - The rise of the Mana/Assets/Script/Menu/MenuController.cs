@@ -11,11 +11,15 @@ public class MenuController : MonoBehaviour
     public Text showdata1;
     public Text showdata2;
     public Text showdata3;
+    public AudioSource MenuBGM;
+    public AudioSource ClickFX;
 
     public static bool LoadGameCheck;
 
     void Start()
     {
+        MenuBGM.Play();
+
         LoadGameCheck = false;
     }
 
@@ -36,6 +40,8 @@ public class MenuController : MonoBehaviour
     }
     public void PressStartNewGame()
     {
+        ClickFX.Play();
+
         //Set date
         DateController.StartGlobalTime = true;
 
@@ -401,11 +407,15 @@ public class MenuController : MonoBehaviour
 
     public void PressLoadGame()
     {
+        ClickFX.Play();
+
         LoadGamePanel.SetActive(true);
     }
 
     public void PressLoadGameData1()
     {
+        ClickFX.Play();
+
         if (PlayerPrefs.GetInt("SaveGameD1") == 1)
         {
             LoadGameCheck = true;
@@ -774,6 +784,8 @@ public class MenuController : MonoBehaviour
     }
     public void PressLoadGameData2()
     {
+        ClickFX.Play();
+
         if (PlayerPrefs.GetInt("SaveGameD2") == 1)
         {
             LoadGameCheck = true;
@@ -1143,6 +1155,8 @@ public class MenuController : MonoBehaviour
     }
     public void PressLoadGameData3()
     {
+        ClickFX.Play();
+
         if (PlayerPrefs.GetInt("SaveGameD3") == 1)
         {
             LoadGameCheck = true;
@@ -1513,23 +1527,29 @@ public class MenuController : MonoBehaviour
     }
     public void PressDLGameD1()
     {
+        ClickFX.Play();
         PlayerPrefs.SetInt("SaveGameD1", 0);
     }
     public void PressDLGameD2()
     {
+        ClickFX.Play();
         PlayerPrefs.SetInt("SaveGameD2", 0);
     }
     public void PressDLGameD3()
     {
+        ClickFX.Play();
         PlayerPrefs.SetInt("SaveGameD3", 0);
     }
     public void BackButton()
     {
+        ClickFX.Play();
         LoadGamePanel.SetActive(false);
     }
 
     public void SettingPanelOpen()
     {
+        ClickFX.Play();
+
         SettingPanel.SetActive(true);
 
         GameSetting.SetActive(true);
@@ -1543,6 +1563,8 @@ public class MenuController : MonoBehaviour
 
     public void GameSettingOn()
     {
+        ClickFX.Play();
+
         GameSetting.SetActive(true);
         GraphicSetting.SetActive(false);
         SoundSetting.SetActive(false);
@@ -1552,28 +1574,10 @@ public class MenuController : MonoBehaviour
         SoundSettingButton.GetComponent<Image>().color = Color.white;
     }
 
-    public void GameDiffucltL()
-    {
-        DifficultChooseText.text = "Normal";
-    }
-
-    public void GameDiffucltR()
-    {
-        DifficultChooseText.text = "Hard";
-    }
-
-    public void GamePlotLangueL()
-    {
-        PlotLangueChooseText.text = "English";
-    }
-
-    public void GamePlotLangueR()
-    {
-        PlotLangueChooseText.text = "Vietnamese";
-    }
-
     public void GraphicSettingOn()
     {
+        ClickFX.Play();
+
         GameSetting.SetActive(false);
         GraphicSetting.SetActive(true);
         SoundSetting.SetActive(false);
@@ -1585,6 +1589,8 @@ public class MenuController : MonoBehaviour
 
     public void SoundSettingOn()
     {
+        ClickFX.Play();
+
         GameSetting.SetActive(false);
         GraphicSetting.SetActive(false);
         SoundSetting.SetActive(true);
@@ -1596,11 +1602,13 @@ public class MenuController : MonoBehaviour
 
     public void SettingPanelClose()
     {
+        ClickFX.Play();
         SettingPanel.SetActive(false);
     }
 
     public void PressExit()
     {
+        ClickFX.Play();
         Application.Quit();
     }
 }

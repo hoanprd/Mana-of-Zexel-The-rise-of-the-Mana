@@ -43,7 +43,198 @@ public class Global : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Mob
+        if (GameSettingController.GameDiff == 0)
+        {
+            //Mob
+            HPE1 = 100;
+            DamageE1 = 10;
+            SpeedE1 = 10;
+
+            if (CutscenesController.cus111 == 1 && CutscenesController.cus112 == 0)
+            {
+                HPE2 = 2200;
+                DamageE2 = 200;
+                SpeedE2 = 10;
+            }
+            else
+            {
+                HPE2 = 200;
+                DamageE2 = 20;
+                SpeedE2 = 10;
+            }
+
+            if (CutscenesController.cus111 == 1 && CutscenesController.cus112 == 0 && Player.MapIndex == 1)
+            {
+                HPE3 = 3000;
+                DamageE3 = 240;
+                SpeedE3 = 20;
+            }
+            else
+            {
+                HPE3 = 300;
+                DamageE3 = 40;
+                SpeedE3 = 20;
+            }
+
+            if (CutscenesController.cus108 == 1 && CutscenesController.cus109 == 0 && Player.MapIndex == 3)
+            {
+                HPE3 = 6000;
+                DamageE3 = 360;
+                SpeedE3 = 20;
+            }
+            else
+            {
+                HPE4 = 600;
+                DamageE4 = 60;
+                SpeedE4 = 20;
+            }
+
+            HPE5 = 1000;
+            DamageE5 = 80;
+            SpeedE5 = 10;
+
+            HPE6 = 1500;
+            DamageE6 = 160;
+            SpeedE6 = 20;
+
+            HPE7 = 2000;
+            DamageE7 = 180;
+            SpeedE7 = 10;
+
+            HPE8 = 2200;
+            DamageE8 = 100;
+            SpeedE8 = 30;
+
+            HPE9 = 2600;
+            DamageE9 = 160;
+            SpeedE9 = 10;
+
+            HPE10 = 3600;
+            DamageE10 = 220;
+            SpeedE10 = 20;
+
+            HPE11 = 4000;
+            DamageE11 = 260;
+            SpeedE11 = 20;
+
+            //Boss
+            HPBE1 = 2000;
+            DamageBE1 = 120;
+            SpeedBE1 = 20;
+
+            HPBE2 = 6000;
+            DamageBE2 = 200;
+            SpeedBE2 = 30;
+
+            HPBE3 = 10000;
+            DamageBE3 = 260;
+            SpeedBE3 = 10;
+
+            HPBE4 = 8000;
+            DamageBE4 = 180;
+            SpeedBE4 = 30;
+
+            HPBE5 = 50000;
+            DamageBE5 = 500;
+            SpeedBE5 = 20;
+        }
+        else if (GameSettingController.GameDiff == 1)
+        {
+            //Mob
+            HPE1 = 140;
+            DamageE1 = 15;
+            SpeedE1 = 10;
+
+            if (CutscenesController.cus111 == 1 && CutscenesController.cus112 == 0)
+            {
+                HPE2 = 4400;
+                DamageE2 = 300;
+                SpeedE2 = 10;
+            }
+            else
+            {
+                HPE2 = 280;
+                DamageE2 = 25;
+                SpeedE2 = 10;
+            }
+
+            if (CutscenesController.cus111 == 1 && CutscenesController.cus112 == 0 && Player.MapIndex == 1)
+            {
+                HPE3 = 6000;
+                DamageE3 = 340;
+                SpeedE3 = 20;
+            }
+            else
+            {
+                HPE3 = 400;
+                DamageE3 = 50;
+                SpeedE3 = 20;
+            }
+
+            if (CutscenesController.cus108 == 1 && CutscenesController.cus109 == 0 && Player.MapIndex == 3)
+            {
+                HPE3 = 10000;
+                DamageE3 = 440;
+                SpeedE3 = 20;
+            }
+            else
+            {
+                HPE4 = 800;
+                DamageE4 = 70;
+                SpeedE4 = 20;
+            }
+
+            HPE5 = 1500;
+            DamageE5 = 90;
+            SpeedE5 = 10;
+
+            HPE6 = 2000;
+            DamageE6 = 200;
+            SpeedE6 = 20;
+
+            HPE7 = 2500;
+            DamageE7 = 280;
+            SpeedE7 = 10;
+
+            HPE8 = 3200;
+            DamageE8 = 150;
+            SpeedE8 = 30;
+
+            HPE9 = 3600;
+            DamageE9 = 260;
+            SpeedE9 = 10;
+
+            HPE10 = 4600;
+            DamageE10 = 320;
+            SpeedE10 = 20;
+
+            HPE11 = 5000;
+            DamageE11 = 360;
+            SpeedE11 = 20;
+
+            //Boss
+            HPBE1 = 3000;
+            DamageBE1 = 220;
+            SpeedBE1 = 20;
+
+            HPBE2 = 8000;
+            DamageBE2 = 300;
+            SpeedBE2 = 30;
+
+            HPBE3 = 11000;
+            DamageBE3 = 300;
+            SpeedBE3 = 10;
+
+            HPBE4 = 10000;
+            DamageBE4 = 240;
+            SpeedBE4 = 30;
+
+            HPBE5 = 80000;
+            DamageBE5 = 600;
+            SpeedBE5 = 20;
+        }
+
+        /*//Mob
         HPE1 = 100;
         DamageE1 = 100;
         SpeedE1 = 10;
@@ -134,6 +325,6 @@ public class Global : MonoBehaviour
 
         HPBE5 = 50000;
         DamageBE5 = 500;
-        SpeedBE5 = 20;
+        SpeedBE5 = 20;*/
     }
 }

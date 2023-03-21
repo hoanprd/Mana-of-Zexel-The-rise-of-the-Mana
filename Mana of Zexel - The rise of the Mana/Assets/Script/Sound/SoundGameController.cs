@@ -24,10 +24,5 @@ public class SoundGameController : MonoBehaviour
         {
             BGMSound[i].Play();
         }
-
-        for (int i = 0; i < FXSound.Length; i++)
-        {
-            FXSound[i].Play();
-        }
     }
 }
