@@ -34,7 +34,7 @@ public class HubController : MonoBehaviour
     public GameObject PointPlusP3, AttackPointPlusLvP3, HPPointPlusLvP3, MPPointPlusLvP3, SpeedPointPlusLvP3, AttackPointPlusInfoP3, HPPointPlusInfoP3, MPPointPlusInfoP3, SpeedPointPlusInfoP3;
     public GameObject ShowVayneWeaponEquip, ShowVayneArmorEquip, ShowAliaWeaponEquip, ShowAliaArmorEquip, ShowMariaWeaponEquip, ShowMariaArmorEquip;
     public GameObject[] VayneWI, VayneAI, AliaWI, AliaAI, MariaWI, MariaAI;
-    public GameObject VayneW1, VayneW2, VayneW3, VayneA1, VayneA2, VayneA3, AliaW1, AliaW2, AliaW3, AliaA1, AliaA2, AliaA3, MariaW1, MariaW2, MariaW3, MariaA1, MariaA2, MariaA3;
+    public GameObject VayneEmptySlotW1, VayneEmptySlotW2, VayneEmptySlotW3, VayneEmptySlotA1, VayneEmptySlotA2, VayneEmptySlotA3, AliaEmptySlotW1, AliaEmptySlotW2, AliaEmptySlotW3, AliaEmptySlotA1, AliaEmptySlotA2, AliaEmptySlotA3, MariaEmptySlotW1, MariaEmptySlotW2, MariaEmptySlotW3, MariaEmptySlotA1, MariaEmptySlotA2, MariaEmptySlotA3, VayneW1, VayneW2, VayneW3, VayneA1, VayneA2, VayneA3, AliaW1, AliaW2, AliaW3, AliaA1, AliaA2, AliaA3, MariaW1, MariaW2, MariaW3, MariaA1, MariaA2, MariaA3;
     public GameObject Bag;
     public GameObject TimePanel, HubPanel;
 
@@ -197,6 +197,79 @@ public class HubController : MonoBehaviour
         ShowP1Equip();
         ShowP2Equip();
         ShowP3Equip();
+
+        if (Global.VayneStaff1 > 0)
+        {
+            VayneEmptySlotW1.SetActive(false);
+        }
+        if (Global.VayneStaff2 > 0)
+        {
+            VayneEmptySlotW2.SetActive(false);
+        }
+        if (Global.VayneStaff3 > 0)
+        {
+            VayneEmptySlotW3.SetActive(false);
+        }
+        if (Global.AlchemistArmor1 > 0)
+        {
+            VayneEmptySlotA1.SetActive(false);
+        }
+        if (Global.AlchemistArmor2 > 0)
+        {
+            VayneEmptySlotA2.SetActive(false);
+        }
+        if (Global.AlchemistArmor3 > 0)
+        {
+            VayneEmptySlotA3.SetActive(false);
+        }
+        if (Global.AliaShoes1 > 0)
+        {
+            AliaEmptySlotW1.SetActive(false);
+        }
+        if (Global.AliaShoes2 > 0)
+        {
+            AliaEmptySlotW2.SetActive(false);
+        }
+        if (Global.AliaShoes3 > 0)
+        {
+            AliaEmptySlotW3.SetActive(false);
+        }
+        if (Global.WarriorArmor1 > 0)
+        {
+            AliaEmptySlotA1.SetActive(false);
+        }
+        if (Global.WarriorArmor2 > 0)
+        {
+            AliaEmptySlotA2.SetActive(false);
+        }
+        if (Global.WarriorArmor3 > 0)
+        {
+            AliaEmptySlotA3.SetActive(false);
+        }
+        if (Global.MariaCrystal1 > 0)
+        {
+            MariaEmptySlotW1.SetActive(false);
+        }
+        if (Global.MariaCrystal2 > 0)
+        {
+            MariaEmptySlotW2.SetActive(false);
+        }
+        if (Global.MariaCrystal3 > 0)
+        {
+            MariaEmptySlotW3.SetActive(false);
+        }
+        if (Global.AlchemistArmor1 > 0)
+        {
+            MariaEmptySlotA1.SetActive(false);
+        }
+        if (Global.AlchemistArmor2 > 0)
+        {
+            MariaEmptySlotA2.SetActive(false);
+        }
+        if (Global.AlchemistArmor3 > 0)
+        {
+            MariaEmptySlotA3.SetActive(false);
+        }
 
         if (CutscenesController.cus3 == 0)
         {

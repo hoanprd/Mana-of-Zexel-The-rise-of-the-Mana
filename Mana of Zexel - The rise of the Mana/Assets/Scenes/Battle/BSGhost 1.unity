@@ -1042,6 +1042,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136272885}
   m_CullTransparentMesh: 1
+--- !u!1 &146719500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6584872646953156982, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+  m_PrefabInstance: {fileID: 2001497624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &146719501 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6590323148358222284, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+  m_PrefabInstance: {fileID: 2001497624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &146719502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 948308906424155561, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+  m_PrefabInstance: {fileID: 2001497624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &146719503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6536272296203554680, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+  m_PrefabInstance: {fileID: 2001497624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &146719504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1155455707106492279, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+  m_PrefabInstance: {fileID: 2001497624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &146719505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1155455705517677312, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+  m_PrefabInstance: {fileID: 2001497624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &146719506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1155455706504483660, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+  m_PrefabInstance: {fileID: 2001497624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &146719507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1155455707061200827, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
+  m_PrefabInstance: {fileID: 2001497624}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &159681738
 GameObject:
   m_ObjectHideFlags: 0
@@ -5134,7 +5174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5577714257528902911, guid: b98c5674e72a4c645b36edae348ac5dc, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5577714257528902911, guid: b98c5674e72a4c645b36edae348ac5dc, type: 3}
       propertyPath: m_AnchorMax.x
@@ -15045,7 +15085,7 @@ RectTransform:
   - {fileID: 893792391}
   - {fileID: 2106192505}
   m_Father: {fileID: 2110691886}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15588,7 +15628,7 @@ RectTransform:
   - {fileID: 1692258348}
   - {fileID: 707737532}
   m_Father: {fileID: 2110691886}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17284,6 +17324,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36bf6a373523dd419a4b5a8fc92e3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VayneAttackFX: {fileID: 2036142116}
+  AliaAttackFX: {fileID: 0}
+  MariaAttackFX: {fileID: 598976169}
+  VayneSkill1FX: {fileID: 949316161}
+  VayneSkill2FX: {fileID: 548785212}
+  VayneSkill3FX: {fileID: 1484889139}
+  AliaSkill1FX: {fileID: 0}
+  AliaSkill2FX: {fileID: 0}
+  AliaSkill3FX: {fileID: 0}
+  MariaSkill1FX: {fileID: 924877705}
+  MariaSkill2FX: {fileID: 343162094}
+  MariaSkill3FX: {fileID: 627082042}
+  EnemyAttackFX: {fileID: 0}
+  HealFX: {fileID: 384217649}
+  ExplosionFX: {fileID: 72793720}
+  OpenCloseFX: {fileID: 2036009850}
   Item_panel: {fileID: 2001497631}
   HPHealingEffP1: {fileID: 525438429}
   MPHealingEffP1: {fileID: 312091850}
@@ -17323,6 +17379,14 @@ MonoBehaviour:
   MariaSkill3Hide: {fileID: 1033880433}
   Win_panel: {fileID: 1799614299}
   Lose_panel: {fileID: 1209780870}
+  HPItemUI: {fileID: 146719507}
+  MPItemUI: {fileID: 146719506}
+  EPItemUI: {fileID: 146719505}
+  BItemUI: {fileID: 146719504}
+  HHPItemUI: {fileID: 146719503}
+  HMPItemUI: {fileID: 146719502}
+  UBItemUI: {fileID: 146719501}
+  RLItemUI: {fileID: 146719500}
   P2TurnStatusObject: {fileID: 2084905978}
   P3TurnStatusObject: {fileID: 707737531}
   P1TurnStatus: {fileID: 1160630654}
@@ -20679,7 +20743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1155455705711808490, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1155455705711808490, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -22353,10 +22417,10 @@ RectTransform:
   - {fileID: 1285538564}
   - {fileID: 1847688985}
   - {fileID: 340793042}
+  - {fileID: 1429993427}
   - {fileID: 2001497632}
   - {fileID: 608130033}
   - {fileID: 1464384320}
-  - {fileID: 1429993427}
   - {fileID: 1534544586}
   - {fileID: 1799614300}
   - {fileID: 1209780871}

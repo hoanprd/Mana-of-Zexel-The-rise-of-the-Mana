@@ -27,7 +27,10 @@ public class BSInfernoBeast1 : MonoBehaviour
     public GameObject Win_panel;
     public GameObject Lose_panel;
 
+    public GameObject HPItemUI, MPItemUI, EPItemUI, BItemUI, HHPItemUI, HMPItemUI, UBItemUI, RLItemUI;
+
     public GameObject SkillChargeSign;
+
     public Text P1TurnStatus;
     public Text P2TurnStatus;
     public Text P3TurnStatus;
@@ -263,6 +266,39 @@ public class BSInfernoBeast1 : MonoBehaviour
         P2TurnStatus.text = a2 + "";
         P3TurnStatus.text = a3 + "";
         BE2TurnStatus.text = aBE2 + "";
+
+        if (ContainerController.HealPotion <= 0)
+        {
+            HPItemUI.SetActive(false);
+        }
+        if (ContainerController.ManaPotion <= 0)
+        {
+            MPItemUI.SetActive(false);
+        }
+        if (ContainerController.ElixirPotion <= 0)
+        {
+            EPItemUI.SetActive(false);
+        }
+        if (ContainerController.Bom <= 0)
+        {
+            BItemUI.SetActive(false);
+        }
+        if (ContainerController.HoliHP <= 0)
+        {
+            HHPItemUI.SetActive(false);
+        }
+        if (ContainerController.HoliMP <= 0)
+        {
+            HMPItemUI.SetActive(false);
+        }
+        if (ContainerController.UltraBom <= 0)
+        {
+            UBItemUI.SetActive(false);
+        }
+        if (ContainerController.ReincarnationLife <= 0)
+        {
+            RLItemUI.SetActive(false);
+        }
     }
 
     public void ShowP1Panel(bool isshow)

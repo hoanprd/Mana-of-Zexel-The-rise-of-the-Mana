@@ -313,8 +313,8 @@ public class MenuController : MonoBehaviour
         ContainerController.IceCrystal = 0;
 
         //Set item
-        ContainerController.HealPotion = 0;
-        ContainerController.ManaPotion = 0;
+        ContainerController.HealPotion = 1;
+        ContainerController.ManaPotion = 1;
         ContainerController.ElixirPotion = 0;
         ContainerController.Bom = 0;
         ContainerController.Porridge = 0;

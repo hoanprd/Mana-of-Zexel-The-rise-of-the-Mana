@@ -10,14 +10,15 @@ public class BSThief : MonoBehaviour
     PlayerBattle pb;
     ThiefBattle tb;
 
-    public AudioSource VayneAttackFX, VayneSkill1FX, VayneSkill2FX, VayneSkill3FX, OpenCloseFX;
+    public AudioSource VayneAttackFX, VayneSkill1FX, VayneSkill2FX, VayneSkill3FX, HealFX, OpenCloseFX;
 
-    HPMPBarController bar;
     public GameObject Item_panel;
+    public GameObject HPHealingEffP1, MPHealingEffP1;
     public GameObject showr2;
     public GameObject P1_panel;
     public GameObject Win_panel;
     public GameObject Lose_panel;
+    public GameObject HPItemUI, MPItemUI;
     public Text PDamage;
     public Text EDamage;
     public Text num1;
@@ -78,6 +79,15 @@ public class BSThief : MonoBehaviour
         HPE1.text = "HP: " + Global.HPE1.ToString();
         if(Global.HPE1 <= 0)
             HPE1.text = "HP: 0";
+
+        if (ContainerController.HealPotion <= 0)
+        {
+            HPItemUI.SetActive(false);
+        }
+        if (ContainerController.ManaPotion <= 0)
+        {
+            MPItemUI.SetActive(false);
+        }
 
         if (Global.SpeedP1 >= Global.SpeedE1)
         {
@@ -215,6 +225,8 @@ public class BSThief : MonoBehaviour
     {
         if(ContainerController.HealPotion > 0)
         {
+            HealFX.Play();
+            HPHealingEffP1.SetActive(true);
             Item_panel.SetActive(false);
             Global.CurHPP1 += 50;
             showr2.SetActive(true);
@@ -242,7 +254,9 @@ public class BSThief : MonoBehaviour
     public void UseMP()
     {
         if (ContainerController.ManaPotion > 0)
-        {   
+        {
+            HealFX.Play();
+            MPHealingEffP1.SetActive(true);
             Item_panel.SetActive(false);
             Global.CurMPP1 += 30;
             showr2.SetActive(true);
@@ -513,6 +527,8 @@ public class BSThief : MonoBehaviour
     }
     void delayshowr()
     {
+        HPHealingEffP1.SetActive(false);
+        MPHealingEffP1.SetActive(false);
         PDamage.text = "";
         showr2.SetActive(false);
     }
