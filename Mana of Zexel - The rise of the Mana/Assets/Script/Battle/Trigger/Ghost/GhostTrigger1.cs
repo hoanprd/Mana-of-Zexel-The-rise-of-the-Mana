@@ -21,7 +21,14 @@ public class GhostTrigger1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (battle && Input.GetKeyDown(KeyCode.Space))
+        /*if (battle && Input.GetKeyDown(KeyCode.Space))
+        {
+            ContainerController.LoadingOpen = true;
+            HPMPBarController.EIndex = 11;
+            despawn = true;
+            SceneManager.LoadScene("BSGhost 1");
+        }*/
+        if (battle)
         {
             ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 11;
