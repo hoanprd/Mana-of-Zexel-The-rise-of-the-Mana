@@ -117,6 +117,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         a2 = Global.SpeedP2 / 10;
         a3 = Global.SpeedP3 / 10;
         aBE2 = Global.SpeedBE2 / 10;
+
         HPMPBarController.EIndex = 11;
         BreakDamageIndex = 0;
         BossSkillCharge = 0;

@@ -1855,7 +1855,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.PlusPointP1 >= 2)
         {
-            Global.PlusPointP1 -= 1;
+            Global.PlusPointP1 -= 2;
             Global.SpeedP1 += 1;
             Global.PlusPointSpeedLvP1 += 1;
             Global.PlusPointSpeedInfoP1 += 1;
@@ -1904,7 +1904,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.PlusPointP2 >= 2)
         {
-            Global.PlusPointP2 -= 1;
+            Global.PlusPointP2 -= 2;
             Global.SpeedP2 += 1;
             Global.PlusPointSpeedLvP2 += 1;
             Global.PlusPointSpeedInfoP2 += 1;
@@ -1953,7 +1953,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.PlusPointP3 >= 2)
         {
-            Global.PlusPointP3 -= 1;
+            Global.PlusPointP3 -= 2;
             Global.SpeedP3 += 1;
             Global.PlusPointSpeedLvP3 += 1;
             Global.PlusPointSpeedInfoP3 += 1;
