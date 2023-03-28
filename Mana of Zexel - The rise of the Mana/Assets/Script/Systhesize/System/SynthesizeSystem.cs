@@ -58,6 +58,8 @@ public class SynthesizeSystem : MonoBehaviour
     public Slider ManaIceSynSlider;
     public Text ManaIceSynText;
     public Text SynDetailPanelText;
+    public AudioSource ClickFX, SynthesizeFX;
+
     public static int ManaSynthesize;
     public static int ManaFireSynthesize;
     public static int ManaIceSynthesize;
@@ -272,6 +274,7 @@ public class SynthesizeSystem : MonoBehaviour
     
     public void BackButton()
     {
+        ClickFX.Play();
         SlideIndex = 0;
         for (int i = 0; i < Slide.Length; i++)
         {
@@ -284,350 +287,409 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void OpenManaSynPanel()
     {
+        ClickFX.Play();
         ManaSynPanel.SetActive(true);
     }
 
     public void CloseManaSynPanel()
     {
+        ClickFX.Play();
         ManaSynPanel.SetActive(false);
     }
 
     public void DriedLeavesDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Dried leave\n\n\nThis kind of leave can be find at Wishing hill";
         SynDetailPanel.SetActive(true);
     }
 
     public void MorningDropDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Morning drop\n\n\nMorning dew is usually gorgeous in Zexel town";
         SynDetailPanel.SetActive(true);
     }
 
     public void PureWaterDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Pure water\n\n\nWater sources that are indispensable for alchemy are found in areas with fountains";
         SynDetailPanel.SetActive(true);
     }
 
     public void IronDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Iron\n\n\nA cleaned mineral can only be found in the wishing forest";
         SynDetailPanel.SetActive(true);
     }
 
     public void ManaGemDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Mana gem\n\n\nA kind of mana obtained by defeating golems in the wishing forest";
         SynDetailPanel.SetActive(true);
     }
 
     public void WheatDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Wheat\n\n\nRice is an indispensable source of raw materials in villages especially Zexel town";
         SynDetailPanel.SetActive(true);
     }
 
     public void StringDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "String\n\n\nA silk that can only be found in the wishing forest, zexel gate";
         SynDetailPanel.SetActive(true);
     }
 
     public void WoodDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Wood\n\n\nWood is often found in forests like wishing forest";
         SynDetailPanel.SetActive(true);
     }
 
     public void ScorpionVenomDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Scorpion venom\n\n\nThe tail of the extremely poisonous scorpion can be found by defeating the inferno scorpion";
         SynDetailPanel.SetActive(true);
     }
     public void GuardianFeatherDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Guardian feather\n\n\nA gift left by the mana guardian";
         SynDetailPanel.SetActive(true);
     }
 
     public void ManaOreDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Mana ore\n\n\nA mineral that can be found in mana gate";
         SynDetailPanel.SetActive(true);
     }
 
     public void ManaCrystalDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Mana crystal\n\n\nA crystal containing mana can be found in the mana temple";
         SynDetailPanel.SetActive(true);
     }
 
     public void InfernoSandDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Inferno sand\n\n\nSpecial sand with high heat found in inferno desert";
         SynDetailPanel.SetActive(true);
     }
 
     public void FireOreDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Fire ore\n\n\nThe ore containing fire elemental mana can be found in inferno volcano";
         SynDetailPanel.SetActive(true);
     }
 
     public void IceOreDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Ice ore\n\n\nThe ore containing fire elemental mana can be found in inferno ice";
         SynDetailPanel.SetActive(true);
     }
 
     public void GoldenFeatherDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Golden feather\n\n\nFeather type that can be obtained by defeating fire fang in inferno volcano";
         SynDetailPanel.SetActive(true);
     }
 
     public void IceLeatherDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Ice leather\n\n\nLeather type that can be obtained by defeating ice fang in inferno ice";
         SynDetailPanel.SetActive(true);
     }
 
     public void RedManaCrystalDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Red mana crystal\n\n\nA crystal containing fire elemental mana can be found deep inside the volcanic cave at inferno volcano";
         SynDetailPanel.SetActive(true);
     }
 
     public void BlueManaCrystalDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Blue mana crystal\n\n\nA crystal containing ice elemental mana can be found deep inside the ice cave at inferno ice";
         SynDetailPanel.SetActive(true);
     }
 
     public void ManaLiquidDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Mana liquid\n\n\nA liquid obtained by defeating slimes at the mana gate";
         SynDetailPanel.SetActive(true);
     }
 
     public void RedManaSlimeBallDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Red mana slime ball\n\n\nA slime obtained by defeating red slimes deep inside a volcanic cave in inferno volcano";
         SynDetailPanel.SetActive(true);
     }
 
     public void BlueManaSlimeBallDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Blue mana slime ball\n\n\nA slime obtained by defeating red slimes deep inside a ice cave in inferno ice";
         SynDetailPanel.SetActive(true);
     }
 
     public void ManaCoreFireZexelDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Mana core fire Zexel\n\n\nFlame mana energy core created by Zexel";
         SynDetailPanel.SetActive(true);
     }
 
     public void ManaCoreIceZexelDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Mana core ice Zexel\n\n\nIce mana energy core created by Zexel";
         SynDetailPanel.SetActive(true);
     }
 
     public void ObsidianDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Obsidian\n\n\nA natural form of volcanic glass created in the form of erupting igneous rock";
         SynDetailPanel.SetActive(true);
     }
 
     public void RockDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Rock\n\n\nIs a mineral commonly found in cliffs";
         SynDetailPanel.SetActive(true);
     }
 
     public void NatureGrassDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Nature grass\n\n\nA natural herb that can make special medicines can be found in alta inferno";
         SynDetailPanel.SetActive(true);
     }
 
     public void ManaEagleFeatherDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Mana eagle feather\n\n\nThe type of feathers that can be obtained by defeating the eagle on the mana cliff";
         SynDetailPanel.SetActive(true);
     }
 
     public void HealPotionDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Heal potion\n\n\nIt's the liquid solution to restore vitality created by alchemy";
         SynDetailPanel.SetActive(true);
     }
 
     public void ManaPotionDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Mana potion\n\n\nIt's a liquid that restores mana created by alchemy";
         SynDetailPanel.SetActive(true);
     }
 
     public void ElixirPotionDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Elixir potion\n\n\nThe type of liquid that can restore health and mana";
         SynDetailPanel.SetActive(true);
     }
 
     public void BomDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Bom\n\n\nA lethal weapon made from alchemy";
         SynDetailPanel.SetActive(true);
     }
 
     public void PorridgeDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Porridge\n\n\nA culinary specialty made from Vayne's alchemy";
         SynDetailPanel.SetActive(true);
     }
 
     public void ManaClothDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Mana cloth\n\n\nA culinary specialty made from Vayne's alchemy";
         SynDetailPanel.SetActive(true);
     }
 
     public void ManaShieldDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Mana shield\n\n\nA shield made of mana";
         SynDetailPanel.SetActive(true);
     }
 
     public void VenomKillerDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Venom killer\n\n\nSpecial medicine for the poison of scorpions";
         SynDetailPanel.SetActive(true);
     }
 
     public void ManaNecklaceDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Mana necklace\n\n\nThe mana necklace helps the user to fix the flow of mana and is a piece of jewelry";
         SynDetailPanel.SetActive(true);
     }
 
     public void ManaGeneratorDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Mana generator\n\n\nA mana transmitter and receiver makes mana recovery easier";
         SynDetailPanel.SetActive(true);
     }
 
     public void BaxiataDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Baxiata\n\n\nMetal ingots that are stronger than iron are made from minerals containing mana";
         SynDetailPanel.SetActive(true);
     }
 
     public void BaxiataGemDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Baxiata gem\n\n\nA precious gem extracted from a crystal containing mana";
         SynDetailPanel.SetActive(true);
     }
 
     public void PhotonriaDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Photonria\n\n\nA metal ingot synthesized from ores containing the element mana";
         SynDetailPanel.SetActive(true);
     }
 
     public void PhotonriaGemDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Photonria gem\n\n\nA precious gem extracted from a crystal containing the element mana";
         SynDetailPanel.SetActive(true);
     }
 
     public void ManaLiquidCatalystDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Mana liquid catalyst\n\n\nA catalyst extracted from slimes";
         SynDetailPanel.SetActive(true);
     }
 
     public void RedLiquidCatalystDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Red liquid catalyst\n\n\nA catalyst extracted from red slime";
         SynDetailPanel.SetActive(true);
     }
 
     public void BlueLiquidCatalystDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Blue liquid catalyst\n\n\nA catalyst extracted from blue slime";
         SynDetailPanel.SetActive(true);
     }
 
     public void ManaCoreFireVayneDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Mana core fire Vayne\n\n\nFlame mana energy core created by Vayne";
         SynDetailPanel.SetActive(true);
     }
 
     public void ManaCoreIceVayneDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Mana core ice Vayne\n\n\nIce mana energy core created by Vayne";
         SynDetailPanel.SetActive(true);
     }
 
     public void PureObsidianDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Blue liquid catalyst\n\n\nA form of pure glass in the form of stone";
         SynDetailPanel.SetActive(true);
     }
 
     public void FireManaGeneratorDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Fire mana generator\n\n\nA kind of mana transmitter and receiver containing fire element";
         SynDetailPanel.SetActive(true);
     }
 
     public void IceManaGeneratorDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Ice mana generator\n\n\nA kind of mana transmitter and receiver containing ice element";
         SynDetailPanel.SetActive(true);
     }
 
     public void PowderOfLifeDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Powder of life\n\n\nA powder that can give life if it is further prepared";
         SynDetailPanel.SetActive(true);
     }
 
     public void HoliHPDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Powder of life\n\n\nA liquid that can restore vitality very quickly";
         SynDetailPanel.SetActive(true);
     }
 
     public void HoliMPDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Powder of life\n\n\nA liquid that can restore mana very quickly";
         SynDetailPanel.SetActive(true);
     }
 
     public void ReincarnationLifeDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Reincarnation life\n\n\nItem that can revive the dead before a certain amount of time";
         SynDetailPanel.SetActive(true);
     }
 
     public void UltraBomDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Ultra bom\n\n\nThe bomb has tremendous power through processing minerals containing mana";
         SynDetailPanel.SetActive(true);
     }
     public void OmnipotentBoundaryDetail()
     {
+        ClickFX.Play();
         SynDetailPanelText.text = "Omnipotent boundary\n\n\nAn extremely powerful barrier to prevent monsters from attacking";
         SynDetailPanel.SetActive(true);
     }
 
     public void CloseSynDetailPanel()
     {
+        ClickFX.Play();
         SynDetailPanel.SetActive(false);
     }
 
@@ -635,6 +697,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.DriedLeaves > 0 && ContainerController.PureWater > 0 && ContainerController.HealPotion < 4)
         {
+            SynthesizeFX.Play();
             ContainerController.DriedLeaves -= 1;
             ContainerController.PureWater -= 1;
             ContainerController.HealPotionPick = 1;
@@ -661,6 +724,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.MorningDrop > 0 && ContainerController.PureWater > 0 && ContainerController.ManaPotion < 4)
         {
+            SynthesizeFX.Play();
             ContainerController.MorningDrop -= 1;
             ContainerController.PureWater -= 1;
             ContainerController.ManaPotionPick = 1;
@@ -686,6 +750,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.HealPotion > 0 && ContainerController.ManaPotion > 0 && ContainerController.ElixirPotion < 4)
         {
+            SynthesizeFX.Play();
             ContainerController.HealPotion -= 1;
             ContainerController.ManaPotion -= 1;
             ContainerController.ElixirPotionPick = 1;
@@ -711,6 +776,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.Iron >= 2 && ContainerController.ManaGem >= 2 && CutscenesController.cus25 == 0 && CutscenesController.cus24 == 1 && SynBugStop == 0)
         {
+            SynthesizeFX.Play();
             SynBugStop = 1;
             BomCut = true;
             ContainerController.Iron -= 2;
@@ -722,6 +788,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
         else if (ContainerController.Iron >= 0 && ContainerController.ManaGem >= 0 && ContainerController.Bom < 4)
         {
+            SynthesizeFX.Play();
             ContainerController.Iron -= 2;
             ContainerController.ManaGem -= 2;
             ContainerController.BomPick = 1;
@@ -747,6 +814,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.Wheat >= 3 && ContainerController.PureWater >= 2 && CutscenesController.cus48 == 0 && CutscenesController.cus47 == 1 && SynBugStop == 0)
         {
+            SynthesizeFX.Play();
             SynBugStop = 1;
             PorridgeCut = true;
             ContainerController.Wheat -= 3;
@@ -758,6 +826,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
         else if (ContainerController.Wheat >= 3 && ContainerController.PureWater >= 2)
         {
+            SynthesizeFX.Play();
             ContainerController.Wheat -= 3;
             ContainerController.PureWater -= 2;
             ContainerController.PorridgePick = 1;
@@ -781,6 +850,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.String >= 4 && ContainerController.ManaGem >= 2)
         {
+            SynthesizeFX.Play();
             ContainerController.String -= 4;
             ContainerController.ManaGem -= 2;
             ContainerController.ManaClothPick = 1;
@@ -800,6 +870,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.Iron >= 2 && ContainerController.Wood >= 3 && ContainerController.ManaCloth >= 2)
         {
+            SynthesizeFX.Play();
             ContainerController.Iron -= 2;
             ContainerController.Wood -= 3;
             ContainerController.ManaCloth -= 2;
@@ -826,6 +897,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
         else if (ContainerController.ScorpionVenom >= 2 && ContainerController.ElixirPotion >= 2 && CutscenesController.cus40 == 0 && CutscenesController.cus39 == 1 && SynBugStop == 0)
         {
+            SynthesizeFX.Play();
             SynBugStop = 1;
             VenomKillerCut = true;
             ContainerController.ScorpionVenom -= 2;
@@ -837,6 +909,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
         else if (ContainerController.ScorpionVenom >= 2 && ContainerController.ElixirPotion >= 2)
         {
+            SynthesizeFX.Play();
             ContainerController.ScorpionVenom -= 2;
             ContainerController.ElixirPotion -= 2;
             ContainerController.VenomKillerPick = 1;
@@ -856,6 +929,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.String > 0 && ContainerController.ManaGem > 0 && ContainerController.GuardianFeather > 0 && CutscenesController.cus54 == 0 && CutscenesController.cus53 == 1 && SynBugStop == 0)
         {
+            SynthesizeFX.Play();
             SynBugStop = 1;
             ManaSynthesize -= 20;
             ManaNecklaceCut = true;
@@ -885,6 +959,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.Iron >= 4 && ContainerController.Wood >= 2 && ContainerController.ManaGem >= 4 && ManaSynthesize >= 80)
         {
+            SynthesizeFX.Play();
             ManaSynthesize -= 80;
             ContainerController.Iron -= 4;
             ContainerController.Wood -= 2;
@@ -912,6 +987,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.Iron > 0 && ContainerController.ManaOre >= 2)
         {
+            SynthesizeFX.Play();
             ContainerController.Iron -= 1;
             ContainerController.ManaOre -= 2;
             ContainerController.BaxiataPick = 1;
@@ -931,6 +1007,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.ManaCrystal >= 2 && ContainerController.InfernoSand > 0 && ContainerController.Baxiata >= 2 && ManaSynthesize >= 20)
         {
+            SynthesizeFX.Play();
             ManaSynthesize -= 20;
             ContainerController.ManaCrystal -= 2;
             ContainerController.InfernoSand -= 1;
@@ -958,6 +1035,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.FireOre >= 2 && ContainerController.IceOre >= 2 && ContainerController.Baxiata >= 1)
         {
+            SynthesizeFX.Play();
             ContainerController.FireOre -= 2;
             ContainerController.IceOre -= 2;
             ContainerController.Baxiata -= 1;
@@ -978,6 +1056,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.RedManaCrystal >= 2 && ContainerController.BlueManaCrystal >= 2 && ContainerController.Photonria >= 2 && ManaSynthesize >= 40)
         {
+            SynthesizeFX.Play();
             ManaSynthesize -= 40;
             ContainerController.RedManaCrystal -= 2;
             ContainerController.BlueManaCrystal -= 2;
@@ -1005,6 +1084,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.ManaLiquid >= 2 && ContainerController.PureWater >= 2 && ManaSynthesize >= 20)
         {
+            SynthesizeFX.Play();
             ManaSynthesize -= 20;
             ContainerController.ManaLiquid -= 2;
             ContainerController.PureWater -= 2;
@@ -1031,6 +1111,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.RedManaSlimeBall >= 2 && ContainerController.PureWater >= 2 && ManaSynthesize >= 20)
         {
+            SynthesizeFX.Play();
             ManaSynthesize -= 20;
             ContainerController.RedManaSlimeBall -= 2;
             ContainerController.PureWater -= 2;
@@ -1057,6 +1138,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.BlueManaSlimeBall >= 2 && ContainerController.PureWater >= 2 && ManaSynthesize >= 20)
         {
+            SynthesizeFX.Play();
             ManaSynthesize -= 20;
             ContainerController.BlueManaSlimeBall -= 2;
             ContainerController.PureWater -= 2;
@@ -1083,6 +1165,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.ManaCoreFireZexel > 0 && ContainerController.RedManaCrystal >= 2 && ContainerController.RedLiquidCatalyst >= 2 && ManaFireSynthesize >= 20 && SynBugStop == 0)
         {
+            SynthesizeFX.Play();
             SynBugStop = 1;
             ManaFireSynthesize -= 20;
             ManaNecklaceCut = true;
@@ -1111,6 +1194,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.ManaCoreIceZexel > 0 && ContainerController.BlueManaCrystal >= 2 && ContainerController.BlueLiquidCatalyst >= 2 && ManaIceSynthesize >= 20)
         {
+            SynthesizeFX.Play();
             ManaIceSynthesize -= 20;
             ContainerController.BlueManaCrystal -= 2;
             ContainerController.BlueLiquidCatalyst -= 2;
@@ -1137,6 +1221,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.Obsidian >= 2 && ContainerController.GoldenFeather >= 3 && ContainerController.Rock >= 2)
         {
+            SynthesizeFX.Play();
             ContainerController.Obsidian -= 2;
             ContainerController.GoldenFeather -= 2;
             ContainerController.Rock -= 1;
@@ -1157,6 +1242,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.Iron >= 4 && ContainerController.Wood >= 2 && ContainerController.RedManaCrystal >= 4 && ManaSynthesize >= 80)
         {
+            SynthesizeFX.Play();
             ManaFireSynthesize -= 80;
             ContainerController.Iron -= 4;
             ContainerController.Wood -= 2;
@@ -1184,6 +1270,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.Iron >= 4 && ContainerController.Wood >= 2 && ContainerController.BlueManaCrystal >= 4 && ManaSynthesize >= 80)
         {
+            SynthesizeFX.Play();
             ManaIceSynthesize -= 80;
             ContainerController.Iron -= 4;
             ContainerController.Wood -= 2;
@@ -1211,6 +1298,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.NatureGrass >= 4 && ContainerController.GoldenFeather >= 4 && ContainerController.Wheat >= 2)
         {
+            SynthesizeFX.Play();
             ContainerController.NatureGrass -= 4;
             ContainerController.GoldenFeather -= 4;
             ContainerController.Wheat -= 2;
@@ -1231,6 +1319,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.HealPotion >= 2 && ContainerController.BaxiataGem >= 1 && ContainerController.RedLiquidCatalyst >= 2 && ManaFireSynthesize >= 40)
         {
+            SynthesizeFX.Play();
             ManaFireSynthesize -= 40;
             ContainerController.HealPotion -= 2;
             ContainerController.BaxiataGem -= 1;
@@ -1264,6 +1353,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.ManaPotion >= 2 && ContainerController.BaxiataGem >= 1 && ContainerController.BlueLiquidCatalyst >= 2 && ManaSynthesize >= 40)
         {
+            SynthesizeFX.Play();
             ManaIceSynthesize -= 40;
             ContainerController.ManaPotion -= 2;
             ContainerController.BaxiataGem -= 1;
@@ -1297,6 +1387,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.ElixirPotion >= 2 && ContainerController.ManaLiquid >= 2 && ContainerController.PowderOfLife >= 1 && ManaSynthesize >= 50)
         {
+            SynthesizeFX.Play();
             ManaSynthesize -= 50;
             ContainerController.ElixirPotion -= 2;
             ContainerController.ManaLiquid -= 2;
@@ -1330,6 +1421,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.Bom >= 2 && ContainerController.PhotonriaGem >= 1 && ContainerController.PureObsidian >= 1 && ManaSynthesize >= 50)
         {
+            SynthesizeFX.Play();
             ManaSynthesize -= 50;
             ContainerController.Bom -= 2;
             ContainerController.PhotonriaGem -= 1;
@@ -1363,6 +1455,7 @@ public class SynthesizeSystem : MonoBehaviour
     {
         if (ContainerController.ManaEagleFeather >= 4 && ContainerController.IceLeather >= 2 && ContainerController.ManaCloth >= 2 && ManaSynthesize >= 100 && CutscenesController.cus113 == 0 && CutscenesController.cus112 == 1 && SynBugStop == 0)
         {
+            SynthesizeFX.Play();
             if (ContainerController.OmnipotentBoundary == 1)
             {
                 SynBugStop = 1;
@@ -1379,6 +1472,7 @@ public class SynthesizeSystem : MonoBehaviour
         }
         else if (ContainerController.ManaEagleFeather >= 4 && ContainerController.IceLeather >= 2 && ContainerController.ManaCloth >= 2 && ManaSynthesize >= 100)
         {
+            SynthesizeFX.Play();
             ContainerController.ManaEagleFeather -= 4;
             ContainerController.IceLeather -= 4;
             ContainerController.ManaCloth -= 2;
@@ -1403,6 +1497,7 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void RightButton()
     {
+        ClickFX.Play();
         if (SlideIndex != 9)
         {
             SlideIndex += 1;
@@ -1411,6 +1506,7 @@ public class SynthesizeSystem : MonoBehaviour
     }
     public void LeftButton()
     {
+        ClickFX.Play();
         if (SlideIndex != 0)
         {
             SlideIndex -= 1;

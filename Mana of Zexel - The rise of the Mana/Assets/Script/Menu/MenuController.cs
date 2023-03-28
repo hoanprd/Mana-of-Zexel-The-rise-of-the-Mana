@@ -7,12 +7,15 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     public GameObject LoadGamePanel, SettingPanel, GameSetting, GraphicSetting, SoundSetting, GameSettingButton, GraphicSettingButton, SoundSettingButton;
+    public GameObject AskDeleteLoadGamePanel;
     public Text DifficultChooseText, PlotLangueChooseText;
     public Text showdata1;
     public Text showdata2;
     public Text showdata3;
     public AudioSource MenuBGM;
     public AudioSource ClickFX;
+
+    public int DeleteLoadGameIndex;
 
     public static bool LoadGameCheck;
 
@@ -21,6 +24,7 @@ public class MenuController : MonoBehaviour
         MenuBGM.Play();
 
         LoadGameCheck = false;
+        DeleteLoadGameIndex = 0;
     }
 
     void Update()
@@ -1528,18 +1532,57 @@ public class MenuController : MonoBehaviour
     public void PressDLGameD1()
     {
         ClickFX.Play();
-        PlayerPrefs.SetInt("SaveGameD1", 0);
+        DeleteLoadGameIndex = 1;
+        if (PlayerPrefs.GetInt("SaveGameD1") == 1)
+        {
+            AskDeleteLoadGamePanel.SetActive(true);
+        }
     }
     public void PressDLGameD2()
     {
         ClickFX.Play();
-        PlayerPrefs.SetInt("SaveGameD2", 0);
+        DeleteLoadGameIndex = 2;
+        if (PlayerPrefs.GetInt("SaveGameD2") == 1)
+        {
+            AskDeleteLoadGamePanel.SetActive(true);
+        }
     }
     public void PressDLGameD3()
     {
         ClickFX.Play();
-        PlayerPrefs.SetInt("SaveGameD3", 0);
+        DeleteLoadGameIndex = 3;
+        if (PlayerPrefs.GetInt("SaveGameD3") == 1)
+        {
+            AskDeleteLoadGamePanel.SetActive(true);
+        }
     }
+    
+    public void ConfirmDeleteLoadGame()
+    {
+        ClickFX.Play();
+        if (DeleteLoadGameIndex == 1)
+        {
+            PlayerPrefs.SetInt("SaveGameD1", 0);
+        }
+        else if (DeleteLoadGameIndex == 2)
+        {
+            PlayerPrefs.SetInt("SaveGameD2", 0);
+        }
+        else if (DeleteLoadGameIndex == 3)
+        {
+            PlayerPrefs.SetInt("SaveGameD3", 0);
+        }
+
+        AskDeleteLoadGamePanel.SetActive(false);
+    }
+
+    public void CancerDeleteLoadGame()
+    {
+        ClickFX.Play();
+        DeleteLoadGameIndex = 0;
+        AskDeleteLoadGamePanel.SetActive(false);
+    }
+
     public void BackButton()
     {
         ClickFX.Play();
