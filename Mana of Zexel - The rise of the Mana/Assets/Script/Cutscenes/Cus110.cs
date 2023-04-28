@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Cus110 : MonoBehaviour
+public class Cus105 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
-    public GameObject VayneVAL1, AliaVAL1, MariaVAL1, JescaVAL1, JescaVAR1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAR1, MariaVAL1, ShanVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -24,63 +24,84 @@ public class Cus110 : MonoBehaviour
     {
         if (tang == 1)
         {
-            JescaVAL1.SetActive(true);
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
-            NameTagText.text = "Jesca";
-            dia.text = "Ahhhhhhhhh!!!";
+            NameTagText.text = "Vayne";
+            dia.text = "Granted, we're much stronger than before!";
         }
         else if (tang == 2)
         {
-            JescaVAL1.SetActive(false);
-            NameTagText.text = "Mana eagle";
-            dia.text = "Wahhhh...";
+            AliaVAR1.SetActive(true);
+            NameTagText.text = "Alia";
+            dia.text = "That's right, with this we can fight the magician Zane!";
         }
         else if (tang == 3)
         {
-            AliaVAL1.SetActive(true);
-            NameTagText.text = "Alia";
-            dia.text = "Get away from that hideous eagle! Hyaaaa.";
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
+            NameTagText.text = "Maria";
+            dia.text = "We must not be complacent, though.";
         }
         else if (tang == 4)
         {
-            JescaVAR1.SetActive(true);
-            NameTagText.text = "Jesca";
-            dia.text = "It's Alia's sister!";
+            MariaVAL1.SetActive(false);
+            AliaVAR1.SetActive(false);
+            ShanVAL1.SetActive(true);
+            NameTagText.text = "Shan";
+            dia.text = "Hoh... phoo... Hoh... phoo...";
         }
         else if (tang == 5)
         {
-            AliaVAL1.SetActive(false);
-            MariaVAL1.SetActive(true);
-            NameTagText.text = "Maria";
-            dia.text = "Jesca, are you okay?";
+            NameTagText.text = "Shan";
+            dia.text = "Is it Vayne? Is that Vayne?";
         }
         else if (tang == 6)
         {
-            NameTagText.text = "Jesca";
-            dia.text = "I'm fine, luckily you got there in time. I was surrounded by these eagles so I couldn't run back to the village.";
+            VayneVAR1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "Is that person Shan? Why have you come this far?";
         }
         else if (tang == 7)
         {
-            MariaVAL1.SetActive(false);
-            VayneVAL1.SetActive(true);
-            NameTagText.text = "Vayne";
-            dia.text = "It good that you are fine! May you go back to the village, Mrs. Meru is worried about you!";
+            NameTagText.text = "Shan";
+            dia.text = "Please help the two villages in inferno volcano and inferno ice go Vayne!";
         }
         else if (tang == 8)
         {
-            NameTagText.text = "Jesca";
-            dia.text = "Yes! But what's going on in the world, suddenly there's an earthquake and the monsters become more ferocious.";
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
+            NameTagText.text = "Alia";
+            dia.text = "What's wrong, Shan? Calm down.";
         }
         else if (tang == 9)
         {
-            NameTagText.text = "Vayne";
-            dia.text = "I don't know, but this means something bad is about to happen.";
+            NameTagText.text = "Shan";
+            dia.text = "The monster inferno is back. It became more ferocious than before!";
         }
-        else if (tang >= 10)
+        else if (tang == 10)
+        {
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "So that monster hasn't given up yet. All right, we'll give it a full blow this time.";
+        }
+        else if (tang == 11)
+        {
+            NameTagText.text = "Shan";
+            dia.text = "Sorry to bother everyone.";
+        }
+        else if (tang == 12)
+        {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
+            NameTagText.text = "Alia";
+            dia.text = "Don't worry, we're also excited about this new power and need some sandbags to fight!";
+        }
+        else if (tang >= 13)
         {
             CutscenesController.cus110 = 1;
             ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Mana cliff");
+            SceneManager.LoadScene("Zexel town");
         }
     }
     public void Pressnext()
@@ -91,6 +112,6 @@ public class Cus110 : MonoBehaviour
     {
         CutscenesController.cus110 = 1;
         ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("Mana cliff");
+        SceneManager.LoadScene("Zexel town");
     }
 }

@@ -248,7 +248,7 @@ public class MenuController : MonoBehaviour
 
         Global.PlusPointP2 = 2;
 
-        /*Global.CurHPP2 = 840;
+        Global.CurHPP2 = 840;
         Global.MaxHPP2 = 840;
         Global.CurMPP2 = 121;
         Global.MaxMPP2 = 121;
@@ -256,7 +256,7 @@ public class MenuController : MonoBehaviour
         Global.SpeedP2 = 40;
         Global.LevelP2 = 30;
         Global.MaxEXPP2 = 80;
-        Global.CurEXPP2 = 0;*/
+        Global.CurEXPP2 = 0;
 
         //Set Maria
         Global.CurHPP3 = 235;
@@ -317,10 +317,10 @@ public class MenuController : MonoBehaviour
         ContainerController.IceCrystal = 0;
 
         //Set item
-        ContainerController.HealPotion = 1;
-        ContainerController.ManaPotion = 1;
-        ContainerController.ElixirPotion = 0;
-        ContainerController.Bom = 0;
+        ContainerController.HealPotion = 4;
+        ContainerController.ManaPotion = 4;
+        ContainerController.ElixirPotion = 4;
+        ContainerController.Bom = 4;
         ContainerController.Porridge = 0;
         ContainerController.ManaCloth = 0;
         ContainerController.ManaShield = 0;
@@ -340,10 +340,10 @@ public class MenuController : MonoBehaviour
         ContainerController.FireManaGenerator = 0;
         ContainerController.IceManaGenerator = 0;
         ContainerController.PowderOfLife = 0;
-        ContainerController.HoliHP = 0;
-        ContainerController.HoliMP = 0;
-        ContainerController.UltraBom = 0;
-        ContainerController.ReincarnationLife = 0;
+        ContainerController.HoliHP = 4;
+        ContainerController.HoliMP = 4;
+        ContainerController.UltraBom = 4;
+        ContainerController.ReincarnationLife = 4;
         ContainerController.FireOfPeace = 0;
         ContainerController.OmnipotentBoundary = 0;
 
@@ -405,8 +405,8 @@ public class MenuController : MonoBehaviour
         SynthesizeSystem.ManaFireSynthesize = 100;
         SynthesizeSystem.ManaIceSynthesize = 100;
 
-        SceneManager.LoadScene("Cutscenes");
-        //SceneManager.LoadScene("BSBlueManaSlime 1");
+        //SceneManager.LoadScene("Cutscenes");
+        SceneManager.LoadScene("BSSicxalon 1");
     }
 
     public void PressLoadGame()

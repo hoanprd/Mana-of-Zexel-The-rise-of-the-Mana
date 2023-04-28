@@ -9,7 +9,7 @@ public class ZexelGateStatus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (CutscenesController.cus87 == 1)
+        if (CutscenesController.cus87 == 1 && CutscenesController.cus139 == 0)
         {
             Destroy(ManaGateClose);
             ManaGateOpen.SetActive(true);
