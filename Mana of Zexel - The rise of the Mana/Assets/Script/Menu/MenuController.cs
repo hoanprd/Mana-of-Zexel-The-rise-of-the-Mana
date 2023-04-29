@@ -405,8 +405,8 @@ public class MenuController : MonoBehaviour
         SynthesizeSystem.ManaFireSynthesize = 100;
         SynthesizeSystem.ManaIceSynthesize = 100;
 
-        //SceneManager.LoadScene("Cutscenes");
-        SceneManager.LoadScene("BSSicxalon 1");
+        SceneManager.LoadScene("Cutscenes");
+        //SceneManager.LoadScene("BSSicxalon 1");
     }
 
     public void PressLoadGame()

@@ -8,8 +8,8 @@ public class Cus139 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1, va2, va3, va4, va5, va6, va7;
-    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, MrLanceVAL1, KlenerVAL1, HeeriumVAL1, OrinaVAL1, ManaElfVAL1, ZaneVAL1, ZaneVAR1;
+    public GameObject va0, va1, va2, va3;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, ZaneVAL1, ZaneVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -212,6 +212,8 @@ public class Cus139 : MonoBehaviour
         }
         else if (tang == 32)
         {
+            va1.SetActive(false);
+            va2.SetActive(true);
             AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
             dia.text = "No! The wall has fallen...";
@@ -239,6 +241,8 @@ public class Cus139 : MonoBehaviour
         }
         else if (tang == 37)
         {
+            va2.SetActive(false);
+            va1.SetActive(true);
             AliaVAL1.SetActive(false);
             VayneVAR1.SetActive(false);
             VayneVAL1.SetActive(true);
@@ -266,7 +270,7 @@ public class Cus139 : MonoBehaviour
         else if (tang == 41)
         {
             va1.SetActive(false);
-            va2.SetActive(true);
+            va0.SetActive(true);
             MariaVAL1.SetActive(false);
             ZaneVAR1.SetActive(false);
             NameTagText.text = "";
@@ -274,7 +278,7 @@ public class Cus139 : MonoBehaviour
         }
         else if (tang == 42)
         {
-            va2.SetActive(false);
+            va0.SetActive(false);
             va3.SetActive(true);
             NameTagText.text = "";
             dia.text = "...";

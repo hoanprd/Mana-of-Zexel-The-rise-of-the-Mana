@@ -8,8 +8,8 @@ public class Cus141 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1, va2, va3, va4, va5, va6, va7;
-    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, MrLanceVAL1, KlenerVAL1, HeeriumVAL1, OrinaVAL1, ManaElfVAL1, ZaneVAL1, ZaneVAR1;
+    public GameObject va1;
+    public GameObject VayneVAR1, ManaElfVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -42,9 +42,44 @@ public class Cus141 : MonoBehaviour
         else if (tang == 4)
         {
             NameTagText.text = "Vayne";
+            dia.text = "May I ask how many of you will know this ending? Even the fact that Maria sacrificed her life and you guys did nothing?";
+        }
+        else if (tang == 5)
+        {
+            NameTagText.text = "Mana elf";
+            dia.text = "It's really beyond our expectations. What we do know is that we believe in the people who will defeat Sicxalon and bring back its inherent peace.";
+        }
+        else if (tang == 6)
+        {
+            NameTagText.text = "Mana elf";
+            dia.text = "We are really sorry for everyone's sacrifice. From now on we won't come into contact with your world to avoid the unfortunate incident in the past.";
+        }
+        else if (tang == 7)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "Okay,... looks like my job is done.";
+        }
+        else if (tang == 8)
+        {
+            NameTagText.text = "Mana elf";
+            dia.text = "It's over but you won't stop thinking about the past right?";
+        }
+        else if (tang == 9)
+        {
+            NameTagText.text = "Vayne";
             dia.text = "(The battle is really over, but the journey isn't over yet...)";
         }
-        else if (tang >= 5)
+        else if (tang == 10)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "It seems so, from now on I will live the life I choose. Being an alchemist like my parents once believed in me and I will not tolerate people who use mana or anything related to do evil.";
+        }
+        else if (tang == 11)
+        {
+            NameTagText.text = "Mana elf";
+            dia.text = "We are very pleased to meet an alchemist like you Vayne! Best of luck on the rest of your journey!";
+        }
+        else if (tang >= 12)
         {
             CutscenesController.cus141 = 1;
             ContainerController.LoadingOpen = true;

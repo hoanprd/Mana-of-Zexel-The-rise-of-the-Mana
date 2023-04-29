@@ -8,7 +8,7 @@ public class Cus143 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1, va2, va3, va4, va5, va6, va7;
+    public GameObject va1;
     public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, MrLanceVAL1, KlenerVAL1, HeeriumVAL1, OrinaVAL1, ManaElfVAL1, ZaneVAL1, ZaneVAR1;
     public GameObject NameTag;
     private int tang = 0;
@@ -52,7 +52,7 @@ public class Cus143 : MonoBehaviour
         else if (tang == 6)
         {
             NameTagText.text = "Vayne";
-            dia.text = "Let's see... or go back to your hometown, you have to go back and tell your mother what happened or else she would be very worried.";
+            dia.text = "Let's see... or go back to my hometown, I have to go back and tell my mother what happened or else she would be very worried.";
         }
         else if (tang == 7)
         {
@@ -69,9 +69,33 @@ public class Cus143 : MonoBehaviour
             VayneVAL1.SetActive(true);
             AliaVAR1.SetActive(true);
             NameTagText.text = "";
+            dia.text = "This is not simply an alchemist's journey.";
+        }
+        else if (tang == 10)
+        {
+            dia.text = "This is the story to kick off a life full of enthusiasm.";
+        }
+        else if (tang == 11)
+        {
+            dia.text = "Sometimes we will encounter difficult things in life.";
+        }
+        else if (tang == 12)
+        {
+            dia.text = "Just accept it and go through it, everything will be easier.";
+        }
+        else if (tang == 13)
+        {
+            dia.text = "That's called maturity, and that growth isn't the same for everyone.";
+        }
+        else if (tang == 14)
+        {
+            dia.text = "Live a happy life with the people you love.";
+        }
+        else if (tang == 15)
+        {
             dia.text = "The end.";
         }
-        else if (tang >= 10)
+        else if (tang >= 16)
         {
             CutscenesController.cus143 = 1;
             ContainerController.LoadingOpen = true;
