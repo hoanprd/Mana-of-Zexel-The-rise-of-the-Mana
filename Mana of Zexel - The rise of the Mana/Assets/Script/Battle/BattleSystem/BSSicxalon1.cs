@@ -14,7 +14,7 @@ public class BSSicxalon1 : MonoBehaviour
 
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
-    public GameObject VayneSkill2Effect, VayneSkill3Effect, MariaSkill3Effect;
+    public GameObject VayneAttackEffect, VayneSkill2Effect, VayneSkill3Effect, MariaAttackEffect, MariaSkill3Effect;
     public GameObject showr2;
     public GameObject P1_panel;
     public GameObject P2_panel;
@@ -79,6 +79,7 @@ public class BSSicxalon1 : MonoBehaviour
     public int BE5Hit;
     public int UseItemIndex, ChooseSkillIndex;
     public int BE5ANum, TurnIndex, BossSkillCharge, BossSkillEngage, BossSkillBreak, BeforeBreakSkillDamageCal, AfterBreakDamageCal, BreakDamageCal, BreakDamageIndex;
+    public bool EndGame;
 
     // Start is called before the first frame update
     void Start()
@@ -87,6 +88,7 @@ public class BSSicxalon1 : MonoBehaviour
         SB = FindObjectOfType<SicxalonBattle>();
 
         HubController.BusyHub = true;
+        EndGame = false;
 
         if (Global.LevelP1 < 10)
         {
@@ -139,7 +141,7 @@ public class BSSicxalon1 : MonoBehaviour
         CheckP3Die();
         UpdateUIText();
 
-        if (a2 > 0 && Global.CurHPP2 > 0)
+        if (a2 > 0 && Global.CurHPP2 > 0 && EndGame == false)
         {
             CheckBE5Die();
             CheckP1Die();
@@ -151,7 +153,7 @@ public class BSSicxalon1 : MonoBehaviour
             else
                 ShowP2Panel(false);
         }
-        else if (a1 > 0 && Global.CurHPP1 > 0)
+        else if (a1 > 0 && Global.CurHPP1 > 0 && EndGame == false)
         {
             CheckBE5Die();
             CheckP1Die();
@@ -163,7 +165,7 @@ public class BSSicxalon1 : MonoBehaviour
             else
                 ShowP1Panel(false);
         }
-        else if (aBE5 > 0 && Global.HPBE5 > 0)
+        else if (aBE5 > 0 && Global.HPBE5 > 0 && EndGame == false)
         {
             CheckBE5Die();
             ShowP1Panel(false);
@@ -201,7 +203,7 @@ public class BSSicxalon1 : MonoBehaviour
             CheckP2Die();
             CheckP1P2P3Die();
         }
-        else if (a3 > 0 && Global.CurHPP3 > 0)
+        else if (a3 > 0 && Global.CurHPP3 > 0 && EndGame == false)
         {
             CheckBE5Die();
             CheckP1Die();
@@ -221,6 +223,7 @@ public class BSSicxalon1 : MonoBehaviour
             a2 = Global.SpeedP2 / 10;
             a3 = Global.SpeedP3 / 10;
             aBE5 = Global.SpeedBE5 / 10;
+            dem = 2;
         }
         FixBug();
     }
@@ -358,6 +361,7 @@ public class BSSicxalon1 : MonoBehaviour
     public void PressAttack()
     {
         VayneAttackFX.Play();
+        VayneAttackEffect.SetActive(true);
         pb.yes1 = 1;
         show1 = 1;
         PDamage.color = Color.red;
@@ -378,6 +382,7 @@ public class BSSicxalon1 : MonoBehaviour
     public void PressAttackP3()
     {
         MariaAttackFX.Play();
+        MariaAttackEffect.SetActive(true);
         pb.yes5 = 1;
         show3 = 1;
         PDamage.color = Color.red;
@@ -398,7 +403,7 @@ public class BSSicxalon1 : MonoBehaviour
         if (Global.CurMPP1 >= 20)
         {
             VayneSkill1FX.Play();
-            CloseChooseSkillVayne();
+            CloseChooseSkillVayne2();
             ChooseSkillIndex = 1;
             pb.yes2 = 1;
             show1 = 1;
@@ -421,7 +426,7 @@ public class BSSicxalon1 : MonoBehaviour
         if (Global.CurMPP1 >= 50)
         {
             VayneSkill2FX.Play();
-            CloseChooseSkillVayne();
+            CloseChooseSkillVayne2();
             VayneSkill2Effect.SetActive(true);
             ChooseSkillIndex = 2;
             pb.yes7 = 1;
@@ -445,7 +450,7 @@ public class BSSicxalon1 : MonoBehaviour
         if (Global.CurMPP1 >= 100)
         {
             VayneSkill3FX.Play();
-            CloseChooseSkillVayne();
+            CloseChooseSkillVayne2();
             VayneSkill3Effect.SetActive(true);
             ChooseSkillIndex = 3;
             pb.yes8 = 1;
@@ -470,6 +475,12 @@ public class BSSicxalon1 : MonoBehaviour
         show1 = 0;
     }
 
+    public void CloseChooseSkillVayne2()
+    {
+        ChooseVayneSkillPanel.SetActive(false);
+        show1 = 0;
+    }
+
     public void PressSkillAlia()
     {
         OpenCloseFX.Play();
@@ -481,7 +492,7 @@ public class BSSicxalon1 : MonoBehaviour
         if (Global.CurMPP2 >= 20)
         {
             AliaSkill1FX.Play();
-            CloseChooseSkillAlia();
+            CloseChooseSkillAlia2();
             ChooseSkillIndex = 1;
             pb.yes4 = 1;
             show2 = 1;
@@ -503,7 +514,7 @@ public class BSSicxalon1 : MonoBehaviour
         if (Global.CurMPP2 >= 50)
         {
             AliaSkill2FX.Play();
-            CloseChooseSkillAlia();
+            CloseChooseSkillAlia2();
             ChooseSkillIndex = 2;
             pb.yes9 = 1;
             show2 = 1;
@@ -525,7 +536,7 @@ public class BSSicxalon1 : MonoBehaviour
         if (Global.CurMPP2 >= 100)
         {
             AliaSkill3FX.Play();
-            CloseChooseSkillAlia();
+            CloseChooseSkillAlia2();
             ChooseSkillIndex = 3;
             pb.yes10 = 1;
             show2 = 1;
@@ -549,6 +560,12 @@ public class BSSicxalon1 : MonoBehaviour
         show2 = 0;
     }
 
+    public void CloseChooseSkillAlia2()
+    {
+        ChooseAliaSkillPanel.SetActive(false);
+        show2 = 0;
+    }
+
     public void PressSkillMaria()
     {
         OpenCloseFX.Play();
@@ -560,7 +577,7 @@ public class BSSicxalon1 : MonoBehaviour
         if (Global.CurMPP3 >= 40)
         {
             MariaSkill1FX.Play();
-            CloseChooseSkillMaria();
+            CloseChooseSkillMaria2();
             ChooseSkillIndex = 1;
             pb.yes6 = 1;
             show3 = 1;
@@ -583,7 +600,7 @@ public class BSSicxalon1 : MonoBehaviour
         if (Global.CurMPP3 >= 80)
         {
             MariaSkill2FX.Play();
-            CloseChooseSkillMaria();
+            CloseChooseSkillMaria2();
             ChooseSkillIndex = 2;
             pb.yes11 = 1;
             show3 = 1;
@@ -606,7 +623,7 @@ public class BSSicxalon1 : MonoBehaviour
         if (Global.CurMPP3 >= 120)
         {
             MariaSkill3FX.Play();
-            CloseChooseSkillMaria();
+            CloseChooseSkillMaria2();
             MariaSkill3Effect.SetActive(true);
             ChooseSkillIndex = 3;
             pb.yes12 = 1;
@@ -627,6 +644,12 @@ public class BSSicxalon1 : MonoBehaviour
     public void CloseChooseSkillMaria()
     {
         OpenCloseFX.Play();
+        ChooseMariaSkillPanel.SetActive(false);
+        show3 = 0;
+    }
+
+    public void CloseChooseSkillMaria2()
+    {
         ChooseMariaSkillPanel.SetActive(false);
         show3 = 0;
     }
@@ -986,6 +1009,7 @@ public class BSSicxalon1 : MonoBehaviour
             UpdateUIText();
             ContainerController.DestroyBag = true;
             ContainerController.stop = 0;
+            EndGame = true;
             Invoke("delayCheckP1P2P3Die1", 1f);
             Invoke("delayCheckP1P2P3Die2", 2f);
         }
@@ -1307,6 +1331,7 @@ public class BSSicxalon1 : MonoBehaviour
     void delayP1PressAttack()
     {
         ShowP1Panel(false);
+        VayneAttackEffect.SetActive(false);
         Global.HPBE5 -= Global.DamageP1;
         PDamage.text = "";
         a1 -= 1;
@@ -1327,6 +1352,7 @@ public class BSSicxalon1 : MonoBehaviour
     void delayP3PressAttack()
     {
         ShowP3Panel(false);
+        MariaAttackEffect.SetActive(false);
         Global.HPBE5 -= Global.DamageP3;
         PDamage.text = "";
         a3 -= 1;
