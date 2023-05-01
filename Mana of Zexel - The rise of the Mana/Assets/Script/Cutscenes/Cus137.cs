@@ -9,7 +9,7 @@ public class Cus137 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
-    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, ZaneVAL1, ZaneVAR1;
+    public GameObject VayneVAL1, AliaVAL1, MariaVAL1, ZaneVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -109,7 +109,7 @@ public class Cus137 : MonoBehaviour
         else if (tang == 16)
         {
             NameTagText.text = "Zane";
-            dia.text = "Then my world won't contain you guys. Sicxalon show me your strength.";
+            dia.text = "Then my world won't contain you guys. Come and I'll give you a lesson for life.";
         }
         else if (tang >= 17)
         {
