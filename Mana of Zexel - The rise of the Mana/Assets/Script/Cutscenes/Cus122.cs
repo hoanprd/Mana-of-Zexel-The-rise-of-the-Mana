@@ -9,7 +9,7 @@ public class Cus122 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
-    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, JescaVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -89,29 +89,83 @@ public class Cus122 : MonoBehaviour
         {
             VayneVAL1.SetActive(false);
             MariaVAR1.SetActive(false);
-            NameTagText.text = "Inferno desert villager";
-            dia.text = "Save us! Save us!";
+            JescaVAL1.SetActive(true);
+            NameTagText.text = "Jesca";
+            dia.text = "It's dangerous, I have to collect it quickly and then return.";
         }
         else if (tang == 12)
         {
             VayneVAL1.SetActive(true);
-            NameTagText.text = "Vayne";
-            dia.text = "Is there a cry for help from the inferno desert village?";
+            NameTagText.text = "Jesca";
+            dia.text = "Huh? Is that Vayne's group? Do you guys have any business to come over here?";
         }
         else if (tang == 13)
         {
-            MariaVAR1.SetActive(true);
-            NameTagText.text = "Maria";
-            dia.text = "Looks like there's something there.";
+            VayneVAR1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "Jesca? We just stopped by here for a little business. Why are you out here alone?";
         }
         else if (tang == 14)
         {
-            VayneVAL1.SetActive(false);
-            AliaVAL1.SetActive(true);
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
-            dia.text = "It's not okay, Mrs. Meru and Jesca might be in danger. We have to go there.";
+            dia.text = "Don't tell me you're taking the risk of picking medicine again?";
         }
-        else if (tang >= 15)
+        else if (tang == 15)
+        {
+            NameTagText.text = "Jesca";
+            dia.text = "No, that's not it, I'm just collecting cacti.";
+        }
+        else if (tang == 16)
+        {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
+            NameTagText.text = "Maria";
+            dia.text = "Collecting cactus? To do what?";
+        }
+        else if (tang == 17)
+        {
+            NameTagText.text = "Jesca";
+            dia.text = "It's also complicated, my village is running out of water right now. So everyone uses every source of water they can find like a cactus.";
+        }
+        else if (tang == 18)
+        {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "Did your village all have a source of water these days?";
+        }
+        else if (tang == 19)
+        {
+            NameTagText.text = "Jesca";
+            dia.text = "Yes, my villagers use water from a river to create a large lake but the recent shoreline has made it salty through groundwater.";
+        }
+        else if (tang == 20)
+        {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
+            NameTagText.text = "Maria";
+            dia.text = "Has this just happened or is it cyclical?";
+        }
+        else if (tang == 21)
+        {
+            NameTagText.text = "Jesca";
+            dia.text = "My grandma said this is the first time this has happened to me so it's really hard to deal with.";
+        }
+        else if (tang == 22)
+        {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "Well, if that's the case, why don't we drop by to have a look.";
+        }
+        else if (tang == 23)
+        {
+            NameTagText.text = "Jesca";
+            dia.text = "Yes, please come over to my place.";
+        }
+        else if (tang >= 24)
         {
             CutscenesController.cus122 = 1;
             ContainerController.LoadingOpen = true;
