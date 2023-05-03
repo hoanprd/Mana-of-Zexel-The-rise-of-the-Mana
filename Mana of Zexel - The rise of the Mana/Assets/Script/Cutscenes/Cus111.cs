@@ -9,7 +9,7 @@ public class Cus111 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
-    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, ShanVAL1, AsilaVAL1, AlasaVAR1, ZaneVAR1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, ShanVAL1, AsilaVAL1, AlasaVAR1, ZaneVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -222,23 +222,122 @@ public class Cus111 : MonoBehaviour
         else if (tang == 33)
         {
             MariaVAL1.SetActive(false);
-            ShanVAL1.SetActive(true);
-            NameTagText.text = "Shan";
-            dia.text = "Good luck to you guys.";
+            AliaVAR1.SetActive(false);
+            NameTagText.text = "Villager (Man)";
+            dia.text = "Sir Asila! Everyone has been moved to a safe location, we're here to help you fight monsters!";
         }
         else if (tang == 34)
+        {
+            AsilaVAL1.SetActive(true);
+            NameTagText.text = "Asila";
+            dia.text = "Oh, thanks everyone, but the monster is done.";
+        }
+        else if (tang == 35)
+        {
+            NameTagText.text = "Villager (Man)";
+            dia.text = "Really! Did you two deal with it?";
+        }
+        else if (tang == 36)
+        {
+            NameTagText.text = "Asila";
+            dia.text = "Actually, this group of adventurers defeated that monster.";
+        }
+        else if (tang == 37)
+        {
+            NameTagText.text = "Villager (Man)";
+            dia.text = "The three of you are our benefactors!";
+        }
+        else if (tang == 38)
+        {
+            VayneVAR1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "It's okay, consider us a reliable ally.";
+        }
+        else if (tang == 39)
+        {
+            NameTagText.text = "Asila";
+            dia.text = "How's the damage done?";
+        }
+        else if (tang == 40)
+        {
+            VayneVAR1.SetActive(false);
+            NameTagText.text = "Villager (Man)";
+            dia.text = "Well, the situation in our village has a few houses damaged, it will be difficult to fix because of the ancient raw materials we have to import from outside...";
+        }
+        else if (tang == 41)
+        {
+            NameTagText.text = "Asila";
+            dia.text = "That's hard.";
+        }
+        else if (tang == 42)
+        {
+            AlasaVAR1.SetActive(true);
+            NameTagText.text = "Alasa";
+            dia.text = "If we open the border to the outside from now on, it will take time to get used to the new lifestyle.";
+        }
+        else if (tang == 43)
+        {
+            NameTagText.text = "Asila";
+            dia.text = "But who's the internal damage we haven't solved yet. Unless...";
+        }
+        else if (tang == 44)
+        {
+            NameTagText.text = "Asila";
+            dia.text = "Vayne, it seems a bit selfish but...";
+        }
+        else if (tang == 45)
+        {
+            AlasaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
+            NameTagText.text = "Maria";
+            dia.text = "You don't have to be afraid Vayne will help you.";
+        }
+        else if (tang == 46)
+        {
+            MariaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "Huh? I mean can help what I can.";
+        }
+        else if (tang == 47)
+        {
+            NameTagText.text = "Asila";
+            dia.text = "You just need to help the villagers deal with the damage from the inferno beast attack just now. That will help us a lot while we will start to open the border to the outside. Think of it as dividing the work to treat.";
+        }
+        else if (tang == 48)
+        {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
+            NameTagText.text = "Alia";
+            dia.text = "What's up Vayne? We can make friends with these two villages with our help.";
+        }
+        else if (tang == 49)
         {
             AliaVAR1.SetActive(false);
             VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
-            dia.text = "Uhm, nothing more we're going back to Zexel town.";
+            dia.text = "That's fine, I'll use alchemy to help everyone.";
         }
-        else if (tang == 35)
+        else if (tang == 50)
         {
-            NameTagText.text = "Shan";
-            dia.text = "Goodbye!";
+            NameTagText.text = "Asila";
+            dia.text = "Thank you, Mr. Vayne, you are indeed our benefactor. If anything, please visit the villagers to ask about the situation comfortably!";
         }
-        else if (tang >= 18)
+        else if (tang == 51)
+        {
+            VayneVAR1.SetActive(false);
+            AlasaVAR1.SetActive(true);
+            NameTagText.text = "Alasa";
+            dia.text = "I think I will need you to help my villagers too Vayne, thank you very much indeed.";
+        }
+        else if (tang == 52)
+        {
+            AlasaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "Everyone please be optimistic and believe, I will do my best for everyone.";
+        }
+        else if (tang >= 53)
         {
             CutscenesController.cus111 = 1;
             ContainerController.LoadingOpen = true;
