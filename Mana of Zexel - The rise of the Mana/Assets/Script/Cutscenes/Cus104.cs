@@ -8,8 +8,8 @@ public class Cus104 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1;
-    public GameObject VayneVAL1, AliaVAL1, MariaVAL1, MariaVAR1, OrinaVAR1;
+    public GameObject va1, va2;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, OrinaVAL1, OrinaVAR1, MeruVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -24,205 +24,118 @@ public class Cus104 : MonoBehaviour
     {
         if (tang == 1)
         {
-            VayneVAL1.SetActive(true);
+            MeruVAL1.SetActive(true);
             NameTag.SetActive(true);
-            NameTagText.text = "Vayne";
-            dia.text = "Hey Orina! Are you here?";
+            NameTagText.text = "Meru";
+            dia.text = "I think this part I can go home on my own, I don't need you guys to follow me.";
         }
         else if (tang == 2)
         {
-            OrinaVAR1.SetActive(true);
-            NameTagText.text = "Orina";
-            dia.text = "Huh? Hey... hey... why don't you guys knock before entering?";
+            VayneVAR1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "We have to escort you back to safety!";
         }
         else if (tang == 3)
+        {
+            VayneVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
+            NameTagText.text = "Alia";
+            dia.text = "That's right! Grandma got my treatment for free, so we decided to take you home.";
+        }
+        else if (tang == 4)
+        {
+            NameTagText.text = "Meru";
+            dia.text = "Okay, if you guys say that, I'll have to deal with it.";
+        }
+        else if (tang == 5)
+        {
+            MeruVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
+            NameTagText.text = "Maria";
+            dia.text = "Is that... Orina?";
+        }
+        else if (tang == 6)
+        {
+            AliaVAR1.SetActive(false);
+            OrinaVAR1.SetActive(true);
+            NameTagText.text = "Orina";
+            dia.text = "Oh, so Alia is well again?";
+        }
+        else if (tang == 7)
+        {
+            MariaVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
+            NameTagText.text = "Alia";
+            dia.text = "Of course, how could I surrender to death.";
+        }
+        else if (tang == 8)
+        {
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "Ah thank you so much Orina for pointing out the location of the mana dragon.";
+        }
+        else if (tang == 9)
+        {
+            NameTagText.text = "Orina";
+            dia.text = "There's no such thing as a privilege for regular customers.";
+        }
+        else if (tang == 10)
         {
             VayneVAL1.SetActive(false);
             AliaVAL1.SetActive(true);
             NameTagText.text = "Alia";
-            dia.text = "Even we knock on the door, you won't open it.";
-        }
-        else if (tang == 4)
-        {
-            AliaVAL1.SetActive(false);
-            MariaVAL1.SetActive(true);
-            NameTagText.text = "Maria";
-            dia.text = "Hmm? Something Orina... how could she...";
-        }
-        else if (tang == 5)
-        {
-            MariaVAL1.SetActive(false);
-            VayneVAL1.SetActive(true);
-            NameTagText.text = "Vayne";
-            dia.text = "It's dark magic... Orina you're...";
-        }
-        else if (tang == 6)
-        {
-            NameTagText.text = "Orina";
-            dia.text = "Boring! I was trying to change my appearance a bit with dark magic but I was interrupted by you guys.";
-        }
-        else if (tang == 7)
-        {
-            NameTagText.text = "Vayne";
-            dia.text = "Why are you hiding the fact that you're a magician?";
-        }
-        else if (tang == 8)
-        {
-            NameTagText.text = "Orina";
-            dia.text = "I simply don't want to get in trouble. How many people understand...";
-        }
-        else if (tang == 9)
-        {
-            VayneVAL1.SetActive(false);
-            MariaVAL1.SetActive(true);
-            NameTagText.text = "Maria";
-            dia.text = "What happened Orina... surely your past has kept you hidden until now?";
-        }
-        else if (tang == 10)
-        {
-            NameTagText.text = "Orina";
-            dia.text = "It happened a long time ago... from the time of the war mages. Everyone was afraid of magicians, so they sought to destroy people like me.";
+            dia.text = "This is the first time I've heard a pleasant word from you, Orina.";
         }
         else if (tang == 11)
         {
             NameTagText.text = "Orina";
-            dia.text = "That's why my husband had to die, and my children no longer trust anyone, so they left alone and left me alone.";
+            dia.text = "Then stop being annoyed with me.";
         }
         else if (tang == 12)
         {
-            MariaVAL1.SetActive(false);
-            AliaVAL1.SetActive(true);
-            NameTagText.text = "Alia";
-            dia.text = "It's cruel... you have to endure such solitude all the time... it seems we're a little too wordy for you...";
+            AliaVAL1.SetActive(false);
+            MeruVAL1.SetActive(true);
+            NameTagText.text = "Meru";
+            dia.text = "Hmm... Are you a magician, girl?";
         }
         else if (tang == 13)
         {
             NameTagText.text = "Orina";
-            dia.text = "It's okay, for someone who is over a hundred years old, looking at you guys makes me feel like my past self.";
+            dia.text = "What?";
         }
         else if (tang == 14)
         {
-            AliaVAL1.SetActive(false);
-            VayneVAL1.SetActive(true);
+            OrinaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
-            dia.text = "Are you over 100 years old? Why is she still so young?";
+            dia.text = "What's wrong with Mrs. Meru?";
         }
         else if (tang == 15)
         {
-            NameTagText.text = "Orina";
-            dia.text = "Dark magic can do anything, even immortality.";
+            NameTagText.text = "Meru";
+            dia.text = "Oh nothing... I just feel something strange. It's like leaving. We just go on.";
         }
         else if (tang == 16)
         {
-            VayneVAL1.SetActive(false);
-            MariaVAL1.SetActive(true);
-            NameTagText.text = "Maria";
-            dia.text = "But you don't seem to have any malice towards people.";
+            va1.SetActive(false);
+            va2.SetActive(true);
+            MeruVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
+            NameTagText.text = "";
+            dia.text = "...";
         }
         else if (tang == 17)
         {
+            OrinaVAL1.SetActive(true);
             NameTagText.text = "Orina";
-            dia.text = "I just want to live peacefully. But it seems my son doesn't want that.";
+            dia.text = "That old lady, almost gave me goosebumps, looks like I have to hide my eyes and change my hair.";
         }
-        else if (tang == 18)
-        {
-            MariaVAL1.SetActive(false);
-            VayneVAL1.SetActive(true);
-            NameTagText.text = "Vayne";
-            dia.text = "Your son? Who is that?";
-        }
-        else if (tang == 19)
-        {
-            NameTagText.text = "Orina";
-            dia.text = "The one who killed your father and gave Alia a fatal wound. It was none other than Zane.";
-        }
-        else if (tang == 20)
-        {
-            NameTagText.text = "Vayne";
-            dia.text = "...";
-        }
-        else if (tang == 21)
-        {
-            NameTagText.text = "Orina";
-            dia.text = "I met and talked to her almost a year ago, she has lost her humanity, I can't teach her anymore. So I really hope someone eats its evil plots to monopolize the world.";
-        }
-        else if (tang == 22)
-        {
-            VayneVAL1.SetActive(false);
-            MariaVAL1.SetActive(true);
-            NameTagText.text = "Maria";
-            dia.text = "What an ironic fate...";
-        }
-        else if (tang == 23)
-        {
-            MariaVAL1.SetActive(false);
-            VayneVAL1.SetActive(true);
-            NameTagText.text = "Vayne";
-            dia.text = "Orina, we're going to beat Zane and bring him back here to make amends. I won't leave him alone either.";
-        }
-        else if (tang == 24)
-        {
-            NameTagText.text = "Orina";
-            dia.text = "Can you guys do that? If so, we'll have to ask for your help.";
-        }
-        else if (tang == 25)
-        {
-            NameTagText.text = "Orina";
-            dia.text = "Oh, one more thing, I have something for you, Vayne.";
-        }
-        else if (tang == 26)
-        {
-            NameTagText.text = "Vayne";
-            dia.text = "Is this an alchemy recipe?";
-        }
-        else if (tang == 27)
-        {
-            NameTagText.text = "Orina";
-            dia.text = "That's right, this is a recipe for making powerful items that use a lot of mana energy.";
-        }
-        else if (tang == 28)
-        {
-            VayneVAL1.SetActive(false);
-            MariaVAL1.SetActive(true);
-            NameTagText.text = "Maria";
-            dia.text = "How did you get these things Orina?";
-        }
-        else if (tang == 29)
-        {
-            NameTagText.text = "Orina";
-            dia.text = "You'll know when the time comes. Maria, I can't say that.";
-        }
-        else if (tang == 30)
-        {
-            MariaVAL1.SetActive(false);
-            OrinaVAR1.SetActive(false);
-            NameTagText.text = "Villager";
-            dia.text = "Danger, danger! Everyone go back to town, the iron golemn monster is coming!";
-        }
-        else if (tang == 31)
-        {
-            AliaVAL1.SetActive(true);
-            NameTagText.text = "Alia";
-            dia.text = "Don't tell me the iron golemn we stopped earlier broke Maria's barrier?";
-        }
-        else if (tang == 32)
-        {
-            MariaVAR1.SetActive(true);
-            NameTagText.text = "Maria";
-            dia.text = "Looks like we know who we should try the new powers we have, Vayne.";
-        }
-        else if (tang == 33)
-        {
-            AliaVAL1.SetActive(false);
-            VayneVAL1.SetActive(true);
-            NameTagText.text = "Vayne";
-            dia.text = "Okay, let's give that iron golemn a fight.";
-        }
-        else if (tang >= 34)
+        else if (tang >= 18)
         {
             CutscenesController.cus104 = 1;
             ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("GroceryStore");
+            SceneManager.LoadScene("Inferno desert");
         }
     }
     public void Pressnext()
@@ -233,6 +146,6 @@ public class Cus104 : MonoBehaviour
     {
         CutscenesController.cus104 = 1;
         ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("GroceryStore");
+        SceneManager.LoadScene("Inferno desert");
     }
 }

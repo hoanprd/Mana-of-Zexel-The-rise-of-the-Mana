@@ -8,8 +8,8 @@ public class Cus87 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1, va2, va3;
-    public GameObject VayneVAL1, VayneVAR1, AliaVAR1, MariaVAL1, ZaneVAL1;
+    public GameObject va1, va2;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAR1, MariaVAL1, MariaVAR1, AlasaVAL1, AlasaVAR1, ShanVAL1, ShanVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -27,89 +27,127 @@ public class Cus87 : MonoBehaviour
             VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
-            dia.text = "We just need to put two mana cores like this?";
+            dia.text = "Let's get active my ice core.";
         }
         else if (tang == 2)
         {
-            AliaVAR1.SetActive(true);
-            NameTagText.text = "Alia";
-            dia.text = "Still no response?";
+            va1.SetActive(false);
+            va2.SetActive(true);
+            VayneVAL1.SetActive(false);
+            NameTagText.text = "";
+            dia.text = "Glowing...";
         }
         else if (tang == 3)
         {
+            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
-            dia.text = "... Heh? Two energy cores flying towards the door scene?";
+            dia.text = "Looks as good as new, village chief Alasa.";
         }
         else if (tang == 4)
         {
-            VayneVAL1.SetActive(false);
-            AliaVAR1.SetActive(false);
-            NameTagText.text = "";
-            dia.text = "Glowinggggggggggggg...";
+            AlasaVAR1.SetActive(true);
+            NameTagText.text = "Alasa";
+            dia.text = "You are such a good alchemist. I think you can match the legendary alchemist Zexel hahaha.";
         }
         else if (tang == 5)
         {
-            va1.SetActive(false);
-            va2.SetActive(true);
-            NameTagText.text = "";
-            dia.text = "Rammmmmmmmmmmmmmm...";
+            VayneVAL1.SetActive(false);
+            ShanVAL1.SetActive(true);
+            NameTagText.text = "Shan";
+            dia.text = "Great, looks like you saved both of these villages, Vayne.";
         }
         else if (tang == 6)
         {
-            MariaVAL1.SetActive(true);
-            NameTagText.text = "Maria";
-            dia.text = "The door is open!";
-        }
-        else if (tang == 7)
-        {
-            VayneVAR1.SetActive(true);
-            NameTagText.text = "Vayne";
-            dia.text = "Can we go in already?";
-        }
-        else if (tang == 8)
-        {
-            VayneVAR1.SetActive(false);
+            AlasaVAR1.SetActive(false);
             AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
-            dia.text = "Come on, maybe your father is waiting there, Vayne.";
+            dia.text = "Is that Shan? Are you awake already?";
         }
-        else if (tang == 9)
+        else if (tang == 7)
         {
             AliaVAR1.SetActive(false);
             VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
-            dia.text = "Take it easy, be careful of traps and monsters around.";
+            dia.text = "How are you, Shan? We're pretty worried about him, too.";
+        }
+        else if (tang == 8)
+        {
+            NameTagText.text = "Shan";
+            dia.text = "I'm fine, I've taken over my selfishness. However, I won't make that mistake again.";
+        }
+        else if (tang == 9)
+        {
+            VayneVAR1.SetActive(false);
+            MariaVAR1.SetActive(false);
+            NameTagText.text = "Maria";
+            dia.text = "Dark magic is very scary, it can take over the hole in the user's heart.";
         }
         else if (tang == 10)
         {
-            NameTagText.text = "Maria";
-            dia.text = "What a passionate youth.";
+            NameTagText.text = "Shan";
+            dia.text = "I know, if I hadn't shaken hands with that magician that day, everyone wouldn't be in trouble.";
         }
         else if (tang == 11)
         {
-            MariaVAL1.SetActive(false);
-            VayneVAR1.SetActive(false);
-            NameTagText.text = "";
-            dia.text = "...";
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
+            NameTagText.text = "Alia";
+            dia.text = "It's okay, as long as we can help people, it's an honor!";
         }
         else if (tang == 12)
         {
-            va2.SetActive(false);
-            va3.SetActive(true);
-            ZaneVAL1.SetActive(true);
-            NameTagText.text = "???";
-            dia.text = "I just felt something coming.";
+            AliaVAR1.SetActive(false);
+            VayneVAR1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "By the way, Shan, do you know where that magician is?";
         }
         else if (tang == 13)
         {
-            NameTagText.text = "???";
-            dia.text = "That's annoying, it seems the Sicxalon revival has been put on hold. But that's okay, everything happened faster than I expected hahahahahaaa...";
+            NameTagText.text = "Shan";
+            dia.text = "That magician? I don't know either what I remember is that he was aiming for the Zexel temple.";
         }
-        else if (tang >= 14)
+        else if (tang == 14)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "The temple of Zexel, that's where my father went too...";
+        }
+        else if (tang == 15)
+        {
+            ShanVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
+            NameTagText.text = "Maria";
+            dia.text = "Then can we go, Vayne? I already have enough Zexel's two cores of fire and ice mana energy.";
+        }
+        else if (tang == 16)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "Uhm! I want to go back to Mr. Lance for a moment.";
+        }
+        else if (tang == 17)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "Here we go, say goodbye to Asila village chief for us!";
+        }
+        else if (tang == 18)
+        {
+            MariaVAL1.SetActive(false);
+            AlasaVAL1.SetActive(true);
+            NameTagText.text = "Alasa";
+            dia.text = "Goodbye, I wish everyone a safe journey!";
+        }
+        else if (tang == 19)
+        {
+            VayneVAR1.SetActive(false);
+            ShanVAR1.SetActive(true);
+            NameTagText.text = "Shan";
+            dia.text = "Thank you everyone and see you soon!";
+        }
+        else if (tang >= 20)
         {
             CutscenesController.cus87 = 1;
+            ContainerController.ManaCoreIceVayne -= 1;
             ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Zexel gate");
+            SceneManager.LoadScene("InsideIceCave");
         }
     }
     public void Pressnext()
@@ -119,7 +157,8 @@ public class Cus87 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus87 = 1;
+        ContainerController.ManaCoreIceVayne -= 1;
         ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("Zexel gate");
+        SceneManager.LoadScene("InsideIceCave");
     }
 }

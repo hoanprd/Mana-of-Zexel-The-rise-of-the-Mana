@@ -9,7 +9,7 @@ public class Cus98 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
-    public GameObject VayneVAR1, AliaVAL1, MariaVAR1, MrLanceVAL1, MeruVAR1;
+    public GameObject VayneVAL1, MariaVAL1, OrinaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -24,82 +24,104 @@ public class Cus98 : MonoBehaviour
     {
         if (tang == 1)
         {
-            AliaVAL1.SetActive(true);
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
-            NameTagText.text = "Alia";
-            dia.text = "Vayne! Look at me, healthy like nothing ever happened hihi.";
+            NameTagText.text = "Vayne";
+            dia.text = "Oh Orina! Are you here?";
         }
         else if (tang == 2)
         {
-            NameTagText.text = "Alia";
-            dia.text = "Alia! Are you awake! It's lucky... I'm so worried.";
+            OrinaVAR1.SetActive(true);
+            NameTagText.text = "Orina";
+            dia.text = "Is something wrong?";
         }
         else if (tang == 3)
         {
-            MariaVAR1.SetActive(true);
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
             NameTagText.text = "Maria";
-            dia.text = "I'm worried too, are you sure you're okay?";
+            dia.text = "We came here to inquire about something that absorbs magic like dragon mana scales.";
         }
         else if (tang == 4)
         {
-            NameTagText.text = "Alia";
-            dia.text = "Of course...";
+            NameTagText.text = "Orina";
+            dia.text = "Dragon scales mana? So that's it, it's also a good idea.";
         }
         else if (tang == 5)
         {
-            MariaVAR1.SetActive(false);
-            MeruVAR1.SetActive(true);
-            NameTagText.text = "Meru";
-            dia.text = "Of course it's not completely fine. Don't get too cocky little girl, you may be in good shape but it still takes time to fully recover.";
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "Do you know where it is?";
         }
         else if (tang == 6)
         {
-            NameTagText.text = "Alia";
-            dia.text = "Hehe...";
+            NameTagText.text = "Orina";
+            dia.text = "Of course I know, the problem is I don't know if you guys can get it. If you want to get dragon scales, you have to fight that mana dragon.";
         }
         else if (tang == 7)
         {
-            MeruVAR1.SetActive(false);
-            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
-            dia.text = "Alia I'm sorry for everything...";
+            dia.text = "We have to save Alia so the danger is natural.";
         }
         else if (tang == 8)
         {
-            NameTagText.text = "Alia";
-            dia.text = "It's okay I get it... if that's the case with me, I'll act like you.";
+            NameTagText.text = "Orina";
+            dia.text = "Okay, I don't want to waste your time either. That dragon is on the mana cliff.";
         }
         else if (tang == 9)
         {
-            NameTagText.text = "Vayne";
-            dia.text = "I promise I won't make the same mistake again.";
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
+            NameTagText.text = "Maria";
+            dia.text = "Where exactly?";
         }
         else if (tang == 10)
         {
-            AliaVAL1.SetActive(false);
-            MrLanceVAL1.SetActive(true);
-            NameTagText.text = "Mr. Lance";
-            dia.text = "It's been a long wait, hasn't it? The food has arrived.";
+            NameTagText.text = "Orina";
+            dia.text = "If I remember correctly, somewhere southwest of that inferno desert village. But that's just what I thought, but I'm not sure there's a mana dragon there.";
         }
         else if (tang == 11)
         {
-            VayneVAR1.SetActive(false);
-            MariaVAR1.SetActive(true);
-            NameTagText.text = "Maria";
-            dia.text = "Invite everyone to a meal.";
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "At least we can look around. As for dragons, I've never seen them in real life either.";
         }
         else if (tang == 12)
         {
-            MrLanceVAL1.SetActive(false);
-            MariaVAR1.SetActive(false);
-            NameTagText.text = "All";
-            dia.text = "Have a good meal everyone";
+            NameTagText.text = "Orina";
+            dia.text = "The mana dragon is different from normal, it looks like a cow?";
         }
-        else if (tang >= 13)
+        else if (tang == 13)
+        {
+            VayneVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
+            NameTagText.text = "Maria";
+            dia.text = "A... cow? Does it really look like that?";
+        }
+        else if (tang == 14)
+        {
+            NameTagText.text = "Orina";
+            dia.text = "That kind of dragon is quite rare anyway, if you see a flying cow, it's a mana dragon.";
+        }
+        else if (tang == 15)
+        {
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "Thank you, Orina, if that's the case, here we go!";
+        }
+        else if (tang == 16)
+        {
+            NameTagText.text = "Orina";
+            dia.text = "Yeah, nothing.";
+        }
+        else if (tang >= 17)
         {
             CutscenesController.cus98 = 1;
             ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Tavern");
+            SceneManager.LoadScene("GroceryStore");
         }
     }
     public void Pressnext()
@@ -110,6 +132,6 @@ public class Cus98 : MonoBehaviour
     {
         CutscenesController.cus98 = 1;
         ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("Tavern");
+        SceneManager.LoadScene("GroceryStore");
     }
 }

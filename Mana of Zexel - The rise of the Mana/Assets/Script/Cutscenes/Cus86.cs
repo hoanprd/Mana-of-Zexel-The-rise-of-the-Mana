@@ -9,7 +9,7 @@ public class Cus86 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
-    public GameObject VayneVAR1, AliaVAR1, MariaVAR1, ManaElfVAL1, ManaElfVAR1, ManaRockVAL1, ManaLightVAL1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAR1, MariaVAL1, AlasaVAL1, AlasaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -24,123 +24,85 @@ public class Cus86 : MonoBehaviour
     {
         if (tang == 1)
         {
-            ManaElfVAL1.SetActive(true);
+            AlasaVAL1.SetActive(true);
             NameTag.SetActive(true);
-            NameTagText.text = "Mana elf";
-            dia.text = "Looks like everyone found Zexel's fire and ice mana core.";
+            NameTagText.text = "Alasa";
+            dia.text = "Ah Vayne! You're here, according to what I should do it seems to give you Zexel's ice energy core right?";
         }
         else if (tang == 2)
         {
             VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
-            dia.text = "That's right! We have obtained those two cores of energy with all our sincerity...";
+            dia.text = "Yes sir, so the front energy core is Zexel's ice energy core? I can feel the mana source from it.";
         }
         else if (tang == 3)
         {
-            ManaElfVAL1.SetActive(false);
-            ManaRockVAL1.SetActive(true);
-            NameTagText.text = "Mana rock";
-            dia.text = "If you are selfish in defying both the inferno volcano and inferno ice villages, you will fail the Zexel Gate test.";
+            NameTagText.text = "Alasa";
+            dia.text = "Hahaha, that's right, not bad right? You really are a talented alchemist! So I think this energy core belongs to you.";
         }
         else if (tang == 4)
         {
-            ManaRockVAL1.SetActive(false);
-            ManaLightVAL1.SetActive(true);
-            NameTagText.text = "Mana light";
-            dia.text = "And you will be devoured by the mana core. However, you have passed the test wonderfully.";
+            NameTagText.text = "Vayne";
+            dia.text = "But if I take it, what will happen to this village?";
         }
         else if (tang == 5)
+        {
+            NameTagText.text = "Alasa";
+            dia.text = "The glacial climate will simply become colder than usual, which will cause the villagers to move to the inferno volcano or alta inferno to live.";
+        }
+        else if (tang == 6)
+        {
+            NameTagText.text = "Alasa";
+            dia.text = "Sadly, we can't make use of the resources in this land of inferno ice anymore.";
+        }
+        else if (tang == 7)
+        {
+            AlasaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
+            NameTagText.text = "Maria";
+            dia.text = "You don't have to worry about this, village head Alasa, Vayne can easily clone Zexel's ice energy core like when he saved Asila's village from the volcanic eruption.";
+        }
+        else if (tang == 8)
         {
             VayneVAR1.SetActive(false);
             AliaVAR1.SetActive(true);
             NameTagText.text = "Alia";
-            dia.text = "So resolving the conflict between the two villages is part of the challenge? Why didn't the gods foretell?";
-        }
-        else if (tang == 6)
-        {
-            ManaLightVAL1.SetActive(false);
-            ManaElfVAL1.SetActive(true);
-            NameTagText.text = "Mana elf";
-            dia.text = "Only then will we be able to see the true heart of humans, which is also the basis of other mana's belief in you.";
-        }
-        else if (tang == 7)
-        {
-            ManaElfVAL1.SetActive(false);
-            ManaRockVAL1.SetActive(true);
-            NameTagText.text = "Mana rock";
-            dia.text = "Don't be selfish especially between humans. That is the key to being able to make friends with other species like us mana.";
-        }
-        else if (tang == 8)
-        {
-            AliaVAR1.SetActive(false);
-            MariaVAR1.SetActive(true);
-            NameTagText.text = "Maria";
-            dia.text = "Then can we open the Zexel portal with these two power cores?";
+            dia.text = "That's right! Vayne is very good at these things!";
         }
         else if (tang == 9)
         {
-            ManaRockVAL1.SetActive(false);
-            ManaElfVAL1.SetActive(true);
-            NameTagText.text = "Mana elf";
-            dia.text = "You just need to put two of Zexel's energy cores in front of the gate to open it.";
+            MariaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "Come on guys, I'm not that good, it's all down to luck.";
         }
         else if (tang == 10)
         {
-            ManaElfVAL1.SetActive(false);
-            ManaLightVAL1.SetActive(true);
-            NameTagText.text = "Mana light";
-            dia.text = "However, the main challenge begins now. What you do next will determine the fate of this place.";
+            AliaVAR1.SetActive(false);
+            AlasaVAR1.SetActive(true);
+            NameTagText.text = "Alasa";
+            dia.text = "Can you really make a copy of the ice energy core?";
         }
         else if (tang == 11)
         {
-            MariaVAR1.SetActive(false);
-            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
-            dia.text = "Decide fate? I still don't understand what will happen next.";
+            dia.text = "I have to do it to see the results...";
         }
         else if (tang == 12)
         {
-            ManaLightVAL1.SetActive(false);
-            ManaElfVAL1.SetActive(true);
-            NameTagText.text = "Mana elf";
-            dia.text = "You will understand once you get there. The journey of maturity, everyone can understand that.";
+            NameTagText.text = "Alasa";
+            dia.text = "I see, I've given you the energy core anyway so make good use of it.";
         }
         else if (tang == 13)
         {
-            ManaElfVAL1.SetActive(false);
-            ManaRockVAL1.SetActive(true);
-            NameTagText.text = "Mana rock";
-            dia.text = "Zexel before his death brought temporary peace between humans and mana. Those who hold it will be those people.";
-        }
-        else if (tang == 14)
-        {
             NameTagText.text = "Vayne";
-            dia.text = "Sounds stressful, right? If so, we'll go to the gate!";
+            dia.text = "I'll do my best.";
         }
-        else if (tang == 15)
-        {
-            ManaRockVAL1.SetActive(false);
-            VayneVAR1.SetActive(false);
-            NameTagText.text = "";
-            dia.text = "...";
-        }
-        else if (tang == 16)
-        {
-            ManaLightVAL1.SetActive(true);
-            NameTagText.text = "Mana light";
-            dia.text = "Are you sure they can do it?";
-        }
-        else if (tang == 17)
-        {
-            ManaElfVAR1.SetActive(true);
-            NameTagText.text = "Mana elf";
-            dia.text = "If Zexel believes in the next generation, then they can do it. Not only that, the red-haired alchemist, is the key to the cycle of peace continuing.";
-        }
-        else if (tang >= 18)
+        else if (tang >= 14)
         {
             CutscenesController.cus86 = 1;
             ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Mana temple");
+            SceneManager.LoadScene("InsideIceCave");
         }
     }
     public void Pressnext()
@@ -151,6 +113,6 @@ public class Cus86 : MonoBehaviour
     {
         CutscenesController.cus86 = 1;
         ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("Mana temple");
+        SceneManager.LoadScene("InsideIceCave");
     }
 }

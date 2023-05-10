@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Cus105 : MonoBehaviour
+public class Cus110 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;

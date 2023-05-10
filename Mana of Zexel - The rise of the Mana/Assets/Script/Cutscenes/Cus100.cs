@@ -9,7 +9,7 @@ public class Cus100 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
-    public GameObject VayneVAL1, AliaVAR1, MariaVAL1, JescaVAL1, MeruVAR1;
+    public GameObject VayneVAL1, VayneVAR1, MariaVAL1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -24,92 +24,86 @@ public class Cus100 : MonoBehaviour
     {
         if (tang == 1)
         {
-            JescaVAL1.SetActive(true);
             NameTag.SetActive(true);
-            NameTagText.text = "Jesca";
-            dia.text = "Oh grandma! You are back!";
+            NameTagText.text = "Mana dragon";
+            dia.text = "Grahhhhhhhhhhh...";
         }
         else if (tang == 2)
         {
-            MeruVAR1.SetActive(true);
-            NameTagText.text = "Meru";
-            dia.text = "I'm back! Is my granddaughter at home well?";
+            VayneVAL1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "Ha... ha... ha... Maria hold that dragon back!";
         }
         else if (tang == 3)
         {
-            NameTagText.text = "Jesca";
-            dia.text = "Of course it's fine, I also prepared some premixed medicine while you were away.";
+            MariaVAR1.SetActive(true);
+            NameTagText.text = "Maria";
+            dia.text = "Come on Vayne!";
         }
         else if (tang == 4)
         {
-            MeruVAR1.SetActive(false);
-            AliaVAR1.SetActive(true);
-            NameTagText.text = "Alia";
-            dia.text = "You're so good Jesca, do you want to be a great doctor like your grandmother?";
+            NameTagText.text = "Vayne";
+            dia.text = "Hyaaaaaaaa...";
         }
         else if (tang == 5)
         {
-            NameTagText.text = "Jesca";
-            dia.text = "Ah, Alia, are you feeling well! I'm very happy to meet you.";
+            VayneVAL1.SetActive(false);
+            MariaVAR1.SetActive(false);
+            NameTagText.text = "";
+            dia.text = "Senggggggggggggg...";
         }
         else if (tang == 6)
         {
-            NameTagText.text = "Jesca";
-            dia.text = "Are you thinking of stopping by here?";
+            NameTagText.text = "Mana dragon";
+            dia.text = "Grahhhhhhhh...";
         }
         else if (tang == 7)
         {
-            JescaVAL1.SetActive(false);
-            VayneVAL1.SetActive(true);
-            NameTagText.text = "Vayne";
-            dia.text = "Too bad we'll have to go back to Zexel town, if given the chance I'll visit.";
+            MariaVAL1.SetActive(true);
+            NameTagText.text = "Maria";
+            dia.text = "It flew away...";
         }
         else if (tang == 8)
         {
-            AliaVAR1.SetActive(false);
-            MeruVAR1.SetActive(true);
-            NameTagText.text = "Meru";
-            dia.text = "You guys better be careful. Wounds like that are hard to save.";
+            VayneVAR1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "Hehe... Luckily I got the dragon scales in time.";
         }
         else if (tang == 9)
         {
-            NameTagText.text = "Vayne";
-            dia.text = "We'll be more careful.";
+            NameTagText.text = "Maria";
+            dia.text = "Well done Vayne, with this we can Alia.";
         }
         else if (tang == 10)
         {
-            VayneVAL1.SetActive(false);
-            MariaVAL1.SetActive(true);
-            NameTagText.text = "Maria";
-            dia.text = "By the way, Mrs. Meru, what do you mean by calling the girl we met before a magician?";
+            NameTagText.text = "Vayne";
+            dia.text = "Okay! We're going to... um... huh... hump...";
         }
         else if (tang == 11)
         {
-            NameTagText.text = "Meru";
-            dia.text = "Just a guess, usually magicians have silver hair as well as eye color.";
+            NameTagText.text = "Maria";
+            dia.text = "Vayne! Are you alright?";
         }
         else if (tang == 12)
         {
-            NameTagText.text = "Meru";
-            dia.text = "But forget it, I feel like she's your friend so it should be fine.";
+            NameTagText.text = "Vayne";
+            dia.text = "Maybe I tried too hard.";
         }
         else if (tang == 13)
         {
-            MariaVAL1.SetActive(false);
-            VayneVAL1.SetActive(true);
-            NameTagText.text = "Vayne";
-            dia.text = "... Anyway, we thank you very much.";
+            NameTagText.text = "Maria";
+            dia.text = "I'm tired too but we still have a few things to deal with.";
         }
         else if (tang == 14)
         {
-            NameTagText.text = "Meru";
-            dia.text = "It's okay, I wish you all a safe journey.";
+            NameTagText.text = "Vayne";
+            dia.text = "I'm fine, Alia is waiting for us.";
         }
         else if (tang >= 15)
         {
             CutscenesController.cus100 = 1;
             ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Inferno desert");
+            SceneManager.LoadScene("Mana cliff");
         }
     }
     public void Pressnext()
@@ -120,6 +114,6 @@ public class Cus100 : MonoBehaviour
     {
         CutscenesController.cus100 = 1;
         ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("Inferno desert");
+        SceneManager.LoadScene("Mana cliff");
     }
 }

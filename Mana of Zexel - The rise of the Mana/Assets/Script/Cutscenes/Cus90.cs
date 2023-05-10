@@ -8,8 +8,8 @@ public class Cus90 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1, va2;
-    public GameObject VayneVAL1, VayneVAR1, MariaVAL1, MariaVAR1, JescaVAL1, JescaVAR1, MeruVAL1;
+    public GameObject va1;
+    public GameObject VayneVAL1, AliaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -27,115 +27,45 @@ public class Cus90 : MonoBehaviour
             VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
-            dia.text = "Damn where is that doctor? I searched and couldn't find it.";
+            dia.text = "Okay! Another machine in inferno ice already.";
         }
         else if (tang == 2)
         {
-            MariaVAR1.SetActive(true);
-            NameTagText.text = "Maria";
-            dia.text = "Try asking the villagers around?";
+            AliaVAR1.SetActive(true);
+            NameTagText.text = "Alia";
+            dia.text = "Ahhhhhh... It's those disgusting slimes again!";
         }
         else if (tang == 3)
         {
             NameTagText.text = "Vayne";
-            dia.text = "... Hey, what little girl? Let me ask you...";
+            dia.text = "Calm down Alia, don't touch them.";
         }
         else if (tang == 4)
         {
-            VayneVAL1.SetActive(false);
-            JescaVAL1.SetActive(true);
-            NameTagText.text = "Jesca";
-            dia.text = "Huh? Was it Vayne and Maria?";
+            NameTagText.text = "Alia";
+            dia.text = "Calm down, they keep coming towards me. Why don't they like the other two! I don't like you guys.";
         }
         else if (tang == 5)
         {
-            NameTagText.text = "Maria";
-            dia.text = "So it's you, Jesca? You still good there.";
+            NameTagText.text = "Vayne";
+            dia.text = "Okay, okay, I'll deal with them.";
         }
         else if (tang == 6)
         {
-            NameTagText.text = "Jesca";
-            dia.text = "Are you okay? What about brothers and sisters? And where is Alia, isn't she going with you two?";
+            NameTagText.text = "Alia";
+            dia.text = "Let's get out of here, I'm freezing cold too!";
         }
         else if (tang == 7)
         {
-            MariaVAR1.SetActive(false);
-            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
-            dia.text = "Sister Alia is seriously injured by dark magic, I'm looking for a magic healer somewhere in this village. Do you know that person?";
+            dia.text = "(It's hard to understand girls!)";
         }
-        else if (tang == 8)
-        {
-            NameTagText.text = "Jesca";
-            dia.text = "The doctor? In this village there is only one doctor and that is my grandmother!";
-        }
-        else if (tang == 9)
-        {
-            NameTagText.text = "Vayne";
-            dia.text = "In that case, can you take me to your grandmother's place?";
-        }
-        else if (tang == 10)
-        {
-            NameTagText.text = "Jesca";
-            dia.text = "Of course! Follow me!";
-        }
-        else if (tang == 11)
-        {
-            va1.SetActive(false);
-            va2.SetActive(true);
-            JescaVAL1.SetActive(false);
-            VayneVAR1.SetActive(false);
-            NameTagText.text = "";
-            dia.text = "...";
-        }
-        else if (tang == 12)
-        {
-            MeruVAL1.SetActive(true);
-            NameTagText.text = "???";
-            dia.text = "Oh, so this is the group that rescued your grandson from those inferno scorpions? That is a pleasure.";
-        }
-        else if (tang == 13)
-        {
-            JescaVAR1.SetActive(true);
-            NameTagText.text = "Jesca";
-            dia.text = "Everyone, this is Meru, she is my grandmother, the only and talented doctor in this village!";
-        }
-        else if (tang == 14)
-        {
-            JescaVAR1.SetActive(false);
-            VayneVAR1.SetActive(true);
-            NameTagText.text = "Vayne";
-            dia.text = "Ma'am, can you follow me back to Zexel town and help me heal my friend who got hit by a magician's attack?";
-        }
-        else if (tang == 15)
-        {
-            NameTagText.text = "Meru";
-            dia.text = "Magician? Looks serious. All right, I'm grateful to you anyway, so I'll treat your friend. However, in terms of cost...";
-        }
-        else if (tang == 16)
-        {
-            VayneVAR1.SetActive(false);
-            JescaVAR1.SetActive(true);
-            NameTagText.text = "Jesca";
-            dia.text = "Hey grandma, their friend is the only benefactor in my life!";
-        }
-        else if (tang == 17)
-        {
-            NameTagText.text = "Meru";
-            dia.text = "Oh okay, I'll treat it for free! Now take me there to see what the situation is.";
-        }
-        else if (tang == 18)
-        {
-            JescaVAR1.SetActive(false);
-            VayneVAR1.SetActive(true);
-            NameTagText.text = "Vayne";
-            dia.text = "Thank you very much!";
-        }
-        else if (tang >= 19)
+        else if (tang >= 8)
         {
             CutscenesController.cus90 = 1;
+            ContainerController.IceManaGenerator -= 1;
             ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Inferno desert");
+            SceneManager.LoadScene("InsideIceCave");
         }
     }
     public void Pressnext()
@@ -145,7 +75,8 @@ public class Cus90 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus90 = 1;
+        ContainerController.IceManaGenerator -= 1;
         ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("Inferno desert");
+        SceneManager.LoadScene("InsideIceCave");
     }
 }

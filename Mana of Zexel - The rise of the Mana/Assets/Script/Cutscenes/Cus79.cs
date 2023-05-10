@@ -8,8 +8,8 @@ public class Cus79 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1, va2;
-    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, MariaVAR1, AlasaVAL1, AlasaVAR1, AsilaVAL1, AsilaVAR1;
+    public GameObject va1;
+    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1;
     public GameObject NameTag;
     private int tang = 0;
 
@@ -24,180 +24,208 @@ public class Cus79 : MonoBehaviour
     {
         if (tang == 1)
         {
-            AsilaVAL1.SetActive(true);
+            MariaVAL1.SetActive(true);
             NameTag.SetActive(true);
-            NameTagText.text = "Asila";
-            dia.text = "Alasa! It's been a while since we met like this!";
+            NameTagText.text = "Maria";
+            dia.text = "This land! I can feel a huge amount of mana!";
         }
         else if (tang == 2)
         {
-            AlasaVAR1.SetActive(true);
-            NameTagText.text = "Alasa";
-            dia.text = "Hum... Don't think I'm here for you. I came to see if this kid Vayne can do what he says?";
+            VayneVAR1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "That's right, I also feel a tremendous amount of energy here... but...";
         }
         else if (tang == 3)
         {
-            NameTagText.text = "Asila";
-            dia.text = "... Vayne, are you ready?";
+            MariaVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
+            NameTagText.text = "Alia";
+            dia.text = "What's wrong, Vayne?";
         }
         else if (tang == 4)
         {
-            AsilaVAL1.SetActive(false);
-            VayneVAL1.SetActive(true);
             NameTagText.text = "Vayne";
-            dia.text = "I'm ready, now let's get started.";
+            dia.text = "It's just that we don't see any life here, the trees, the animals, all without what we see as a dead land.";
         }
         else if (tang == 5)
         {
-            VayneVAL1.SetActive(false);
-            AlasaVAR1.SetActive(false);
-            NameTagText.text = "";
-            dia.text = "...";
+            NameTagText.text = "Alia";
+            dia.text = "Okay Vayne! Use the potion you used to revive the farmers' rice fields in Zexel town, I believe you can do it.";
         }
         else if (tang == 6)
         {
-            va1.SetActive(false);
-            va2.SetActive(true);
-            NameTagText.text = "";
-            dia.text = "Glowing...";
+            AliaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
+            NameTagText.text = "Maria";
+            dia.text = "Interesting isn't it? I never thought using alchemy to reform the land.";
         }
         else if (tang == 7)
         {
-            AliaVAL1.SetActive(true);
-            NameTagText.text = "Alia";
-            dia.text = "The land... is green again.";
+            NameTagText.text = "Vayne";
+            dia.text = "This... I'm not sure if it's possible because basically land that is damaged by physical factors can be restored easily but this land we still don't understand the cause. Why is this land dead?";
         }
         else if (tang == 8)
         {
-            MariaVAR1.SetActive(true);
-            NameTagText.text = "Maria";
-            dia.text = "This land used to contain mana too? I can feel its inherent mana mixed with Vayne's mana.";
+            NameTagText.text = "Vayne";
+            dia.text = "But it's also worth trying the elixir potion to revive the land. Alright let's try!";
         }
         else if (tang == 9)
         {
-            AliaVAL1.SetActive(false);
-            AsilaVAL1.SetActive(true);
-            NameTagText.text = "Asila";
-            dia.text = "What a land that is coming back to life...";
+            MariaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
+            NameTagText.text = "";
+            dia.text = "...";
         }
         else if (tang == 10)
         {
-            MariaVAR1.SetActive(false);
-            AlasaVAR1.SetActive(true);
-            NameTagText.text = "Alasa";
-            dia.text = "Is this true?";
+            AliaVAL1.SetActive(true);
+            NameTagText.text = "Alia";
+            dia.text = "Uhmmmm... Why do I feel like it hasn't changed at all?";
         }
         else if (tang == 11)
         {
-            AsilaVAL1.SetActive(false);
-            VayneVAL1.SetActive(true);
+            VayneVAR1.SetActive(true);
             NameTagText.text = "Vayne";
-            dia.text = "Now, I've done what needed to be done, do you have any questions?";
+            dia.text = "It's not as easy as I thought it would be.";
         }
         else if (tang == 12)
         {
-            VayneVAL1.SetActive(false);
-            AsilaVAL1.SetActive(true);
-            NameTagText.text = "Asila";
-            dia.text = "Alasa, I... I...";
+            AliaVAL1.SetActive(false);
+            MariaVAL1.SetActive(true);
+            NameTagText.text = "Maria";
+            dia.text = "The land is still dry and the color of the earth is still crimson. The problem was why this land had so many mana sources but no life at all. It's absurd.";
         }
         else if (tang == 13)
         {
-            NameTagText.text = "Alasa";
-            dia.text = "Even so, I still don't trust you.";
+            NameTagText.text = "Vayne";
+            dia.text = "Somehow this land is dead but still retains a huge amount of mana energy.";
         }
         else if (tang == 14)
         {
-            NameTagText.text = "Asila";
-            dia.text = "... I know it's hard but anyway, the land that our parents believed in has come back to life, with this we will combine the two villages into one and...";
+            NameTagText.text = "Maria";
+            dia.text = "... I don't think so... Look down at the ground at your feet and release some mana there Vayne!";
         }
         else if (tang == 15)
         {
-            AsilaVAL1.SetActive(false);
-            AlasaVAR1.SetActive(false);
-            NameTagText.text = "";
-            dia.text = "Crackkkkk... crackkkkkkkkk...";
+            NameTagText.text = "Vayne";
+            dia.text = "Is this really necessary? I see...";
         }
         else if (tang == 16)
         {
-            VayneVAL1.SetActive(true);
-            NameTagText.text = "Vayne";
-            dia.text = "What is it?";
+            NameTagText.text = "Maria";
+            dia.text = "Just do it, and you'll understand what I mean!";
         }
         else if (tang == 17)
         {
-            MariaVAR1.SetActive(true);
-            NameTagText.text = "Maria";
-            dia.text = "There's something on that hill!";
+            NameTagText.text = "Vayne";
+            dia.text = "Okay,...";
         }
         else if (tang == 18)
         {
-            VayneVAL1.SetActive(false);
-            MariaVAR1.SetActive(false);
+            MariaVAL1.SetActive(false);
+            VayneVAR1.SetActive(false);
             NameTagText.text = "";
-            dia.text = "Crackkkkkkkkkkkkkkkkkkk...";
+            dia.text = "...";
         }
         else if (tang == 19)
         {
-            NameTagText.text = "";
-            dia.text = "Gruuuuuuuuuuuuuuuuuuuuuuuuhhhhhhhhhhh...";
+            VayneVAL1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "No way, is there something on this earth resonating with your mana?";
         }
         else if (tang == 20)
         {
-            VayneVAL1.SetActive(true);
-            NameTagText.text = "Vayne";
-            dia.text = "What is that! A monster!";
+            MariaVAR1.SetActive(true);
+            NameTagText.text = "Maria";
+            dia.text = "That's what I mean, something is covering this land and absorbing our mana. Although it is not large, the mana we can feel is the mana being absorbed from this land.";
         }
         else if (tang == 21)
         {
-            AsilaVAR1.SetActive(true);
-            NameTagText.text = "Asila";
-            dia.text = "It can't be... Inferno beast!!!";
+            VayneVAL1.SetActive(false);
+            AliaVAL1.SetActive(true);
+            NameTagText.text = "Alia";
+            dia.text = "Mana in this land is being absorbed but we don't feel anything.";
         }
         else if (tang == 22)
         {
-            VayneVAL1.SetActive(false);
-            AlasaVAL1.SetActive(true);
-            NameTagText.text = "Alasa";
-            dia.text = "Isn't that thing sealed a long time ago? How come it got out!";
+            NameTagText.text = "Maria";
+            dia.text = "That's when we don't use mana.";
         }
         else if (tang == 23)
         {
-            AlasaVAL1.SetActive(false);
-            AliaVAL1.SetActive(true);
-            NameTagText.text = "Alia";
-            dia.text = "This monster, this place has a conflict that needs to be resolved, this is not a place for you to mess around.";
+            AliaVAL1.SetActive(false);
+            VayneVAL1.SetActive(true);
+            NameTagText.text = "Vayne";
+            dia.text = "Then we'll find a way to get rid of what's haunting the ground. But what's the problem with that? I still don't understand.";
         }
         else if (tang == 24)
         {
-            AsilaVAR1.SetActive(false);
-            VayneVAR1.SetActive(true);
-            NameTagText.text = "Vayne";
-            dia.text = "Chief Asila and Alasa stay back we'll deal with it.";
+            NameTagText.text = "Maria";
+            dia.text = "I'm not so sure about this, something that can absorb mana is definitely not trivial.";
         }
         else if (tang == 25)
         {
-            AliaVAL1.SetActive(false);
-            AlasaVAL1.SetActive(true);
-            NameTagText.text = "Alasa";
-            dia.text = "Where's the goddamn Shan gone! Just when we need him.";
+            NameTagText.text = "Vayne";
+            dia.text = "I mean a form of mana energy greater than us.";
         }
         else if (tang == 26)
         {
-            VayneVAR1.SetActive(false);
-            AsilaVAR1.SetActive(true);
-            NameTagText.text = "Asila";
-            dia.text = "Be careful, that monster is an ancient monster so it's very strong.";
+            NameTagText.text = "Maria";
+            dia.text = "Yes, this mana might belong to magicians.";
         }
         else if (tang == 27)
         {
-            AlasaVAL1.SetActive(false);
-            AsilaVAR1.SetActive(false);
-            VayneVAL1.SetActive(true);
-            NameTagText.text = "Vayne";
-            dia.text = "Rest assured we are not weak. Come on up, everyone!";
+            MariaVAR1.SetActive(false);
+            AliaVAR1.SetActive(true);
+            NameTagText.text = "Alia";
+            dia.text = "A magician again? After all, what is a magician?";
         }
-        else if (tang >= 28)
+        else if (tang == 28)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "That's not good, I don't know anything about dark magic.";
+        }
+        else if (tang == 29)
+        {
+            AliaVAR1.SetActive(false);
+            MariaVAR1.SetActive(true);
+            NameTagText.text = "Maria";
+            dia.text = "Me too but if we can purify the dark magic then maybe we can revive the land.";
+        }
+        else if (tang == 30)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "An item that can purify magic?";
+        }
+        else if (tang == 31)
+        {
+            NameTagText.text = "Maria";
+            dia.text = "I've only heard some people in Zexel town talk about the legend of the cleansing water for quite some time, but I don't know if it's true?";
+        }
+        else if (tang == 32)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "If so, try visiting Mr. Is Lance sure he knows?";
+        }
+        else if (tang == 33)
+        {
+            NameTagText.text = "Maria";
+            dia.text = "I pray that my father doesn't get mad and gossip about this matter.";
+        }
+        else if (tang == 34)
+        {
+            NameTagText.text = "Vayne";
+            dia.text = "At least we have a clue! Let's go, let's go back to Zexel town.";
+        }
+        else if (tang == 35)
+        {
+            VayneVAL1.SetActive(false);
+            MariaVAR1.SetActive(false);
+            AliaVAL1.SetActive(true);
+            NameTagText.text = "Alia";
+            dia.text = "Hey, are you guys really ignoring me?";
+        }
+        else if (tang >= 36)
         {
             CutscenesController.cus79 = 1;
             ContainerController.LoadingOpen = true;
