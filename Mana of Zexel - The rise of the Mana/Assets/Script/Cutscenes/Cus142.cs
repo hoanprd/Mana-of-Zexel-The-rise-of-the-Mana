@@ -9,7 +9,7 @@ public class Cus142 : MonoBehaviour
     public Text NameTagText;
     public Text dia;
     public GameObject va1, va2;
-    public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, MrLanceVAL1, MrLanceVAR1, KlenerVAL1, HeeriumVAL1, OrinaVAL1, ManaElfVAL1, ZaneVAL1, ZaneVAR1;
+    public GameObject VayneVAL1, VayneVAR1, MrLanceVAL1, MrLanceVAR1, KlenerVAL1, HeeriumVAL1, OrinaVAL1;
     public GameObject NameTag;
     private int tang = 0;
 
