@@ -8,7 +8,7 @@ public class Cus128 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1;
+    public GameObject va1, va2;
     public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, MeruVAL1, JescaVAL1, JescaVAR1;
     public GameObject NameTag;
     private int tang = 0;
@@ -85,6 +85,8 @@ public class Cus128 : MonoBehaviour
         }
         else if (tang == 11)
         {
+            va1.SetActive(false);
+            va2.SetActive(true);
             MeruVAL1.SetActive(false);
             AliaVAR1.SetActive(false);
             NameTagText.text = "";
