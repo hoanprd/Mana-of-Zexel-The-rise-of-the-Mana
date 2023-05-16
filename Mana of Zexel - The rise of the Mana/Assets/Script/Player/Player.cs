@@ -117,11 +117,6 @@ public class Player : MonoBehaviour
                 show1.text = "You still haven't found the ice crystal";
                 Invoke("delay1", 2f);
             }
-
-            if (CutscenesController.cus78 == 0 && CutscenesController.cus77 == 1)
-            {
-                SceneManager.LoadScene("Cutscenes");
-            }
         }
         if (asilaqz && Input.GetKeyDown(KeyCode.Space))
         {
@@ -238,13 +233,26 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("ZexelTownToWishingHill"))
         {
-            MapController.ZexelTownToWishingHill = true;
-            GoblinTrigger1.despawn = false;
-            GoblinTrigger2.despawn = false;
-            GoblinTrigger3.despawn = false;
-            GoblinTrigger4.despawn = false;
-            MapIndex = 0;
-            SceneManager.LoadScene("Wishing hill");
+            if (CutscenesController.cus143 == 0 && CutscenesController.cus142 == 1)
+            {
+                MapController.ZexelTownToWishingHill = true;
+                GoblinTrigger1.despawn = false;
+                GoblinTrigger2.despawn = false;
+                GoblinTrigger3.despawn = false;
+                GoblinTrigger4.despawn = false;
+                MapIndex = 0;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+            {
+                MapController.ZexelTownToWishingHill = true;
+                GoblinTrigger1.despawn = false;
+                GoblinTrigger2.despawn = false;
+                GoblinTrigger3.despawn = false;
+                GoblinTrigger4.despawn = false;
+                MapIndex = 0;
+                SceneManager.LoadScene("Wishing hill");
+            }
         }
         if (collision.CompareTag("ZexelTownToTavern"))
         {
@@ -321,6 +329,10 @@ public class Player : MonoBehaviour
                 SceneManager.LoadScene("Cutscenes");
             }
             else if (CutscenesController.cus101 == 0 && CutscenesController.cus100 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus142 == 0 && CutscenesController.cus141 == 1)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
@@ -647,6 +659,30 @@ public class Player : MonoBehaviour
                 MapIndex = 1;
                 SceneManager.LoadScene("Cutscenes");
             }
+            else if (CutscenesController.cus130 == 0 && CutscenesController.cus129 == 1)
+            {
+                MapController.InfernoDesertToZexelTown = true;
+                InfernoScorpionTrigger1.despawn = false;
+                InfernoScorpionTrigger2.despawn = false;
+                InfernoScorpionTrigger3.despawn = false;
+                InfernoScorpionTrigger4.despawn = false;
+                InfernoScorpionTrigger5.despawn = false;
+                InfernoScorpionTrigger6.despawn = false;
+                MapIndex = 1;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus140 == 0 && CutscenesController.cus139 == 1)
+            {
+                MapController.InfernoDesertToZexelTown = true;
+                InfernoScorpionTrigger1.despawn = false;
+                InfernoScorpionTrigger2.despawn = false;
+                InfernoScorpionTrigger3.despawn = false;
+                InfernoScorpionTrigger4.despawn = false;
+                InfernoScorpionTrigger5.despawn = false;
+                InfernoScorpionTrigger6.despawn = false;
+                MapIndex = 1;
+                SceneManager.LoadScene("Cutscenes");
+            }
             else
             {
                 MapController.InfernoDesertToZexelTown = true;
@@ -732,6 +768,18 @@ public class Player : MonoBehaviour
                 SceneManager.LoadScene("Cutscenes");
             }
             else if (CutscenesController.cus57 == 0 && CutscenesController.cus56 == 1)
+            {
+                MapController.InfernoDesertToManaGate = true;
+                InfernoScorpionTrigger1.despawn = false;
+                InfernoScorpionTrigger2.despawn = false;
+                InfernoScorpionTrigger3.despawn = false;
+                InfernoScorpionTrigger4.despawn = false;
+                InfernoScorpionTrigger5.despawn = false;
+                InfernoScorpionTrigger6.despawn = false;
+                MapIndex = 5;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus141 == 0 && CutscenesController.cus140 == 1)
             {
                 MapController.InfernoDesertToManaGate = true;
                 InfernoScorpionTrigger1.despawn = false;

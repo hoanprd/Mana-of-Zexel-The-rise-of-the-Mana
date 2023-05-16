@@ -897,11 +897,13 @@ public class BSSicxalon1 : MonoBehaviour
         }
         Item_panel.SetActive(false);
     }
+
     public void PressRun()
     {
         HubController.BusyHub = false;
         SceneManager.LoadScene("Cutscenes");
     }
+
     public void PressBackToTheMap2()
     {
         ContainerController.LoadingOpen = true;

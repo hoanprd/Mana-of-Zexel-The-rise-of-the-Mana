@@ -50,7 +50,7 @@ public class Global : MonoBehaviour
             DamageE1 = 10;
             SpeedE1 = 10;
 
-            if (CutscenesController.cus111 == 1 && CutscenesController.cus112 == 0)
+            if (CutscenesController.cus130 == 1 && CutscenesController.cus131 == 0)
             {
                 HPE2 = 2200;
                 DamageE2 = 200;
@@ -63,7 +63,7 @@ public class Global : MonoBehaviour
                 SpeedE2 = 10;
             }
 
-            if (CutscenesController.cus111 == 1 && CutscenesController.cus112 == 0 && Player.MapIndex == 1)
+            if (CutscenesController.cus130 == 1 && CutscenesController.cus131 == 0 && Player.MapIndex == 1)
             {
                 HPE3 = 3000;
                 DamageE3 = 240;
@@ -76,11 +76,11 @@ public class Global : MonoBehaviour
                 SpeedE3 = 20;
             }
 
-            if (CutscenesController.cus108 == 1 && CutscenesController.cus109 == 0 && Player.MapIndex == 3)
+            if (CutscenesController.cus127 == 1 && CutscenesController.cus128 == 0 && Player.MapIndex == 3)
             {
-                HPE3 = 6000;
-                DamageE3 = 360;
-                SpeedE3 = 20;
+                HPE4 = 6000;
+                DamageE4 = 360;
+                SpeedE4 = 20;
             }
             else
             {
@@ -109,9 +109,18 @@ public class Global : MonoBehaviour
             DamageE9 = 160;
             SpeedE9 = 10;
 
-            HPE10 = 3600;
-            DamageE10 = 220;
-            SpeedE10 = 20;
+            if (CutscenesController.cus128 == 1 && CutscenesController.cus129 == 0 && Player.MapIndex == 3)
+            {
+                HPE10 = 7200;
+                DamageE10 = 240;
+                SpeedE10 = 20;
+            }
+            else
+            {
+                HPE10 = 3600;
+                DamageE10 = 220;
+                SpeedE10 = 20;
+            }
 
             HPE11 = 4000;
             DamageE11 = 260;
@@ -145,7 +154,7 @@ public class Global : MonoBehaviour
             DamageE1 = 15;
             SpeedE1 = 10;
 
-            if (CutscenesController.cus111 == 1 && CutscenesController.cus112 == 0)
+            if (CutscenesController.cus130 == 1 && CutscenesController.cus131 == 0)
             {
                 HPE2 = 4400;
                 DamageE2 = 300;
@@ -158,7 +167,7 @@ public class Global : MonoBehaviour
                 SpeedE2 = 10;
             }
 
-            if (CutscenesController.cus111 == 1 && CutscenesController.cus112 == 0 && Player.MapIndex == 1)
+            if (CutscenesController.cus130 == 1 && CutscenesController.cus131 == 0 && Player.MapIndex == 1)
             {
                 HPE3 = 6000;
                 DamageE3 = 340;
@@ -171,11 +180,11 @@ public class Global : MonoBehaviour
                 SpeedE3 = 20;
             }
 
-            if (CutscenesController.cus108 == 1 && CutscenesController.cus109 == 0 && Player.MapIndex == 3)
+            if (CutscenesController.cus127 == 1 && CutscenesController.cus128 == 0 && Player.MapIndex == 3)
             {
-                HPE3 = 10000;
-                DamageE3 = 440;
-                SpeedE3 = 20;
+                HPE4 = 10000;
+                DamageE4 = 320;
+                SpeedE4 = 20;
             }
             else
             {
@@ -204,9 +213,18 @@ public class Global : MonoBehaviour
             DamageE9 = 260;
             SpeedE9 = 10;
 
-            HPE10 = 4600;
-            DamageE10 = 320;
-            SpeedE10 = 20;
+            if (CutscenesController.cus128 == 1 && CutscenesController.cus129 == 0 && Player.MapIndex == 3)
+            {
+                HPE10 = 12000;
+                DamageE10 = 300;
+                SpeedE10 = 20;
+            }
+            else
+            {
+                HPE10 = 4600;
+                DamageE10 = 320;
+                SpeedE10 = 20;
+            }
 
             HPE11 = 5000;
             DamageE11 = 360;

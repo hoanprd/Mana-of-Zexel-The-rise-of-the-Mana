@@ -10,6 +10,8 @@ public class CutscenesController : MonoBehaviour
 
     void Start()
     {
+        SynthesizeSystem.SynBugStop = 0;
+
         if (cus1 == 0)
             C1.SetActive(true);
         else if (cus2 == 0)
@@ -267,13 +269,13 @@ public class CutscenesController : MonoBehaviour
         else if (cus140 == 0)
             C140.SetActive(true);
         else if (cus141 == 0)
-            C140.SetActive(true);
+            C141.SetActive(true);
         else if (cus142 == 0)
-            C140.SetActive(true);
+            C142.SetActive(true);
         else if (cus143 == 0)
-            C140.SetActive(true);
+            C143.SetActive(true);
         else if (cus144 == 0)
-            C140.SetActive(true);
+            C144.SetActive(true);
 
         if (cus84 == 0 && cus84FIndex == 1)
             C84.SetActive(true);

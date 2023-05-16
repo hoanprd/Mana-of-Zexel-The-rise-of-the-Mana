@@ -903,7 +903,15 @@ public class BSManaEagle1 : MonoBehaviour
         HubController.BusyHub = false;
 
         ContainerController.ManaEagleFeatherPick = 1;
-        SceneManager.LoadScene("Mana cliff");
+
+        if (CutscenesController.cus129 == 0 && CutscenesController.cus128 == 1)
+        {
+            SceneManager.LoadScene("Cutscenes");
+        }
+        else
+        {
+            SceneManager.LoadScene("Mana cliff");
+        }
     }
     public void CheckP1Die()
     {

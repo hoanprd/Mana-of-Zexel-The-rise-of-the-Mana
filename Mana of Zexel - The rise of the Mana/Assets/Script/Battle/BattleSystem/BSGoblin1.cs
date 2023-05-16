@@ -913,7 +913,7 @@ public class BSGoblin1 : MonoBehaviour
                 GlobalQuest.KillGoblinQuest = 4;
         }
 
-        if (CutscenesController.cus111 == 1 && CutscenesController.cus112 == 0)
+        if (CutscenesController.cus130 == 1 && CutscenesController.cus131 == 0)
         {
             CutscenesTrigger.GoblinKillP2 += 1;
             if (CutscenesTrigger.GoblinKillP2 == 2 && CutscenesTrigger.GolemnKillP2 == 2)

@@ -925,7 +925,7 @@ public class BSGolemn1 : MonoBehaviour
                 SceneManager.LoadScene("Wishing forest");
             }
         }
-        else if (CutscenesController.cus111 == 1 && CutscenesController.cus112 == 0)
+        else if (CutscenesController.cus130 == 1 && CutscenesController.cus131 == 0)
         {
             CutscenesTrigger.GolemnKillP2 += 1;
             if (CutscenesTrigger.GoblinKillP2 == 2 && CutscenesTrigger.GolemnKillP2 == 2)

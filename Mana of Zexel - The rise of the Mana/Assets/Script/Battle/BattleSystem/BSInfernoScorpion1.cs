@@ -935,7 +935,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
                 SceneManager.LoadScene("Inferno desert");
             }
         }
-        else if (CutscenesController.cus109 == 0 && CutscenesController.cus108 == 1)
+        else if (CutscenesController.cus128 == 0 && CutscenesController.cus127 == 1)
         {
             SceneManager.LoadScene("Cutscenes");
         }

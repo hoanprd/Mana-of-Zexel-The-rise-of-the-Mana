@@ -60,11 +60,9 @@ public class SynthesizeSystem : MonoBehaviour
     public Text SynDetailPanelText;
     public AudioSource ClickFX, SynthesizeFX;
 
-    public static int ManaSynthesize;
-    public static int ManaFireSynthesize;
-    public static int ManaIceSynthesize;
-    public int SlideIndex = 0, SynBugStop = 0;
-    public bool BomCut, VenomKillerCut, PorridgeCut, ManaNecklaceCut, ManaFireCoreVayneCut, OmnipotentBoundaryCut;
+    public static int SynBugStop, ManaSynthesize, ManaFireSynthesize, ManaIceSynthesize;
+    public int SlideIndex = 0;
+    public static bool BomCut, VenomKillerCut, PorridgeCut, ManaNecklaceCut, ManaFireCoreVayneCut, OmnipotentBoundaryCut;
 
     // Start is called before the first frame update
     void Start()
@@ -103,14 +101,15 @@ public class SynthesizeSystem : MonoBehaviour
         {
             RBHideSlide6.SetActive(false);
         }
-        if (CutscenesController.cus83 == 0)
+        if (CutscenesController.cus88 == 0)
         {
             RBHideSlide7.SetActive(false);
         }
-        if (CutscenesController.cus104 == 0)
+        if (CutscenesController.cus109 == 0)
         {
             RBHideSlide8.SetActive(false);
         }
+
         if (CutscenesController.cus18 == 0)
         {
             for (int i = 0; i < Hide1.Length; i++)
@@ -132,14 +131,14 @@ public class SynthesizeSystem : MonoBehaviour
                 Hide3[i].SetActive(false);
             }
         }
-        if (CutscenesController.cus81 == 0)
+        if (CutscenesController.cus86 == 0)
         {
             for (int i = 0; i < Hide4.Length; i++)
             {
                 Hide4[i].SetActive(false);
             }
         }
-        if (CutscenesController.cus112 == 0)
+        if (CutscenesController.cus131 == 0)
         {
             for (int i = 0; i < Hide5.Length; i++)
             {
@@ -1556,7 +1555,7 @@ public class SynthesizeSystem : MonoBehaviour
         {
             SceneManager.LoadScene("Cutscenes");
         }
-        if (CutscenesController.cus113 == 0 && CutscenesController.cus112 == 1 && ContainerController.OmnipotentBoundary >= 2 && OmnipotentBoundaryCut == true)
+        if (CutscenesController.cus132 == 0 && CutscenesController.cus131 == 1 && ContainerController.OmnipotentBoundary >= 2 && OmnipotentBoundaryCut == true)
         {
             SceneManager.LoadScene("Cutscenes");
         }

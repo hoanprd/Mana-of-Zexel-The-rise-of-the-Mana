@@ -84,6 +84,10 @@ public class CutscenesTrigger : MonoBehaviour
             {
                 SceneManager.LoadScene("Cutscenes");
             }
+            else if (CutscenesController.cus78 == 0 && CutscenesController.cus77 == 1 && Player.MapIndex == 10)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
             else if (CutscenesController.cus79 == 0 && CutscenesController.cus78 == 1 && Player.MapIndex == 10)
             {
                 SceneManager.LoadScene("Cutscenes");
@@ -130,23 +134,23 @@ public class CutscenesTrigger : MonoBehaviour
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus114 == 0 && CutscenesController.cus113 == 1 && Player.MapIndex == 3)
+            else if (CutscenesController.cus133 == 0 && CutscenesController.cus132 == 1 && Player.MapIndex == 3)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus115 == 0 && CutscenesController.cus114 == 1 && Player.MapIndex == 7)
+            else if (CutscenesController.cus134 == 0 && CutscenesController.cus133 == 1 && Player.MapIndex == 7)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus116 == 0 && CutscenesController.cus115 == 1 && Player.MapIndex == 11)
+            else if (CutscenesController.cus135 == 0 && CutscenesController.cus134 == 1 && Player.MapIndex == 11)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus117 == 0 && CutscenesController.cus116 == 1 && Player.MapIndex == 11)
+            else if (CutscenesController.cus136 == 0 && CutscenesController.cus135 == 1 && Player.MapIndex == 11)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus118 == 0 && CutscenesController.cus117 == 1 && Player.MapIndex == 11)
+            else if (CutscenesController.cus137 == 0 && CutscenesController.cus136 == 1 && Player.MapIndex == 11)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
