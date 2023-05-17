@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class CutInfernoDesert : MonoBehaviour
 {
-    public GameObject CutTrigger1, CutTrigger2, CutTrigger3, CutTrigger4, CutTrigger5, CutTrigger6;
+    public GameObject CutTrigger1, CutTrigger2, CutTrigger3, CutTrigger4, CutTrigger5, CutTrigger6, InfernoDesertLake;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (CutscenesController.cus127 == 1)
+        {
+            InfernoDesertLake.SetActive(true);
+        }
+
         if (CutscenesController.cus37 == 0)
         {
             CutTrigger2.SetActive(false);
