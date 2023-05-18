@@ -84,53 +84,65 @@ public class CutscenesTrigger : MonoBehaviour
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus78 == 0 && CutscenesController.cus77 == 1 && Player.MapIndex == 10)
+            else if (CutscenesController.cus77 == 0 && CutscenesController.cus76 == 1 && Player.MapIndex == 8)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus79 == 0 && CutscenesController.cus78 == 1 && Player.MapIndex == 10)
+            else if (CutscenesController.cus78 == 0 && CutscenesController.cus77 == 1 && Player.MapIndex == 9)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus81 == 0 && CutscenesController.cus80 == 1 && Player.MapIndex == 9)
+            else if (CutscenesController.cus81 == 0 && CutscenesController.cus80 == 1 && Player.MapIndex == 2)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus82 == 0 && CutscenesController.cus81 == 1 && ContainerController.ManaCoreIceVayne > 0 && Player.MapIndex == 9)
+            else if (CutscenesController.cus86 == 0 && CutscenesController.cus85 == 1 && Player.MapIndex == 9)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus84 == 0 && CutscenesController.cus83 == 1 && ContainerController.FireManaGenerator > 0 && Player.MapIndex == 9)
-            {
-                CutscenesController.cus84FIndex = 1;
-                SceneManager.LoadScene("Cutscenes");
-            }
-            else if (CutscenesController.cus85 == 0 && CutscenesController.cus83 == 1 && ContainerController.IceManaGenerator > 0 && Player.MapIndex == 9)
-            {
-                CutscenesController.cus85FIndex = 1;
-                SceneManager.LoadScene("Cutscenes");
-            }
-            else if (CutscenesController.cus86 == 0 && CutscenesController.cus85 == 1 && Player.MapIndex == 7)
+            else if (CutscenesController.cus87 == 0 && CutscenesController.cus86 == 1 && ContainerController.ManaCoreIceVayne > 0 && Player.MapIndex == 9)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus90 == 0 && CutscenesController.cus89 == 1 && Player.MapIndex == 3)
+            else if (CutscenesController.cus89 == 0 && CutscenesController.cus88 == 1 && ContainerController.FireManaGenerator > 0 && Player.MapIndex == 8)
+            {
+                CutscenesController.cus89FIndex = 1;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus90 == 0 && CutscenesController.cus88 == 1 && ContainerController.IceManaGenerator > 0 && Player.MapIndex == 9)
+            {
+                CutscenesController.cus90FIndex = 1;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus91 == 0 && CutscenesController.cus90 == 1 && Player.MapIndex == 7)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus94 == 0 && CutscenesController.cus93 == 1 && Player.MapIndex == 12)
+            else if (CutscenesController.cus95 == 0 && CutscenesController.cus94 == 1 && Player.MapIndex == 3)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus100 == 0 && CutscenesController.cus99 == 1 && Player.MapIndex == 3)
+            else if (CutscenesController.cus99 == 0 && CutscenesController.cus98 == 1 && Player.MapIndex == 12)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus108 == 0 && CutscenesController.cus107 == 1 && Player.MapIndex == 3)
+            else if (CutscenesController.cus105 == 0 && CutscenesController.cus104 == 1 && Player.MapIndex == 3)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus110 == 0 && CutscenesController.cus109 == 1 && Player.MapIndex == 12)
+            else if (CutscenesController.cus120 == 0 && CutscenesController.cus119 == 1 && Player.MapIndex == 9)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus123 == 0 && CutscenesController.cus122 == 1 && Player.MapIndex == 3)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus124 == 0 && CutscenesController.cus123 == 1 && Player.MapIndex == 2)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus126 == 0 && CutscenesController.cus125 == 1 && Player.MapIndex == 3)
             {
                 SceneManager.LoadScene("Cutscenes");
             }

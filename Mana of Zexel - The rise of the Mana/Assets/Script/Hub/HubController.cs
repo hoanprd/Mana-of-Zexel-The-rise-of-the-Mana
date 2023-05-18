@@ -424,88 +424,136 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus78 == 0)
             QT.text = "Go to the village chief Alasa in the village of inferno ice to convince him of the restoration of the land of alta inferno to remove the conflict";
         else if (CutscenesController.cus79 == 0)
-            QT.text = "Bring four elixir potions to alta inferno to proceed with the revival of the land";
+            QT.text = "Let's go to the land in alta inferno to see the situation, the location of alta inferno to the west of inferno volcano and inferno ice";
         else if (CutscenesController.cus80 == 0)
-            QT.text = "";
+            QT.text = "The land was covered by dark magic, Mr. Lance may know about the legend of the purification potion, so go back to the tavern to inquire";
         else if (CutscenesController.cus81 == 0)
-            QT.text = "Find the village chief Alasa who is deep in the ice cave in inferno ice";
+            QT.text = "Find the source of purification water in the wishing forest";
         else if (CutscenesController.cus82 == 0)
-            QT.text = "Let's clone Zexel's ice mana core and replace it in the ice cave inferno ice";
+            QT.text = "Craft and give mana water special back pain medicine";
         else if (CutscenesController.cus83 == 0)
-            QT.text = "Let's go back to Mr.'s tavern. Lance in Zexel town, Vayne has an idea";
+            QT.text = "Use purification water to make purification potions and revive the land of alta inferno";
         else if (CutscenesController.cus84 == 0)
-            QT.text = "Synthesize generators and collectors of elemental mana and place them in two caves in the land of inferno volcano, inferno ice";
+            QT.text = "Use the magic purification potion and the four potion elixir potions to revive the land of alta inferno";
         else if (CutscenesController.cus85 == 0)
-            QT.text = "Synthesize generators and collectors of elemental mana and place them in two caves in the land of inferno volcano, inferno ice";
+            QT.text = "";
         else if (CutscenesController.cus86 == 0)
-            QT.text = "Go to the mana temple to find the gods about Zexel's two mana cores";
+            QT.text = "Find the village chief Alasa who is deep in the ice cave in inferno ice";
         else if (CutscenesController.cus87 == 0)
-            QT.text = "Let's proceed to Zexel gate and proceed to open the gate";
+            QT.text = "Let's clone Zexel's ice mana core and replace it in the ice cave inferno ice";
         else if (CutscenesController.cus88 == 0)
-            QT.text = "Let's go inside the temple of Zexel";
+            QT.text = "Let's go back to Mr.'s tavern. Lance in Zexel town, Vayne has an idea";
         else if (CutscenesController.cus89 == 0)
-            QT.text = "Hurry back to Mr. Lance to find a way to heal Alia's wound";
+            QT.text = "Synthesize generators and collectors of elemental mana and place them in two caves in the land of inferno volcano, inferno ice";
         else if (CutscenesController.cus90 == 0)
-            QT.text = "Head to the village southwest of the inferno desert to find a healer who can eliminate dark magic";
+            QT.text = "Synthesize generators and collectors of elemental mana and place them in two caves in the land of inferno volcano, inferno ice";
         else if (CutscenesController.cus91 == 0)
-            QT.text = "Let's take Mrs. Meru back to the tavern in Zexel town";
+            QT.text = "Go to the mana temple to find the gods about Zexel's two mana cores";
         else if (CutscenesController.cus92 == 0)
-            QT.text = "Let's collect the ingredients for Mrs. Meru to make the potion. Nature grass: 4, Red mana slime: 4, Blue mana slime: 4, Scorpion venom: 4";
+            QT.text = "Let's proceed to Zexel gate and proceed to open the gate";
         else if (CutscenesController.cus93 == 0)
-            QT.text = "Go to Orina's grocery store to inquire about dragon mana scales information";
-        else if (CutscenesController.cus94 == 0)
-            QT.text = "Head to the mana cliff southwest of the inferno desert village to search for the mana dragon";
-        else if (CutscenesController.cus95 == 0)
-            QT.text = "";
-        else if (CutscenesController.cus96 == 0)
-            QT.text = "Let's return to the tavern in Zexel town with the mana dragon scales collected";
-        else if (CutscenesController.cus97 == 0)
-            QT.text = "Let's take a walk around town waiting for Alia to get better";
-        else if (CutscenesController.cus98 == 0)
-            QT.text = "Let's go back to the tavern to take a break";
-        else if (CutscenesController.cus99 == 0)
-            QT.text = "Let's escort Mrs. Meru back to the village inferno desert";
-        else if (CutscenesController.cus100 == 0)
-            QT.text = "Let's escort Mrs. Meru back to the village inferno desert";
-        else if (CutscenesController.cus101 == 0)
-            QT.text = "Let's return to the tavern in Zexel town to rest and discuss the next strategy";
-        else if (CutscenesController.cus102 == 0)
-            QT.text = "The whole party wants to become stronger so stop by the Heerium to buy new equipment";
-        else if (CutscenesController.cus103 == 0)
-            QT.text = "Find the materials needed so that Heerium can craft powerful new equipment. Fire ore: 3, Red mana crystal: 3, Ice ore: 3, Blue mana crystal: 3, Mana dust: 3";
-        else if (CutscenesController.cus104 == 0)
-            QT.text = "Stop by Orina's place to find out new items";
-        else if (CutscenesController.cus105 == 0)
-            QT.text = "Defeat the iron golem in the wishing forest to test your team's new strength";
-        else if (CutscenesController.cus106 == 0)
-            QT.text = "The inferno beast is back in alta inferno, go there and stop its destruction";
-        else if (CutscenesController.cus107 == 0)
-            QT.text = "Let's return to Zexel town to prepare for the battle with Zane";
-        else if (CutscenesController.cus108 == 0)
-            QT.text = "Let's return to Zexel town to prepare for the battle with Zane";
-        else if (CutscenesController.cus109 == 0)
-            QT.text = "Defeat all the monsters and protect the people of Zexel town";
-        else if (CutscenesController.cus110 == 0)
-            QT.text = "Come to the mana temple to hear the messages of the mana gods";
-        else if (CutscenesController.cus111 == 0)
             QT.text = "Let's go inside the temple of Zexel";
+        else if (CutscenesController.cus94 == 0)
+            QT.text = "Hurry back to Mr. Lance to find a way to heal Alia's wound";
+        else if (CutscenesController.cus95 == 0)
+            QT.text = "Head to the village southwest of the inferno desert to find a healer who can eliminate dark magic";
+        else if (CutscenesController.cus96 == 0)
+            QT.text = "Let's take Mrs. Meru back to the tavern in Zexel town";
+        else if (CutscenesController.cus97 == 0)
+            QT.text = "Let's collect the ingredients for Mrs. Meru to make the potion. Nature grass: 4, Red mana slime: 4, Blue mana slime: 4, Scorpion venom: 4";
+        else if (CutscenesController.cus98 == 0)
+            QT.text = "Go to Orina's grocery store to inquire about dragon mana scales information";
+        else if (CutscenesController.cus99 == 0)
+            QT.text = "Head to the mana cliff southwest of the inferno desert village to search for the mana dragon";
+        else if (CutscenesController.cus100 == 0)
+            QT.text = "";
+        else if (CutscenesController.cus101 == 0)
+            QT.text = "Let's return to the tavern in Zexel town with the mana dragon scales collected";
+        else if (CutscenesController.cus102 == 0)
+            QT.text = "Let's take a walk around town waiting for Alia to get better";
+        else if (CutscenesController.cus103 == 0)
+            QT.text = "Let's go back to the tavern to take a break";
+        else if (CutscenesController.cus104 == 0)
+            QT.text = "Let's escort Mrs. Meru back to the village inferno desert";
+        else if (CutscenesController.cus105 == 0)
+            QT.text = "Let's escort Mrs. Meru back to the village inferno desert";
+        else if (CutscenesController.cus106 == 0)
+            QT.text = "Let's return to the tavern in Zexel town to rest and discuss the next strategy";
+        else if (CutscenesController.cus107 == 0)
+            QT.text = "The whole party wants to become stronger so stop by the Heerium to buy new equipment";
+        else if (CutscenesController.cus108 == 0)
+            QT.text = "Find the materials needed so that Heerium can craft powerful new equipment. Fire ore: 3, Red mana crystal: 3, Ice ore: 3, Blue mana crystal: 3, Mana dust: 3";
+        else if (CutscenesController.cus109 == 0)
+            QT.text = "Stop by Orina's place to find out new items";
+        else if (CutscenesController.cus110 == 0)
+            QT.text = "Defeat the iron golem in the wishing forest to test your team's new strength";
+        else if (CutscenesController.cus111 == 0)
+            QT.text = "The inferno beast is back in alta inferno, go there and stop its destruction";
         else if (CutscenesController.cus112 == 0)
-            QT.text = "Enter the room of truth located on the right hand side of the temple of Zexel";
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
         else if (CutscenesController.cus113 == 0)
-            QT.text = "Zane is behind the main door of the temple of Zexel, stop his evil plot and prepare for the final battle";
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
         else if (CutscenesController.cus114 == 0)
-            QT.text = "";
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
         else if (CutscenesController.cus115 == 0)
-            QT.text = "";
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
         else if (CutscenesController.cus116 == 0)
-            QT.text = "";
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
         else if (CutscenesController.cus117 == 0)
-            QT.text = "";
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
         else if (CutscenesController.cus118 == 0)
-            QT.text = "";
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
         else if (CutscenesController.cus119 == 0)
-            QT.text = "";
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
         else if (CutscenesController.cus120 == 0)
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
+        else if (CutscenesController.cus121 == 0)
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
+        else if (CutscenesController.cus122 == 0)
+            QT.text = "Let's return to Zexel town to prepare for the battle with Zane";
+        else if (CutscenesController.cus123 == 0)
+            QT.text = "Follow Jesca to the village of Inferno desert to learn about the village situation";
+        else if (CutscenesController.cus124 == 0)
+            QT.text = "Let's go to Maria's old house in the Wishing forest to find the mana detector";
+        else if (CutscenesController.cus125 == 0)
+            QT.text = "Let's repair the mana detector from the old one you just found";
+        else if (CutscenesController.cus126 == 0)
+            QT.text = "Head to the village of Inferno desert to use the detector";
+        else if (CutscenesController.cus127 == 0)
+            QT.text = "You need to use 3 Ultra bombs to dig up the lake area";
+        else if (CutscenesController.cus128 == 0)
+            QT.text = "";
+        else if (CutscenesController.cus129 == 0)
+            QT.text = "";
+        else if (CutscenesController.cus130 == 0)
+            QT.text = "Let's return to Zexel town to prepare for the battle with Zane";
+        else if (CutscenesController.cus131 == 0)
+            QT.text = "Defeat all the monsters and protect the people of Zexel town";
+        else if (CutscenesController.cus132 == 0)
+            QT.text = "Make a barrier that covers Zexel town to protect everyone in the village";
+        else if (CutscenesController.cus133 == 0)
+            QT.text = "Come to the village in Inferno desert to use the barrier to protect everyone";
+        else if (CutscenesController.cus134 == 0)
+            QT.text = "Come to the mana temple to hear the messages of the mana gods";
+        else if (CutscenesController.cus135 == 0)
+            QT.text = "Let's go inside the temple of Zexel";
+        else if (CutscenesController.cus136 == 0)
+            QT.text = "Enter the room of truth located on the right hand side of the temple of Zexel";
+        else if (CutscenesController.cus137 == 0)
+            QT.text = "Zane is behind the main door of the temple of Zexel, stop his evil plot and prepare for the final battle";
+        else if (CutscenesController.cus138 == 0)
+            QT.text = "";
+        else if (CutscenesController.cus139 == 0)
+            QT.text = "";
+        else if (CutscenesController.cus140 == 0)
+            QT.text = "The final battle is over, let's return to Zexel town";
+        else if (CutscenesController.cus141 == 0)
+            QT.text = "It's time to hand over Sicxalon's soul to the Mana gods at the Mana temple";
+        else if (CutscenesController.cus142 == 0)
+            QT.text = "Let's return to Zexel town and rest at the tavern until tomorrow";
+        else if (CutscenesController.cus143 == 0)
+            QT.text = "Time to leave Zexel town, go back to wishing hill";
+        else if (CutscenesController.cus144 == 0)
             QT.text = "";
     }
     public void Back1()
