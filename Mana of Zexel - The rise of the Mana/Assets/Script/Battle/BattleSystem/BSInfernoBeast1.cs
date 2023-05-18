@@ -853,11 +853,11 @@ public class BSInfernoBeast1 : MonoBehaviour
         ContainerController.LoadingOpen = true;
         HubController.BusyHub = false;
 
-        if (CutscenesController.cus80 == 0 && CutscenesController.cus79 == 1)
+        if (CutscenesController.cus85 == 0 && CutscenesController.cus84 == 1)
         {
             SceneManager.LoadScene("Cutscenes");
         }
-        else if (CutscenesController.cus106 == 0 && CutscenesController.cus105 == 1)
+        else if (CutscenesController.cus111 == 0 && CutscenesController.cus110 == 1)
         {
             SceneManager.LoadScene("Cutscenes");
         }

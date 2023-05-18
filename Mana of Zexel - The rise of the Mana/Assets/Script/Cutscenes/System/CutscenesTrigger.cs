@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CutscenesTrigger : MonoBehaviour
 {
     public static int PorridgeSyn, BomSyn;
-    public static int GolemnKill, GolemnKillP2, GoblinKillP2, InfernoScorpionKill, InfernoScorpionKillP2, IceFangKill;
+    public static int GolemnKill, GolemnKillP2, GoblinKillP2, InfernoScorpionKill, InfernoScorpionKillP2, IceFangKill, IceFangKill2;
 
     // Start is called before the first frame update
     void Start()
@@ -93,6 +93,10 @@ public class CutscenesTrigger : MonoBehaviour
                 SceneManager.LoadScene("Cutscenes");
             }
             else if (CutscenesController.cus81 == 0 && CutscenesController.cus80 == 1 && Player.MapIndex == 2)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus84 == 0 && CutscenesController.cus83 == 1 && Player.MapIndex == 10)
             {
                 SceneManager.LoadScene("Cutscenes");
             }

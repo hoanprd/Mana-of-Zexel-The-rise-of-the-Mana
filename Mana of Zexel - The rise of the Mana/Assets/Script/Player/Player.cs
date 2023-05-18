@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public GameObject show2;
     public Text show3;
     public GameObject show4;
-    private bool heal, tqz, mqz, alasaqz, asilaqz, klener, ManaGenerator, FireManaGenerator, IceManaGenerator;
+    private bool heal, tqz, mqz, alasaqz, asilaqz, klener, ManaGenerator, FireManaGenerator, IceManaGenerator, InfernoVillagersHelp;
     public static int MapIndex;
     public AudioSource FootStep;
     Vector2 movement;
@@ -296,39 +296,39 @@ public class Player : MonoBehaviour
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus74 == 0 && CutscenesController.cus73 == 1)
+            else if (CutscenesController.cus80 == 0 && CutscenesController.cus79 == 1)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus83 == 0 && CutscenesController.cus82 == 1)
+            else if (CutscenesController.cus88 == 0 && CutscenesController.cus87 == 1)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus89 == 0 && CutscenesController.cus88 == 1)
+            else if (CutscenesController.cus94 == 0 && CutscenesController.cus93 == 1)
             {
-                SceneManager.LoadScene("Cutscenes");
-            }
-            else if (CutscenesController.cus91 == 0 && CutscenesController.cus90 == 1)
-            {
-                SceneManager.LoadScene("Cutscenes");
-            }
-            else if (CutscenesController.cus92 == 0 && CutscenesController.cus91 == 1 && ContainerController.NatureGrass >= 4 && ContainerController.RedManaSlimeBall >= 4 && ContainerController.BlueManaSlimeBall >= 4 && ContainerController.ScorpionVenom >= 4)
-            {
-                ContainerController.NatureGrass -= 4;
-                ContainerController.RedManaSlimeBall -= 4;
-                ContainerController.BlueManaSlimeBall -= 4;
-                ContainerController.VenomKiller -= 4;
                 SceneManager.LoadScene("Cutscenes");
             }
             else if (CutscenesController.cus96 == 0 && CutscenesController.cus95 == 1)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus98 == 0 && CutscenesController.cus97 == 1)
+            else if (CutscenesController.cus97 == 0 && CutscenesController.cus96 == 1 && ContainerController.NatureGrass >= 4 && ContainerController.RedManaSlimeBall >= 4 && ContainerController.BlueManaSlimeBall >= 4 && ContainerController.ScorpionVenom >= 4)
             {
+                ContainerController.NatureGrass -= 4;
+                ContainerController.RedManaSlimeBall -= 4;
+                ContainerController.BlueManaSlimeBall -= 4;
+                ContainerController.ScorpionVenom -= 4;
                 SceneManager.LoadScene("Cutscenes");
             }
             else if (CutscenesController.cus101 == 0 && CutscenesController.cus100 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus103 == 0 && CutscenesController.cus102 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus106 == 0 && CutscenesController.cus105 == 1)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
@@ -348,7 +348,7 @@ public class Player : MonoBehaviour
             {
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus97 == 0 && CutscenesController.cus96 == 1)
+            else if (CutscenesController.cus102 == 0 && CutscenesController.cus101 == 1)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
@@ -429,7 +429,7 @@ public class Player : MonoBehaviour
                 GoblinTrigger4.despawn = false;
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus93 == 0 && CutscenesController.cus92 == 1)
+            else if (CutscenesController.cus98 == 0 && CutscenesController.cus97 == 1)
             {
                 MapController.ZexelTownToGroceryStore = true;
                 GoblinTrigger1.despawn = false;
@@ -438,7 +438,7 @@ public class Player : MonoBehaviour
                 GoblinTrigger4.despawn = false;
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus104 == 0 && CutscenesController.cus103 == 1)
+            else if (CutscenesController.cus109 == 0 && CutscenesController.cus108 == 1)
             {
                 MapController.ZexelTownToGroceryStore = true;
                 GoblinTrigger1.despawn = false;
@@ -502,7 +502,7 @@ public class Player : MonoBehaviour
                 ContainerController.FireOre -= 4;
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus102 == 0 && CutscenesController.cus101 == 1)
+            else if (CutscenesController.cus107 == 0 && CutscenesController.cus106 == 1)
             {
                 MapController.ZexelTownToWeaponStore = true;
                 GoblinTrigger1.despawn = false;
@@ -511,7 +511,7 @@ public class Player : MonoBehaviour
                 GoblinTrigger4.despawn = false;
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus103 == 0 && CutscenesController.cus102 == 1 && ContainerController.FireOre >= 3 && ContainerController.RedManaCrystal >= 3 && ContainerController.IceOre >= 3 && ContainerController.BlueManaCrystal >= 3 && ContainerController.ManaDust >= 3)
+            else if (CutscenesController.cus108 == 0 && CutscenesController.cus107 == 1 && ContainerController.FireOre >= 3 && ContainerController.RedManaCrystal >= 3 && ContainerController.IceOre >= 3 && ContainerController.BlueManaCrystal >= 3 && ContainerController.ManaDust >= 3)
             {
                 ContainerController.FireOre -= 3;
                 ContainerController.RedManaCrystal -= 3;
@@ -587,7 +587,7 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("WishingForestToZexelTown"))
         {
-            if (CutscenesController.cus105 == 0 && CutscenesController.cus104 == 1)
+            if (CutscenesController.cus110 == 0 && CutscenesController.cus109 == 1)
             {
                 MapController.WishingForestToZexelTown = true;
                 GolemnTrigger1.despawn = false;
@@ -624,7 +624,7 @@ public class Player : MonoBehaviour
                 MapIndex = 3;
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus99 == 0 && CutscenesController.cus98 == 1)
+            else if (CutscenesController.cus104 == 0 && CutscenesController.cus103 == 1)
             {
                 MapController.ZexelTownToInfernoDesert = true;
                 GoblinTrigger1.despawn = false;
@@ -716,7 +716,7 @@ public class Player : MonoBehaviour
                 MapIndex = 4;
                 SceneManager.LoadScene("Cutscenes");
             }
-            else if (CutscenesController.cus87 == 0 && CutscenesController.cus86 == 1)
+            else if (CutscenesController.cus92 == 0 && CutscenesController.cus91 == 1)
             {
                 MapController.InfernoDesertToZexelGate = true;
                 InfernoScorpionTrigger1.despawn = false;
@@ -849,24 +849,22 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("InfernoVolcanoToInfernoDesert"))
         {
+            FireFangTrigger1.despawn = false;
+            FireFangTrigger2.despawn = false;
+            FireFangTrigger3.despawn = false;
+            FireFangTrigger4.despawn = false;
+            MapController.InfernoVolcanoToInfernoDesert = true;
+            MapIndex = 3;
             if (CutscenesController.cus107 == 0 && CutscenesController.cus106 == 1)
             {
-                FireFangTrigger1.despawn = false;
-                FireFangTrigger2.despawn = false;
-                FireFangTrigger3.despawn = false;
-                FireFangTrigger4.despawn = false;
-                MapController.InfernoVolcanoToInfernoDesert = true;
-                MapIndex = 3;
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else if (CutscenesController.cus122 == 0 && CutscenesController.cus121 == 1)
+            {
                 SceneManager.LoadScene("Cutscenes");
             }
             else
             {
-                FireFangTrigger1.despawn = false;
-                FireFangTrigger2.despawn = false;
-                FireFangTrigger3.despawn = false;
-                FireFangTrigger4.despawn = false;
-                MapController.InfernoVolcanoToInfernoDesert = true;
-                MapIndex = 3;
                 SceneManager.LoadScene("Inferno desert");
             }
         }
@@ -907,7 +905,18 @@ public class Player : MonoBehaviour
         {
             MapController.InfernoIceToInfernoDesert = true;
             MapIndex = 3;
-            SceneManager.LoadScene("Inferno desert");
+            IceFangTrigger1.despawn = false;
+            IceFangTrigger2.despawn = false;
+            IceFangTrigger3.despawn = false;
+            IceFangTrigger4.despawn = false;
+            if (CutscenesController.cus122 == 0 && CutscenesController.cus121 == 1)
+            {
+                SceneManager.LoadScene("Cutscenes");
+            }
+            else
+            {
+                SceneManager.LoadScene("Inferno desert");
+            }
         }
         if (collision.CompareTag("InfernoDesertToManaCliff"))
         {
@@ -1023,6 +1032,16 @@ public class Player : MonoBehaviour
                 show1.text = "You can go to this area yet!";
                 Invoke("delay1", 2f);
             }
+            else if (CutscenesController.cus79 == 0 && CutscenesController.cus78 == 1)
+            {
+                MapController.InfernoVolcanoToAltaInferno = true;
+                FireFangTrigger1.despawn = false;
+                FireFangTrigger2.despawn = false;
+                FireFangTrigger3.despawn = false;
+                FireFangTrigger4.despawn = false;
+                MapIndex = 10;
+                SceneManager.LoadScene("Cutscenes");
+            }
             else
             {
                 MapController.InfernoVolcanoToAltaInferno = true;
@@ -1096,7 +1115,7 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("ZexelGateToZexelTemple"))
         {
-            if (CutscenesController.cus88 == 0 && CutscenesController.cus87 == 1)
+            if (CutscenesController.cus93 == 0 && CutscenesController.cus92 == 1)
             {
                 MapController.ZexelGateToZexelTemple = true;
                 MapIndex = 11;

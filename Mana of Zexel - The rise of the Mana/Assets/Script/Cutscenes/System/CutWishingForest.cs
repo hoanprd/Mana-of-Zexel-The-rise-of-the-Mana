@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CutWishingForest : MonoBehaviour
 {
-    public GameObject CutTrigger1, CutTrigger2;
+    public GameObject CutTrigger1, CutTrigger2, ManaWater;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +21,11 @@ public class CutWishingForest : MonoBehaviour
         else if (CutscenesController.cus15 == 1)
         {
             Destroy(CutTrigger2);
+        }
+
+        if (CutscenesController.cus81 == 0 || (CutscenesController.cus81 == 1 && CutscenesController.cus82 == 1))
+        {
+            Destroy(ManaWater);
         }
     }
 }

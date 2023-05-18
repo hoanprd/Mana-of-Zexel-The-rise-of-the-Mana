@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CutInfernoIce : MonoBehaviour
 {
-    public GameObject CutTrigger1, CutTrigger2, CutTrigger3;
+    public GameObject CutTrigger1, CutTrigger2, CutTrigger3, VillagerMissing;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +29,11 @@ public class CutInfernoIce : MonoBehaviour
         if (CutscenesController.cus78 == 1)
         {
             Destroy(CutTrigger3);
+        }
+
+        if (CutscenesController.cus111 == 1 && CutscenesController.cus121 == 0)
+        {
+            Destroy(VillagerMissing);
         }
     }
 }

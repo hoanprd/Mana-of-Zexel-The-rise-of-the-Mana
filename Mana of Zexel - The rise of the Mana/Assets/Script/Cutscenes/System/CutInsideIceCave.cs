@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CutInsideIceCave : MonoBehaviour
 {
-    public GameObject CutTrigger1, CutTrigger2, CutTrigger3, CutTrigger4, ManaCoreIceZexel, ManaCoreIceVayne;
+    public GameObject CutTrigger1, CutTrigger2, CutTrigger3, CutTrigger4, ManaCoreIceZexel, ManaCoreIceVayne, VillagerMissing;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +44,15 @@ public class CutInsideIceCave : MonoBehaviour
         if (CutscenesController.cus82 == 1)
         {
             Destroy(CutTrigger3);
+        }
+
+        if (CutscenesController.cus119 == 1 && CutscenesController.cus121 == 0)
+        {
+            VillagerMissing.SetActive(true);
+        }
+        else
+        {
+            Destroy(VillagerMissing);
         }
     }
 }

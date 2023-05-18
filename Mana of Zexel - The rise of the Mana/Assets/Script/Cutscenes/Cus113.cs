@@ -73,6 +73,7 @@ public class Cus113 : MonoBehaviour
         else if (tang >= 9)
         {
             CutscenesController.cus113 = 1;
+            ContainerController.Wood -= 10;
             ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("Inferno volcano");
         }
@@ -84,6 +85,7 @@ public class Cus113 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus113 = 1;
+        ContainerController.Wood -= 10;
         ContainerController.LoadingOpen = true;
         if (tang < 8)
         {

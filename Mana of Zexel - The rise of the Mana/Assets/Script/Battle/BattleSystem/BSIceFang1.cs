@@ -913,6 +913,10 @@ public class BSIceFang1 : MonoBehaviour
         {
             CutscenesTrigger.IceFangKill += 1;
         }
+        else if (CutscenesController.cus117 == 0 && CutscenesController.cus116 == 1)
+        {
+            CutscenesTrigger.IceFangKill2 += 1;
+        }
         SceneManager.LoadScene("Inferno ice");
     }
     public void CheckP1Die()

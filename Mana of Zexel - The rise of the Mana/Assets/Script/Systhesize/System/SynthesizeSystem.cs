@@ -1555,6 +1555,10 @@ public class SynthesizeSystem : MonoBehaviour
         {
             SceneManager.LoadScene("Cutscenes");
         }
+        if (CutscenesController.cus83 == 0 && CutscenesController.cus82 == 1)
+        {
+            SceneManager.LoadScene("Cutscenes");
+        }
         if (CutscenesController.cus132 == 0 && CutscenesController.cus131 == 1 && ContainerController.OmnipotentBoundary >= 2 && OmnipotentBoundaryCut == true)
         {
             SceneManager.LoadScene("Cutscenes");

@@ -845,7 +845,7 @@ public class BSManaDragon1 : MonoBehaviour
         ContainerController.LoadingOpen = true;
         HubController.BusyHub = false;
 
-        if (CutscenesController.cus95 == 0 && CutscenesController.cus94 == 1)
+        if (CutscenesController.cus100 == 0 && CutscenesController.cus99 == 1)
         {
             SceneManager.LoadScene("Cutscenes");
         }

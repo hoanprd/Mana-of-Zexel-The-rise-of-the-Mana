@@ -117,6 +117,7 @@ public class Cus127 : MonoBehaviour
         else if (tang >= 16)
         {
             CutscenesController.cus127 = 1;
+            ContainerController.UltraBom -= 2;
             ContainerController.LoadingOpen = true;
             SceneManager.LoadScene("BSInfernoScorpion 1");
         }
@@ -128,6 +129,7 @@ public class Cus127 : MonoBehaviour
     public void Pressskip()
     {
         CutscenesController.cus127 = 1;
+        ContainerController.UltraBom -= 2;
         ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("BSInfernoScorpion 1");
     }
