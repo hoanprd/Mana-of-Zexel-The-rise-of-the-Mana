@@ -855,11 +855,7 @@ public class Player : MonoBehaviour
             FireFangTrigger4.despawn = false;
             MapController.InfernoVolcanoToInfernoDesert = true;
             MapIndex = 3;
-            if (CutscenesController.cus107 == 0 && CutscenesController.cus106 == 1)
-            {
-                SceneManager.LoadScene("Cutscenes");
-            }
-            else if (CutscenesController.cus122 == 0 && CutscenesController.cus121 == 1)
+            if (CutscenesController.cus122 == 0 && CutscenesController.cus121 == 1)
             {
                 SceneManager.LoadScene("Cutscenes");
             }
@@ -1095,6 +1091,16 @@ public class Player : MonoBehaviour
                 show2.SetActive(true);
                 show1.text = "You can go to this area yet!";
                 Invoke("delay1", 2f);
+            }
+            else if (CutscenesController.cus79 == 0 && CutscenesController.cus78 == 1)
+            {
+                MapController.InfernoIceToAltaInferno = true;
+                IceFangTrigger1.despawn = false;
+                IceFangTrigger2.despawn = false;
+                IceFangTrigger3.despawn = false;
+                IceFangTrigger4.despawn = false;
+                MapIndex = 10;
+                SceneManager.LoadScene("Alta inferno");
             }
             else
             {

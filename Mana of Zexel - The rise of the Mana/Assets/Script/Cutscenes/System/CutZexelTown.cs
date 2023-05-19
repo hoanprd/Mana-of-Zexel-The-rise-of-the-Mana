@@ -20,12 +20,12 @@ public class CutZexelTown : MonoBehaviour
             Destroy(CutTrigger1);
             Destroy(CutTrigger2);
         }
-        else if (CutscenesController.cus34 == 1)
+        if (CutscenesController.cus34 == 1)
         {
             Destroy(CutTrigger3);
         }
 
-        if (CutscenesController.cus110 == 1)
+        if (CutscenesController.cus130 == 1)
         {
             for (int i = 0; i < VillageHome.Length; i++)
             {

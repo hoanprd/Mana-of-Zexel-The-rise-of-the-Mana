@@ -27298,6 +27298,7 @@ Transform:
   - {fileID: 1588996529}
   - {fileID: 841680036}
   - {fileID: 1219628409}
+  - {fileID: 1027799510}
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -101059,7 +101060,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -13.136185, y: -2}
+  m_Offset: {x: -22.636185, y: -5.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -101070,7 +101071,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 28.72763, y: 15}
+  m_Size: {x: 9.727631, y: 6}
   m_EdgeRadius: 0
 --- !u!1 &884682898
 GameObject:
@@ -101660,6 +101661,77 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1027799509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1027799510}
+  - component: {fileID: 1027799512}
+  - component: {fileID: 1027799511}
+  m_Layer: 0
+  m_Name: CutQuestZone (6)
+  m_TagString: Cutscense
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1027799510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027799509}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -109.43036, y: 38.913544, z: -155.93828}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 339209890}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1027799511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027799509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 593087343a0b74547973e0046120d35a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1027799512
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027799509}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -22.136185, y: -6.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.727631, y: 6}
+  m_EdgeRadius: 0
 --- !u!1 &1048879643
 GameObject:
   m_ObjectHideFlags: 0
@@ -101964,7 +102036,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -13.136185, y: -2}
+  m_Offset: {x: -21.636185, y: -6}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -101975,7 +102047,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 28.72763, y: 15}
+  m_Size: {x: 11.727631, y: 7}
   m_EdgeRadius: 0
 --- !u!1 &1268145968
 GameObject:
@@ -102540,6 +102612,7 @@ MonoBehaviour:
   CutTrigger4: {fileID: 1588996528}
   CutTrigger5: {fileID: 841680035}
   CutTrigger6: {fileID: 1219628408}
+  CutTrigger7: {fileID: 1027799509}
   InfernoDesertLake: {fileID: 601913765}
 --- !u!1 &1346016487
 GameObject:
@@ -103438,7 +103511,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -22.136185, y: -8}
+  m_Offset: {x: -22.136185, y: -6.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -103449,7 +103522,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.727631, y: 5}
+  m_Size: {x: 10.727631, y: 8}
   m_EdgeRadius: 0
 --- !u!1001 &1815647400
 PrefabInstance:

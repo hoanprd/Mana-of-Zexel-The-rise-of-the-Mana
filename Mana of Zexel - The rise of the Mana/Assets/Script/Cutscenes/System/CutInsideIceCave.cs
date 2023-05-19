@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CutInsideIceCave : MonoBehaviour
 {
-    public GameObject CutTrigger1, CutTrigger2, CutTrigger3, CutTrigger4, ManaCoreIceZexel, ManaCoreIceVayne, VillagerMissing;
+    public GameObject CutTrigger1, CutTrigger2, CutTrigger3, CutTrigger4, CutTrigger5, ManaCoreIceZexel, ManaCoreIceVayne, VillagerMissing;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (CutscenesController.cus81 == 0)
+        if (CutscenesController.cus86 == 0)
         {
             ManaCoreIceZexel.SetActive(true);
             ManaCoreIceVayne.SetActive(false);
@@ -24,26 +24,38 @@ public class CutInsideIceCave : MonoBehaviour
         {
             CutTrigger2.SetActive(false);
         }
-        if (CutscenesController.cus81 == 0)
+        if (CutscenesController.cus86 == 0)
         {
             CutTrigger3.SetActive(false);
         }
-        if (CutscenesController.cus82 == 0)
+        if (CutscenesController.cus87 == 0)
         {
             CutTrigger4.SetActive(false);
+        }
+        if (CutscenesController.cus90 == 0)
+        {
+            CutTrigger5.SetActive(false);
         }
 
         if (CutscenesController.cus69 == 1)
         {
             Destroy(CutTrigger1);
         }
-        if (CutscenesController.cus81 == 1)
+        if (CutscenesController.cus86 == 1)
         {
             Destroy(CutTrigger2);
         }
-        if (CutscenesController.cus82 == 1)
+        if (CutscenesController.cus87 == 1)
         {
             Destroy(CutTrigger3);
+        }
+        if (CutscenesController.cus90 == 1)
+        {
+            Destroy(CutTrigger4);
+        }
+        if (CutscenesController.cus120 == 1)
+        {
+            Destroy(CutTrigger5);
         }
 
         if (CutscenesController.cus119 == 1 && CutscenesController.cus121 == 0)

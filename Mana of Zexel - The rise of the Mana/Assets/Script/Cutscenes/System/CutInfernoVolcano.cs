@@ -19,7 +19,7 @@ public class CutInfernoVolcano : MonoBehaviour
         {
             Destroy(CutTrigger1);
         }
-        else if (CutscenesController.cus61 == 1)
+        if (CutscenesController.cus61 == 1)
         {
             Destroy(CutTrigger2);
         }

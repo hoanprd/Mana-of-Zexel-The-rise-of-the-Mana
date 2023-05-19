@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CutInfernoDesert : MonoBehaviour
 {
-    public GameObject CutTrigger1, CutTrigger2, CutTrigger3, CutTrigger4, CutTrigger5, CutTrigger6, InfernoDesertLake;
+    public GameObject CutTrigger1, CutTrigger2, CutTrigger3, CutTrigger4, CutTrigger5, CutTrigger6, CutTrigger7, InfernoDesertLake;
 
     // Start is called before the first frame update
     void Start()
@@ -22,17 +22,21 @@ public class CutInfernoDesert : MonoBehaviour
         {
             CutTrigger3.SetActive(false);
         }
-        if (CutscenesController.cus90 == 0)
+        if (CutscenesController.cus95 == 0)
         {
             CutTrigger4.SetActive(false);
         }
-        if (CutscenesController.cus100 == 0)
+        if (CutscenesController.cus105 == 0)
         {
             CutTrigger5.SetActive(false);
         }
-        if (CutscenesController.cus108 == 0)
+        if (CutscenesController.cus123 == 0)
         {
             CutTrigger6.SetActive(false);
+        }
+        if (CutscenesController.cus126 == 0)
+        {
+            CutTrigger7.SetActive(false);
         }
 
         if (CutscenesController.cus37 == 1)
@@ -43,21 +47,25 @@ public class CutInfernoDesert : MonoBehaviour
         {
             Destroy(CutTrigger2);
         }
-        if (CutscenesController.cus90 == 1)
+        if (CutscenesController.cus95 == 1)
         {
             Destroy(CutTrigger3);
         }
-        if (CutscenesController.cus100 == 1)
+        if (CutscenesController.cus105 == 1)
         {
             Destroy(CutTrigger4);
         }
-        if (CutscenesController.cus108 == 1)
+        if (CutscenesController.cus123 == 1)
         {
             Destroy(CutTrigger5);
         }
-        if (CutscenesController.cus114 == 1)
+        if (CutscenesController.cus126 == 1)
         {
             Destroy(CutTrigger6);
+        }
+        if (CutscenesController.cus133 == 1)
+        {
+            Destroy(CutTrigger7);
         }
     }
 }

@@ -9,22 +9,26 @@ public class CutZexelTemple : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (CutscenesController.cus111 == 0)
+        if (CutscenesController.cus135 == 0)
         {
             CutTrigger2.SetActive(false);
         }
-        if (CutscenesController.cus112 == 0)
+        if (CutscenesController.cus136 == 0)
         {
             CutTrigger3.SetActive(false);
         }
 
-        if (CutscenesController.cus111 == 1)
+        if (CutscenesController.cus135 == 1)
         {
             Destroy(CutTrigger1);
         }
-        if (CutscenesController.cus112 == 1)
+        if (CutscenesController.cus136 == 1)
         {
             Destroy(CutTrigger2);
+        }
+        if (CutscenesController.cus137 == 1)
+        {
+            Destroy(CutTrigger3);
         }
     }
 }

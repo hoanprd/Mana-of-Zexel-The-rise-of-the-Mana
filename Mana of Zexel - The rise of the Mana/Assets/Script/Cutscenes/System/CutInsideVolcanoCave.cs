@@ -45,5 +45,9 @@ public class CutInsideVolcanoCave : MonoBehaviour
         {
             Destroy(CutTrigger2);
         }
+        if (CutscenesController.cus89 == 1)
+        {
+            Destroy(CutTrigger3);
+        }
     }
 }
