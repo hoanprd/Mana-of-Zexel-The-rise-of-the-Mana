@@ -11929,9 +11929,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1555103273
+  m_SortingLayer: 2
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: ea53c4a1c1dd4f94ea11ff8c174d272a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -13046,8 +13046,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1555103273
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 7ac22c2a804f35d4fa52b1a5d4bb4f53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -17109,8 +17109,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1555103273
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: bc2d0733e22de6c4a978aa4a1253882f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -17151,6 +17151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anithief: {fileID: 1478883635}
+  Root: {fileID: 1478883637}
+  Enemy: {fileID: 1478883637}
   yes_thief: 0
 --- !u!1 &1486448214
 GameObject:
@@ -18492,18 +18494,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VayneAttackFX: {fileID: 1323334989}
-  AliaAttackFX: {fileID: 0}
+  AliaAttackFX: {fileID: 1323334989}
   MariaAttackFX: {fileID: 510923441}
   VayneSkill1FX: {fileID: 814437113}
   VayneSkill2FX: {fileID: 622514479}
   VayneSkill3FX: {fileID: 426198538}
-  AliaSkill1FX: {fileID: 0}
-  AliaSkill2FX: {fileID: 0}
-  AliaSkill3FX: {fileID: 0}
+  AliaSkill1FX: {fileID: 1323334989}
+  AliaSkill2FX: {fileID: 1323334989}
+  AliaSkill3FX: {fileID: 1323334989}
   MariaSkill1FX: {fileID: 664366902}
   MariaSkill2FX: {fileID: 100132770}
   MariaSkill3FX: {fileID: 1369401533}
-  EnemyAttackFX: {fileID: 0}
+  EnemyAttackFX: {fileID: 1323334989}
   HealFX: {fileID: 1534014576}
   ExplosionFX: {fileID: 1437610387}
   OpenCloseFX: {fileID: 1233833690}
@@ -18556,6 +18558,11 @@ MonoBehaviour:
   RLItemUI: {fileID: 1817658661}
   P2TurnStatusObject: {fileID: 61137822}
   P3TurnStatusObject: {fileID: 556564896}
+  CharOff:
+  - {fileID: 1227732187}
+  - {fileID: 1478883634}
+  - {fileID: 2082233349}
+  - {fileID: 1087531950}
   P1TurnStatus: {fileID: 433250395}
   P2TurnStatus: {fileID: 1178618745}
   P3TurnStatus: {fileID: 390064260}
@@ -18599,7 +18606,6 @@ MonoBehaviour:
   show1: 0
   show2: 0
   show3: 0
-  E1Hit: 0
   P2Available: 0
   P3Available: 0
   UseItemIndex: 0
@@ -21089,8 +21095,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1555103273
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 73eb2dd99b121f04d9e6cca72cb19636, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -45,6 +45,8 @@ public class BSThief1 : MonoBehaviour
     public GameObject P2TurnStatusObject;
     public GameObject P3TurnStatusObject;
 
+    public GameObject[] CharOff;
+
     public Text P1TurnStatus;
     public Text P2TurnStatus;
     public Text P3TurnStatus;
@@ -89,7 +91,7 @@ public class BSThief1 : MonoBehaviour
     public int show1 = 0;
     public int show2 = 0;
     public int show3 = 0;
-    public int E1Hit;
+    public static int E1Hit;
     public bool P2Available, P3Available;
     public int UseItemIndex, ChooseSkillIndex;
 
@@ -125,6 +127,8 @@ public class BSThief1 : MonoBehaviour
         {
             MariaSkill3Hide.SetActive(false);
         }
+
+        E1Hit = 0;
 
         a1 = Global.SpeedP1 / 10;
         a2 = Global.SpeedP2 / 10;
@@ -239,6 +243,7 @@ public class BSThief1 : MonoBehaviour
                 tb.yes_thief = 1;
                 EDamage.color = Color.red;
                 EDamage.text = "-" + Global.DamageE1;
+                E1AttackTarget();
                 Invoke("delayE1", 1f);
                 dem = 0;
             }
@@ -1051,8 +1056,6 @@ public class BSThief1 : MonoBehaviour
         CheckE1Die();
         ShowP1Panel(false);
 
-        E1AttackTarget();
-
         EDamage.text = "";
         aE1 -= 1;
         dem_turn += 1;
@@ -1268,6 +1271,11 @@ public class BSThief1 : MonoBehaviour
     }
     void delayCheckE1Die1()
     {
+        for (int i = 0; i < CharOff.Length; i++)
+        {
+            CharOff[i].SetActive(false);
+        }
+
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }
