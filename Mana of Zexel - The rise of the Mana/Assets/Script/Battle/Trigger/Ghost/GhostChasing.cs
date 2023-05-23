@@ -25,14 +25,14 @@ public class GhostChasing : MonoBehaviour
             if (Enemy.transform.position.x > Player.transform.position.x)
             {
                 //GhostRotate.SetTrigger("e10left");
-                GhostRotate.SetBool("e10left", true);
-                GhostRotate.SetBool("e10right", false);
+                GhostRotate.SetBool("e11left", true);
+                GhostRotate.SetBool("e11right", false);
             }
             else if (Enemy.transform.position.x < Player.transform.position.x)
             {
                 //GhostRotate.SetTrigger("e10right");
-                GhostRotate.SetBool("e10left", false);
-                GhostRotate.SetBool("e10right", true);
+                GhostRotate.SetBool("e11left", false);
+                GhostRotate.SetBool("e11right", true);
             }
 
             Enemy.transform.position = Vector2.MoveTowards(Enemy.transform.position, Player.transform.position, speed * Time.deltaTime);
@@ -42,14 +42,14 @@ public class GhostChasing : MonoBehaviour
             if (Enemy.transform.position.x > Player.transform.position.x)
             {
                 //GhostRotate.SetTrigger("e10right");
-                GhostRotate.SetBool("e10left", false);
-                GhostRotate.SetBool("e10right", true);
+                GhostRotate.SetBool("e11left", false);
+                GhostRotate.SetBool("e11right", true);
             }
             else if (Enemy.transform.position.x < Player.transform.position.x)
             {
                 //GhostRotate.SetTrigger("e10left");
-                GhostRotate.SetBool("e10left", true);
-                GhostRotate.SetBool("e10right", false);
+                GhostRotate.SetBool("e11left", true);
+                GhostRotate.SetBool("e11right", false);
             }
 
             Enemy.transform.position = Vector2.MoveTowards(Enemy.transform.position, OldPosition, speed * Time.deltaTime);

@@ -14,7 +14,7 @@ public class BSBlueManaSlime1 : MonoBehaviour
 
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
-    public GameObject VayneSkill2Effect, VayneSkill3Effect, MariaSkill3Effect;
+    public GameObject VayneAttackEffect, VayneSkill2Effect, VayneSkill3Effect, MariaAttackEffect, MariaSkill3Effect;
     public GameObject showr2;
     public GameObject P1_panel;
     public GameObject P2_panel;
@@ -89,7 +89,7 @@ public class BSBlueManaSlime1 : MonoBehaviour
     public int show1 = 0;
     public int show2 = 0;
     public int show3 = 0;
-    public int E9Hit;
+    public static int E9Hit;
     public bool P2Available, P3Available;
     public int UseItemIndex, ChooseSkillIndex;
 
@@ -126,6 +126,7 @@ public class BSBlueManaSlime1 : MonoBehaviour
             MariaSkill3Hide.SetActive(false);
         }
 
+        E9Hit = 0;
 
         a1 = Global.SpeedP1 / 10;
         a2 = Global.SpeedP2 / 10;
@@ -240,6 +241,7 @@ public class BSBlueManaSlime1 : MonoBehaviour
                 BMSB.yes_BlueManaSlime = 1;
                 EDamage.color = Color.red;
                 EDamage.text = "-" + Global.DamageE9;
+                E9AttackTarget();
                 Invoke("delayE9", 1f);
                 dem = 0;
             }
@@ -255,12 +257,14 @@ public class BSBlueManaSlime1 : MonoBehaviour
                 a1 = Global.SpeedP1 / 10;
                 a2 = Global.SpeedP2 / 10;
                 aE9 = Global.SpeedE9 / 10;
+                dem = 1;
             }
             else if (P2Available == false)
             {
                 a1 = Global.SpeedP1 / 10;
                 a3 = Global.SpeedP3 / 10;
                 aE9 = Global.SpeedE9 / 10;
+                dem = 1;
             }
             else
             {
@@ -268,7 +272,18 @@ public class BSBlueManaSlime1 : MonoBehaviour
                 a2 = Global.SpeedP2 / 10;
                 a3 = Global.SpeedP3 / 10;
                 aE9 = Global.SpeedE9 / 10;
+                dem = 1;
             }
+        }
+        FixBug();
+    }
+
+    public void FixBug()
+    {
+        if (a1 == 0 && a3 != 0 && Global.CurHPP3 <= 0)
+        {
+            a3 = 0;
+            aE9 = 0;
         }
     }
 
@@ -388,6 +403,7 @@ public class BSBlueManaSlime1 : MonoBehaviour
     public void PressAttack()
     {
         VayneAttackFX.Play();
+        VayneAttackEffect.SetActive(true);
         pb.yes1 = 1;
         show1 = 1;
         PDamage.color = Color.red;
@@ -408,6 +424,7 @@ public class BSBlueManaSlime1 : MonoBehaviour
     public void PressAttackP3()
     {
         MariaAttackFX.Play();
+        MariaAttackEffect.SetActive(true);
         pb.yes5 = 1;
         show3 = 1;
         PDamage.color = Color.red;
@@ -1054,7 +1071,19 @@ public class BSBlueManaSlime1 : MonoBehaviour
         CheckE9Die();
         ShowP1Panel(false);
 
-        E9AttackTarget();
+        //E9AttackTarget();
+        if (E9Hit == 1 && Global.CurHPP1 > 0)
+        {
+            Global.CurHPP1 -= Global.DamageE9;
+        }
+        else if (E9Hit == 2 && Global.CurHPP2 > 0)
+        {
+            Global.CurHPP2 -= Global.DamageE9;
+        }
+        else if (E9Hit == 3 && Global.CurHPP3 > 0)
+        {
+            Global.CurHPP3 -= Global.DamageE9;
+        }
 
         EDamage.text = "";
         aE9 -= 1;
@@ -1076,21 +1105,28 @@ public class BSBlueManaSlime1 : MonoBehaviour
         }
 
         if (E9Hit == 1 && Global.CurHPP1 > 0)
-            Global.CurHPP1 -= Global.DamageE9;
+        {
+            pb.p1YesGetHit = 1;
+        }
         else if (E9Hit == 1 && Global.CurHPP1 <= 0)
             E9AttackTarget();
         else if (E9Hit == 2 && Global.CurHPP2 > 0)
-            Global.CurHPP2 -= Global.DamageE9;
+        {
+            pb.p2YesGetHit = 1;
+        }
         else if (E9Hit == 2 && Global.CurHPP2 <= 0)
             E9AttackTarget();
         else if (E9Hit == 3 && Global.CurHPP3 > 0)
-            Global.CurHPP3 -= Global.DamageE9;
+        {
+            pb.p3YesGetHit = 1;
+        }
         else if (E9Hit == 3 && Global.CurHPP3 <= 0)
             E9AttackTarget();
     }
     void delayP1PressAttack()
     {
         ShowP1Panel(false);
+        VayneAttackEffect.SetActive(false);
         Global.HPE9 -= Global.DamageP1;
         PDamage.text = "";
         a1 -= 1;
@@ -1111,6 +1147,7 @@ public class BSBlueManaSlime1 : MonoBehaviour
     void delayP3PressAttack()
     {
         ShowP3Panel(false);
+        MariaAttackEffect.SetActive(false);
         Global.HPE9 -= Global.DamageP3;
         PDamage.text = "";
         a3 -= 1;

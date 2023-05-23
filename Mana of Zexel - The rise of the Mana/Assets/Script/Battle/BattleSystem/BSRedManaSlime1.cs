@@ -14,7 +14,7 @@ public class BSRedManaSlime1 : MonoBehaviour
 
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
-    public GameObject VayneSkill2Effect, VayneSkill3Effect, MariaSkill3Effect;
+    public GameObject VayneAttackEffect, VayneSkill2Effect, VayneSkill3Effect, MariaAttackEffect, MariaSkill3Effect;
     public GameObject showr2;
     public GameObject P1_panel;
     public GameObject P2_panel;
@@ -90,7 +90,7 @@ public class BSRedManaSlime1 : MonoBehaviour
     public int show1 = 0;
     public int show2 = 0;
     public int show3 = 0;
-    public int E7Hit;
+    public static int E7Hit;
     public bool P2Available, P3Available;
     public int UseItemIndex, ChooseSkillIndex;
 
@@ -131,6 +131,8 @@ public class BSRedManaSlime1 : MonoBehaviour
         a2 = Global.SpeedP2 / 10;
         a3 = Global.SpeedP3 / 10;
         aE7 = Global.SpeedE7 / 10;
+
+        E7Hit = 0;
 
         if (Global.CurHPP1 <= 0)
             a1 = 0;
@@ -240,6 +242,7 @@ public class BSRedManaSlime1 : MonoBehaviour
                 RMSB.yes_RedManaSlime = 1;
                 EDamage.color = Color.red;
                 EDamage.text = "-" + Global.DamageE7;
+                E7AttackTarget();
                 Invoke("delayE7", 1f);
                 dem = 0;
             }
@@ -255,12 +258,14 @@ public class BSRedManaSlime1 : MonoBehaviour
                 a1 = Global.SpeedP1 / 10;
                 a2 = Global.SpeedP2 / 10;
                 aE7 = Global.SpeedE7 / 10;
+                dem = 1;
             }
             else if (P2Available == false)
             {
                 a1 = Global.SpeedP1 / 10;
                 a3 = Global.SpeedP3 / 10;
                 aE7 = Global.SpeedE7 / 10;
+                dem = 1;
             }
             else
             {
@@ -268,7 +273,18 @@ public class BSRedManaSlime1 : MonoBehaviour
                 a2 = Global.SpeedP2 / 10;
                 a3 = Global.SpeedP3 / 10;
                 aE7 = Global.SpeedE7 / 10;
+                dem = 1;
             }
+        }
+        FixBug();
+    }
+
+    public void FixBug()
+    {
+        if (a1 == 0 && a3 != 0 && Global.CurHPP3 <= 0)
+        {
+            a3 = 0;
+            aE7 = 0;
         }
     }
 
@@ -388,6 +404,7 @@ public class BSRedManaSlime1 : MonoBehaviour
     public void PressAttack()
     {
         VayneAttackFX.Play();
+        VayneAttackEffect.SetActive(true);
         pb.yes1 = 1;
         show1 = 1;
         PDamage.color = Color.red;
@@ -408,6 +425,7 @@ public class BSRedManaSlime1 : MonoBehaviour
     public void PressAttackP3()
     {
         MariaAttackFX.Play();
+        MariaAttackEffect.SetActive(true);
         pb.yes5 = 1;
         show3 = 1;
         PDamage.color = Color.red;
@@ -1055,7 +1073,14 @@ public class BSRedManaSlime1 : MonoBehaviour
         CheckE7Die();
         ShowP1Panel(false);
 
-        E7AttackTarget();
+        if (E7Hit == 1 && Global.CurHPP1 > 0)
+            Global.CurHPP1 -= Global.DamageE7;
+        else if (E7Hit == 2 && Global.CurHPP2 > 0)
+            Global.CurHPP2 -= Global.DamageE7;
+        else if (E7Hit == 3 && Global.CurHPP3 > 0)
+            Global.CurHPP3 -= Global.DamageE7;
+
+        //E7AttackTarget();
 
         EDamage.text = "";
         aE7 -= 1;
@@ -1077,21 +1102,28 @@ public class BSRedManaSlime1 : MonoBehaviour
         }
 
         if (E7Hit == 1 && Global.CurHPP1 > 0)
-            Global.CurHPP1 -= Global.DamageE7;
+        {
+            pb.p1YesGetHit = 1;
+        }
         else if (E7Hit == 1 && Global.CurHPP1 <= 0)
             E7AttackTarget();
         else if (E7Hit == 2 && Global.CurHPP2 > 0)
-            Global.CurHPP2 -= Global.DamageE7;
+        {
+            pb.p2YesGetHit = 1;
+        }
         else if (E7Hit == 2 && Global.CurHPP2 <= 0)
             E7AttackTarget();
         else if (E7Hit == 3 && Global.CurHPP3 > 0)
-            Global.CurHPP3 -= Global.DamageE7;
+        {
+            pb.p3YesGetHit = 1;
+        }
         else if (E7Hit == 3 && Global.CurHPP3 <= 0)
             E7AttackTarget();
     }
     void delayP1PressAttack()
     {
         ShowP1Panel(false);
+        VayneAttackEffect.SetActive(false);
         Global.HPE7 -= Global.DamageP1;
         PDamage.text = "";
         a1 -= 1;
@@ -1112,6 +1144,7 @@ public class BSRedManaSlime1 : MonoBehaviour
     void delayP3PressAttack()
     {
         ShowP3Panel(false);
+        MariaAttackEffect.SetActive(false);
         Global.HPE7 -= Global.DamageP3;
         PDamage.text = "";
         a3 -= 1;

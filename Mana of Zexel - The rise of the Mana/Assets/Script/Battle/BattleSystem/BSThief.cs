@@ -13,7 +13,7 @@ public class BSThief : MonoBehaviour
     public AudioSource VayneAttackFX, VayneSkill1FX, VayneSkill2FX, VayneSkill3FX, HealFX, OpenCloseFX;
 
     public GameObject Item_panel;
-    public GameObject HPHealingEffP1, MPHealingEffP1;
+    public GameObject VayneAttackEffect, HPHealingEffP1, MPHealingEffP1;
     public GameObject showr2;
     public GameObject P1_panel;
     public GameObject Win_panel;
@@ -107,6 +107,7 @@ public class BSThief : MonoBehaviour
                 if (dem == 1)
                 {
                     tb.yes_thief = 1;
+                    pb.p1YesGetHit = 1;
                     EDamage.color = Color.red;
                     EDamage.text = "-" + Global.DamageE1;
                     Invoke("delayE1", 1f);
@@ -128,6 +129,7 @@ public class BSThief : MonoBehaviour
                 if (dem == 1)
                 {
                     tb.yes_thief = 1;
+                    pb.p1YesGetHit = 1;
                     EDamage.color = Color.red;
                     EDamage.text = "-" + Global.DamageE1;
                     Invoke("delayE1", 1f);
@@ -163,6 +165,7 @@ public class BSThief : MonoBehaviour
     public void PressAttack()
     {
         VayneAttackFX.Play();
+        VayneAttackEffect.SetActive(true);
         pb.yes1 = 1;
         show = 1;
         ShowP1Panel(false);
@@ -448,6 +451,7 @@ public class BSThief : MonoBehaviour
     void delayP1PressAttack()
     {
         ShowP1Panel(false);
+        VayneAttackEffect.SetActive(false);
         Global.HPE1 -= Global.DamageP1;
         HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
         MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;

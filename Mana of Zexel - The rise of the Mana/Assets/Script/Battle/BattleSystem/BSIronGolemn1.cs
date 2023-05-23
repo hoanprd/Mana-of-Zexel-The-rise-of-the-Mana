@@ -14,7 +14,7 @@ public class BSIronGolemn1 : MonoBehaviour
 
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
-    public GameObject VayneSkill2Effect, VayneSkill3Effect, MariaSkill3Effect;
+    public GameObject VayneAttackEffect, VayneSkill2Effect, VayneSkill3Effect, MariaAttackEffect, MariaSkill3Effect;
     public GameObject showr2;
     public GameObject P1_panel;
     public GameObject P2_panel;
@@ -254,12 +254,14 @@ public class BSIronGolemn1 : MonoBehaviour
                 a1 = Global.SpeedP1 / 10;
                 a2 = Global.SpeedP2 / 10;
                 aBE4 = Global.SpeedBE4 / 10;
+                dem = 3;
             }
             else if (P2Available == false)
             {
                 a1 = Global.SpeedP1 / 10;
                 a3 = Global.SpeedP3 / 10;
                 aBE4 = Global.SpeedE9 / 10;
+                dem = 3;
             }
             else
             {
@@ -267,7 +269,18 @@ public class BSIronGolemn1 : MonoBehaviour
                 a2 = Global.SpeedP2 / 10;
                 a3 = Global.SpeedP3 / 10;
                 aBE4 = Global.SpeedBE4 / 10;
+                dem = 3;
             }
+        }
+        FixBug();
+    }
+
+    public void FixBug()
+    {
+        if (a1 == 0 && a3 != 0 && Global.CurHPP3 <= 0)
+        {
+            a3 = 0;
+            aBE4 = 0;
         }
     }
 
@@ -387,6 +400,7 @@ public class BSIronGolemn1 : MonoBehaviour
     public void PressAttack()
     {
         VayneAttackFX.Play();
+        VayneAttackEffect.SetActive(true);
         pb.yes1 = 1;
         show1 = 1;
         PDamage.color = Color.red;
@@ -407,6 +421,7 @@ public class BSIronGolemn1 : MonoBehaviour
     public void PressAttackP3()
     {
         MariaAttackFX.Play();
+        MariaAttackEffect.SetActive(true);
         pb.yes5 = 1;
         show3 = 1;
         PDamage.color = Color.red;
@@ -1098,10 +1113,12 @@ public class BSIronGolemn1 : MonoBehaviour
         {
             if (BE4ANum <= 7)
             {
+                pb.p1YesGetHit = 1;
                 Global.CurHPP1 -= Global.DamageBE4;
             }
             else
             {
+                pb.p1YesGetHit = 1;
                 Global.CurHPP1 -= Global.DamageBE4 + ((Global.DamageBE4 * 100) / 100);
             }
         }
@@ -1111,10 +1128,12 @@ public class BSIronGolemn1 : MonoBehaviour
         {
             if (BE4ANum <= 7)
             {
+                pb.p2YesGetHit = 1;
                 Global.CurHPP2 -= Global.DamageBE4;
             }
             else
             {
+                pb.p2YesGetHit = 1;
                 Global.CurHPP2 -= Global.DamageBE4 + ((Global.DamageBE4 * 100) / 100);
             }
         }
@@ -1124,10 +1143,12 @@ public class BSIronGolemn1 : MonoBehaviour
         {
             if (BE4ANum <= 7)
             {
+                pb.p3YesGetHit = 1;
                 Global.CurHPP3 -= Global.DamageBE4;
             }
             else
             {
+                pb.p3YesGetHit = 1;
                 Global.CurHPP3 -= Global.DamageBE4 + ((Global.DamageBE4 * 100) / 100);
             }
         }
@@ -1170,6 +1191,7 @@ public class BSIronGolemn1 : MonoBehaviour
     void delayP1PressAttack()
     {
         ShowP1Panel(false);
+        VayneAttackEffect.SetActive(false);
         Global.HPBE4 -= Global.DamageP1;
         PDamage.text = "";
         a1 -= 1;
@@ -1190,6 +1212,7 @@ public class BSIronGolemn1 : MonoBehaviour
     void delayP3PressAttack()
     {
         ShowP3Panel(false);
+        MariaAttackEffect.SetActive(false);
         Global.HPBE4 -= Global.DamageP3;
         PDamage.text = "";
         a3 -= 1;

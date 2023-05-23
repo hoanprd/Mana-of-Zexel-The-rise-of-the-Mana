@@ -688,6 +688,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -87, y: -16, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 52
+      m_TileSpriteIndex: 52
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -85, y: -16, z: 0}
     second:
       serializedVersion: 2
@@ -8164,7 +8174,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 3e2e44e73be3be148a3a45eac69b560d, type: 2}
   - m_RefCount: 83
     m_Data: {fileID: 11400000, guid: 80e7b26ee7afebd4d82ef87884342011, type: 2}
-  - m_RefCount: 59
+  - m_RefCount: 60
     m_Data: {fileID: 11400000, guid: ca4ae038469faf443ac3bb25060119aa, type: 2}
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: 4893d303c1a5bf941b0878623fc5a481, type: 2}
@@ -8289,7 +8299,7 @@ Tilemap:
     m_Data: {fileID: -300810135, guid: be67918895741364fa1073a53aa9a9e5, type: 3}
   - m_RefCount: 83
     m_Data: {fileID: 672695942, guid: be67918895741364fa1073a53aa9a9e5, type: 3}
-  - m_RefCount: 59
+  - m_RefCount: 60
     m_Data: {fileID: 718504210, guid: be67918895741364fa1073a53aa9a9e5, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: 1078036434, guid: be67918895741364fa1073a53aa9a9e5, type: 3}
@@ -8310,7 +8320,7 @@ Tilemap:
   - m_RefCount: 5
     m_Data: {fileID: 2113841432, guid: be67918895741364fa1073a53aa9a9e5, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 739
+  - m_RefCount: 740
     m_Data:
       e00: 1
       e01: 0
@@ -8329,7 +8339,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 739
+  - m_RefCount: 740
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -28336,6 +28346,7 @@ GameObject:
   - component: {fileID: 508146736}
   - component: {fileID: 508146735}
   - component: {fileID: 508146738}
+  - component: {fileID: 508146739}
   m_Layer: 0
   m_Name: MainFlag
   m_TagString: Untagged
@@ -28456,6 +28467,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &508146739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508146734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0a23ba45f31d94c8dfc3ea986108a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  once: 0
+  IsReady: 0
+  show1: {fileID: 1815647402}
+  show2: {fileID: 1815647401}
 --- !u!1001 &517699523
 PrefabInstance:
   m_ObjectHideFlags: 0

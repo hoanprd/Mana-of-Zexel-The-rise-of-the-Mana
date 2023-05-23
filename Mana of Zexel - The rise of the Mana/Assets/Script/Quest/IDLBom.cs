@@ -10,7 +10,7 @@ public class IDLBom : MonoBehaviour
     public bool IsReady;
 
     public Text show1;
-    public GameObject show2, VillagerDialog;
+    public GameObject show2;
 
     // Start is called before the first frame update
     void Start()

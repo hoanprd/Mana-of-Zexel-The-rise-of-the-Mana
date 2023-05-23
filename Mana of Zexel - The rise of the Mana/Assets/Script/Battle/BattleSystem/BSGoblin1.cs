@@ -14,7 +14,7 @@ public class BSGoblin1 : MonoBehaviour
 
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
-    public GameObject VayneSkill2Effect, VayneSkill3Effect, MariaSkill3Effect;
+    public GameObject VayneAttackEffect, VayneSkill2Effect, VayneSkill3Effect, MariaAttackEffect, MariaSkill3Effect;
     public GameObject showr2;
     public GameObject P1_panel;
     public GameObject P2_panel;
@@ -89,9 +89,10 @@ public class BSGoblin1 : MonoBehaviour
     private int show1 = 0;
     public int show2 = 0;
     public int show3 = 0;
-    public int E2Hit;
+    public static int E2Hit;
     public bool P2Available, P3Available;
     public int UseItemIndex, ChooseSkillIndex;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -129,6 +130,8 @@ public class BSGoblin1 : MonoBehaviour
         a2 = Global.SpeedP2 / 10;
         a3 = Global.SpeedP3 / 10;
         aE2 = Global.SpeedE2 / 10;
+
+        E2Hit = 0;
 
         if (CutscenesController.cus12 == 0)
         {
@@ -230,6 +233,7 @@ public class BSGoblin1 : MonoBehaviour
                     GB.yes_goblin = 1;
                     EDamage.color = Color.red;
                     EDamage.text = "-" + Global.DamageE2;
+                    E2AttackTarget();
                     Invoke("delayE2", 1f);
                     dem = 0;
                 }
@@ -246,12 +250,14 @@ public class BSGoblin1 : MonoBehaviour
                 a1 = Global.SpeedP1 / 10;
                 a2 = Global.SpeedP2 / 10;
                 aE2 = Global.SpeedE2 / 10;
+                dem = 1;
             }
             else if (P2Available == false)
             {
                 a1 = Global.SpeedP1 / 10;
                 a3 = Global.SpeedP3 / 10;
                 aE2 = Global.SpeedE2 / 10;
+                dem = 1;
             }
             else
             {
@@ -259,7 +265,18 @@ public class BSGoblin1 : MonoBehaviour
                 a2 = Global.SpeedP2 / 10;
                 a3 = Global.SpeedP3 / 10;
                 aE2 = Global.SpeedE2 / 10;
+                dem = 1;
             }
+        }
+        FixBug();
+    }
+
+    public void FixBug()
+    {
+        if (a1 == 0 && a3 != 0 && Global.CurHPP3 <= 0)
+        {
+            a3 = 0;
+            aE2 = 0;
         }
     }
 
@@ -379,6 +396,7 @@ public class BSGoblin1 : MonoBehaviour
     public void PressAttack()
     {
         VayneAttackFX.Play();
+        VayneAttackEffect.SetActive(true);
         pb.yes1 = 1;
         show1 = 1;
         PDamage.color = Color.red;
@@ -399,6 +417,7 @@ public class BSGoblin1 : MonoBehaviour
     public void PressAttackP3()
     {
         MariaAttackFX.Play();
+        MariaAttackEffect.SetActive(true);
         pb.yes5 = 1;
         show3 = 1;
         PDamage.color = Color.red;
@@ -1060,7 +1079,16 @@ public class BSGoblin1 : MonoBehaviour
     {
         CheckE2Die();
         ShowP1Panel(false);
-        E2AttackTarget();
+
+        if (E2Hit == 1 && Global.CurHPP1 > 0)
+            Global.CurHPP1 -= Global.DamageE2;
+        else if (E2Hit == 2 && Global.CurHPP2 > 0)
+            Global.CurHPP2 -= Global.DamageE2;
+        else if (E2Hit == 3 && Global.CurHPP3 > 0)
+            Global.CurHPP3 -= Global.DamageE2;
+
+        //E2AttackTarget();
+
         EDamage.text = "";
 
         aE2 -= 1;
@@ -1083,15 +1111,21 @@ public class BSGoblin1 : MonoBehaviour
         }
 
         if (E2Hit == 1 && Global.CurHPP1 > 0)
-            Global.CurHPP1 -= Global.DamageE2;
+        {
+            pb.p1YesGetHit = 1;
+        }
         else if (E2Hit == 1 && Global.CurHPP1 <= 0)
             E2AttackTarget();
         else if (E2Hit == 2 && Global.CurHPP2 > 0)
-            Global.CurHPP2 -= Global.DamageE2;
+        {
+            pb.p2YesGetHit = 1;
+        }
         else if (E2Hit == 2 && Global.CurHPP2 <= 0)
             E2AttackTarget();
         else if (E2Hit == 3 && Global.CurHPP3 > 0)
-            Global.CurHPP3 -= Global.DamageE2;
+        {
+            pb.p3YesGetHit = 1;
+        }
         else if (E2Hit == 3 && Global.CurHPP3 <= 0)
             E2AttackTarget();
     }
@@ -1099,6 +1133,7 @@ public class BSGoblin1 : MonoBehaviour
     void delayP1PressAttack()
     {
         ShowP1Panel(false);
+        VayneAttackEffect.SetActive(false);
         Global.HPE2 -= Global.DamageP1;
         PDamage.text = "";
         a1 -= 1;
@@ -1119,6 +1154,7 @@ public class BSGoblin1 : MonoBehaviour
     void delayP3PressAttack()
     {
         ShowP3Panel(false);
+        MariaAttackEffect.SetActive(false);
         Global.HPE2 -= Global.DamageP3;
         PDamage.text = "";
         a3 -= 1;

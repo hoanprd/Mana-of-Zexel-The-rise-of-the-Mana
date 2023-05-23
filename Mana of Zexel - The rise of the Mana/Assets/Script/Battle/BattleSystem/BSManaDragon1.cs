@@ -14,7 +14,7 @@ public class BSManaDragon1 : MonoBehaviour
 
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
-    public GameObject VayneSkill2Effect, VayneSkill3Effect, MariaSkill3Effect;
+    public GameObject VayneAttackEffect, VayneSkill2Effect, VayneSkill3Effect, MariaAttackEffect, MariaSkill3Effect;
     public GameObject showr2;
     public GameObject P1_panel;
     public GameObject P2_panel;
@@ -123,7 +123,9 @@ public class BSManaDragon1 : MonoBehaviour
         a2 = Global.SpeedP2 / 10;
         a3 = Global.SpeedP3 / 10;
         aBE3 = Global.SpeedBE3 / 10;
+
         HPMPBarController.EIndex = 11;
+
         BreakDamageIndex = 0;
         BossSkillCharge = 0;
 
@@ -235,6 +237,7 @@ public class BSManaDragon1 : MonoBehaviour
                 a1 = Global.SpeedP1 / 10;
                 a3 = Global.SpeedP3 / 10;
                 aBE3 = Global.SpeedBE3 / 10;
+                dem = 1;
             }
             else
             {
@@ -242,7 +245,18 @@ public class BSManaDragon1 : MonoBehaviour
                 a2 = Global.SpeedP2 / 10;
                 a3 = Global.SpeedP3 / 10;
                 aBE3 = Global.SpeedBE3 / 10;
+                dem = 1;
             }
+        }
+        FixBug();
+    }
+
+    public void FixBug()
+    {
+        if (a1 == 0 && a3 != 0 && Global.CurHPP3 <= 0)
+        {
+            a3 = 0;
+            aBE3 = 0;
         }
     }
 
@@ -355,6 +369,8 @@ public class BSManaDragon1 : MonoBehaviour
     }
     public void PressAttack()
     {
+        VayneAttackFX.Play();
+        VayneAttackEffect.SetActive(true);
         pb.yes1 = 1;
         show1 = 1;
         PDamage.color = Color.red;
@@ -364,6 +380,7 @@ public class BSManaDragon1 : MonoBehaviour
     }
     public void PressAttackP2()
     {
+        AliaAttackFX.Play();
         pb.yes3 = 1;
         show2 = 1;
         PDamage.color = Color.red;
@@ -373,6 +390,8 @@ public class BSManaDragon1 : MonoBehaviour
     }
     public void PressAttackP3()
     {
+        MariaAttackFX.Play();
+        MariaAttackEffect.SetActive(true);
         pb.yes5 = 1;
         show3 = 1;
         PDamage.color = Color.red;
@@ -1082,10 +1101,12 @@ public class BSManaDragon1 : MonoBehaviour
         {
             if (BE3ANum <= 3)
             {
+                pb.p1YesGetHit = 1;
                 Global.CurHPP1 -= Global.DamageBE3;
             }
             else if (BE3ANum <= 5)
             {
+                pb.p1YesGetHit = 1;
                 Global.CurMPP1 -= 30;
                 if (Global.CurMPP1 < 0)
                     Global.CurMPP1 = 0;
@@ -1097,10 +1118,12 @@ public class BSManaDragon1 : MonoBehaviour
         {
             if (BE3ANum <= 3)
             {
+                pb.p2YesGetHit = 1;
                 Global.CurHPP2 -= Global.DamageBE3;
             }
             else if (BE3ANum <= 5)
             {
+                pb.p2YesGetHit = 1;
                 Global.CurMPP2 -= 30;
                 if (Global.CurMPP2 < 0)
                     Global.CurMPP2 = 0;
@@ -1112,10 +1135,12 @@ public class BSManaDragon1 : MonoBehaviour
         {
             if (BE3ANum <= 3)
             {
+                pb.p3YesGetHit = 1;
                 Global.CurHPP3 -= Global.DamageBE3;
             }
             else if (BE3ANum <= 5)
             {
+                pb.p3YesGetHit = 1;
                 Global.CurMPP3 -= 30;
                 if (Global.CurMPP3 < 0)
                     Global.CurMPP3 = 0;
@@ -1128,6 +1153,7 @@ public class BSManaDragon1 : MonoBehaviour
     void delayP1PressAttack()
     {
         ShowP1Panel(false);
+        VayneAttackEffect.SetActive(false);
         Global.HPBE3 -= Global.DamageP1;
         PDamage.text = "";
         a1 -= 1;
@@ -1148,6 +1174,7 @@ public class BSManaDragon1 : MonoBehaviour
     void delayP3PressAttack()
     {
         ShowP3Panel(false);
+        MariaAttackEffect.SetActive(false);
         Global.HPBE3 -= Global.DamageP3;
         PDamage.text = "";
         a3 -= 1;

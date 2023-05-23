@@ -14,7 +14,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
 
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
-    public GameObject VayneSkill2Effect, VayneSkill3Effect, MariaSkill3Effect;
+    public GameObject VayneAttackEffect, VayneSkill2Effect, VayneSkill3Effect, MariaAttackEffect, MariaSkill3Effect;
     public GameObject showr2;
     public GameObject P1_panel;
     public GameObject P2_panel;
@@ -90,7 +90,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
     private int show1 = 0;
     public int show2 = 0;
     public int show3 = 0;
-    public int E4Hit;
+    public static int E4Hit;
     public bool P2Available, P3Available;
     public int UseItemIndex, ChooseSkillIndex;
 
@@ -131,6 +131,8 @@ public class BSInfernoScorpion1 : MonoBehaviour
         a2 = Global.SpeedP2 / 10;
         a3 = Global.SpeedP3 / 10;
         aE4 = Global.SpeedE4 / 10;
+
+        E4Hit = 0;
 
         if (CutscenesController.cus12 == 0)
         {
@@ -206,6 +208,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
                 dem -= 1;
                 EDamage.color = Color.red;
                 EDamage.text = "-" + Global.DamageE4;
+                E4AttackTarget();
                 Invoke("delayE4", 1f);
                 Invoke("delayeE4attack2", 2f);
             }
@@ -246,12 +249,14 @@ public class BSInfernoScorpion1 : MonoBehaviour
                 a1 = Global.SpeedP1 / 10;
                 a2 = Global.SpeedP2 / 10;
                 aE4 = Global.SpeedE4 / 10;
+                dem = 2;
             }
             else if (P2Available == false)
             {
                 a1 = Global.SpeedP1 / 10;
                 a3 = Global.SpeedP3 / 10;
                 aE4 = Global.SpeedE9 / 10;
+                dem = 2;
             }
             else
             {
@@ -259,7 +264,18 @@ public class BSInfernoScorpion1 : MonoBehaviour
                 a2 = Global.SpeedP2 / 10;
                 a3 = Global.SpeedP3 / 10;
                 aE4 = Global.SpeedE4 / 10;
+                dem = 2;
             }
+        }
+        FixBug();
+    }
+
+    public void FixBug()
+    {
+        if (a1 == 0 && a3 != 0 && Global.CurHPP3 <= 0)
+        {
+            a3 = 0;
+            aE4 = 0;
         }
     }
 
@@ -379,6 +395,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
     public void PressAttack()
     {
         VayneAttackFX.Play();
+        VayneAttackEffect.SetActive(true);
         pb.yes1 = 1;
         show1 = 1;
         PDamage.color = Color.red;
@@ -399,6 +416,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
     public void PressAttackP3()
     {
         MariaAttackFX.Play();
+        MariaAttackEffect.SetActive(true);
         pb.yes5 = 1;
         show3 = 1;
         PDamage.color = Color.red;
@@ -1076,13 +1094,23 @@ public class BSInfernoScorpion1 : MonoBehaviour
             }
         }
     }
+
     void delayE4()
     {
         CheckE4Die();
         ShowP1Panel(false);
         ShowP2Panel(false);
         ShowP3Panel(false);
-        E4AttackTarget();
+
+        if (E4Hit == 1 && Global.CurHPP1 > 0)
+            Global.CurHPP1 -= Global.DamageE4;
+        else if (E4Hit == 2 && Global.CurHPP2 > 0)
+            Global.CurHPP2 -= Global.DamageE4;
+        else if (E4Hit == 3 && Global.CurHPP3 > 0)
+            Global.CurHPP3 -= Global.DamageE4;
+
+        //E4AttackTarget();
+
         EDamage.text = "";
 
         aE4 -= 1;
@@ -1105,15 +1133,21 @@ public class BSInfernoScorpion1 : MonoBehaviour
         }
 
         if (E4Hit == 1 && Global.CurHPP1 > 0)
-            Global.CurHPP1 -= Global.DamageE4;
+        {
+            pb.p1YesGetHit = 1;
+        }
         else if (E4Hit == 1 && Global.CurHPP1 <= 0)
             E4AttackTarget();
         else if (E4Hit == 2 && Global.CurHPP2 > 0)
-            Global.CurHPP2 -= Global.DamageE4;
+        {
+            pb.p2YesGetHit = 1;
+        }
         else if (E4Hit == 2 && Global.CurHPP2 <= 0)
             E4AttackTarget();
         else if (E4Hit == 3 && Global.CurHPP3 > 0)
-            Global.CurHPP3 -= Global.DamageE4;
+        {
+            pb.p3YesGetHit = 1;
+        }
         else if (E4Hit == 3 && Global.CurHPP3 <= 0)
             E4AttackTarget();
     }
@@ -1126,12 +1160,14 @@ public class BSInfernoScorpion1 : MonoBehaviour
             dem -= 1;
             EDamage.color = Color.red;
             EDamage.text = "-" + Global.DamageE4;
+            E4AttackTarget();
             Invoke("delayE4", 1f);
         }
     }
     void delayP1PressAttack()
     {
         ShowP1Panel(false);
+        VayneAttackEffect.SetActive(false);
         Global.HPE4 -= Global.DamageP1;
         PDamage.text = "";
         a1 -= 1;
@@ -1152,6 +1188,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
     void delayP3PressAttack()
     {
         ShowP3Panel(false);
+        MariaAttackEffect.SetActive(false);
         Global.HPE4 -= Global.DamageP3;
         PDamage.text = "";
         a3 -= 1;

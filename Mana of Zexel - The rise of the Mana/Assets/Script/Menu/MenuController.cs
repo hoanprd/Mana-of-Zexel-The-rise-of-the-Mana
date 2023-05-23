@@ -406,7 +406,7 @@ public class MenuController : MonoBehaviour
         SynthesizeSystem.ManaIceSynthesize = 100;
 
         SceneManager.LoadScene("Cutscenes");
-        //SceneManager.LoadScene("BSThief 1");
+        //SceneManager.LoadScene("BSInfernoBeast 1");
     }
 
     public void PressLoadGame()

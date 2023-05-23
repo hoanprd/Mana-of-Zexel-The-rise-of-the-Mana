@@ -14,7 +14,7 @@ public class BSInfernoBeast1 : MonoBehaviour
 
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
-    public GameObject VayneSkill2Effect, VayneSkill3Effect, MariaSkill3Effect;
+    public GameObject VayneAttackEffect, VayneSkill2Effect, VayneSkill3Effect, MariaAttackEffect, MariaSkill3Effect;
     public GameObject showr2;
 
     public GameObject P1_panel;
@@ -76,7 +76,7 @@ public class BSInfernoBeast1 : MonoBehaviour
     public int show1 = 0;
     public int show2 = 0;
     public int show3 = 0;
-    public int BE2Hit;
+    public static int BE2Hit;
     public int UseItemIndex, ChooseSkillIndex;
     public int BE2ANum, TurnIndex, BossSkillCharge, BossSkillEngage, BossSkillBreak, BeforeBreakSkillDamageCal, AfterBreakDamageCal, BreakDamageCal, BreakDamageIndex;
 
@@ -117,6 +117,8 @@ public class BSInfernoBeast1 : MonoBehaviour
         a2 = Global.SpeedP2 / 10;
         a3 = Global.SpeedP3 / 10;
         aBE2 = Global.SpeedBE2 / 10;
+
+        BE2Hit = 0;
 
         HPMPBarController.EIndex = 11;
         BreakDamageIndex = 0;
@@ -215,6 +217,17 @@ public class BSInfernoBeast1 : MonoBehaviour
             a2 = Global.SpeedP2 / 10;
             a3 = Global.SpeedP3 / 10;
             aBE2 = Global.SpeedBE2 / 10;
+            dem = 3;
+        }
+        FixBug();
+    }
+
+    public void FixBug()
+    {
+        if (a1 == 0 && a3 != 0 && Global.CurHPP3 <= 0)
+        {
+            a3 = 0;
+            aBE2 = 0;
         }
     }
 
@@ -326,6 +339,7 @@ public class BSInfernoBeast1 : MonoBehaviour
     public void PressAttack()
     {
         VayneAttackFX.Play();
+        VayneAttackEffect.SetActive(true);
         pb.yes1 = 1;
         show1 = 1;
         PDamage.color = Color.red;
@@ -346,6 +360,7 @@ public class BSInfernoBeast1 : MonoBehaviour
     public void PressAttackP3()
     {
         MariaAttackFX.Play();
+        MariaAttackEffect.SetActive(true);
         pb.yes5 = 1;
         show3 = 1;
         PDamage.color = Color.red;
@@ -769,11 +784,11 @@ public class BSInfernoBeast1 : MonoBehaviour
 
             if (UseItemIndex == 1)
             {
-                HPHealingEffP1.SetActive(true);
+                MPHealingEffP1.SetActive(true);
             }
             else if (UseItemIndex == 3)
             {
-                HPHealingEffP3.SetActive(true);
+                MPHealingEffP3.SetActive(true);
             }
 
             showr2.SetActive(true);
@@ -1028,7 +1043,7 @@ public class BSInfernoBeast1 : MonoBehaviour
                 AfterBreakDamageCal = Global.HPBE2;
                 BreakDamageCal = BeforeBreakSkillDamageCal - AfterBreakDamageCal;
 
-                if (BreakDamageCal >= 400)
+                if (BreakDamageCal >= 2000)
                 {
                     BreakDamageCal = 0;
                     BeforeBreakSkillDamageCal = 0;
@@ -1082,6 +1097,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         {
             if (BE2ANum <= 6)
             {
+                pb.p1YesGetHit = 1;
                 Global.CurHPP1 -= Global.DamageBE2;
             }
         }
@@ -1091,6 +1107,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         {
             if (BE2ANum <= 6)
             {
+                pb.p2YesGetHit = 1;
                 Global.CurHPP2 -= Global.DamageBE2;
             }
         }
@@ -1100,6 +1117,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         {
             if (BE2ANum <= 6)
             {
+                pb.p3YesGetHit = 1;
                 Global.CurHPP3 -= Global.DamageBE2;
             }
         }
@@ -1138,6 +1156,7 @@ public class BSInfernoBeast1 : MonoBehaviour
     void delayP1PressAttack()
     {
         ShowP1Panel(false);
+        VayneAttackEffect.SetActive(false);
         Global.HPBE2 -= Global.DamageP1;
         PDamage.text = "";
         a1 -= 1;
@@ -1158,6 +1177,7 @@ public class BSInfernoBeast1 : MonoBehaviour
     void delayP3PressAttack()
     {
         ShowP3Panel(false);
+        MariaAttackEffect.SetActive(false);
         Global.HPBE2 -= Global.DamageP3;
         PDamage.text = "";
         a3 -= 1;

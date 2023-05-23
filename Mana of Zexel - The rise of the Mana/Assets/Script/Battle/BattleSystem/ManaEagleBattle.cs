@@ -5,6 +5,8 @@ using UnityEngine;
 public class ManaEagleBattle : MonoBehaviour
 {
     public Animator animanaeagle;
+    public Transform Enemy;
+
     public int yes_ManaEagle = 0;
 
     // Update is called once per frame
@@ -12,8 +14,36 @@ public class ManaEagleBattle : MonoBehaviour
     {
         if (yes_ManaEagle == 1)
         {
-            animanaeagle.SetTrigger("e10attack");
+            //animanaeagle.SetTrigger("e10attack");
+            Invoke("delayE10", 0.01f);
             yes_ManaEagle = 0;
         }
+    }
+
+    void delayE10()
+    {
+        if (BSManaEagle1.E10Hit == 1)
+        {
+            Enemy.position = new Vector2(Enemy.position.x - 3f, Enemy.position.y);
+            animanaeagle.SetTrigger("e10attack");
+            Invoke("delayE10Done", 1f);
+        }
+        else if (BSManaEagle1.E10Hit == 2)
+        {
+            Enemy.position = new Vector2(Enemy.position.x - 5f, Enemy.position.y + 1);
+            animanaeagle.SetTrigger("e10attack");
+            Invoke("delayE10Done", 1f);
+        }
+        else if (BSManaEagle1.E10Hit == 3)
+        {
+            Enemy.position = new Vector2(Enemy.position.x - 6f, Enemy.position.y - 3);
+            animanaeagle.SetTrigger("e10attack");
+            Invoke("delayE10Done", 1f);
+        }
+    }
+
+    void delayE10Done()
+    {
+        Enemy.position = new Vector2(3.89f, -0.4f);
     }
 }

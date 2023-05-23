@@ -46,7 +46,7 @@ public class Global : MonoBehaviour
         if (GameSettingController.GameDiff == 0)
         {
             //Mob
-            HPE1 = 10000;
+            HPE1 = 100;
             DamageE1 = 10;
             SpeedE1 = 10;
 
@@ -101,7 +101,7 @@ public class Global : MonoBehaviour
             DamageE7 = 180;
             SpeedE7 = 10;
 
-            HPE8 = 2200;
+            HPE8 = 22000;
             DamageE8 = 100;
             SpeedE8 = 30;
 

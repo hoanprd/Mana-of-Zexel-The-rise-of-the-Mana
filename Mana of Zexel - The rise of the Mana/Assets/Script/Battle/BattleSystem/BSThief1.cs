@@ -14,7 +14,7 @@ public class BSThief1 : MonoBehaviour
 
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
-    public GameObject VayneSkill2Effect, VayneSkill3Effect, MariaSkill3Effect;
+    public GameObject VayneAttackEffect, VayneSkill2Effect, VayneSkill3Effect, MariaAttackEffect, MariaSkill3Effect;
     public GameObject showr2;
     public GameObject P1_panel;
     public GameObject P2_panel;
@@ -259,12 +259,14 @@ public class BSThief1 : MonoBehaviour
                 a1 = Global.SpeedP1 / 10;
                 a2 = Global.SpeedP2 / 10;
                 aE1 = Global.SpeedE1 / 10;
+                dem = 1;
             }
             else if (P2Available == false)
             {
                 a1 = Global.SpeedP1 / 10;
                 a3 = Global.SpeedP3 / 10;
                 aE1 = Global.SpeedE9 / 10;
+                dem = 1;
             }
             else
             {
@@ -272,7 +274,18 @@ public class BSThief1 : MonoBehaviour
                 a2 = Global.SpeedP2 / 10;
                 a3 = Global.SpeedP3 / 10;
                 aE1 = Global.SpeedE1 / 10;
+                dem = 1;
             }
+        }
+        FixBug();
+    }
+
+    public void FixBug()
+    {
+        if (a1 == 0 && a3 != 0 && Global.CurHPP3 <= 0)
+        {
+            a3 = 0;
+            aE1 = 0;
         }
     }
 
@@ -392,6 +405,7 @@ public class BSThief1 : MonoBehaviour
     public void PressAttack()
     {
         VayneAttackFX.Play();
+        VayneAttackEffect.SetActive(true);
         pb.yes1 = 1;
         show1 = 1;
         PDamage.color = Color.red;
@@ -412,6 +426,7 @@ public class BSThief1 : MonoBehaviour
     public void PressAttackP3()
     {
         MariaAttackFX.Play();
+        MariaAttackEffect.SetActive(true);
         pb.yes5 = 1;
         show3 = 1;
         PDamage.color = Color.red;
@@ -1056,6 +1071,13 @@ public class BSThief1 : MonoBehaviour
         CheckE1Die();
         ShowP1Panel(false);
 
+        if (E1Hit == 1 && Global.CurHPP1 > 0)
+            Global.CurHPP1 -= Global.DamageE1;
+        else if (E1Hit == 2 && Global.CurHPP2 > 0)
+            Global.CurHPP2 -= Global.DamageE1;
+        else if (E1Hit == 3 && Global.CurHPP3 > 0)
+            Global.CurHPP3 -= Global.DamageE1;
+
         EDamage.text = "";
         aE1 -= 1;
         dem_turn += 1;
@@ -1076,21 +1098,28 @@ public class BSThief1 : MonoBehaviour
         }
 
         if (E1Hit == 1 && Global.CurHPP1 > 0)
-            Global.CurHPP1 -= Global.DamageE1;
+        {
+            pb.p1YesGetHit = 1;
+        }
         else if (E1Hit == 1 && Global.CurHPP1 <= 0)
             E1AttackTarget();
         else if (E1Hit == 2 && Global.CurHPP2 > 0)
-            Global.CurHPP2 -= Global.DamageE1;
+        {
+            pb.p2YesGetHit = 1;
+        }
         else if (E1Hit == 2 && Global.CurHPP2 <= 0)
             E1AttackTarget();
         else if (E1Hit == 3 && Global.CurHPP3 > 0)
-            Global.CurHPP3 -= Global.DamageE1;
+        {
+            pb.p3YesGetHit = 1;
+        }
         else if (E1Hit == 3 && Global.CurHPP3 <= 0)
             E1AttackTarget();
     }
     void delayP1PressAttack()
     {
         ShowP1Panel(false);
+        VayneAttackEffect.SetActive(false);
         Global.HPE1 -= Global.DamageP1;
         PDamage.text = "";
         a1 -= 1;
@@ -1111,6 +1140,7 @@ public class BSThief1 : MonoBehaviour
     void delayP3PressAttack()
     {
         ShowP3Panel(false);
+        MariaAttackEffect.SetActive(false);
         Global.HPE1 -= Global.DamageP3;
         PDamage.text = "";
         a3 -= 1;
