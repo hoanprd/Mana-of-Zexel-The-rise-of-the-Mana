@@ -19,6 +19,7 @@ public class SaveGameTrigger : MonoBehaviour
         if (pick && Input.GetKeyDown(KeyCode.Space))
         {
             //once = 1;
+            HubController.BusyHub = true;
             SaveGamePanel.SetActive(true);
             //Invoke("delay1", 1f);
         }

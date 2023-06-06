@@ -2031,6 +2031,7 @@ public class SaveGameSystem : MonoBehaviour
     public void PressSGBackButton()
     {
         ClickFX.Play();
+        HubController.BusyHub = false;
         SaveGamePanel.SetActive(false);
         SaveOverrideIndex = 0;
     }

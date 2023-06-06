@@ -317,10 +317,10 @@ public class MenuController : MonoBehaviour
         ContainerController.IceCrystal = 0;
 
         //Set item
-        ContainerController.HealPotion = 4;
-        ContainerController.ManaPotion = 4;
-        ContainerController.ElixirPotion = 4;
-        ContainerController.Bom = 4;
+        ContainerController.HealPotion = 0;
+        ContainerController.ManaPotion = 0;
+        ContainerController.ElixirPotion = 0;
+        ContainerController.Bom = 0;
         ContainerController.Porridge = 0;
         ContainerController.ManaCloth = 0;
         ContainerController.ManaShield = 0;
@@ -340,10 +340,10 @@ public class MenuController : MonoBehaviour
         ContainerController.FireManaGenerator = 0;
         ContainerController.IceManaGenerator = 0;
         ContainerController.PowderOfLife = 0;
-        ContainerController.HoliHP = 4;
-        ContainerController.HoliMP = 4;
-        ContainerController.UltraBom = 4;
-        ContainerController.ReincarnationLife = 4;
+        ContainerController.HoliHP = 0;
+        ContainerController.HoliMP = 0;
+        ContainerController.UltraBom = 0;
+        ContainerController.ReincarnationLife = 0;
         ContainerController.FireOfPeace = 0;
         ContainerController.OmnipotentBoundary = 0;
 

@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class DateController : MonoBehaviour
 {
+    public Animator Sun, Moon;
     public Text UpHour, PHour, DownHour, DayNight;
     public GameObject WHDay, WHNight, MDDay, MDNight, MCDay, MCNight;
+
     public static float GlobalTime;
     public static int GlobalUpHour, GlobalPHour, GlobalDownHour, GlobalDayNight;
     public static bool StartGlobalTime;
@@ -130,6 +132,17 @@ public class DateController : MonoBehaviour
         {
             MCDay.SetActive(false);
             MCNight.SetActive(true);
+        }
+
+        if (((GlobalDayNight == 0 && GlobalPHour >= 6) || (GlobalDayNight == 1 && GlobalPHour < 6)))
+        {
+            Sun.SetTrigger("sunon");
+            Moon.SetTrigger("moonoff");
+        }
+        else if (((GlobalDayNight == 1 && GlobalPHour >= 6) || (GlobalDayNight == 0 && GlobalPHour < 6)))
+        {
+            Sun.SetTrigger("sunoff");
+            Moon.SetTrigger("moonon");
         }
     }
 }

@@ -147,7 +147,7 @@ public class HubController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ContainerController.BagStatus == 1)
+        /*if (ContainerController.BagStatus == 1)
         {
             TimePanel.SetActive(false);
             HubPanel.SetActive(false);
@@ -156,24 +156,24 @@ public class HubController : MonoBehaviour
         {
             TimePanel.SetActive(true);
             HubPanel.SetActive(true);
-        }
+        }*/
 
-        if (Input.GetKeyDown(KeyCode.M) && BusyHub == false)
+        if (Input.GetKeyDown(KeyCode.M) && BusyHub == false && ContainerController.LoadingOpen == false)
         {
             map.SetActive(true);
             BusyHub = true;
         }
-        else if (Input.GetKeyDown(KeyCode.I) && BusyHub == false)
+        else if (Input.GetKeyDown(KeyCode.I) && BusyHub == false && ContainerController.LoadingOpen == false)
         {
             info.SetActive(true);
             BusyHub = true;
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && BusyHub == false)
+        else if (Input.GetKeyDown(KeyCode.Escape) && BusyHub == false && ContainerController.LoadingOpen == false)
         {
             esc.SetActive(true);
             BusyHub = true;
         }
-        else if (Input.GetKeyDown(KeyCode.Q) && BusyHub == false)
+        else if (Input.GetKeyDown(KeyCode.Q) && BusyHub == false && ContainerController.LoadingOpen == false)
         {
             quest.SetActive(true);
             BusyHub = true;
