@@ -114,6 +114,7 @@ public class Cus54 : MonoBehaviour
         {
             CutscenesController.cus54 = 1;
             ContainerController.LoadingOpen = true;
+            ContainerController.ManaNecklace -= 1;
             SceneManager.LoadScene("Save room");
         }
     }
@@ -125,6 +126,7 @@ public class Cus54 : MonoBehaviour
     {
         CutscenesController.cus54 = 1;
         ContainerController.LoadingOpen = true;
+        ContainerController.ManaNecklace -= 1;
         SceneManager.LoadScene("Save room");
     }
 }

@@ -169,6 +169,7 @@ public class Cus25 : MonoBehaviour
         {
             CutscenesController.cus25 = 1;
             ContainerController.LoadingOpen = true;
+            ContainerController.Bom -= 1;
             SceneManager.LoadScene("Save room");
         }
     }
@@ -180,6 +181,7 @@ public class Cus25 : MonoBehaviour
     {
         CutscenesController.cus25 = 1;
         ContainerController.LoadingOpen = true;
+        ContainerController.Bom -= 1;
         SceneManager.LoadScene("Save room");
     }
 }

@@ -129,6 +129,7 @@ public class Cus48 : MonoBehaviour
         {
             CutscenesController.cus48 = 1;
             ContainerController.LoadingOpen = true;
+            ContainerController.Porridge -= 1;
             MapController.SaveRoomToTavern = true;
             SceneManager.LoadScene("Tavern");
         }
@@ -141,6 +142,7 @@ public class Cus48 : MonoBehaviour
     {
         CutscenesController.cus48 = 1;
         ContainerController.LoadingOpen = true;
+        ContainerController.Porridge -= 1;
         MapController.SaveRoomToTavern = true;
         SceneManager.LoadScene("Tavern");
     }

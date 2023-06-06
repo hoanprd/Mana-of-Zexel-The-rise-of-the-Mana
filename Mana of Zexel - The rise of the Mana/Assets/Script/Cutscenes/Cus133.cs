@@ -169,6 +169,7 @@ public class Cus133 : MonoBehaviour
         {
             CutscenesController.cus133 = 1;
             ContainerController.LoadingOpen = true;
+            ContainerController.OmnipotentBoundary -= 1;
             SceneManager.LoadScene("Inferno desert");
         }
     }
@@ -180,6 +181,7 @@ public class Cus133 : MonoBehaviour
     {
         CutscenesController.cus133 = 1;
         ContainerController.LoadingOpen = true;
+        ContainerController.OmnipotentBoundary -= 1;
         SceneManager.LoadScene("Inferno desert");
     }
 }

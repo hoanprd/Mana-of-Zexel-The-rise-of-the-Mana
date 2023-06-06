@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ContainerController : MonoBehaviour
 {
-    public static int DriedLeaves, PureWater, MorningDrop, Wheat, Wood, String, Iron, ManaGem, ScorpionVenom, InfernoSand, ManaLiquid, ManaOre, ManaCrystal, GuardianFeather, FireOre, GoldenFeather, RedManaCrystal, Obsidian, IceOre, IceLeather, BlueManaCrystal, RedManaSlimeBall, BlueManaSlimeBall, ManaCoreFireZexel, ManaCoreIceZexel, Rock, NatureGrass, ManaDust, ManaEagleFeather, IceCrystal, HealPotion, ManaPotion, ElixirPotion, Bom, Porridge, ManaCloth, ManaShield, VenomKiller, ManaNecklace, ManaGenerator, Baxiata, BaxiataGem, Photonria, PhotonriaGem, ManaLiquidCatalyst, RedLiquidCatalyst, BlueLiquidCatalyst, ManaCoreFireVayne, ManaCoreIceVayne, PureObsidian, FireManaGenerator, IceManaGenerator, PowderOfLife, HoliHP, HoliMP, UltraBom, ReincarnationLife, FireOfPeace, OmnipotentBoundary;
-    public GameObject BagPanel, DriedLeavesObject, PureWaterObject, MorningDropObject, WheatObject, WoodObject, StringObject, IronObject, ManaGemObject, ScorpionVenomObject, InfernoSandObject, ManaLiquidObject, ManaOreObject, ManaCrystalObject, FireOreObject, GoldenFeatherObject, RedManaCrystalObject, ObsidianObject, RedManaSlimeBallObject, IceOreObject, IceLeatherObject, BlueManaCrystalObject, BlueManaSlimeBallObject, NatureGrassObject, ManaDustObject, RockObject, GuardianFeatherObject, ManaEagleFeatherObject, IceCrystalObject, ManaCoreFireZexelObject, ManaCoreIceZexelObject;
-    public GameObject HealPotionObject, ManaPotionObject, ElixirPotionObject, BomObject, PorridgeObject, ManaClothObject, ManaShieldObject, VenomKillerObject, ManaNecklaceObject, ManaGeneratorObject, BaxiataObject, BaxiataGemObject, PhotonriaObject, PhotonriaGemObject, ManaLiquidCatalystObject, RedLiquidCatalystObject, BlueLiquidCatalystObject, ManaCoreFireVayneObject, ManaCoreIceVayneObject, PureObsidianObject, FireManaGeneratorObject, IceManaGeneratorObject, PowderOfLifeObject, HoliHPObject, HoliMPObject, UltraBomObject, ReincarnationLifeObject, FireOfPeaceObject, OmnipotentBoundaryObject;
+    public static int DriedLeaves, PureWater, MorningDrop, Wheat, Wood, String, Iron, ManaGem, ScorpionVenom, InfernoSand, ManaLiquid, ManaOre, ManaCrystal, GuardianFeather, FireOre, GoldenFeather, RedManaCrystal, Obsidian, IceOre, IceLeather, BlueManaCrystal, RedManaSlimeBall, BlueManaSlimeBall, ManaCoreFireZexel, ManaCoreIceZexel, Rock, PurifyingWater, NatureGrass, ManaDust, ManaEagleFeather, IceCrystal, HealPotion, ManaPotion, ElixirPotion, Bom, Porridge, ManaCloth, ManaShield, VenomKiller, ManaNecklace, ManaGenerator, Baxiata, BaxiataGem, Photonria, PhotonriaGem, ManaLiquidCatalyst, RedLiquidCatalyst, BlueLiquidCatalyst, ManaCoreFireVayne, ManaCoreIceVayne, PureObsidian, BackPainMedicine, PurifyingPotion, FireManaGenerator, IceManaGenerator, BrokenManaDetector, ManaDetector, PowderOfLife, HoliHP, HoliMP, UltraBom, ReincarnationLife, FireOfPeace, OmnipotentBoundary;
+    public GameObject BagPanel, DriedLeavesObject, PureWaterObject, MorningDropObject, WheatObject, WoodObject, StringObject, IronObject, ManaGemObject, ScorpionVenomObject, InfernoSandObject, ManaLiquidObject, ManaOreObject, ManaCrystalObject, FireOreObject, GoldenFeatherObject, RedManaCrystalObject, ObsidianObject, RedManaSlimeBallObject, IceOreObject, IceLeatherObject, BlueManaCrystalObject, BlueManaSlimeBallObject, NatureGrassObject, ManaDustObject, RockObject, PurifyingWaterObject, GuardianFeatherObject, ManaEagleFeatherObject, IceCrystalObject, ManaCoreFireZexelObject, ManaCoreIceZexelObject;
+    public GameObject HealPotionObject, ManaPotionObject, ElixirPotionObject, BomObject, PorridgeObject, ManaClothObject, ManaShieldObject, VenomKillerObject, ManaNecklaceObject, ManaGeneratorObject, BaxiataObject, BaxiataGemObject, PhotonriaObject, PhotonriaGemObject, ManaLiquidCatalystObject, RedLiquidCatalystObject, BlueLiquidCatalystObject, ManaCoreFireVayneObject, ManaCoreIceVayneObject, PureObsidianObject, BackPainMedicineObject, PurifyingPotionObject, PowderOfLifeObject, FireManaGeneratorObject, IceManaGeneratorObject, BrokenManaDetectorObject, ManaDetectorObject, HoliHPObject, HoliMPObject, UltraBomObject, ReincarnationLifeObject, FireOfPeaceObject, OmnipotentBoundaryObject;
     public GameObject SynSuccessPanel, LoadingPanel, CloseSSP;
     public Transform MateBagList, ItemBagList;
     public GameObject[] LoadGameMaterial, LoadGameItem;
@@ -16,8 +17,8 @@ public class ContainerController : MonoBehaviour
     public int SynItemIndex;
     public bool CSSPButtonActive;
     public static int stop, BagStatus;
-    public static int DriedLeavesPick, MorningDropPick, PureWaterPick, WheatPick, StringPick, WoodPick, IronPick, ManaGemPick, ScorpionVenomPick, InfernoSandPick, ManaLiquidPick, ManaOrePick, ManaCrystalPick, FireOrePick, GoldenFeatherPick, RedManaCrystalPick, ObsidianPick, RedManaSlimeBallPick, IceOrePick, IceLeatherPick, BlueManaCrystalPick, BlueManaSlimeBallPick, NatureGrassPick, ManaDustPick, RockPick, GuardianFeatherPick, IceCrystalPick, ManaEagleFeatherPick, ManaCoreFireZexelPick, ManaCoreIceZexelPick;
-    public static int HealPotionPick, ManaPotionPick, ElixirPotionPick, BomPick, PorridgePick, ManaClothPick, ManaShieldPick, VenomKillerPick, ManaNecklacePick, ManaGeneratorPick, BaxiataPick, BaxiataGemPick, PhotonriaPick, PhotonriaGemPick, ManaLiquidCatalystPick, RedLiquidCatalystPick, BlueLiquidCatalystPick, ManaCoreFireVaynePick, ManaCoreIceVaynePick, PureObsidianPick, FireManaGeneratorPick, IceManaGeneratorPick, PowderOfLifePick, HoliHPPick, HoliMPPick, UltraBomPick, ReincarnationLifePick, FireOfPeacePick, OmnipotentBoundaryPick;
+    public static int DriedLeavesPick, MorningDropPick, PureWaterPick, WheatPick, StringPick, WoodPick, IronPick, ManaGemPick, ScorpionVenomPick, InfernoSandPick, ManaLiquidPick, ManaOrePick, ManaCrystalPick, FireOrePick, GoldenFeatherPick, RedManaCrystalPick, ObsidianPick, RedManaSlimeBallPick, IceOrePick, IceLeatherPick, BlueManaCrystalPick, BlueManaSlimeBallPick, NatureGrassPick, ManaDustPick, RockPick, PurifyingWaterPick, GuardianFeatherPick, IceCrystalPick, ManaEagleFeatherPick, ManaCoreFireZexelPick, ManaCoreIceZexelPick;
+    public static int HealPotionPick, ManaPotionPick, ElixirPotionPick, BomPick, PorridgePick, ManaClothPick, ManaShieldPick, VenomKillerPick, ManaNecklacePick, ManaGeneratorPick, BaxiataPick, BaxiataGemPick, PhotonriaPick, PhotonriaGemPick, ManaLiquidCatalystPick, RedLiquidCatalystPick, BlueLiquidCatalystPick, ManaCoreFireVaynePick, ManaCoreIceVaynePick, PureObsidianPick, BackPainMedicinePick, PurifyingPotionPick, PowderOfLifePick, FireManaGeneratorPick, IceManaGeneratorPick, BrokenManaDetectorPick, ManaDetectorPick, HoliHPPick, HoliMPPick, UltraBomPick, ReincarnationLifePick, FireOfPeacePick, OmnipotentBoundaryPick;
     public static bool DestroyBag, LoadingOpen;
 
     private void Start()
@@ -402,6 +403,20 @@ public class ContainerController : MonoBehaviour
             else
             {
                 Rock += 1;
+            }
+        }
+        if (PurifyingWaterPick == 1)
+        {
+            PurifyingWaterPick = 0;
+
+            if (PurifyingWater <= 0)
+            {
+                PurifyingWater += 1;
+                Instantiate(PurifyingWaterObject, MateBagList);
+            }
+            else
+            {
+                PurifyingWater += 1;
             }
         }
         if (GuardianFeatherPick == 1)
@@ -876,9 +891,9 @@ public class ContainerController : MonoBehaviour
                 PureObsidian += 1;
             }
         }
-        if (FireManaGeneratorPick == 1)
+        if (BackPainMedicinePick == 1)
         {
-            FireManaGeneratorPick = 0;
+            BackPainMedicinePick = 0;
 
             SynItemIndex = 20;
             SynSuccessPanel.SetActive(true);
@@ -886,19 +901,19 @@ public class ContainerController : MonoBehaviour
             OpenSynSuccessImage();
             StartCoroutine(WaitToCloseSSP());
 
-            if (FireManaGenerator <= 0)
+            if (BackPainMedicine <= 0)
             {
-                FireManaGenerator += 1;
-                Instantiate(FireManaGeneratorObject, ItemBagList);
+                BackPainMedicine += 1;
+                Instantiate(BackPainMedicineObject, ItemBagList);
             }
             else
             {
-                FireManaGenerator += 1;
+                BackPainMedicine += 1;
             }
         }
-        if (IceManaGeneratorPick == 1)
+        if (PurifyingPotionPick == 1)
         {
-            IceManaGeneratorPick = 0;
+            PurifyingPotionPick = 0;
 
             SynItemIndex = 21;
             SynSuccessPanel.SetActive(true);
@@ -906,14 +921,14 @@ public class ContainerController : MonoBehaviour
             OpenSynSuccessImage();
             StartCoroutine(WaitToCloseSSP());
 
-            if (IceManaGenerator <= 0)
+            if (PurifyingPotion <= 0)
             {
-                IceManaGenerator += 1;
-                Instantiate(IceManaGeneratorObject, ItemBagList);
+                PurifyingPotion += 1;
+                Instantiate(PurifyingPotionObject, ItemBagList);
             }
             else
             {
-                IceManaGenerator += 1;
+                PurifyingPotion += 1;
             }
         }
         if (PowderOfLifePick == 1)
@@ -936,11 +951,85 @@ public class ContainerController : MonoBehaviour
                 PowderOfLife += 1;
             }
         }
+        if (FireManaGeneratorPick == 1)
+        {
+            FireManaGeneratorPick = 0;
+
+            SynItemIndex = 23;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
+
+            if (FireManaGenerator <= 0)
+            {
+                FireManaGenerator += 1;
+                Instantiate(FireManaGeneratorObject, ItemBagList);
+            }
+            else
+            {
+                FireManaGenerator += 1;
+            }
+        }
+        if (IceManaGeneratorPick == 1)
+        {
+            IceManaGeneratorPick = 0;
+
+            SynItemIndex = 24;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
+
+            if (IceManaGenerator <= 0)
+            {
+                IceManaGenerator += 1;
+                Instantiate(IceManaGeneratorObject, ItemBagList);
+            }
+            else
+            {
+                IceManaGenerator += 1;
+            }
+        }
+        if (BrokenManaDetectorPick == 1)
+        {
+            BrokenManaDetectorPick = 0;
+
+            if (BrokenManaDetector <= 0)
+            {
+                BrokenManaDetector += 1;
+                Instantiate(BrokenManaDetectorObject, ItemBagList);
+            }
+            else
+            {
+                BrokenManaDetector += 1;
+            }
+        }
+        if (ManaDetectorPick == 1)
+        {
+            ManaDetectorPick = 0;
+
+            SynItemIndex = 25;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
+
+            if (ManaDetector <= 0)
+            {
+                ManaDetector += 1;
+                Instantiate(ManaDetectorObject, ItemBagList);
+            }
+            else
+            {
+                ManaDetector += 1;
+            }
+        }
         if (HoliHPPick == 1)
         {
             HoliHPPick = 0;
 
-            SynItemIndex = 23;
+            SynItemIndex = 26;
             SynSuccessPanel.SetActive(true);
             OpenBag();
             OpenSynSuccessImage();
@@ -960,7 +1049,7 @@ public class ContainerController : MonoBehaviour
         {
             HoliMPPick = 0;
 
-            SynItemIndex = 24;
+            SynItemIndex = 27;
             SynSuccessPanel.SetActive(true);
             OpenBag();
             OpenSynSuccessImage();
@@ -980,7 +1069,7 @@ public class ContainerController : MonoBehaviour
         {
             UltraBomPick = 0;
 
-            SynItemIndex = 25;
+            SynItemIndex = 28;
             SynSuccessPanel.SetActive(true);
             OpenBag();
             OpenSynSuccessImage();
@@ -1000,7 +1089,7 @@ public class ContainerController : MonoBehaviour
         {
             ReincarnationLifePick = 0;
 
-            SynItemIndex = 26;
+            SynItemIndex = 29;
             SynSuccessPanel.SetActive(true);
             OpenBag();
             OpenSynSuccessImage();
@@ -1034,7 +1123,7 @@ public class ContainerController : MonoBehaviour
         {
             OmnipotentBoundaryPick = 0;
 
-            SynItemIndex = 27;
+            SynItemIndex = 30;
             SynSuccessPanel.SetActive(true);
             OpenBag();
             OpenSynSuccessImage();
@@ -1086,6 +1175,39 @@ public class ContainerController : MonoBehaviour
         CSSPButtonActive = false;
         Back4();
         SynSuccessPanel.SetActive(false);
+
+        if (CutscenesController.cus25 == 0 && CutscenesController.cus24 == 1 && SynItemIndex == 3)
+        {
+            SceneManager.LoadScene("Cutscenes");
+        }
+        else if (CutscenesController.cus40 == 0 && CutscenesController.cus39 == 1 && SynItemIndex == 7)
+        {
+            SceneManager.LoadScene("Cutscenes");
+        }
+        else if (CutscenesController.cus48 == 0 && CutscenesController.cus47 == 1 && SynItemIndex == 4)
+        {
+            SceneManager.LoadScene("Cutscenes");
+        }
+        else if (CutscenesController.cus54 == 0 && CutscenesController.cus53 == 1 && SynItemIndex == 8)
+        {
+            SceneManager.LoadScene("Cutscenes");
+        }
+        else if (CutscenesController.cus75 == 0 && CutscenesController.cus74 == 1 && SynItemIndex == 17)
+        {
+            SceneManager.LoadScene("Cutscenes");
+        }
+        else if (CutscenesController.cus83 == 0 && CutscenesController.cus82 == 1 && SynItemIndex == 21)
+        {
+            SceneManager.LoadScene("Cutscenes");
+        }
+        else if (CutscenesController.cus125 == 0 && CutscenesController.cus124 == 1 && SynItemIndex == 25)
+        {
+            SceneManager.LoadScene("Cutscenes");
+        }
+        else if(CutscenesController.cus132 == 0 && CutscenesController.cus131 == 1 && ContainerController.OmnipotentBoundary >= 2 && SynItemIndex == 30)
+        {
+            SceneManager.LoadScene("Cutscenes");
+        }
     }
 
     IEnumerator WaitToCloseSSP()

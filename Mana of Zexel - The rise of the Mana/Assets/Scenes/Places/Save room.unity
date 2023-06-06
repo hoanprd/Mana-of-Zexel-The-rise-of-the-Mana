@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 6290127}
   - component: {fileID: 6290126}
   m_Layer: 5
-  m_Name: Num64 (Legacy)
+  m_Name: Num60 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -329,7 +329,7 @@ RectTransform:
   m_Children:
   - {fileID: 430660472}
   m_Father: {fileID: 1998687578}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2670,7 +2670,7 @@ GameObject:
   - component: {fileID: 90829911}
   - component: {fileID: 90829910}
   m_Layer: 5
-  m_Name: Num98 (Legacy)
+  m_Name: Num70 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3408,7 +3408,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: ManaClothDetail
+        m_MethodName: PureObsidianDetail
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3966,7 +3966,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: GoldenFeatherDetail
+        m_MethodName: BaxiataGemDetail
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4235,7 +4235,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: SynthesizeButton22
+        m_MethodName: SynthesizeButton25
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4499,6 +4499,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128575527}
   m_CullTransparentMesh: 1
+--- !u!1 &130726341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 130726342}
+  - component: {fileID: 130726344}
+  - component: {fileID: 130726343}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &130726342
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130726341}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1846154684}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 10}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &130726343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130726341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 80
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Synthesize
+--- !u!222 &130726344
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130726341}
+  m_CullTransparentMesh: 1
 --- !u!1 &135792987
 GameObject:
   m_ObjectHideFlags: 0
@@ -4593,7 +4673,7 @@ GameObject:
   - component: {fileID: 141567657}
   - component: {fileID: 141567656}
   m_Layer: 5
-  m_Name: Num92 (Legacy)
+  m_Name: Num100 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5049,7 +5129,7 @@ GameObject:
   - component: {fileID: 155695464}
   - component: {fileID: 155695463}
   m_Layer: 5
-  m_Name: Num71(Legacy)
+  m_Name: Num67 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9504,7 +9584,7 @@ GameObject:
   - component: {fileID: 287374093}
   - component: {fileID: 287374092}
   m_Layer: 5
-  m_Name: Num60(Legacy)
+  m_Name: Num56(Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9884,7 +9964,7 @@ GameObject:
   - component: {fileID: 297178499}
   - component: {fileID: 297178500}
   m_Layer: 5
-  m_Name: Num98 (Legacy)
+  m_Name: Num106 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10044,7 +10124,7 @@ GameObject:
   - component: {fileID: 305657979}
   - component: {fileID: 305657978}
   m_Layer: 5
-  m_Name: Num88 (Legacy)
+  m_Name: Num96 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10260,7 +10340,7 @@ GameObject:
   - component: {fileID: 306900665}
   - component: {fileID: 306900664}
   m_Layer: 5
-  m_Name: Num101 (Legacy)
+  m_Name: Num109 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10498,7 +10578,7 @@ GameObject:
   - component: {fileID: 313213791}
   - component: {fileID: 313213790}
   m_Layer: 5
-  m_Name: Num72(Legacy)
+  m_Name: Num68 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10647,86 +10727,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318882037}
-  m_CullTransparentMesh: 1
---- !u!1 &322780105
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 322780106}
-  - component: {fileID: 322780108}
-  - component: {fileID: 322780107}
-  m_Layer: 5
-  m_Name: Text (Legacy) (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &322780106
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 322780105}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 369279054}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -23.900024}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &322780107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 322780105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.08235294, g: 0, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 80
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Mana -50
---- !u!222 &322780108
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 322780105}
   m_CullTransparentMesh: 1
 --- !u!1 &323772515
 GameObject:
@@ -10902,7 +10902,7 @@ GameObject:
   - component: {fileID: 326871479}
   - component: {fileID: 326871478}
   m_Layer: 5
-  m_Name: Num74 (Legacy)
+  m_Name: Num82 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11057,7 +11057,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: SynthesizeButton26
+        m_MethodName: SynthesizeButton29
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14675,7 +14675,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1401260358}
-  - {fileID: 322780106}
   m_Father: {fileID: 1998687578}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14730,7 +14729,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: SynthesizeButton27
+        m_MethodName: SynthesizeButton21
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15209,7 +15208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: SynthesizeButton27
+        m_MethodName: SynthesizeButton30
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15269,7 +15268,7 @@ GameObject:
   - component: {fileID: 378522756}
   - component: {fileID: 378522755}
   m_Layer: 5
-  m_Name: Num52(Legacy)
+  m_Name: Num48 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16005,7 +16004,7 @@ GameObject:
   - component: {fileID: 411676353}
   - component: {fileID: 411676352}
   m_Layer: 5
-  m_Name: Num94 (Legacy)
+  m_Name: Num102 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16087,7 +16086,7 @@ GameObject:
   - component: {fileID: 412062760}
   - component: {fileID: 412062759}
   m_Layer: 5
-  m_Name: Num67(Legacy)
+  m_Name: Num63 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16462,7 +16461,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: PhotonriaGemDetail
+        m_MethodName: ScorpionVenomDetail
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17114,7 +17113,7 @@ GameObject:
   - component: {fileID: 430660474}
   - component: {fileID: 430660473}
   m_Layer: 5
-  m_Name: Num84 (Legacy)
+  m_Name: Num78 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17873,7 +17872,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: IceLeatherDetail
+        m_MethodName: PhotonriaGemDetail
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18007,7 +18006,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: PureObsidianDetail
+        m_MethodName: ElixirPotionDetail
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18135,6 +18134,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468046325}
   m_CullTransparentMesh: 1
+--- !u!1 &468376788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 468376789}
+  - component: {fileID: 468376791}
+  - component: {fileID: 468376790}
+  m_Layer: 5
+  m_Name: Text (Legacy) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &468376789
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468376788}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1846154684}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -24}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &468376790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468376788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.08362627, g: 0, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 30
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 80
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Mana - 60
+--- !u!222 &468376791
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468376788}
+  m_CullTransparentMesh: 1
 --- !u!1 &478270370
 GameObject:
   m_ObjectHideFlags: 0
@@ -18147,7 +18226,7 @@ GameObject:
   - component: {fileID: 478270373}
   - component: {fileID: 478270372}
   m_Layer: 5
-  m_Name: Num78 (Legacy)
+  m_Name: Num86 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20093,7 +20172,7 @@ GameObject:
   - component: {fileID: 566342548}
   - component: {fileID: 566342547}
   m_Layer: 5
-  m_Name: Num96 (Legacy)
+  m_Name: Num104 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20916,7 +20995,7 @@ GameObject:
   - component: {fileID: 592032710}
   - component: {fileID: 592032709}
   m_Layer: 5
-  m_Name: Num61(Legacy)
+  m_Name: Num57(Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21467,7 +21546,7 @@ GameObject:
   - component: {fileID: 628562610}
   - component: {fileID: 628562609}
   m_Layer: 5
-  m_Name: Num100 (Legacy)
+  m_Name: Num108 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22029,7 +22108,7 @@ GameObject:
   - component: {fileID: 636160813}
   - component: {fileID: 636160812}
   m_Layer: 5
-  m_Name: Num83 (Legacy)
+  m_Name: Num80 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22197,7 +22276,7 @@ GameObject:
   - component: {fileID: 640371069}
   - component: {fileID: 640371068}
   m_Layer: 5
-  m_Name: Num82 (Legacy)
+  m_Name: Num79 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22721,7 +22800,7 @@ GameObject:
   - component: {fileID: 658803581}
   - component: {fileID: 658803580}
   m_Layer: 5
-  m_Name: Num66(Legacy)
+  m_Name: Num62 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23017,7 +23096,7 @@ GameObject:
   - component: {fileID: 690739562}
   - component: {fileID: 690739561}
   m_Layer: 5
-  m_Name: Num56(Legacy)
+  m_Name: Num52(Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25198,7 +25277,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mana -100
+  m_Text: Mana -50
 --- !u!222 &712855718
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25661,7 +25740,7 @@ GameObject:
   - component: {fileID: 729125426}
   - component: {fileID: 729125425}
   m_Layer: 5
-  m_Name: Num53 (Legacy)
+  m_Name: Num49 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25823,7 +25902,7 @@ GameObject:
   - component: {fileID: 738136750}
   - component: {fileID: 738136749}
   m_Layer: 5
-  m_Name: Num83 (Legacy)
+  m_Name: Num91 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26204,7 +26283,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: UltraBomDetail
+        m_MethodName: BackPainMedicineDetail
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -27519,7 +27598,7 @@ GameObject:
   - component: {fileID: 791085191}
   - component: {fileID: 791085190}
   m_Layer: 5
-  m_Name: Num93 (Legacy)
+  m_Name: Num101 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27838,7 +27917,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: SynthesizeButton28
+        m_MethodName: SynthesizeButton31
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28195,7 +28274,7 @@ GameObject:
   - component: {fileID: 817289291}
   - component: {fileID: 817289290}
   m_Layer: 5
-  m_Name: Num63 (Legacy)
+  m_Name: Num59 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28277,7 +28356,7 @@ GameObject:
   - component: {fileID: 823507147}
   - component: {fileID: 823507146}
   m_Layer: 5
-  m_Name: Num85 (Legacy)
+  m_Name: Num81 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28359,7 +28438,7 @@ GameObject:
   - component: {fileID: 824158263}
   - component: {fileID: 824158262}
   m_Layer: 5
-  m_Name: Num95 (Legacy)
+  m_Name: Num103 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29642,7 +29721,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: SynthesizeButton28
+        m_MethodName: SynthesizeButton22
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29702,7 +29781,7 @@ GameObject:
   - component: {fileID: 871145679}
   - component: {fileID: 871145678}
   m_Layer: 5
-  m_Name: Num105 (Legacy)
+  m_Name: Num113 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30347,7 +30426,7 @@ GameObject:
   - component: {fileID: 900526491}
   - component: {fileID: 900526490}
   m_Layer: 5
-  m_Name: Num104 (Legacy)
+  m_Name: Num76 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30503,7 +30582,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: NatureGrassDetail
+        m_MethodName: BrokenManaDetectorDetail
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30717,7 +30796,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: BomDetail
+        m_MethodName: PorridgeDetail
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31850,7 +31929,7 @@ GameObject:
   - component: {fileID: 941242303}
   - component: {fileID: 941242302}
   m_Layer: 5
-  m_Name: Num85 (Legacy)
+  m_Name: Num93 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32087,7 +32166,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: SynthesizeButton25
+        m_MethodName: SynthesizeButton28
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32478,7 +32557,7 @@ GameObject:
   - component: {fileID: 964788995}
   - component: {fileID: 964788994}
   m_Layer: 5
-  m_Name: Num54 (Legacy)
+  m_Name: Num50 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32936,7 +33015,7 @@ GameObject:
   - component: {fileID: 970595340}
   - component: {fileID: 970595339}
   m_Layer: 5
-  m_Name: Num101 (Legacy)
+  m_Name: Num73 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33532,7 +33611,7 @@ GameObject:
   - component: {fileID: 988050713}
   - component: {fileID: 988050712}
   m_Layer: 5
-  m_Name: BMC
+  m_Name: GF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33552,7 +33631,7 @@ RectTransform:
   m_Children:
   - {fileID: 636160811}
   m_Father: {fileID: 1998687578}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -34353,7 +34432,7 @@ GameObject:
   - component: {fileID: 1001263633}
   - component: {fileID: 1001263632}
   m_Layer: 5
-  m_Name: Num50(Legacy)
+  m_Name: Num46 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34650,7 +34729,7 @@ GameObject:
   - component: {fileID: 1004714628}
   - component: {fileID: 1004714627}
   m_Layer: 5
-  m_Name: Num76 (Legacy)
+  m_Name: Num84 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36261,7 +36340,7 @@ GameObject:
   - component: {fileID: 1047090170}
   - component: {fileID: 1047090169}
   m_Layer: 5
-  m_Name: Num104 (Legacy)
+  m_Name: Num112 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36343,7 +36422,7 @@ GameObject:
   - component: {fileID: 1047229173}
   - component: {fileID: 1047229172}
   m_Layer: 5
-  m_Name: Num87 (Legacy)
+  m_Name: Num95 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37733,86 +37812,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081237458}
   m_CullTransparentMesh: 1
---- !u!1 &1085080912
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1085080913}
-  - component: {fileID: 1085080915}
-  - component: {fileID: 1085080914}
-  m_Layer: 5
-  m_Name: Text (Legacy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1085080913
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085080912}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1846154684}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1085080914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085080912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 80
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Synthesize
---- !u!222 &1085080915
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085080912}
-  m_CullTransparentMesh: 1
 --- !u!1 &1090117854
 GameObject:
   m_ObjectHideFlags: 0
@@ -38562,7 +38561,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: WheatDetail
+        m_MethodName: ManaLiquidCatalystDetail
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38992,7 +38991,7 @@ GameObject:
   - component: {fileID: 1131709154}
   - component: {fileID: 1131709153}
   m_Layer: 5
-  m_Name: Num59(Legacy)
+  m_Name: Num55(Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39629,7 +39628,7 @@ GameObject:
   - component: {fileID: 1147526376}
   - component: {fileID: 1147526375}
   m_Layer: 5
-  m_Name: Num73(Legacy)
+  m_Name: Num69 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40222,7 +40221,7 @@ GameObject:
   - component: {fileID: 1157992137}
   - component: {fileID: 1157992136}
   m_Layer: 5
-  m_Name: Num70(Legacy)
+  m_Name: Num66 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40849,7 +40848,7 @@ GameObject:
   - component: {fileID: 1166554093}
   - component: {fileID: 1166554092}
   m_Layer: 5
-  m_Name: Num86 (Legacy)
+  m_Name: Num94 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41325,7 +41324,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: PowderOfLifeDetail
+        m_MethodName: ManaDetectorDetail
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -42109,7 +42108,7 @@ GameObject:
   - component: {fileID: 1213188261}
   - component: {fileID: 1213188260}
   m_Layer: 5
-  m_Name: Num75 (Legacy)
+  m_Name: Num83 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42349,7 +42348,7 @@ GameObject:
   - component: {fileID: 1236529218}
   - component: {fileID: 1236529217}
   m_Layer: 5
-  m_Name: Num102 (Legacy)
+  m_Name: Num74 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42431,7 +42430,7 @@ GameObject:
   - component: {fileID: 1236630881}
   - component: {fileID: 1236630880}
   m_Layer: 5
-  m_Name: Num49(Legacy)
+  m_Name: Num45 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43511,7 +43510,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: ManaEagleFeatherDetail
+        m_MethodName: PurifyingWaterDetail
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -43947,7 +43946,7 @@ GameObject:
   - component: {fileID: 1296230851}
   - component: {fileID: 1296230850}
   m_Layer: 5
-  m_Name: Num57(Legacy)
+  m_Name: Num53(Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44678,7 +44677,7 @@ GameObject:
   - component: {fileID: 1318450530}
   - component: {fileID: 1318450529}
   m_Layer: 5
-  m_Name: Num90 (Legacy)
+  m_Name: Num98 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44970,7 +44969,7 @@ GameObject:
   - component: {fileID: 1326891131}
   - component: {fileID: 1326891130}
   m_Layer: 5
-  m_Name: Num84 (Legacy)
+  m_Name: Num92 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45186,7 +45185,7 @@ GameObject:
   - component: {fileID: 1331203341}
   - component: {fileID: 1331203340}
   m_Layer: 5
-  m_Name: Num77 (Legacy)
+  m_Name: Num85 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46630,7 +46629,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 10.799927}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1401260359
@@ -47289,7 +47288,7 @@ GameObject:
   - component: {fileID: 1431603648}
   - component: {fileID: 1431603647}
   m_Layer: 5
-  m_Name: Num99 (Legacy)
+  m_Name: Num107 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47752,7 +47751,7 @@ GameObject:
   - component: {fileID: 1450079574}
   - component: {fileID: 1450079573}
   m_Layer: 5
-  m_Name: Num91 (Legacy)
+  m_Name: Num99 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48123,7 +48122,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: SynthesizeButton21
+        m_MethodName: SynthesizeButton24
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -49237,67 +49236,75 @@ MonoBehaviour:
   num42: {fileID: 17748492}
   num43: {fileID: 436118882}
   num44: {fileID: 1018295344}
-  num45: {fileID: 0}
-  num46: {fileID: 0}
-  num47: {fileID: 0}
-  num48: {fileID: 0}
-  num49: {fileID: 1236630880}
-  num50: {fileID: 1001263632}
-  num51: {fileID: 2140536409}
-  num52: {fileID: 378522755}
-  num53: {fileID: 729125425}
-  num54: {fileID: 964788994}
-  num55: {fileID: 1720599747}
-  num56: {fileID: 690739561}
-  num57: {fileID: 1296230850}
-  num58: {fileID: 1754294188}
-  num59: {fileID: 1131709153}
-  num60: {fileID: 287374092}
-  num61: {fileID: 592032709}
-  num62: {fileID: 1755309446}
-  num63: {fileID: 817289290}
-  num64: {fileID: 6290126}
-  num65: {fileID: 1675883717}
-  num66: {fileID: 658803580}
-  num67: {fileID: 412062759}
-  num68: {fileID: 1819541939}
-  num69: {fileID: 1821863007}
-  num70: {fileID: 1157992136}
-  num71: {fileID: 155695463}
-  num72: {fileID: 313213790}
-  num73: {fileID: 1147526375}
-  num74: {fileID: 326871478}
-  num75: {fileID: 1213188260}
-  num76: {fileID: 1004714627}
-  num77: {fileID: 1331203340}
-  num78: {fileID: 478270372}
-  num79: {fileID: 1718918665}
-  num80: {fileID: 2095495431}
-  num81: {fileID: 1698622104}
-  num82: {fileID: 2133584928}
-  num83: {fileID: 738136749}
-  num84: {fileID: 1326891130}
-  num85: {fileID: 941242302}
-  num86: {fileID: 1166554092}
-  num87: {fileID: 1047229172}
-  num88: {fileID: 305657978}
-  num89: {fileID: 2043313398}
-  num90: {fileID: 1318450529}
-  num91: {fileID: 1450079573}
-  num92: {fileID: 141567656}
-  num93: {fileID: 791085190}
-  num94: {fileID: 411676352}
-  num95: {fileID: 824158262}
-  num96: {fileID: 566342547}
-  num97: {fileID: 2103694168}
-  num98: {fileID: 297178500}
-  num99: {fileID: 1431603647}
-  num100: {fileID: 628562609}
-  num101: {fileID: 306900664}
-  num102: {fileID: 1834792643}
-  num103: {fileID: 1672244582}
-  num104: {fileID: 1047090169}
-  num105: {fileID: 871145678}
+  num45: {fileID: 1236630880}
+  num46: {fileID: 1001263632}
+  num47: {fileID: 2140536409}
+  num48: {fileID: 378522755}
+  num49: {fileID: 729125425}
+  num50: {fileID: 964788994}
+  num51: {fileID: 1720599747}
+  num52: {fileID: 690739561}
+  num53: {fileID: 1296230850}
+  num54: {fileID: 1754294188}
+  num55: {fileID: 1131709153}
+  num56: {fileID: 287374092}
+  num57: {fileID: 592032709}
+  num58: {fileID: 1755309446}
+  num59: {fileID: 817289290}
+  num60: {fileID: 6290126}
+  num61: {fileID: 1675883717}
+  num62: {fileID: 658803580}
+  num63: {fileID: 412062759}
+  num64: {fileID: 1819541939}
+  num65: {fileID: 1821863007}
+  num66: {fileID: 1157992136}
+  num67: {fileID: 155695463}
+  num68: {fileID: 313213790}
+  num69: {fileID: 1147526375}
+  num70: {fileID: 90829910}
+  num71: {fileID: 1913024048}
+  num72: {fileID: 2071781580}
+  num73: {fileID: 970595339}
+  num74: {fileID: 1236529217}
+  num75: {fileID: 2044820867}
+  num76: {fileID: 900526490}
+  num77: {fileID: 1620304818}
+  num78: {fileID: 430660473}
+  num79: {fileID: 640371068}
+  num80: {fileID: 636160812}
+  num81: {fileID: 823507146}
+  num82: {fileID: 326871478}
+  num83: {fileID: 1213188260}
+  num84: {fileID: 1004714627}
+  num85: {fileID: 1331203340}
+  num86: {fileID: 478270372}
+  num87: {fileID: 1718918665}
+  num88: {fileID: 2095495431}
+  num89: {fileID: 1698622104}
+  num90: {fileID: 2133584928}
+  num91: {fileID: 738136749}
+  num92: {fileID: 1326891130}
+  num93: {fileID: 941242302}
+  num94: {fileID: 1166554092}
+  num95: {fileID: 1047229172}
+  num96: {fileID: 305657978}
+  num97: {fileID: 2043313398}
+  num98: {fileID: 1318450529}
+  num99: {fileID: 1450079573}
+  num100: {fileID: 141567656}
+  num101: {fileID: 791085190}
+  num102: {fileID: 411676352}
+  num103: {fileID: 824158262}
+  num104: {fileID: 566342547}
+  num105: {fileID: 2103694168}
+  num106: {fileID: 297178500}
+  num107: {fileID: 1431603647}
+  num108: {fileID: 628562609}
+  num109: {fileID: 306900664}
+  num110: {fileID: 1834792643}
+  num111: {fileID: 1672244582}
+  num112: {fileID: 1047090169}
+  num113: {fileID: 871145678}
   showr1: {fileID: 325909099}
   ManaSynSlider: {fileID: 1131715119}
   ManaSynText: {fileID: 2009607353}
@@ -49865,7 +49872,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: SynthesizeButton24
+        m_MethodName: SynthesizeButton27
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -53175,7 +53182,7 @@ GameObject:
   - component: {fileID: 1620304819}
   - component: {fileID: 1620304818}
   m_Layer: 5
-  m_Name: Num105 (Legacy)
+  m_Name: Num77 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54456,7 +54463,7 @@ GameObject:
   - component: {fileID: 1672244583}
   - component: {fileID: 1672244582}
   m_Layer: 5
-  m_Name: Num103 Legacy)
+  m_Name: Num111 Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54829,7 +54836,7 @@ GameObject:
   - component: {fileID: 1675883718}
   - component: {fileID: 1675883717}
   m_Layer: 5
-  m_Name: Num65 (Legacy)
+  m_Name: Num61 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54932,7 +54939,7 @@ RectTransform:
   m_Children:
   - {fileID: 640371067}
   m_Father: {fileID: 1998687578}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -55125,7 +55132,7 @@ GameObject:
   - component: {fileID: 1698622105}
   - component: {fileID: 1698622104}
   m_Layer: 5
-  m_Name: Num81 (Legacy)
+  m_Name: Num89 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55722,7 +55729,7 @@ GameObject:
   - component: {fileID: 1718918666}
   - component: {fileID: 1718918665}
   m_Layer: 5
-  m_Name: Num79 (Legacy)
+  m_Name: Num87 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55804,7 +55811,7 @@ GameObject:
   - component: {fileID: 1720599748}
   - component: {fileID: 1720599747}
   m_Layer: 5
-  m_Name: Num55 (Legacy)
+  m_Name: Num51 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56520,7 +56527,7 @@ GameObject:
   - component: {fileID: 1754294189}
   - component: {fileID: 1754294188}
   m_Layer: 5
-  m_Name: Num58(Legacy)
+  m_Name: Num54(Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56602,7 +56609,7 @@ GameObject:
   - component: {fileID: 1755309447}
   - component: {fileID: 1755309446}
   m_Layer: 5
-  m_Name: Num62 (Legacy)
+  m_Name: Num58 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57924,7 +57931,7 @@ GameObject:
   - component: {fileID: 1819541940}
   - component: {fileID: 1819541939}
   m_Layer: 5
-  m_Name: Num68(Legacy)
+  m_Name: Num64 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58097,7 +58104,7 @@ GameObject:
   - component: {fileID: 1821863008}
   - component: {fileID: 1821863007}
   m_Layer: 5
-  m_Name: Num69(Legacy)
+  m_Name: Num65 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58447,7 +58454,7 @@ GameObject:
   - component: {fileID: 1834792644}
   - component: {fileID: 1834792643}
   m_Layer: 5
-  m_Name: Num102 (Legacy)
+  m_Name: Num110 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58630,7 +58637,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1085080913}
+  - {fileID: 130726342}
+  - {fileID: 468376789}
   m_Father: {fileID: 2016739548}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -58685,7 +58693,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: SynthesizeButton23
+        m_MethodName: SynthesizeButton26
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -59511,7 +59519,7 @@ GameObject:
   - component: {fileID: 1913024049}
   - component: {fileID: 1913024048}
   m_Layer: 5
-  m_Name: Num99 (Legacy)
+  m_Name: Num71 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61288,7 +61296,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481781482}
         m_TargetAssemblyTypeName: SynthesizeSystem, Assembly-CSharp
-        m_MethodName: OmnipotentBoundaryDetail
+        m_MethodName: PurifyingPotionDetail
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -62334,9 +62342,9 @@ RectTransform:
   - {fileID: 465695471}
   - {fileID: 101748881}
   - {fileID: 1955777042}
-  - {fileID: 8311186}
   - {fileID: 1692708507}
   - {fileID: 988050711}
+  - {fileID: 8311186}
   - {fileID: 1069524572}
   - {fileID: 1502429270}
   - {fileID: 795722322}
@@ -63579,7 +63587,7 @@ GameObject:
   - component: {fileID: 2043313399}
   - component: {fileID: 2043313398}
   m_Layer: 5
-  m_Name: Num89 (Legacy)
+  m_Name: Num97 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63661,7 +63669,7 @@ GameObject:
   - component: {fileID: 2044820868}
   - component: {fileID: 2044820867}
   m_Layer: 5
-  m_Name: Num103 Legacy)
+  m_Name: Num75 Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64331,7 +64339,7 @@ GameObject:
   - component: {fileID: 2071781581}
   - component: {fileID: 2071781580}
   m_Layer: 5
-  m_Name: Num100 (Legacy)
+  m_Name: Num72 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64821,7 +64829,7 @@ GameObject:
   - component: {fileID: 2095495432}
   - component: {fileID: 2095495431}
   m_Layer: 5
-  m_Name: Num80 (Legacy)
+  m_Name: Num88 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65059,7 +65067,7 @@ GameObject:
   - component: {fileID: 2103694169}
   - component: {fileID: 2103694168}
   m_Layer: 5
-  m_Name: Num97 (Legacy)
+  m_Name: Num105 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65885,7 +65893,7 @@ GameObject:
   - component: {fileID: 2133584929}
   - component: {fileID: 2133584928}
   m_Layer: 5
-  m_Name: Num82 (Legacy)
+  m_Name: Num90 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66128,7 +66136,7 @@ GameObject:
   - component: {fileID: 2140536410}
   - component: {fileID: 2140536409}
   m_Layer: 5
-  m_Name: Num51(Legacy)
+  m_Name: Num47 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

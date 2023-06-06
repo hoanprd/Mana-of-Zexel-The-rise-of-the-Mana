@@ -197,6 +197,7 @@ public class Cus40 : MonoBehaviour
         {
             CutscenesController.cus40 = 1;
             ContainerController.LoadingOpen = true;
+            ContainerController.VenomKiller -= 1;
             SceneManager.LoadScene("Save room");
         }
     }
@@ -208,6 +209,7 @@ public class Cus40 : MonoBehaviour
     {
         CutscenesController.cus40 = 1;
         ContainerController.LoadingOpen = true;
+        ContainerController.VenomKiller -= 1;
         SceneManager.LoadScene("Save room");
     }
 }
