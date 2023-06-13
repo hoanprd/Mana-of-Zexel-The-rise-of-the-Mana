@@ -55,6 +55,7 @@ public class SaveGameSystem : MonoBehaviour
             PlayerPrefs.SetInt("SaveGlobalDownHourD1", DateController.GlobalDownHour);
 
             //Set cut
+            PlayerPrefs.SetInt("Savecus0D1", CutscenesController.cus0);
             PlayerPrefs.SetInt("Savecus1D1", CutscenesController.cus1);
             PlayerPrefs.SetInt("Savecus2D1", CutscenesController.cus2);
             PlayerPrefs.SetInt("Savecus3D1", CutscenesController.cus3);
@@ -389,6 +390,7 @@ public class SaveGameSystem : MonoBehaviour
             PlayerPrefs.SetInt("SaveGlobalDownHourD2", DateController.GlobalDownHour);
 
             //Set cut
+            PlayerPrefs.SetInt("Savecus0D2", CutscenesController.cus0);
             PlayerPrefs.SetInt("Savecus1D2", CutscenesController.cus1);
             PlayerPrefs.SetInt("Savecus2D2", CutscenesController.cus2);
             PlayerPrefs.SetInt("Savecus3D2", CutscenesController.cus3);
@@ -723,6 +725,7 @@ public class SaveGameSystem : MonoBehaviour
             PlayerPrefs.SetInt("SaveGlobalDownHourD3", DateController.GlobalDownHour);
 
             //Set cut
+            PlayerPrefs.SetInt("Savecus0D3", CutscenesController.cus0);
             PlayerPrefs.SetInt("Savecus1D3", CutscenesController.cus1);
             PlayerPrefs.SetInt("Savecus2D3", CutscenesController.cus2);
             PlayerPrefs.SetInt("Savecus3D3", CutscenesController.cus3);

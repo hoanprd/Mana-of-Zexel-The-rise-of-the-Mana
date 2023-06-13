@@ -12,6 +12,7 @@ public class Cus1 : MonoBehaviour
     public GameObject va2;
     public GameObject va3;
     public GameObject va4;
+    public GameObject VayneVAL1, GinVAR1;
     public GameObject NameTag;
     private int tang=0;
     // Start is called before the first frame update
@@ -95,13 +96,15 @@ public class Cus1 : MonoBehaviour
         }
         else if (tang == 14)
         {
+            VayneVAL1.SetActive(true);
             NameTag.SetActive(true);
             NameTagText.text = "Vayne";
             dia.text = "I'm going mom! Wish you stay healthy.";
         }
         else if (tang == 15)
         {
-            NameTagText.text = "Jin";
+            GinVAR1.SetActive(true);
+            NameTagText.text = "Gin";
             dia.text = "Well, it's been over a year and your father still hasn't returned. I hope you find your father again.";
         }
         else if (tang == 16)
@@ -113,6 +116,7 @@ public class Cus1 : MonoBehaviour
         {
             va3.SetActive(false);
             va4.SetActive(true);
+            GinVAR1.SetActive(false);
             NameTagText.text = "Vayne";
             dia.text = "Phuff... Am I nearing to Zexel town yet?";
         }

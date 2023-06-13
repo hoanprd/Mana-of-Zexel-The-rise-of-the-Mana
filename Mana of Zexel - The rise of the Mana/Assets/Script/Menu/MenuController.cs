@@ -70,6 +70,7 @@ public class MenuController : MonoBehaviour
         Global.WarriorArmor3 = 0;
 
         //Set cut
+        CutscenesController.cus0 = 0;
         CutscenesController.cus1 = 0;
         CutscenesController.cus2 = 0;
         CutscenesController.cus3 = 0;
@@ -434,6 +435,7 @@ public class MenuController : MonoBehaviour
             DateController.GlobalPHour = PlayerPrefs.GetInt("SaveGlobalPHourD1");
             DateController.GlobalDownHour = PlayerPrefs.GetInt("SaveGlobalDownHourD1");
 
+            CutscenesController.cus0 = PlayerPrefs.GetInt("Savecus0D1");
             CutscenesController.cus1 = PlayerPrefs.GetInt("Savecus1D1");
             CutscenesController.cus2 = PlayerPrefs.GetInt("Savecus2D1");
             CutscenesController.cus3 = PlayerPrefs.GetInt("Savecus3D1");
@@ -804,6 +806,7 @@ public class MenuController : MonoBehaviour
             DateController.GlobalPHour = PlayerPrefs.GetInt("SaveGlobalPHourD2");
             DateController.GlobalDownHour = PlayerPrefs.GetInt("SaveGlobalDownHourD2");
 
+            CutscenesController.cus0 = PlayerPrefs.GetInt("Savecus0D2");
             CutscenesController.cus1 = PlayerPrefs.GetInt("Savecus1D2");
             CutscenesController.cus2 = PlayerPrefs.GetInt("Savecus2D2");
             CutscenesController.cus3 = PlayerPrefs.GetInt("Savecus3D2");
@@ -1176,6 +1179,7 @@ public class MenuController : MonoBehaviour
             DateController.GlobalDownHour = PlayerPrefs.GetInt("SaveGlobalDownHourD3");
 
             //Set cut
+            CutscenesController.cus0 = PlayerPrefs.GetInt("Savecus0D3");
             CutscenesController.cus1 = PlayerPrefs.GetInt("Savecus1D3");
             CutscenesController.cus2 = PlayerPrefs.GetInt("Savecus2D3");
             CutscenesController.cus3 = PlayerPrefs.GetInt("Savecus3D3");
