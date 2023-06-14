@@ -105,7 +105,7 @@ public class PlayerBattle : MonoBehaviour
             {
                 P2.position = new Vector2(P2.position.x + 8f, P2.position.y - 1.5f);
                 anip2.SetTrigger("p2attack");
-                Invoke("delayP2", 1f);
+                Invoke("delayP2", 1.5f);
                 yes3 = 0;
             }
             if (yes4 == 1)

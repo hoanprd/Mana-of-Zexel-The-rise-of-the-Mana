@@ -73,7 +73,6 @@ public class BSZane1 : MonoBehaviour
     public int stop = 0;
     private int dem = 0;
     private int dem_turn = 1;
-    private int once = 0;
     public int show1 = 0;
     public int show2 = 0;
     public int show3 = 0;
@@ -343,7 +342,7 @@ public class BSZane1 : MonoBehaviour
         show1 = 1;
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP1;
-        Invoke("delayP1PressAttack", 1f);
+        Invoke("delayP1PressAttack", 2f);
         dem = 2;
     }
     public void PressAttackP2()
@@ -353,7 +352,7 @@ public class BSZane1 : MonoBehaviour
         show2 = 1;
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP2;
-        Invoke("delayP2PressAttack", 1f);
+        Invoke("delayP2PressAttack", 2f);
         dem = 2;
     }
     public void PressAttackP3()
@@ -364,7 +363,7 @@ public class BSZane1 : MonoBehaviour
         show3 = 1;
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP3;
-        Invoke("delayP3PressAttack", 1f);
+        Invoke("delayP3PressAttack", 2f);
         dem = 2;
     }
 
@@ -396,7 +395,7 @@ public class BSZane1 : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 100 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
+            Invoke("delayP1PressSkill", 2f);
             dem = 2;
         }
         else
@@ -420,7 +419,7 @@ public class BSZane1 : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 200 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
+            Invoke("delayP1PressSkill", 2f);
             dem = 2;
         }
         else
@@ -444,7 +443,7 @@ public class BSZane1 : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 300 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
+            Invoke("delayP1PressSkill", 2f);
             dem = 2;
         }
         else
@@ -577,7 +576,7 @@ public class BSZane1 : MonoBehaviour
             showr2.SetActive(true);
             showr1.text = "HP +" + HealAmount;
             Invoke("delayshowr", 2f);
-            Invoke("delayP3PressSkill", 1f);
+            Invoke("delayP3PressSkill", 2f);
             dem = 2;
         }
         else
@@ -600,7 +599,7 @@ public class BSZane1 : MonoBehaviour
             showr2.SetActive(true);
             showr1.text = "MP +" + HealAmount;
             Invoke("delayshowr", 2f);
-            Invoke("delayP3PressSkill", 1f);
+            Invoke("delayP3PressSkill", 2f);
             dem = 2;
         }
         else
@@ -623,7 +622,7 @@ public class BSZane1 : MonoBehaviour
             int DamgeCal = Global.DamageP3 + (Global.DamageP3 * 300 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP3PressSkill", 1f);
+            Invoke("delayP3PressSkill", 2f);
             dem = 2;
         }
         else
@@ -950,7 +949,7 @@ public class BSZane1 : MonoBehaviour
     }
     public void CheckBE6Die()
     {
-        if (Global.HPBE6 <= 0)
+        if (Global.HPBE6 <= (EMaxHeal/ 2))
         {
             GameOver = true;
             ShowP1Panel(false);
@@ -958,54 +957,16 @@ public class BSZane1 : MonoBehaviour
             ShowP3Panel(false);
             UpdateUIText();
 
-            if (stop == 0)
-            {
-                stop = 1;
-
-                if (Global.LevelP1 < 30)
-                {
-                    LevelP1.text = "Level " + Global.LevelP1;
-                    EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
-                }
-                else
-                {
-                    LevelP1.text = "Level Max";
-                    EXPP1.text = "MAX";
-                }
-
-                if (Global.LevelP2 < 30)
-                {
-                    LevelP2.text = "Level " + Global.LevelP2;
-                    EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
-                }
-                else
-                {
-                    LevelP2.text = "Level Max";
-                    EXPP2.text = "MAX";
-                }
-
-                if (Global.LevelP3 < 30)
-                {
-                    LevelP3.text = "Level " + Global.LevelP3;
-                    EXPP3.text = Global.CurEXPP3 + "/" + Global.MaxEXPP3;
-                }
-                else
-                {
-                    LevelP3.text = "Level Max";
-                    EXPP3.text = "MAX";
-                }
-
-                Money.text = Global.Zen + " ";
-            }
-
-            Invoke("delayCheckBE6Die1", 1f);
-            if (once == 0)
-            {
-                Invoke("delayCheckBE6Die2", 2f);
-                once = 1;
-            }
+            Invoke("delayEndBE6", 2f);
         }
     }
+
+    void delayEndBE6()
+    {
+        ContainerController.LoadingOpen = true;
+        SceneManager.LoadScene("Cutscenes");
+    }
+
     void delayBE6()
     {
         CheckBE6Die();
@@ -1266,99 +1227,12 @@ public class BSZane1 : MonoBehaviour
         HPMP.SetActive(false);
         Lose_panel.SetActive(true);
     }
+
     void delayCheckP1P2P3Die2()
     {
         SceneManager.LoadScene("Intro");
     }
-    void delayCheckBE6Die1()
-    {
-        HPMP.SetActive(false);
-        Win_panel.SetActive(true);
-    }
-    void delayCheckBE6Die2()
-    {
-        if (Global.LevelP1 < 30)
-        {
-            Global.CurEXPP1 += 360;
-        }
-        if (Global.LevelP2 < 30)
-        {
-            Global.CurEXPP2 += 360;
-        }
-        if (Global.LevelP3 < 30)
-        {
-            Global.CurEXPP3 += 360;
-        }
-        Global.Zen += 360;
-        while (Global.CurEXPP1 >= Global.MaxEXPP1)
-        {
-            lu.SetActive(true);
-            Global.CurEXPP1 -= Global.MaxEXPP1;
-            Global.MaxEXPP1 += 40;
-            Global.LevelP1 += 1;
-            Global.MaxHPP1 += 20;
-            Global.MaxMPP1 += 4;
-            Global.DamageP1 += 10;
-            Global.SpeedP1 += 1;
-            Global.PlusPointP1 += 1;
-        }
-        while (Global.CurEXPP2 >= Global.MaxEXPP2)
-        {
-            lu2.SetActive(true);
-            Global.CurEXPP2 -= Global.MaxEXPP2;
-            Global.MaxEXPP2 += 40;
-            Global.LevelP2 += 1;
-            Global.MaxHPP2 += 10;
-            Global.MaxMPP2 += 3;
-            Global.DamageP2 += 15;
-            Global.SpeedP2 += 1;
-            Global.PlusPointP2 += 1;
-        }
-        while (Global.CurEXPP3 >= Global.MaxEXPP3)
-        {
-            lu3.SetActive(true);
-            Global.CurEXPP3 -= Global.MaxEXPP3;
-            Global.MaxEXPP3 += 40;
-            Global.LevelP3 += 1;
-            Global.MaxHPP3 += 25;
-            Global.MaxMPP3 += 5;
-            Global.DamageP3 += 10;
-            Global.SpeedP3 += 1;
-            Global.PlusPointP3 += 1;
-        }
-        if (Global.LevelP1 < 30)
-        {
-            LevelP1.text = "Level " + Global.LevelP1;
-            EXPP1.text = Global.CurEXPP1 + "/" + Global.MaxEXPP1;
-        }
-        else
-        {
-            LevelP1.text = "Level Max";
-            EXPP1.text = "MAX";
-        }
-        if (Global.LevelP2 < 30)
-        {
-            LevelP2.text = "Level " + Global.LevelP2;
-            EXPP2.text = Global.CurEXPP2 + "/" + Global.MaxEXPP2;
-        }
-        else
-        {
-            LevelP2.text = "Level Max";
-            EXPP2.text = "MAX";
-        }
-        if (Global.LevelP3 < 30)
-        {
-            LevelP3.text = "Level " + Global.LevelP3;
-            EXPP3.text = Global.CurEXPP3 + "/" + Global.MaxEXPP3;
-        }
-        else
-        {
-            LevelP3.text = "Level Max";
-            EXPP3.text = "MAX";
-        }
-        Money.text = Global.Zen + " ";
-        NB.SetActive(true);
-    }
+    
     void delayUseHP()
     {
         if (UseItemIndex == 1)

@@ -115,7 +115,7 @@ public class Cus137 : MonoBehaviour
         {
             CutscenesController.cus137 = 1;
             ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("BSSicxalon 1");
+            SceneManager.LoadScene("BSZane 1");
         }
     }
     public void Pressnext()
@@ -126,6 +126,6 @@ public class Cus137 : MonoBehaviour
     {
         CutscenesController.cus137 = 1;
         ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("BSSicxalon 1");
+        SceneManager.LoadScene("BSZane 1");
     }
 }
