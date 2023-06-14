@@ -34,6 +34,7 @@ public class Global : MonoBehaviour
     public static int HPBE3, DamageBE3, SpeedBE3;
     public static int HPBE4, DamageBE4, SpeedBE4;
     public static int HPBE5, DamageBE5, SpeedBE5;
+    public static int HPBE6, DamageBE6, SpeedBE6;
 
     //Equip
     public static int VayneStaff1, VayneStaff2, VayneStaff3, AlchemistArmor1, AlchemistArmor2, AlchemistArmor3, VayneWeaponStatus, VayneArmorStatus;
@@ -131,9 +132,18 @@ public class Global : MonoBehaviour
             DamageBE1 = 120;
             SpeedBE1 = 20;
 
-            HPBE2 = 6000;
-            DamageBE2 = 200;
-            SpeedBE2 = 30;
+            if (CutscenesController.cus110 == 1 && CutscenesController.cus111 == 0)
+            {
+                HPBE2 = 8000;
+                DamageBE2 = 220;
+                SpeedBE2 = 30;
+            }
+            else
+            {
+                HPBE2 = 6000;
+                DamageBE2 = 200;
+                SpeedBE2 = 30;
+            }
 
             HPBE3 = 10000;
             DamageBE3 = 260;
@@ -146,6 +156,10 @@ public class Global : MonoBehaviour
             HPBE5 = 50000;
             DamageBE5 = 500;
             SpeedBE5 = 20;
+
+            HPBE6 = 25000;
+            DamageBE6 = 140;
+            SpeedBE6 = 20;
         }
         else if (GameSettingController.GameDiff == 1)
         {
@@ -235,9 +249,18 @@ public class Global : MonoBehaviour
             DamageBE1 = 220;
             SpeedBE1 = 20;
 
-            HPBE2 = 8000;
-            DamageBE2 = 300;
-            SpeedBE2 = 30;
+            if (CutscenesController.cus110 == 1 && CutscenesController.cus111 == 0)
+            {
+                HPBE2 = 10000;
+                DamageBE2 = 320;
+                SpeedBE2 = 30;
+            }
+            else
+            {
+                HPBE2 = 8000;
+                DamageBE2 = 300;
+                SpeedBE2 = 30;
+            }
 
             HPBE3 = 11000;
             DamageBE3 = 300;
@@ -250,6 +273,10 @@ public class Global : MonoBehaviour
             HPBE5 = 80000;
             DamageBE5 = 600;
             SpeedBE5 = 20;
+
+            HPBE6 = 35000;
+            DamageBE6 = 150;
+            SpeedBE6 = 20;
         }
 
         /*//Mob

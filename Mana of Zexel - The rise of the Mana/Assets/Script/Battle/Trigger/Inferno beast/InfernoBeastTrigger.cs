@@ -30,12 +30,12 @@ public class InfernoBeastTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (battle && Input.GetKeyDown(KeyCode.Space))
+        if (battle)
         {
             ContainerController.LoadingOpen = true;
-            HPMPBarController.EIndex = 2;
+            HPMPBarController.EIndex = 22;
             despawn = true;
-            SceneManager.LoadScene("BSIceFang 1");
+            SceneManager.LoadScene("BSInfernoBeast 1");
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

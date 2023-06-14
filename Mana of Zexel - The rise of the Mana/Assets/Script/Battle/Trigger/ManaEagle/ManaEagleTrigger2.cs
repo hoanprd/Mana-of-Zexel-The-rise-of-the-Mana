@@ -21,12 +21,12 @@ public class ManaEagleTrigger2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (battle && Input.GetKeyDown(KeyCode.Space))
+        if (battle)
         {
             ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 10;
             despawn = true;
-            SceneManager.LoadScene("BSFireFang 1");
+            SceneManager.LoadScene("BSManaEagle 1");
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

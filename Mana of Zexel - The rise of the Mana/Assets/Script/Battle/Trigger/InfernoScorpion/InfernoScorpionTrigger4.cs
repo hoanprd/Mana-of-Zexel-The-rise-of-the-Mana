@@ -21,7 +21,7 @@ public class InfernoScorpionTrigger4 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (battle && Input.GetKeyDown(KeyCode.Space))
+        if (battle)
         {
             ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 4;
