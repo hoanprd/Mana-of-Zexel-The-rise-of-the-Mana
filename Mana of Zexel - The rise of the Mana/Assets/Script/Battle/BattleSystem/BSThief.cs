@@ -41,18 +41,23 @@ public class BSThief : MonoBehaviour
     public GameObject NB;
     public GameObject ChooseVayneSkillPanel;
     public GameObject VayneSkill2Hide, VayneSkill3Hide;
+    public GameObject TutorialImage1, TutorialImage2, TutorialImage3, TutorialImage4;
     public int a1, aE1;
     public int stop=0;
     private int dem=0;
     private int once = 0;
     private int show = 0;
     public int UseItemIndex, ChooseSkillIndex;
+    public bool Tutorial1, Tutorial2, Tutorial3, Tutorial4;
 
     // Start is called before the first frame update
     void Start()
     {
         pb = FindObjectOfType<PlayerBattle>();
         tb = FindObjectOfType<ThiefBattle>();
+
+        Tutorial1 = Tutorial2 = Tutorial3 = Tutorial4 = true;
+        TutorialImage1.SetActive(true);
 
         HubController.BusyHub = true;
 
@@ -165,13 +170,17 @@ public class BSThief : MonoBehaviour
     public void PressAttack()
     {
         VayneAttackFX.Play();
+        if (Tutorial1 == true)
+        {
+            TutorialImage1.SetActive(false);
+        }
         VayneAttackEffect.SetActive(true);
         pb.yes1 = 1;
         show = 1;
         ShowP1Panel(false);
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP1;
-        Invoke("delayP1PressAttack", 1f);
+        Invoke("delayP1PressAttack", 2f);
         dem = 1;
     }
     public void PressSkillVayne()
@@ -186,6 +195,10 @@ public class BSThief : MonoBehaviour
         if (Global.CurMPP1 >= 20)
         {
             VayneSkill1FX.Play();
+            if (Tutorial2 == true)
+            {
+                TutorialImage2.SetActive(false);
+            }
             CloseChooseSkillVayne();
             ChooseSkillIndex = 1;
             pb.yes2 = 1;
@@ -193,8 +206,8 @@ public class BSThief : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 100 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
-            dem = 3;
+            Invoke("delayP1PressSkill", 2f);
+            dem = 1;
         }
         else
         {
@@ -229,22 +242,14 @@ public class BSThief : MonoBehaviour
         if(ContainerController.HealPotion > 0)
         {
             HealFX.Play();
+            if (Tutorial3 == true)
+            {
+                TutorialImage3.SetActive(false);
+            }
             HPHealingEffP1.SetActive(true);
             Item_panel.SetActive(false);
-            Global.CurHPP1 += 50;
             showr2.SetActive(true);
             showr1.text = "HP +50";
-            ContainerController.HealPotion -= 1;
-            if (Global.CurHPP1 > Global.MaxHPP1)
-            {
-                Global.CurHPP1 = Global.MaxHPP1;
-            }
-            a1 -= 1;
-            dem = 1;
-            if (a1 == 0)
-            {
-                aE1 = Global.SpeedE1 / 10;
-            }
             Invoke("delayshowr", 2f);
         }
         else
@@ -344,34 +349,6 @@ public class BSThief : MonoBehaviour
         }
     }
 
-    public void UseHoliHP()
-    {
-        showr2.SetActive(true);
-        showr1.text = "Not enough item";
-        Invoke("delayshowr", 2f);
-    }
-
-    public void UseHoliMP()
-    {
-        showr2.SetActive(true);
-        showr1.text = "Not enough item";
-        Invoke("delayshowr", 2f);
-    }
-
-    public void UseUltraBom()
-    {
-        showr2.SetActive(true);
-        showr1.text = "Not enough item";
-        Invoke("delayshowr", 2f);
-    }
-
-    public void UseRL()
-    {
-        showr2.SetActive(true);
-        showr1.text = "Not enough item";
-        Invoke("delayshowr", 2f);
-    }
-
     public void CloseItemPanel()
     {
         OpenCloseFX.Play();
@@ -450,6 +427,11 @@ public class BSThief : MonoBehaviour
     }
     void delayP1PressAttack()
     {
+        if (Tutorial1 == true)
+        {
+            Tutorial1 = false;
+            TutorialImage2.SetActive(true);
+        }
         ShowP1Panel(false);
         VayneAttackEffect.SetActive(false);
         Global.HPE1 -= Global.DamageP1;
@@ -467,6 +449,11 @@ public class BSThief : MonoBehaviour
     }
     void delayP1PressSkill()
     {
+        if (Tutorial2 == true)
+        {
+            Tutorial2 = false;
+            TutorialImage3.SetActive(true);
+        }
         CloseChooseSkillVayne();
         ShowP1Panel(false);
         Global.CurMPP1 -= 20;
@@ -531,9 +518,38 @@ public class BSThief : MonoBehaviour
     }
     void delayshowr()
     {
+        if (Tutorial3 == true)
+        {
+            Tutorial3 = false;
+            TutorialImage4.SetActive(true);
+            if (Tutorial4 == true)
+            {
+                Tutorial4 = false;
+                StartCoroutine(CloseTutorial4());
+            }
+        }
+        Global.CurHPP1 += 50;
+        ContainerController.HealPotion -= 1;
+        if (Global.CurHPP1 > Global.MaxHPP1)
+        {
+            Global.CurHPP1 = Global.MaxHPP1;
+        }
+        show = 0;
+        a1 -= 1;
+        dem = 1;
+        if (a1 == 0)
+        {
+            aE1 = Global.SpeedE1 / 10;
+        }
         HPHealingEffP1.SetActive(false);
         MPHealingEffP1.SetActive(false);
         PDamage.text = "";
         showr2.SetActive(false);
+    }
+
+    IEnumerator CloseTutorial4()
+    {
+        yield return new WaitForSeconds(8f);
+        TutorialImage4.SetActive(false);
     }
 }

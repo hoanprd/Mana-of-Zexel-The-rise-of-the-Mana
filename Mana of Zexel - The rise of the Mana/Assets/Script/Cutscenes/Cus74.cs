@@ -8,11 +8,10 @@ public class Cus74 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject[] TutorialImage;
-    public GameObject va1, TutorialPanel;
+    public GameObject va1;
     public GameObject VayneVAR1, AliaVAL1, MariaVAL1;
     public GameObject NameTag;
-    private int tang = 0, TuTang = 0;
+    private int tang = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -92,7 +91,9 @@ public class Cus74 : MonoBehaviour
         }
         else if (tang >= 13)
         {
-            TutorialPanel.SetActive(true);
+            CutscenesController.cus74 = 1;
+            ContainerController.LoadingOpen = true;
+            SceneManager.LoadScene("Tavern");
         }
     }
     public void Pressnext()
@@ -101,43 +102,8 @@ public class Cus74 : MonoBehaviour
     }
     public void Pressskip()
     {
-        TutorialPanel.SetActive(true);
-    }
-
-    public void PressLTutorialButton()
-    {
-        if (TuTang > 0)
-            TuTang -= 1;
-
-        CheckTutorialStatus();
-    }
-
-    public void PressRTutorialButton()
-    {
-        TuTang += 1;
-
-        if (TuTang > 1)
-        {
-            CutscenesController.cus74 = 1;
-            ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Tavern");
-        }
-
-        CheckTutorialStatus();
-    }
-
-    public void CheckTutorialStatus()
-    {
-        for (int i = 0; i < TutorialImage.Length; i++)
-        {
-            if (i == TuTang)
-            {
-                TutorialImage[i].SetActive(true);
-            }
-            else
-            {
-                TutorialImage[i].SetActive(false);
-            }
-        }
+        CutscenesController.cus74 = 1;
+        ContainerController.LoadingOpen = true;
+        SceneManager.LoadScene("Tavern");
     }
 }

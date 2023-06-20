@@ -151,7 +151,7 @@ public class Cus4 : MonoBehaviour
     {
         TuTang += 1;
 
-        if (TuTang > 1)
+        if (TuTang > 0)
         {
             CutscenesController.cus4 = 1;
             ContainerController.LoadingOpen = true;

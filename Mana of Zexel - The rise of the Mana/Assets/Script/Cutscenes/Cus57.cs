@@ -8,15 +8,16 @@ public class Cus57 : MonoBehaviour
 {
     public Text NameTagText;
     public Text dia;
-    public GameObject va1;
+    public GameObject[] TutorialImage;
+    public GameObject va1, TutorialPanel;
     public GameObject VayneVAL1, AliaVAR1, MariaVAR1;
     public GameObject NameTag;
-    private int tang = 0;
+    private int tang, TuTang;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        tang = TuTang = 0;
     }
 
     // Update is called once per frame
@@ -96,9 +97,7 @@ public class Cus57 : MonoBehaviour
         }
         else if (tang >= 14)
         {
-            CutscenesController.cus57 = 1;
-            ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Mana gate");
+            TutorialPanel.SetActive(true);
         }
     }
     public void Pressnext()
@@ -107,8 +106,43 @@ public class Cus57 : MonoBehaviour
     }
     public void Pressskip()
     {
-        CutscenesController.cus57 = 1;
-        ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("Mana gate");
+        TutorialPanel.SetActive(true);
+    }
+
+    public void PressLTutorialButton()
+    {
+        if (TuTang > 1)
+            TuTang -= 1;
+
+        CheckTutorialStatus();
+    }
+
+    public void PressRTutorialButton()
+    {
+        TuTang += 1;
+
+        if (TuTang > 1)
+        {
+            CutscenesController.cus57 = 1;
+            ContainerController.LoadingOpen = true;
+            SceneManager.LoadScene("Mana gate");
+        }
+
+        CheckTutorialStatus();
+    }
+
+    public void CheckTutorialStatus()
+    {
+        for (int i = 0; i < TutorialImage.Length; i++)
+        {
+            if (i == TuTang)
+            {
+                TutorialImage[i].SetActive(true);
+            }
+            else
+            {
+                TutorialImage[i].SetActive(false);
+            }
+        }
     }
 }
