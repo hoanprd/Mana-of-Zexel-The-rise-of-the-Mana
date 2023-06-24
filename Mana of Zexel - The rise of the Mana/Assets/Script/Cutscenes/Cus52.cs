@@ -22,6 +22,14 @@ public class Cus52 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameSettingController.GameLangPlot == 0)
+        {
+
+        }
+        else
+        {
+
+        }
         if (tang == 1)
         {
             ManaGuardianVAL1.SetActive(true);
