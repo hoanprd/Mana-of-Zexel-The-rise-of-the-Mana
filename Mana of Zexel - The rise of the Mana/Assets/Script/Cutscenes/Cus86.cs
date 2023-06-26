@@ -22,6 +22,14 @@ public class Cus86 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameSettingController.GameLangPlot == 0)
+        {
+
+        }
+        else
+        {
+
+        }
         if (tang == 1)
         {
             AlasaVAL1.SetActive(true);

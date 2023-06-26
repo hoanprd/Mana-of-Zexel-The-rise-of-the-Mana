@@ -22,6 +22,14 @@ public class Cus91 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameSettingController.GameLangPlot == 0)
+        {
+
+        }
+        else
+        {
+
+        }
         if (tang == 1)
         {
             ManaElfVAL1.SetActive(true);
