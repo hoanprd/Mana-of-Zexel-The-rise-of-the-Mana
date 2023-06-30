@@ -133,13 +133,31 @@ public class Player : MonoBehaviour
 
         if (klener && Input.GetKeyDown(KeyCode.Space))
         {
-            if (CutscenesController.cus19 == 0 && CutscenesController.cus18 == 1 && ContainerController.HealPotion >= 1 && ContainerController.ManaCloth >= 1)
+            if (CutscenesController.cus19 == 0 && CutscenesController.cus18 == 1)
             {
-                SceneManager.LoadScene("Cutscenes");
+                if (ContainerController.HealPotion >= 1 && ContainerController.ManaCloth >= 1)
+                {
+                    SceneManager.LoadScene("Cutscenes");
+                }
+                else
+                {
+                    show2.SetActive(true);
+                    show1.text = "Not enough items";
+                    Invoke("delay1", 2f);
+                }
             }
-            else if (CutscenesController.cus22 == 0 && CutscenesController.cus21 == 1 && ContainerController.ManaShield >= 1)
+            else if (CutscenesController.cus22 == 0 && CutscenesController.cus21 == 1)
             {
-                SceneManager.LoadScene("Cutscenes");
+                if (ContainerController.ManaShield >= 1)
+                {
+                    SceneManager.LoadScene("Cutscenes");
+                }
+                else
+                {
+                    show2.SetActive(true);
+                    show1.text = "Not enough items";
+                    Invoke("delay1", 2f);
+                }
             }
         }
 
@@ -1273,7 +1291,18 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Klener"))
         {
-            klener = true;
+            if (CutscenesController.cus19 == 0 && CutscenesController.cus18 == 1)
+            {
+                klener = true;
+                show2.SetActive(false);
+                show1.text = "Press Space to commit the quest";
+            }
+            else if (CutscenesController.cus22 == 0 && CutscenesController.cus21 == 1)
+            {
+                klener = true;
+                show2.SetActive(false);
+                show1.text = "Press Space to commit the quest";
+            }
         }
 
         if (collision.gameObject.CompareTag("ManaGenerator"))
@@ -1296,7 +1325,18 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Klener"))
         {
-            klener = false;
+            if (CutscenesController.cus19 == 0 && CutscenesController.cus18 == 1)
+            {
+                klener = false;
+                show2.SetActive(false);
+                show1.text = "";
+            }
+            else if (CutscenesController.cus22 == 0 && CutscenesController.cus21 == 1)
+            {
+                klener = false;
+                show2.SetActive(false);
+                show1.text = "";
+            }
         }
 
         if (collision.gameObject.CompareTag("ManaGenerator"))
