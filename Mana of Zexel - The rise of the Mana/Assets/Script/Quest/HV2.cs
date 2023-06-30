@@ -27,6 +27,13 @@ public class HV2 : MonoBehaviour
             GlobalQuest.HelpVillagerDone += 1;
             Invoke("delay1", 1f);
         }
+        else if (pick && Input.GetKeyDown(KeyCode.Space) && CutscenesController.cus8 == 1 && ContainerController.ElixirPotion <= 0 && GlobalQuest.HelpVillagerStop2 == 0)
+        {
+            show2.SetActive(true);
+            show1.text = "You don't have enough elixir potion";
+            Invoke("delay1", 1f);
+        }
+
         if (PlayerPrefs.GetInt("SHV") == 3 && GlobalQuest.HelpVillagerStop1 == 1 && GlobalQuest.HelpVillagerStop2 == 1 && GlobalQuest.HelpVillagerStop3 == 1)
         {
             GlobalQuest.HelpVillagerStop1 = 2;
@@ -35,13 +42,30 @@ public class HV2 : MonoBehaviour
             SceneManager.LoadScene("Cutscenes");
         }
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            pick = true;
+            if (CutscenesController.cus9 == 0 && CutscenesController.cus8 == 1 && GlobalQuest.HelpVillagerStop2 == 0)
+            {
+                pick = true;
+                show2.SetActive(true);
+                show1.text = "Press Space to commit the elixir potion";
+            }
         }
     }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            pick = false;
+            show2.SetActive(false);
+            show1.text = "";
+        }
+    }
+
     void delay1()
     {
         show2.SetActive(false);

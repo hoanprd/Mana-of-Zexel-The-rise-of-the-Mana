@@ -1219,7 +1219,12 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("TQZ"))
         {
-            tqz = true;
+            if (CutscenesController.cus6 == 0 && CutscenesController.cus4 == 1)
+            {
+                tqz = true;
+                show2.SetActive(true);
+                show1.text = "Press Space to commit the quest";
+            }
         }
         if (collision.CompareTag("MQZ"))
         {
@@ -1243,7 +1248,12 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("TQZ"))
         {
-            tqz = false;
+            if (CutscenesController.cus6 == 0 && CutscenesController.cus4 == 1)
+            {
+                tqz = false;
+                show2.SetActive(false);
+                show1.text = "";
+            }
         }
         if (collision.CompareTag("MQZ"))
         {
@@ -1309,8 +1319,8 @@ public class Player : MonoBehaviour
     {
         show2.SetActive(false);
     }
-    void delay2()
+    /*void delay2()
     {
         show4.SetActive(false);
-    }
+    }*/
 }
