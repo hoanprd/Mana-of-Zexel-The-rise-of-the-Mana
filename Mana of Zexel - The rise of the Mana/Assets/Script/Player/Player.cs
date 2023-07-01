@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     public GameObject show2;
     public Text show3;
     public GameObject show4;
-    private bool heal, tqz, mqz, alasaqz, asilaqz, klener, ManaGenerator, FireManaGenerator, IceManaGenerator, InfernoVillagersHelp;
+    private bool heal, tqz, mqz, alasaqz, asilaqz, klener, mwqz, ManaGenerator, FireManaGenerator, IceManaGenerator;
     public static int MapIndex;
     public AudioSource FootStep;
     Vector2 movement;
@@ -156,6 +156,24 @@ public class Player : MonoBehaviour
                 {
                     show2.SetActive(true);
                     show1.text = "Not enough items";
+                    Invoke("delay1", 2f);
+                }
+            }
+        }
+
+        if (mwqz && Input.GetKeyDown(KeyCode.Space))
+        {
+            if (CutscenesController.cus82 == 0)
+            {
+                if (ContainerController.BackPainMedicine >= 1)
+                {
+                    ContainerController.BackPainMedicine -= 1;
+                    SceneManager.LoadScene("Cutscenes");
+                }
+                else
+                {
+                    show2.SetActive(true);
+                    show1.text = "You don't have enough back pain medicine!";
                     Invoke("delay1", 2f);
                 }
             }
@@ -1246,7 +1264,21 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("MQZ"))
         {
-            mqz = true;
+            if (CutscenesController.cus12 == 0 && CutscenesController.cus11 == 1)
+            {
+                mqz = true;
+                show2.SetActive(false);
+                show1.text = "Press Space to commit the quest";
+            }
+        }
+        if (collision.CompareTag("MWQZ"))
+        {
+            if (CutscenesController.cus82 == 0 && CutscenesController.cus81 == 1)
+            {
+                mwqz = true;
+                show2.SetActive(false);
+                show1.text = "Press Space to commit the quest";
+            }
         }
         if (collision.CompareTag("AlasaQZ"))
         {
@@ -1275,7 +1307,21 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("MQZ"))
         {
-            mqz = false;
+            if (CutscenesController.cus12 == 0 && CutscenesController.cus11 == 1)
+            {
+                mqz = false;
+                show2.SetActive(false);
+                show1.text = "";
+            }
+        }
+        if (collision.CompareTag("MWQZ"))
+        {
+            if (CutscenesController.cus82 == 0 && CutscenesController.cus81 == 1)
+            {
+                mwqz = false;
+                show2.SetActive(false);
+                show1.text = "";
+            }
         }
         if (collision.CompareTag("AlasaQZ"))
         {

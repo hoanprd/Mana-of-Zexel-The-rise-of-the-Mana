@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class SynthesizeTrigger : MonoBehaviour
 {
-    public GameObject spanel1;
+    public GameObject showr2, spanel1;
+    public Text showr1;
     private bool pick;
     //private int once = 0;
 
@@ -21,6 +22,8 @@ public class SynthesizeTrigger : MonoBehaviour
         if (pick && Input.GetKeyDown(KeyCode.Space))
         {
             HubController.BusyHub = true;
+            showr2.SetActive(false);
+            showr1.text = "";
             spanel1.SetActive(true);
         }
     }
@@ -29,6 +32,8 @@ public class SynthesizeTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             pick = true;
+            showr2.SetActive(true);
+            showr1.text = "Press Space to synthesize";
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -36,6 +41,8 @@ public class SynthesizeTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             pick = false;
+            showr2.SetActive(false);
+            showr1.text = "";
         }
     }
 }
