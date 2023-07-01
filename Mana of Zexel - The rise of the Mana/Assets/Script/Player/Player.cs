@@ -1282,11 +1282,33 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("AlasaQZ"))
         {
-            alasaqz = true;
+            if (CutscenesController.cus67 == 0 && CutscenesController.cus66 == 1)
+            {
+                alasaqz = true;
+                show2.SetActive(false);
+                show1.text = "Press Space to commit the quest";
+            }
+            else if (CutscenesController.cus70 == 0 && CutscenesController.cus69 == 1)
+            {
+                alasaqz = true;
+                show2.SetActive(false);
+                show1.text = "Press Space to commit the quest";
+            }
         }
         if (collision.CompareTag("AsilaQZ"))
         {
-            asilaqz = true;
+            if (CutscenesController.cus71 == 0 && CutscenesController.cus70 == 1)
+            {
+                asilaqz = true;
+                show2.SetActive(false);
+                show1.text = "Press Space to commit the quest";
+            }
+            else if (CutscenesController.cus77 == 0 && CutscenesController.cus76 == 1)
+            {
+                asilaqz = false;
+                show2.SetActive(false);
+                show1.text = "Press Space to commit the quest";
+            }
         }
     }
 
@@ -1325,11 +1347,33 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("AlasaQZ"))
         {
-            alasaqz = false;
+            if (CutscenesController.cus67 == 0 && CutscenesController.cus66 == 1)
+            {
+                alasaqz = false;
+                show2.SetActive(false);
+                show1.text = "";
+            }
+            else if (CutscenesController.cus70 == 0 && CutscenesController.cus69 == 1)
+            {
+                alasaqz = false;
+                show2.SetActive(false);
+                show1.text = "";
+            }
         }
         if (collision.CompareTag("AsilaQZ"))
         {
-            asilaqz = false;
+            if (CutscenesController.cus71 == 0 && CutscenesController.cus70 == 1)
+            {
+                asilaqz = false;
+                show2.SetActive(false);
+                show1.text = "";
+            }
+            else if (CutscenesController.cus77 == 0 && CutscenesController.cus76 == 1)
+            {
+                asilaqz = false;
+                show2.SetActive(false);
+                show1.text = "";
+            }
         }
     }
 
