@@ -80,6 +80,7 @@ public class Cus129 : MonoBehaviour
             {
                 CutscenesController.cus129 = 1;
                 ContainerController.LoadingOpen = true;
+                MapController.InfernoDesertToManaCliff = true;
                 SceneManager.LoadScene("Mana cliff");
             }
         }
@@ -141,6 +142,7 @@ public class Cus129 : MonoBehaviour
             {
                 CutscenesController.cus129 = 1;
                 ContainerController.LoadingOpen = true;
+                MapController.InfernoDesertToManaCliff = true;
                 SceneManager.LoadScene("Mana cliff");
             }
         }
