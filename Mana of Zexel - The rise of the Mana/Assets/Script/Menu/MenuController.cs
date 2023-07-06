@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -15,29 +17,32 @@ public class MenuController : MonoBehaviour
     public AudioSource MenuBGM;
     public AudioSource ClickFX;
 
-    public int DeleteLoadGameIndex;
-
+    public int LoadGameIndex, DeleteLoadGameIndex;
+    public string loadPath;
     public static bool LoadGameCheck;
+
+    string userPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
     void Start()
     {
         MenuBGM.Play();
 
         LoadGameCheck = false;
+        LoadGameIndex = 0;
         DeleteLoadGameIndex = 0;
     }
 
     void Update()
     {
-        if (PlayerPrefs.GetInt("SaveGameD1") == 1)
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveD1.prd"}"))
             showdata1.text = "Data Save!";
         else
             showdata1.text = "No Data!";
-        if (PlayerPrefs.GetInt("SaveGameD2") == 1)
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveD2.prd"}"))
             showdata2.text = "Data Save!";
         else
             showdata2.text = "No Data!";
-        if (PlayerPrefs.GetInt("SaveGameD3") == 1)
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveD3.prd"}"))
             showdata3.text = "Data Save!";
         else
             showdata3.text = "No Data!";
@@ -421,1123 +426,452 @@ public class MenuController : MonoBehaviour
     {
         ClickFX.Play();
 
-        if (PlayerPrefs.GetInt("SaveGameD1") == 1)
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveD1.prd"}"))
         {
-            LoadGameCheck = true;
-
-            //Load map
-            Player.MapIndex = 1;
-
-            //Load date
-            DateController.GlobalDayNight = PlayerPrefs.GetInt("SaveGlobalDayNightD1");
-            DateController.GlobalTime = PlayerPrefs.GetFloat("SaveGlobalTimeD1");
-            DateController.GlobalUpHour = PlayerPrefs.GetInt("SaveGlobalUpHourD1");
-            DateController.GlobalPHour = PlayerPrefs.GetInt("SaveGlobalPHourD1");
-            DateController.GlobalDownHour = PlayerPrefs.GetInt("SaveGlobalDownHourD1");
-
-            CutscenesController.cus0 = PlayerPrefs.GetInt("Savecus0D1");
-            CutscenesController.cus1 = PlayerPrefs.GetInt("Savecus1D1");
-            CutscenesController.cus2 = PlayerPrefs.GetInt("Savecus2D1");
-            CutscenesController.cus3 = PlayerPrefs.GetInt("Savecus3D1");
-            CutscenesController.cus4 = PlayerPrefs.GetInt("Savecus4D1");
-            CutscenesController.cus5 = PlayerPrefs.GetInt("Savecus5D1");
-            CutscenesController.cus6 = PlayerPrefs.GetInt("Savecus6D1");
-            CutscenesController.cus7 = PlayerPrefs.GetInt("Savecus7D1");
-            CutscenesController.cus8 = PlayerPrefs.GetInt("Savecus8D1");
-            CutscenesController.cus9 = PlayerPrefs.GetInt("Savecus9D1");
-            CutscenesController.cus10 = PlayerPrefs.GetInt("Savecus10D1");
-            CutscenesController.cus11 = PlayerPrefs.GetInt("Savecus11D1");
-            CutscenesController.cus12 = PlayerPrefs.GetInt("Savecus12D1");
-            CutscenesController.cus13 = PlayerPrefs.GetInt("Savecus13D1");
-            CutscenesController.cus14 = PlayerPrefs.GetInt("Savecus14D1");
-            CutscenesController.cus15 = PlayerPrefs.GetInt("Savecus15D1");
-            CutscenesController.cus16 = PlayerPrefs.GetInt("Savecus16D1");
-            CutscenesController.cus17 = PlayerPrefs.GetInt("Savecus17D1");
-            CutscenesController.cus18 = PlayerPrefs.GetInt("Savecus18D1");
-            CutscenesController.cus19 = PlayerPrefs.GetInt("Savecus19D1");
-            CutscenesController.cus20 = PlayerPrefs.GetInt("Savecus20D1");
-            CutscenesController.cus21 = PlayerPrefs.GetInt("Savecus21D1");
-            CutscenesController.cus22 = PlayerPrefs.GetInt("Savecus22D1");
-            CutscenesController.cus23 = PlayerPrefs.GetInt("Savecus23D1");
-            CutscenesController.cus24 = PlayerPrefs.GetInt("Savecus24D1");
-            CutscenesController.cus25 = PlayerPrefs.GetInt("Savecus25D1");
-            CutscenesController.cus26 = PlayerPrefs.GetInt("Savecus26D1");
-            CutscenesController.cus27 = PlayerPrefs.GetInt("Savecus27D1");
-            CutscenesController.cus28 = PlayerPrefs.GetInt("Savecus28D1");
-            CutscenesController.cus29 = PlayerPrefs.GetInt("Savecus29D1");
-            CutscenesController.cus30 = PlayerPrefs.GetInt("Savecus30D1");
-            CutscenesController.cus31 = PlayerPrefs.GetInt("Savecus31D1");
-            CutscenesController.cus32 = PlayerPrefs.GetInt("Savecus32D1");
-            CutscenesController.cus33 = PlayerPrefs.GetInt("Savecus33D1");
-            CutscenesController.cus34 = PlayerPrefs.GetInt("Savecus34D1");
-            CutscenesController.cus35 = PlayerPrefs.GetInt("Savecus35D1");
-            CutscenesController.cus36 = PlayerPrefs.GetInt("Savecus36D1");
-            CutscenesController.cus37 = PlayerPrefs.GetInt("Savecus37D1");
-            CutscenesController.cus38 = PlayerPrefs.GetInt("Savecus38D1");
-            CutscenesController.cus39 = PlayerPrefs.GetInt("Savecus39D1");
-            CutscenesController.cus40 = PlayerPrefs.GetInt("Savecus40D1");
-            CutscenesController.cus41 = PlayerPrefs.GetInt("Savecus41D1");
-            CutscenesController.cus42 = PlayerPrefs.GetInt("Savecus42D1");
-            CutscenesController.cus43 = PlayerPrefs.GetInt("Savecus43D1");
-            CutscenesController.cus44 = PlayerPrefs.GetInt("Savecus44D1");
-            CutscenesController.cus45 = PlayerPrefs.GetInt("Savecus45D1");
-            CutscenesController.cus46 = PlayerPrefs.GetInt("Savecus46D1");
-            CutscenesController.cus47 = PlayerPrefs.GetInt("Savecus47D1");
-            CutscenesController.cus48 = PlayerPrefs.GetInt("Savecus48D1");
-            CutscenesController.cus49 = PlayerPrefs.GetInt("Savecus49D1");
-            CutscenesController.cus50 = PlayerPrefs.GetInt("Savecus50D1");
-            CutscenesController.cus51 = PlayerPrefs.GetInt("Savecus51D1");
-            CutscenesController.cus52 = PlayerPrefs.GetInt("Savecus52D1");
-            CutscenesController.cus53 = PlayerPrefs.GetInt("Savecus53D1");
-            CutscenesController.cus54 = PlayerPrefs.GetInt("Savecus54D1");
-            CutscenesController.cus55 = PlayerPrefs.GetInt("Savecus55D1");
-            CutscenesController.cus56 = PlayerPrefs.GetInt("Savecus56D1");
-            CutscenesController.cus57 = PlayerPrefs.GetInt("Savecus57D1");
-            CutscenesController.cus58 = PlayerPrefs.GetInt("Savecus58D1");
-            CutscenesController.cus59 = PlayerPrefs.GetInt("Savecus59D1");
-            CutscenesController.cus60 = PlayerPrefs.GetInt("Savecus60D1");
-            CutscenesController.cus61 = PlayerPrefs.GetInt("Savecus61D1");
-            CutscenesController.cus62 = PlayerPrefs.GetInt("Savecus62D1");
-            CutscenesController.cus63 = PlayerPrefs.GetInt("Savecus63D1");
-            CutscenesController.cus64 = PlayerPrefs.GetInt("Savecus64D1");
-            CutscenesController.cus65 = PlayerPrefs.GetInt("Savecus65D1");
-            CutscenesController.cus66 = PlayerPrefs.GetInt("Savecus66D1");
-            CutscenesController.cus67 = PlayerPrefs.GetInt("Savecus67D1");
-            CutscenesController.cus68 = PlayerPrefs.GetInt("Savecus68D1");
-            CutscenesController.cus69 = PlayerPrefs.GetInt("Savecus69D1");
-            CutscenesController.cus70 = PlayerPrefs.GetInt("Savecus70D1");
-            CutscenesController.cus71 = PlayerPrefs.GetInt("Savecus71D1");
-            CutscenesController.cus72 = PlayerPrefs.GetInt("Savecus72D1");
-            CutscenesController.cus73 = PlayerPrefs.GetInt("Savecus73D1");
-            CutscenesController.cus74 = PlayerPrefs.GetInt("Savecus74D1");
-            CutscenesController.cus75 = PlayerPrefs.GetInt("Savecus75D1");
-            CutscenesController.cus76 = PlayerPrefs.GetInt("Savecus76D1");
-            CutscenesController.cus77 = PlayerPrefs.GetInt("Savecus77D1");
-            CutscenesController.cus78 = PlayerPrefs.GetInt("Savecus78D1");
-            CutscenesController.cus79 = PlayerPrefs.GetInt("Savecus79D1");
-            CutscenesController.cus80 = PlayerPrefs.GetInt("Savecus80D1");
-            CutscenesController.cus81 = PlayerPrefs.GetInt("Savecus81D1");
-            CutscenesController.cus82 = PlayerPrefs.GetInt("Savecus82D1");
-            CutscenesController.cus83 = PlayerPrefs.GetInt("Savecus83D1");
-            CutscenesController.cus84 = PlayerPrefs.GetInt("Savecus84D1");
-            CutscenesController.cus85 = PlayerPrefs.GetInt("Savecus85D1");
-            CutscenesController.cus86 = PlayerPrefs.GetInt("Savecus86D1");
-            CutscenesController.cus87 = PlayerPrefs.GetInt("Savecus87D1");
-            CutscenesController.cus88 = PlayerPrefs.GetInt("Savecus88D1");
-            CutscenesController.cus89 = PlayerPrefs.GetInt("Savecus89D1");
-            CutscenesController.cus90 = PlayerPrefs.GetInt("Savecus90D1");
-            CutscenesController.cus91 = PlayerPrefs.GetInt("Savecus91D1");
-            CutscenesController.cus92 = PlayerPrefs.GetInt("Savecus92D1");
-            CutscenesController.cus93 = PlayerPrefs.GetInt("Savecus93D1");
-            CutscenesController.cus94 = PlayerPrefs.GetInt("Savecus94D1");
-            CutscenesController.cus95 = PlayerPrefs.GetInt("Savecus95D1");
-            CutscenesController.cus96 = PlayerPrefs.GetInt("Savecus96D1");
-            CutscenesController.cus97 = PlayerPrefs.GetInt("Savecus97D1");
-            CutscenesController.cus98 = PlayerPrefs.GetInt("Savecus98D1");
-            CutscenesController.cus99 = PlayerPrefs.GetInt("Savecus99D1");
-            CutscenesController.cus100 = PlayerPrefs.GetInt("Savecus100D1");
-            CutscenesController.cus101 = PlayerPrefs.GetInt("Savecus101D1");
-            CutscenesController.cus102 = PlayerPrefs.GetInt("Savecus102D1");
-            CutscenesController.cus103 = PlayerPrefs.GetInt("Savecus103D1");
-            CutscenesController.cus104 = PlayerPrefs.GetInt("Savecus104D1");
-            CutscenesController.cus105 = PlayerPrefs.GetInt("Savecus105D1");
-            CutscenesController.cus106 = PlayerPrefs.GetInt("Savecus106D1");
-            CutscenesController.cus107 = PlayerPrefs.GetInt("Savecus107D1");
-            CutscenesController.cus108 = PlayerPrefs.GetInt("Savecus108D1");
-            CutscenesController.cus109 = PlayerPrefs.GetInt("Savecus109D1");
-            CutscenesController.cus110 = PlayerPrefs.GetInt("Savecus110D1");
-            CutscenesController.cus111 = PlayerPrefs.GetInt("Savecus111D1");
-            CutscenesController.cus112 = PlayerPrefs.GetInt("Savecus112D1");
-            CutscenesController.cus113 = PlayerPrefs.GetInt("Savecus113D1");
-            CutscenesController.cus114 = PlayerPrefs.GetInt("Savecus114D1");
-            CutscenesController.cus115 = PlayerPrefs.GetInt("Savecus115D1");
-            CutscenesController.cus116 = PlayerPrefs.GetInt("Savecus116D1");
-            CutscenesController.cus117 = PlayerPrefs.GetInt("Savecus117D1");
-            CutscenesController.cus118 = PlayerPrefs.GetInt("Savecus118D1");
-            CutscenesController.cus119 = PlayerPrefs.GetInt("Savecus119D1");
-            CutscenesController.cus120 = PlayerPrefs.GetInt("Savecus120D1");
-
-            //Load quest
-            GlobalQuest.KillGoblinQuest = PlayerPrefs.GetInt("SaveKGQD1");
-            GlobalQuest.HelpVillagerStop1 = PlayerPrefs.GetInt("SaveHVStop1D1");
-            GlobalQuest.HelpVillagerStop2 = PlayerPrefs.GetInt("SaveHVStop2D1");
-            GlobalQuest.HelpVillagerStop3 = PlayerPrefs.GetInt("SaveHVStop3D1");
-            GlobalQuest.HelpVillagerDone = PlayerPrefs.GetInt("SaveHVD1");
-            CutscenesTrigger.PorridgeSyn = PlayerPrefs.GetInt("SavePorridgeSynD1");
-            CutscenesTrigger.BomSyn = PlayerPrefs.GetInt("SaveBomSynD1");
-            CutscenesTrigger.GolemnKill = PlayerPrefs.GetInt("SaveGolemnKillD1");
-            CutscenesTrigger.InfernoScorpionKill = PlayerPrefs.GetInt("SaveInfernoScorpionKillD1");
-            CutscenesTrigger.InfernoScorpionKillP2 = PlayerPrefs.GetInt("SaveInfernoScorpionKillP2D1");
-            CutscenesTrigger.IceFangKill = PlayerPrefs.GetInt("SaveIceFangKillD1");
-            CutscenesTrigger.GoblinKillP2 = PlayerPrefs.GetInt("SaveGoblinKillP2D1");
-            CutscenesTrigger.GolemnKillP2 = PlayerPrefs.GetInt("SaveGolemnKillP2D1");
-
-            PlayerPrefs.SetFloat("x", 6);
-            PlayerPrefs.SetFloat("y", -3);
-            PlayerPrefs.SetFloat("z", 0);
-
-            //Load Vayne
-            Global.CurHPP1 = PlayerPrefs.GetInt("SaveHPP1D1");
-            Global.MaxHPP1 = PlayerPrefs.GetInt("SaveMaxHPP1D1");
-            Global.CurMPP1 = PlayerPrefs.GetInt("SaveMPP1D1");
-            Global.MaxMPP1 = PlayerPrefs.GetInt("SaveMaxMPP1D1");
-            Global.DamageP1 = PlayerPrefs.GetInt("SaveDamageP1D1");
-            Global.SpeedP1 = PlayerPrefs.GetInt("SaveSpeedP1D1");
-            Global.LevelP1 = PlayerPrefs.GetInt("SaveLevelP1D1");
-            Global.MaxEXPP1 = PlayerPrefs.GetInt("SaveMaxEXPP1D1");
-            Global.CurEXPP1 = PlayerPrefs.GetInt("SaveCurEXPP1D1");
-            Global.PlusPointP1 = PlayerPrefs.GetInt("SavePlusPointP1D1");
-            Global.PlusPointAttackLvP1 = PlayerPrefs.GetInt("SavePlusPointAttackLvP1D1");
-            Global.PlusPointHPLvP1 = PlayerPrefs.GetInt("SavePlusPointHPLvP1D1");
-            Global.PlusPointMPLvP1 = PlayerPrefs.GetInt("SavePlusPointMPLvP1D1");
-            Global.PlusPointSpeedLvP1 = PlayerPrefs.GetInt("SavePlusPointSpeedLvP1D1");
-            Global.PlusPointAttackInfoP1 = PlayerPrefs.GetInt("SavePlusPointAttackInfoP1D1");
-            Global.PlusPointHPInfoP1 = PlayerPrefs.GetInt("SavePlusPointHPInfoP1D1");
-            Global.PlusPointMPInfoP1 = PlayerPrefs.GetInt("SavePlusPointMPInfoP1D1");
-            Global.PlusPointSpeedInfoP1 = PlayerPrefs.GetInt("SavePlusPointSpeedInfoP1D1");
-
-            //Load Alia
-            Global.CurHPP2 = PlayerPrefs.GetInt("SaveHPP2D1");
-            Global.MaxHPP2 = PlayerPrefs.GetInt("SaveMaxHPP2D1");
-            Global.CurMPP2 = PlayerPrefs.GetInt("SaveMPP2D1");
-            Global.MaxMPP2 = PlayerPrefs.GetInt("SaveMaxMPP2D1");
-            Global.DamageP2 = PlayerPrefs.GetInt("SaveDamageP2D1");
-            Global.SpeedP2 = PlayerPrefs.GetInt("SaveSpeedP2D1");
-            Global.LevelP2 = PlayerPrefs.GetInt("SaveLevelP2D1");
-            Global.MaxEXPP2 = PlayerPrefs.GetInt("SaveMaxEXPP2D1");
-            Global.CurEXPP2 = PlayerPrefs.GetInt("SaveCurEXPP2D1");
-            Global.PlusPointP2 = PlayerPrefs.GetInt("SavePlusPointP2D1");
-            Global.PlusPointAttackLvP2 = PlayerPrefs.GetInt("SavePlusPointAttackLvP2D1");
-            Global.PlusPointHPLvP2 = PlayerPrefs.GetInt("SavePlusPointHPLvP2D1");
-            Global.PlusPointMPLvP2 = PlayerPrefs.GetInt("SavePlusPointMPLvP2D1");
-            Global.PlusPointSpeedLvP2 = PlayerPrefs.GetInt("SavePlusPointSpeedLvP2D1");
-            Global.PlusPointAttackInfoP2 = PlayerPrefs.GetInt("SavePlusPointAttackInfoP2D1");
-            Global.PlusPointHPInfoP2 = PlayerPrefs.GetInt("SavePlusPointHPInfoP2D1");
-            Global.PlusPointMPInfoP2 = PlayerPrefs.GetInt("SavePlusPointMPInfoP2D1");
-            Global.PlusPointSpeedInfoP2 = PlayerPrefs.GetInt("SavePlusPointSpeedInfoP2D1");
-
-            //Load Maria
-            Global.CurHPP3 = PlayerPrefs.GetInt("SaveHPP3D1");
-            Global.MaxHPP3 = PlayerPrefs.GetInt("SaveMaxHPP3D1");
-            Global.CurMPP3 = PlayerPrefs.GetInt("SaveMPP3D1");
-            Global.MaxMPP3 = PlayerPrefs.GetInt("SaveMaxMPP3D1");
-            Global.DamageP3 = PlayerPrefs.GetInt("SaveDamageP3D1");
-            Global.SpeedP3 = PlayerPrefs.GetInt("SaveSpeedP3D1");
-            Global.LevelP3 = PlayerPrefs.GetInt("SaveLevelP3D1");
-            Global.MaxEXPP3 = PlayerPrefs.GetInt("SaveMaxEXPP3D1");
-            Global.CurEXPP3 = PlayerPrefs.GetInt("SaveCurEXPP3D1");
-            Global.PlusPointP3 = PlayerPrefs.GetInt("SavePlusPointP3D1");
-            Global.PlusPointAttackLvP3 = PlayerPrefs.GetInt("SavePlusPointAttackLvP3D1");
-            Global.PlusPointHPLvP3 = PlayerPrefs.GetInt("SavePlusPointHPLvP3D1");
-            Global.PlusPointMPLvP3 = PlayerPrefs.GetInt("SavePlusPointMPLvP3D1");
-            Global.PlusPointSpeedLvP3 = PlayerPrefs.GetInt("SavePlusPointSpeedLvP3D1");
-            Global.PlusPointAttackInfoP3 = PlayerPrefs.GetInt("SavePlusPointAttackInfoP3D1");
-            Global.PlusPointHPInfoP3 = PlayerPrefs.GetInt("SavePlusPointHPInfoP3D1");
-            Global.PlusPointMPInfoP3 = PlayerPrefs.GetInt("SavePlusPointMPInfoP3D1");
-            Global.PlusPointSpeedInfoP3 = PlayerPrefs.GetInt("SavePlusPointSpeedInfoP3D1");
-
-            //Load Zen
-            Global.Zen = PlayerPrefs.GetInt("SaveZenD1");
-
-            //Load Weapon
-            Global.VayneStaff1 = PlayerPrefs.GetInt("SaveVayneStaff1D1");
-            Global.VayneStaff2 = PlayerPrefs.GetInt("SaveVayneStaff2D1");
-            Global.VayneStaff3 = PlayerPrefs.GetInt("SaveVayneStaff3D1");
-            Global.AliaShoes1 = PlayerPrefs.GetInt("SaveAliaShoes1D1");
-            Global.AliaShoes2 = PlayerPrefs.GetInt("SaveAliaShoes2D1");
-            Global.AliaShoes3 = PlayerPrefs.GetInt("SaveAliaShoes3D1");
-            Global.MariaCrystal1 = PlayerPrefs.GetInt("SaveMariaCrystal1D1");
-            Global.MariaCrystal2 = PlayerPrefs.GetInt("SaveMariaCrystal2D1");
-            Global.MariaCrystal3 = PlayerPrefs.GetInt("SaveMariaCrystal3D1");
-            Global.AlchemistArmor1 = PlayerPrefs.GetInt("SaveAlchemistArmor1D1");
-            Global.AlchemistArmor2 = PlayerPrefs.GetInt("SaveAlchemistArmor2D1");
-            Global.AlchemistArmor3 = PlayerPrefs.GetInt("SaveAlchemistArmor3D1");
-            Global.WarriorArmor1 = PlayerPrefs.GetInt("SaveWarriorArmor1D1");
-            Global.WarriorArmor2 = PlayerPrefs.GetInt("SaveWarriorArmor2D1");
-            Global.WarriorArmor3 = PlayerPrefs.GetInt("SaveWarriorArmor3D1");
-
-            //Load weapon status
-            Global.VayneWeaponStatus = PlayerPrefs.GetInt("SaveVayneWeaponStatusD1");
-            Global.VayneArmorStatus = PlayerPrefs.GetInt("SaveVayneArmorStatusD1");
-            Global.AliaWeaponStatus = PlayerPrefs.GetInt("SaveAliaWeaponStatusD1");
-            Global.AliaArmorStatus = PlayerPrefs.GetInt("SaveAliaArmorStatusD1");
-            Global.MariaWeaponStatus = PlayerPrefs.GetInt("SaveMariaWeaponStatusD1");
-            Global.MariaArmorStatus = PlayerPrefs.GetInt("SaveMariaArmorStatusD1");
-
-            //Load weapon had bought
-            WeaponStoreController.Bought1 = PlayerPrefs.GetInt("SaveBought1D1");
-            WeaponStoreController.Bought2 = PlayerPrefs.GetInt("SaveBought2D1");
-            WeaponStoreController.Bought3 = PlayerPrefs.GetInt("SaveBought3D1");
-            WeaponStoreController.Bought4 = PlayerPrefs.GetInt("SaveBought4D1");
-            WeaponStoreController.Bought5 = PlayerPrefs.GetInt("SaveBought5D1");
-            WeaponStoreController.Bought6 = PlayerPrefs.GetInt("SaveBought6D1");
-            WeaponStoreController.Bought7 = PlayerPrefs.GetInt("SaveBought7D1");
-            WeaponStoreController.Bought8 = PlayerPrefs.GetInt("SaveBought8D1");
-            WeaponStoreController.Bought9 = PlayerPrefs.GetInt("SaveBought9D1");
-            WeaponStoreController.Bought10 = PlayerPrefs.GetInt("SaveBought10D1");
-            WeaponStoreController.Bought11 = PlayerPrefs.GetInt("SaveBought11D1");
-            WeaponStoreController.Bought12 = PlayerPrefs.GetInt("SaveBought12D1");
-            WeaponStoreController.Bought13 = PlayerPrefs.GetInt("SaveBought13D1");
-            WeaponStoreController.Bought14 = PlayerPrefs.GetInt("SaveBought14D1");
-            WeaponStoreController.Bought15 = PlayerPrefs.GetInt("SaveBought15D1");
-
-            //Load item material
-            ContainerController.DriedLeaves = PlayerPrefs.GetInt("SaveDriedLeavesD1");
-            ContainerController.PureWater = PlayerPrefs.GetInt("SavePureWaterD1");
-            ContainerController.MorningDrop = PlayerPrefs.GetInt("SaveMorningDropD1");
-            ContainerController.Wheat = PlayerPrefs.GetInt("SaveWheatD1");
-            ContainerController.Wood = PlayerPrefs.GetInt("SaveWoodD1");
-            ContainerController.String = PlayerPrefs.GetInt("SaveStringD1");
-            ContainerController.Iron = PlayerPrefs.GetInt("SaveIronD1");
-            ContainerController.ManaGem = PlayerPrefs.GetInt("SaveManaGemD1");
-            ContainerController.ScorpionVenom = PlayerPrefs.GetInt("SaveScorpionVenomD1");
-            ContainerController.InfernoSand = PlayerPrefs.GetInt("SaveInfernoSandD1");
-            ContainerController.ManaLiquid = PlayerPrefs.GetInt("SaveManaLiquidD1");
-            ContainerController.ManaOre = PlayerPrefs.GetInt("SaveManaOreD1");
-            ContainerController.ManaCrystal = PlayerPrefs.GetInt("SaveManaCrystalD1"); ;
-            ContainerController.GuardianFeather = PlayerPrefs.GetInt("SaveGuardianFeatherD1");
-            ContainerController.FireOre = PlayerPrefs.GetInt("SaveFireOreD1");
-            ContainerController.GoldenFeather = PlayerPrefs.GetInt("SaveGoldenFeatherD1");
-            ContainerController.RedManaCrystal = PlayerPrefs.GetInt("SaveRedManaCrystalD1");
-            ContainerController.Obsidian = PlayerPrefs.GetInt("SaveObsidianD1");
-            ContainerController.IceOre = PlayerPrefs.GetInt("SaveIceOreD1");
-            ContainerController.IceLeather = PlayerPrefs.GetInt("SaveIceLeatherD1");
-            ContainerController.BlueManaCrystal = PlayerPrefs.GetInt("SaveBlueManaCrystalD1");
-            ContainerController.RedManaSlimeBall = PlayerPrefs.GetInt("SaveRedManaSlimeBallD1");
-            ContainerController.BlueManaSlimeBall = PlayerPrefs.GetInt("SaveBlueManaSlimeBallD1");
-            ContainerController.ManaCoreFireZexel = PlayerPrefs.GetInt("SaveManaCoreFireZexelD1");
-            ContainerController.ManaCoreIceZexel = PlayerPrefs.GetInt("SaveManaCoreIceZexelD1");
-            ContainerController.Rock = PlayerPrefs.GetInt("SaveRockD1");
-            ContainerController.NatureGrass = PlayerPrefs.GetInt("SaveNatureGrassD1");
-            ContainerController.ManaDust = PlayerPrefs.GetInt("SaveManaDustD1");
-            ContainerController.ManaEagleFeather = PlayerPrefs.GetInt("SaveManaEagleFeatherD1");
-            ContainerController.IceCrystal = PlayerPrefs.GetInt("SaveIceCrystalD1");
-
-            //Load item
-            ContainerController.HealPotion = PlayerPrefs.GetInt("SaveHealPotionD1");
-            ContainerController.ManaPotion = PlayerPrefs.GetInt("SaveManaPotionD1");
-            ContainerController.ElixirPotion = PlayerPrefs.GetInt("SaveElixirPotionD1");
-            ContainerController.Bom = PlayerPrefs.GetInt("SaveBomD1");
-            ContainerController.Porridge = PlayerPrefs.GetInt("SavePorridgeD1");
-            ContainerController.ManaCloth = PlayerPrefs.GetInt("SaveManaClothD1");
-            ContainerController.ManaShield = PlayerPrefs.GetInt("SaveManaShieldD1");
-            ContainerController.VenomKiller = PlayerPrefs.GetInt("SaveVenomKillerD1");
-            ContainerController.ManaNecklace = PlayerPrefs.GetInt("SaveManaNecklaceD1");
-            ContainerController.ManaGenerator = PlayerPrefs.GetInt("SaveManaGeneratorD1");
-            ContainerController.Baxiata = PlayerPrefs.GetInt("SaveBaxiataD1");
-            ContainerController.BaxiataGem = PlayerPrefs.GetInt("SaveBaxiataGemD1");
-            ContainerController.Photonria = PlayerPrefs.GetInt("SavePhotonriaD1");
-            ContainerController.PhotonriaGem = PlayerPrefs.GetInt("SavePhotonriaGemD1");
-            ContainerController.ManaLiquidCatalyst = PlayerPrefs.GetInt("SaveManaLiquidCatalystD1");
-            ContainerController.RedLiquidCatalyst = PlayerPrefs.GetInt("SaveRedLiquidCatalystD1");
-            ContainerController.BlueLiquidCatalyst = PlayerPrefs.GetInt("SaveBlueLiquidCatalystD1");
-            ContainerController.ManaCoreFireVayne = PlayerPrefs.GetInt("SaveManaCoreFireVayneD1");
-            ContainerController.ManaCoreIceVayne = PlayerPrefs.GetInt("SaveManaCoreIceVayneD1");
-            ContainerController.PureObsidian = PlayerPrefs.GetInt("SavePureObsidianD1");
-            ContainerController.FireManaGenerator = PlayerPrefs.GetInt("SaveFireManaGeneratorD1");
-            ContainerController.IceManaGenerator = PlayerPrefs.GetInt("SaveIceManaGeneratorD1");
-            ContainerController.PowderOfLife = PlayerPrefs.GetInt("SavePowderOfLifeD1");
-            ContainerController.HoliHP = PlayerPrefs.GetInt("SaveHoliHPD1");
-            ContainerController.HoliMP = PlayerPrefs.GetInt("SaveHoliMPD1");
-            ContainerController.UltraBom = PlayerPrefs.GetInt("SaveUltraBomD1");
-            ContainerController.ReincarnationLife = PlayerPrefs.GetInt("SaveReincarnationLifeD1");
-            ContainerController.FireOfPeace = PlayerPrefs.GetInt("SaveFireOfPeaceD1");
-            ContainerController.OmnipotentBoundary = PlayerPrefs.GetInt("SaveOmnipotentBoundaryD1");
-
-            //Load ManaSynthesize
-            SynthesizeSystem.ManaSynthesize = PlayerPrefs.GetInt("SaveManaSynthesizeD1");
-            SynthesizeSystem.ManaFireSynthesize = PlayerPrefs.GetInt("SaveManaFireSynthesizeD1");
-            SynthesizeSystem.ManaIceSynthesize = PlayerPrefs.GetInt("SaveManaIceSynthesizeD1");
-
-            //Load map posi
-            MapController.WishingHillToZexelTown = false;
-            MapController.ZexelTownToTavern = false;
-            MapController.TavernToSaveRoom = true;
-            MapController.ZexelTownToWishingForest = false;
-            MapController.ZexelTownToInfernoDesert = false;
-            MapController.ZexelTownToWishingHill = false;
-            MapController.TavernToZexelTown = false;
-            MapController.SaveRoomToTavern = false;
-            MapController.WishingForestToZexelTown = false;
-            MapController.InfernoDesertToZexelTown = false;
-            MapController.InfernoDesertToZexelGate = false;
-            MapController.ZexelGateToInfernoDesert = false;
-            MapController.InfernoDesertToManaGate = false;
-            MapController.ManaGateToInfernoDesert = false;
-            MapController.InfernoDesertToInfernoVolcano = false;
-            MapController.InfernoVolcanoToInfernoDesert = false;
-            MapController.InfernoDesertToInfernoIce = false;
-            MapController.InfernoIceToInfernoDesert = false;
-            MapController.InfernoDesertToManaCliff = false;
-            MapController.ManaCliffToInfernoDesert = false;
-            MapController.ManaGateToManaDimension = false;
-            MapController.ManaDimensionToManaGate = false;
-            MapController.ManaDimensionToManaTemple = false;
-            MapController.ManaTempleToManaDimension = false;
-            MapController.InfernoVolcanoToInsideVolcanoCave = false;
-            MapController.InsideVolcanoCaveToInfernoVolcano = false;
-            MapController.InfernoVolcanoToAltaInferno = false;
-            MapController.AltaInfernoToInfernoVolcano = false;
-            MapController.InfernoIceToInsideIceCave = false;
-            MapController.InsideIceCaveToInfernoIce = false;
-            MapController.InfernoIceToAltaInferno = false;
-            MapController.AltaInfernoToInfernoIce = false;
-            MapController.ZexelGateToZexelTemple = false;
-            MapController.ZexelTempleToZexelGate = false;
-
-            SceneManager.LoadScene("Save room");
+            LoadGameIndex = 1;
+            LoadGameProcess();
         }
     }
     public void PressLoadGameData2()
     {
         ClickFX.Play();
 
-        if (PlayerPrefs.GetInt("SaveGameD2") == 1)
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveD2.prd"}"))
         {
-            LoadGameCheck = true;
-
-            //Load map
-            Player.MapIndex = 1;
-
-            //Load date
-            DateController.GlobalDayNight = PlayerPrefs.GetInt("SaveGlobalDayNightD2");
-            DateController.GlobalTime = PlayerPrefs.GetFloat("SaveGlobalTimeD2");
-            DateController.GlobalUpHour = PlayerPrefs.GetInt("SaveGlobalUpHourD2");
-            DateController.GlobalPHour = PlayerPrefs.GetInt("SaveGlobalPHourD2");
-            DateController.GlobalDownHour = PlayerPrefs.GetInt("SaveGlobalDownHourD2");
-
-            CutscenesController.cus0 = PlayerPrefs.GetInt("Savecus0D2");
-            CutscenesController.cus1 = PlayerPrefs.GetInt("Savecus1D2");
-            CutscenesController.cus2 = PlayerPrefs.GetInt("Savecus2D2");
-            CutscenesController.cus3 = PlayerPrefs.GetInt("Savecus3D2");
-            CutscenesController.cus4 = PlayerPrefs.GetInt("Savecus4D2");
-            CutscenesController.cus5 = PlayerPrefs.GetInt("Savecus5D2");
-            CutscenesController.cus6 = PlayerPrefs.GetInt("Savecus6D2");
-            CutscenesController.cus7 = PlayerPrefs.GetInt("Savecus7D2");
-            CutscenesController.cus8 = PlayerPrefs.GetInt("Savecus8D2");
-            CutscenesController.cus9 = PlayerPrefs.GetInt("Savecus9D2");
-            CutscenesController.cus10 = PlayerPrefs.GetInt("Savecus10D2");
-            CutscenesController.cus11 = PlayerPrefs.GetInt("Savecus11D2");
-            CutscenesController.cus12 = PlayerPrefs.GetInt("Savecus12D2");
-            CutscenesController.cus13 = PlayerPrefs.GetInt("Savecus13D2");
-            CutscenesController.cus14 = PlayerPrefs.GetInt("Savecus14D2");
-            CutscenesController.cus15 = PlayerPrefs.GetInt("Savecus15D2");
-            CutscenesController.cus16 = PlayerPrefs.GetInt("Savecus16D2");
-            CutscenesController.cus17 = PlayerPrefs.GetInt("Savecus17D2");
-            CutscenesController.cus18 = PlayerPrefs.GetInt("Savecus18D2");
-            CutscenesController.cus19 = PlayerPrefs.GetInt("Savecus19D2");
-            CutscenesController.cus20 = PlayerPrefs.GetInt("Savecus20D2");
-            CutscenesController.cus21 = PlayerPrefs.GetInt("Savecus21D2");
-            CutscenesController.cus22 = PlayerPrefs.GetInt("Savecus22D2");
-            CutscenesController.cus23 = PlayerPrefs.GetInt("Savecus23D2");
-            CutscenesController.cus24 = PlayerPrefs.GetInt("Savecus24D2");
-            CutscenesController.cus25 = PlayerPrefs.GetInt("Savecus25D2");
-            CutscenesController.cus26 = PlayerPrefs.GetInt("Savecus26D2");
-            CutscenesController.cus27 = PlayerPrefs.GetInt("Savecus27D2");
-            CutscenesController.cus28 = PlayerPrefs.GetInt("Savecus28D2");
-            CutscenesController.cus29 = PlayerPrefs.GetInt("Savecus29D2");
-            CutscenesController.cus30 = PlayerPrefs.GetInt("Savecus30D2");
-            CutscenesController.cus31 = PlayerPrefs.GetInt("Savecus31D2");
-            CutscenesController.cus32 = PlayerPrefs.GetInt("Savecus32D2");
-            CutscenesController.cus33 = PlayerPrefs.GetInt("Savecus33D2");
-            CutscenesController.cus34 = PlayerPrefs.GetInt("Savecus34D2");
-            CutscenesController.cus35 = PlayerPrefs.GetInt("Savecus35D2");
-            CutscenesController.cus36 = PlayerPrefs.GetInt("Savecus36D2");
-            CutscenesController.cus37 = PlayerPrefs.GetInt("Savecus37D2");
-            CutscenesController.cus38 = PlayerPrefs.GetInt("Savecus38D2");
-            CutscenesController.cus39 = PlayerPrefs.GetInt("Savecus39D2");
-            CutscenesController.cus40 = PlayerPrefs.GetInt("Savecus40D2");
-            CutscenesController.cus41 = PlayerPrefs.GetInt("Savecus41D2");
-            CutscenesController.cus42 = PlayerPrefs.GetInt("Savecus42D2");
-            CutscenesController.cus43 = PlayerPrefs.GetInt("Savecus43D2");
-            CutscenesController.cus44 = PlayerPrefs.GetInt("Savecus44D2");
-            CutscenesController.cus45 = PlayerPrefs.GetInt("Savecus45D2");
-            CutscenesController.cus46 = PlayerPrefs.GetInt("Savecus46D2");
-            CutscenesController.cus47 = PlayerPrefs.GetInt("Savecus47D2");
-            CutscenesController.cus48 = PlayerPrefs.GetInt("Savecus48D2");
-            CutscenesController.cus49 = PlayerPrefs.GetInt("Savecus49D2");
-            CutscenesController.cus50 = PlayerPrefs.GetInt("Savecus50D2");
-            CutscenesController.cus51 = PlayerPrefs.GetInt("Savecus51D2");
-            CutscenesController.cus52 = PlayerPrefs.GetInt("Savecus52D2");
-            CutscenesController.cus53 = PlayerPrefs.GetInt("Savecus53D2");
-            CutscenesController.cus54 = PlayerPrefs.GetInt("Savecus54D2");
-            CutscenesController.cus55 = PlayerPrefs.GetInt("Savecus55D2");
-            CutscenesController.cus56 = PlayerPrefs.GetInt("Savecus56D2");
-            CutscenesController.cus57 = PlayerPrefs.GetInt("Savecus57D2");
-            CutscenesController.cus58 = PlayerPrefs.GetInt("Savecus58D2");
-            CutscenesController.cus59 = PlayerPrefs.GetInt("Savecus59D2");
-            CutscenesController.cus60 = PlayerPrefs.GetInt("Savecus60D2");
-            CutscenesController.cus61 = PlayerPrefs.GetInt("Savecus61D2");
-            CutscenesController.cus62 = PlayerPrefs.GetInt("Savecus62D2");
-            CutscenesController.cus63 = PlayerPrefs.GetInt("Savecus63D2");
-            CutscenesController.cus64 = PlayerPrefs.GetInt("Savecus64D2");
-            CutscenesController.cus65 = PlayerPrefs.GetInt("Savecus65D2");
-            CutscenesController.cus66 = PlayerPrefs.GetInt("Savecus66D2");
-            CutscenesController.cus67 = PlayerPrefs.GetInt("Savecus67D2");
-            CutscenesController.cus68 = PlayerPrefs.GetInt("Savecus68D2");
-            CutscenesController.cus69 = PlayerPrefs.GetInt("Savecus69D2");
-            CutscenesController.cus70 = PlayerPrefs.GetInt("Savecus70D2");
-            CutscenesController.cus71 = PlayerPrefs.GetInt("Savecus71D2");
-            CutscenesController.cus72 = PlayerPrefs.GetInt("Savecus72D2");
-            CutscenesController.cus73 = PlayerPrefs.GetInt("Savecus73D2");
-            CutscenesController.cus74 = PlayerPrefs.GetInt("Savecus74D2");
-            CutscenesController.cus75 = PlayerPrefs.GetInt("Savecus75D2");
-            CutscenesController.cus76 = PlayerPrefs.GetInt("Savecus76D2");
-            CutscenesController.cus77 = PlayerPrefs.GetInt("Savecus77D2");
-            CutscenesController.cus78 = PlayerPrefs.GetInt("Savecus78D2");
-            CutscenesController.cus79 = PlayerPrefs.GetInt("Savecus79D2");
-            CutscenesController.cus80 = PlayerPrefs.GetInt("Savecus80D2");
-            CutscenesController.cus81 = PlayerPrefs.GetInt("Savecus81D2");
-            CutscenesController.cus82 = PlayerPrefs.GetInt("Savecus82D2");
-            CutscenesController.cus83 = PlayerPrefs.GetInt("Savecus83D2");
-            CutscenesController.cus84 = PlayerPrefs.GetInt("Savecus84D2");
-            CutscenesController.cus85 = PlayerPrefs.GetInt("Savecus85D2");
-            CutscenesController.cus86 = PlayerPrefs.GetInt("Savecus86D2");
-            CutscenesController.cus87 = PlayerPrefs.GetInt("Savecus87D2");
-            CutscenesController.cus88 = PlayerPrefs.GetInt("Savecus88D2");
-            CutscenesController.cus89 = PlayerPrefs.GetInt("Savecus89D2");
-            CutscenesController.cus90 = PlayerPrefs.GetInt("Savecus90D2");
-            CutscenesController.cus91 = PlayerPrefs.GetInt("Savecus91D2");
-            CutscenesController.cus92 = PlayerPrefs.GetInt("Savecus92D2");
-            CutscenesController.cus93 = PlayerPrefs.GetInt("Savecus93D2");
-            CutscenesController.cus94 = PlayerPrefs.GetInt("Savecus94D2");
-            CutscenesController.cus95 = PlayerPrefs.GetInt("Savecus95D2");
-            CutscenesController.cus96 = PlayerPrefs.GetInt("Savecus96D2");
-            CutscenesController.cus97 = PlayerPrefs.GetInt("Savecus97D2");
-            CutscenesController.cus98 = PlayerPrefs.GetInt("Savecus98D2");
-            CutscenesController.cus99 = PlayerPrefs.GetInt("Savecus99D2");
-            CutscenesController.cus100 = PlayerPrefs.GetInt("Savecus100D2");
-            CutscenesController.cus101 = PlayerPrefs.GetInt("Savecus101D2");
-            CutscenesController.cus102 = PlayerPrefs.GetInt("Savecus102D2");
-            CutscenesController.cus103 = PlayerPrefs.GetInt("Savecus103D2");
-            CutscenesController.cus104 = PlayerPrefs.GetInt("Savecus104D2");
-            CutscenesController.cus105 = PlayerPrefs.GetInt("Savecus105D2");
-            CutscenesController.cus106 = PlayerPrefs.GetInt("Savecus106D2");
-            CutscenesController.cus107 = PlayerPrefs.GetInt("Savecus107D2");
-            CutscenesController.cus108 = PlayerPrefs.GetInt("Savecus108D2");
-            CutscenesController.cus109 = PlayerPrefs.GetInt("Savecus109D2");
-            CutscenesController.cus110 = PlayerPrefs.GetInt("Savecus110D2");
-            CutscenesController.cus111 = PlayerPrefs.GetInt("Savecus111D2");
-            CutscenesController.cus112 = PlayerPrefs.GetInt("Savecus112D2");
-            CutscenesController.cus113 = PlayerPrefs.GetInt("Savecus113D2");
-            CutscenesController.cus114 = PlayerPrefs.GetInt("Savecus114D2");
-            CutscenesController.cus115 = PlayerPrefs.GetInt("Savecus115D2");
-            CutscenesController.cus116 = PlayerPrefs.GetInt("Savecus116D2");
-            CutscenesController.cus117 = PlayerPrefs.GetInt("Savecus117D2");
-            CutscenesController.cus118 = PlayerPrefs.GetInt("Savecus118D2");
-            CutscenesController.cus119 = PlayerPrefs.GetInt("Savecus119D2");
-            CutscenesController.cus120 = PlayerPrefs.GetInt("Savecus120D2");
-
-            //Load quest
-            GlobalQuest.KillGoblinQuest = PlayerPrefs.GetInt("SaveKGQD2");
-            GlobalQuest.HelpVillagerStop1 = PlayerPrefs.GetInt("SaveHVStop1D2");
-            GlobalQuest.HelpVillagerStop2 = PlayerPrefs.GetInt("SaveHVStop2D2");
-            GlobalQuest.HelpVillagerStop3 = PlayerPrefs.GetInt("SaveHVStop3D2");
-            GlobalQuest.HelpVillagerDone = PlayerPrefs.GetInt("SaveHVD2");
-            CutscenesTrigger.PorridgeSyn = PlayerPrefs.GetInt("SavePorridgeSynD2");
-            CutscenesTrigger.BomSyn = PlayerPrefs.GetInt("SaveBomSynD2");
-            CutscenesTrigger.GolemnKill = PlayerPrefs.GetInt("SaveGolemnKillD2");
-            CutscenesTrigger.InfernoScorpionKill = PlayerPrefs.GetInt("SaveInfernoScorpionKillD2");
-            CutscenesTrigger.InfernoScorpionKillP2 = PlayerPrefs.GetInt("SaveInfernoScorpionKillP2D2");
-            CutscenesTrigger.IceFangKill = PlayerPrefs.GetInt("SaveIceFangKillD2");
-            CutscenesTrigger.GoblinKillP2 = PlayerPrefs.GetInt("SaveGoblinKillP2D2");
-            CutscenesTrigger.GolemnKillP2 = PlayerPrefs.GetInt("SaveGolemnKillP2D2");
-
-            //Set point
-            PlayerPrefs.SetFloat("x", 6);
-            PlayerPrefs.SetFloat("y", -3);
-            PlayerPrefs.SetFloat("z", 0);
-
-            //Load Vayne
-            Global.CurHPP1 = PlayerPrefs.GetInt("SaveHPP1D2");
-            Global.MaxHPP1 = PlayerPrefs.GetInt("SaveMaxHPP1D2");
-            Global.CurMPP1 = PlayerPrefs.GetInt("SaveMPP1D2");
-            Global.MaxMPP1 = PlayerPrefs.GetInt("SaveMaxMPP1D2");
-            Global.DamageP1 = PlayerPrefs.GetInt("SaveDamageP1D2");
-            Global.SpeedP1 = PlayerPrefs.GetInt("SaveSpeedP1D2");
-            Global.LevelP1 = PlayerPrefs.GetInt("SaveLevelP1D2");
-            Global.MaxEXPP1 = PlayerPrefs.GetInt("SaveMaxEXPP1D2");
-            Global.CurEXPP1 = PlayerPrefs.GetInt("SaveCurEXPP1D2");
-            Global.PlusPointP1 = PlayerPrefs.GetInt("SavePlusPointP1D2");
-            Global.PlusPointAttackLvP1 = PlayerPrefs.GetInt("SavePlusPointAttackLvP1D2");
-            Global.PlusPointHPLvP1 = PlayerPrefs.GetInt("SavePlusPointHPLvP1D2");
-            Global.PlusPointMPLvP1 = PlayerPrefs.GetInt("SavePlusPointMPLvP1D2");
-            Global.PlusPointSpeedLvP1 = PlayerPrefs.GetInt("SavePlusPointSpeedLvP1D2");
-            Global.PlusPointAttackInfoP1 = PlayerPrefs.GetInt("SavePlusPointAttackInfoP1D2");
-            Global.PlusPointHPInfoP1 = PlayerPrefs.GetInt("SavePlusPointHPInfoP1D2");
-            Global.PlusPointMPInfoP1 = PlayerPrefs.GetInt("SavePlusPointMPInfoP1D2");
-            Global.PlusPointSpeedInfoP1 = PlayerPrefs.GetInt("SavePlusPointSpeedInfoP1D2");
-
-            //Load Alia
-            Global.CurHPP2 = PlayerPrefs.GetInt("SaveHPP2D2");
-            Global.MaxHPP2 = PlayerPrefs.GetInt("SaveMaxHPP2D2");
-            Global.CurMPP2 = PlayerPrefs.GetInt("SaveMPP2D2");
-            Global.MaxMPP2 = PlayerPrefs.GetInt("SaveMaxMPP2D2");
-            Global.DamageP2 = PlayerPrefs.GetInt("SaveDamageP2D2");
-            Global.SpeedP2 = PlayerPrefs.GetInt("SaveSpeedP2D2");
-            Global.LevelP2 = PlayerPrefs.GetInt("SaveLevelP2D2");
-            Global.MaxEXPP2 = PlayerPrefs.GetInt("SaveMaxEXPP2D2");
-            Global.CurEXPP2 = PlayerPrefs.GetInt("SaveCurEXPP2D2");
-            Global.PlusPointP2 = PlayerPrefs.GetInt("SavePlusPointP2D2");
-            Global.PlusPointAttackLvP2 = PlayerPrefs.GetInt("SavePlusPointAttackLvP2D2");
-            Global.PlusPointHPLvP2 = PlayerPrefs.GetInt("SavePlusPointHPLvP2D2");
-            Global.PlusPointMPLvP2 = PlayerPrefs.GetInt("SavePlusPointMPLvP2D2");
-            Global.PlusPointSpeedLvP2 = PlayerPrefs.GetInt("SavePlusPointSpeedLvP2D2");
-            Global.PlusPointAttackInfoP2 = PlayerPrefs.GetInt("SavePlusPointAttackInfoP2D2");
-            Global.PlusPointHPInfoP2 = PlayerPrefs.GetInt("SavePlusPointHPInfoP2D2");
-            Global.PlusPointMPInfoP2 = PlayerPrefs.GetInt("SavePlusPointMPInfoP2D2");
-            Global.PlusPointSpeedInfoP2 = PlayerPrefs.GetInt("SavePlusPointSpeedInfoP2D2");
-
-            //Load Maria
-            Global.CurHPP3 = PlayerPrefs.GetInt("SaveHPP3D2");
-            Global.MaxHPP3 = PlayerPrefs.GetInt("SaveMaxHPP3D2");
-            Global.CurMPP3 = PlayerPrefs.GetInt("SaveMPP3D2");
-            Global.MaxMPP3 = PlayerPrefs.GetInt("SaveMaxMPP3D2");
-            Global.DamageP3 = PlayerPrefs.GetInt("SaveDamageP3D2");
-            Global.SpeedP3 = PlayerPrefs.GetInt("SaveSpeedP3D2");
-            Global.LevelP3 = PlayerPrefs.GetInt("SaveLevelP3D2");
-            Global.MaxEXPP3 = PlayerPrefs.GetInt("SaveMaxEXPP3D2");
-            Global.CurEXPP3 = PlayerPrefs.GetInt("SaveCurEXPP3D2");
-            Global.PlusPointP3 = PlayerPrefs.GetInt("SavePlusPointP3D2");
-            Global.PlusPointAttackLvP3 = PlayerPrefs.GetInt("SavePlusPointAttackLvP3D2");
-            Global.PlusPointHPLvP3 = PlayerPrefs.GetInt("SavePlusPointHPLvP3D2");
-            Global.PlusPointMPLvP3 = PlayerPrefs.GetInt("SavePlusPointMPLvP3D2");
-            Global.PlusPointSpeedLvP3 = PlayerPrefs.GetInt("SavePlusPointSpeedLvP3D2");
-            Global.PlusPointAttackInfoP3 = PlayerPrefs.GetInt("SavePlusPointAttackInfoP3D2");
-            Global.PlusPointHPInfoP3 = PlayerPrefs.GetInt("SavePlusPointHPInfoP3D2");
-            Global.PlusPointMPInfoP3 = PlayerPrefs.GetInt("SavePlusPointMPInfoP3D2");
-            Global.PlusPointSpeedInfoP3 = PlayerPrefs.GetInt("SavePlusPointSpeedInfoP3D2");
-
-            //Set Zen
-            Global.Zen = PlayerPrefs.GetInt("SaveZenD2");
-
-            //Load Weapon
-            Global.VayneStaff1 = PlayerPrefs.GetInt("SaveVayneStaff1D2");
-            Global.VayneStaff2 = PlayerPrefs.GetInt("SaveVayneStaff2D2");
-            Global.VayneStaff3 = PlayerPrefs.GetInt("SaveVayneStaff3D2");
-            Global.AliaShoes1 = PlayerPrefs.GetInt("SaveAliaShoes1D2");
-            Global.AliaShoes2 = PlayerPrefs.GetInt("SaveAliaShoes2D2");
-            Global.AliaShoes3 = PlayerPrefs.GetInt("SaveAliaShoes3D2");
-            Global.MariaCrystal1 = PlayerPrefs.GetInt("SaveMariaCrystal1D2");
-            Global.MariaCrystal2 = PlayerPrefs.GetInt("SaveMariaCrystal2D2");
-            Global.MariaCrystal3 = PlayerPrefs.GetInt("SaveMariaCrystal3D2");
-            Global.AlchemistArmor1 = PlayerPrefs.GetInt("SaveAlchemistArmor1D2");
-            Global.AlchemistArmor2 = PlayerPrefs.GetInt("SaveAlchemistArmor2D2");
-            Global.AlchemistArmor3 = PlayerPrefs.GetInt("SaveAlchemistArmor3D2");
-            Global.WarriorArmor1 = PlayerPrefs.GetInt("SaveWarriorArmor1D2");
-            Global.WarriorArmor2 = PlayerPrefs.GetInt("SaveWarriorArmor2D2");
-            Global.WarriorArmor3 = PlayerPrefs.GetInt("SaveWarriorArmor3D2");
-
-            //Load weapon status
-            Global.VayneWeaponStatus = PlayerPrefs.GetInt("SaveVayneWeaponStatusD2");
-            Global.VayneArmorStatus = PlayerPrefs.GetInt("SaveVayneArmorStatusD2");
-            Global.AliaWeaponStatus = PlayerPrefs.GetInt("SaveAliaWeaponStatusD2");
-            Global.AliaArmorStatus = PlayerPrefs.GetInt("SaveAliaArmorStatusD2");
-            Global.MariaWeaponStatus = PlayerPrefs.GetInt("SaveMariaWeaponStatusD2");
-            Global.MariaArmorStatus = PlayerPrefs.GetInt("SaveMariaArmorStatusD2");
-
-            //Load weapon had bought
-            WeaponStoreController.Bought1 = PlayerPrefs.GetInt("SaveBought1D2");
-            WeaponStoreController.Bought2 = PlayerPrefs.GetInt("SaveBought2D2");
-            WeaponStoreController.Bought3 = PlayerPrefs.GetInt("SaveBought3D2");
-            WeaponStoreController.Bought4 = PlayerPrefs.GetInt("SaveBought4D2");
-            WeaponStoreController.Bought5 = PlayerPrefs.GetInt("SaveBought5D2");
-            WeaponStoreController.Bought6 = PlayerPrefs.GetInt("SaveBought6D2");
-            WeaponStoreController.Bought7 = PlayerPrefs.GetInt("SaveBought7D2");
-            WeaponStoreController.Bought8 = PlayerPrefs.GetInt("SaveBought8D2");
-            WeaponStoreController.Bought9 = PlayerPrefs.GetInt("SaveBought9D2");
-            WeaponStoreController.Bought10 = PlayerPrefs.GetInt("SaveBought10D2");
-            WeaponStoreController.Bought11 = PlayerPrefs.GetInt("SaveBought11D2");
-            WeaponStoreController.Bought12 = PlayerPrefs.GetInt("SaveBought12D2");
-            WeaponStoreController.Bought13 = PlayerPrefs.GetInt("SaveBought13D2");
-            WeaponStoreController.Bought14 = PlayerPrefs.GetInt("SaveBought14D2");
-            WeaponStoreController.Bought15 = PlayerPrefs.GetInt("SaveBought15D2");
-
-            //Load item material
-            ContainerController.DriedLeaves = PlayerPrefs.GetInt("SaveDriedLeavesD2");
-            ContainerController.PureWater = PlayerPrefs.GetInt("SavePureWaterD2");
-            ContainerController.MorningDrop = PlayerPrefs.GetInt("SaveMorningDropD2");
-            ContainerController.Wheat = PlayerPrefs.GetInt("SaveWheatD2");
-            ContainerController.Wood = PlayerPrefs.GetInt("SaveWoodD2");
-            ContainerController.String = PlayerPrefs.GetInt("SaveStringD2");
-            ContainerController.Iron = PlayerPrefs.GetInt("SaveIronD2");
-            ContainerController.ManaGem = PlayerPrefs.GetInt("SaveManaGemD2");
-            ContainerController.ScorpionVenom = PlayerPrefs.GetInt("SaveScorpionVenomD2");
-            ContainerController.InfernoSand = PlayerPrefs.GetInt("SaveInfernoSandD2");
-            ContainerController.ManaLiquid = PlayerPrefs.GetInt("SaveManaLiquidD2");
-            ContainerController.ManaOre = PlayerPrefs.GetInt("SaveManaOreD2");
-            ContainerController.ManaCrystal = PlayerPrefs.GetInt("SaveManaCrystalD2"); ;
-            ContainerController.GuardianFeather = PlayerPrefs.GetInt("SaveGuardianFeatherD2");
-            ContainerController.FireOre = PlayerPrefs.GetInt("SaveFireOreD2");
-            ContainerController.GoldenFeather = PlayerPrefs.GetInt("SaveGoldenFeatherD2");
-            ContainerController.RedManaCrystal = PlayerPrefs.GetInt("SaveRedManaCrystalD2");
-            ContainerController.Obsidian = PlayerPrefs.GetInt("SaveObsidianD2");
-            ContainerController.IceOre = PlayerPrefs.GetInt("SaveIceOreD2");
-            ContainerController.IceLeather = PlayerPrefs.GetInt("SaveIceLeatherD2");
-            ContainerController.BlueManaCrystal = PlayerPrefs.GetInt("SaveBlueManaCrystalD2");
-            ContainerController.RedManaSlimeBall = PlayerPrefs.GetInt("SaveRedManaSlimeBallD2");
-            ContainerController.BlueManaSlimeBall = PlayerPrefs.GetInt("SaveBlueManaSlimeBallD2");
-            ContainerController.ManaCoreFireZexel = PlayerPrefs.GetInt("SaveManaCoreFireZexelD2");
-            ContainerController.ManaCoreIceZexel = PlayerPrefs.GetInt("SaveManaCoreIceZexelD2");
-            ContainerController.Rock = PlayerPrefs.GetInt("SaveRockD2");
-            ContainerController.NatureGrass = PlayerPrefs.GetInt("SaveNatureGrassD2");
-            ContainerController.ManaDust = PlayerPrefs.GetInt("SaveManaDustD2");
-            ContainerController.ManaEagleFeather = PlayerPrefs.GetInt("SaveManaEagleFeatherD2");
-            ContainerController.IceCrystal = PlayerPrefs.GetInt("SaveIceCrystalD2");
-
-            //Load item
-            ContainerController.HealPotion = PlayerPrefs.GetInt("SaveHealPotionD2");
-            ContainerController.ManaPotion = PlayerPrefs.GetInt("SaveManaPotionD2");
-            ContainerController.ElixirPotion = PlayerPrefs.GetInt("SaveElixirPotionD2");
-            ContainerController.Bom = PlayerPrefs.GetInt("SaveBomD2");
-            ContainerController.Porridge = PlayerPrefs.GetInt("SavePorridgeD2");
-            ContainerController.ManaCloth = PlayerPrefs.GetInt("SaveManaClothD2");
-            ContainerController.ManaShield = PlayerPrefs.GetInt("SaveManaShieldD2");
-            ContainerController.VenomKiller = PlayerPrefs.GetInt("SaveVenomKillerD2");
-            ContainerController.ManaNecklace = PlayerPrefs.GetInt("SaveManaNecklaceD2");
-            ContainerController.ManaGenerator = PlayerPrefs.GetInt("SaveManaGeneratorD2");
-            ContainerController.Baxiata = PlayerPrefs.GetInt("SaveBaxiataD2");
-            ContainerController.BaxiataGem = PlayerPrefs.GetInt("SaveBaxiataGemD2");
-            ContainerController.Photonria = PlayerPrefs.GetInt("SavePhotonriaD2");
-            ContainerController.PhotonriaGem = PlayerPrefs.GetInt("SavePhotonriaGemD2");
-            ContainerController.ManaLiquidCatalyst = PlayerPrefs.GetInt("SaveManaLiquidCatalystD2");
-            ContainerController.RedLiquidCatalyst = PlayerPrefs.GetInt("SaveRedLiquidCatalystD2");
-            ContainerController.BlueLiquidCatalyst = PlayerPrefs.GetInt("SaveBlueLiquidCatalystD2");
-            ContainerController.ManaCoreFireVayne = PlayerPrefs.GetInt("SaveManaCoreFireVayneD2");
-            ContainerController.ManaCoreIceVayne = PlayerPrefs.GetInt("SaveManaCoreIceVayneD2");
-            ContainerController.PureObsidian = PlayerPrefs.GetInt("SavePureObsidianD2");
-            ContainerController.FireManaGenerator = PlayerPrefs.GetInt("SaveFireManaGeneratorD2");
-            ContainerController.IceManaGenerator = PlayerPrefs.GetInt("SaveIceManaGeneratorD2");
-            ContainerController.PowderOfLife = PlayerPrefs.GetInt("SavePowderOfLifeD2");
-            ContainerController.HoliHP = PlayerPrefs.GetInt("SaveHoliHPD2");
-            ContainerController.HoliMP = PlayerPrefs.GetInt("SaveHoliMPD2");
-            ContainerController.UltraBom = PlayerPrefs.GetInt("SaveUltraBomD2");
-            ContainerController.ReincarnationLife = PlayerPrefs.GetInt("SaveReincarnationLifeD2");
-            ContainerController.FireOfPeace = PlayerPrefs.GetInt("SaveFireOfPeaceD2");
-            ContainerController.OmnipotentBoundary = PlayerPrefs.GetInt("SaveOmnipotentBoundaryD2");
-
-            //Load ManaSynthesize
-            SynthesizeSystem.ManaSynthesize = PlayerPrefs.GetInt("SaveManaSynthesizeD2");
-            SynthesizeSystem.ManaFireSynthesize = PlayerPrefs.GetInt("SaveManaFireSynthesizeD2");
-            SynthesizeSystem.ManaIceSynthesize = PlayerPrefs.GetInt("SaveManaIceSynthesizeD2");
-
-            //Load map posi
-            MapController.WishingHillToZexelTown = false;
-            MapController.ZexelTownToTavern = false;
-            MapController.TavernToSaveRoom = true;
-            MapController.ZexelTownToWishingForest = false;
-            MapController.ZexelTownToInfernoDesert = false;
-            MapController.ZexelTownToWishingHill = false;
-            MapController.TavernToZexelTown = false;
-            MapController.SaveRoomToTavern = false;
-            MapController.WishingForestToZexelTown = false;
-            MapController.InfernoDesertToZexelTown = false;
-            MapController.InfernoDesertToZexelGate = false;
-            MapController.ZexelGateToInfernoDesert = false;
-            MapController.InfernoDesertToManaGate = false;
-            MapController.ManaGateToInfernoDesert = false;
-            MapController.InfernoDesertToInfernoVolcano = false;
-            MapController.InfernoVolcanoToInfernoDesert = false;
-            MapController.InfernoDesertToInfernoIce = false;
-            MapController.InfernoIceToInfernoDesert = false;
-            MapController.InfernoDesertToManaCliff = false;
-            MapController.ManaCliffToInfernoDesert = false;
-            MapController.ManaGateToManaDimension = false;
-            MapController.ManaDimensionToManaGate = false;
-            MapController.ManaDimensionToManaTemple = false;
-            MapController.ManaTempleToManaDimension = false;
-            MapController.InfernoVolcanoToInsideVolcanoCave = false;
-            MapController.InsideVolcanoCaveToInfernoVolcano = false;
-            MapController.InfernoVolcanoToAltaInferno = false;
-            MapController.AltaInfernoToInfernoVolcano = false;
-            MapController.InfernoIceToInsideIceCave = false;
-            MapController.InsideIceCaveToInfernoIce = false;
-            MapController.InfernoIceToAltaInferno = false;
-            MapController.AltaInfernoToInfernoIce = false;
-            MapController.ZexelGateToZexelTemple = false;
-            MapController.ZexelTempleToZexelGate = false;
-
-            SceneManager.LoadScene("Save room");
+            LoadGameIndex = 2;
+            LoadGameProcess();
         }
     }
     public void PressLoadGameData3()
     {
         ClickFX.Play();
 
-        if (PlayerPrefs.GetInt("SaveGameD3") == 1)
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveD3.prd"}"))
         {
-            LoadGameCheck = true;
-
-            //Load map
-            Player.MapIndex = 1;
-
-            //Load date
-            DateController.GlobalDayNight = PlayerPrefs.GetInt("SaveGlobalDayNightD3");
-            DateController.GlobalTime = PlayerPrefs.GetFloat("SaveGlobalTimeD3");
-            DateController.GlobalUpHour = PlayerPrefs.GetInt("SaveGlobalUpHourD3");
-            DateController.GlobalPHour = PlayerPrefs.GetInt("SaveGlobalPHourD3");
-            DateController.GlobalDownHour = PlayerPrefs.GetInt("SaveGlobalDownHourD3");
-
-            //Set cut
-            CutscenesController.cus0 = PlayerPrefs.GetInt("Savecus0D3");
-            CutscenesController.cus1 = PlayerPrefs.GetInt("Savecus1D3");
-            CutscenesController.cus2 = PlayerPrefs.GetInt("Savecus2D3");
-            CutscenesController.cus3 = PlayerPrefs.GetInt("Savecus3D3");
-            CutscenesController.cus4 = PlayerPrefs.GetInt("Savecus4D3");
-            CutscenesController.cus5 = PlayerPrefs.GetInt("Savecus5D3");
-            CutscenesController.cus6 = PlayerPrefs.GetInt("Savecus6D3");
-            CutscenesController.cus7 = PlayerPrefs.GetInt("Savecus7D3");
-            CutscenesController.cus8 = PlayerPrefs.GetInt("Savecus8D3");
-            CutscenesController.cus9 = PlayerPrefs.GetInt("Savecus9D3");
-            CutscenesController.cus10 = PlayerPrefs.GetInt("Savecus10D3");
-            CutscenesController.cus11 = PlayerPrefs.GetInt("Savecus11D3");
-            CutscenesController.cus12 = PlayerPrefs.GetInt("Savecus12D3");
-            CutscenesController.cus13 = PlayerPrefs.GetInt("Savecus13D3");
-            CutscenesController.cus14 = PlayerPrefs.GetInt("Savecus14D3");
-            CutscenesController.cus15 = PlayerPrefs.GetInt("Savecus15D3");
-            CutscenesController.cus16 = PlayerPrefs.GetInt("Savecus16D3");
-            CutscenesController.cus17 = PlayerPrefs.GetInt("Savecus17D3");
-            CutscenesController.cus18 = PlayerPrefs.GetInt("Savecus18D3");
-            CutscenesController.cus19 = PlayerPrefs.GetInt("Savecus19D3");
-            CutscenesController.cus20 = PlayerPrefs.GetInt("Savecus20D3");
-            CutscenesController.cus21 = PlayerPrefs.GetInt("Savecus21D3");
-            CutscenesController.cus22 = PlayerPrefs.GetInt("Savecus22D3");
-            CutscenesController.cus23 = PlayerPrefs.GetInt("Savecus23D3");
-            CutscenesController.cus24 = PlayerPrefs.GetInt("Savecus24D3");
-            CutscenesController.cus25 = PlayerPrefs.GetInt("Savecus25D3");
-            CutscenesController.cus26 = PlayerPrefs.GetInt("Savecus26D3");
-            CutscenesController.cus27 = PlayerPrefs.GetInt("Savecus27D3");
-            CutscenesController.cus28 = PlayerPrefs.GetInt("Savecus28D3");
-            CutscenesController.cus29 = PlayerPrefs.GetInt("Savecus29D3");
-            CutscenesController.cus30 = PlayerPrefs.GetInt("Savecus30D3");
-            CutscenesController.cus31 = PlayerPrefs.GetInt("Savecus31D3");
-            CutscenesController.cus32 = PlayerPrefs.GetInt("Savecus32D3");
-            CutscenesController.cus33 = PlayerPrefs.GetInt("Savecus33D3");
-            CutscenesController.cus34 = PlayerPrefs.GetInt("Savecus34D3");
-            CutscenesController.cus35 = PlayerPrefs.GetInt("Savecus35D3");
-            CutscenesController.cus36 = PlayerPrefs.GetInt("Savecus36D3");
-            CutscenesController.cus37 = PlayerPrefs.GetInt("Savecus37D3");
-            CutscenesController.cus38 = PlayerPrefs.GetInt("Savecus38D3");
-            CutscenesController.cus39 = PlayerPrefs.GetInt("Savecus39D3");
-            CutscenesController.cus40 = PlayerPrefs.GetInt("Savecus40D3");
-            CutscenesController.cus41 = PlayerPrefs.GetInt("Savecus41D3");
-            CutscenesController.cus42 = PlayerPrefs.GetInt("Savecus42D3");
-            CutscenesController.cus43 = PlayerPrefs.GetInt("Savecus43D3");
-            CutscenesController.cus44 = PlayerPrefs.GetInt("Savecus44D3");
-            CutscenesController.cus45 = PlayerPrefs.GetInt("Savecus45D3");
-            CutscenesController.cus46 = PlayerPrefs.GetInt("Savecus46D3");
-            CutscenesController.cus47 = PlayerPrefs.GetInt("Savecus47D3");
-            CutscenesController.cus48 = PlayerPrefs.GetInt("Savecus48D3");
-            CutscenesController.cus49 = PlayerPrefs.GetInt("Savecus49D3");
-            CutscenesController.cus50 = PlayerPrefs.GetInt("Savecus50D3");
-            CutscenesController.cus51 = PlayerPrefs.GetInt("Savecus51D3");
-            CutscenesController.cus52 = PlayerPrefs.GetInt("Savecus52D3");
-            CutscenesController.cus53 = PlayerPrefs.GetInt("Savecus53D3");
-            CutscenesController.cus54 = PlayerPrefs.GetInt("Savecus54D3");
-            CutscenesController.cus55 = PlayerPrefs.GetInt("Savecus55D3");
-            CutscenesController.cus56 = PlayerPrefs.GetInt("Savecus56D3");
-            CutscenesController.cus57 = PlayerPrefs.GetInt("Savecus57D3");
-            CutscenesController.cus58 = PlayerPrefs.GetInt("Savecus58D3");
-            CutscenesController.cus59 = PlayerPrefs.GetInt("Savecus59D3");
-            CutscenesController.cus60 = PlayerPrefs.GetInt("Savecus60D3");
-            CutscenesController.cus61 = PlayerPrefs.GetInt("Savecus61D3");
-            CutscenesController.cus62 = PlayerPrefs.GetInt("Savecus62D3");
-            CutscenesController.cus63 = PlayerPrefs.GetInt("Savecus63D3");
-            CutscenesController.cus64 = PlayerPrefs.GetInt("Savecus64D3");
-            CutscenesController.cus65 = PlayerPrefs.GetInt("Savecus65D3");
-            CutscenesController.cus66 = PlayerPrefs.GetInt("Savecus66D3");
-            CutscenesController.cus67 = PlayerPrefs.GetInt("Savecus67D3");
-            CutscenesController.cus68 = PlayerPrefs.GetInt("Savecus68D3");
-            CutscenesController.cus69 = PlayerPrefs.GetInt("Savecus69D3");
-            CutscenesController.cus70 = PlayerPrefs.GetInt("Savecus70D3");
-            CutscenesController.cus71 = PlayerPrefs.GetInt("Savecus71D3");
-            CutscenesController.cus72 = PlayerPrefs.GetInt("Savecus72D3");
-            CutscenesController.cus73 = PlayerPrefs.GetInt("Savecus73D3");
-            CutscenesController.cus74 = PlayerPrefs.GetInt("Savecus74D3");
-            CutscenesController.cus75 = PlayerPrefs.GetInt("Savecus75D3");
-            CutscenesController.cus76 = PlayerPrefs.GetInt("Savecus76D3");
-            CutscenesController.cus77 = PlayerPrefs.GetInt("Savecus77D3");
-            CutscenesController.cus78 = PlayerPrefs.GetInt("Savecus78D3");
-            CutscenesController.cus79 = PlayerPrefs.GetInt("Savecus79D3");
-            CutscenesController.cus80 = PlayerPrefs.GetInt("Savecus80D3");
-            CutscenesController.cus81 = PlayerPrefs.GetInt("Savecus81D3");
-            CutscenesController.cus82 = PlayerPrefs.GetInt("Savecus82D3");
-            CutscenesController.cus83 = PlayerPrefs.GetInt("Savecus83D3");
-            CutscenesController.cus84 = PlayerPrefs.GetInt("Savecus84D3");
-            CutscenesController.cus85 = PlayerPrefs.GetInt("Savecus85D3");
-            CutscenesController.cus86 = PlayerPrefs.GetInt("Savecus86D3");
-            CutscenesController.cus87 = PlayerPrefs.GetInt("Savecus87D3");
-            CutscenesController.cus88 = PlayerPrefs.GetInt("Savecus88D3");
-            CutscenesController.cus89 = PlayerPrefs.GetInt("Savecus89D3");
-            CutscenesController.cus90 = PlayerPrefs.GetInt("Savecus90D3");
-            CutscenesController.cus91 = PlayerPrefs.GetInt("Savecus91D3");
-            CutscenesController.cus92 = PlayerPrefs.GetInt("Savecus92D3");
-            CutscenesController.cus93 = PlayerPrefs.GetInt("Savecus93D3");
-            CutscenesController.cus94 = PlayerPrefs.GetInt("Savecus94D3");
-            CutscenesController.cus95 = PlayerPrefs.GetInt("Savecus95D3");
-            CutscenesController.cus96 = PlayerPrefs.GetInt("Savecus96D3");
-            CutscenesController.cus97 = PlayerPrefs.GetInt("Savecus97D3");
-            CutscenesController.cus98 = PlayerPrefs.GetInt("Savecus98D3");
-            CutscenesController.cus99 = PlayerPrefs.GetInt("Savecus99D3");
-            CutscenesController.cus100 = PlayerPrefs.GetInt("Savecus100D3");
-            CutscenesController.cus101 = PlayerPrefs.GetInt("Savecus101D3");
-            CutscenesController.cus102 = PlayerPrefs.GetInt("Savecus102D3");
-            CutscenesController.cus103 = PlayerPrefs.GetInt("Savecus103D3");
-            CutscenesController.cus104 = PlayerPrefs.GetInt("Savecus104D3");
-            CutscenesController.cus105 = PlayerPrefs.GetInt("Savecus105D3");
-            CutscenesController.cus106 = PlayerPrefs.GetInt("Savecus106D3");
-            CutscenesController.cus107 = PlayerPrefs.GetInt("Savecus107D3");
-            CutscenesController.cus108 = PlayerPrefs.GetInt("Savecus108D3");
-            CutscenesController.cus109 = PlayerPrefs.GetInt("Savecus109D3");
-            CutscenesController.cus110 = PlayerPrefs.GetInt("Savecus110D3");
-            CutscenesController.cus111 = PlayerPrefs.GetInt("Savecus111D3");
-            CutscenesController.cus112 = PlayerPrefs.GetInt("Savecus112D3");
-            CutscenesController.cus113 = PlayerPrefs.GetInt("Savecus113D3");
-            CutscenesController.cus114 = PlayerPrefs.GetInt("Savecus114D3");
-            CutscenesController.cus115 = PlayerPrefs.GetInt("Savecus115D3");
-            CutscenesController.cus116 = PlayerPrefs.GetInt("Savecus116D3");
-            CutscenesController.cus117 = PlayerPrefs.GetInt("Savecus117D3");
-            CutscenesController.cus118 = PlayerPrefs.GetInt("Savecus118D3");
-            CutscenesController.cus119 = PlayerPrefs.GetInt("Savecus119D3");
-            CutscenesController.cus120 = PlayerPrefs.GetInt("Savecus120D3");
-
-            //Load quest
-            PlayerPrefs.SetInt("SKGQ", PlayerPrefs.GetInt("SaveKGQD3"));
-            GlobalQuest.HelpVillagerStop1 = PlayerPrefs.GetInt("SaveHVStop1D3");
-            GlobalQuest.HelpVillagerStop2 = PlayerPrefs.GetInt("SaveHVStop2D3");
-            GlobalQuest.HelpVillagerStop3 = PlayerPrefs.GetInt("SaveHVStop3D3");
-            GlobalQuest.HelpVillagerDone = PlayerPrefs.GetInt("SaveHVD3");
-            CutscenesTrigger.PorridgeSyn = PlayerPrefs.GetInt("SavePorridgeSynD3");
-            CutscenesTrigger.BomSyn = PlayerPrefs.GetInt("SaveBomSynD3");
-            CutscenesTrigger.GolemnKill = PlayerPrefs.GetInt("SaveGolemnKillD3");
-            CutscenesTrigger.InfernoScorpionKill = PlayerPrefs.GetInt("SaveInfernoScorpionKillD3");
-            CutscenesTrigger.InfernoScorpionKillP2 = PlayerPrefs.GetInt("SaveInfernoScorpionKillP2D3");
-            CutscenesTrigger.IceFangKill = PlayerPrefs.GetInt("SaveIceFangKillD3");
-            CutscenesTrigger.GoblinKillP2 = PlayerPrefs.GetInt("SaveGoblinKillP2D3");
-            CutscenesTrigger.GolemnKillP2 = PlayerPrefs.GetInt("SaveGolemnKillP2D3");
-
-            //Load point
-            PlayerPrefs.SetFloat("x", 6);
-            PlayerPrefs.SetFloat("y", -3);
-            PlayerPrefs.SetFloat("z", 0);
-
-            //Load Vayne
-            Global.CurHPP1 = PlayerPrefs.GetInt("SaveHPP1D3");
-            Global.MaxHPP1 = PlayerPrefs.GetInt("SaveMaxHPP1D3");
-            Global.CurMPP1 = PlayerPrefs.GetInt("SaveMPP1D3");
-            Global.MaxMPP1 = PlayerPrefs.GetInt("SaveMaxMPP1D3");
-            Global.DamageP1 = PlayerPrefs.GetInt("SaveDamageP1D3");
-            Global.SpeedP1 = PlayerPrefs.GetInt("SaveSpeedP1D3");
-            Global.LevelP1 = PlayerPrefs.GetInt("SaveLevelP1D3");
-            Global.MaxEXPP1 = PlayerPrefs.GetInt("SaveMaxEXPP1D3");
-            Global.CurEXPP1 = PlayerPrefs.GetInt("SaveCurEXPP1D3");
-            Global.PlusPointP1 = PlayerPrefs.GetInt("SavePlusPointP1D3");
-            Global.PlusPointAttackLvP1 = PlayerPrefs.GetInt("SavePlusPointAttackLvP1D3");
-            Global.PlusPointHPLvP1 = PlayerPrefs.GetInt("SavePlusPointHPLvP1D3");
-            Global.PlusPointMPLvP1 = PlayerPrefs.GetInt("SavePlusPointMPLvP1D3");
-            Global.PlusPointSpeedLvP1 = PlayerPrefs.GetInt("SavePlusPointSpeedLvP1D3");
-            Global.PlusPointAttackInfoP1 = PlayerPrefs.GetInt("SavePlusPointAttackInfoP1D3");
-            Global.PlusPointHPInfoP1 = PlayerPrefs.GetInt("SavePlusPointHPInfoP1D3");
-            Global.PlusPointMPInfoP1 = PlayerPrefs.GetInt("SavePlusPointMPInfoP1D3");
-            Global.PlusPointSpeedInfoP1 = PlayerPrefs.GetInt("SavePlusPointSpeedInfoP1D3");
-
-            //Load Alia
-            Global.CurHPP2 = PlayerPrefs.GetInt("SaveHPP2D3");
-            Global.MaxHPP2 = PlayerPrefs.GetInt("SaveMaxHPP2D3");
-            Global.CurMPP2 = PlayerPrefs.GetInt("SaveMPP2D3");
-            Global.MaxMPP2 = PlayerPrefs.GetInt("SaveMaxMPP2D3");
-            Global.DamageP2 = PlayerPrefs.GetInt("SaveDamageP2D3");
-            Global.SpeedP2 = PlayerPrefs.GetInt("SaveSpeedP2D3");
-            Global.LevelP2 = PlayerPrefs.GetInt("SaveLevelP2D3");
-            Global.MaxEXPP2 = PlayerPrefs.GetInt("SaveMaxEXPP2D3");
-            Global.CurEXPP2 = PlayerPrefs.GetInt("SaveCurEXPP2D3");
-            Global.PlusPointP2 = PlayerPrefs.GetInt("SavePlusPointP2D3");
-            Global.PlusPointAttackLvP2 = PlayerPrefs.GetInt("SavePlusPointAttackLvP2D3");
-            Global.PlusPointHPLvP2 = PlayerPrefs.GetInt("SavePlusPointHPLvP2D3");
-            Global.PlusPointMPLvP2 = PlayerPrefs.GetInt("SavePlusPointMPLvP2D3");
-            Global.PlusPointSpeedLvP2 = PlayerPrefs.GetInt("SavePlusPointSpeedLvP2D3");
-            Global.PlusPointAttackInfoP2 = PlayerPrefs.GetInt("SavePlusPointAttackInfoP2D3");
-            Global.PlusPointHPInfoP2 = PlayerPrefs.GetInt("SavePlusPointHPInfoP2D3");
-            Global.PlusPointMPInfoP2 = PlayerPrefs.GetInt("SavePlusPointMPInfoP2D3");
-            Global.PlusPointSpeedInfoP2 = PlayerPrefs.GetInt("SavePlusPointSpeedInfoP2D3");
-
-            //Load Maria
-            Global.CurHPP3 = PlayerPrefs.GetInt("SaveHPP3D3");
-            Global.MaxHPP3 = PlayerPrefs.GetInt("SaveMaxHPP3D3");
-            Global.CurMPP3 = PlayerPrefs.GetInt("SaveMPP3D3");
-            Global.MaxMPP3 = PlayerPrefs.GetInt("SaveMaxMPP3D3");
-            Global.DamageP3 = PlayerPrefs.GetInt("SaveDamageP3D3");
-            Global.SpeedP3 = PlayerPrefs.GetInt("SaveSpeedP3D3");
-            Global.LevelP3 = PlayerPrefs.GetInt("SaveLevelP3D3");
-            Global.MaxEXPP3 = PlayerPrefs.GetInt("SaveMaxEXPP3D3");
-            Global.CurEXPP3 = PlayerPrefs.GetInt("SaveCurEXPP3D3");
-            Global.PlusPointP3 = PlayerPrefs.GetInt("SavePlusPointP3D3");
-            Global.PlusPointAttackLvP3 = PlayerPrefs.GetInt("SavePlusPointAttackLvP3D3");
-            Global.PlusPointHPLvP3 = PlayerPrefs.GetInt("SavePlusPointHPLvP3D3");
-            Global.PlusPointMPLvP3 = PlayerPrefs.GetInt("SavePlusPointMPLvP3D3");
-            Global.PlusPointSpeedLvP3 = PlayerPrefs.GetInt("SavePlusPointSpeedLvP3D3");
-            Global.PlusPointAttackInfoP3 = PlayerPrefs.GetInt("SavePlusPointAttackInfoP3D3");
-            Global.PlusPointHPInfoP3 = PlayerPrefs.GetInt("SavePlusPointHPInfoP3D3");
-            Global.PlusPointMPInfoP3 = PlayerPrefs.GetInt("SavePlusPointMPInfoP3D3");
-            Global.PlusPointSpeedInfoP3 = PlayerPrefs.GetInt("SavePlusPointSpeedInfoP3D3");
-
-            //Load Zen
-            Global.Zen = PlayerPrefs.GetInt("SaveZenD3");
-
-            //Load Weapon
-            Global.VayneStaff1 = PlayerPrefs.GetInt("SaveVayneStaff1D3");
-            Global.VayneStaff2 = PlayerPrefs.GetInt("SaveVayneStaff2D3");
-            Global.VayneStaff3 = PlayerPrefs.GetInt("SaveVayneStaff3D3");
-            Global.AliaShoes1 = PlayerPrefs.GetInt("SaveAliaShoes1D3");
-            Global.AliaShoes2 = PlayerPrefs.GetInt("SaveAliaShoes2D3");
-            Global.AliaShoes3 = PlayerPrefs.GetInt("SaveAliaShoes3D3");
-            Global.MariaCrystal1 = PlayerPrefs.GetInt("SaveMariaCrystal1D3");
-            Global.MariaCrystal2 = PlayerPrefs.GetInt("SaveMariaCrystal2D3");
-            Global.MariaCrystal3 = PlayerPrefs.GetInt("SaveMariaCrystal3D3");
-            Global.AlchemistArmor1 = PlayerPrefs.GetInt("SaveAlchemistArmor1D3");
-            Global.AlchemistArmor2 = PlayerPrefs.GetInt("SaveAlchemistArmor2D3");
-            Global.AlchemistArmor3 = PlayerPrefs.GetInt("SaveAlchemistArmor3D3");
-            Global.WarriorArmor1 = PlayerPrefs.GetInt("SaveWarriorArmor1D3");
-            Global.WarriorArmor2 = PlayerPrefs.GetInt("SaveWarriorArmor2D3");
-            Global.WarriorArmor3 = PlayerPrefs.GetInt("SaveWarriorArmor3D3");
-
-            //Load weapon status
-            Global.VayneWeaponStatus = PlayerPrefs.GetInt("SaveVayneWeaponStatusD3");
-            Global.VayneArmorStatus = PlayerPrefs.GetInt("SaveVayneArmorStatusD3");
-            Global.AliaWeaponStatus = PlayerPrefs.GetInt("SaveAliaWeaponStatusD3");
-            Global.AliaArmorStatus = PlayerPrefs.GetInt("SaveAliaArmorStatusD3");
-            Global.MariaWeaponStatus = PlayerPrefs.GetInt("SaveMariaWeaponStatusD3");
-            Global.MariaArmorStatus = PlayerPrefs.GetInt("SaveMariaArmorStatusD3");
-
-            //Load weapon had bought
-            WeaponStoreController.Bought1 = PlayerPrefs.GetInt("SaveBought1D3");
-            WeaponStoreController.Bought2 = PlayerPrefs.GetInt("SaveBought2D3");
-            WeaponStoreController.Bought3 = PlayerPrefs.GetInt("SaveBought3D3");
-            WeaponStoreController.Bought4 = PlayerPrefs.GetInt("SaveBought4D3");
-            WeaponStoreController.Bought5 = PlayerPrefs.GetInt("SaveBought5D3");
-            WeaponStoreController.Bought6 = PlayerPrefs.GetInt("SaveBought6D3");
-            WeaponStoreController.Bought7 = PlayerPrefs.GetInt("SaveBought7D3");
-            WeaponStoreController.Bought8 = PlayerPrefs.GetInt("SaveBought8D3");
-            WeaponStoreController.Bought9 = PlayerPrefs.GetInt("SaveBought9D3");
-            WeaponStoreController.Bought10 = PlayerPrefs.GetInt("SaveBought10D3");
-            WeaponStoreController.Bought11 = PlayerPrefs.GetInt("SaveBought11D3");
-            WeaponStoreController.Bought12 = PlayerPrefs.GetInt("SaveBought12D3");
-            WeaponStoreController.Bought13 = PlayerPrefs.GetInt("SaveBought13D3");
-            WeaponStoreController.Bought14 = PlayerPrefs.GetInt("SaveBought14D3");
-            WeaponStoreController.Bought15 = PlayerPrefs.GetInt("SaveBought15D3");
-
-            //Load item material
-            ContainerController.DriedLeaves = PlayerPrefs.GetInt("SaveDriedLeavesD3");
-            ContainerController.PureWater = PlayerPrefs.GetInt("SavePureWaterD3");
-            ContainerController.MorningDrop = PlayerPrefs.GetInt("SaveMorningDropD3");
-            ContainerController.Wheat = PlayerPrefs.GetInt("SaveWheatD3");
-            ContainerController.Wood = PlayerPrefs.GetInt("SaveWoodD3");
-            ContainerController.String = PlayerPrefs.GetInt("SaveStringD3");
-            ContainerController.Iron = PlayerPrefs.GetInt("SaveIronD3");
-            ContainerController.ManaGem = PlayerPrefs.GetInt("SaveManaGemD3");
-            ContainerController.ScorpionVenom = PlayerPrefs.GetInt("SaveScorpionVenomD3");
-            ContainerController.InfernoSand = PlayerPrefs.GetInt("SaveInfernoSandD3");
-            ContainerController.ManaLiquid = PlayerPrefs.GetInt("SaveManaLiquidD3");
-            ContainerController.ManaOre = PlayerPrefs.GetInt("SaveManaOreD3");
-            ContainerController.ManaCrystal = PlayerPrefs.GetInt("SaveManaCrystalD3"); ;
-            ContainerController.GuardianFeather = PlayerPrefs.GetInt("SaveGuardianFeatherD3");
-            ContainerController.FireOre = PlayerPrefs.GetInt("SaveFireOreD3");
-            ContainerController.GoldenFeather = PlayerPrefs.GetInt("SaveGoldenFeatherD3");
-            ContainerController.RedManaCrystal = PlayerPrefs.GetInt("SaveRedManaCrystalD3");
-            ContainerController.Obsidian = PlayerPrefs.GetInt("SaveObsidianD3");
-            ContainerController.IceOre = PlayerPrefs.GetInt("SaveIceOreD3");
-            ContainerController.IceLeather = PlayerPrefs.GetInt("SaveIceLeatherD3");
-            ContainerController.BlueManaCrystal = PlayerPrefs.GetInt("SaveBlueManaCrystalD3");
-            ContainerController.RedManaSlimeBall = PlayerPrefs.GetInt("SaveRedManaSlimeBallD3");
-            ContainerController.BlueManaSlimeBall = PlayerPrefs.GetInt("SaveBlueManaSlimeBallD3");
-            ContainerController.ManaCoreFireZexel = PlayerPrefs.GetInt("SaveManaCoreFireZexelD3");
-            ContainerController.ManaCoreIceZexel = PlayerPrefs.GetInt("SaveManaCoreIceZexelD3");
-            ContainerController.Rock = PlayerPrefs.GetInt("SaveRockD3");
-            ContainerController.NatureGrass = PlayerPrefs.GetInt("SaveNatureGrassD3");
-            ContainerController.ManaDust = PlayerPrefs.GetInt("SaveManaDustD3");
-            ContainerController.ManaEagleFeather = PlayerPrefs.GetInt("SaveManaEagleFeatherD3");
-            ContainerController.IceCrystal = PlayerPrefs.GetInt("SaveIceCrystalD3");
-
-            //Load item
-            ContainerController.HealPotion = PlayerPrefs.GetInt("SaveHealPotionD3");
-            ContainerController.ManaPotion = PlayerPrefs.GetInt("SaveManaPotionD3");
-            ContainerController.ElixirPotion = PlayerPrefs.GetInt("SaveElixirPotionD3");
-            ContainerController.Bom = PlayerPrefs.GetInt("SaveBomD3");
-            ContainerController.Porridge = PlayerPrefs.GetInt("SavePorridgeD3");
-            ContainerController.ManaCloth = PlayerPrefs.GetInt("SaveManaClothD3");
-            ContainerController.ManaShield = PlayerPrefs.GetInt("SaveManaShieldD3");
-            ContainerController.VenomKiller = PlayerPrefs.GetInt("SaveVenomKillerD3");
-            ContainerController.ManaNecklace = PlayerPrefs.GetInt("SaveManaNecklaceD3");
-            ContainerController.ManaGenerator = PlayerPrefs.GetInt("SaveManaGeneratorD3");
-            ContainerController.Baxiata = PlayerPrefs.GetInt("SaveBaxiataD3");
-            ContainerController.BaxiataGem = PlayerPrefs.GetInt("SaveBaxiataGemD3");
-            ContainerController.Photonria = PlayerPrefs.GetInt("SavePhotonriaD3");
-            ContainerController.PhotonriaGem = PlayerPrefs.GetInt("SavePhotonriaGemD3");
-            ContainerController.ManaLiquidCatalyst = PlayerPrefs.GetInt("SaveManaLiquidCatalystD3");
-            ContainerController.RedLiquidCatalyst = PlayerPrefs.GetInt("SaveRedLiquidCatalystD3");
-            ContainerController.BlueLiquidCatalyst = PlayerPrefs.GetInt("SaveBlueLiquidCatalystD3");
-            ContainerController.ManaCoreFireVayne = PlayerPrefs.GetInt("SaveManaCoreFireVayneD3");
-            ContainerController.ManaCoreIceVayne = PlayerPrefs.GetInt("SaveManaCoreIceVayneD3");
-            ContainerController.PureObsidian = PlayerPrefs.GetInt("SavePureObsidianD3");
-            ContainerController.FireManaGenerator = PlayerPrefs.GetInt("SaveFireManaGeneratorD3");
-            ContainerController.IceManaGenerator = PlayerPrefs.GetInt("SaveIceManaGeneratorD3");
-            ContainerController.PowderOfLife = PlayerPrefs.GetInt("SavePowderOfLifeD3");
-            ContainerController.HoliHP = PlayerPrefs.GetInt("SaveHoliHPD3");
-            ContainerController.HoliMP = PlayerPrefs.GetInt("SaveHoliMPD3");
-            ContainerController.UltraBom = PlayerPrefs.GetInt("SaveUltraBomD3");
-            ContainerController.ReincarnationLife = PlayerPrefs.GetInt("SaveReincarnationLifeD3");
-            ContainerController.FireOfPeace = PlayerPrefs.GetInt("SaveFireOfPeaceD3");
-            ContainerController.OmnipotentBoundary = PlayerPrefs.GetInt("SaveOmnipotentBoundaryD3");
-
-            //Load ManaSynthesize
-            SynthesizeSystem.ManaSynthesize = PlayerPrefs.GetInt("SaveManaSynthesizeD3");
-            SynthesizeSystem.ManaFireSynthesize = PlayerPrefs.GetInt("SaveManaFireSynthesizeD3");
-            SynthesizeSystem.ManaIceSynthesize = PlayerPrefs.GetInt("SaveManaIceSynthesizeD3");
-
-            //Load map posi
-            MapController.WishingHillToZexelTown = false;
-            MapController.ZexelTownToTavern = false;
-            MapController.TavernToSaveRoom = true;
-            MapController.ZexelTownToWishingForest = false;
-            MapController.ZexelTownToInfernoDesert = false;
-            MapController.ZexelTownToWishingHill = false;
-            MapController.TavernToZexelTown = false;
-            MapController.SaveRoomToTavern = false;
-            MapController.WishingForestToZexelTown = false;
-            MapController.InfernoDesertToZexelTown = false;
-            MapController.InfernoDesertToZexelGate = false;
-            MapController.ZexelGateToInfernoDesert = false;
-            MapController.InfernoDesertToManaGate = false;
-            MapController.ManaGateToInfernoDesert = false;
-            MapController.InfernoDesertToInfernoVolcano = false;
-            MapController.InfernoVolcanoToInfernoDesert = false;
-            MapController.InfernoDesertToInfernoIce = false;
-            MapController.InfernoIceToInfernoDesert = false;
-            MapController.InfernoDesertToManaCliff = false;
-            MapController.ManaCliffToInfernoDesert = false;
-            MapController.ManaGateToManaDimension = false;
-            MapController.ManaDimensionToManaGate = false;
-            MapController.ManaDimensionToManaTemple = false;
-            MapController.ManaTempleToManaDimension = false;
-            MapController.InfernoVolcanoToInsideVolcanoCave = false;
-            MapController.InsideVolcanoCaveToInfernoVolcano = false;
-            MapController.InfernoVolcanoToAltaInferno = false;
-            MapController.AltaInfernoToInfernoVolcano = false;
-            MapController.InfernoIceToInsideIceCave = false;
-            MapController.InsideIceCaveToInfernoIce = false;
-            MapController.InfernoIceToAltaInferno = false;
-            MapController.AltaInfernoToInfernoIce = false;
-            MapController.ZexelGateToZexelTemple = false;
-            MapController.ZexelTempleToZexelGate = false;
-
-            SceneManager.LoadScene("Save room");
+            LoadGameIndex = 3;
+            LoadGameProcess();
         }
     }
+
+    public void LoadGameProcess()
+    {
+        LoadGameCheck = true;
+
+        if (LoadGameIndex == 1)
+        {
+            loadPath = userPath + "/PRD Team/SaveD1.prd";
+        }
+        else if (LoadGameIndex == 2)
+        {
+            loadPath = userPath + "/PRD Team/SaveD2.prd";
+        }
+        else if (LoadGameIndex == 3)
+        {
+            loadPath = userPath + "/PRD Team/SaveD3.prd";
+        }
+
+        string json = File.ReadAllText(loadPath);
+        SaveDataGlobal sdg = JsonUtility.FromJson<SaveDataGlobal>(json);
+
+        //Load map
+        Player.MapIndex = 1;
+
+        //Load date
+        DateController.GlobalDayNight = sdg.SaveGlobalDayNight;
+        DateController.GlobalTime = sdg.SaveGlobalTime;
+        DateController.GlobalUpHour = sdg.SaveGlobalUpHour;
+        DateController.GlobalPHour = sdg.SaveGlobalPHour;
+        DateController.GlobalDownHour = sdg.SaveGlobalDownHour;
+
+        //Load cutscene
+        CutscenesController.cus0 = sdg.Savecus0;
+        CutscenesController.cus1 = sdg.Savecus1;
+        CutscenesController.cus2 = sdg.Savecus2;
+        CutscenesController.cus3 = sdg.Savecus3;
+        CutscenesController.cus4 = sdg.Savecus4;
+        CutscenesController.cus5 = sdg.Savecus5;
+        CutscenesController.cus6 = sdg.Savecus6;
+        CutscenesController.cus7 = sdg.Savecus7;
+        CutscenesController.cus8 = sdg.Savecus8;
+        CutscenesController.cus9 = sdg.Savecus9;
+        CutscenesController.cus10 = sdg.Savecus10;
+        CutscenesController.cus11 = sdg.Savecus11;
+        CutscenesController.cus12 = sdg.Savecus12;
+        CutscenesController.cus13 = sdg.Savecus13;
+        CutscenesController.cus14 = sdg.Savecus14;
+        CutscenesController.cus15 = sdg.Savecus15;
+        CutscenesController.cus16 = sdg.Savecus16;
+        CutscenesController.cus17 = sdg.Savecus17;
+        CutscenesController.cus18 = sdg.Savecus18;
+        CutscenesController.cus19 = sdg.Savecus19;
+        CutscenesController.cus20 = sdg.Savecus20;
+        CutscenesController.cus21 = sdg.Savecus21;
+        CutscenesController.cus22 = sdg.Savecus22;
+        CutscenesController.cus23 = sdg.Savecus23;
+        CutscenesController.cus24 = sdg.Savecus24;
+        CutscenesController.cus25 = sdg.Savecus25;
+        CutscenesController.cus26 = sdg.Savecus26;
+        CutscenesController.cus27 = sdg.Savecus27;
+        CutscenesController.cus28 = sdg.Savecus28;
+        CutscenesController.cus29 = sdg.Savecus29;
+        CutscenesController.cus30 = sdg.Savecus30;
+        CutscenesController.cus31 = sdg.Savecus31;
+        CutscenesController.cus32 = sdg.Savecus32;
+        CutscenesController.cus33 = sdg.Savecus33;
+        CutscenesController.cus34 = sdg.Savecus34;
+        CutscenesController.cus35 = sdg.Savecus35;
+        CutscenesController.cus36 = sdg.Savecus36;
+        CutscenesController.cus37 = sdg.Savecus37;
+        CutscenesController.cus38 = sdg.Savecus38;
+        CutscenesController.cus39 = sdg.Savecus39;
+        CutscenesController.cus40 = sdg.Savecus40;
+        CutscenesController.cus41 = sdg.Savecus41;
+        CutscenesController.cus42 = sdg.Savecus42;
+        CutscenesController.cus43 = sdg.Savecus43;
+        CutscenesController.cus44 = sdg.Savecus44;
+        CutscenesController.cus45 = sdg.Savecus45;
+        CutscenesController.cus46 = sdg.Savecus46;
+        CutscenesController.cus47 = sdg.Savecus47;
+        CutscenesController.cus48 = sdg.Savecus48;
+        CutscenesController.cus49 = sdg.Savecus49;
+        CutscenesController.cus50 = sdg.Savecus50;
+        CutscenesController.cus51 = sdg.Savecus51;
+        CutscenesController.cus52 = sdg.Savecus52;
+        CutscenesController.cus53 = sdg.Savecus53;
+        CutscenesController.cus54 = sdg.Savecus54;
+        CutscenesController.cus55 = sdg.Savecus55;
+        CutscenesController.cus56 = sdg.Savecus56;
+        CutscenesController.cus57 = sdg.Savecus57;
+        CutscenesController.cus58 = sdg.Savecus58;
+        CutscenesController.cus59 = sdg.Savecus59;
+        CutscenesController.cus60 = sdg.Savecus60;
+        CutscenesController.cus61 = sdg.Savecus61;
+        CutscenesController.cus62 = sdg.Savecus62;
+        CutscenesController.cus63 = sdg.Savecus63;
+        CutscenesController.cus64 = sdg.Savecus64;
+        CutscenesController.cus65 = sdg.Savecus65;
+        CutscenesController.cus66 = sdg.Savecus66;
+        CutscenesController.cus67 = sdg.Savecus67;
+        CutscenesController.cus68 = sdg.Savecus68;
+        CutscenesController.cus69 = sdg.Savecus69;
+        CutscenesController.cus70 = sdg.Savecus70;
+        CutscenesController.cus71 = sdg.Savecus71;
+        CutscenesController.cus72 = sdg.Savecus72;
+        CutscenesController.cus73 = sdg.Savecus73;
+        CutscenesController.cus74 = sdg.Savecus74;
+        CutscenesController.cus75 = sdg.Savecus75;
+        CutscenesController.cus76 = sdg.Savecus76;
+        CutscenesController.cus77 = sdg.Savecus77;
+        CutscenesController.cus78 = sdg.Savecus78;
+        CutscenesController.cus79 = sdg.Savecus79;
+        CutscenesController.cus80 = sdg.Savecus80;
+        CutscenesController.cus81 = sdg.Savecus81;
+        CutscenesController.cus82 = sdg.Savecus82;
+        CutscenesController.cus83 = sdg.Savecus83;
+        CutscenesController.cus84 = sdg.Savecus84;
+        CutscenesController.cus85 = sdg.Savecus85;
+        CutscenesController.cus86 = sdg.Savecus86;
+        CutscenesController.cus87 = sdg.Savecus87;
+        CutscenesController.cus88 = sdg.Savecus88;
+        CutscenesController.cus89 = sdg.Savecus89;
+        CutscenesController.cus90 = sdg.Savecus90;
+        CutscenesController.cus91 = sdg.Savecus91;
+        CutscenesController.cus92 = sdg.Savecus92;
+        CutscenesController.cus93 = sdg.Savecus93;
+        CutscenesController.cus94 = sdg.Savecus94;
+        CutscenesController.cus95 = sdg.Savecus95;
+        CutscenesController.cus96 = sdg.Savecus96;
+        CutscenesController.cus97 = sdg.Savecus97;
+        CutscenesController.cus98 = sdg.Savecus98;
+        CutscenesController.cus99 = sdg.Savecus99;
+        CutscenesController.cus100 = sdg.Savecus100;
+        CutscenesController.cus101 = sdg.Savecus101;
+        CutscenesController.cus102 = sdg.Savecus102;
+        CutscenesController.cus103 = sdg.Savecus103;
+        CutscenesController.cus104 = sdg.Savecus104;
+        CutscenesController.cus105 = sdg.Savecus105;
+        CutscenesController.cus106 = sdg.Savecus106;
+        CutscenesController.cus107 = sdg.Savecus107;
+        CutscenesController.cus108 = sdg.Savecus108;
+        CutscenesController.cus109 = sdg.Savecus109;
+        CutscenesController.cus110 = sdg.Savecus110;
+        CutscenesController.cus111 = sdg.Savecus111;
+        CutscenesController.cus112 = sdg.Savecus112;
+        CutscenesController.cus113 = sdg.Savecus113;
+        CutscenesController.cus114 = sdg.Savecus114;
+        CutscenesController.cus115 = sdg.Savecus115;
+        CutscenesController.cus116 = sdg.Savecus116;
+        CutscenesController.cus117 = sdg.Savecus117;
+        CutscenesController.cus118 = sdg.Savecus118;
+        CutscenesController.cus119 = sdg.Savecus119;
+        CutscenesController.cus120 = sdg.Savecus120;
+        CutscenesController.cus121 = sdg.Savecus121;
+        CutscenesController.cus122 = sdg.Savecus122;
+        CutscenesController.cus123 = sdg.Savecus123;
+        CutscenesController.cus124 = sdg.Savecus124;
+        CutscenesController.cus125 = sdg.Savecus125;
+        CutscenesController.cus126 = sdg.Savecus126;
+        CutscenesController.cus127 = sdg.Savecus127;
+        CutscenesController.cus128 = sdg.Savecus128;
+        CutscenesController.cus129 = sdg.Savecus129;
+        CutscenesController.cus130 = sdg.Savecus130;
+        CutscenesController.cus131 = sdg.Savecus131;
+        CutscenesController.cus132 = sdg.Savecus132;
+        CutscenesController.cus133 = sdg.Savecus133;
+        CutscenesController.cus134 = sdg.Savecus134;
+        CutscenesController.cus135 = sdg.Savecus135;
+        CutscenesController.cus136 = sdg.Savecus136;
+        CutscenesController.cus137 = sdg.Savecus137;
+        CutscenesController.cus138 = sdg.Savecus138;
+        CutscenesController.cus139 = sdg.Savecus139;
+        CutscenesController.cus140 = sdg.Savecus140;
+        CutscenesController.cus141 = sdg.Savecus141;
+        CutscenesController.cus142 = sdg.Savecus142;
+        CutscenesController.cus143 = sdg.Savecus143;
+        CutscenesController.cus144 = sdg.Savecus144;
+
+        //Load quest
+        GlobalQuest.KillGoblinQuest = sdg.SaveKGQ;
+        GlobalQuest.HelpVillagerStop1 = sdg.SaveHVStop1;
+        GlobalQuest.HelpVillagerStop2 = sdg.SaveHVStop2;
+        GlobalQuest.HelpVillagerStop3 = sdg.SaveHVStop3;
+        GlobalQuest.HelpVillagerDone = sdg.SaveHV;
+        CutscenesTrigger.PorridgeSyn = sdg.SavePorridgeSyn;
+        CutscenesTrigger.BomSyn = sdg.SaveBomSyn;
+        CutscenesTrigger.GolemnKill = sdg.SaveGolemnKill;
+        CutscenesTrigger.InfernoScorpionKill = sdg.SaveInfernoScorpionKill;
+        CutscenesTrigger.InfernoScorpionKillP2 = sdg.SaveInfernoScorpionKillP2;
+        CutscenesTrigger.IceFangKill = sdg.SaveIceFangKill;
+        CutscenesTrigger.GoblinKillP2 = sdg.SaveGoblinKillP2;
+        CutscenesTrigger.GolemnKillP2 = sdg.SaveGolemnKillP2;
+
+        //Load position 
+        PlayerPrefs.SetFloat("x", 6);
+        PlayerPrefs.SetFloat("y", -3);
+        PlayerPrefs.SetFloat("z", 0);
+
+        //Load Vayne
+        Global.CurHPP1 = sdg.SaveHPP1;
+        Global.MaxHPP1 = sdg.SaveMaxHPP1;
+        Global.CurMPP1 = sdg.SaveMPP1;
+        Global.MaxMPP1 = sdg.SaveMaxMPP1;
+        Global.DamageP1 = sdg.SaveDamageP1;
+        Global.SpeedP1 = sdg.SaveSpeedP1;
+        Global.LevelP1 = sdg.SaveLevelP1;
+        Global.MaxEXPP1 = sdg.SaveMaxEXPP1;
+        Global.CurEXPP1 = sdg.SaveCurEXPP1;
+        Global.PlusPointP1 = sdg.SavePlusPointP1;
+        Global.PlusPointAttackLvP1 = sdg.SavePlusPointAttackLvP1;
+        Global.PlusPointHPLvP1 = sdg.SavePlusPointHPLvP1;
+        Global.PlusPointMPLvP1 = sdg.SavePlusPointMPLvP1;
+        Global.PlusPointSpeedLvP1 = sdg.SavePlusPointSpeedLvP1;
+        Global.PlusPointAttackInfoP1 = sdg.SavePlusPointAttackInfoP1;
+        Global.PlusPointHPInfoP1 = sdg.SavePlusPointHPInfoP1;
+        Global.PlusPointMPInfoP1 = sdg.SavePlusPointMPInfoP1;
+        Global.PlusPointSpeedInfoP1 = sdg.SavePlusPointSpeedInfoP1;
+
+        //Load Alia
+        Global.CurHPP2 = sdg.SaveHPP2;
+        Global.MaxHPP2 = sdg.SaveMaxHPP2;
+        Global.CurMPP2 = sdg.SaveMPP2;
+        Global.MaxMPP2 = sdg.SaveMaxMPP2;
+        Global.DamageP2 = sdg.SaveDamageP2;
+        Global.SpeedP2 = sdg.SaveSpeedP2;
+        Global.LevelP2 = sdg.SaveLevelP2;
+        Global.MaxEXPP2 = sdg.SaveMaxEXPP2;
+        Global.CurEXPP2 = sdg.SaveCurEXPP2;
+        Global.PlusPointP2 = sdg.SavePlusPointP2;
+        Global.PlusPointAttackLvP2 = sdg.SavePlusPointAttackLvP2;
+        Global.PlusPointHPLvP2 = sdg.SavePlusPointHPLvP2;
+        Global.PlusPointMPLvP2 = sdg.SavePlusPointMPLvP2;
+        Global.PlusPointSpeedLvP2 = sdg.SavePlusPointSpeedLvP2;
+        Global.PlusPointAttackInfoP2 = sdg.SavePlusPointAttackInfoP2;
+        Global.PlusPointHPInfoP2 = sdg.SavePlusPointHPInfoP2;
+        Global.PlusPointMPInfoP2 = sdg.SavePlusPointMPInfoP2;
+        Global.PlusPointSpeedInfoP2 = sdg.SavePlusPointSpeedInfoP2;
+
+        //Load Maria
+        Global.CurHPP3 = sdg.SaveHPP3;
+        Global.MaxHPP3 = sdg.SaveMaxHPP3;
+        Global.CurMPP3 = sdg.SaveMPP3;
+        Global.MaxMPP3 = sdg.SaveMaxMPP3;
+        Global.DamageP3 = sdg.SaveDamageP3;
+        Global.SpeedP3 = sdg.SaveSpeedP3;
+        Global.LevelP3 = sdg.SaveLevelP3;
+        Global.MaxEXPP3 = sdg.SaveMaxEXPP3;
+        Global.CurEXPP3 = sdg.SaveCurEXPP3;
+        Global.PlusPointP3 = sdg.SavePlusPointP3;
+        Global.PlusPointAttackLvP3 = sdg.SavePlusPointAttackLvP3;
+        Global.PlusPointHPLvP3 = sdg.SavePlusPointHPLvP3;
+        Global.PlusPointMPLvP3 = sdg.SavePlusPointMPLvP3;
+        Global.PlusPointSpeedLvP3 = sdg.SavePlusPointSpeedLvP3;
+        Global.PlusPointAttackInfoP3 = sdg.SavePlusPointAttackInfoP3;
+        Global.PlusPointHPInfoP3 = sdg.SavePlusPointHPInfoP3;
+        Global.PlusPointMPInfoP3 = sdg.SavePlusPointMPInfoP3;
+        Global.PlusPointSpeedInfoP3 = sdg.SavePlusPointSpeedInfoP3;
+
+        //Load Zen
+        Global.Zen = sdg.SaveZen;
+
+        //Load Weapon
+        Global.VayneStaff1 = sdg.SaveVayneStaff1;
+        Global.VayneStaff2 = sdg.SaveVayneStaff2;
+        Global.VayneStaff3 = sdg.SaveVayneStaff3;
+        Global.AliaShoes1 = sdg.SaveAliaShoes1;
+        Global.AliaShoes2 = sdg.SaveAliaShoes2;
+        Global.AliaShoes3 = sdg.SaveAliaShoes3;
+        Global.MariaCrystal1 = sdg.SaveMariaCrystal1;
+        Global.MariaCrystal2 = sdg.SaveMariaCrystal2;
+        Global.MariaCrystal3 = sdg.SaveMariaCrystal3;
+        Global.AlchemistArmor1 = sdg.SaveAlchemistArmor1;
+        Global.AlchemistArmor2 = sdg.SaveAlchemistArmor2;
+        Global.AlchemistArmor3 = sdg.SaveAlchemistArmor3;
+        Global.WarriorArmor1 = sdg.SaveWarriorArmor1;
+        Global.WarriorArmor2 = sdg.SaveWarriorArmor2;
+        Global.WarriorArmor3 = sdg.SaveWarriorArmor3;
+
+        //Load weapon status
+        Global.VayneWeaponStatus = sdg.SaveVayneWeaponStatus;
+        Global.VayneArmorStatus = sdg.SaveVayneArmorStatus;
+        Global.AliaWeaponStatus = sdg.SaveAliaWeaponStatus;
+        Global.AliaArmorStatus = sdg.SaveAliaArmorStatus;
+        Global.MariaWeaponStatus = sdg.SaveMariaWeaponStatus;
+        Global.MariaArmorStatus = sdg.SaveMariaArmorStatus;
+
+        //Load weapon had bought
+        WeaponStoreController.Bought1 = sdg.SaveBought1;
+        WeaponStoreController.Bought2 = sdg.SaveBought2;
+        WeaponStoreController.Bought3 = sdg.SaveBought3;
+        WeaponStoreController.Bought4 = sdg.SaveBought4;
+        WeaponStoreController.Bought5 = sdg.SaveBought5;
+        WeaponStoreController.Bought6 = sdg.SaveBought6;
+        WeaponStoreController.Bought7 = sdg.SaveBought7;
+        WeaponStoreController.Bought8 = sdg.SaveBought8;
+        WeaponStoreController.Bought9 = sdg.SaveBought9;
+        WeaponStoreController.Bought10 = sdg.SaveBought10;
+        WeaponStoreController.Bought11 = sdg.SaveBought11;
+        WeaponStoreController.Bought12 = sdg.SaveBought12;
+        WeaponStoreController.Bought13 = sdg.SaveBought13;
+        WeaponStoreController.Bought14 = sdg.SaveBought14;
+        WeaponStoreController.Bought15 = sdg.SaveBought15;
+
+        //Load item material
+        ContainerController.DriedLeaves = sdg.SaveDriedLeaves;
+        ContainerController.PureWater = sdg.SavePureWater;
+        ContainerController.MorningDrop = sdg.SaveMorningDrop;
+        ContainerController.Wheat = sdg.SaveWheat;
+        ContainerController.Wood = sdg.SaveWood;
+        ContainerController.String = sdg.SaveString;
+        ContainerController.Iron = sdg.SaveIron;
+        ContainerController.ManaGem = sdg.SaveManaGem;
+        ContainerController.ScorpionVenom = sdg.SaveScorpionVenom;
+        ContainerController.InfernoSand = sdg.SaveInfernoSand;
+        ContainerController.ManaLiquid = sdg.SaveManaLiquid;
+        ContainerController.ManaOre = sdg.SaveManaOre;
+        ContainerController.ManaCrystal = sdg.SaveManaCrystal;
+        ContainerController.GuardianFeather = sdg.SaveGuardianFeather;
+        ContainerController.FireOre = sdg.SaveFireOre;
+        ContainerController.GoldenFeather = sdg.SaveGoldenFeather;
+        ContainerController.RedManaCrystal = sdg.SaveRedManaCrystal;
+        ContainerController.Obsidian = sdg.SaveObsidian;
+        ContainerController.IceOre = sdg.SaveIceOre;
+        ContainerController.IceLeather = sdg.SaveIceLeather;
+        ContainerController.BlueManaCrystal = sdg.SaveBlueManaCrystal;
+        ContainerController.RedManaSlimeBall = sdg.SaveRedManaSlimeBall;
+        ContainerController.BlueManaSlimeBall = sdg.SaveBlueManaSlimeBall;
+        ContainerController.ManaCoreFireZexel = sdg.SaveManaCoreFireZexel;
+        ContainerController.ManaCoreIceZexel = sdg.SaveManaCoreIceZexel;
+        ContainerController.Rock = sdg.SaveRock;
+        ContainerController.PurifyingWater = sdg.SavePurifyingWater;
+        ContainerController.NatureGrass = sdg.SaveNatureGrass;
+        ContainerController.ManaDust = sdg.SaveManaDust;
+        ContainerController.ManaEagleFeather = sdg.SaveManaEagleFeather;
+        ContainerController.IceCrystal = sdg.SaveIceCrystal;
+
+        //Load item
+        ContainerController.HealPotion = sdg.SaveHealPotion;
+        ContainerController.ManaPotion = sdg.SaveManaPotion;
+        ContainerController.ElixirPotion = sdg.SaveElixirPotion;
+        ContainerController.Bom = sdg.SaveBom;
+        ContainerController.Porridge = sdg.SavePorridge;
+        ContainerController.ManaCloth = sdg.SaveManaCloth;
+        ContainerController.ManaShield = sdg.SaveManaShield;
+        ContainerController.VenomKiller = sdg.SaveVenomKiller;
+        ContainerController.ManaNecklace = sdg.SaveManaNecklace;
+        ContainerController.ManaGenerator = sdg.SaveManaGenerator;
+        ContainerController.Baxiata = sdg.SaveBaxiata;
+        ContainerController.BaxiataGem = sdg.SaveBaxiataGem;
+        ContainerController.Photonria = sdg.SavePhotonria;
+        ContainerController.PhotonriaGem = sdg.SavePhotonriaGem;
+        ContainerController.ManaLiquidCatalyst = sdg.SaveManaLiquidCatalyst;
+        ContainerController.RedLiquidCatalyst = sdg.SaveRedLiquidCatalyst;
+        ContainerController.BlueLiquidCatalyst = sdg.SaveBlueLiquidCatalyst;
+        ContainerController.ManaCoreFireVayne = sdg.SaveManaCoreFireVayne;
+        ContainerController.ManaCoreIceVayne = sdg.SaveManaCoreIceVayne;
+        ContainerController.PureObsidian = sdg.SavePureObsidian;
+        ContainerController.BackPainMedicine = sdg.SaveBackPainMedicine;
+        ContainerController.PurifyingPotion = sdg.SavePurifyingPotion;
+        ContainerController.FireManaGenerator = sdg.SaveFireManaGenerator;
+        ContainerController.IceManaGenerator = sdg.SaveIceManaGenerator;
+        ContainerController.BrokenManaDetector = sdg.SaveBrokenManaDetector;
+        ContainerController.ManaDetector = sdg.SaveManaDetector;
+        ContainerController.PowderOfLife = sdg.SavePowderOfLife;
+        ContainerController.HoliHP = sdg.SaveHoliHP;
+        ContainerController.HoliMP = sdg.SaveHoliMP;
+        ContainerController.UltraBom = sdg.SaveUltraBom;
+        ContainerController.ReincarnationLife = sdg.SaveReincarnationLife;
+        ContainerController.FireOfPeace = sdg.SaveFireOfPeace;
+        ContainerController.OmnipotentBoundary = sdg.SaveOmnipotentBoundary;
+
+        //Load ManaSynthesize
+        SynthesizeSystem.ManaSynthesize = sdg.SaveManaSynthesize;
+        SynthesizeSystem.ManaFireSynthesize = sdg.SaveManaFireSynthesize;
+        SynthesizeSystem.ManaIceSynthesize = sdg.SaveManaIceSynthesize;
+
+        //Load map posi
+        MapController.WishingHillToZexelTown = false;
+        MapController.ZexelTownToTavern = false;
+        MapController.TavernToSaveRoom = true;
+        MapController.ZexelTownToWishingForest = false;
+        MapController.ZexelTownToInfernoDesert = false;
+        MapController.ZexelTownToWishingHill = false;
+        MapController.TavernToZexelTown = false;
+        MapController.SaveRoomToTavern = false;
+        MapController.WishingForestToZexelTown = false;
+        MapController.InfernoDesertToZexelTown = false;
+        MapController.InfernoDesertToZexelGate = false;
+        MapController.ZexelGateToInfernoDesert = false;
+        MapController.InfernoDesertToManaGate = false;
+        MapController.ManaGateToInfernoDesert = false;
+        MapController.InfernoDesertToInfernoVolcano = false;
+        MapController.InfernoVolcanoToInfernoDesert = false;
+        MapController.InfernoDesertToInfernoIce = false;
+        MapController.InfernoIceToInfernoDesert = false;
+        MapController.InfernoDesertToManaCliff = false;
+        MapController.ManaCliffToInfernoDesert = false;
+        MapController.ManaGateToManaDimension = false;
+        MapController.ManaDimensionToManaGate = false;
+        MapController.ManaDimensionToManaTemple = false;
+        MapController.ManaTempleToManaDimension = false;
+        MapController.InfernoVolcanoToInsideVolcanoCave = false;
+        MapController.InsideVolcanoCaveToInfernoVolcano = false;
+        MapController.InfernoVolcanoToAltaInferno = false;
+        MapController.AltaInfernoToInfernoVolcano = false;
+        MapController.InfernoIceToInsideIceCave = false;
+        MapController.InsideIceCaveToInfernoIce = false;
+        MapController.InfernoIceToAltaInferno = false;
+        MapController.AltaInfernoToInfernoIce = false;
+        MapController.ZexelGateToZexelTemple = false;
+        MapController.ZexelTempleToZexelGate = false;
+
+        SceneManager.LoadScene("Save room");
+    }
+
     public void PressDLGameD1()
     {
         ClickFX.Play();
         DeleteLoadGameIndex = 1;
-        if (PlayerPrefs.GetInt("SaveGameD1") == 1)
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveD1.prd"}"))
         {
             AskDeleteLoadGamePanel.SetActive(true);
         }
@@ -1546,7 +880,7 @@ public class MenuController : MonoBehaviour
     {
         ClickFX.Play();
         DeleteLoadGameIndex = 2;
-        if (PlayerPrefs.GetInt("SaveGameD2") == 1)
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveD2.prd"}"))
         {
             AskDeleteLoadGamePanel.SetActive(true);
         }
@@ -1555,7 +889,7 @@ public class MenuController : MonoBehaviour
     {
         ClickFX.Play();
         DeleteLoadGameIndex = 3;
-        if (PlayerPrefs.GetInt("SaveGameD3") == 1)
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveD3.prd"}"))
         {
             AskDeleteLoadGamePanel.SetActive(true);
         }
@@ -1566,15 +900,15 @@ public class MenuController : MonoBehaviour
         ClickFX.Play();
         if (DeleteLoadGameIndex == 1)
         {
-            PlayerPrefs.SetInt("SaveGameD1", 0);
+            File.Delete($"{userPath}\\{"PRD Team"}\\{"SaveD1.prd"}");
         }
         else if (DeleteLoadGameIndex == 2)
         {
-            PlayerPrefs.SetInt("SaveGameD2", 0);
+            File.Delete($"{userPath}\\{"PRD Team"}\\{"SaveD2.prd"}");
         }
         else if (DeleteLoadGameIndex == 3)
         {
-            PlayerPrefs.SetInt("SaveGameD3", 0);
+            File.Delete($"{userPath}\\{"PRD Team"}\\{"SaveD3.prd"}");
         }
 
         AskDeleteLoadGamePanel.SetActive(false);
