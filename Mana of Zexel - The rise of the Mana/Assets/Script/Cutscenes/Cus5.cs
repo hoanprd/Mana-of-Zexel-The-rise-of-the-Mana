@@ -146,7 +146,7 @@ public class Cus5 : MonoBehaviour
 
     public void PressLTutorialButton()
     {
-        if (TuTang > 1)
+        if (TuTang > 0)
             TuTang -= 1;
 
         CheckTutorialStatus();

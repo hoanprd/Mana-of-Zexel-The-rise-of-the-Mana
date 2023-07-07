@@ -34,15 +34,15 @@ public class MenuController : MonoBehaviour
 
     void Update()
     {
-        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveD1.prd"}"))
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData01"}\\{"SaveD1.prd"}"))
             showdata1.text = "Data Save!";
         else
             showdata1.text = "No Data!";
-        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveD2.prd"}"))
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData02"}\\{"SaveD2.prd"}"))
             showdata2.text = "Data Save!";
         else
             showdata2.text = "No Data!";
-        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveD3.prd"}"))
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData03"}\\{"SaveD3.prd"}"))
             showdata3.text = "Data Save!";
         else
             showdata3.text = "No Data!";
@@ -426,7 +426,7 @@ public class MenuController : MonoBehaviour
     {
         ClickFX.Play();
 
-        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveD1.prd"}"))
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData01"}\\{"SaveD1.prd"}"))
         {
             LoadGameIndex = 1;
             LoadGameProcess();
@@ -436,7 +436,7 @@ public class MenuController : MonoBehaviour
     {
         ClickFX.Play();
 
-        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveD2.prd"}"))
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData02"}\\{"SaveD2.prd"}"))
         {
             LoadGameIndex = 2;
             LoadGameProcess();
@@ -446,7 +446,7 @@ public class MenuController : MonoBehaviour
     {
         ClickFX.Play();
 
-        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveD3.prd"}"))
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData03"}\\{"SaveD3.prd"}"))
         {
             LoadGameIndex = 3;
             LoadGameProcess();
@@ -459,15 +459,15 @@ public class MenuController : MonoBehaviour
 
         if (LoadGameIndex == 1)
         {
-            loadPath = userPath + "/PRD Team/SaveD1.prd";
+            loadPath = userPath + "/PRD Team/SaveData01/SaveD1.prd";
         }
         else if (LoadGameIndex == 2)
         {
-            loadPath = userPath + "/PRD Team/SaveD2.prd";
+            loadPath = userPath + "/PRD Team/SaveData02/SaveD2.prd";
         }
         else if (LoadGameIndex == 3)
         {
-            loadPath = userPath + "/PRD Team/SaveD3.prd";
+            loadPath = userPath + "/PRD Team/SaveData03/SaveD3.prd";
         }
 
         string json = File.ReadAllText(loadPath);
@@ -871,7 +871,7 @@ public class MenuController : MonoBehaviour
     {
         ClickFX.Play();
         DeleteLoadGameIndex = 1;
-        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveD1.prd"}"))
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData01"}\\{"SaveD1.prd"}"))
         {
             AskDeleteLoadGamePanel.SetActive(true);
         }
@@ -880,7 +880,7 @@ public class MenuController : MonoBehaviour
     {
         ClickFX.Play();
         DeleteLoadGameIndex = 2;
-        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveD2.prd"}"))
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData02"}\\{"SaveD2.prd"}"))
         {
             AskDeleteLoadGamePanel.SetActive(true);
         }
@@ -889,7 +889,7 @@ public class MenuController : MonoBehaviour
     {
         ClickFX.Play();
         DeleteLoadGameIndex = 3;
-        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveD3.prd"}"))
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData03"}\\{"SaveD3.prd"}"))
         {
             AskDeleteLoadGamePanel.SetActive(true);
         }
@@ -900,15 +900,24 @@ public class MenuController : MonoBehaviour
         ClickFX.Play();
         if (DeleteLoadGameIndex == 1)
         {
-            File.Delete($"{userPath}\\{"PRD Team"}\\{"SaveD1.prd"}");
+            if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData01"}\\{"SaveD1.prd"}"))
+            {
+                File.Delete($"{userPath}\\{"PRD Team"}\\{"SaveData01"}\\{"SaveD1.prd"}");
+            }
         }
         else if (DeleteLoadGameIndex == 2)
         {
-            File.Delete($"{userPath}\\{"PRD Team"}\\{"SaveD2.prd"}");
+            if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData02"}\\{"SaveD2.prd"}"))
+            {
+                File.Delete($"{userPath}\\{"PRD Team"}\\{"SaveData02"}\\{"SaveD2.prd"}");
+            }
         }
         else if (DeleteLoadGameIndex == 3)
         {
-            File.Delete($"{userPath}\\{"PRD Team"}\\{"SaveD3.prd"}");
+            if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData03"}\\{"SaveD3.prd"}"))
+            {
+                File.Delete($"{userPath}\\{"PRD Team"}\\{"SaveData03"}\\{"SaveD3.prd"}");
+            }
         }
 
         AskDeleteLoadGamePanel.SetActive(false);

@@ -1173,7 +1173,8 @@ public class ContainerController : MonoBehaviour
     public void CloseSynSuccessPanel()
     {
         CSSPButtonActive = false;
-        Back4();
+        BagPanel.SetActive(false);
+        BagStatus = 0;
         SynSuccessPanel.SetActive(false);
 
         if (CutscenesController.cus25 == 0 && CutscenesController.cus24 == 1 && SynItemIndex == 3)

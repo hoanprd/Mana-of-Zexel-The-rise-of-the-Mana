@@ -14,12 +14,14 @@ public class Cus1 : MonoBehaviour
     public GameObject va4;
     public GameObject VayneVAL1, GinVAR1;
     public GameObject NameTag;
+    public AudioSource FunBGM, LessSeriousBGM, NormalBGM, SeriousBGM, TutorialBGM2;
     private int tang;
 
     // Start is called before the first frame update
     void Start()
     {
         tang = 0;
+        StartCoroutine(DelayBGM());
     }
 
     // Update is called once per frame
@@ -99,6 +101,8 @@ public class Cus1 : MonoBehaviour
             }
             else if (tang == 14)
             {
+                LessSeriousBGM.Stop();
+                NormalBGM.Play();
                 VayneVAL1.SetActive(true);
                 NameTag.SetActive(true);
                 NameTagText.text = "Vayne";
@@ -119,21 +123,28 @@ public class Cus1 : MonoBehaviour
             {
                 va3.SetActive(false);
                 va4.SetActive(true);
+                VayneVAL1.SetActive(false);
                 GinVAR1.SetActive(false);
+                NameTagText.text = "";
+                dia.text = "...";
+            }
+            else if (tang == 18)
+            {
+                VayneVAL1.SetActive(true);
                 NameTagText.text = "Vayne";
                 dia.text = "Phuff... Am I nearing to Zexel town yet?";
             }
-            else if (tang == 18)
+            else if (tang == 19)
             {
                 NameTagText.text = "Thief";
                 dia.text = "Stop there kid! Give me all your jewelry and valuables things.";
             }
-            else if (tang == 19)
+            else if (tang == 20)
             {
                 NameTagText.text = "Vayne";
                 dia.text = "Are you kidding me? A thief in middel of the day? I think I have to teach this bandit a lesson!";
             }
-            else if (tang >= 20)
+            else if (tang >= 21)
             {
                 CutscenesController.cus1 = 1;
                 SceneManager.LoadScene("BSThief");
@@ -233,21 +244,28 @@ public class Cus1 : MonoBehaviour
             {
                 va3.SetActive(false);
                 va4.SetActive(true);
+                VayneVAL1.SetActive(false);
                 GinVAR1.SetActive(false);
+                NameTagText.text = "";
+                dia.text = "...";
+            }
+            else if (tang == 18)
+            {
+                VayneVAL1.SetActive(true);
                 NameTagText.text = "Vayne";
                 dia.text = "Phù... Mình đã đến gần thị trấn Zexel chưa thế?";
             }
-            else if (tang == 18)
+            else if (tang == 19)
             {
                 NameTagText.text = "Thief";
                 dia.text = "Dừng lại đi nhóc con! Đưa ta toàn bộ đồ trang sức và vật phẩm giá trị đây.";
             }
-            else if (tang == 19)
+            else if (tang == 20)
             {
                 NameTagText.text = "Vayne";
                 dia.text = "Đùa mình à? Một tên cướp giữa ban ngày ư? Có vẻ mình phải cho tên cướp này một bài học!";
             }
-            else if (tang >= 20)
+            else if (tang >= 21)
             {
                 CutscenesController.cus1 = 1;
                 SceneManager.LoadScene("BSThief");
@@ -263,5 +281,11 @@ public class Cus1 : MonoBehaviour
     {
         CutscenesController.cus1 = 1;
         SceneManager.LoadScene("BSThief");
+    }
+
+    IEnumerator DelayBGM()
+    {
+        yield return new WaitForSeconds(2f);
+        LessSeriousBGM.Play();
     }
 }

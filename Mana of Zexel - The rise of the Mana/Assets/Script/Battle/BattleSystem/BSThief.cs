@@ -10,7 +10,7 @@ public class BSThief : MonoBehaviour
     PlayerBattle pb;
     ThiefBattle tb;
 
-    public AudioSource VayneAttackFX, VayneSkill1FX, VayneSkill2FX, VayneSkill3FX, HealFX, OpenCloseFX;
+    public AudioSource VayneAttackFX, VayneSkill1FX, VayneSkill2FX, VayneSkill3FX, EnemyAttackFX, HealFX, OpenCloseFX;
 
     public GameObject Item_panel;
     public GameObject VayneAttackEffect, HPHealingEffP1, MPHealingEffP1;
@@ -111,6 +111,7 @@ public class BSThief : MonoBehaviour
                 ShowP1Panel(false);
                 if (dem == 1)
                 {
+                    EnemyAttackFX.Play();
                     tb.yes_thief = 1;
                     pb.p1YesGetHit = 1;
                     EDamage.color = Color.red;
