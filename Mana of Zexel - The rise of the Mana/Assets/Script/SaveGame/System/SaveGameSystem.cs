@@ -16,6 +16,7 @@ public class SaveGameSystem : MonoBehaviour
     public AudioSource ClickFX;
 
     public int SaveIndex, SaveOverrideIndex;
+    public string CryptedPassword;
     string userPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
     // Start is called before the first frame update
@@ -33,15 +34,15 @@ public class SaveGameSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData01"}\\{"SaveD1.prd"}"))
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData01"}\\{"SaveD1.prd.PRD"}"))
             showdata1.text = "Data Save!";
         else
             showdata1.text = "No Data!";
-        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData02"}\\{"SaveD2.prd"}"))
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData02"}\\{"SaveD2.prd.PRD"}"))
             showdata2.text = "Data Save!";
         else
             showdata2.text = "No Data!";
-        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData03"}\\{"SaveD3.prd"}"))
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData03"}\\{"SaveD3.prd.PRD"}"))
             showdata3.text = "Data Save!";
         else
             showdata3.text = "No Data!";
@@ -51,7 +52,7 @@ public class SaveGameSystem : MonoBehaviour
     {
         ClickFX.Play();
         SaveIndex = 1;
-        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData01"}\\{"SaveD1.prd"}"))
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData01"}\\{"SaveD1.prd.PRD"}"))
         {
             SaveOverrideIndex = 1;
             AskSaveOverrideGamePanel.SetActive(true);
@@ -66,7 +67,7 @@ public class SaveGameSystem : MonoBehaviour
     {
         ClickFX.Play();
         SaveIndex = 2;
-        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData02"}\\{"SaveD2.prd"}"))
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData02"}\\{"SaveD2.prd.PRD"}"))
         {
             SaveOverrideIndex = 2;
             AskSaveOverrideGamePanel.SetActive(true);
@@ -81,7 +82,7 @@ public class SaveGameSystem : MonoBehaviour
     {
         ClickFX.Play();
         SaveIndex = 3;
-        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData03"}\\{"SaveD3.prd"}"))
+        if (File.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData03"}\\{"SaveD3.prd.PRD"}"))
         {
             SaveOverrideIndex = 3;
             AskSaveOverrideGamePanel.SetActive(true);
@@ -465,11 +466,17 @@ public class SaveGameSystem : MonoBehaviour
         if (SaveIndex == 1)
         {
             string json = JsonUtility.ToJson(sdg, true);
+
             if (!Directory.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData01"}"))
             {
                 Directory.CreateDirectory($"{userPath}\\{"PRD Team"}\\{"SaveData01"}");
             }
+
             File.WriteAllText(userPath + "/PRD Team/SaveData01/SaveD1.prd", json);
+
+            CryptSaveData csd2 = new CryptSaveData($"{userPath}\\{"PRD Team"}\\{"SaveData01"}\\{"SaveD1.prd"}", CryptedPassword);
+            csd2.EncryptedSaveData();
+
             show4.SetActive(true);
             show3.text = "Data Save!";
             Invoke("delay2", 2f);
@@ -481,7 +488,12 @@ public class SaveGameSystem : MonoBehaviour
             {
                 Directory.CreateDirectory($"{userPath}\\{"PRD Team"}\\{"SaveData02"}");
             }
+
             File.WriteAllText(userPath + "/PRD Team/SaveData02/SaveD2.prd", json);
+
+            CryptSaveData csd2 = new CryptSaveData($"{userPath}\\{"PRD Team"}\\{"SaveData02"}\\{"SaveD2.prd"}", CryptedPassword);
+            csd2.EncryptedSaveData();
+
             show4.SetActive(true);
             show3.text = "Data Save!";
             Invoke("delay2", 2f);
@@ -493,7 +505,12 @@ public class SaveGameSystem : MonoBehaviour
             {
                 Directory.CreateDirectory($"{userPath}\\{"PRD Team"}\\{"SaveData03"}");
             }
+
             File.WriteAllText(userPath + "/PRD Team/SaveData03/SaveD3.prd", json);
+
+            CryptSaveData csd2 = new CryptSaveData($"{userPath}\\{"PRD Team"}\\{"SaveData03"}\\{"SaveD3.prd"}", CryptedPassword);
+            csd2.EncryptedSaveData();
+
             show4.SetActive(true);
             show3.text = "Data Save!";
             Invoke("delay2", 2f);
@@ -854,11 +871,15 @@ public class SaveGameSystem : MonoBehaviour
         if (SaveOverrideIndex == 1)
         {
             string json = JsonUtility.ToJson(sdg, true);
-            if (!Directory.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData01"}"))
-            {
-                Directory.CreateDirectory($"{userPath}\\{"PRD Team"}\\{"SaveData01"}");
-            }
+            CryptSaveData csd1 = new CryptSaveData($"{userPath}\\{"PRD Team"}\\{"SaveData01"}\\{"SaveD1.prd.PRD"}", CryptedPassword);
+
+            csd1.DecryptedSaveData();
+
             File.WriteAllText(userPath + "/PRD Team/SaveData01/SaveD1.prd", json);
+
+            CryptSaveData csd2 = new CryptSaveData($"{userPath}\\{"PRD Team"}\\{"SaveData01"}\\{"SaveD1.prd"}", CryptedPassword);
+            csd2.EncryptedSaveData();
+
             show4.SetActive(true);
             show3.text = "Data Save!";
             Invoke("delay2", 2f);
@@ -866,11 +887,15 @@ public class SaveGameSystem : MonoBehaviour
         else if (SaveOverrideIndex == 2)
         {
             string json = JsonUtility.ToJson(sdg, true);
-            if (!Directory.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData02"}"))
-            {
-                Directory.CreateDirectory($"{userPath}\\{"PRD Team"}\\{"SaveData02"}");
-            }
+            CryptSaveData csd1 = new CryptSaveData($"{userPath}\\{"PRD Team"}\\{"SaveData02"}\\{"SaveD2.prd.PRD"}", CryptedPassword);
+
+            csd1.DecryptedSaveData();
+
             File.WriteAllText(userPath + "/PRD Team/SaveData02/SaveD2.prd", json);
+
+            CryptSaveData csd2 = new CryptSaveData($"{userPath}\\{"PRD Team"}\\{"SaveData02"}\\{"SaveD2.prd"}", CryptedPassword);
+            csd2.EncryptedSaveData();
+
             show4.SetActive(true);
             show3.text = "Data Save!";
             Invoke("delay2", 2f);
@@ -878,11 +903,15 @@ public class SaveGameSystem : MonoBehaviour
         else if (SaveOverrideIndex == 3)
         {
             string json = JsonUtility.ToJson(sdg, true);
-            if (!Directory.Exists($"{userPath}\\{"PRD Team"}\\{"SaveData03"}"))
-            {
-                Directory.CreateDirectory($"{userPath}\\{"PRD Team"}\\{"SaveData03"}");
-            }
+            CryptSaveData csd1 = new CryptSaveData($"{userPath}\\{"PRD Team"}\\{"SaveData03"}\\{"SaveD3.prd.PRD"}", CryptedPassword);
+
+            csd1.DecryptedSaveData();
+
             File.WriteAllText(userPath + "/PRD Team/SaveData03/SaveD3.prd", json);
+
+            CryptSaveData csd2 = new CryptSaveData($"{userPath}\\{"PRD Team"}\\{"SaveData03"}\\{"SaveD3.prd"}", CryptedPassword);
+            csd2.EncryptedSaveData();
+
             show4.SetActive(true);
             show3.text = "Data Save!";
             Invoke("delay2", 2f);
