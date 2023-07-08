@@ -455,7 +455,6 @@ public class BSThief : MonoBehaviour
             Tutorial2 = false;
             TutorialImage3.SetActive(true);
         }
-        CloseChooseSkillVayne();
         ShowP1Panel(false);
         Global.CurMPP1 -= 20;
         Global.HPE1 = Global.HPE1 - (Global.DamageP1 + (Global.DamageP1 * 100 / 100));

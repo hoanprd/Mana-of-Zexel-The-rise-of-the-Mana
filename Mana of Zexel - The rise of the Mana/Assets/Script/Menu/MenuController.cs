@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     public GameObject LoadGamePanel, SettingPanel, GameSetting, GraphicSetting, SoundSetting, GameSettingButton, GraphicSettingButton, SoundSettingButton;
-    public GameObject AskDeleteLoadGamePanel;
+    public GameObject FadeOutPanel, FadeInPanel, AskDeleteLoadGamePanel;
     public Text DifficultChooseText, PlotLangueChooseText;
     public Text showdata1;
     public Text showdata2;
@@ -26,6 +26,8 @@ public class MenuController : MonoBehaviour
     void Start()
     {
         MenuBGM.Play();
+
+        StartCoroutine(DelayFadeOutOff());
 
         LoadGameCheck = false;
         LoadGameIndex = 0;
@@ -411,7 +413,7 @@ public class MenuController : MonoBehaviour
         SynthesizeSystem.ManaFireSynthesize = 100;
         SynthesizeSystem.ManaIceSynthesize = 100;
 
-        SceneManager.LoadScene("Cutscenes");
+        StartCoroutine(DelayChangeCutscense());
         //SceneManager.LoadScene("BSZane 1");
     }
 
@@ -870,7 +872,7 @@ public class MenuController : MonoBehaviour
         CryptSaveData csd2 = new CryptSaveData(loadPath, CryptedPassword);
         csd2.EncryptedSaveData();
 
-        SceneManager.LoadScene("Save room");
+        StartCoroutine(DelayChangeLoadGame());
     }
 
     public void PressDLGameD1()
@@ -1006,5 +1008,29 @@ public class MenuController : MonoBehaviour
     {
         ClickFX.Play();
         Application.Quit();
+    }
+
+    IEnumerator DelayChangeCutscense()
+    {
+        FadeInPanel.SetActive(true);
+
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Cutscenes");
+    }
+
+    IEnumerator DelayChangeLoadGame()
+    {
+        FadeInPanel.SetActive(true);
+
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Save room");
+    }
+
+    IEnumerator DelayFadeOutOff()
+    {
+        FadeOutPanel.SetActive(true);
+
+        yield return new WaitForSeconds(1.4f);
+        FadeOutPanel.SetActive(false);
     }
 }

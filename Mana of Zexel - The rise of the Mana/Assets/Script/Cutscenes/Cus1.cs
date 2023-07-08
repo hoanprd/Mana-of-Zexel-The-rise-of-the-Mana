@@ -14,7 +14,7 @@ public class Cus1 : MonoBehaviour
     public GameObject va4;
     public GameObject VayneVAL1, GinVAR1;
     public GameObject NameTag;
-    public AudioSource FunBGM, LessSeriousBGM, NormalBGM, SeriousBGM, TutorialBGM2;
+    public AudioSource FunBGM, LessSeriousBGM, NormalBGM, SeriousBGM, TutorialBGM2, Click1FX, Click2FX;
     private int tang;
 
     // Start is called before the first frame update
@@ -224,6 +224,8 @@ public class Cus1 : MonoBehaviour
             }
             else if (tang == 14)
             {
+                LessSeriousBGM.Stop();
+                NormalBGM.Play();
                 VayneVAL1.SetActive(true);
                 NameTag.SetActive(true);
                 NameTagText.text = "Vayne";
@@ -274,11 +276,13 @@ public class Cus1 : MonoBehaviour
     }
     public void Pressnext()
     {
+        Click2FX.Play();
         tang += 1;
     }
 
     public void Pressskip()
     {
+        Click2FX.Play();
         CutscenesController.cus1 = 1;
         SceneManager.LoadScene("BSThief");
     }
