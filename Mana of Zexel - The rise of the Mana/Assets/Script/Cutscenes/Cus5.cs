@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Cus5 : MonoBehaviour
 {
+    CutscenesController cc;
+
     public Text NameTagText;
     public Text dia;
     public GameObject[] TutorialImage;
@@ -17,7 +19,10 @@ public class Cus5 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tang = TuTang = 0;
+        cc = FindObjectOfType<CutscenesController>();
+        tang = 0;
+        TuTang = 0;
+        StartCoroutine(DelayBGM());
     }
 
     // Update is called once per frame
@@ -136,24 +141,33 @@ public class Cus5 : MonoBehaviour
     }
     public void Pressnext()
     {
+        cc.FXCutscenes(1);
+
         tang += 1;
     }
 
     public void Pressskip()
     {
+        cc.FXCutscenes(1);
+
         TutorialPanel.SetActive(true);
     }
 
     public void PressLTutorialButton()
     {
         if (TuTang > 0)
+        {
+            cc.FXCutscenes(0);
             TuTang -= 1;
+        }
 
         CheckTutorialStatus();
     }
 
     public void PressRTutorialButton()
     {
+        cc.FXCutscenes(0);
+
         TuTang += 1;
 
         if (TuTang > 1)
@@ -179,5 +193,11 @@ public class Cus5 : MonoBehaviour
                 TutorialImage[i].SetActive(false);
             }
         }
+    }
+
+    IEnumerator DelayBGM()
+    {
+        yield return new WaitForSeconds(2f);
+        cc.BGMCutscenes(0, false);
     }
 }
