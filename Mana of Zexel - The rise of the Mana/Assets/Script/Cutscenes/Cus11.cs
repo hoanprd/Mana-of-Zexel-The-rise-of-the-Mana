@@ -6,17 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class Cus11 : MonoBehaviour
 {
+    CutscenesController cc;
+
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
     public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAR1;
     public GameObject NameTag;
-    private int tang = 0;
+    private int tang;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        cc = FindObjectOfType<CutscenesController>();
+        tang = 0;
+        StartCoroutine(DelayBGM());
     }
 
     // Update is called once per frame
@@ -204,7 +208,7 @@ public class Cus11 : MonoBehaviour
             else if (tang == 8)
             {
                 NameTagText.text = "???";
-                dia.text = "Này, cả hau đang làm gì trước nhà của tôi vậy?";
+                dia.text = "Này, cả hai đang làm gì trước nhà của tôi vậy?";
             }
             else if (tang == 9)
             {
@@ -286,7 +290,7 @@ public class Cus11 : MonoBehaviour
                 VayneVAL1.SetActive(false);
                 AliaVAL1.SetActive(true);
                 NameTagText.text = "Alia";
-                dia.text = "Vậy thì ổn thôi, hau bọn em chỉ cần hạ bọn golem đó là được chứ gì?";
+                dia.text = "Vậy thì ổn thôi, hai bọn em chỉ cần hạ bọn golem đó là được chứ gì?";
             }
             else if (tang == 24)
             {
@@ -303,12 +307,21 @@ public class Cus11 : MonoBehaviour
     }
     public void Pressnext()
     {
+        cc.FXCutscenes(1);
+
         tang += 1;
     }
     public void Pressskip()
     {
+        cc.FXCutscenes(1);
         CutscenesController.cus11 = 1;
         ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Wishing forest");
+    }
+
+    IEnumerator DelayBGM()
+    {
+        yield return new WaitForSeconds(2f);
+        cc.BGMCutscenes(2, false);
     }
 }

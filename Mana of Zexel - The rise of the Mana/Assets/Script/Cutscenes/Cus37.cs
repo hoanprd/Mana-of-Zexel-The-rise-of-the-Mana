@@ -6,17 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class Cus37 : MonoBehaviour
 {
+    CutscenesController cc;
+
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
     public GameObject VayneVAR1, AliaVAR1, MariaVAR1, JescaVAL1;
     public GameObject NameTag;
-    private int tang = 0;
+    private int tang;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        cc = FindObjectOfType<CutscenesController>();
+        tang = 0;
+        StartCoroutine(DelayBGM());
     }
 
     // Update is called once per frame
@@ -307,14 +311,25 @@ public class Cus37 : MonoBehaviour
             }
         }
     }
+
     public void Pressnext()
     {
+        cc.FXCutscenes(1);
+
         tang += 1;
     }
+
     public void Pressskip()
     {
+        cc.FXCutscenes(1);
         CutscenesController.cus37 = 1;
         ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Inferno desert");
+    }
+
+    IEnumerator DelayBGM()
+    {
+        yield return new WaitForSeconds(2f);
+        cc.BGMCutscenes(2, false);
     }
 }

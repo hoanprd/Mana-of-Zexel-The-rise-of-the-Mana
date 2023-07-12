@@ -6,17 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class Cus40 : MonoBehaviour
 {
+    CutscenesController cc;
+
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
     public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, MrLanceVAR1;
     public GameObject NameTag;
-    private int tang = 0;
+    private int tang;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        cc = FindObjectOfType<CutscenesController>();
+        tang = 0;
     }
 
     // Update is called once per frame
@@ -385,12 +388,26 @@ public class Cus40 : MonoBehaviour
             }
         }
     }
+
     public void Pressnext()
     {
+        cc.FXCutscenes(1);
+
         tang += 1;
+
+        if (tang == 13)
+        {
+            cc.BGMCutscenes(2, false);
+        }
+        if (tang == 20)
+        {
+            cc.BGMCutscenes(0, false);
+        }
     }
+
     public void Pressskip()
     {
+        cc.FXCutscenes(1);
         CutscenesController.cus40 = 1;
         ContainerController.LoadingOpen = true;
         ContainerController.VenomKiller -= 1;

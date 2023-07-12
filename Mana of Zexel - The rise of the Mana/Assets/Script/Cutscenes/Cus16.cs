@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Cus16 : MonoBehaviour
 {
+    CutscenesController cc;
+
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
@@ -17,7 +19,9 @@ public class Cus16 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        cc = FindObjectOfType<CutscenesController>();
+        tang = 0;
+        StartCoroutine(DelayBGM());
     }
 
     // Update is called once per frame
@@ -472,16 +476,36 @@ public class Cus16 : MonoBehaviour
             }
         }
     }
+
     public void Pressnext()
     {
+        cc.FXCutscenes(1);
+
         tang += 1;
+
+        if (tang == 17)
+        {
+            cc.BGMCutscenes(0, true);
+        }
+        if (tang == 23)
+        {
+            cc.BGMCutscenes(2, false);
+        }
     }
+
     public void Pressskip()
     {
+        cc.FXCutscenes(1);
         CutscenesController.cus16 = 1;
         ContainerController.LoadingOpen = true;
         MapController.ZexelTownToTavern = false;
         MapController.ZexelTownToWishingForest = true;
         SceneManager.LoadScene("Wishing forest");
+    }
+
+    IEnumerator DelayBGM()
+    {
+        yield return new WaitForSeconds(2f);
+        cc.BGMCutscenes(5, false);
     }
 }

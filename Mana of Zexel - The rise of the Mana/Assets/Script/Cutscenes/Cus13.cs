@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Cus13 : MonoBehaviour
 {
+    CutscenesController cc;
+
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
@@ -16,7 +18,9 @@ public class Cus13 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        cc = FindObjectOfType<CutscenesController>();
+        tang = 0;
+        StartCoroutine(DelayBGM());
     }
 
     // Update is called once per frame
@@ -135,14 +139,25 @@ public class Cus13 : MonoBehaviour
             }
         }
     }
+
     public void Pressnext()
     {
+        cc.FXCutscenes(1);
+
         tang += 1;
     }
+
     public void Pressskip()
     {
+        cc.FXCutscenes(1);
         CutscenesController.cus13 = 1;
         ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("BSGolemn 1");
+    }
+
+    IEnumerator DelayBGM()
+    {
+        yield return new WaitForSeconds(2f);
+        cc.BGMCutscenes(4, false);
     }
 }
