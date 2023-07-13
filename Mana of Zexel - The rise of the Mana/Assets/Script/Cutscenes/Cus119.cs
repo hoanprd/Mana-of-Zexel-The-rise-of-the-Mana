@@ -6,17 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class Cus119 : MonoBehaviour
 {
+    CutscenesController cc;
+
     public Text NameTagText;
     public Text dia;
     public GameObject va1, va2, va3;
     public GameObject VayneVAL1, AliaVAL1, MariaVAL1;
     public GameObject NameTag;
-    private int tang = 0;
+    private int tang;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        cc = FindObjectOfType<CutscenesController>();
+        tang = 0;
+        StartCoroutine(DelayBGM());
     }
 
     // Update is called once per frame
@@ -251,14 +255,30 @@ public class Cus119 : MonoBehaviour
             }
         }
     }
+
     public void Pressnext()
     {
+        cc.FXCutscenes(1);
+
         tang += 1;
+
+        if (tang == 8)
+        {
+            cc.BGMCutscenes(0, true);
+        }
     }
+
     public void Pressskip()
     {
+        cc.FXCutscenes(1);
         CutscenesController.cus119 = 1;
         ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("InsideIceCave");
+    }
+
+    IEnumerator DelayBGM()
+    {
+        yield return new WaitForSeconds(2f);
+        cc.BGMCutscenes(2, false);
     }
 }

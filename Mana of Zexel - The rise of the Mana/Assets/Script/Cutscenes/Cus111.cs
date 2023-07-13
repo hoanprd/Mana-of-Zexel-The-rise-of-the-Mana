@@ -6,17 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class Cus111 : MonoBehaviour
 {
+    CutscenesController cc;
+
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
     public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, ShanVAL1, AsilaVAL1, AlasaVAR1, ZaneVAR1;
     public GameObject NameTag;
-    private int tang = 0;
+    private int tang;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        cc = FindObjectOfType<CutscenesController>();
+        tang = 0;
+        StartCoroutine(DelayBGM());
     }
 
     // Update is called once per frame
@@ -671,14 +675,34 @@ public class Cus111 : MonoBehaviour
             }
         }
     }
+
     public void Pressnext()
     {
+        cc.FXCutscenes(1);
+
         tang += 1;
+
+        if (tang == 15)
+        {
+            cc.BGMCutscenes(0, true);
+        }
+        if (tang == 18)
+        {
+            cc.BGMCutscenes(4, false);
+        }
     }
+
     public void Pressskip()
     {
+        cc.FXCutscenes(1);
         CutscenesController.cus111 = 1;
         ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Alta inferno");
+    }
+
+    IEnumerator DelayBGM()
+    {
+        yield return new WaitForSeconds(2f);
+        cc.BGMCutscenes(2, false);
     }
 }

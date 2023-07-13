@@ -6,17 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class Cus115 : MonoBehaviour
 {
+    CutscenesController cc;
+
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
     public GameObject VayneVAL1;
     public GameObject NameTag;
-    private int tang = 0, stop1 = 0, stop2 = 0;
+    private int tang, stop1, stop2;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        cc = FindObjectOfType<CutscenesController>();
+        tang = 0;
+        stop1 = 0;
+        stop2 = 0;
+        StartCoroutine(DelayBGM());
     }
 
     // Update is called once per frame
@@ -156,14 +162,18 @@ public class Cus115 : MonoBehaviour
                 SceneManager.LoadScene("Inferno volcano");
             }
         }
-        
     }
+
     public void Pressnext()
     {
+        cc.FXCutscenes(1);
+
         tang += 1;
     }
+
     public void Pressskip()
     {
+        cc.FXCutscenes(1);
         CutscenesController.cus115 = 1;
         ContainerController.LoadingOpen = true;
         if (tang < 5)
@@ -176,5 +186,11 @@ public class Cus115 : MonoBehaviour
             ContainerController.BaxiataPick = 1;
         }
         SceneManager.LoadScene("Inferno volcano");
+    }
+
+    IEnumerator DelayBGM()
+    {
+        yield return new WaitForSeconds(2f);
+        cc.BGMCutscenes(2, false);
     }
 }

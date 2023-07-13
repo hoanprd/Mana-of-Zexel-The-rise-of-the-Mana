@@ -6,17 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class Cus140 : MonoBehaviour
 {
+    CutscenesController cc;
+
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
     public GameObject VayneVAR1, AliaVAL1, AliaVAR1, MrLanceVAL1, KlenerVAL1;
     public GameObject NameTag;
-    private int tang = 0;
+    private int tang;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        cc = FindObjectOfType<CutscenesController>();
+        tang = 0;
     }
 
     // Update is called once per frame
@@ -191,12 +194,22 @@ public class Cus140 : MonoBehaviour
             }
         }
     }
+
     public void Pressnext()
     {
+        cc.FXCutscenes(1);
+
         tang += 1;
+
+        if (tang == 5)
+        {
+            cc.BGMCutscenes(6, false);
+        }
     }
+
     public void Pressskip()
     {
+        cc.FXCutscenes(1);
         CutscenesController.cus140 = 1;
         ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Zexel town");
