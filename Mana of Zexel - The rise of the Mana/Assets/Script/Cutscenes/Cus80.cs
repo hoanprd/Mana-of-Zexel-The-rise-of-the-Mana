@@ -6,17 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class Cus80 : MonoBehaviour
 {
+    CutscenesController cc;
+
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
     public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, MrLanceVAL1;
     public GameObject NameTag;
-    private int tang = 0;
+    private int tang;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        cc = FindObjectOfType<CutscenesController>();
+        tang = 0;
+        StartCoroutine(DelayBGM());
     }
 
     // Update is called once per frame
@@ -264,7 +268,7 @@ public class Cus80 : MonoBehaviour
                 MariaVAR1.SetActive(false);
                 VayneVAR1.SetActive(true);
                 NameTagText.text = "Vayne";
-                dia.text = "Yes, but there is a cold war there, the best way to resolve the conflict between the two sides is to remove the dark magic in that land and revive that land.";
+                dia.text = "Đúng thế, tuy nhiên ở đó đang có chiến tranh lạnh, cách giải quyết xung đột 2 bên tốt nhất là loại bỏ ma thuật hắc ám ở vùng đất đó và hồi sinh lại mảnh đất đó.";
             }
             else if (tang == 20)
             {
@@ -291,14 +295,25 @@ public class Cus80 : MonoBehaviour
             }
         }
     }
+
     public void Pressnext()
     {
+        cc.FXCutscenes(1);
+
         tang += 1;
     }
+
     public void Pressskip()
     {
+        cc.FXCutscenes(1);
         CutscenesController.cus80 = 1;
         ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Tavern");
+    }
+
+    IEnumerator DelayBGM()
+    {
+        yield return new WaitForSeconds(2f);
+        cc.BGMCutscenes(2, false);
     }
 }

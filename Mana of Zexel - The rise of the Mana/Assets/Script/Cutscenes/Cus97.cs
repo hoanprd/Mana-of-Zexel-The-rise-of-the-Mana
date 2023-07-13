@@ -6,17 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class Cus97 : MonoBehaviour
 {
+    CutscenesController cc;
+
     public Text NameTagText;
     public Text dia;
     public GameObject va1;
     public GameObject VayneVAL1, MariaVAL1, MariaVAR1, MeruVAR1;
     public GameObject NameTag;
-    private int tang = 0;
+    private int tang;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        cc = FindObjectOfType<CutscenesController>();
+        tang = 0;
+        StartCoroutine(DelayBGM());
     }
 
     // Update is called once per frame
@@ -203,14 +207,25 @@ public class Cus97 : MonoBehaviour
             }
         }
     }
+
     public void Pressnext()
     {
+        cc.FXCutscenes(1);
+
         tang += 1;
     }
+
     public void Pressskip()
     {
+        cc.FXCutscenes(1);
         CutscenesController.cus97 = 1;
         ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Tavern");
+    }
+
+    IEnumerator DelayBGM()
+    {
+        yield return new WaitForSeconds(2f);
+        cc.BGMCutscenes(2, false);
     }
 }

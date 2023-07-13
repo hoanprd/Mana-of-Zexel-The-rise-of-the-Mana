@@ -6,17 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class Cus99 : MonoBehaviour
 {
+    CutscenesController cc;
+
     public Text NameTagText;
     public Text dia;
     public GameObject va1, va2;
     public GameObject VayneVAR1, MariaVAL1;
     public GameObject NameTag;
-    private int tang = 0;
+    private int tang;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        cc = FindObjectOfType<CutscenesController>();
+        tang = 0;
+        StartCoroutine(DelayBGM());
     }
 
     // Update is called once per frame
@@ -181,14 +185,34 @@ public class Cus99 : MonoBehaviour
             }
         }
     }
+
     public void Pressnext()
     {
+        cc.FXCutscenes(1);
+
         tang += 1;
+
+        if (tang == 4)
+        {
+            cc.BGMCutscenes(0, true);
+        }
+        if (tang == 4)
+        {
+            cc.BGMCutscenes(5, false);
+        }
     }
+
     public void Pressskip()
     {
+        cc.FXCutscenes(1);
         CutscenesController.cus99 = 1;
         ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Mana cliff");
+    }
+
+    IEnumerator DelayBGM()
+    {
+        yield return new WaitForSeconds(2f);
+        cc.BGMCutscenes(2, false);
     }
 }
