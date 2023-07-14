@@ -240,6 +240,15 @@ public class Cus127 : MonoBehaviour
 
         if (tang == 4)
         {
+            cc.FXCutscenes(15);
+        }
+        else if (tang == 5)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 4)
+        {
             cc.BGMCutscenes(0, true);
         }
         if (tang == 6)

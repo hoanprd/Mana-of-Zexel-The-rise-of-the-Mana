@@ -306,6 +306,24 @@ public class Cus136 : MonoBehaviour
 
         tang += 1;
 
+        if (tang == 1)
+        {
+            cc.FXCutscenes(3);
+        }
+        else if (tang == 2)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 20)
+        {
+            cc.FXCutscenes(2);
+        }
+        else if (tang == 21)
+        {
+            cc.FXCutscenesStop();
+        }
+
         if (tang == 14)
         {
             cc.BGMCutscenes(0, true);

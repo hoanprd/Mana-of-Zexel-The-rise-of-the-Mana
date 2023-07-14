@@ -402,6 +402,42 @@ public class Cus84 : MonoBehaviour
 
         tang += 1;
 
+        if (tang == 6)
+        {
+            cc.FXCutscenes(2);
+        }
+        else if (tang == 7)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 15)
+        {
+            cc.FXCutscenes(2);
+        }
+        else if (tang == 16)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 18)
+        {
+            cc.FXCutscenes(5);
+        }
+        else if (tang == 19)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 19)
+        {
+            cc.FXCutscenes(3);
+        }
+        else if (tang == 20)
+        {
+            cc.FXCutscenesStop();
+        }
+
         if (tang == 15)
         {
             cc.BGMCutscenes(0, true);

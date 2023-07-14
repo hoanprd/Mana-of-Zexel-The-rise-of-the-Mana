@@ -307,6 +307,33 @@ public class Cus138 : MonoBehaviour
 
         tang += 1;
 
+        if (tang == 10)
+        {
+            cc.FXCutscenes(7);
+        }
+        else if (tang == 11)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 13)
+        {
+            cc.FXCutscenes(8);
+        }
+        else if (tang == 14)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 17)
+        {
+            cc.FXCutscenes(16);
+        }
+        else if (tang == 18)
+        {
+            cc.FXCutscenesStop();
+        }
+
         if (tang == 19)
         {
             cc.BGMCutscenes(3, false);

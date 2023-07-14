@@ -218,6 +218,24 @@ public class Cus92 : MonoBehaviour
 
         tang += 1;
 
+        if (tang == 4)
+        {
+            cc.FXCutscenes(3);
+        }
+        else if (tang == 5)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 5)
+        {
+            cc.FXCutscenes(2);
+        }
+        else if (tang == 6)
+        {
+            cc.FXCutscenesStop();
+        }
+
         if (tang == 11)
         {
             cc.BGMCutscenes(0, true);

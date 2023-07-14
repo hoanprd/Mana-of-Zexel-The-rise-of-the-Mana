@@ -354,6 +354,14 @@ public class CutscenesController : MonoBehaviour
         }
     }
 
+    public void FXCutscenesStop()
+    {
+        for (int i = 0; i < CutFX.Length; i++)
+        {
+            CutFX[i].Stop();
+        }
+    }
+
     IEnumerator delayFaded()
     {
         yield return new WaitForSeconds(2f);

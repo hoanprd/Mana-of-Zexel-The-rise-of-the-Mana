@@ -650,6 +650,51 @@ public class Cus139 : MonoBehaviour
 
         tang += 1;
 
+        if (tang == 1)
+        {
+            cc.FXCutscenes(8);
+        }
+        else if (tang == 2)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 9)
+        {
+            cc.FXCutscenes(10);
+        }
+        else if (tang == 10)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 29)
+        {
+            cc.FXCutscenes(10);
+        }
+        else if (tang == 30)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 31)
+        {
+            cc.FXCutscenes(2);
+        }
+        else if (tang == 32)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 41)
+        {
+            cc.FXCutscenes(15);
+        }
+        else if (tang == 42)
+        {
+            cc.FXCutscenesStop();
+        }
+
         if (tang == 41)
         {
             cc.BGMCutscenes(0, true);

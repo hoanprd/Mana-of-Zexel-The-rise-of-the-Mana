@@ -233,6 +233,15 @@ public class Cus132 : MonoBehaviour
         cc.FXCutscenes(1);
 
         tang += 1;
+
+        if (tang == 2)
+        {
+            cc.FXCutscenes(3);
+        }
+        else if (tang == 3)
+        {
+            cc.FXCutscenesStop();
+        }
     }
 
     public void Pressskip()

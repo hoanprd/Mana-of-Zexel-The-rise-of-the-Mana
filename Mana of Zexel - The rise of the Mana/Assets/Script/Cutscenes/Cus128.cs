@@ -279,6 +279,24 @@ public class Cus128 : MonoBehaviour
 
         tang += 1;
 
+        if (tang == 13)
+        {
+            cc.FXCutscenes(6);
+        }
+        else if (tang == 14)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 14)
+        {
+            cc.FXCutscenes(11);
+        }
+        else if (tang == 15)
+        {
+            cc.FXCutscenesStop();
+        }
+
         if (tang == 12)
         {
             cc.BGMCutscenes(4, false);

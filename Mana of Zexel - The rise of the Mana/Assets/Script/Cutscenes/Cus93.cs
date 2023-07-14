@@ -515,6 +515,51 @@ public class Cus93 : MonoBehaviour
 
         tang += 1;
 
+        if (tang == 10)
+        {
+            cc.FXCutscenes(12);
+        }
+        else if (tang == 11)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 28)
+        {
+            cc.FXCutscenes(11);
+        }
+        else if (tang == 29)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 30)
+        {
+            cc.FXCutscenes(10);
+        }
+        else if (tang == 31)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 35)
+        {
+            cc.FXCutscenes(10);
+        }
+        else if (tang == 36)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 37)
+        {
+            cc.FXCutscenes(12);
+        }
+        else if (tang == 38)
+        {
+            cc.FXCutscenesStop();
+        }
+
         if (tang == 18)
         {
             cc.BGMCutscenes(5, false);

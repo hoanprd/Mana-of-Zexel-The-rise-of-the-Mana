@@ -682,6 +682,33 @@ public class Cus111 : MonoBehaviour
 
         tang += 1;
 
+        if (tang == 2)
+        {
+            cc.FXCutscenes(8);
+        }
+        else if (tang == 3)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 15)
+        {
+            cc.FXCutscenes(12);
+        }
+        else if (tang == 16)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 30)
+        {
+            cc.FXCutscenes(12);
+        }
+        else if (tang == 31)
+        {
+            cc.FXCutscenesStop();
+        }
+
         if (tang == 15)
         {
             cc.BGMCutscenes(0, true);

@@ -270,6 +270,15 @@ public class Cus70 : MonoBehaviour
 
         tang += 1;
 
+        if (tang == 11)
+        {
+            cc.FXCutscenes(3);
+        }
+        else if (tang == 12)
+        {
+            cc.FXCutscenesStop();
+        }
+
         if (tang == 10)
         {
             cc.BGMCutscenes(0, true);

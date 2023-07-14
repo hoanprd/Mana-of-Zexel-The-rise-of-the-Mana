@@ -340,6 +340,24 @@ public class Cus122 : MonoBehaviour
 
         if (tang == 4)
         {
+            cc.FXCutscenes(2);
+        }
+        else if (tang == 5)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 8)
+        {
+            cc.FXCutscenes(2);
+        }
+        else if (tang == 9)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 4)
+        {
             cc.BGMCutscenes(0, true);
         }
         if (tang == 11)

@@ -194,6 +194,24 @@ public class Cus20 : MonoBehaviour
         cc.FXCutscenes(1);
 
         tang += 1;
+
+        if (tang == 2)
+        {
+            cc.FXCutscenes(5);
+        }
+        else if (tang == 3)
+        {
+            cc.FXCutscenesStop();
+        }
+
+        if (tang == 8)
+        {
+            cc.FXCutscenes(11);
+        }
+        else if (tang == 9)
+        {
+            cc.FXCutscenesStop();
+        }
     }
     public void Pressskip()
     {

@@ -124,7 +124,7 @@ public class Cus124 : MonoBehaviour
             else if (tang == 17)
             {
                 NameTagText.text = "Maria";
-                dia.text = "Even though I'm not a doctor like your mother, I've tried my best in being helpful to everyone I know.";
+                dia.text = "Even though I'm not a doctor like my mother, I've tried my best in being helpful to everyone I know.";
             }
             else if (tang == 18)
             {
@@ -273,7 +273,7 @@ public class Cus124 : MonoBehaviour
             else if (tang == 17)
             {
                 NameTagText.text = "Maria";
-                dia.text = " Dù chị không phải là một bác sĩ như mẹ nhưng chị đã cố gắng hết sức trong việc tỏ ra mình hữu ích cho mọi người mà chị biết.";
+                dia.text = " Dù chị không phải là một bác sĩ như mẹ chị nhưng chị đã cố gắng hết sức trong việc tỏ ra mình hữu ích cho mọi người mà chị biết.";
             }
             else if (tang == 18)
             {

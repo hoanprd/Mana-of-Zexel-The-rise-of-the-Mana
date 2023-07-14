@@ -13,7 +13,7 @@ public class Cus13 : MonoBehaviour
     public GameObject va1;
     public GameObject VayneVAL1, VayneVAR1, AliaVAL1, MariaVAR1;
     public GameObject NameTag;
-    private int tang = 0;
+    private int tang;
 
     // Start is called before the first frame update
     void Start()
@@ -145,6 +145,15 @@ public class Cus13 : MonoBehaviour
         cc.FXCutscenes(1);
 
         tang += 1;
+
+        if (tang == 6)
+        {
+            cc.FXCutscenes(5);
+        }
+        else if (tang == 7)
+        {
+            cc.FXCutscenesStop();
+        }
     }
 
     public void Pressskip()

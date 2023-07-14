@@ -116,6 +116,15 @@ public class Cus144 : MonoBehaviour
         cc.FXCutscenes(1);
 
         tang += 1;
+
+        if (tang == 1)
+        {
+            cc.FXCutscenes(3);
+        }
+        else if (tang == 2)
+        {
+            cc.FXCutscenesStop();
+        }
     }
 
     public void Pressskip()

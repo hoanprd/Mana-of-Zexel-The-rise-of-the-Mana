@@ -118,7 +118,7 @@ public class Cus133 : MonoBehaviour
             {
                 VayneVAL1.SetActive(true);
                 NameTagText.text = "Vayne";
-                dia.text = "That's... mana gurdian?";
+                dia.text = "That's... mana guardian?";
             }
             else if (tang == 15)
             {
@@ -271,7 +271,7 @@ public class Cus133 : MonoBehaviour
             {
                 VayneVAL1.SetActive(true);
                 NameTagText.text = "Vayne";
-                dia.text = "Đó là... mana gurdian?";
+                dia.text = "Đó là... mana guardian?";
             }
             else if (tang == 15)
             {
@@ -339,6 +339,15 @@ public class Cus133 : MonoBehaviour
         cc.FXCutscenes(1);
 
         tang += 1;
+
+        if (tang == 9)
+        {
+            cc.FXCutscenes(3);
+        }
+        else if (tang == 10)
+        {
+            cc.FXCutscenesStop();
+        }
 
         if (tang == 13)
         {
