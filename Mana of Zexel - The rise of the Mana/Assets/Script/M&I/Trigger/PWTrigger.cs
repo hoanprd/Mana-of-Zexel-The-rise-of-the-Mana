@@ -19,7 +19,7 @@ public class PWTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pick && Input.GetKeyDown(KeyCode.Space) && once == 0)
+        if (pick && Input.GetKeyDown(KeyCode.Space) && HubController.BusyHub == false && once == 0)
         {
             show2.SetActive(true);
             show1.text = "Pure water +1";

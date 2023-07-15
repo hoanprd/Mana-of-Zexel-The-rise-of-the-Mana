@@ -9,7 +9,7 @@ public class MainFlagInfernoDesert : MainFlagGlobal
     // Start is called before the first frame update
     void Start()
     {
-        MainFlagGlobal mfd = new MainFlagGlobal();
+        MainFlagGlobal mfd = FindObjectOfType<MainFlagGlobal>();
 
         mfd.MainFlagDisplay(CutscenesController.cus37, CutscenesController.cus36, MainFlag1);
         mfd.MainFlagDisplay(CutscenesController.cus38, CutscenesController.cus37, MainFlag2);

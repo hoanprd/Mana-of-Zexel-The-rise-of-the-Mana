@@ -9,7 +9,7 @@ public class MainFlagZexelTemple : MainFlagGlobal
     // Start is called before the first frame update
     void Start()
     {
-        MainFlagGlobal mfd = new MainFlagGlobal();
+        MainFlagGlobal mfd = FindObjectOfType<MainFlagGlobal>();
 
         mfd.MainFlagDisplay(CutscenesController.cus135, CutscenesController.cus134, MainFlag1);
         mfd.MainFlagDisplay(CutscenesController.cus136, CutscenesController.cus135, MainFlag2);

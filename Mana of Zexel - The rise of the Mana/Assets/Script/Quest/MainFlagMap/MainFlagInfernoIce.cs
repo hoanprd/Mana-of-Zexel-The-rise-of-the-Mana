@@ -9,7 +9,7 @@ public class MainFlagInfernoIce : MainFlagGlobal
     // Start is called before the first frame update
     void Start()
     {
-        MainFlagGlobal mfd = new MainFlagGlobal();
+        MainFlagGlobal mfd = FindObjectOfType<MainFlagGlobal>();
 
         mfd.MainFlagDisplay(CutscenesController.cus66, CutscenesController.cus65, MainFlag1);
         if (CutscenesController.cus67 == 0 && CutscenesController.cus66 == 1 && CutscenesTrigger.IceFangKill >= 4)

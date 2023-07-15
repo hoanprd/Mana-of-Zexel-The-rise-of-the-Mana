@@ -9,7 +9,7 @@ public class MainFlagManaGate : MainFlagGlobal
     // Start is called before the first frame update
     void Start()
     {
-        MainFlagGlobal mfd = new MainFlagGlobal();
+        MainFlagGlobal mfd = FindObjectOfType<MainFlagGlobal>();
 
         mfd.MainFlagDisplay(CutscenesController.cus51, CutscenesController.cus50, MainFlag1);
         mfd.MainFlagDisplay(CutscenesController.cus53, CutscenesController.cus52, MainFlag2);

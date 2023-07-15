@@ -9,6 +9,7 @@ public class ContainerController : MonoBehaviour
     public static int DriedLeaves, PureWater, MorningDrop, Wheat, Wood, String, Iron, ManaGem, ScorpionVenom, InfernoSand, ManaLiquid, ManaOre, ManaCrystal, GuardianFeather, FireOre, GoldenFeather, RedManaCrystal, Obsidian, IceOre, IceLeather, BlueManaCrystal, RedManaSlimeBall, BlueManaSlimeBall, ManaCoreFireZexel, ManaCoreIceZexel, Rock, PurifyingWater, NatureGrass, ManaDust, ManaEagleFeather, IceCrystal, HealPotion, ManaPotion, ElixirPotion, Bom, Porridge, ManaCloth, ManaShield, VenomKiller, ManaNecklace, ManaGenerator, Baxiata, BaxiataGem, Photonria, PhotonriaGem, ManaLiquidCatalyst, RedLiquidCatalyst, BlueLiquidCatalyst, ManaCoreFireVayne, ManaCoreIceVayne, PureObsidian, BackPainMedicine, PurifyingPotion, FireManaGenerator, IceManaGenerator, BrokenManaDetector, ManaDetector, PowderOfLife, HoliHP, HoliMP, UltraBom, ReincarnationLife, FireOfPeace, OmnipotentBoundary;
     public GameObject BagPanel, DriedLeavesObject, PureWaterObject, MorningDropObject, WheatObject, WoodObject, StringObject, IronObject, ManaGemObject, ScorpionVenomObject, InfernoSandObject, ManaLiquidObject, ManaOreObject, ManaCrystalObject, FireOreObject, GoldenFeatherObject, RedManaCrystalObject, ObsidianObject, RedManaSlimeBallObject, IceOreObject, IceLeatherObject, BlueManaCrystalObject, BlueManaSlimeBallObject, NatureGrassObject, ManaDustObject, RockObject, PurifyingWaterObject, GuardianFeatherObject, ManaEagleFeatherObject, IceCrystalObject, ManaCoreFireZexelObject, ManaCoreIceZexelObject;
     public GameObject HealPotionObject, ManaPotionObject, ElixirPotionObject, BomObject, PorridgeObject, ManaClothObject, ManaShieldObject, VenomKillerObject, ManaNecklaceObject, ManaGeneratorObject, BaxiataObject, BaxiataGemObject, PhotonriaObject, PhotonriaGemObject, ManaLiquidCatalystObject, RedLiquidCatalystObject, BlueLiquidCatalystObject, ManaCoreFireVayneObject, ManaCoreIceVayneObject, PureObsidianObject, BackPainMedicineObject, PurifyingPotionObject, PowderOfLifeObject, FireManaGeneratorObject, IceManaGeneratorObject, BrokenManaDetectorObject, ManaDetectorObject, HoliHPObject, HoliMPObject, UltraBomObject, ReincarnationLifeObject, FireOfPeaceObject, OmnipotentBoundaryObject;
+    public AudioSource OpenHubFX;
     public GameObject SynSuccessPanel, LoadingPanel, CloseSSP;
     public Transform MateBagList, ItemBagList;
     public GameObject[] LoadGameMaterial, LoadGameItem;
@@ -53,6 +54,7 @@ public class ContainerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B) && HubController.BusyHub == false)
         {
+            OpenHubFX.Play();
             OpenBag();
         }
 

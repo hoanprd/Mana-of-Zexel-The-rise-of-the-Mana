@@ -9,7 +9,7 @@ public class MainFlagInsideVolcanoCave : MainFlagGlobal
     // Start is called before the first frame update
     void Start()
     {
-        MainFlagGlobal mfd = new MainFlagGlobal();
+        MainFlagGlobal mfd = FindObjectOfType<MainFlagGlobal>();
 
         mfd.MainFlagDisplay(CutscenesController.cus73, CutscenesController.cus72, MainFlag1);
         mfd.MainFlagDisplay(CutscenesController.cus76, CutscenesController.cus75, MainFlag1);

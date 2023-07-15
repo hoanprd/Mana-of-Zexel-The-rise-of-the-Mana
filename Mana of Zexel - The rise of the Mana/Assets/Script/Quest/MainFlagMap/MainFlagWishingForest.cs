@@ -9,7 +9,7 @@ public class MainFlagWishingForest : MainFlagGlobal
     // Start is called before the first frame update
     void Start()
     {
-        MainFlagGlobal mfd = new MainFlagGlobal();
+        MainFlagGlobal mfd = FindObjectOfType<MainFlagGlobal>();
 
         mfd.MainFlagDisplay(CutscenesController.cus12, CutscenesController.cus10, MainFlag1);
         mfd.MainFlagDisplay(CutscenesController.cus15, CutscenesController.cus14, MainFlag2);

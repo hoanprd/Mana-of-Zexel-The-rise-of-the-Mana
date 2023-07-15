@@ -5,7 +5,7 @@ using UnityEngine;
 using System.Security.Cryptography;
 using System.Text;
 
-public class CryptSaveData : MonoBehaviour
+public class CryptSaveData
 {
     //public string inputFile;
     //public string outputFile;

@@ -9,7 +9,7 @@ public class MainFlagManaTemple : MainFlagGlobal
     // Start is called before the first frame update
     void Start()
     {
-        MainFlagGlobal mfd = new MainFlagGlobal();
+        MainFlagGlobal mfd = FindObjectOfType<MainFlagGlobal>();
 
         mfd.MainFlagDisplay(CutscenesController.cus55, CutscenesController.cus54, MainFlag1);
     }

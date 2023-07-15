@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class HubController : MonoBehaviour
 {
-    MenuController mc;
+    public AudioSource ClickHubFX, OpenHubFX, EquipFX;
+
     public GameObject map;
     public GameObject[] MapArrow;
     public Text[] MapText;
@@ -26,12 +27,14 @@ public class HubController : MonoBehaviour
     public Text Zen;
     public Text QT;
     public int ShowLevelP1, ShowLevelP2, ShowLevelP3, ShowHPP1, ShowHPP2, ShowHPP3, ShowMPP1, ShowMPP2, ShowMPP3, ShowZen;
+    public int PlusPointIndex;
     public static bool BusyHub;
     public GameObject ShowVayneDetailPanel, ShowAliaDetailPanel, ShowMariaDetailPanel;
     public GameObject DShowLevelP1, DShowAttackP1, DShowHPP1, DShowMPP1, DShowSpeedP1, DShowLevelP2, DShowAttackP2, DShowHPP2, DShowMPP2, DShowSpeedP2, DShowLevelP3, DShowAttackP3, DShowHPP3, DShowMPP3, DShowSpeedP3;
     public GameObject PointPlusP1, AttackPointPlusLvP1, HPPointPlusLvP1, MPPointPlusLvP1, SpeedPointPlusLvP1, AttackPointPlusInfoP1, HPPointPlusInfoP1, MPPointPlusInfoP1, SpeedPointPlusInfoP1;
     public GameObject PointPlusP2, AttackPointPlusLvP2, HPPointPlusLvP2, MPPointPlusLvP2, SpeedPointPlusLvP2, AttackPointPlusInfoP2, HPPointPlusInfoP2, MPPointPlusInfoP2, SpeedPointPlusInfoP2;
     public GameObject PointPlusP3, AttackPointPlusLvP3, HPPointPlusLvP3, MPPointPlusLvP3, SpeedPointPlusLvP3, AttackPointPlusInfoP3, HPPointPlusInfoP3, MPPointPlusInfoP3, SpeedPointPlusInfoP3;
+    public GameObject ConfirmPlusPointVaynePanel, ConfirmPlusPointAliaPanel, ConfirmPlusPointMariaPanel;
     public GameObject ShowVayneWeaponEquip, ShowVayneArmorEquip, ShowAliaWeaponEquip, ShowAliaArmorEquip, ShowMariaWeaponEquip, ShowMariaArmorEquip;
     public GameObject[] VayneWI, VayneAI, AliaWI, AliaAI, MariaWI, MariaAI;
     public GameObject VayneEmptySlotW1, VayneEmptySlotW2, VayneEmptySlotW3, VayneEmptySlotA1, VayneEmptySlotA2, VayneEmptySlotA3, AliaEmptySlotW1, AliaEmptySlotW2, AliaEmptySlotW3, AliaEmptySlotA1, AliaEmptySlotA2, AliaEmptySlotA3, MariaEmptySlotW1, MariaEmptySlotW2, MariaEmptySlotW3, MariaEmptySlotA1, MariaEmptySlotA2, MariaEmptySlotA3, VayneW1, VayneW2, VayneW3, VayneA1, VayneA2, VayneA3, AliaW1, AliaW2, AliaW3, AliaA1, AliaA2, AliaA3, MariaW1, MariaW2, MariaW3, MariaA1, MariaA2, MariaA3;
@@ -41,8 +44,6 @@ public class HubController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mc = FindObjectOfType<MenuController>();
-
         BusyHub = false;
 
         if (ContainerController.stop != 1)
@@ -160,21 +161,25 @@ public class HubController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.M) && BusyHub == false && ContainerController.LoadingOpen == false)
         {
+            OpenHubFX.Play();
             map.SetActive(true);
             BusyHub = true;
         }
         else if (Input.GetKeyDown(KeyCode.I) && BusyHub == false && ContainerController.LoadingOpen == false)
         {
+            OpenHubFX.Play();
             info.SetActive(true);
             BusyHub = true;
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && BusyHub == false && ContainerController.LoadingOpen == false)
         {
+            OpenHubFX.Play();
             esc.SetActive(true);
             BusyHub = true;
         }
         else if (Input.GetKeyDown(KeyCode.Q) && BusyHub == false && ContainerController.LoadingOpen == false)
         {
+            OpenHubFX.Play();
             quest.SetActive(true);
             BusyHub = true;
         }
@@ -558,32 +563,38 @@ public class HubController : MonoBehaviour
     }
     public void Back1()
     {
+        ClickHubFX.Play();
         map.SetActive(false);
         BusyHub = false;
     }
     public void Back2()
     {
+        ClickHubFX.Play();
         info.SetActive(false);
         BusyHub = false;
     }
     public void Back3()
     {
+        ClickHubFX.Play();
         quest.SetActive(false);
         BusyHub = false;
     }
 
     public void OpenVaynePanel()
     {
+        ClickHubFX.Play();
         ShowVayneDetailPanel.SetActive(true);
     }
 
     public void OpenAliaPanel()
     {
+        ClickHubFX.Play();
         ShowAliaDetailPanel.SetActive(true);
     }
 
     public void OpenMariaPanel()
     {
+        ClickHubFX.Play();
         ShowMariaDetailPanel.SetActive(true);
     }
 
@@ -706,6 +717,7 @@ public class HubController : MonoBehaviour
 
     public void VayneWeaponEquip()
     {
+        EquipFX.Play();
         ShowVayneArmorEquip.SetActive(false);
         ShowVayneWeaponEquip.SetActive(true);
     }
@@ -715,6 +727,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.VayneWeaponStatus == 0 && Global.VayneStaff1 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < VayneWI.Length; i++)
             {
                 if(i == 1)
@@ -733,6 +746,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneWeaponStatus == 2 && Global.VayneStaff1 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < VayneWI.Length; i++)
             {
                 if (i == 1)
@@ -753,6 +767,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneWeaponStatus == 3 && Global.VayneStaff1 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < VayneWI.Length; i++)
             {
                 if (i == 1)
@@ -777,6 +792,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.VayneWeaponStatus == 0 && Global.VayneStaff2 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < VayneWI.Length; i++)
             {
                 if (i == 2)
@@ -795,6 +811,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneWeaponStatus == 1 && Global.VayneStaff2 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < VayneWI.Length; i++)
             {
                 if (i == 2)
@@ -815,6 +832,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneWeaponStatus == 3 && Global.VayneStaff2 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < VayneWI.Length; i++)
             {
                 if (i == 2)
@@ -839,6 +857,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.VayneWeaponStatus == 0 && Global.VayneStaff3 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < VayneWI.Length; i++)
             {
                 if (i == 3)
@@ -857,6 +876,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneWeaponStatus == 1 && Global.VayneStaff3 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < VayneWI.Length; i++)
             {
                 if (i == 3)
@@ -877,6 +897,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneWeaponStatus == 2 && Global.VayneStaff3 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < VayneWI.Length; i++)
             {
                 if (i == 3)
@@ -899,6 +920,7 @@ public class HubController : MonoBehaviour
 
     public void VayneArmorEquip()
     {
+        EquipFX.Play();
         ShowVayneWeaponEquip.SetActive(false);
         ShowVayneArmorEquip.SetActive(true);
     }
@@ -908,6 +930,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.VayneArmorStatus == 0 && Global.AlchemistArmor1 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < VayneAI.Length; i++)
             {
                 if (i == 1)
@@ -926,6 +949,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneArmorStatus == 2 && Global.AlchemistArmor1 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < VayneAI.Length; i++)
             {
                 if (i == 1)
@@ -946,6 +970,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneArmorStatus == 3 && Global.AlchemistArmor1 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < VayneAI.Length; i++)
             {
                 if (i == 1)
@@ -970,6 +995,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.VayneArmorStatus == 0 && Global.AlchemistArmor2 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < VayneAI.Length; i++)
             {
                 if (i == 2)
@@ -988,6 +1014,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneArmorStatus == 1 && Global.AlchemistArmor2 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < VayneWI.Length; i++)
             {
                 if (i == 2)
@@ -1008,6 +1035,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneArmorStatus == 3 && Global.AlchemistArmor2 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < VayneWI.Length; i++)
             {
                 if (i == 2)
@@ -1032,6 +1060,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.VayneArmorStatus == 0 && Global.AlchemistArmor3 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < VayneAI.Length; i++)
             {
                 if (i == 3)
@@ -1050,6 +1079,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneArmorStatus == 1 && Global.AlchemistArmor3 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < VayneAI.Length; i++)
             {
                 if (i == 3)
@@ -1070,6 +1100,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneArmorStatus == 2 && Global.AlchemistArmor3 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < VayneAI.Length; i++)
             {
                 if (i == 3)
@@ -1092,6 +1123,7 @@ public class HubController : MonoBehaviour
 
     public void AliaWeaponEquip()
     {
+        EquipFX.Play();
         ShowAliaArmorEquip.SetActive(false);
         ShowAliaWeaponEquip.SetActive(true);
     }
@@ -1101,6 +1133,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.AliaWeaponStatus == 0 && Global.AliaShoes1 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < AliaWI.Length; i++)
             {
                 if (i == 1)
@@ -1119,6 +1152,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaWeaponStatus == 2 && Global.AliaShoes1 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < AliaWI.Length; i++)
             {
                 if (i == 1)
@@ -1139,6 +1173,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaWeaponStatus == 3 && Global.AliaShoes1 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < AliaWI.Length; i++)
             {
                 if (i == 1)
@@ -1163,6 +1198,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.AliaWeaponStatus == 0 && Global.AliaShoes2 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < AliaWI.Length; i++)
             {
                 if (i == 2)
@@ -1181,6 +1217,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaWeaponStatus == 1 && Global.AliaShoes2 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < AliaWI.Length; i++)
             {
                 if (i == 2)
@@ -1201,6 +1238,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaWeaponStatus == 3 && Global.AliaShoes2 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < AliaWI.Length; i++)
             {
                 if (i == 2)
@@ -1225,6 +1263,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.AliaWeaponStatus == 0 && Global.AliaShoes3 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < AliaWI.Length; i++)
             {
                 if (i == 3)
@@ -1243,6 +1282,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaWeaponStatus == 1 && Global.AliaShoes3 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < AliaWI.Length; i++)
             {
                 if (i == 3)
@@ -1263,6 +1303,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaWeaponStatus == 2 && Global.AliaShoes3 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < AliaWI.Length; i++)
             {
                 if (i == 3)
@@ -1285,6 +1326,7 @@ public class HubController : MonoBehaviour
 
     public void AliaArmorEquip()
     {
+        EquipFX.Play();
         ShowAliaWeaponEquip.SetActive(false);
         ShowAliaArmorEquip.SetActive(true);
     }
@@ -1294,6 +1336,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.AliaArmorStatus == 0 && Global.WarriorArmor1 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < AliaAI.Length; i++)
             {
                 if (i == 1)
@@ -1312,6 +1355,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaArmorStatus == 2 && Global.WarriorArmor1 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < AliaAI.Length; i++)
             {
                 if (i == 1)
@@ -1332,6 +1376,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaArmorStatus == 3 && Global.WarriorArmor1 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < AliaAI.Length; i++)
             {
                 if (i == 1)
@@ -1356,6 +1401,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.AliaArmorStatus == 0 && Global.WarriorArmor2 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < AliaAI.Length; i++)
             {
                 if (i == 2)
@@ -1374,6 +1420,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaArmorStatus == 1 && Global.WarriorArmor2 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < AliaWI.Length; i++)
             {
                 if (i == 2)
@@ -1394,6 +1441,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaArmorStatus == 3 && Global.WarriorArmor2 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < AliaWI.Length; i++)
             {
                 if (i == 2)
@@ -1418,6 +1466,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.AliaArmorStatus == 0 && Global.WarriorArmor3 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < AliaAI.Length; i++)
             {
                 if (i == 3)
@@ -1436,6 +1485,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaArmorStatus == 1 && Global.WarriorArmor3 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < AliaAI.Length; i++)
             {
                 if (i == 3)
@@ -1456,6 +1506,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaArmorStatus == 2 && Global.WarriorArmor3 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < AliaAI.Length; i++)
             {
                 if (i == 3)
@@ -1478,6 +1529,7 @@ public class HubController : MonoBehaviour
 
     public void MariaWeaponEquip()
     {
+        EquipFX.Play();
         ShowMariaArmorEquip.SetActive(false);
         ShowMariaWeaponEquip.SetActive(true);
     }
@@ -1487,6 +1539,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.MariaWeaponStatus == 0 && Global.MariaCrystal1 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < MariaWI.Length; i++)
             {
                 if (i == 1)
@@ -1505,6 +1558,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaWeaponStatus == 2 && Global.MariaCrystal1 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < MariaWI.Length; i++)
             {
                 if (i == 1)
@@ -1525,6 +1579,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaWeaponStatus == 3 && Global.MariaCrystal1 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < MariaWI.Length; i++)
             {
                 if (i == 1)
@@ -1549,6 +1604,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.MariaWeaponStatus == 0 && Global.MariaCrystal2 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < MariaWI.Length; i++)
             {
                 if (i == 2)
@@ -1567,6 +1623,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaWeaponStatus == 1 && Global.MariaCrystal2 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < MariaWI.Length; i++)
             {
                 if (i == 2)
@@ -1587,6 +1644,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaWeaponStatus == 3 && Global.MariaCrystal2 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < MariaWI.Length; i++)
             {
                 if (i == 2)
@@ -1611,6 +1669,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.MariaWeaponStatus == 0 && Global.MariaCrystal3 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < MariaWI.Length; i++)
             {
                 if (i == 3)
@@ -1629,6 +1688,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaWeaponStatus == 1 && Global.MariaCrystal3 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < MariaWI.Length; i++)
             {
                 if (i == 3)
@@ -1649,6 +1709,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaWeaponStatus == 2 && Global.MariaCrystal3 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < MariaWI.Length; i++)
             {
                 if (i == 3)
@@ -1671,6 +1732,7 @@ public class HubController : MonoBehaviour
 
     public void MariaArmorEquip()
     {
+        EquipFX.Play();
         ShowMariaArmorEquip.SetActive(true);
         ShowMariaWeaponEquip.SetActive(false);
     }
@@ -1680,6 +1742,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.MariaArmorStatus == 0 && Global.AlchemistArmor1 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < MariaAI.Length; i++)
             {
                 if (i == 1)
@@ -1698,6 +1761,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaArmorStatus == 2 && Global.AlchemistArmor1 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < MariaAI.Length; i++)
             {
                 if (i == 1)
@@ -1718,6 +1782,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaArmorStatus == 3 && Global.AlchemistArmor1 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < MariaAI.Length; i++)
             {
                 if (i == 1)
@@ -1742,6 +1807,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.MariaArmorStatus == 0 && Global.AlchemistArmor2 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < MariaAI.Length; i++)
             {
                 if (i == 2)
@@ -1760,6 +1826,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaArmorStatus == 1 && Global.AlchemistArmor2 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < MariaWI.Length; i++)
             {
                 if (i == 2)
@@ -1780,6 +1847,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaArmorStatus == 3 && Global.AlchemistArmor2 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < MariaWI.Length; i++)
             {
                 if (i == 2)
@@ -1804,6 +1872,7 @@ public class HubController : MonoBehaviour
     {
         if (Global.MariaArmorStatus == 0 && Global.AlchemistArmor3 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < MariaAI.Length; i++)
             {
                 if (i == 3)
@@ -1822,6 +1891,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaArmorStatus == 1 && Global.AlchemistArmor3 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < MariaAI.Length; i++)
             {
                 if (i == 3)
@@ -1842,6 +1912,7 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaArmorStatus == 2 && Global.AlchemistArmor3 >= 1)
         {
+            EquipFX.Play();
             for (int i = 0; i < MariaAI.Length; i++)
             {
                 if (i == 3)
@@ -1867,11 +1938,9 @@ public class HubController : MonoBehaviour
     {
         if (Global.PlusPointP1 >= 1)
         {
-            Global.PlusPointP1 -= 1;
-            Global.DamageP1 += 2;
-            Global.PlusPointAttackLvP1 += 1;
-            Global.PlusPointAttackInfoP1 += 2;
-            ShowP1Detail();
+            ClickHubFX.Play();
+            PlusPointIndex = 1;
+            ConfirmPlusPointVaynePanel.SetActive(true);
         }
     }
 
@@ -1879,11 +1948,9 @@ public class HubController : MonoBehaviour
     {
         if (Global.PlusPointP1 >= 1)
         {
-            Global.PlusPointP1 -= 1;
-            Global.MaxHPP1 += 5;
-            Global.PlusPointHPLvP1 += 1;
-            Global.PlusPointHPInfoP1 += 5;
-            ShowP1Detail();
+            ClickHubFX.Play();
+            PlusPointIndex = 2;
+            ConfirmPlusPointVaynePanel.SetActive(true);
         }
     }
 
@@ -1891,11 +1958,9 @@ public class HubController : MonoBehaviour
     {
         if (Global.PlusPointP1 >= 1)
         {
-            Global.PlusPointP1 -= 1;
-            Global.MaxMPP1 += 2;
-            Global.PlusPointMPLvP1 += 1;
-            Global.PlusPointMPInfoP1 += 2;
-            ShowP1Detail();
+            ClickHubFX.Play();
+            PlusPointIndex = 3;
+            ConfirmPlusPointVaynePanel.SetActive(true);
         }
     }
 
@@ -1903,11 +1968,9 @@ public class HubController : MonoBehaviour
     {
         if (Global.PlusPointP1 >= 2)
         {
-            Global.PlusPointP1 -= 2;
-            Global.SpeedP1 += 1;
-            Global.PlusPointSpeedLvP1 += 1;
-            Global.PlusPointSpeedInfoP1 += 1;
-            ShowP1Detail();
+            ClickHubFX.Play();
+            PlusPointIndex = 4;
+            ConfirmPlusPointVaynePanel.SetActive(true);
         }
     }
 
@@ -1916,11 +1979,9 @@ public class HubController : MonoBehaviour
     {
         if (Global.PlusPointP2 >= 1)
         {
-            Global.PlusPointP2 -= 1;
-            Global.DamageP2 += 2;
-            Global.PlusPointAttackLvP2 += 1;
-            Global.PlusPointAttackInfoP2 += 2;
-            ShowP2Detail();
+            ClickHubFX.Play();
+            PlusPointIndex = 1;
+            ConfirmPlusPointAliaPanel.SetActive(true);
         }
     }
 
@@ -1928,11 +1989,9 @@ public class HubController : MonoBehaviour
     {
         if (Global.PlusPointP2 >= 1)
         {
-            Global.PlusPointP2 -= 1;
-            Global.MaxHPP2 += 5;
-            Global.PlusPointHPLvP2 += 1;
-            Global.PlusPointHPInfoP2 += 5;
-            ShowP2Detail();
+            ClickHubFX.Play();
+            PlusPointIndex = 2;
+            ConfirmPlusPointAliaPanel.SetActive(true);
         }
     }
 
@@ -1940,11 +1999,9 @@ public class HubController : MonoBehaviour
     {
         if (Global.PlusPointP2 >= 1)
         {
-            Global.PlusPointP2 -= 1;
-            Global.MaxMPP2 += 2;
-            Global.PlusPointMPLvP2 += 1;
-            Global.PlusPointMPInfoP2 += 2;
-            ShowP2Detail();
+            ClickHubFX.Play();
+            PlusPointIndex = 3;
+            ConfirmPlusPointAliaPanel.SetActive(true);
         }
     }
 
@@ -1952,11 +2009,9 @@ public class HubController : MonoBehaviour
     {
         if (Global.PlusPointP2 >= 2)
         {
-            Global.PlusPointP2 -= 2;
-            Global.SpeedP2 += 1;
-            Global.PlusPointSpeedLvP2 += 1;
-            Global.PlusPointSpeedInfoP2 += 1;
-            ShowP2Detail();
+            ClickHubFX.Play();
+            PlusPointIndex = 4;
+            ConfirmPlusPointAliaPanel.SetActive(true);
         }
     }
 
@@ -1965,11 +2020,9 @@ public class HubController : MonoBehaviour
     {
         if (Global.PlusPointP3 >= 1)
         {
-            Global.PlusPointP3 -= 1;
-            Global.DamageP3 += 2;
-            Global.PlusPointAttackLvP3 += 1;
-            Global.PlusPointAttackInfoP3 += 2;
-            ShowP3Detail();
+            ClickHubFX.Play();
+            PlusPointIndex = 1;
+            ConfirmPlusPointMariaPanel.SetActive(true);
         }
     }
 
@@ -1977,11 +2030,9 @@ public class HubController : MonoBehaviour
     {
         if (Global.PlusPointP3 >= 1)
         {
-            Global.PlusPointP3 -= 1;
-            Global.MaxHPP3 += 5;
-            Global.PlusPointHPLvP3 += 1;
-            Global.PlusPointHPInfoP3 += 5;
-            ShowP3Detail();
+            ClickHubFX.Play();
+            PlusPointIndex = 2;
+            ConfirmPlusPointMariaPanel.SetActive(true);
         }
     }
 
@@ -1989,11 +2040,9 @@ public class HubController : MonoBehaviour
     {
         if (Global.PlusPointP3 >= 1)
         {
-            Global.PlusPointP3 -= 1;
-            Global.MaxMPP2 += 3;
-            Global.PlusPointMPLvP3 += 1;
-            Global.PlusPointMPInfoP3 += 2;
-            ShowP3Detail();
+            ClickHubFX.Play();
+            PlusPointIndex = 3;
+            ConfirmPlusPointMariaPanel.SetActive(true);
         }
     }
 
@@ -2001,16 +2050,132 @@ public class HubController : MonoBehaviour
     {
         if (Global.PlusPointP3 >= 2)
         {
+            ClickHubFX.Play();
+            PlusPointIndex = 4;
+            ConfirmPlusPointMariaPanel.SetActive(true);
+        }
+    }
+
+    public void ConfirmPlusPointVayne()
+    {
+        ClickHubFX.Play();
+        if (PlusPointIndex == 1)
+        {
+            Global.PlusPointP1 -= 1;
+            Global.DamageP1 += 2;
+            Global.PlusPointAttackLvP1 += 1;
+            Global.PlusPointAttackInfoP1 += 2;
+        }
+        else if (PlusPointIndex == 2)
+        {
+            Global.PlusPointP1 -= 1;
+            Global.MaxHPP1 += 5;
+            Global.PlusPointHPLvP1 += 1;
+            Global.PlusPointHPInfoP1 += 5;
+        }
+        else if (PlusPointIndex == 3)
+        {
+            Global.PlusPointP1 -= 1;
+            Global.MaxMPP1 += 2;
+            Global.PlusPointMPLvP1 += 1;
+            Global.PlusPointMPInfoP1 += 2;
+        }
+        else if (PlusPointIndex == 4)
+        {
+            Global.PlusPointP1 -= 2;
+            Global.SpeedP1 += 1;
+            Global.PlusPointSpeedLvP1 += 1;
+            Global.PlusPointSpeedInfoP1 += 1;
+        }
+        ShowP1Detail();
+        PlusPointIndex = 0;
+        ConfirmPlusPointVaynePanel.SetActive(false);
+    }
+
+    public void ConfirmPlusPointAlia()
+    {
+        ClickHubFX.Play();
+        if (PlusPointIndex == 1)
+        {
+            Global.PlusPointP2 -= 1;
+            Global.DamageP2 += 2;
+            Global.PlusPointAttackLvP2 += 1;
+            Global.PlusPointAttackInfoP2 += 2;
+        }
+        else if (PlusPointIndex == 2)
+        {
+            Global.PlusPointP2 -= 1;
+            Global.MaxHPP2 += 5;
+            Global.PlusPointHPLvP2 += 1;
+            Global.PlusPointHPInfoP2 += 5;
+        }
+        else if (PlusPointIndex == 3)
+        {
+            Global.PlusPointP2 -= 1;
+            Global.MaxMPP2 += 2;
+            Global.PlusPointMPLvP2 += 1;
+            Global.PlusPointMPInfoP2 += 2;
+        }
+        else if (PlusPointIndex == 4)
+        {
+            Global.PlusPointP2 -= 2;
+            Global.SpeedP2 += 1;
+            Global.PlusPointSpeedLvP2 += 1;
+            Global.PlusPointSpeedInfoP2 += 1;
+        }
+        ShowP2Detail();
+        PlusPointIndex = 0;
+        ConfirmPlusPointAliaPanel.SetActive(false);
+    }
+
+    public void ConfirmPlusPointMaria()
+    {
+        ClickHubFX.Play();
+        if (PlusPointIndex == 1)
+        {
+            Global.PlusPointP3 -= 1;
+            Global.DamageP3 += 2;
+            Global.PlusPointAttackLvP3 += 1;
+            Global.PlusPointAttackInfoP3 += 2;
+        }
+        else if (PlusPointIndex == 2)
+        {
+            Global.PlusPointP3 -= 1;
+            Global.MaxHPP3 += 5;
+            Global.PlusPointHPLvP3 += 1;
+            Global.PlusPointHPInfoP3 += 5;
+        }
+        else if (PlusPointIndex == 3)
+        {
+            Global.PlusPointP3 -= 1;
+            Global.MaxMPP3 += 2;
+            Global.PlusPointMPLvP3 += 1;
+            Global.PlusPointMPInfoP3 += 2;
+        }
+        else if (PlusPointIndex == 4)
+        {
             Global.PlusPointP3 -= 2;
             Global.SpeedP3 += 1;
             Global.PlusPointSpeedLvP3 += 1;
             Global.PlusPointSpeedInfoP3 += 1;
-            ShowP3Detail();
         }
+        ShowP3Detail();
+        PlusPointIndex = 0;
+        ConfirmPlusPointMariaPanel.SetActive(false);
+    }
+
+    public void CancerPlusPoint()
+    {
+        ClickHubFX.Play();
+        PlusPointIndex = 0;
+        ConfirmPlusPointVaynePanel.SetActive(false);
+        ConfirmPlusPointAliaPanel.SetActive(false);
+        ConfirmPlusPointMariaPanel.SetActive(false);
     }
 
     public void CloseVaynePanel()
     {
+        ClickHubFX.Play();
         ShowVayneDetailPanel.SetActive(false);
         ShowVayneWeaponEquip.SetActive(false);
         ShowVayneArmorEquip.SetActive(false);
@@ -2018,6 +2183,7 @@ public class HubController : MonoBehaviour
 
     public void CloseAliaPanel()
     {
+        ClickHubFX.Play();
         ShowAliaDetailPanel.SetActive(false);
         ShowAliaWeaponEquip.SetActive(false);
         ShowAliaArmorEquip.SetActive(false);
@@ -2025,6 +2191,7 @@ public class HubController : MonoBehaviour
 
     public void CloseMariaPanel()
     {
+        ClickHubFX.Play();
         ShowMariaDetailPanel.SetActive(false);
         ShowMariaWeaponEquip.SetActive(false);
         ShowMariaArmorEquip.SetActive(false);
@@ -2032,12 +2199,14 @@ public class HubController : MonoBehaviour
 
     public void BackToGame()
     {
+        ClickHubFX.Play();
         esc.SetActive(false);
         BusyHub = false;
     }
 
     public void ExitGame()
     {
+        ClickHubFX.Play();
         Application.Quit();
     }
 }
