@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public bool FootStepIndex;
     public float move_speed = 5f;
     public int OnceFootStep = 0, once;
+    private string[] MapNameID = {"Wishing hill", "Zexel town", "Wishing forest", "Inferno desert", "Zexel gate", "Mana gate", "Mana dimension", "Mana temple", "Inferno volcano", "Inferno ice", "Alta inferno", "Zexel temple", "Mana cliff", "Tavern", "Save room", "WeaponStore", "GroceryStore", "InsideIceCave", "InsideVolcanoCave"};
     public Rigidbody2D rb;
     public Animator animator;
 
@@ -295,12 +296,10 @@ public class Player : MonoBehaviour
             {
                 FadeInPanel.SetActive(true);
                 StartCoroutine(DelayChangeCutscense());
-
             }
             else
             {
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Zexel town");
+                StartCoroutine(DelayChangeMap(1));
             }
         }
         if (collision.CompareTag("ZexelTownToWishingHill"))
@@ -314,7 +313,6 @@ public class Player : MonoBehaviour
                 GoblinTrigger4.despawn = false;
                 MapIndex = 0;
                 FadeInPanel.SetActive(true);
-                //ContainerController.LoadingOpen = true;
                 StartCoroutine(DelayChangeCutscense());
             }
             else
@@ -325,8 +323,7 @@ public class Player : MonoBehaviour
                 GoblinTrigger3.despawn = false;
                 GoblinTrigger4.despawn = false;
                 MapIndex = 0;
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Wishing hill");
+                StartCoroutine(DelayChangeMap(0));
             }
         }
         if (collision.CompareTag("ZexelTownToTavern"))
@@ -433,8 +430,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Tavern");
+                StartCoroutine(DelayChangeMap(13));
             }
         }
         if (collision.CompareTag("TavernToZexelTown"))
@@ -457,8 +453,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Zexel town");
+                StartCoroutine(DelayChangeMap(1));
             }
         }
         if (collision.CompareTag("TavernToSaveRoom"))
@@ -481,8 +476,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Save room");
+                StartCoroutine(DelayChangeMap(14));
             }
         }
         if (collision.CompareTag("SaveRoomToTavern"))
@@ -500,8 +494,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Tavern");
+                StartCoroutine(DelayChangeMap(13));
             }
         }
         if (collision.CompareTag("ZexelTownToGroceryStore") && CutscenesController.cus19 == 1 && CutscenesController.cus140 == 0)
@@ -572,13 +565,12 @@ public class Player : MonoBehaviour
             }
             else
             {
-                ContainerController.LoadingOpen = true;
                 MapController.ZexelTownToGroceryStore = true;
                 GoblinTrigger1.despawn = false;
                 GoblinTrigger2.despawn = false;
                 GoblinTrigger3.despawn = false;
                 GoblinTrigger4.despawn = false;
-                SceneManager.LoadScene("GroceryStore");
+                StartCoroutine(DelayChangeMap(16));
             }
         }
         if (collision.CompareTag("GroceryStoreToZexelTown"))
@@ -591,9 +583,8 @@ public class Player : MonoBehaviour
             }
             else
             {
-                ContainerController.LoadingOpen = true;
                 MapController.GroceryStoreToZexelTown = true;
-                SceneManager.LoadScene("Zexel town");
+                StartCoroutine(DelayChangeMap(1));
             }
         }
         if (collision.CompareTag("ZexelTownToWeaponStore") && CutscenesController.cus20 == 1 && CutscenesController.cus140 == 0)
@@ -658,13 +649,12 @@ public class Player : MonoBehaviour
             }
             else
             {
-                ContainerController.LoadingOpen = true;
                 MapController.ZexelTownToWeaponStore = true;
                 GoblinTrigger1.despawn = false;
                 GoblinTrigger2.despawn = false;
                 GoblinTrigger3.despawn = false;
                 GoblinTrigger4.despawn = false;
-                SceneManager.LoadScene("WeaponStore");
+                StartCoroutine(DelayChangeMap(15));
             }
         }
         if (collision.CompareTag("WeaponStoreToZexelTown"))
@@ -683,9 +673,8 @@ public class Player : MonoBehaviour
             }
             else
             {
-                ContainerController.LoadingOpen = true;
                 MapController.WeaponStoreToZexelTown = true;
-                SceneManager.LoadScene("Zexel town");
+                StartCoroutine(DelayChangeMap(1));
             }
         }
         if (collision.CompareTag("ZexelTownToWishingForest"))
@@ -717,8 +706,7 @@ public class Player : MonoBehaviour
                     GoblinTrigger3.despawn = false;
                     GoblinTrigger4.despawn = false;
                     MapIndex = 2;
-                    ContainerController.LoadingOpen = true;
-                    SceneManager.LoadScene("Wishing forest");
+                    StartCoroutine(DelayChangeMap(2));
                 }
             }
         }
@@ -736,13 +724,12 @@ public class Player : MonoBehaviour
             }
             else
             {
-                ContainerController.LoadingOpen = true;
                 MapController.WishingForestToZexelTown = true;
                 GolemnTrigger1.despawn = false;
                 GolemnTrigger2.despawn = false;
                 GolemnTrigger3.despawn = false;
                 MapIndex = 1;
-                SceneManager.LoadScene("Zexel town");
+                StartCoroutine(DelayChangeMap(1));
             }
         }
         if (collision.CompareTag("ZexelTownToInfernoDesert"))
@@ -783,8 +770,7 @@ public class Player : MonoBehaviour
                 GoblinTrigger3.despawn = false;
                 GoblinTrigger4.despawn = false;
                 MapIndex = 3;
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Inferno desert");
+                StartCoroutine(DelayChangeMap(3));
             }
         }
         if (collision.CompareTag("InfernoDesertToZexelTown"))
@@ -838,8 +824,7 @@ public class Player : MonoBehaviour
                 InfernoScorpionTrigger5.despawn = false;
                 InfernoScorpionTrigger6.despawn = false;
                 MapIndex = 1;
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Zexel town");
+                StartCoroutine(DelayChangeMap(1));
             }
         }
         if (collision.CompareTag("InfernoDesertToZexelGate"))
@@ -886,16 +871,14 @@ public class Player : MonoBehaviour
                 InfernoScorpionTrigger5.despawn = false;
                 InfernoScorpionTrigger6.despawn = false;
                 MapIndex = 4;
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Zexel gate");
+                StartCoroutine(DelayChangeMap(4));
             }
         }
         if (collision.CompareTag("ZexelGateToInfernoDesert"))
         {
             MapController.ZexelGateToInfernoDesert = true;
             MapIndex = 3;
-            ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Inferno desert");
+            StartCoroutine(DelayChangeMap(3));
         }
         if (collision.CompareTag("InfernoDesertToManaGate"))
         {
@@ -954,8 +937,7 @@ public class Player : MonoBehaviour
                 InfernoScorpionTrigger5.despawn = false;
                 InfernoScorpionTrigger6.despawn = false;
                 MapIndex = 5;
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Mana gate");
+                StartCoroutine(DelayChangeMap(5));
             }
         }
         if (collision.CompareTag("ManaGateToInfernoDesert"))
@@ -966,8 +948,7 @@ public class Player : MonoBehaviour
             ManaSlimeTrigger3.despawn = false;
             ManaSlimeTrigger4.despawn = false;
             MapIndex = 3;
-            ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Inferno desert");
+            StartCoroutine(DelayChangeMap(3));
         }
         if (collision.CompareTag("InfernoDesertToInfernoVolcano"))
         {
@@ -1000,8 +981,7 @@ public class Player : MonoBehaviour
                 InfernoScorpionTrigger5.despawn = false;
                 InfernoScorpionTrigger6.despawn = false;
                 MapIndex = 8;
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Inferno volcano");
+                StartCoroutine(DelayChangeMap(8));
             }
         }
         if (collision.CompareTag("InfernoVolcanoToInfernoDesert"))
@@ -1019,8 +999,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Inferno desert");
+                StartCoroutine(DelayChangeMap(3));
             }
         }
         if (collision.CompareTag("InfernoDesertToInfernoIce"))
@@ -1054,8 +1033,7 @@ public class Player : MonoBehaviour
                 InfernoScorpionTrigger5.despawn = false;
                 InfernoScorpionTrigger6.despawn = false;
                 MapIndex = 9;
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Inferno ice");
+                StartCoroutine(DelayChangeMap(9));
             }
         }
         if (collision.CompareTag("InfernoIceToInfernoDesert"))
@@ -1073,8 +1051,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Inferno desert");
+                StartCoroutine(DelayChangeMap(3));
             }
         }
         if (collision.CompareTag("InfernoDesertToManaCliff"))
@@ -1095,8 +1072,7 @@ public class Player : MonoBehaviour
                 InfernoScorpionTrigger5.despawn = false;
                 InfernoScorpionTrigger6.despawn = false;
                 MapIndex = 12;
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Mana cliff");
+                StartCoroutine(DelayChangeMap(12));
             }
         }
         if (collision.CompareTag("ManaCliffToInfernoDesert"))
@@ -1107,7 +1083,7 @@ public class Player : MonoBehaviour
             ManaEagleTrigger3.despawn = false;
             ManaEagleTrigger4.despawn = false;
             MapIndex = 3;
-            ContainerController.LoadingOpen = true;
+            StartCoroutine(DelayChangeMap(3));
             SceneManager.LoadScene("Inferno desert");
         }
         if (collision.CompareTag("ManaGateToManaDimension"))
@@ -1131,16 +1107,14 @@ public class Player : MonoBehaviour
                 ManaSlimeTrigger3.despawn = false;
                 ManaSlimeTrigger4.despawn = false;
                 MapIndex = 6;
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Mana dimension");
+                StartCoroutine(DelayChangeMap(6));
             }
         }
         if (collision.CompareTag("ManaDimensionToManaGate"))
         {
             MapController.ManaDimensionToManaGate = true;
             MapIndex = 5;
-            ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Mana gate");
+            StartCoroutine(DelayChangeMap(5));
         }
         if (collision.CompareTag("ManaDimensionToManaTemple"))
         {
@@ -1154,16 +1128,14 @@ public class Player : MonoBehaviour
             {
                 MapController.ManaDimensionToManaTemple = true;
                 MapIndex = 7;
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Mana temple");
+                StartCoroutine(DelayChangeMap(7));
             }
         }
         if (collision.CompareTag("ManaTempleToManaDimension"))
         {
             MapController.ManaTempleToManaDimension = true;
             MapIndex = 6;
-            ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Mana dimension");
+            StartCoroutine(DelayChangeMap(6));
         }
         if (collision.CompareTag("InfernoVolcanoToInsideVolcanoCave"))
         {
@@ -1186,8 +1158,7 @@ public class Player : MonoBehaviour
                 FireFangTrigger3.despawn = false;
                 FireFangTrigger4.despawn = false;
                 MapIndex = 8;
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("InsideVolcanoCave");
+                StartCoroutine(DelayChangeMap(18));
             }
         }
         if (collision.CompareTag("InsideVolcanoCaveToInfernoVolcano"))
@@ -1198,8 +1169,7 @@ public class Player : MonoBehaviour
             RedManaSlimeTrigger3.despawn = false;
             RedManaSlimeTrigger4.despawn = false;
             MapIndex = 8;
-            ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Inferno volcano");
+            StartCoroutine(DelayChangeMap(8));
         }
         if (collision.CompareTag("InfernoVolcanoToAltaInferno"))
         {
@@ -1228,16 +1198,14 @@ public class Player : MonoBehaviour
                 FireFangTrigger3.despawn = false;
                 FireFangTrigger4.despawn = false;
                 MapIndex = 10;
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Alta inferno");
+                StartCoroutine(DelayChangeMap(10));
             }
         }
         if (collision.CompareTag("AltaInfernoToInfernoVolcano"))
         {
             MapController.AltaInfernoToInfernoVolcano = true;
             MapIndex = 8;
-            ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Inferno volcano");
+            StartCoroutine(DelayChangeMap(8));
         }
         if (collision.CompareTag("InfernoIceToInsideIceCave"))
         {
@@ -1260,8 +1228,7 @@ public class Player : MonoBehaviour
                 IceFangTrigger3.despawn = false;
                 IceFangTrigger4.despawn = false;
                 MapIndex = 9;
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("InsideIceCave");
+                StartCoroutine(DelayChangeMap(17));
             }
         }
         if (collision.CompareTag("InsideIceCaveToInfernoIce"))
@@ -1272,8 +1239,7 @@ public class Player : MonoBehaviour
             BlueManaSlimeTrigger3.despawn = false;
             BlueManaSlimeTrigger4.despawn = false;
             MapIndex = 9;
-            ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Inferno ice");
+            StartCoroutine(DelayChangeMap(9));
         }
         if (collision.CompareTag("InfernoIceToAltaInferno"))
         {
@@ -1302,16 +1268,14 @@ public class Player : MonoBehaviour
                 IceFangTrigger3.despawn = false;
                 IceFangTrigger4.despawn = false;
                 MapIndex = 10;
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Alta inferno");
+                StartCoroutine(DelayChangeMap(10));
             }
         }
         if (collision.CompareTag("AltaInfernoToInfernoIce"))
         {
             MapController.AltaInfernoToInfernoIce = true;
             MapIndex = 9;
-            ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Inferno Ice");
+            StartCoroutine(DelayChangeMap(9));
         }
         if (collision.CompareTag("ZexelGateToZexelTemple"))
         {
@@ -1326,8 +1290,7 @@ public class Player : MonoBehaviour
             {
                 MapController.ZexelGateToZexelTemple = true;
                 MapIndex = 11;
-                ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Zexel temple");
+                StartCoroutine(DelayChangeMap(11));
             }
         }
         if (collision.CompareTag("ZexelTempleToZexelGate"))
@@ -1338,8 +1301,7 @@ public class Player : MonoBehaviour
             GhostTrigger3.despawn = false;
             GhostTrigger4.despawn = false;
             MapIndex = 4;
-            ContainerController.LoadingOpen = true;
-            SceneManager.LoadScene("Zexel gate");
+            StartCoroutine(DelayChangeMap(4));
         }
 
         if (collision.CompareTag("HealPoint"))
@@ -1549,7 +1511,7 @@ public class Player : MonoBehaviour
 
     IEnumerator DelayFadeOutOff()
     {
-        yield return new WaitForSeconds(1.4f);
+        yield return new WaitForSeconds(2f);
         FadeOutPanel.SetActive(false);
 
         yield return new WaitForSeconds(0.2f);
@@ -1560,5 +1522,23 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Cutscenes");
+    }
+
+    IEnumerator DelayChangeMap(int mapChangeIndex)
+    {
+        FadeInPanel.SetActive(true);
+
+        yield return new WaitForSeconds(0.5f);
+        ContainerController.LoadingOpen = true;
+
+        yield return new WaitForSeconds(0.5f);
+        FadeInPanel.SetActive(false);
+        for (int i = 0; i <= MapNameID.Length; i++)
+        {
+            if (mapChangeIndex == i)
+            {
+                SceneManager.LoadScene(MapNameID[i]);
+            }
+        }
     }
 }

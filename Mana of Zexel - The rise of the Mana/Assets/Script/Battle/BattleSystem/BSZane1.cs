@@ -69,6 +69,7 @@ public class BSZane1 : MonoBehaviour
     public GameObject lu3;
     public GameObject HPMP;
     public GameObject NB;
+    public GameObject FadeInPanel;
     public int a1, a2, a3, aBE6;
     public int stop = 0;
     private int dem = 0;
@@ -965,6 +966,7 @@ public class BSZane1 : MonoBehaviour
     {
         ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Cutscenes");
+        StartCoroutine(delayEndBattle());
     }
 
     void delayBE6()
@@ -1522,5 +1524,17 @@ public class BSZane1 : MonoBehaviour
         ReinEff.SetActive(false);
         showr2.SetActive(false);
         showr4.SetActive(false);
+    }
+
+    IEnumerator delayEndBattle()
+    {
+        FadeInPanel.SetActive(true);
+
+        yield return new WaitForSeconds(0.5f);
+        ContainerController.LoadingOpen = true;
+
+        yield return new WaitForSeconds(0.5f);
+        FadeInPanel.SetActive(false);
+        SceneManager.LoadScene("Cutscenes");
     }
 }
