@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class RockTrigger : MonoBehaviour
 {
+    ContainerController cc;
+
     public Text show1;
     public GameObject show2;
     private bool pick;
-    private int once=0;
+    private int once;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        cc = FindObjectOfType<ContainerController>();
+        once = 0;
     }
 
     // Update is called once per frame

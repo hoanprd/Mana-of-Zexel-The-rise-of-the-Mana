@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class ObsidianTrigger : MonoBehaviour
 {
+    ContainerController cc;
+
     public Text show1;
     public GameObject show2;
     private bool pick;
-    private int once=0;
+    private int once;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        cc = FindObjectOfType<ContainerController>();
+        once = 0;
     }
 
     // Update is called once per frame
@@ -24,6 +27,7 @@ public class ObsidianTrigger : MonoBehaviour
             show2.SetActive(true);
             show1.text = "Obsidian +1";
             ContainerController.ObsidianPick = 1;
+            cc.UpdateBagPickUp(true);
             once = 1;
             Invoke("delay1", 1f);
         }

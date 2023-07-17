@@ -11,6 +11,7 @@ public class ContainerController : MonoBehaviour
     public GameObject HealPotionObject, ManaPotionObject, ElixirPotionObject, BomObject, PorridgeObject, ManaClothObject, ManaShieldObject, VenomKillerObject, ManaNecklaceObject, ManaGeneratorObject, BaxiataObject, BaxiataGemObject, PhotonriaObject, PhotonriaGemObject, ManaLiquidCatalystObject, RedLiquidCatalystObject, BlueLiquidCatalystObject, ManaCoreFireVayneObject, ManaCoreIceVayneObject, PureObsidianObject, BackPainMedicineObject, PurifyingPotionObject, PowderOfLifeObject, FireManaGeneratorObject, IceManaGeneratorObject, BrokenManaDetectorObject, ManaDetectorObject, HoliHPObject, HoliMPObject, UltraBomObject, ReincarnationLifeObject, FireOfPeaceObject, OmnipotentBoundaryObject;
     public AudioSource OpenHubFX;
     public GameObject SynSuccessPanel, LoadingPanel, CloseSSP;
+    public Canvas BagCanvas;
     public Transform MateBagList, ItemBagList;
     public GameObject[] LoadGameMaterial, LoadGameItem;
     public GameObject[] ItemSynImage;
@@ -20,7 +21,7 @@ public class ContainerController : MonoBehaviour
     public static int stop, BagStatus;
     public static int DriedLeavesPick, MorningDropPick, PureWaterPick, WheatPick, StringPick, WoodPick, IronPick, ManaGemPick, ScorpionVenomPick, InfernoSandPick, ManaLiquidPick, ManaOrePick, ManaCrystalPick, FireOrePick, GoldenFeatherPick, RedManaCrystalPick, ObsidianPick, RedManaSlimeBallPick, IceOrePick, IceLeatherPick, BlueManaCrystalPick, BlueManaSlimeBallPick, NatureGrassPick, ManaDustPick, RockPick, PurifyingWaterPick, GuardianFeatherPick, IceCrystalPick, ManaEagleFeatherPick, ManaCoreFireZexelPick, ManaCoreIceZexelPick;
     public static int HealPotionPick, ManaPotionPick, ElixirPotionPick, BomPick, PorridgePick, ManaClothPick, ManaShieldPick, VenomKillerPick, ManaNecklacePick, ManaGeneratorPick, BaxiataPick, BaxiataGemPick, PhotonriaPick, PhotonriaGemPick, ManaLiquidCatalystPick, RedLiquidCatalystPick, BlueLiquidCatalystPick, ManaCoreFireVaynePick, ManaCoreIceVaynePick, PureObsidianPick, BackPainMedicinePick, PurifyingPotionPick, PowderOfLifePick, FireManaGeneratorPick, IceManaGeneratorPick, BrokenManaDetectorPick, ManaDetectorPick, HoliHPPick, HoliMPPick, UltraBomPick, ReincarnationLifePick, FireOfPeacePick, OmnipotentBoundaryPick;
-    public static bool DestroyBag, LoadingOpen;
+    public static bool DestroyBag, LoadingOpen, PickUpUpdate;
 
     private void Start()
     {
@@ -28,6 +29,7 @@ public class ContainerController : MonoBehaviour
         DestroyBag = false;
         CSSPButtonActive = false;
         LoadingOpen = false;
+        PickUpUpdate = false;
 
         if (MenuController.LoadGameCheck == true)
         {
@@ -43,6 +45,8 @@ public class ContainerController : MonoBehaviour
 
             MenuController.LoadGameCheck = false;
         }
+
+        UpdateBagPickUp(true);
     }
 
     void Update()
@@ -52,7 +56,7 @@ public class ContainerController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (Input.GetKeyDown(KeyCode.B) && HubController.BusyHub == false)
+        if (Input.GetKeyDown(KeyCode.B) && HubController.BusyHub == false && PickUpUpdate == false)
         {
             OpenHubFX.Play();
             OpenBag();
@@ -1213,6 +1217,18 @@ public class ContainerController : MonoBehaviour
         }
     }
 
+    public void UpdateBagPickUp(bool pickUpStatus)
+    {
+        PickUpUpdate = pickUpStatus;
+        if (PickUpUpdate == true)
+        {
+            BagCanvas.targetDisplay = 2;
+            BagPanel.SetActive(true);
+            BagStatus = 1;
+            StartCoroutine(WaitToBagOff());
+        }
+    }
+
     IEnumerator WaitToCloseSSP()
     {
         yield return new WaitForSeconds(0.5f);
@@ -1227,5 +1243,14 @@ public class ContainerController : MonoBehaviour
         yield return new WaitForSeconds(1.2f);
         Back4();
         LoadingPanel.SetActive(false);
+    }
+
+    IEnumerator WaitToBagOff()
+    {
+        yield return new WaitForSeconds(0.4f);
+        BagPanel.SetActive(false);
+        BagStatus = 0;
+        BagCanvas.targetDisplay = 0;
+        PickUpUpdate = false;
     }
 }
