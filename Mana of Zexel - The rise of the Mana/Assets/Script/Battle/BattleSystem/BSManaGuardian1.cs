@@ -79,6 +79,7 @@ public class BSManaGuardian1 : MonoBehaviour
     public int BE1Hit;
     public int UseItemIndex, ChooseSkillIndex;
     public int BE1ANum, TurnIndex, BossSkillCharge, BossSkillEngage, BossSkillBreak, BeforeBreakSkillDamageCal, AfterBreakDamageCal, BreakDamageCal, BreakDamageIndex;
+    public bool GameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -86,6 +87,7 @@ public class BSManaGuardian1 : MonoBehaviour
         pb = FindObjectOfType<PlayerBattle>();
         MGB = FindObjectOfType<ManaGuardianBattle>();
 
+        GameOver = false;
         HubController.BusyHub = true;
 
         if (Global.LevelP1 < 10)
@@ -139,7 +141,7 @@ public class BSManaGuardian1 : MonoBehaviour
         CheckP3Die();
         UpdateUIText();
 
-        if (a2 > 0 && Global.CurHPP2 > 0)
+        if (a2 > 0 && Global.CurHPP2 > 0 && GameOver == false)
         {
             CheckBE1Die();
             CheckP1Die();
@@ -151,7 +153,7 @@ public class BSManaGuardian1 : MonoBehaviour
             else
                 ShowP2Panel(false);
         }
-        else if (a1 > 0 && Global.CurHPP1 > 0)
+        else if (a1 > 0 && Global.CurHPP1 > 0 && GameOver == false)
         {
             CheckBE1Die();
             CheckP1Die();
@@ -163,7 +165,7 @@ public class BSManaGuardian1 : MonoBehaviour
             else
                 ShowP1Panel(false);
         }
-        else if (aBE1 > 0 && Global.HPBE1 > 0)
+        else if (aBE1 > 0 && Global.HPBE1 > 0 && GameOver == false)
         {
             CheckBE1Die();
             ShowP1Panel(false);
@@ -193,7 +195,7 @@ public class BSManaGuardian1 : MonoBehaviour
             CheckP2Die();
             CheckP1P2P3Die();
         }
-        else if (a3 > 0 && Global.CurHPP3 > 0)
+        else if (a3 > 0 && Global.CurHPP3 > 0 && GameOver == false)
         {
             CheckBE1Die();
             CheckP1Die();
@@ -966,6 +968,7 @@ public class BSManaGuardian1 : MonoBehaviour
     {
         if (Global.HPBE1 <= 0)
         {
+            GameOver = true;
             ShowP1Panel(false);
             ShowP2Panel(false);
             ShowP3Panel(false);
@@ -1323,17 +1326,17 @@ public class BSManaGuardian1 : MonoBehaviour
     {
         if (Global.LevelP1 < 30)
         {
-            Global.CurEXPP1 += 120;
+            Global.CurEXPP1 += Global.ExpBE1;
         }
         if (Global.LevelP2 < 30)
         {
-            Global.CurEXPP2 += 120;
+            Global.CurEXPP2 += Global.ExpBE1;
         }
         if (Global.LevelP3 < 30)
         {
-            Global.CurEXPP3 += 120;
+            Global.CurEXPP3 += Global.ExpBE1;
         }
-        Global.Zen += 120;
+        Global.Zen += Global.ExpBE1;
         while (Global.CurEXPP1 >= Global.MaxEXPP1)
         {
             lu.SetActive(true);

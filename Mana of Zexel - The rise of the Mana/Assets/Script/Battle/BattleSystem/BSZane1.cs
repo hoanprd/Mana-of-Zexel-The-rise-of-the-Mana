@@ -884,17 +884,19 @@ public class BSZane1 : MonoBehaviour
         }
         Item_panel.SetActive(false);
     }
-    public void PressRun()
+
+    /*public void PressRun()
     {
         HubController.BusyHub = false;
         SceneManager.LoadScene("Wishing forest");
     }
+
     public void PressBackToTheMap2()
     {
         ContainerController.LoadingOpen = true;
         HubController.BusyHub = false;
         SceneManager.LoadScene("Cutscenes");
-    }
+    }*/
 
     public void BE6Action()
     {
@@ -964,8 +966,6 @@ public class BSZane1 : MonoBehaviour
 
     void delayEndBE6()
     {
-        ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("Cutscenes");
         StartCoroutine(delayEndBattle());
     }
 
@@ -1532,6 +1532,7 @@ public class BSZane1 : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         ContainerController.LoadingOpen = true;
+        HubController.BusyHub = false;
 
         yield return new WaitForSeconds(0.5f);
         FadeInPanel.SetActive(false);

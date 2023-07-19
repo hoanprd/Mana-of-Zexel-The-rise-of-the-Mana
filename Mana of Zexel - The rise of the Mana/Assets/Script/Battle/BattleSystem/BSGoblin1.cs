@@ -90,7 +90,7 @@ public class BSGoblin1 : MonoBehaviour
     public int show2 = 0;
     public int show3 = 0;
     public static int E2Hit;
-    public bool P2Available, P3Available;
+    public bool GameOver, P2Available, P3Available;
     public int UseItemIndex, ChooseSkillIndex;
 
     // Start is called before the first frame update
@@ -99,6 +99,7 @@ public class BSGoblin1 : MonoBehaviour
         pb = FindObjectOfType<PlayerBattle>();
         GB = FindObjectOfType<GoblinBattle>();
 
+        GameOver = false;
         HubController.BusyHub = true;
 
         if (Global.LevelP1 < 10)
@@ -186,7 +187,7 @@ public class BSGoblin1 : MonoBehaviour
 
         if (Global.SpeedP2 >= Global.SpeedE2)
         {
-            if(a2 > 0 && Global.CurHPP2 > 0 && P2Available == true)
+            if (a2 > 0 && Global.CurHPP2 > 0 && P2Available == true && GameOver == false)
             {
                 CheckE2Die();
                 CheckP1Die();
@@ -197,7 +198,7 @@ public class BSGoblin1 : MonoBehaviour
                 else
                     ShowP2Panel(false);
             }
-            else if (a1 > 0 && Global.CurHPP1 > 0)
+            else if (a1 > 0 && Global.CurHPP1 > 0 && GameOver == false)
             {
                 CheckE2Die();
                 CheckP1Die();
@@ -209,7 +210,7 @@ public class BSGoblin1 : MonoBehaviour
                 else
                     ShowP1Panel(false);
             }
-            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true)
+            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true && GameOver == false)
             {
                 CheckE2Die();
                 CheckP1Die();
@@ -222,7 +223,7 @@ public class BSGoblin1 : MonoBehaviour
                 else
                     ShowP3Panel(false);
             }
-            else if (aE2 > 0 && Global.HPE2 > 0)
+            else if (aE2 > 0 && Global.HPE2 > 0 && GameOver == false)
             {
                 CheckE2Die();
                 ShowP1Panel(false);
@@ -1007,8 +1008,10 @@ public class BSGoblin1 : MonoBehaviour
     {
         if (Global.HPE2 <= 0)
         {
+            GameOver = true;
             ShowP1Panel(false);
             ShowP2Panel(false);
+            ShowP3Panel(false);
             UpdateUIText();
 
             if (stop == 0)
@@ -1322,15 +1325,15 @@ public class BSGoblin1 : MonoBehaviour
     {
         if (Global.LevelP1 < 30)
         {
-            Global.CurEXPP1 += 20;
+            Global.CurEXPP1 += Global.ExpE2;
         }
         if (Global.LevelP2 < 30 && P2Available == true)
         {
-            Global.CurEXPP2 += 20;
+            Global.CurEXPP2 += Global.ExpE2;
         }
         if (Global.LevelP3 < 30 && P3Available == true)
         {
-            Global.CurEXPP3 += 20;
+            Global.CurEXPP3 += Global.ExpE2;
         }
         Global.Zen += 20;
         while (Global.CurEXPP1 >= Global.MaxEXPP1)

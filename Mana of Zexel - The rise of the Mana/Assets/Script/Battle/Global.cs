@@ -17,22 +17,22 @@ public class Global : MonoBehaviour
     public static int PlusPointAttackLvP3, PlusPointHPLvP3, PlusPointMPLvP3, PlusPointSpeedLvP3, PlusPointAttackInfoP3, PlusPointHPInfoP3, PlusPointMPInfoP3, PlusPointSpeedInfoP3;
 
     //Enemy status
-    public static int HPE1, DamageE1, SpeedE1;
-    public static int HPE2, DamageE2, SpeedE2;
-    public static int HPE3, DamageE3, SpeedE3;
-    public static int HPE4, DamageE4, SpeedE4;
-    public static int HPE5, DamageE5, SpeedE5;
-    public static int HPE6, DamageE6, SpeedE6;
-    public static int HPE7, DamageE7, SpeedE7;
-    public static int HPE8, DamageE8, SpeedE8;
-    public static int HPE9, DamageE9, SpeedE9;
-    public static int HPE10, DamageE10, SpeedE10;
-    public static int HPE11, DamageE11, SpeedE11;
+    public static int HPE1, DamageE1, SpeedE1, ExpE1;
+    public static int HPE2, DamageE2, SpeedE2, ExpE2;
+    public static int HPE3, DamageE3, SpeedE3, ExpE3;
+    public static int HPE4, DamageE4, SpeedE4, ExpE4;
+    public static int HPE5, DamageE5, SpeedE5, ExpE5;
+    public static int HPE6, DamageE6, SpeedE6, ExpE6;
+    public static int HPE7, DamageE7, SpeedE7, ExpE7;
+    public static int HPE8, DamageE8, SpeedE8, ExpE8;
+    public static int HPE9, DamageE9, SpeedE9, ExpE9;
+    public static int HPE10, DamageE10, SpeedE10, ExpE10;
+    public static int HPE11, DamageE11, SpeedE11, ExpE11;
 
-    public static int HPBE1, DamageBE1, SpeedBE1;
-    public static int HPBE2, DamageBE2, SpeedBE2;
-    public static int HPBE3, DamageBE3, SpeedBE3;
-    public static int HPBE4, DamageBE4, SpeedBE4;
+    public static int HPBE1, DamageBE1, SpeedBE1, ExpBE1;
+    public static int HPBE2, DamageBE2, SpeedBE2, ExpBE2;
+    public static int HPBE3, DamageBE3, SpeedBE3, ExpBE3;
+    public static int HPBE4, DamageBE4, SpeedBE4, ExpBE4;
     public static int HPBE5, DamageBE5, SpeedBE5;
     public static int HPBE6, DamageBE6, SpeedBE6;
 
@@ -44,6 +44,23 @@ public class Global : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ExpE1 = 10;
+        ExpE2 = 20;
+        ExpE3 = 40;
+        ExpE4 = 60;
+        ExpE5 = 50;
+        ExpE6 = 80;
+        ExpE7 = 60;
+        ExpE8 = 80;
+        ExpE9 = 60;
+        ExpE10 = 100;
+        ExpE11 = 120;
+
+        ExpBE1 = 120;
+        ExpBE2 = 200;
+        ExpBE3 = 200;
+        ExpBE4 = 240;
+
         if (GameSettingController.GameDiff == 0)
         {
             //Mob
@@ -110,7 +127,7 @@ public class Global : MonoBehaviour
             DamageE9 = 160;
             SpeedE9 = 10;
 
-            if (CutscenesController.cus128 == 1 && CutscenesController.cus129 == 0 && Player.MapIndex == 3)
+            if (CutscenesController.cus128 == 1 && CutscenesController.cus129 == 0 && Player.MapIndex == 12)
             {
                 HPE10 = 7200;
                 DamageE10 = 240;
@@ -227,7 +244,7 @@ public class Global : MonoBehaviour
             DamageE9 = 260;
             SpeedE9 = 10;
 
-            if (CutscenesController.cus128 == 1 && CutscenesController.cus129 == 0 && Player.MapIndex == 3)
+            if (CutscenesController.cus128 == 1 && CutscenesController.cus129 == 0 && Player.MapIndex == 12)
             {
                 HPE10 = 12000;
                 DamageE10 = 300;

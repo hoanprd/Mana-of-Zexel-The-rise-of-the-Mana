@@ -67,12 +67,13 @@ public class BSSicxalon1 : MonoBehaviour
     public GameObject lu3;
     public GameObject HPMP;
     public GameObject NB;
+    public GameObject FadeInPanel;
     public GameObject SicxalonManaAttack;
     public int a1, a2, a3, aBE5;
     public int stop = 0;
     private int dem = 0;
     private int dem_turn = 1;
-    private int once = 0;
+    //private int once = 0;
     public int show1 = 0;
     public int show2 = 0;
     public int show3 = 0;
@@ -87,8 +88,8 @@ public class BSSicxalon1 : MonoBehaviour
         pb = FindObjectOfType<PlayerBattle>();
         SB = FindObjectOfType<SicxalonBattle>();
 
-        HubController.BusyHub = true;
         EndGame = false;
+        HubController.BusyHub = true;
 
         if (Global.LevelP1 < 10)
         {
@@ -898,7 +899,7 @@ public class BSSicxalon1 : MonoBehaviour
         Item_panel.SetActive(false);
     }
 
-    public void PressRun()
+    /*public void PressRun()
     {
         HubController.BusyHub = false;
         SceneManager.LoadScene("Cutscenes");
@@ -909,7 +910,7 @@ public class BSSicxalon1 : MonoBehaviour
         ContainerController.LoadingOpen = true;
         HubController.BusyHub = false;
         SceneManager.LoadScene("Cutscenes");
-    }
+    }*/
 
     public void BE5Action()
     {
@@ -1020,12 +1021,15 @@ public class BSSicxalon1 : MonoBehaviour
     {
         if (Global.HPBE5 <= 0)
         {
+            EndGame = true;
             ShowP1Panel(false);
             ShowP2Panel(false);
             ShowP3Panel(false);
             UpdateUIText();
 
-            if (stop == 0)
+            Invoke("delayEndBE5", 2f);
+
+            /*if (stop == 0)
             {
                 stop = 1;
 
@@ -1070,9 +1074,15 @@ public class BSSicxalon1 : MonoBehaviour
             {
                 Invoke("delayCheckBE5Die2", 2f);
                 once = 1;
-            }
+            }*/
         }
     }
+
+    void delayEndBE5()
+    {
+        StartCoroutine(delayEndBattle());
+    }
+
     void delayBE5()
     {
         CheckBE5Die();
@@ -1509,15 +1519,18 @@ public class BSSicxalon1 : MonoBehaviour
         HPMP.SetActive(false);
         Lose_panel.SetActive(true);
     }
+
     void delayCheckP1P2P3Die2()
     {
         SceneManager.LoadScene("Intro");
     }
-    void delayCheckBE5Die1()
+
+    /*void delayCheckBE5Die1()
     {
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }
+
     void delayCheckBE5Die2()
     {
         if (Global.LevelP1 < 30)
@@ -1601,7 +1614,8 @@ public class BSSicxalon1 : MonoBehaviour
         }
         Money.text = Global.Zen + " ";
         NB.SetActive(true);
-    }
+    }*/
+
     void delayUseHP()
     {
         if (UseItemIndex == 1)
@@ -1858,5 +1872,18 @@ public class BSSicxalon1 : MonoBehaviour
         EPHealingEffP3.SetActive(false);
         ReinEff.SetActive(false);
         showr2.SetActive(false);
+    }
+
+    IEnumerator delayEndBattle()
+    {
+        FadeInPanel.SetActive(true);
+
+        yield return new WaitForSeconds(0.5f);
+        ContainerController.LoadingOpen = true;
+        HubController.BusyHub = false;
+
+        yield return new WaitForSeconds(0.5f);
+        FadeInPanel.SetActive(false);
+        SceneManager.LoadScene("Cutscenes");
     }
 }

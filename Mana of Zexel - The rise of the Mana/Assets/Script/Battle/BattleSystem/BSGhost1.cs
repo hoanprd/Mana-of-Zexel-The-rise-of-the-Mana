@@ -90,7 +90,7 @@ public class BSGhost1 : MonoBehaviour
     public int show2 = 0;
     public int show3 = 0;
     public static int E11Hit;
-    public bool P2Available, P3Available;
+    public bool GameOver, P2Available, P3Available;
     public int UseItemIndex, ChooseSkillIndex;
 
     // Start is called before the first frame update
@@ -99,6 +99,7 @@ public class BSGhost1 : MonoBehaviour
         pb = FindObjectOfType<PlayerBattle>();
         GB = FindObjectOfType<GhostBattle>();
 
+        GameOver = false;
         HubController.BusyHub = true;
 
         if (Global.LevelP1 < 10)
@@ -187,7 +188,7 @@ public class BSGhost1 : MonoBehaviour
 
         if (Global.SpeedP2 >= Global.SpeedE11)
         {
-            if(a2 > 0 && Global.CurHPP2 > 0 && P2Available == true)
+            if(a2 > 0 && Global.CurHPP2 > 0 && P2Available == true && GameOver == false)
             {
                 CheckE11Die();
                 CheckP1Die();
@@ -198,7 +199,7 @@ public class BSGhost1 : MonoBehaviour
                 else
                     ShowP2Panel(false);
             }
-            else if (a1 > 0 && Global.CurHPP1 > 0)
+            else if (a1 > 0 && Global.CurHPP1 > 0 && GameOver == false)
             {
                 CheckE11Die();
                 CheckP1Die();
@@ -210,7 +211,7 @@ public class BSGhost1 : MonoBehaviour
                 else
                     ShowP1Panel(false);
             }
-            else if (aE11 > 0 && Global.HPE11 > 0)
+            else if (aE11 > 0 && Global.HPE11 > 0 && GameOver == false)
             {
                 CheckE11Die();
                 ShowP1Panel(false);
@@ -230,7 +231,7 @@ public class BSGhost1 : MonoBehaviour
                 CheckP2Die();
                 CheckP1P2P3Die();
             }
-            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true)
+            else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true && GameOver == false)
             {
                 CheckE11Die();
                 CheckP1Die();
@@ -992,6 +993,7 @@ public class BSGhost1 : MonoBehaviour
     {
         if (Global.HPE11 <= 0)
         {
+            GameOver = true;
             ShowP1Panel(false);
             ShowP2Panel(false);
             ShowP3Panel(false);
@@ -1321,17 +1323,17 @@ public class BSGhost1 : MonoBehaviour
     {
         if (Global.LevelP1 < 30)
         {
-            Global.CurEXPP1 += 40;
+            Global.CurEXPP1 += Global.ExpE11;
         }
         if (Global.LevelP2 < 30 && P3Available == true)
         {
-            Global.CurEXPP2 += 40;
+            Global.CurEXPP2 += Global.ExpE11;
         }
         if (Global.LevelP3 < 30 && P3Available == true)
         {
-            Global.CurEXPP3 += 40;
+            Global.CurEXPP3 += Global.ExpE11;
         }
-        Global.Zen += 40;
+        Global.Zen += Global.ExpE11;
         while (Global.CurEXPP1 >= Global.MaxEXPP1)
         {
             lu.SetActive(true);

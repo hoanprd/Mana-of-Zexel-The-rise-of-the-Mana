@@ -48,7 +48,7 @@ public class BSThief : MonoBehaviour
     private int once = 0;
     private int show = 0;
     public int UseItemIndex, ChooseSkillIndex;
-    public bool Tutorial1, Tutorial2, Tutorial3, Tutorial4;
+    public bool GameOver, Tutorial1, Tutorial2, Tutorial3, Tutorial4;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +59,7 @@ public class BSThief : MonoBehaviour
         Tutorial1 = Tutorial2 = Tutorial3 = Tutorial4 = true;
         TutorialImage1.SetActive(true);
 
+        GameOver = false;
         HubController.BusyHub = true;
 
         if (Global.LevelP1 < 10)
@@ -96,7 +97,7 @@ public class BSThief : MonoBehaviour
 
         if (Global.SpeedP1 >= Global.SpeedE1)
         {
-            if(a1 > 0 && Global.CurHPP1 > 0)
+            if(a1 > 0 && Global.CurHPP1 > 0 && GameOver == false)
             {
                 CheckE1Die();
                 CheckP1Die();
@@ -105,7 +106,7 @@ public class BSThief : MonoBehaviour
                 else
                     ShowP1Panel(false);
             }
-            else if(aE1 > 0 && Global.HPE1 > 0)
+            else if(aE1 > 0 && Global.HPE1 > 0 && GameOver == false)
             {
                 CheckE1Die();
                 ShowP1Panel(false);
@@ -380,6 +381,7 @@ public class BSThief : MonoBehaviour
     {
         if(Global.HPE1 <= 0)
         {
+            GameOver = true;
             ShowP1Panel(false);
             HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
             MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;

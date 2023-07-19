@@ -92,7 +92,7 @@ public class BSThief1 : MonoBehaviour
     public int show2 = 0;
     public int show3 = 0;
     public static int E1Hit;
-    public bool P2Available, P3Available;
+    public bool GameOver, P2Available, P3Available;
     public int UseItemIndex, ChooseSkillIndex;
 
     // Start is called before the first frame update
@@ -101,6 +101,7 @@ public class BSThief1 : MonoBehaviour
         pb = FindObjectOfType<PlayerBattle>();
         tb = FindObjectOfType<ThiefBattle>();
 
+        GameOver = false;
         HubController.BusyHub = true;
 
         if (Global.LevelP1 < 10)
@@ -194,7 +195,7 @@ public class BSThief1 : MonoBehaviour
         CheckP3Die();
         UpdateUIText();
 
-        if (a2 > 0 && Global.CurHPP2 > 0 && P2Available == true)
+        if (a2 > 0 && Global.CurHPP2 > 0 && P2Available == true && GameOver == false)
         {
             CheckE1Die();
             CheckP1Die();
@@ -206,7 +207,7 @@ public class BSThief1 : MonoBehaviour
             else
                 ShowP2Panel(false);
         }
-        else if (a1 > 0 && Global.CurHPP1 > 0)
+        else if (a1 > 0 && Global.CurHPP1 > 0 && GameOver == false)
         {
             CheckE1Die();
             CheckP1Die();
@@ -219,7 +220,7 @@ public class BSThief1 : MonoBehaviour
             else
                 ShowP1Panel(false);
         }
-        else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true)
+        else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true && GameOver == false)
         {
             CheckE1Die();
             CheckP1Die();
@@ -232,7 +233,7 @@ public class BSThief1 : MonoBehaviour
             else
                 ShowP3Panel(false);
         }
-        else if (aE1 > 0 && Global.HPE1 > 0)
+        else if (aE1 > 0 && Global.HPE1 > 0 && GameOver == false)
         {
             CheckE1Die();
             ShowP1Panel(false);
@@ -998,6 +999,7 @@ public class BSThief1 : MonoBehaviour
     {
         if (Global.HPE1 <= 0)
         {
+            GameOver = true;
             ShowP1Panel(false);
             ShowP2Panel(false);
             UpdateUIText();

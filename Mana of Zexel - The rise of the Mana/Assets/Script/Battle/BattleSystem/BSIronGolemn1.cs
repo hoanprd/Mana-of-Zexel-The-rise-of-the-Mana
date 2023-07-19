@@ -91,7 +91,7 @@ public class BSIronGolemn1 : MonoBehaviour
     public int show2 = 0;
     public int show3 = 0;
     public int BE4Hit;
-    public bool P2Available, P3Available;
+    public bool GameOver, P2Available, P3Available;
     public int UseItemIndex, ChooseSkillIndex;
     public int BE4ANum, TurnIndex;
 
@@ -101,6 +101,7 @@ public class BSIronGolemn1 : MonoBehaviour
         pb = FindObjectOfType<PlayerBattle>();
         IGB = FindObjectOfType<IronGolemnBattle>();
 
+        GameOver = false;
         HubController.BusyHub = true;
 
         if (Global.LevelP1 < 10)
@@ -185,7 +186,7 @@ public class BSIronGolemn1 : MonoBehaviour
         CheckP3Die();
         UpdateUIText();
 
-        if (a2 > 0 && Global.CurHPP2 > 0 && P2Available == true)
+        if (a2 > 0 && Global.CurHPP2 > 0 && P2Available == true && GameOver == false)
         {
             CheckBE4Die();
             CheckP1Die();
@@ -197,7 +198,7 @@ public class BSIronGolemn1 : MonoBehaviour
             else
                 ShowP2Panel(false);
         }
-        else if (a1 > 0 && Global.CurHPP1 > 0)
+        else if (a1 > 0 && Global.CurHPP1 > 0 && GameOver == false)
         {
             CheckBE4Die();
             CheckP1Die();
@@ -209,7 +210,7 @@ public class BSIronGolemn1 : MonoBehaviour
             else
                 ShowP1Panel(false);
         }
-        else if (aBE4 > 0 && Global.HPBE4 > 0)
+        else if (aBE4 > 0 && Global.HPBE4 > 0 && GameOver == false)
         {
             CheckBE4Die();
             ShowP1Panel(false);
@@ -233,7 +234,7 @@ public class BSIronGolemn1 : MonoBehaviour
             CheckP2Die();
             CheckP1P2P3Die();
         }
-        else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true)
+        else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true && GameOver == false)
         {
             CheckBE4Die();
             CheckP1Die();
@@ -1011,6 +1012,7 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (Global.HPBE4 <= 0)
         {
+            GameOver = true;
             ShowP1Panel(false);
             ShowP2Panel(false);
             ShowP3Panel(false);
@@ -1380,17 +1382,17 @@ public class BSIronGolemn1 : MonoBehaviour
     {
         if (Global.LevelP1 < 30)
         {
-            Global.CurEXPP1 += 360;
+            Global.CurEXPP1 += Global.ExpBE4;
         }
         if (Global.LevelP2 < 30 && P2Available == true)
         {
-            Global.CurEXPP2 += 360;
+            Global.CurEXPP2 += Global.ExpBE4;
         }
         if (Global.LevelP3 < 30 && P3Available == true)
         {
-            Global.CurEXPP3 += 360;
+            Global.CurEXPP3 += Global.ExpBE4;
         }
-        Global.Zen += 360;
+        Global.Zen += Global.ExpBE4;
         while (Global.CurEXPP1 >= Global.MaxEXPP1)
         {
             lu.SetActive(true);

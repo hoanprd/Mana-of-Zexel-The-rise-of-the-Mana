@@ -82,7 +82,7 @@ public class BSManaDragon1 : MonoBehaviour
     public int show2 = 0;
     public int show3 = 0;
     public int BE3Hit;
-    public bool P2Available;
+    public bool GameOver, P2Available;
     public int UseItemIndex, ChooseSkillIndex;
     public int BE3ANum, TurnIndex, BossSkillCharge, BossSkillEngage, BossSkillBreak, BeforeBreakSkillDamageCal, AfterBreakDamageCal, BreakDamageCal, BreakDamageIndex;
 
@@ -92,6 +92,7 @@ public class BSManaDragon1 : MonoBehaviour
         pb = FindObjectOfType<PlayerBattle>();
         MDB = FindObjectOfType<ManaDragonBattle>();
 
+        GameOver = false;
         HubController.BusyHub = true;
 
         if (Global.LevelP1 < 10)
@@ -163,7 +164,7 @@ public class BSManaDragon1 : MonoBehaviour
         CheckP3Die();
         UpdateUIText();
 
-        if (a2 > 0 && Global.CurHPP2 > 0 && P2Available == true)
+        if (a2 > 0 && Global.CurHPP2 > 0 && P2Available == true && GameOver == false)
         {
             CheckBE3Die();
             CheckP1Die();
@@ -175,7 +176,7 @@ public class BSManaDragon1 : MonoBehaviour
             else
                 ShowP2Panel(false);
         }
-        else if (a1 > 0 && Global.CurHPP1 > 0)
+        else if (a1 > 0 && Global.CurHPP1 > 0 && GameOver == false)
         {
             CheckBE3Die();
             CheckP1Die();
@@ -187,7 +188,7 @@ public class BSManaDragon1 : MonoBehaviour
             else
                 ShowP1Panel(false);
         }
-        else if (a3 > 0 && Global.CurHPP3 > 0)
+        else if (a3 > 0 && Global.CurHPP3 > 0 && GameOver == false)
         {
             CheckBE3Die();
             CheckP1Die();
@@ -200,7 +201,7 @@ public class BSManaDragon1 : MonoBehaviour
             else
                 ShowP3Panel(false);
         }
-        else if (aBE3 > 0 && Global.HPBE3 > 0)
+        else if (aBE3 > 0 && Global.HPBE3 > 0 && GameOver == false)
         {
             CheckBE3Die();
             ShowP1Panel(false);
@@ -964,6 +965,7 @@ public class BSManaDragon1 : MonoBehaviour
     {
         if (Global.HPBE3 <= 0)
         {
+            GameOver = true;
             ShowP1Panel(false);
             ShowP2Panel(false);
             ShowP3Panel(false);
@@ -1342,17 +1344,17 @@ public class BSManaDragon1 : MonoBehaviour
     {
         if (Global.LevelP1 < 30)
         {
-            Global.CurEXPP1 += 120;
+            Global.CurEXPP1 += Global.ExpBE3;
         }
         if (Global.LevelP2 < 30 && P2Available == true)
         {
-            Global.CurEXPP2 += 120;
+            Global.CurEXPP2 += Global.ExpBE3;
         }
         if (Global.LevelP3 < 30)
         {
-            Global.CurEXPP3 += 120;
+            Global.CurEXPP3 += Global.ExpBE3;
         }
-        Global.Zen += 120;
+        Global.Zen += Global.ExpBE3;
         while (Global.CurEXPP1 >= Global.MaxEXPP1)
         {
             lu.SetActive(true);
