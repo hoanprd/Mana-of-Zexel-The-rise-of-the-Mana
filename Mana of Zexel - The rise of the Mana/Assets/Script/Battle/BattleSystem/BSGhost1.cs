@@ -1310,7 +1310,7 @@ public class BSGhost1 : MonoBehaviour
 
     void delayCheckP1P2P3Die1()
     {
-        URPController.TurnOffURP = true;
+        URPMapController.TurnOffURP = true;
         HPMP.SetActive(false);
         Lose_panel.SetActive(true);
     }
@@ -1320,7 +1320,7 @@ public class BSGhost1 : MonoBehaviour
     }
     void delayCheckE11Die1()
     {
-        URPController.TurnOffURP = true;
+        URPMapController.TurnOffURP = true;
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }

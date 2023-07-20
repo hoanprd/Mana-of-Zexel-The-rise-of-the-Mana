@@ -1328,7 +1328,7 @@ public class BSManaDragon1 : MonoBehaviour
 
     void delayCheckP1P2P3Die1()
     {
-        URPController.TurnOffURP = true;
+        URPMapController.TurnOffURP = true;
         HPMP.SetActive(false);
         Lose_panel.SetActive(true);
     }
@@ -1338,7 +1338,7 @@ public class BSManaDragon1 : MonoBehaviour
     }
     void delayCheckBE3Die1()
     {
-        URPController.TurnOffURP = true;
+        URPMapController.TurnOffURP = true;
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }

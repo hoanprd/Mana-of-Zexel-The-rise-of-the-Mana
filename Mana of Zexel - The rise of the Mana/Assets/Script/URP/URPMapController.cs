@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public class URPController : MonoBehaviour
+public class URPMapController : MonoBehaviour
 {
     public Volume _volume;
     private Bloom _bloom;

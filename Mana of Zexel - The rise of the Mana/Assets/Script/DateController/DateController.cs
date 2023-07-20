@@ -138,7 +138,8 @@ public class DateController : MonoBehaviour
         {
             DayOn = true;
             NightOn = false;
-            URPController.UpdateURP = true;
+            URPMapController.UpdateURP = true;
+            URPPlacesController.UpdateURP = true;
             Sun.SetTrigger("sunon");
             Moon.SetTrigger("moonoff");
         }
@@ -146,7 +147,8 @@ public class DateController : MonoBehaviour
         {
             DayOn = false;
             NightOn = true;
-            URPController.UpdateURP = true;
+            URPMapController.UpdateURP = true;
+            URPPlacesController.UpdateURP = true;
             Sun.SetTrigger("sunoff");
             Moon.SetTrigger("moonon");
         }
