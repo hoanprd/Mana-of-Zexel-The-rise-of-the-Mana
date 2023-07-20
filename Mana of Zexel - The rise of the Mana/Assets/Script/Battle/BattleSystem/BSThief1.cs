@@ -12,6 +12,8 @@ public class BSThief1 : MonoBehaviour
 
     public AudioSource VayneAttackFX, AliaAttackFX, MariaAttackFX, VayneSkill1FX, VayneSkill2FX, VayneSkill3FX, AliaSkill1FX, AliaSkill2FX, AliaSkill3FX, MariaSkill1FX, MariaSkill2FX, MariaSkill3FX, EnemyAttackFX, HealFX, ExplosionFX, OpenCloseFX;
 
+    public Canvas _canvas;
+
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
     public GameObject VayneAttackEffect, VayneSkill2Effect, VayneSkill3Effect, MariaAttackEffect, MariaSkill3Effect;
@@ -45,7 +47,7 @@ public class BSThief1 : MonoBehaviour
     public GameObject P2TurnStatusObject;
     public GameObject P3TurnStatusObject;
 
-    public GameObject[] CharOff;
+    //public GameObject[] CharOff;
 
     public Text P1TurnStatus;
     public Text P2TurnStatus;
@@ -239,6 +241,7 @@ public class BSThief1 : MonoBehaviour
             ShowP1Panel(false);
             ShowP2Panel(false);
             ShowP3Panel(false);
+            _canvas.sortingOrder = 1;
             if (dem == 1)
             {
                 tb.yes_thief = 1;
@@ -411,7 +414,7 @@ public class BSThief1 : MonoBehaviour
         show1 = 1;
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP1;
-        Invoke("delayP1PressAttack", 1f);
+        Invoke("delayP1PressAttack", 2f);
         dem = 1;
     }
     public void PressAttackP2()
@@ -421,7 +424,7 @@ public class BSThief1 : MonoBehaviour
         show2 = 1;
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP2;
-        Invoke("delayP2PressAttack", 1f);
+        Invoke("delayP2PressAttack", 2f);
         dem = 1;
     }
     public void PressAttackP3()
@@ -432,7 +435,7 @@ public class BSThief1 : MonoBehaviour
         show3 = 1;
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP3;
-        Invoke("delayP3PressAttack", 1f);
+        Invoke("delayP3PressAttack", 2f);
         dem = 1;
     }
 
@@ -455,7 +458,7 @@ public class BSThief1 : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 100 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
+            Invoke("delayP1PressSkill", 2f);
             dem = 1;
         }
         else
@@ -479,7 +482,7 @@ public class BSThief1 : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 200 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
+            Invoke("delayP1PressSkill", 2f);
             dem = 1;
         }
         else
@@ -503,7 +506,7 @@ public class BSThief1 : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 300 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
+            Invoke("delayP1PressSkill", 2f);
             dem = 1;
         }
         else
@@ -618,7 +621,7 @@ public class BSThief1 : MonoBehaviour
             showr2.SetActive(true);
             showr1.text = "HP +" + HealAmount;
             Invoke("delayshowr", 2f);
-            Invoke("delayP3PressSkill", 1f);
+            Invoke("delayP3PressSkill", 2f);
             dem = 1;
         }
         else
@@ -641,7 +644,7 @@ public class BSThief1 : MonoBehaviour
             showr2.SetActive(true);
             showr1.text = "MP +" + HealAmount;
             Invoke("delayshowr", 2f);
-            Invoke("delayP3PressSkill", 1f);
+            Invoke("delayP3PressSkill", 2f);
             dem = 1;
         }
         else
@@ -664,7 +667,7 @@ public class BSThief1 : MonoBehaviour
             int DamgeCal = Global.DamageP3 + (Global.DamageP3 * 300 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP3PressSkill", 1f);
+            Invoke("delayP3PressSkill", 2f);
             dem = 1;
         }
         else
@@ -1080,6 +1083,7 @@ public class BSThief1 : MonoBehaviour
         else if (E1Hit == 3 && Global.CurHPP3 > 0)
             Global.CurHPP3 -= Global.DamageE1;
 
+        _canvas.sortingOrder = 3;
         EDamage.text = "";
         aE1 -= 1;
         dem_turn += 1;
@@ -1294,6 +1298,7 @@ public class BSThief1 : MonoBehaviour
 
     void delayCheckP1P2P3Die1()
     {
+        URPController.TurnOffURP = true;
         HPMP.SetActive(false);
         Lose_panel.SetActive(true);
     }
@@ -1303,11 +1308,12 @@ public class BSThief1 : MonoBehaviour
     }
     void delayCheckE1Die1()
     {
-        for (int i = 0; i < CharOff.Length; i++)
+        /*for (int i = 0; i < CharOff.Length; i++)
         {
             CharOff[i].SetActive(false);
-        }
+        }*/
 
+        URPController.TurnOffURP = true;
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }

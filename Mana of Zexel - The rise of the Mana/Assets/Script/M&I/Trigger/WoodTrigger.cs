@@ -27,6 +27,7 @@ public class WoodTrigger : MonoBehaviour
             show2.SetActive(true);
             show1.text = "Wood +1";
             ContainerController.WoodPick = 1;
+            cc.UpdateBagPickUp(true);
             once = 1;
             Invoke("delay1", 1f);
         }

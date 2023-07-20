@@ -27,6 +27,7 @@ public class WheatTrigger : MonoBehaviour
             show2.SetActive(true);
             show1.text = "Wheat +1";
             ContainerController.WheatPick = 1;
+            cc.UpdateBagPickUp(true);
             once = 1;
             Invoke("delay1", 1f);
         }

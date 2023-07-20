@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class CameraController : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class CameraController : MonoBehaviour
     public float smoothing;
     public Vector2 min_pos;
     public Vector2 max_pos;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -256,7 +256,7 @@ public class MenuController : MonoBehaviour
 
         Global.PlusPointP2 = 2;
 
-        Global.CurHPP2 = 840;
+        /*Global.CurHPP2 = 840;
         Global.MaxHPP2 = 840;
         Global.CurMPP2 = 121;
         Global.MaxMPP2 = 121;
@@ -264,7 +264,7 @@ public class MenuController : MonoBehaviour
         Global.SpeedP2 = 40;
         Global.LevelP2 = 30;
         Global.MaxEXPP2 = 80;
-        Global.CurEXPP2 = 0;
+        Global.CurEXPP2 = 0;*/
 
         //Set Maria
         Global.CurHPP3 = 235;

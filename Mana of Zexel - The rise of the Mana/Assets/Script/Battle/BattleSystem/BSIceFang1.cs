@@ -12,6 +12,8 @@ public class BSIceFang1 : MonoBehaviour
 
     public AudioSource VayneAttackFX, AliaAttackFX, MariaAttackFX, VayneSkill1FX, VayneSkill2FX, VayneSkill3FX, AliaSkill1FX, AliaSkill2FX, AliaSkill3FX, MariaSkill1FX, MariaSkill2FX, MariaSkill3FX, EnemyAttackFX, HealFX, ExplosionFX, OpenCloseFX;
 
+    public Canvas _canvas;
+
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
     public GameObject VayneAttackEffect, VayneSkill2Effect, VayneSkill3Effect, MariaAttackEffect, MariaSkill3Effect;
@@ -204,6 +206,7 @@ public class BSIceFang1 : MonoBehaviour
             ShowP1Panel(false);
             ShowP2Panel(false);
             ShowP3Panel(false);
+            _canvas.sortingOrder = 1;
             if (dem == 3)
             {
                 IFB.yes_IceFang = 1;
@@ -403,7 +406,7 @@ public class BSIceFang1 : MonoBehaviour
         show1 = 1;
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP1;
-        Invoke("delayP1PressAttack", 1f);
+        Invoke("delayP1PressAttack", 2f);
         dem = 3;
     }
     public void PressAttackP2()
@@ -413,7 +416,7 @@ public class BSIceFang1 : MonoBehaviour
         show2 = 1;
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP2;
-        Invoke("delayP2PressAttack", 1f);
+        Invoke("delayP2PressAttack", 2f);
         dem = 3;
     }
     public void PressAttackP3()
@@ -424,7 +427,7 @@ public class BSIceFang1 : MonoBehaviour
         show3 = 1;
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP3;
-        Invoke("delayP3PressAttack", 1f);
+        Invoke("delayP3PressAttack", 2f);
         dem = 3;
     }
 
@@ -447,7 +450,7 @@ public class BSIceFang1 : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 100 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
+            Invoke("delayP1PressSkill", 2f);
             dem = 3;
         }
         else
@@ -471,7 +474,7 @@ public class BSIceFang1 : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 200 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
+            Invoke("delayP1PressSkill", 2f);
             dem = 3;
         }
         else
@@ -495,7 +498,7 @@ public class BSIceFang1 : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 300 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
+            Invoke("delayP1PressSkill", 2f);
             dem = 3;
         }
         else
@@ -610,7 +613,7 @@ public class BSIceFang1 : MonoBehaviour
             showr2.SetActive(true);
             showr1.text = "HP +" + HealAmount;
             Invoke("delayshowr", 2f);
-            Invoke("delayP3PressSkill", 1f);
+            Invoke("delayP3PressSkill", 2f);
             dem = 3;
         }
         else
@@ -633,7 +636,7 @@ public class BSIceFang1 : MonoBehaviour
             showr2.SetActive(true);
             showr1.text = "MP +" + HealAmount;
             Invoke("delayshowr", 2f);
-            Invoke("delayP3PressSkill", 1f);
+            Invoke("delayP3PressSkill", 2f);
             dem = 3;
         }
         else
@@ -656,7 +659,7 @@ public class BSIceFang1 : MonoBehaviour
             int DamgeCal = Global.DamageP3 + (Global.DamageP3 * 300 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP3PressSkill", 1f);
+            Invoke("delayP3PressSkill", 2f);
             dem = 3;
         }
         else
@@ -1089,8 +1092,8 @@ public class BSIceFang1 : MonoBehaviour
 
         //E8AttackTarget();
 
+        _canvas.sortingOrder = 3;
         EDamage.text = "";
-
         aE8 -= 1;
         dem_turn += 1;
     }
@@ -1332,6 +1335,7 @@ public class BSIceFang1 : MonoBehaviour
 
     void delayCheckP1P2P3Die1()
     {
+        URPController.TurnOffURP = true;
         HPMP.SetActive(false);
         Lose_panel.SetActive(true);
     }
@@ -1341,6 +1345,7 @@ public class BSIceFang1 : MonoBehaviour
     }
     void delayCheckE8Die1()
     {
+        URPController.TurnOffURP = true;
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }

@@ -27,6 +27,7 @@ public class RockTrigger : MonoBehaviour
             show2.SetActive(true);
             show1.text = "Rock +1";
             ContainerController.RockPick = 1;
+            cc.UpdateBagPickUp(true);
             once = 1;
             Invoke("delay1", 1f);
         }

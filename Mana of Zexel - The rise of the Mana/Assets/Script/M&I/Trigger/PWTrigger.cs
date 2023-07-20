@@ -26,6 +26,7 @@ public class PWTrigger : MonoBehaviour
             show2.SetActive(true);
             show1.text = "Pure water +1";
             ContainerController.PureWaterPick = 1;
+            cc.UpdateBagPickUp(true);
             once = 1;
             Invoke("delay1", 1f);
         }

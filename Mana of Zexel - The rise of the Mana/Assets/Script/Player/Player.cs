@@ -1316,6 +1316,12 @@ public class Player : MonoBehaviour
                 show2.SetActive(true);
                 show1.text = "Press Space to commit the quest";
             }
+            else if (CutscenesController.cus7 == 0 && CutscenesController.cus6 == 1)
+            {
+                tqz = true;
+                show2.SetActive(true);
+                show1.text = "Press Space to commit the quest";
+            }
         }
         if (collision.CompareTag("MQZ"))
         {
@@ -1376,6 +1382,12 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("TQZ"))
         {
             if (CutscenesController.cus6 == 0 && CutscenesController.cus4 == 1)
+            {
+                tqz = false;
+                show2.SetActive(false);
+                show1.text = "";
+            }
+            else if (CutscenesController.cus7 == 0 && CutscenesController.cus6 == 1)
             {
                 tqz = false;
                 show2.SetActive(false);

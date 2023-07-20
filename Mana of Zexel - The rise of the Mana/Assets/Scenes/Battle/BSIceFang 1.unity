@@ -2124,6 +2124,7 @@ GameObject:
   - component: {fileID: 206664517}
   - component: {fileID: 206664516}
   - component: {fileID: 206664515}
+  - component: {fileID: 206664518}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2197,6 +2198,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &206664518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206664514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &234725038
 GameObject:
   m_ObjectHideFlags: 0
@@ -19452,6 +19486,7 @@ MonoBehaviour:
   HealFX: {fileID: 1317575068}
   ExplosionFX: {fileID: 864423927}
   OpenCloseFX: {fileID: 1586051252}
+  _canvas: {fileID: 2110691885}
   Item_panel: {fileID: 2001497631}
   HPHealingEffP1: {fileID: 55516670}
   MPHealingEffP1: {fileID: 1577615878}
@@ -19546,6 +19581,7 @@ MonoBehaviour:
   stop: 0
   show2: 0
   show3: 0
+  GameOver: 0
   P2Available: 0
   P3Available: 0
   UseItemIndex: 0
@@ -20903,6 +20939,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852129308}
   m_CullTransparentMesh: 1
+--- !u!1 &1855893773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1855893775}
+  - component: {fileID: 1855893774}
+  m_Layer: 0
+  m_Name: URPIns
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1855893774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855893773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc05837d841f7c3419d798c279e44a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  URPPrefab:
+  - {fileID: 9102692782035764627, guid: 5adecc7d8e4d5a6488a2467cea4775a2, type: 3}
+--- !u!4 &1855893775
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855893773}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -17.210533, y: -13.81999, z: 225.56534}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1870066340
 GameObject:
   m_ObjectHideFlags: 0

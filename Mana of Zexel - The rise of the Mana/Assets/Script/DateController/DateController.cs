@@ -11,7 +11,7 @@ public class DateController : MonoBehaviour
 
     public static float GlobalTime;
     public static int GlobalUpHour, GlobalPHour, GlobalDownHour, GlobalDayNight;
-    public static bool StartGlobalTime;
+    public static bool StartGlobalTime, DayOn, NightOn;
 
     // Start is called before the first frame update
     void Start()
@@ -136,11 +136,17 @@ public class DateController : MonoBehaviour
 
         if (((GlobalDayNight == 0 && GlobalPHour >= 6) || (GlobalDayNight == 1 && GlobalPHour < 6)))
         {
+            DayOn = true;
+            NightOn = false;
+            URPController.UpdateURP = true;
             Sun.SetTrigger("sunon");
             Moon.SetTrigger("moonoff");
         }
         else if (((GlobalDayNight == 1 && GlobalPHour >= 6) || (GlobalDayNight == 0 && GlobalPHour < 6)))
         {
+            DayOn = false;
+            NightOn = true;
+            URPController.UpdateURP = true;
             Sun.SetTrigger("sunoff");
             Moon.SetTrigger("moonon");
         }
