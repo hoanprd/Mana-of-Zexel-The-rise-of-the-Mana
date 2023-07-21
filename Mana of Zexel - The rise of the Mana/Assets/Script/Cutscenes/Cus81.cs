@@ -10,7 +10,7 @@ public class Cus81 : MonoBehaviour
 
     public Text NameTagText;
     public Text dia;
-    public GameObject va1;
+    public GameObject va1, va2;
     public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, ManaWaterVAL1;
     public GameObject NameTag;
     private int tang;
@@ -121,6 +121,8 @@ public class Cus81 : MonoBehaviour
             }
             else if (tang == 16)
             {
+                va1.SetActive(false);
+                va2.SetActive(true);
                 VayneVAL1.SetActive(false);
                 ManaWaterVAL1.SetActive(true);
                 NameTagText.text = "???";
@@ -381,6 +383,8 @@ public class Cus81 : MonoBehaviour
             }
             else if (tang == 16)
             {
+                va1.SetActive(false);
+                va2.SetActive(true);
                 VayneVAL1.SetActive(false);
                 ManaWaterVAL1.SetActive(true);
                 NameTagText.text = "???";
