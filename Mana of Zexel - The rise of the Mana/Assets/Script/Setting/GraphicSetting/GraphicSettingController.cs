@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GraphicSettingController : MonoBehaviour
 {
+    public AudioSource ClickFX;
     public GameObject BloomOn, BloomOff, VignetteOn, VignetteOff, WhiteBalanceOn, WhiteBalanceOff, HightlightShadowOn, HightlightShadowOff;
 
     public static int Bloom, Vignette, WhiteBalance, HightlightShadow;
@@ -95,6 +96,7 @@ public class GraphicSettingController : MonoBehaviour
 
     public void OnBloomPress()
     {
+        ClickFX.Play();
         Bloom = 0;
         BloomOn.SetActive(false);
         BloomOff.SetActive(true);
@@ -103,6 +105,7 @@ public class GraphicSettingController : MonoBehaviour
 
     public void OffBloomPress()
     {
+        ClickFX.Play();
         Bloom = 1;
         BloomOn.SetActive(true);
         BloomOff.SetActive(false);
@@ -111,6 +114,7 @@ public class GraphicSettingController : MonoBehaviour
 
     public void OnVignettePress()
     {
+        ClickFX.Play();
         Vignette = 0;
         VignetteOn.SetActive(false);
         VignetteOff.SetActive(true);
@@ -119,6 +123,7 @@ public class GraphicSettingController : MonoBehaviour
 
     public void OffVignettePress()
     {
+        ClickFX.Play();
         Vignette = 1;
         VignetteOn.SetActive(true);
         VignetteOff.SetActive(false);
@@ -127,6 +132,7 @@ public class GraphicSettingController : MonoBehaviour
 
     public void OnWhiteBalancePress()
     {
+        ClickFX.Play();
         WhiteBalance = 0;
         WhiteBalanceOn.SetActive(false);
         WhiteBalanceOff.SetActive(true);
@@ -135,6 +141,7 @@ public class GraphicSettingController : MonoBehaviour
 
     public void OffWhiteBalancePress()
     {
+        ClickFX.Play();
         WhiteBalance = 1;
         WhiteBalanceOn.SetActive(true);
         WhiteBalanceOff.SetActive(false);
@@ -143,6 +150,7 @@ public class GraphicSettingController : MonoBehaviour
 
     public void OnHightlightShadowPress()
     {
+        ClickFX.Play();
         HightlightShadow = 0;
         HightlightShadowOn.SetActive(false);
         HightlightShadowOff.SetActive(true);
@@ -151,6 +159,7 @@ public class GraphicSettingController : MonoBehaviour
 
     public void OffHightlightShadowPress()
     {
+        ClickFX.Play();
         HightlightShadow = 1;
         HightlightShadowOn.SetActive(true);
         HightlightShadowOff.SetActive(false);
