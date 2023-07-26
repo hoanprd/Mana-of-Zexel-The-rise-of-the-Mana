@@ -118,7 +118,6 @@ public class CusE4 : MonoBehaviour
             }
             else if (tang >= 16)
             {
-                ExtraCutscenesController.cuse5 = 1;
                 ContainerController.LoadingOpen = true;
                 SceneManager.LoadScene("Mana cliff");
             }
@@ -215,7 +214,6 @@ public class CusE4 : MonoBehaviour
             }
             else if (tang >= 16)
             {
-                ExtraCutscenesController.cuse4 = 1;
                 ContainerController.LoadingOpen = true;
                 SceneManager.LoadScene("Mana cliff");
             }
@@ -232,7 +230,6 @@ public class CusE4 : MonoBehaviour
     public void Pressskip()
     {
         ecc.FXCutscenes(1);
-        ExtraCutscenesController.cuse4 = 1;
         ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Mana cliff");
     }

@@ -143,7 +143,6 @@ public class CusE1 : MonoBehaviour
             }
             else if (tang >= 23)
             {
-                ExtraCutscenesController.cuse1 = 1;
                 ContainerController.LoadingOpen = true;
                 SceneManager.LoadScene("Wishing hill");
             }
@@ -265,7 +264,6 @@ public class CusE1 : MonoBehaviour
             }
             else if (tang >= 23)
             {
-                ExtraCutscenesController.cuse1 = 1;
                 ContainerController.LoadingOpen = true;
                 SceneManager.LoadScene("Wishing hill");
             }
@@ -282,7 +280,6 @@ public class CusE1 : MonoBehaviour
     public void Pressskip()
     {
         ecc.FXCutscenes(1);
-        ExtraCutscenesController.cuse1 = 1;
         ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Wishing hill");
     }

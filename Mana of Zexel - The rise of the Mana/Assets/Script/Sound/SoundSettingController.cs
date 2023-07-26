@@ -15,6 +15,7 @@ public class SoundSettingController : MonoBehaviour
         if (!PlayerPrefs.HasKey("SBGM"))
         {
             BGMSlider.value = 0.5f;
+            PlayerPrefs.SetFloat("SBGM", BGMSlider.value);
         }
         else
         {
@@ -24,6 +25,7 @@ public class SoundSettingController : MonoBehaviour
         if (!PlayerPrefs.HasKey("SFX"))
         {
             FXSlider.value = 0.5f;
+            PlayerPrefs.SetFloat("SFX", FXSlider.value);
         }
         else
         {

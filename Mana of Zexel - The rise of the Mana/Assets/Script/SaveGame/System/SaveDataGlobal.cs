@@ -158,6 +158,13 @@ public class SaveDataGlobal
     public int Savecus143;
     public int Savecus144;
 
+    //Set extra cut
+    public int Savecuse1;
+    public int Savecuse2;
+    public int Savecuse3;
+    public int Savecuse4;
+    public int Savecuse5;
+
     //Set quest
     public int SaveKGQ;
     public int SaveHVStop1;

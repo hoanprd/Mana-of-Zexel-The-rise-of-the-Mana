@@ -199,6 +199,12 @@ public class MenuController : MonoBehaviour
         CutscenesController.cus119 = 0;
         CutscenesController.cus120 = 0;
 
+        //Load extra cus
+        ExtraCutscenesController.cuse1 = 0;
+        ExtraCutscenesController.cuse2 = 0;
+        ExtraCutscenesController.cuse3 = 0;
+        ExtraCutscenesController.cuse4 = 0;
+        ExtraCutscenesController.cuse5 = 0;
 
         //Set quest
         GlobalQuest.KillGoblinQuest = 0;
@@ -634,6 +640,13 @@ public class MenuController : MonoBehaviour
         CutscenesController.cus142 = sdg.Savecus142;
         CutscenesController.cus143 = sdg.Savecus143;
         CutscenesController.cus144 = sdg.Savecus144;
+
+        //Load extra cus
+        ExtraCutscenesController.cuse1 = sdg.Savecuse1;
+        ExtraCutscenesController.cuse2 = sdg.Savecuse2;
+        ExtraCutscenesController.cuse3 = sdg.Savecuse3;
+        ExtraCutscenesController.cuse4 = sdg.Savecuse4;
+        ExtraCutscenesController.cuse5 = sdg.Savecuse5;
 
         //Load quest
         GlobalQuest.KillGoblinQuest = sdg.SaveKGQ;

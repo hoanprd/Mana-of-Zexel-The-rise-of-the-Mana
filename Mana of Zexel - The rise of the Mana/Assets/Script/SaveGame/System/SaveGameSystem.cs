@@ -270,6 +270,13 @@ public class SaveGameSystem : MonoBehaviour
         sdg.Savecus143 = CutscenesController.cus143;
         sdg.Savecus144 = CutscenesController.cus144;
 
+        //Set extra cus
+        sdg.Savecuse1 = ExtraCutscenesController.cuse1;
+        sdg.Savecuse2 = ExtraCutscenesController.cuse2;
+        sdg.Savecuse3 = ExtraCutscenesController.cuse3;
+        sdg.Savecuse4 = ExtraCutscenesController.cuse4;
+        sdg.Savecuse5 = ExtraCutscenesController.cuse5;
+
         //Set quest
         sdg.SaveKGQ = GlobalQuest.KillGoblinQuest;
         sdg.SaveHVStop1 = GlobalQuest.HelpVillagerStop1;
@@ -674,6 +681,13 @@ public class SaveGameSystem : MonoBehaviour
         sdg.Savecus142 = CutscenesController.cus142;
         sdg.Savecus143 = CutscenesController.cus143;
         sdg.Savecus144 = CutscenesController.cus144;
+
+        //Set extra cus
+        sdg.Savecuse1 = ExtraCutscenesController.cuse1;
+        sdg.Savecuse2 = ExtraCutscenesController.cuse2;
+        sdg.Savecuse3 = ExtraCutscenesController.cuse3;
+        sdg.Savecuse4 = ExtraCutscenesController.cuse4;
+        sdg.Savecuse5 = ExtraCutscenesController.cuse5;
 
         //Set quest
         sdg.SaveKGQ = GlobalQuest.KillGoblinQuest;

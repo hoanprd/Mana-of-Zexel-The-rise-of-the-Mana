@@ -124,7 +124,6 @@ public class CusE2 : MonoBehaviour
             }
             else if (tang >= 19)
             {
-                ExtraCutscenesController.cuse2 = 1;
                 ContainerController.LoadingOpen = true;
                 SceneManager.LoadScene("Zexel town");
             }
@@ -227,7 +226,6 @@ public class CusE2 : MonoBehaviour
             }
             else if (tang >= 19)
             {
-                ExtraCutscenesController.cuse2 = 1;
                 ContainerController.LoadingOpen = true;
                 SceneManager.LoadScene("Zexel town");
             }
@@ -244,7 +242,6 @@ public class CusE2 : MonoBehaviour
     public void Pressskip()
     {
         ecc.FXCutscenes(1);
-        ExtraCutscenesController.cuse2 = 1;
         ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Zexel town");
     }

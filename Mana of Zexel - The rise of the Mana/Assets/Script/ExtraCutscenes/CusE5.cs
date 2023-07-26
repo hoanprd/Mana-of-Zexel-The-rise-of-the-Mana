@@ -99,7 +99,6 @@ public class CusE5 : MonoBehaviour
             }
             else if (tang >= 13)
             {
-                ExtraCutscenesController.cuse5 = 1;
                 ContainerController.LoadingOpen = true;
                 SceneManager.LoadScene("Zexel temple");
             }
@@ -176,7 +175,6 @@ public class CusE5 : MonoBehaviour
             }
             else if (tang >= 13)
             {
-                ExtraCutscenesController.cuse5 = 1;
                 ContainerController.LoadingOpen = true;
                 SceneManager.LoadScene("Zexel temple");
             }
@@ -193,7 +191,6 @@ public class CusE5 : MonoBehaviour
     public void Pressskip()
     {
         ecc.FXCutscenes(1);
-        ExtraCutscenesController.cuse5 = 1;
         ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Zexel temple");
     }

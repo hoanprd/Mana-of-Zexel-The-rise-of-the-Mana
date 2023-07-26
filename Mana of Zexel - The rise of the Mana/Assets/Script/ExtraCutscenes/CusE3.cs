@@ -93,7 +93,6 @@ public class CusE3 : MonoBehaviour
             }
             else if (tang >= 13)
             {
-                ExtraCutscenesController.cuse3 = 1;
                 ContainerController.LoadingOpen = true;
                 SceneManager.LoadScene("Alta inferno");
             }
@@ -165,7 +164,6 @@ public class CusE3 : MonoBehaviour
             }
             else if (tang >= 13)
             {
-                ExtraCutscenesController.cuse3 = 1;
                 ContainerController.LoadingOpen = true;
                 SceneManager.LoadScene("Alta inferno");
             }
@@ -182,7 +180,6 @@ public class CusE3 : MonoBehaviour
     public void Pressskip()
     {
         ecc.FXCutscenes(1);
-        ExtraCutscenesController.cuse3 = 1;
         ContainerController.LoadingOpen = true;
         SceneManager.LoadScene("Alta inferno");
     }
