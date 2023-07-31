@@ -7,6 +7,7 @@ public class ObsidianTrigger : MonoBehaviour
 {
     ContainerController cc;
 
+    public AudioSource PickUpFX;
     public Text show1;
     public GameObject show2;
     private bool pick;
@@ -24,6 +25,7 @@ public class ObsidianTrigger : MonoBehaviour
     {
         if (pick && Input.GetKeyDown(KeyCode.Space) && HubController.BusyHub == false && once == 0)
         {
+            PickUpFX.Play();
             show2.SetActive(true);
             show1.text = "Obsidian +1";
             ContainerController.ObsidianPick = 1;

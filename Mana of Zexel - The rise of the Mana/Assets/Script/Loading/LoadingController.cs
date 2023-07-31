@@ -7,6 +7,8 @@ public class LoadingController : MonoBehaviour
 {
     bool ta = true;
     float ct;
+
+    public bool SkikOP;
     public float sm;
 
     // Start is called before the first frame update
@@ -24,7 +26,14 @@ public class LoadingController : MonoBehaviour
         }
         if (ct < 0)
         {
-            SceneManager.LoadScene("Intro");
+            if (SkikOP == true)
+            {
+                SceneManager.LoadScene("StartMenu");
+            }
+            else
+            {
+                SceneManager.LoadScene("Intro");
+            }
         }
     }
 }

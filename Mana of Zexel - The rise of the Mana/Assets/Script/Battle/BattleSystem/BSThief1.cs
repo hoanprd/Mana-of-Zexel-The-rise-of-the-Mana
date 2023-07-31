@@ -244,6 +244,7 @@ public class BSThief1 : MonoBehaviour
             _canvas.sortingOrder = 1;
             if (dem == 1)
             {
+                EnemyAttackFX.Play();
                 tb.yes_thief = 1;
                 EDamage.color = Color.red;
                 EDamage.text = "-" + Global.DamageE1;

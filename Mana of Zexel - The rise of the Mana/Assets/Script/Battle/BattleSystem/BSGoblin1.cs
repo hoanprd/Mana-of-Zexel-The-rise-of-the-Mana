@@ -140,6 +140,7 @@ public class BSGoblin1 : MonoBehaviour
         {
             MariaStatus.SetActive(false);
             MariaBar.SetActive(false);
+            a3 = 0;
             HP3.text = "";
             MP3.text = "";
             P3Available = false;
@@ -234,6 +235,7 @@ public class BSGoblin1 : MonoBehaviour
                 _canvas.sortingOrder = 1;
                 if (dem == 1)
                 {
+                    EnemyAttackFX.Play();
                     GB.yes_goblin = 1;
                     EDamage.color = Color.red;
                     EDamage.text = "-" + Global.DamageE2;

@@ -54,7 +54,7 @@ public class Cus2 : MonoBehaviour
             }
             else if (tang == 5)
             {
-                va1.SetActive(false);
+                VayneVAL1.SetActive(false);
                 NameTagText.text = "???";
                 dia.text = "I don't think so. Hya!";
             }
@@ -65,6 +65,7 @@ public class Cus2 : MonoBehaviour
             }
             else if (tang == 7)
             {
+                VayneVAL1.SetActive(true);
                 NameTagText.text = "Vayne";
                 dia.text = "What?";
             }
@@ -261,10 +262,6 @@ public class Cus2 : MonoBehaviour
         if (tang == 20)
         {
             cc.BGMCutscenes(0, true);
-        }
-        if (tang == 21)
-        {
-            cc.BGMCutscenes(4, false);
         }
     }
 

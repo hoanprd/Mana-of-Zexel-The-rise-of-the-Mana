@@ -208,7 +208,7 @@ public class Cus6 : MonoBehaviour
 
         if (tang == 7)
         {
-            cc.BGMCutscenes(1, true);
+            cc.BGMCutscenes(4, false);
         }
     }
 

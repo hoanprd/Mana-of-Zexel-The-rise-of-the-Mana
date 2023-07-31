@@ -7,10 +7,12 @@ public class PWTrigger : MonoBehaviour
 {
     ContainerController cc;
 
+    public AudioSource PickUpFX;
     public Text show1;
     public GameObject show2;
     private bool pick;
     private int once;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,7 @@ public class PWTrigger : MonoBehaviour
     {
         if (pick && Input.GetKeyDown(KeyCode.Space) && HubController.BusyHub == false && once == 0)
         {
+            PickUpFX.Play();
             show2.SetActive(true);
             show1.text = "Pure water +1";
             ContainerController.PureWaterPick = 1;
