@@ -389,7 +389,8 @@ public class BSZane1 : MonoBehaviour
         if (Global.CurMPP1 >= 20)
         {
             VayneSkill1FX.Play();
-            CloseChooseSkillVayne();
+            ChooseVayneSkillPanel.SetActive(false);
+            show1 = 0;
             ChooseSkillIndex = 1;
             pb.yes2 = 1;
             show1 = 1;
@@ -412,7 +413,8 @@ public class BSZane1 : MonoBehaviour
         if (Global.CurMPP1 >= 50)
         {
             VayneSkill2FX.Play();
-            CloseChooseSkillVayne();
+            ChooseVayneSkillPanel.SetActive(false);
+            show1 = 0;
             VayneSkill2Effect.SetActive(true);
             ChooseSkillIndex = 2;
             pb.yes7 = 1;
@@ -436,7 +438,8 @@ public class BSZane1 : MonoBehaviour
         if (Global.CurMPP1 >= 100)
         {
             VayneSkill3FX.Play();
-            CloseChooseSkillVayne();
+            ChooseVayneSkillPanel.SetActive(false);
+            show1 = 0;
             VayneSkill3Effect.SetActive(true);
             ChooseSkillIndex = 3;
             pb.yes8 = 1;
@@ -481,7 +484,8 @@ public class BSZane1 : MonoBehaviour
         if (Global.CurMPP2 >= 20)
         {
             AliaSkill1FX.Play();
-            CloseChooseSkillAlia();
+            ChooseAliaSkillPanel.SetActive(false);
+            show2 = 0;
             ChooseSkillIndex = 1;
             pb.yes4 = 1;
             show2 = 1;
@@ -503,7 +507,8 @@ public class BSZane1 : MonoBehaviour
         if (Global.CurMPP2 >= 50)
         {
             AliaSkill2FX.Play();
-            CloseChooseSkillAlia();
+            ChooseAliaSkillPanel.SetActive(false);
+            show2 = 0;
             ChooseSkillIndex = 2;
             pb.yes9 = 1;
             show2 = 1;
@@ -525,7 +530,8 @@ public class BSZane1 : MonoBehaviour
         if (Global.CurMPP2 >= 100)
         {
             AliaSkill3FX.Play();
-            CloseChooseSkillAlia();
+            ChooseAliaSkillPanel.SetActive(false);
+            show2 = 0;
             ChooseSkillIndex = 3;
             pb.yes10 = 1;
             show2 = 1;
@@ -569,7 +575,8 @@ public class BSZane1 : MonoBehaviour
         if (Global.CurMPP3 >= 40)
         {
             MariaSkill1FX.Play();
-            CloseChooseSkillMaria();
+            ChooseMariaSkillPanel.SetActive(false);
+            show3 = 0;
             ChooseSkillIndex = 1;
             pb.yes6 = 1;
             show3 = 1;
@@ -592,7 +599,8 @@ public class BSZane1 : MonoBehaviour
         if (Global.CurMPP3 >= 80)
         {
             MariaSkill2FX.Play();
-            CloseChooseSkillMaria();
+            ChooseMariaSkillPanel.SetActive(false);
+            show3 = 0;
             ChooseSkillIndex = 2;
             pb.yes11 = 1;
             show3 = 1;
@@ -615,7 +623,8 @@ public class BSZane1 : MonoBehaviour
         if (Global.CurMPP3 >= 120)
         {
             MariaSkill3FX.Play();
-            CloseChooseSkillMaria();
+            ChooseMariaSkillPanel.SetActive(false);
+            show3 = 0;
             MariaSkill3Effect.SetActive(true);
             ChooseSkillIndex = 3;
             pb.yes12 = 1;

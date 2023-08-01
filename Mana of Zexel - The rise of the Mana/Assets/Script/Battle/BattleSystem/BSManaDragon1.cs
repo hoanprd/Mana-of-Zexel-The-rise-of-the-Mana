@@ -403,6 +403,7 @@ public class BSManaDragon1 : MonoBehaviour
 
     public void PressSkillVayne()
     {
+        OpenCloseFX.Play();
         show1 = 1;
         ChooseVayneSkillPanel.SetActive(true);
     }
@@ -411,7 +412,9 @@ public class BSManaDragon1 : MonoBehaviour
     {
         if (Global.CurMPP1 >= 20)
         {
-            CloseChooseSkillVayne();
+            VayneSkill1FX.Play();
+            ChooseVayneSkillPanel.SetActive(false);
+            show1 = 0;
             ChooseSkillIndex = 1;
             pb.yes2 = 1;
             show1 = 1;
@@ -433,7 +436,9 @@ public class BSManaDragon1 : MonoBehaviour
     {
         if (Global.CurMPP1 >= 50)
         {
-            CloseChooseSkillVayne();
+            VayneSkill2FX.Play();
+            ChooseVayneSkillPanel.SetActive(false);
+            show1 = 0;
             VayneSkill2Effect.SetActive(true);
             ChooseSkillIndex = 2;
             pb.yes7 = 1;
@@ -456,7 +461,9 @@ public class BSManaDragon1 : MonoBehaviour
     {
         if (Global.CurMPP1 >= 100)
         {
-            CloseChooseSkillVayne();
+            VayneSkill3FX.Play();
+            ChooseVayneSkillPanel.SetActive(false);
+            show1 = 0;
             VayneSkill3Effect.SetActive(true);
             ChooseSkillIndex = 3;
             pb.yes8 = 1;
@@ -476,12 +483,14 @@ public class BSManaDragon1 : MonoBehaviour
     }
     public void CloseChooseSkillVayne()
     {
+        OpenCloseFX.Play();
         ChooseVayneSkillPanel.SetActive(false);
         show1 = 0;
     }
 
     public void PressSkillAlia()
     {
+        OpenCloseFX.Play();
         show2 = 1;
         ChooseAliaSkillPanel.SetActive(true);
     }
@@ -489,7 +498,9 @@ public class BSManaDragon1 : MonoBehaviour
     {
         if (Global.CurMPP2 >= 20)
         {
-            CloseChooseSkillAlia();
+            AliaSkill1FX.Play();
+            ChooseAliaSkillPanel.SetActive(false);
+            show2 = 0;
             ChooseSkillIndex = 1;
             pb.yes4 = 1;
             show2 = 1;
@@ -510,7 +521,9 @@ public class BSManaDragon1 : MonoBehaviour
     {
         if (Global.CurMPP2 >= 50)
         {
-            CloseChooseSkillAlia();
+            AliaSkill2FX.Play();
+            ChooseAliaSkillPanel.SetActive(false);
+            show2 = 0;
             ChooseSkillIndex = 2;
             pb.yes9 = 1;
             show2 = 1;
@@ -531,7 +544,9 @@ public class BSManaDragon1 : MonoBehaviour
     {
         if (Global.CurMPP2 >= 100)
         {
-            CloseChooseSkillAlia();
+            AliaSkill3FX.Play();
+            ChooseAliaSkillPanel.SetActive(false);
+            show2 = 0;
             ChooseSkillIndex = 3;
             pb.yes10 = 1;
             show2 = 1;
@@ -550,12 +565,14 @@ public class BSManaDragon1 : MonoBehaviour
     }
     public void CloseChooseSkillAlia()
     {
+        OpenCloseFX.Play();
         ChooseAliaSkillPanel.SetActive(false);
         show2 = 0;
     }
 
     public void PressSkillMaria()
     {
+        OpenCloseFX.Play();
         show3 = 1;
         ChooseMariaSkillPanel.SetActive(true);
     }
@@ -563,7 +580,9 @@ public class BSManaDragon1 : MonoBehaviour
     {
         if (Global.CurMPP3 >= 40)
         {
-            CloseChooseSkillMaria();
+            MariaSkill1FX.Play();
+            ChooseMariaSkillPanel.SetActive(false);
+            show3 = 0;
             ChooseSkillIndex = 1;
             pb.yes6 = 1;
             show3 = 1;
@@ -585,7 +604,9 @@ public class BSManaDragon1 : MonoBehaviour
     {
         if (Global.CurMPP3 >= 80)
         {
-            CloseChooseSkillMaria();
+            MariaSkill2FX.Play();
+            ChooseMariaSkillPanel.SetActive(false);
+            show3 = 0;
             ChooseSkillIndex = 2;
             pb.yes11 = 1;
             show3 = 1;
@@ -607,7 +628,9 @@ public class BSManaDragon1 : MonoBehaviour
     {
         if (Global.CurMPP3 >= 120)
         {
-            CloseChooseSkillMaria();
+            MariaSkill3FX.Play();
+            ChooseMariaSkillPanel.SetActive(false);
+            show3 = 0;
             MariaSkill3Effect.SetActive(true);
             ChooseSkillIndex = 3;
             pb.yes12 = 1;
@@ -627,6 +650,7 @@ public class BSManaDragon1 : MonoBehaviour
     }
     public void CloseChooseSkillMaria()
     {
+        OpenCloseFX.Play();
         ChooseMariaSkillPanel.SetActive(false);
         show3 = 0;
     }
@@ -887,6 +911,7 @@ public class BSManaDragon1 : MonoBehaviour
             }
             else
             {
+                EnemySkill1FX.Play();
                 MDB.yes_ManaDragonSkill = 1;
                 int DamgeCal = Global.DamageBE3 + Global.DamageBE3 * 300 / 100;
                 EDamage.color = Color.red;
@@ -898,14 +923,17 @@ public class BSManaDragon1 : MonoBehaviour
             BE3ANum = Random.Range(1, 11);
             if (BE3ANum <= 3)
             {
+                EnemyAttack1FX.Play();
                 MDB.yes_ManaDragonAttack1 = 1;
             }
             else if (BE3ANum == 4 || BE3ANum == 5)
             {
+                EnemyAttack2FX.Play();
                 MDB.yes_ManaDragonAttack2 = 1;
             }
             else
             {
+                EnemySkillChargeFX.Play();
                 MDB.yes_ManaDragonSkillCharge = 1;
                 BossSkillCharge = 1;
                 SkillChargeSign.SetActive(true);

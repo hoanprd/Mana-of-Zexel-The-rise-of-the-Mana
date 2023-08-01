@@ -1307,6 +1307,8 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("HealPoint"))
         {
             heal = true;
+            show2.SetActive(true);
+            show1.text = "Press Space to restore health";
         }
         if (collision.CompareTag("TQZ"))
         {
@@ -1378,6 +1380,8 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("HealPoint"))
         {
             heal = false;
+            show2.SetActive(false);
+            show1.text = "";
         }
         if (collision.CompareTag("TQZ"))
         {
