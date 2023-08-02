@@ -16,6 +16,11 @@ public class FireFangTrigger3 : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (CutscenesController.cus139 == 1)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame

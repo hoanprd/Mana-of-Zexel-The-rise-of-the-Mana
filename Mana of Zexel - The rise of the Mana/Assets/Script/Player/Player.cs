@@ -1467,30 +1467,45 @@ public class Player : MonoBehaviour
             if (CutscenesController.cus19 == 0 && CutscenesController.cus18 == 1)
             {
                 klener = true;
-                show2.SetActive(false);
+                show2.SetActive(true);
                 show1.text = "Press Space to commit the quest";
             }
             else if (CutscenesController.cus22 == 0 && CutscenesController.cus21 == 1)
             {
                 klener = true;
-                show2.SetActive(false);
+                show2.SetActive(true);
                 show1.text = "Press Space to commit the quest";
             }
         }
 
         if (collision.gameObject.CompareTag("ManaGenerator"))
         {
-            ManaGenerator = true;
+            if (CutscenesController.cus139 == 0)
+            {
+                ManaGenerator = true;
+                show2.SetActive(true);
+                show1.text = "Press Space to restore mana";
+            }
         }
 
         if (collision.gameObject.CompareTag("FireManaGenerator"))
         {
-            FireManaGenerator = true;
+            if (CutscenesController.cus139 == 0)
+            {
+                FireManaGenerator = true;
+                show2.SetActive(true);
+                show1.text = "Press Space to restore fire elemental mana";
+            }
         }
 
         if (collision.gameObject.CompareTag("IceManaGenerator"))
         {
-            IceManaGenerator = true;
+            if (CutscenesController.cus139 == 0)
+            {
+                IceManaGenerator = true;
+                show2.SetActive(true);
+                show1.text = "Press Space to restore ice elemental mana";
+            }
         }
     }
 
@@ -1514,17 +1529,32 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("ManaGenerator"))
         {
-            ManaGenerator = false;
+            if (CutscenesController.cus139 == 0)
+            {
+                ManaGenerator = false;
+                show2.SetActive(false);
+                show1.text = "";
+            }
         }
 
         if (collision.gameObject.CompareTag("FireManaGenerator"))
         {
-            FireManaGenerator = false;
+            if (CutscenesController.cus139 == 0)
+            {
+                FireManaGenerator = false;
+                show2.SetActive(false);
+                show1.text = "";
+            }
         }
 
         if (collision.gameObject.CompareTag("IceManaGenerator"))
         {
-            IceManaGenerator = false;
+            if (CutscenesController.cus139 == 0)
+            {
+                IceManaGenerator = false;
+                show2.SetActive(false);
+                show1.text = "";
+            }
         }
     }
 

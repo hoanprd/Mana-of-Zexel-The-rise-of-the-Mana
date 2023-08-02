@@ -15,6 +15,11 @@ public class DLTrigger : MonoBehaviour
 
     void Start()
     {
+        if (CutscenesController.cus139 == 1)
+        {
+            Destroy(gameObject);
+        }
+
         cc = FindObjectOfType<ContainerController>();
         once = 0;
     }

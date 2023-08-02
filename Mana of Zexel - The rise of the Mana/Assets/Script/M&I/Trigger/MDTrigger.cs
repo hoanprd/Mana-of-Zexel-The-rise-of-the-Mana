@@ -16,6 +16,11 @@ public class MDTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (CutscenesController.cus139 == 1)
+        {
+            Destroy(gameObject);
+        }
+
         cc = FindObjectOfType<ContainerController>();
         once = 0;
     }
