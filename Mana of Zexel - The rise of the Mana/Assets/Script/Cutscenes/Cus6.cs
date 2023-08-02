@@ -82,6 +82,7 @@ public class Cus6 : MonoBehaviour
             }
             else if (tang == 10)
             {
+                MrLanceVAR1.SetActive(false);
                 AliaVAR1.SetActive(true);
                 NameTagText.text = "Alia";
                 dia.text = "Hey let me join you, Vayne!";
@@ -168,6 +169,7 @@ public class Cus6 : MonoBehaviour
             }
             else if (tang == 10)
             {
+                MrLanceVAR1.SetActive(false);
                 AliaVAR1.SetActive(true);
                 NameTagText.text = "Alia";
                 dia.text = "Hãy cho tớ tham gia với nào Vayne!";

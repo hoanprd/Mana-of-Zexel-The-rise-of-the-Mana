@@ -15,6 +15,7 @@ public class HubController : MonoBehaviour
     public GameObject quest;
     public GameObject esc;
     public GameObject MariaInfo;
+    public GameObject EquipTextVayne, EquipTextAlia, EquipTextMaria;
     public Text LevelP1;
     public Text HPP1;
     public Text MPP1;
@@ -928,7 +929,7 @@ public class HubController : MonoBehaviour
     //Equip Vayne armor
     public void VayneEquipA1()
     {
-        if (Global.VayneArmorStatus == 0 && Global.AlchemistArmor1 >= 1)
+        if (Global.VayneArmorStatus == 0 && Global.AlchemistArmor1 >= 1 && Global.CurHPP1 == Global.MaxHPP1)
         {
             EquipFX.Play();
             for (int i = 0; i < VayneAI.Length; i++)
@@ -943,11 +944,18 @@ public class HubController : MonoBehaviour
                 }
             }
             Global.MaxHPP1 += 100;
+            Global.CurHPP1 = Global.MaxHPP1;
             Global.AlchemistArmor1 -= 1;
             Global.VayneArmorStatus = 1;
             ShowP1Detail();
         }
-        else if (Global.VayneArmorStatus == 2 && Global.AlchemistArmor1 >= 1)
+        else if (Global.VayneArmorStatus == 0 && Global.AlchemistArmor1 >= 1 && Global.CurHPP1 < Global.MaxHPP1)
+        {
+            EquipTextVayne.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
+
+        if (Global.VayneArmorStatus == 2 && Global.AlchemistArmor1 >= 1 && Global.CurHPP1 == Global.MaxHPP1)
         {
             EquipFX.Play();
             for (int i = 0; i < VayneAI.Length; i++)
@@ -963,12 +971,19 @@ public class HubController : MonoBehaviour
             }
             Global.MaxHPP1 -= 300;
             Global.MaxHPP1 += 100;
+            Global.CurHPP1 = Global.MaxHPP1;
             Global.AlchemistArmor2 += 1;
             Global.AlchemistArmor1 -= 1;
             Global.VayneArmorStatus = 1;
             ShowP1Detail();
         }
-        else if (Global.VayneArmorStatus == 3 && Global.AlchemistArmor1 >= 1)
+        else if(Global.VayneArmorStatus == 2 && Global.AlchemistArmor1 >= 1 && Global.CurHPP1 < Global.MaxHPP1)
+        {
+            EquipTextVayne.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
+
+        if (Global.VayneArmorStatus == 3 && Global.AlchemistArmor1 >= 1 && Global.CurHPP1 == Global.MaxHPP1)
         {
             EquipFX.Play();
             for (int i = 0; i < VayneAI.Length; i++)
@@ -984,16 +999,22 @@ public class HubController : MonoBehaviour
             }
             Global.MaxHPP1 -= 500;
             Global.MaxHPP1 += 100;
+            Global.CurHPP1 = Global.MaxHPP1;
             Global.AlchemistArmor3 += 1;
             Global.AlchemistArmor1 -= 1;
             Global.VayneArmorStatus = 1;
             ShowP1Detail();
+        }
+        else if (Global.VayneArmorStatus == 3 && Global.AlchemistArmor1 >= 1 && Global.CurHPP1 < Global.MaxHPP1)
+        {
+            EquipTextVayne.SetActive(true);
+            StartCoroutine(DelayEquipText());
         }
     }
 
     public void VayneEquipA2()
     {
-        if (Global.VayneArmorStatus == 0 && Global.AlchemistArmor2 >= 1)
+        if (Global.VayneArmorStatus == 0 && Global.AlchemistArmor2 >= 1 && Global.CurHPP1 == Global.MaxHPP1)
         {
             EquipFX.Play();
             for (int i = 0; i < VayneAI.Length; i++)
@@ -1008,11 +1029,18 @@ public class HubController : MonoBehaviour
                 }
             }
             Global.MaxHPP1 += 300;
+            Global.CurHPP1 = Global.MaxHPP1;
             Global.AlchemistArmor2 -= 1;
             Global.VayneArmorStatus = 2;
             ShowP1Detail();
         }
-        else if (Global.VayneArmorStatus == 1 && Global.AlchemistArmor2 >= 1)
+        else if (Global.VayneArmorStatus == 0 && Global.AlchemistArmor2 >= 1 && Global.CurHPP1 < Global.MaxHPP1)
+        {
+            EquipTextVayne.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
+
+        if (Global.VayneArmorStatus == 1 && Global.AlchemistArmor2 >= 1 && Global.CurHPP1 == Global.MaxHPP1)
         {
             EquipFX.Play();
             for (int i = 0; i < VayneWI.Length; i++)
@@ -1028,12 +1056,19 @@ public class HubController : MonoBehaviour
             }
             Global.MaxHPP1 -= 100;
             Global.MaxHPP1 += 300;
+            Global.CurHPP1 = Global.MaxHPP1;
             Global.AlchemistArmor1 += 1;
             Global.AlchemistArmor2 -= 1;
             Global.VayneArmorStatus = 2;
             ShowP1Detail();
         }
-        else if (Global.VayneArmorStatus == 3 && Global.AlchemistArmor2 >= 1)
+        else if (Global.VayneArmorStatus == 1 && Global.AlchemistArmor2 >= 1 && Global.CurHPP1 < Global.MaxHPP1)
+        {
+            EquipTextVayne.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
+
+        if (Global.VayneArmorStatus == 3 && Global.AlchemistArmor2 >= 1 && Global.CurHPP1 == Global.MaxHPP1)
         {
             EquipFX.Play();
             for (int i = 0; i < VayneWI.Length; i++)
@@ -1049,16 +1084,22 @@ public class HubController : MonoBehaviour
             }
             Global.MaxHPP1 -= 500;
             Global.MaxHPP1 += 300;
+            Global.CurHPP1 = Global.MaxHPP1;
             Global.AlchemistArmor3 += 1;
             Global.AlchemistArmor2 -= 1;
             Global.VayneArmorStatus = 2;
             ShowP1Detail();
         }
+        else if (Global.VayneArmorStatus == 3 && Global.AlchemistArmor2 >= 1 && Global.CurHPP1 < Global.MaxHPP1)
+        {
+            EquipTextVayne.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
     }
 
     public void VayneEquipA3()
     {
-        if (Global.VayneArmorStatus == 0 && Global.AlchemistArmor3 >= 1)
+        if (Global.VayneArmorStatus == 0 && Global.AlchemistArmor3 >= 1 && Global.CurHPP1 == Global.MaxHPP1)
         {
             EquipFX.Play();
             for (int i = 0; i < VayneAI.Length; i++)
@@ -1073,11 +1114,18 @@ public class HubController : MonoBehaviour
                 }
             }
             Global.MaxHPP1 += 500;
+            Global.CurHPP1 = Global.MaxHPP1;
             Global.AlchemistArmor3 -= 1;
             Global.VayneArmorStatus = 3;
             ShowP1Detail();
         }
-        else if (Global.VayneArmorStatus == 1 && Global.AlchemistArmor3 >= 1)
+        else if (Global.VayneArmorStatus == 0 && Global.AlchemistArmor3 >= 1 && Global.CurHPP1 < Global.MaxHPP1)
+        {
+            EquipTextVayne.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
+
+        if (Global.VayneArmorStatus == 1 && Global.AlchemistArmor3 >= 1 && Global.CurHPP1 == Global.MaxHPP1)
         {
             EquipFX.Play();
             for (int i = 0; i < VayneAI.Length; i++)
@@ -1093,12 +1141,19 @@ public class HubController : MonoBehaviour
             }
             Global.MaxHPP1 -= 100;
             Global.MaxHPP1 += 500;
+            Global.CurHPP1 = Global.MaxHPP1;
             Global.AlchemistArmor1 += 1;
             Global.AlchemistArmor3 -= 1;
             Global.VayneArmorStatus = 3;
             ShowP1Detail();
         }
-        else if (Global.VayneArmorStatus == 2 && Global.AlchemistArmor3 >= 1)
+        else if (Global.VayneArmorStatus == 1 && Global.AlchemistArmor3 >= 1 && Global.CurHPP1 < Global.MaxHPP1)
+        {
+            EquipTextVayne.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
+
+        if (Global.VayneArmorStatus == 2 && Global.AlchemistArmor3 >= 1 && Global.CurHPP1 == Global.MaxHPP1)
         {
             EquipFX.Play();
             for (int i = 0; i < VayneAI.Length; i++)
@@ -1114,10 +1169,16 @@ public class HubController : MonoBehaviour
             }
             Global.MaxHPP1 -= 300;
             Global.MaxHPP1 += 500;
+            Global.CurHPP1 = Global.MaxHPP1;
             Global.AlchemistArmor2 += 1;
             Global.AlchemistArmor3 -= 1;
             Global.VayneArmorStatus = 3;
             ShowP1Detail();
+        }
+        else if (Global.VayneArmorStatus == 2 && Global.AlchemistArmor3 >= 1 && Global.CurHPP1 < Global.MaxHPP1)
+        {
+            EquipTextVayne.SetActive(true);
+            StartCoroutine(DelayEquipText());
         }
     }
 
@@ -1334,7 +1395,7 @@ public class HubController : MonoBehaviour
     //Equip Alia armor
     public void AliaEquipA1()
     {
-        if (Global.AliaArmorStatus == 0 && Global.WarriorArmor1 >= 1)
+        if (Global.AliaArmorStatus == 0 && Global.WarriorArmor1 >= 1 && Global.CurHPP2 == Global.MaxHPP2)
         {
             EquipFX.Play();
             for (int i = 0; i < AliaAI.Length; i++)
@@ -1349,11 +1410,18 @@ public class HubController : MonoBehaviour
                 }
             }
             Global.MaxHPP2 += 100;
+            Global.CurHPP2 = Global.MaxHPP2;
             Global.WarriorArmor1 -= 1;
             Global.AliaArmorStatus = 1;
             ShowP2Detail();
         }
-        else if (Global.AliaArmorStatus == 2 && Global.WarriorArmor1 >= 1)
+        else if (Global.AliaArmorStatus == 0 && Global.WarriorArmor1 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
+        {
+            EquipTextAlia.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
+
+        if (Global.AliaArmorStatus == 2 && Global.WarriorArmor1 >= 1 && Global.CurHPP2 == Global.MaxHPP2)
         {
             EquipFX.Play();
             for (int i = 0; i < AliaAI.Length; i++)
@@ -1369,12 +1437,19 @@ public class HubController : MonoBehaviour
             }
             Global.MaxHPP2 -= 300;
             Global.MaxHPP2 += 100;
+            Global.CurHPP2 = Global.MaxHPP2;
             Global.WarriorArmor2 += 1;
             Global.WarriorArmor1 -= 1;
             Global.AliaArmorStatus = 1;
             ShowP2Detail();
         }
-        else if (Global.AliaArmorStatus == 3 && Global.WarriorArmor1 >= 1)
+        else if (Global.AliaArmorStatus == 2 && Global.WarriorArmor1 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
+        {
+            EquipTextAlia.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
+
+        if (Global.AliaArmorStatus == 3 && Global.WarriorArmor1 >= 1 && Global.CurHPP2 == Global.MaxHPP2)
         {
             EquipFX.Play();
             for (int i = 0; i < AliaAI.Length; i++)
@@ -1390,16 +1465,22 @@ public class HubController : MonoBehaviour
             }
             Global.MaxHPP2 -= 500;
             Global.MaxHPP2 += 100;
+            Global.CurHPP2 = Global.MaxHPP2;
             Global.WarriorArmor3 += 1;
             Global.WarriorArmor1 -= 1;
             Global.AliaArmorStatus = 1;
             ShowP2Detail();
+        }
+        else if (Global.AliaArmorStatus == 3 && Global.WarriorArmor1 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
+        {
+            EquipTextAlia.SetActive(true);
+            StartCoroutine(DelayEquipText());
         }
     }
 
     public void AliaEquipA2()
     {
-        if (Global.AliaArmorStatus == 0 && Global.WarriorArmor2 >= 1)
+        if (Global.AliaArmorStatus == 0 && Global.WarriorArmor2 >= 1 && Global.CurHPP2 == Global.MaxHPP2)
         {
             EquipFX.Play();
             for (int i = 0; i < AliaAI.Length; i++)
@@ -1414,11 +1495,18 @@ public class HubController : MonoBehaviour
                 }
             }
             Global.MaxHPP2 += 300;
+            Global.CurHPP2 = Global.MaxHPP2;
             Global.WarriorArmor2 -= 1;
             Global.AliaArmorStatus = 2;
             ShowP2Detail();
         }
-        else if (Global.AliaArmorStatus == 1 && Global.WarriorArmor2 >= 1)
+        else if (Global.AliaArmorStatus == 0 && Global.WarriorArmor2 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
+        {
+            EquipTextAlia.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
+
+        if (Global.AliaArmorStatus == 1 && Global.WarriorArmor2 >= 1 && Global.CurHPP2 == Global.MaxHPP2)
         {
             EquipFX.Play();
             for (int i = 0; i < AliaWI.Length; i++)
@@ -1434,12 +1522,19 @@ public class HubController : MonoBehaviour
             }
             Global.MaxHPP2 -= 100;
             Global.MaxHPP2 += 300;
+            Global.CurHPP2 = Global.MaxHPP2;
             Global.WarriorArmor1 += 1;
             Global.WarriorArmor2 -= 1;
             Global.AliaArmorStatus = 2;
             ShowP2Detail();
         }
-        else if (Global.AliaArmorStatus == 3 && Global.WarriorArmor2 >= 1)
+        else if (Global.AliaArmorStatus == 1 && Global.WarriorArmor2 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
+        {
+            EquipTextAlia.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
+
+        if (Global.AliaArmorStatus == 3 && Global.WarriorArmor2 >= 1 && Global.CurHPP2 == Global.MaxHPP2)
         {
             EquipFX.Play();
             for (int i = 0; i < AliaWI.Length; i++)
@@ -1455,16 +1550,22 @@ public class HubController : MonoBehaviour
             }
             Global.MaxHPP2 -= 500;
             Global.MaxHPP2 += 300;
+            Global.CurHPP2 = Global.MaxHPP2;
             Global.WarriorArmor3 += 1;
             Global.WarriorArmor2 -= 1;
             Global.AliaArmorStatus = 2;
             ShowP2Detail();
         }
+        else if (Global.AliaArmorStatus == 3 && Global.WarriorArmor2 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
+        {
+            EquipTextAlia.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
     }
 
     public void AliaEquipA3()
     {
-        if (Global.AliaArmorStatus == 0 && Global.WarriorArmor3 >= 1)
+        if (Global.AliaArmorStatus == 0 && Global.WarriorArmor3 >= 1 && Global.CurHPP2 == Global.MaxHPP2)
         {
             EquipFX.Play();
             for (int i = 0; i < AliaAI.Length; i++)
@@ -1479,11 +1580,18 @@ public class HubController : MonoBehaviour
                 }
             }
             Global.MaxHPP2 += 500;
+            Global.CurHPP2 = Global.MaxHPP2;
             Global.WarriorArmor3 -= 1;
             Global.AliaArmorStatus = 3;
             ShowP2Detail();
         }
-        else if (Global.AliaArmorStatus == 1 && Global.WarriorArmor3 >= 1)
+        else if (Global.AliaArmorStatus == 0 && Global.WarriorArmor3 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
+        {
+            EquipTextAlia.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
+
+        if (Global.AliaArmorStatus == 1 && Global.WarriorArmor3 >= 1 && Global.CurHPP2 == Global.MaxHPP2)
         {
             EquipFX.Play();
             for (int i = 0; i < AliaAI.Length; i++)
@@ -1499,12 +1607,19 @@ public class HubController : MonoBehaviour
             }
             Global.MaxHPP2 -= 100;
             Global.MaxHPP2 += 500;
+            Global.CurHPP2 = Global.MaxHPP2;
             Global.WarriorArmor1 += 1;
             Global.WarriorArmor3 -= 1;
             Global.AliaArmorStatus = 3;
             ShowP2Detail();
         }
-        else if (Global.AliaArmorStatus == 2 && Global.WarriorArmor3 >= 1)
+        else if (Global.AliaArmorStatus == 1 && Global.WarriorArmor3 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
+        {
+            EquipTextAlia.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
+
+        if (Global.AliaArmorStatus == 2 && Global.WarriorArmor3 >= 1 && Global.CurHPP2 == Global.MaxHPP2)
         {
             EquipFX.Play();
             for (int i = 0; i < AliaAI.Length; i++)
@@ -1520,10 +1635,16 @@ public class HubController : MonoBehaviour
             }
             Global.MaxHPP2 -= 300;
             Global.MaxHPP2 += 500;
+            Global.CurHPP2 = Global.MaxHPP2;
             Global.WarriorArmor2 += 1;
             Global.WarriorArmor3 -= 1;
             Global.AliaArmorStatus = 3;
             ShowP2Detail();
+        }
+        else if (Global.AliaArmorStatus == 2 && Global.WarriorArmor3 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
+        {
+            EquipTextAlia.SetActive(true);
+            StartCoroutine(DelayEquipText());
         }
     }
 
@@ -1740,7 +1861,7 @@ public class HubController : MonoBehaviour
     //Equip Maria armor
     public void MariaEquipA1()
     {
-        if (Global.MariaArmorStatus == 0 && Global.AlchemistArmor1 >= 1)
+        if (Global.MariaArmorStatus == 0 && Global.AlchemistArmor1 >= 1 && Global.CurHPP3 == Global.MaxHPP3)
         {
             EquipFX.Play();
             for (int i = 0; i < MariaAI.Length; i++)
@@ -1755,11 +1876,18 @@ public class HubController : MonoBehaviour
                 }
             }
             Global.MaxHPP3 += 100;
+            Global.CurHPP3 = Global.MaxHPP3;
             Global.AlchemistArmor1 -= 1;
             Global.MariaArmorStatus = 1;
             ShowP3Detail();
         }
-        else if (Global.MariaArmorStatus == 2 && Global.AlchemistArmor1 >= 1)
+        else if (Global.MariaArmorStatus == 0 && Global.AlchemistArmor1 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
+        {
+            EquipTextMaria.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
+
+        if (Global.MariaArmorStatus == 2 && Global.AlchemistArmor1 >= 1 && Global.CurHPP3 == Global.MaxHPP3)
         {
             EquipFX.Play();
             for (int i = 0; i < MariaAI.Length; i++)
@@ -1775,12 +1903,19 @@ public class HubController : MonoBehaviour
             }
             Global.MaxHPP3 -= 300;
             Global.MaxHPP3 += 100;
+            Global.CurHPP3 = Global.MaxHPP3;
             Global.AlchemistArmor2 += 1;
             Global.AlchemistArmor1 -= 1;
             Global.MariaArmorStatus = 1;
             ShowP3Detail();
         }
-        else if (Global.MariaArmorStatus == 3 && Global.AlchemistArmor1 >= 1)
+        else if (Global.MariaArmorStatus == 2 && Global.AlchemistArmor1 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
+        {
+            EquipTextMaria.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
+
+        if (Global.MariaArmorStatus == 3 && Global.AlchemistArmor1 >= 1 && Global.CurHPP3 == Global.MaxHPP3)
         {
             EquipFX.Play();
             for (int i = 0; i < MariaAI.Length; i++)
@@ -1796,16 +1931,22 @@ public class HubController : MonoBehaviour
             }
             Global.MaxHPP3 -= 500;
             Global.MaxHPP3 += 100;
+            Global.CurHPP3 = Global.MaxHPP3;
             Global.AlchemistArmor3 += 1;
             Global.AlchemistArmor1 -= 1;
             Global.MariaArmorStatus = 1;
             ShowP3Detail();
+        }
+        else if (Global.MariaArmorStatus == 3 && Global.AlchemistArmor1 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
+        {
+            EquipTextMaria.SetActive(true);
+            StartCoroutine(DelayEquipText());
         }
     }
 
     public void MariaEquipA2()
     {
-        if (Global.MariaArmorStatus == 0 && Global.AlchemistArmor2 >= 1)
+        if (Global.MariaArmorStatus == 0 && Global.AlchemistArmor2 >= 1 && Global.CurHPP3 == Global.MaxHPP3)
         {
             EquipFX.Play();
             for (int i = 0; i < MariaAI.Length; i++)
@@ -1820,11 +1961,18 @@ public class HubController : MonoBehaviour
                 }
             }
             Global.MaxHPP3 += 300;
+            Global.CurHPP3 = Global.MaxHPP3;
             Global.AlchemistArmor2 -= 1;
             Global.MariaArmorStatus = 2;
             ShowP3Detail();
         }
-        else if (Global.MariaArmorStatus == 1 && Global.AlchemistArmor2 >= 1)
+        else if (Global.MariaArmorStatus == 0 && Global.AlchemistArmor2 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
+        {
+            EquipTextMaria.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
+
+        if (Global.MariaArmorStatus == 1 && Global.AlchemistArmor2 >= 1 && Global.CurHPP3 == Global.MaxHPP3)
         {
             EquipFX.Play();
             for (int i = 0; i < MariaWI.Length; i++)
@@ -1840,12 +1988,19 @@ public class HubController : MonoBehaviour
             }
             Global.MaxHPP3 -= 100;
             Global.MaxHPP3 += 300;
+            Global.CurHPP3 = Global.MaxHPP3;
             Global.AlchemistArmor1 += 1;
             Global.AlchemistArmor2 -= 1;
             Global.MariaArmorStatus = 2;
             ShowP3Detail();
         }
-        else if (Global.MariaArmorStatus == 3 && Global.AlchemistArmor2 >= 1)
+        else if (Global.MariaArmorStatus == 1 && Global.AlchemistArmor2 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
+        {
+            EquipTextMaria.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
+
+        if (Global.MariaArmorStatus == 3 && Global.AlchemistArmor2 >= 1 && Global.CurHPP3 == Global.MaxHPP3)
         {
             EquipFX.Play();
             for (int i = 0; i < MariaWI.Length; i++)
@@ -1861,16 +2016,22 @@ public class HubController : MonoBehaviour
             }
             Global.MaxHPP3 -= 500;
             Global.MaxHPP3 += 300;
+            Global.CurHPP3 = Global.MaxHPP3;
             Global.AlchemistArmor3 += 1;
             Global.AlchemistArmor2 -= 1;
             Global.MariaArmorStatus = 2;
             ShowP3Detail();
         }
+        else if (Global.MariaArmorStatus == 3 && Global.AlchemistArmor2 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
+        {
+            EquipTextMaria.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
     }
 
     public void MariaEquipA3()
     {
-        if (Global.MariaArmorStatus == 0 && Global.AlchemistArmor3 >= 1)
+        if (Global.MariaArmorStatus == 0 && Global.AlchemistArmor3 >= 1 && Global.CurHPP3 == Global.MaxHPP3)
         {
             EquipFX.Play();
             for (int i = 0; i < MariaAI.Length; i++)
@@ -1885,11 +2046,18 @@ public class HubController : MonoBehaviour
                 }
             }
             Global.MaxHPP3 += 500;
+            Global.CurHPP3 = Global.MaxHPP3;
             Global.AlchemistArmor3 -= 1;
             Global.MariaArmorStatus = 3;
             ShowP3Detail();
         }
-        else if (Global.MariaArmorStatus == 1 && Global.AlchemistArmor3 >= 1)
+        else if (Global.MariaArmorStatus == 0 && Global.AlchemistArmor3 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
+        {
+            EquipTextMaria.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
+
+        if (Global.MariaArmorStatus == 1 && Global.AlchemistArmor3 >= 1 && Global.CurHPP3 == Global.MaxHPP3)
         {
             EquipFX.Play();
             for (int i = 0; i < MariaAI.Length; i++)
@@ -1905,12 +2073,19 @@ public class HubController : MonoBehaviour
             }
             Global.MaxHPP3 -= 100;
             Global.MaxHPP3 += 500;
+            Global.CurHPP3 = Global.MaxHPP3;
             Global.AlchemistArmor1 += 1;
             Global.AlchemistArmor3 -= 1;
             Global.MariaArmorStatus = 3;
             ShowP3Detail();
         }
-        else if (Global.MariaArmorStatus == 2 && Global.AlchemistArmor3 >= 1)
+        else if (Global.MariaArmorStatus == 1 && Global.AlchemistArmor3 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
+        {
+            EquipTextMaria.SetActive(true);
+            StartCoroutine(DelayEquipText());
+        }
+
+        if (Global.MariaArmorStatus == 2 && Global.AlchemistArmor3 >= 1 && Global.CurHPP3 == Global.MaxHPP3)
         {
             EquipFX.Play();
             for (int i = 0; i < MariaAI.Length; i++)
@@ -1926,10 +2101,16 @@ public class HubController : MonoBehaviour
             }
             Global.MaxHPP3 -= 300;
             Global.MaxHPP3 += 500;
+            Global.CurHPP3 = Global.MaxHPP3;
             Global.AlchemistArmor2 += 1;
             Global.AlchemistArmor3 -= 1;
             Global.MariaArmorStatus = 3;
             ShowP3Detail();
+        }
+        else if (Global.MariaArmorStatus == 2 && Global.AlchemistArmor3 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
+        {
+            EquipTextMaria.SetActive(true);
+            StartCoroutine(DelayEquipText());
         }
     }
 
@@ -2208,5 +2389,13 @@ public class HubController : MonoBehaviour
     {
         ClickHubFX.Play();
         Application.Quit();
+    }
+
+    IEnumerator DelayEquipText()
+    {
+        yield return new WaitForSeconds(2f);
+        EquipTextVayne.SetActive(false);
+        EquipTextAlia.SetActive(false);
+        EquipTextMaria.SetActive(false);
     }
 }

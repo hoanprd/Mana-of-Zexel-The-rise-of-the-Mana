@@ -155,9 +155,9 @@ public class SynthesizeSystem : MonoBehaviour
     {
         num1.text = "1/" + ContainerController.DriedLeaves;
         num2.text = "1/" + ContainerController.PureWater;
-        num3.text = "1/" + ContainerController.MorningDrop;
-        num4.text = "1/" + ContainerController.PureWater;
-        num5.text = ContainerController.HealPotion + "";
+        num3.text =  ContainerController.HealPotion + "";
+        num4.text = "1/" + ContainerController.MorningDrop;
+        num5.text = "1/" + ContainerController.PureWater;
         num6.text = ContainerController.ManaPotion + "";
         num7.text = "1/" + ContainerController.HealPotion;
         num8.text = "1/" + ContainerController.ManaPotion;
@@ -750,7 +750,6 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.DriedLeaves -= 1;
             ContainerController.PureWater -= 1;
             ContainerController.HealPotionPick = 1;
-
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
