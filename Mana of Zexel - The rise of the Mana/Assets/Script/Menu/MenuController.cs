@@ -285,7 +285,7 @@ public class MenuController : MonoBehaviour
 
         Global.PlusPointP3 = 5;
 
-        Global.CurHPP3 = 1360;
+        /*Global.CurHPP3 = 1360;
         Global.MaxHPP3 = 1360;
         Global.CurMPP3 = 220;
         Global.MaxMPP3 = 220;
@@ -293,7 +293,7 @@ public class MenuController : MonoBehaviour
         Global.SpeedP3 = 20;
         Global.LevelP3 = 30;
         Global.MaxEXPP3 = 200;
-        Global.CurEXPP3 = 0;
+        Global.CurEXPP3 = 0;*/
 
         //Set Zen
         Global.Zen = 0;
@@ -420,7 +420,7 @@ public class MenuController : MonoBehaviour
         SynthesizeSystem.ManaIceSynthesize = 100;
 
         StartCoroutine(DelayChangeCutscense());
-        //SceneManager.LoadScene("BSZane 1");
+        //SceneManager.LoadScene("BSGolemn 1");
     }
 
     public void PressLoadGame()

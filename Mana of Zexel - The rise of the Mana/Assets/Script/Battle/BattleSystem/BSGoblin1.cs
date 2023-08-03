@@ -988,6 +988,7 @@ public class BSGoblin1 : MonoBehaviour
         {
             if (Global.CurHPP1 <= 0 && Global.CurHPP2 <= 0)
             {
+                GameOver = true;
                 UpdateUIText();
                 ContainerController.DestroyBag = true;
                 ContainerController.stop = 0;
@@ -999,6 +1000,7 @@ public class BSGoblin1 : MonoBehaviour
         {
             if (Global.CurHPP1 <= 0 && Global.CurHPP3 <= 0)
             {
+                GameOver = true;
                 UpdateUIText();
                 ContainerController.DestroyBag = true;
                 ContainerController.stop = 0;
@@ -1010,6 +1012,7 @@ public class BSGoblin1 : MonoBehaviour
         {
             if (Global.CurHPP1 <= 0 && Global.CurHPP2 <= 0 && Global.CurHPP3 <= 0)
             {
+                GameOver = true;
                 UpdateUIText();
                 ContainerController.DestroyBag = true;
                 ContainerController.stop = 0;
@@ -1361,7 +1364,6 @@ public class BSGoblin1 : MonoBehaviour
             Global.MaxHPP1 += 20;
             Global.MaxMPP1 += 4;
             Global.DamageP1 += 10;
-            Global.SpeedP1 += 1;
             Global.PlusPointP1 += 1;
         }
         while (Global.CurEXPP2 >= Global.MaxEXPP2)
@@ -1373,7 +1375,6 @@ public class BSGoblin1 : MonoBehaviour
             Global.MaxHPP2 += 10;
             Global.MaxMPP2 += 3;
             Global.DamageP2 += 15;
-            Global.SpeedP2 += 1;
             Global.PlusPointP2 += 1;
         }
         while (Global.CurEXPP3 >= Global.MaxEXPP3)
@@ -1385,7 +1386,6 @@ public class BSGoblin1 : MonoBehaviour
             Global.MaxHPP3 += 25;
             Global.MaxMPP3 += 5;
             Global.DamageP3 += 10;
-            Global.SpeedP3 += 1;
             Global.PlusPointP3 += 1;
         }
         if (Global.LevelP1 < 30)

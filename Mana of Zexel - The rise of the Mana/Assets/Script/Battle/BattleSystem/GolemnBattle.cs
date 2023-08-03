@@ -32,19 +32,19 @@ public class GolemnBattle : MonoBehaviour
         {
             Enemy.position = new Vector2(Enemy.position.x - 3f, Enemy.position.y);
             anigolemn.SetTrigger("e3attack");
-            Invoke("delayE3Done", 1f);
+            Invoke("delayE3Done", 1.5f);
         }
         else if (BSGolemn1.E3Hit == 2)
         {
             Enemy.position = new Vector2(Enemy.position.x - 5f, Enemy.position.y + 1);
             anigolemn.SetTrigger("e3attack");
-            Invoke("delayE3Done", 1f);
+            Invoke("delayE3Done", 1.5f);
         }
         else if (BSGolemn1.E3Hit == 3)
         {
             Enemy.position = new Vector2(Enemy.position.x - 6f, Enemy.position.y - 3);
             anigolemn.SetTrigger("e3attack");
-            Invoke("delayE3Done", 1f);
+            Invoke("delayE3Done", 1.5f);
         }
     }
 

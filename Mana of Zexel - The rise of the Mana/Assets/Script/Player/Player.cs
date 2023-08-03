@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
         }
         if (tqz && Input.GetKeyDown(KeyCode.Space))
         {
-            if (CutscenesController.cus4 == 1 && CutscenesController.cus5 == 1 && CutscenesController.cus6 == 0)
+            if (CutscenesController.cus5 == 1 && CutscenesController.cus6 == 0)
             {
                 if (ContainerController.HealPotion > 0)
                 {
@@ -1312,7 +1312,7 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("TQZ"))
         {
-            if (CutscenesController.cus6 == 0 && CutscenesController.cus4 == 1)
+            if (CutscenesController.cus6 == 0 && CutscenesController.cus5 == 1)
             {
                 tqz = true;
                 show2.SetActive(true);
@@ -1391,7 +1391,7 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("TQZ"))
         {
-            if (CutscenesController.cus6 == 0 && CutscenesController.cus4 == 1)
+            if (CutscenesController.cus6 == 0 && CutscenesController.cus5 == 1)
             {
                 tqz = false;
                 show2.SetActive(false);

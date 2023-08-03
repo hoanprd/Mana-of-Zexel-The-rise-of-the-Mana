@@ -9,6 +9,7 @@ public class DateController : MonoBehaviour
     public Text UpHour, PHour, DownHour, DayNight;
     public GameObject WHDay, WHNight, MDDay, MDNight, MCDay, MCNight;
 
+    public int TimeDisplay;
     public static float GlobalTime;
     public static int GlobalUpHour, GlobalPHour, GlobalDownHour, GlobalDayNight;
     public static bool StartGlobalTime, DayOn, NightOn;
@@ -45,9 +46,9 @@ public class DateController : MonoBehaviour
     {
         CheckDayNightChange();
 
-        if (GlobalTime < 5)
+        if (GlobalTime < TimeDisplay)
             GlobalTime += Time.deltaTime;
-        else if (GlobalTime >= 5)
+        else if (GlobalTime >= TimeDisplay)
         {
             GlobalTime = 0f;
 

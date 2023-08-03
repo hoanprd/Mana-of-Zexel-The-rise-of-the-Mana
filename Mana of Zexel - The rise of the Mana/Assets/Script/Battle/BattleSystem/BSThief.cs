@@ -368,8 +368,9 @@ public class BSThief : MonoBehaviour
     }
     public void CheckP1Die()
     {
-        if(Global.CurHPP1 <=0)
+        if(Global.CurHPP1 <= 0)
         {
+            GameOver = true;
             HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
             MP1.text = "MP: " + Global.CurMPP1.ToString() + "/" + Global.MaxMPP1;
             HPE1.text = "HP: " + Global.HPE1.ToString();
@@ -502,7 +503,6 @@ public class BSThief : MonoBehaviour
             Global.MaxHPP1 += 20;
             Global.MaxMPP1 += 4;
             Global.DamageP1 += 10;
-            Global.SpeedP1 += 1;
             Global.PlusPointP1 += 1;
         }
         if (Global.LevelP1 < 30)

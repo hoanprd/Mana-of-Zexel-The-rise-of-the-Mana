@@ -50,6 +50,7 @@ public class Cus7 : MonoBehaviour
             {
                 AliaVAL1.SetActive(false);
                 VayneVAL1.SetActive(true);
+                NameTag.SetActive(true);
                 NameTagText.text = "Vayne";
                 dia.text = "Anyway, did you find out my father's information Mr. Lance?";
             }
@@ -156,6 +157,7 @@ public class Cus7 : MonoBehaviour
             {
                 AliaVAL1.SetActive(false);
                 VayneVAL1.SetActive(true);
+                NameTag.SetActive(true);
                 NameTagText.text = "Vayne";
                 dia.text = "Dù sao thì chú đã tìm tung tích của cha cháu chưa?";
             }

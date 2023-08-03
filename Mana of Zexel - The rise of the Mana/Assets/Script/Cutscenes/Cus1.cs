@@ -15,7 +15,7 @@ public class Cus1 : MonoBehaviour
     public GameObject va3;
     public GameObject va4;
     public GameObject VayneVAL1, GinVAR1;
-    public GameObject NameTag;
+    public GameObject NameTag, LoadingPanel;
     private int tang;
 
     // Start is called before the first frame update
@@ -286,6 +286,11 @@ public class Cus1 : MonoBehaviour
         {
             cc.BGMCutscenes(2, false);
         }
+
+        if (tang == 13 || tang == 17)
+        {
+            StartCoroutine(DelayLoadingPanel());
+        }
     }
 
     public void Pressskip()
@@ -299,5 +304,13 @@ public class Cus1 : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         cc.BGMCutscenes(1, false);
+    }
+
+    IEnumerator DelayLoadingPanel()
+    {
+        LoadingPanel.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+        LoadingPanel.SetActive(false);
     }
 }
