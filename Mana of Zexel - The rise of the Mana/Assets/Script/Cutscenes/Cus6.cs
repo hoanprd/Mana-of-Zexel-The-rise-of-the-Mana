@@ -96,13 +96,14 @@ public class Cus6 : MonoBehaviour
             }
             else if (tang == 12)
             {
-                MrLanceVAR1.SetActive(true);
+                MrLanceVAR1.SetActive(false);
                 AliaVAR1.SetActive(true);
                 NameTagText.text = "Alia";
                 dia.text = "Okay let's go Vayne!";
             }
             else if (tang == 13)
             {
+                AliaVAR1.SetActive(false);
                 NameTagText.text = "Vayne";
                 dia.text = "Hey, don't be like that, Alia! Wait for me!";
             }
@@ -183,13 +184,14 @@ public class Cus6 : MonoBehaviour
             }
             else if (tang == 12)
             {
-                MrLanceVAR1.SetActive(true);
+                MrLanceVAR1.SetActive(false);
                 AliaVAR1.SetActive(true);
                 NameTagText.text = "Alia";
                 dia.text = "Được thôi đi nào Vayne!";
             }
             else if (tang == 13)
             {
+                AliaVAR1.SetActive(false);
                 NameTagText.text = "Vayne";
                 dia.text = "Khoan đã, đừng có vội vàng như thế Alia! Đợi tớ với!";
             }

@@ -19,7 +19,7 @@ public class MenuController : MonoBehaviour
 
     public int LoadGameIndex, DeleteLoadGameIndex;
     public string loadPath, CryptedPassword;
-    public static bool LoadGameCheck;
+    public static bool LoadGameCheck, BugStartGameFix;
 
     string userPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
@@ -52,6 +52,8 @@ public class MenuController : MonoBehaviour
     public void PressStartNewGame()
     {
         ClickFX.Play();
+
+        BugStartGameFix = true;
 
         //Set date
         DateController.StartGlobalTime = true;
@@ -278,7 +280,7 @@ public class MenuController : MonoBehaviour
         Global.CurMPP3 = 85;
         Global.MaxMPP3 = 85;
         Global.DamageP3 = 60;
-        Global.SpeedP3 = 15;
+        Global.SpeedP3 = 10;
         Global.LevelP3 = 5;
         Global.MaxEXPP3 = 200;
         Global.CurEXPP3 = 0;
@@ -420,7 +422,7 @@ public class MenuController : MonoBehaviour
         SynthesizeSystem.ManaIceSynthesize = 100;
 
         StartCoroutine(DelayChangeCutscense());
-        //SceneManager.LoadScene("BSGolemn 1");
+        //SceneManager.LoadScene("Wishing hill");
     }
 
     public void PressLoadGame()

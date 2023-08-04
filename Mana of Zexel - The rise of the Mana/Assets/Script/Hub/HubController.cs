@@ -119,7 +119,7 @@ public class HubController : MonoBehaviour
             }
         }
 
-        ShowLevelP1 = Global.LevelP1;
+        /*ShowLevelP1 = Global.LevelP1;
         ShowHPP1 = Global.CurHPP1;
         ShowMPP1 = Global.CurMPP1;
 
@@ -130,7 +130,7 @@ public class HubController : MonoBehaviour
         ShowLevelP3 = Global.LevelP3;
         ShowHPP3 = Global.CurHPP3;
         ShowMPP3 = Global.CurMPP3;
-        //ShowZen = Global.Zen;
+        ShowZen = Global.Zen;*/
         
         if (CutscenesController.cus12 == 0)
         {
@@ -184,6 +184,18 @@ public class HubController : MonoBehaviour
             quest.SetActive(true);
             BusyHub = true;
         }
+
+        ShowLevelP1 = Global.LevelP1;
+        ShowHPP1 = Global.CurHPP1;
+        ShowMPP1 = Global.CurMPP1;
+
+        ShowLevelP2 = Global.LevelP2;
+        ShowHPP2 = Global.CurHPP2;
+        ShowMPP2 = Global.CurMPP2;
+
+        ShowLevelP3 = Global.LevelP3;
+        ShowHPP3 = Global.CurHPP3;
+        ShowMPP3 = Global.CurMPP3;
 
         LevelP1.text = "Level " + ShowLevelP1;
         HPP1.text = "HP: " + ShowHPP1;
@@ -304,7 +316,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus15 == 0)
             QT.text = "Something drove the golems away, find out the cause in the east wishing hill";
         else if (CutscenesController.cus16 == 0)
-            QT.text = "Collect threads and mana gems for Maria to create an alchemy tool to stop the iron golem";
+            QT.text = "Collect at least 4 string and 2 mana gems for Maria to create an alchemy tool to stop the iron golem";
         else if (CutscenesController.cus17 == 0)
             QT.text = "Let's go back to the tavern to decipher the information";
         else if (CutscenesController.cus18 == 0)

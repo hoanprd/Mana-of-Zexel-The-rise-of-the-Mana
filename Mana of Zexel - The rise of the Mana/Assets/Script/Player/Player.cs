@@ -338,10 +338,11 @@ public class Player : MonoBehaviour
                 FadeInPanel.SetActive(true);
                 StartCoroutine(DelayChangeCutscense());
             }
-            else if (CutscenesController.cus16 == 0 && CutscenesController.cus15 == 1 && ContainerController.String >= 2)
+            else if (CutscenesController.cus16 == 0 && CutscenesController.cus15 == 1 && ContainerController.String >= 4 && ContainerController.ManaGem >= 2)
             {
                 FadeInPanel.SetActive(true);
                 ContainerController.String -= 4;
+                ContainerController.ManaGem -= 2;
                 StartCoroutine(DelayChangeCutscense());
             }
             else if (CutscenesController.cus17 == 0 && CutscenesController.cus16 == 1)
