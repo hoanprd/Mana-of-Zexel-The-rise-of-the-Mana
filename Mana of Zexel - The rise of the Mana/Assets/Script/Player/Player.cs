@@ -84,6 +84,22 @@ public class Player : MonoBehaviour
                     Invoke("delay1", 2f);
                 }
             }
+            else if (CutscenesController.cus15 == 1 && CutscenesController.cus16 == 0)
+            {
+                if (ContainerController.String >= 4 && ContainerController.ManaGem >= 2)
+                {
+                    FadeInPanel.SetActive(true);
+                    ContainerController.String -= 4;
+                    ContainerController.ManaGem -= 2;
+                    StartCoroutine(DelayChangeCutscense());
+                }
+                else
+                {
+                    show2.SetActive(true);
+                    show1.text = "Not enough materials!";
+                    Invoke("delay1", 2f);
+                }
+            }
         }
         if (mqz && Input.GetKeyDown(KeyCode.Space))
         {
@@ -336,13 +352,6 @@ public class Player : MonoBehaviour
             if (CutscenesController.cus4 == 0 && CutscenesController.cus3 == 1)
             {
                 FadeInPanel.SetActive(true);
-                StartCoroutine(DelayChangeCutscense());
-            }
-            else if (CutscenesController.cus16 == 0 && CutscenesController.cus15 == 1 && ContainerController.String >= 4 && ContainerController.ManaGem >= 2)
-            {
-                FadeInPanel.SetActive(true);
-                ContainerController.String -= 4;
-                ContainerController.ManaGem -= 2;
                 StartCoroutine(DelayChangeCutscense());
             }
             else if (CutscenesController.cus17 == 0 && CutscenesController.cus16 == 1)
@@ -1325,6 +1334,12 @@ public class Player : MonoBehaviour
                 show2.SetActive(true);
                 show1.text = "Press Space to commit the quest";
             }
+            else if (CutscenesController.cus16 == 0 && CutscenesController.cus15 == 1)
+            {
+                tqz = true;
+                show2.SetActive(true);
+                show1.text = "Press Space to commit the quest";
+            }
         }
         if (collision.CompareTag("MQZ"))
         {
@@ -1399,6 +1414,12 @@ public class Player : MonoBehaviour
                 show1.text = "";
             }
             else if (CutscenesController.cus7 == 0 && CutscenesController.cus6 == 1)
+            {
+                tqz = false;
+                show2.SetActive(false);
+                show1.text = "";
+            }
+            else if (CutscenesController.cus16 == 0 && CutscenesController.cus15 == 1)
             {
                 tqz = false;
                 show2.SetActive(false);

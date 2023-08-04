@@ -316,7 +316,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus15 == 0)
             QT.text = "Something drove the golems away, find out the cause in the east wishing hill";
         else if (CutscenesController.cus16 == 0)
-            QT.text = "Collect at least 4 string and 2 mana gems for Maria to create an alchemy tool to stop the iron golem";
+            QT.text = "Collect at least 4 string and 2 mana gems for Maria to create an alchemy tool to stop the iron golem\nCommit those materials at the tavern";
         else if (CutscenesController.cus17 == 0)
             QT.text = "Let's go back to the tavern to decipher the information";
         else if (CutscenesController.cus18 == 0)
@@ -340,7 +340,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus27 == 0)
             QT.text = "Let's go to the blacksmith shop of Zexel town in the south";
         else if (CutscenesController.cus28 == 0)
-            QT.text = "Let's collect Heerium some iron and mana gem . Iron: 3\nMana gem: 2";
+            QT.text = "Let's collect Heerium some iron and mana gem . Iron: 3\nMana gem: 2\nRevisit to the weapon store to confirm the quest when the quest requirements are enough";
         else if (CutscenesController.cus29 == 0)
             QT.text = "Let's go back to the tavern to prepare some equipment and wait for the weapon made by Heerium";
         else if (CutscenesController.cus30 == 0)
@@ -350,7 +350,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus32 == 0)
             QT.text = "Maria remembered a grocery store owner on the west side of town near a tavern";
         else if (CutscenesController.cus33 == 0)
-            QT.text = "Let's collect some items for Orina. String: 2\nIron: 3\n Wood: 2";
+            QT.text = "Let's collect some items for Orina. String: 2\nIron: 3\n Wood: 2\nRevisit to the grocery store to confirm the quest when the quest requirements are enough";
         else if (CutscenesController.cus34 == 0)
             QT.text = "Let's make our way to the inferno desert west of Zexel town";
         else if (CutscenesController.cus35 == 0)
@@ -408,7 +408,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus61 == 0)
             QT.text = "Let's head southwest of the inferno volcano to see if the village chief wants to meet or not";
         else if (CutscenesController.cus62 == 0)
-            QT.text = "Let's collect some minerals and return to Heerium's blacksmith shop. Need: 4";
+            QT.text = "Let's collect some minerals and return to Heerium's weapon store. Need: 4\nRevisit to the weapon store to confirm the quest when the quest requirements are enough";
         else if (CutscenesController.cus63 == 0)
             QT.text = "Head to the inferno ice to the west of the inferno desert";
         else if (CutscenesController.cus64 == 0)
