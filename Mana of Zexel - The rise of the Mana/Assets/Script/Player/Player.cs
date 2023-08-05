@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public GameObject FadeOutPanel, FadeInPanel;
     private bool heal, tqz, mqz, alasaqz, asilaqz, klener, mwqz, ManaGenerator, FireManaGenerator, IceManaGenerator;
     public static int MapIndex;
+    public static bool TextDisplay;
     public AudioSource FootStep;
     Vector2 movement;
 
@@ -27,12 +28,19 @@ public class Player : MonoBehaviour
     {
         FadeOutPanel.SetActive(true);
         once = 0;
+        TextDisplay = false;
         StartCoroutine(DelayFadeOutOff());
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (TextDisplay == true)
+        {
+            TextDisplay = false;
+            show2.SetActive(false);
+        }
+
         if (heal && Input.GetKeyDown(KeyCode.Space))
         {
             if (Global.Zen >= 100)
@@ -44,6 +52,8 @@ public class Player : MonoBehaviour
                 Global.CurMPP1 = Global.MaxMPP1;
                 Global.CurHPP2 = Global.MaxHPP2;
                 Global.CurMPP2 = Global.MaxMPP2;
+                Global.CurHPP3 = Global.MaxHPP3;
+                Global.CurMPP3 = Global.MaxMPP3;
                 Invoke("delay1", 2f);
             }
             else
@@ -105,7 +115,8 @@ public class Player : MonoBehaviour
         {
             if (CutscenesController.cus11 == 0)
             {
-                SceneManager.LoadScene("Cutscenes");
+                FadeInPanel.SetActive(true);
+                StartCoroutine(DelayChangeCutscense());
             }
             else if (CutscenesController.cus11 == 1)
             {

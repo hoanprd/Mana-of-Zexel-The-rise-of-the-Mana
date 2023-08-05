@@ -59,6 +59,7 @@ public class ContainerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B) && HubController.BusyHub == false && PickUpUpdate == false)
         {
             OpenHubFX.Play();
+            Player.TextDisplay = true;
             OpenBag();
         }
 

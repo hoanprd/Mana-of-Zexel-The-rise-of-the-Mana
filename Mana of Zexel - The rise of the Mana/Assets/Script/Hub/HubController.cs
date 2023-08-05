@@ -163,24 +163,28 @@ public class HubController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M) && BusyHub == false && ContainerController.LoadingOpen == false)
         {
             OpenHubFX.Play();
+            Player.TextDisplay = true;
             map.SetActive(true);
             BusyHub = true;
         }
         else if (Input.GetKeyDown(KeyCode.I) && BusyHub == false && ContainerController.LoadingOpen == false)
         {
             OpenHubFX.Play();
+            Player.TextDisplay = true;
             info.SetActive(true);
             BusyHub = true;
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && BusyHub == false && ContainerController.LoadingOpen == false)
         {
             OpenHubFX.Play();
+            Player.TextDisplay = true;
             esc.SetActive(true);
             BusyHub = true;
         }
         else if (Input.GetKeyDown(KeyCode.Q) && BusyHub == false && ContainerController.LoadingOpen == false)
         {
             OpenHubFX.Play();
+            Player.TextDisplay = true;
             quest.SetActive(true);
             BusyHub = true;
         }
