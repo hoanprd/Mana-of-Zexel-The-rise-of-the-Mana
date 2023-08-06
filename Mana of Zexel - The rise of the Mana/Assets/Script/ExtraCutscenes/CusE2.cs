@@ -53,7 +53,6 @@ public class CusE2 : MonoBehaviour
             }
             else if (tang == 5)
             {
-                va1.SetActive(false);
                 NameTagText.text = "Vayne";
                 dia.text = "Really? Sounds like fun to go to that forest, doesn't it?";
             }
@@ -155,7 +154,6 @@ public class CusE2 : MonoBehaviour
             }
             else if (tang == 5)
             {
-                va1.SetActive(false);
                 NameTagText.text = "Vayne";
                 dia.text = "Thật vậy ư? Nghe có vẻ thích thú nếu đến khu rừng đó nhỉ?";
             }

@@ -350,7 +350,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus30 == 0)
             QT.text = "Let's go back to the tavern to prepare some equipment and wait for the weapon made by Heerium";
         else if (CutscenesController.cus31 == 0)
-            QT.text = "Prepare some missing equipment to continue the journey";
+            QT.text = "Keep looking for information about the Zexel temple around town";
         else if (CutscenesController.cus32 == 0)
             QT.text = "Maria remembered a grocery store owner on the west side of town near a tavern";
         else if (CutscenesController.cus33 == 0)

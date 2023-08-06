@@ -162,6 +162,7 @@ public class GroceryStoreController : MonoBehaviour
                 ContainerController.WoodPick = 1;
                 Global.Zen -= 30;
                 MessageText.text = "Thanks for shopping";
+                BuyAskPanel.SetActive(false);
                 StartCoroutine(DelayBuy());
             }
             else
@@ -181,6 +182,7 @@ public class GroceryStoreController : MonoBehaviour
                 ContainerController.IronPick = 1;
                 Global.Zen -= 50;
                 MessageText.text = "Thanks for shopping";
+                BuyAskPanel.SetActive(false);
                 StartCoroutine(DelayBuy());
             }
             else
@@ -200,6 +202,7 @@ public class GroceryStoreController : MonoBehaviour
                 ContainerController.ManaGemPick = 1;
                 Global.Zen -= 100;
                 MessageText.text = "Thanks for shopping";
+                BuyAskPanel.SetActive(false);
                 StartCoroutine(DelayBuy());
             }
             else
@@ -219,6 +222,7 @@ public class GroceryStoreController : MonoBehaviour
                 ContainerController.InfernoSandPick = 1;
                 Global.Zen -= 40;
                 MessageText.text = "Thanks for shopping";
+                BuyAskPanel.SetActive(false);
                 StartCoroutine(DelayBuy());
             }
             else
@@ -238,6 +242,7 @@ public class GroceryStoreController : MonoBehaviour
                 ContainerController.ManaLiquidPick = 1;
                 Global.Zen -= 150;
                 MessageText.text = "Thanks for shopping";
+                BuyAskPanel.SetActive(false);
                 StartCoroutine(DelayBuy());
             }
             else
@@ -257,6 +262,7 @@ public class GroceryStoreController : MonoBehaviour
                 ContainerController.GoldenFeatherPick = 1;
                 Global.Zen -= 300;
                 MessageText.text = "Thanks for shopping";
+                BuyAskPanel.SetActive(false);
                 StartCoroutine(DelayBuy());
             }
             else
@@ -276,6 +282,7 @@ public class GroceryStoreController : MonoBehaviour
                 ContainerController.IceLeatherPick = 1;
                 Global.Zen -= 300;
                 MessageText.text = "Thanks for shopping";
+                BuyAskPanel.SetActive(false);
                 StartCoroutine(DelayBuy());
             }
             else

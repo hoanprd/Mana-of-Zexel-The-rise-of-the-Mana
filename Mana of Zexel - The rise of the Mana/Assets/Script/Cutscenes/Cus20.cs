@@ -48,6 +48,8 @@ public class Cus20 : MonoBehaviour
             }
             else if (tang == 4)
             {
+                VayneVAL1.SetActive(false);
+                KlenerVAR1.SetActive(false);
                 NameTagText.text = "Vayne";
                 dia.text = "...";
             }
@@ -58,26 +60,32 @@ public class Cus20 : MonoBehaviour
             }
             else if (tang == 6)
             {
+                VayneVAL1.SetActive(true);
                 NameTagText.text = "Vayne";
                 dia.text = "Klenerr...";
             }
             else if (tang == 7)
             {
+                KlenerVAR1.SetActive(true);
                 NameTagText.text = "Klener";
                 dia.text = "I'm fine, let's finish that golemn quickly.";
             }
             else if (tang == 8)
             {
+                VayneVAL1.SetActive(false);
+                KlenerVAR1.SetActive(false);
                 NameTagText.text = "Vayne";
                 dia.text = "Hyaaaaaa...";
             }
             else if (tang == 9)
             {
+                VayneVAL1.SetActive(true);
                 NameTagText.text = "Vayne";
                 dia.text = "Are you okay? I'm sorry I carelessly caused you to get hurt for me.";
             }
             else if (tang == 10)
             {
+                KlenerVAR1.SetActive(true);
                 NameTagText.text = "Klener";
                 dia.text = "No, just a light scratch.";
             }
@@ -125,6 +133,7 @@ public class Cus20 : MonoBehaviour
             }
             else if (tang == 4)
             {
+                VayneVAL1.SetActive(false);
                 KlenerVAR1.SetActive(false);
                 NameTagText.text = "Vayne";
                 dia.text = "...";
