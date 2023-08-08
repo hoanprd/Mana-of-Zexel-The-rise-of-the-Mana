@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     private bool heal, tqz, mqz, alasaqz, asilaqz, klener, mwqz, ManaGenerator, FireManaGenerator, IceManaGenerator;
     public static int MapIndex;
     public static bool TextDisplay;
-    public AudioSource FootStep;
+    public AudioSource FootStep, TavernHeal;
     Vector2 movement;
 
     void Start()
@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
         {
             if (Global.Zen >= 100)
             {
+                TavernHeal.Play();
                 show2.SetActive(true);
                 show1.text = "-100 Zen";
                 Global.Zen -= 100;
@@ -101,6 +102,24 @@ public class Player : MonoBehaviour
                     FadeInPanel.SetActive(true);
                     ContainerController.String -= 4;
                     ContainerController.ManaGem -= 2;
+                    StartCoroutine(DelayChangeCutscense());
+                }
+                else
+                {
+                    show2.SetActive(true);
+                    show1.text = "Not enough materials!";
+                    Invoke("delay1", 2f);
+                }
+            }
+            else if (CutscenesController.cus97 == 0 && CutscenesController.cus96 == 1)
+            {
+                if (ContainerController.NatureGrass >= 4 && ContainerController.RedManaSlimeBall >= 4 && ContainerController.BlueManaSlimeBall >= 4 && ContainerController.ScorpionVenom >= 4)
+                {
+                    FadeInPanel.SetActive(true);
+                    ContainerController.NatureGrass -= 4;
+                    ContainerController.RedManaSlimeBall -= 4;
+                    ContainerController.BlueManaSlimeBall -= 4;
+                    ContainerController.ScorpionVenom -= 4;
                     StartCoroutine(DelayChangeCutscense());
                 }
                 else
@@ -418,15 +437,6 @@ public class Player : MonoBehaviour
             else if (CutscenesController.cus96 == 0 && CutscenesController.cus95 == 1)
             {
                 FadeInPanel.SetActive(true);
-                StartCoroutine(DelayChangeCutscense());
-            }
-            else if (CutscenesController.cus97 == 0 && CutscenesController.cus96 == 1 && ContainerController.NatureGrass >= 4 && ContainerController.RedManaSlimeBall >= 4 && ContainerController.BlueManaSlimeBall >= 4 && ContainerController.ScorpionVenom >= 4)
-            {
-                FadeInPanel.SetActive(true);
-                ContainerController.NatureGrass -= 4;
-                ContainerController.RedManaSlimeBall -= 4;
-                ContainerController.BlueManaSlimeBall -= 4;
-                ContainerController.ScorpionVenom -= 4;
                 StartCoroutine(DelayChangeCutscense());
             }
             else if (CutscenesController.cus101 == 0 && CutscenesController.cus100 == 1)
@@ -1351,6 +1361,12 @@ public class Player : MonoBehaviour
                 show2.SetActive(true);
                 show1.text = "Press Space to commit the quest";
             }
+            else if (CutscenesController.cus97 == 0 && CutscenesController.cus96 == 1)
+            {
+                tqz = true;
+                show2.SetActive(true);
+                show1.text = "Press Space to commit the quest";
+            }
         }
         if (collision.CompareTag("MQZ"))
         {
@@ -1431,6 +1447,12 @@ public class Player : MonoBehaviour
                 show1.text = "";
             }
             else if (CutscenesController.cus16 == 0 && CutscenesController.cus15 == 1)
+            {
+                tqz = false;
+                show2.SetActive(false);
+                show1.text = "";
+            }
+            else if (CutscenesController.cus97 == 0 && CutscenesController.cus96 == 1)
             {
                 tqz = false;
                 show2.SetActive(false);

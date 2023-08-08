@@ -334,7 +334,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus22 == 0)
             QT.text = "Craft a mana shield using alchemy to give to Klener";
         else if (CutscenesController.cus23 == 0)
-            QT.text = "Let's make Vayne's unique porridge";
+            QT.text = "Let's make Vayne's unique porridge then give the porridge to the group waiting at the tavern";
         else if (CutscenesController.cus24 == 0)
             QT.text = "Vayne is tired, go back to the save room to rest";
         else if (CutscenesController.cus25 == 0)
@@ -412,7 +412,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus61 == 0)
             QT.text = "Let's head southwest of the inferno volcano to see if the village chief wants to meet or not";
         else if (CutscenesController.cus62 == 0)
-            QT.text = "Let's collect some minerals and return to Heerium's weapon store. Need: 4\nRevisit to the weapon store to confirm the quest when the quest requirements are enough";
+            QT.text = "Let's collect some minerals around Inferno Volcano and return to Heerium's weapon store. Fire Ore: 4\nRevisit to the weapon store to confirm the quest when the quest requirements are enough";
         else if (CutscenesController.cus63 == 0)
             QT.text = "Head to the inferno ice to the west of the inferno desert";
         else if (CutscenesController.cus64 == 0)
@@ -422,7 +422,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus66 == 0)
             QT.text = "Head south to inferno ice to meet the village chief there";
         else if (CutscenesController.cus67 == 0)
-            QT.text = "Kill the wolves at east of inferno ice and report back when you're done. Progress: " + CutscenesTrigger.IceFangKill + "/4";
+            QT.text = "Kill the wolves at east of inferno ice and report back when you're done. Process: " + CutscenesTrigger.IceFangKill + "/4";
         else if (CutscenesController.cus68 == 0)
             QT.text = "Enter the ice cave south of the village of inferno ice";
         else if (CutscenesController.cus69 == 0)
@@ -482,7 +482,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus96 == 0)
             QT.text = "Let's take Mrs. Meru back to the tavern in Zexel town";
         else if (CutscenesController.cus97 == 0)
-            QT.text = "Let's collect the ingredients for Mrs. Meru to make the potion. Nature grass: 4, Red mana slime: 4, Blue mana slime: 4, Scorpion venom: 4";
+            QT.text = "Let's collect the ingredients for Mrs. Meru to make the potion. Nature grass: 4, Red mana slime: 4, Blue mana slime: 4, Scorpion venom: 4\nCommit those materials at the tavern";
         else if (CutscenesController.cus98 == 0)
             QT.text = "Go to Orina's grocery store to inquire about dragon mana scales information";
         else if (CutscenesController.cus99 == 0)
@@ -504,7 +504,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus107 == 0)
             QT.text = "The whole party wants to become stronger so stop by the Heerium to buy new equipment";
         else if (CutscenesController.cus108 == 0)
-            QT.text = "Find the materials needed so that Heerium can craft powerful new equipment. Fire ore: 3, Red mana crystal: 3, Ice ore: 3, Blue mana crystal: 3, Mana dust: 3";
+            QT.text = "Find the materials needed so that Heerium can craft powerful new equipment. Fire ore: 3, Red mana crystal: 3, Ice ore: 3, Blue mana crystal: 3, Mana dust: 3\nRevisit to the weapon store to confirm the quest when the quest requirements are enough";
         else if (CutscenesController.cus109 == 0)
             QT.text = "Stop by Orina's place to find out new items";
         else if (CutscenesController.cus110 == 0)

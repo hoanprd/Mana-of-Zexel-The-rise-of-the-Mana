@@ -19,7 +19,7 @@ public class SynthesizeTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pick && Input.GetKeyDown(KeyCode.Space))
+        if (pick && Input.GetKeyDown(KeyCode.Space) && HubController.BusyHub == false)
         {
             HubController.BusyHub = true;
             showr2.SetActive(false);

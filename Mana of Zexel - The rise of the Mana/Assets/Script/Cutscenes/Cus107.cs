@@ -68,7 +68,7 @@ public class Cus107 : MonoBehaviour
             else if (tang == 7)
             {
                 NameTagText.text = "Heerium";
-                dia.text = "Let's see, this material is quite far away, but we guarantee their quality is very good. List here Vayne!";
+                dia.text = "Let's see, this material is quite far away, but I guarantee their quality is very good. List here Vayne!";
             }
             else if (tang == 8)
             {
@@ -79,7 +79,8 @@ public class Cus107 : MonoBehaviour
             {
                 CutscenesController.cus107 = 1;
                 ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("WeaponStore");
+                MapController.WeaponStoreToZexelTown = true;
+                SceneManager.LoadScene("Zexel town");
             }
         }
         else
@@ -135,7 +136,8 @@ public class Cus107 : MonoBehaviour
             {
                 CutscenesController.cus107 = 1;
                 ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("WeaponStore");
+                MapController.WeaponStoreToZexelTown = true;
+                SceneManager.LoadScene("Zexel town");
             }
         }
     }

@@ -185,7 +185,8 @@ public class Cus32 : MonoBehaviour
             {
                 CutscenesController.cus32 = 1;
                 ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("GroceryStore");
+                MapController.GroceryStoreToZexelTown = true;
+                SceneManager.LoadScene("Zexel town");
             }
         }
         else
@@ -347,7 +348,8 @@ public class Cus32 : MonoBehaviour
             {
                 CutscenesController.cus32 = 1;
                 ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("GroceryStore");
+                MapController.GroceryStoreToZexelTown = true;
+                SceneManager.LoadScene("Zexel town");
             }
         }
     }

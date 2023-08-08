@@ -1183,7 +1183,7 @@ public class ContainerController : MonoBehaviour
         CSSPButtonActive = false;
         BagPanel.SetActive(false);
         BagStatus = 0;
-        SynSuccessPanel.SetActive(false);
+        //SynSuccessPanel.SetActive(false);
 
         if (CutscenesController.cus25 == 0 && CutscenesController.cus24 == 1 && SynItemIndex == 3)
         {
@@ -1216,6 +1216,10 @@ public class ContainerController : MonoBehaviour
         else if(CutscenesController.cus132 == 0 && CutscenesController.cus131 == 1 && ContainerController.OmnipotentBoundary >= 2 && SynItemIndex == 30)
         {
             SceneManager.LoadScene("Cutscenes");
+        }
+        else
+        {
+            SynSuccessPanel.SetActive(false);
         }
     }
 

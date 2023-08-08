@@ -135,7 +135,8 @@ public class Cus27 : MonoBehaviour
             {
                 CutscenesController.cus27 = 1;
                 ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("WeaponStore");
+                MapController.WeaponStoreToZexelTown = true;
+                SceneManager.LoadScene("Zexel town");
             }
         }
         else
@@ -247,7 +248,8 @@ public class Cus27 : MonoBehaviour
             {
                 CutscenesController.cus27 = 1;
                 ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("WeaponStore");
+                MapController.WeaponStoreToZexelTown = true;
+                SceneManager.LoadScene("Zexel town");
             }
         }
     }

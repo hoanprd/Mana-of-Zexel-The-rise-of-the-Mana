@@ -18,7 +18,7 @@ public class SaveGameTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pick && Input.GetKeyDown(KeyCode.Space))
+        if (pick && Input.GetKeyDown(KeyCode.Space) && HubController.BusyHub == false)
         {
             //once = 1;
             HubController.BusyHub = true;
