@@ -366,7 +366,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus38 == 0)
             QT.text = "Head north of the desert to find the gate of Zexel";
         else if (CutscenesController.cus39 == 0)
-            QT.text = "Alia has been poisoned, go back to Zexel town's pub to find an antidote";
+            QT.text = "Alia has been poisoned, go back to Zexel town's tavern to find an antidote";
         else if (CutscenesController.cus40 == 0)
             QT.text = "Collect the poisonous tail of the inferno scorpion to make an antidote for Alia";
         else if (CutscenesController.cus41 == 0)

@@ -199,6 +199,18 @@ public class BSInfernoScorpion1 : MonoBehaviour
             else
                 ShowP2Panel(false);
         }
+        else if (a1 > 0 && Global.CurHPP1 > 0 && GameOver == false)
+        {
+            CheckE4Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+            UseItemIndex = 1;
+            if (show1 == 0)
+                ShowP1Panel(true);
+            else
+                ShowP1Panel(false);
+        }
         else if (aE4 > 0 && Global.HPE4 > 0 && GameOver == false)
         {
             CheckE4Die();
@@ -220,18 +232,6 @@ public class BSInfernoScorpion1 : MonoBehaviour
             CheckP1Die();
             CheckP2Die();
             CheckP1P2P3Die();
-        }
-        else if (a1 > 0 && Global.CurHPP1 > 0 && GameOver == false)
-        {
-            CheckE4Die();
-            CheckP1Die();
-            CheckP2Die();
-            CheckP1P2P3Die();
-            UseItemIndex = 1;
-            if (show1 == 0)
-                ShowP1Panel(true);
-            else
-                ShowP1Panel(false);
         }
         else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true && GameOver == false)
         {

@@ -1183,43 +1183,39 @@ public class ContainerController : MonoBehaviour
         CSSPButtonActive = false;
         BagPanel.SetActive(false);
         BagStatus = 0;
-        //SynSuccessPanel.SetActive(false);
+        SynSuccessPanel.SetActive(false);
 
         if (CutscenesController.cus25 == 0 && CutscenesController.cus24 == 1 && SynItemIndex == 3)
         {
-            SceneManager.LoadScene("Cutscenes");
+            StartCoroutine(DelaySynCut());
         }
         else if (CutscenesController.cus40 == 0 && CutscenesController.cus39 == 1 && SynItemIndex == 7)
         {
-            SceneManager.LoadScene("Cutscenes");
+            StartCoroutine(DelaySynCut());
         }
         else if (CutscenesController.cus48 == 0 && CutscenesController.cus47 == 1 && SynItemIndex == 4)
         {
-            SceneManager.LoadScene("Cutscenes");
+            StartCoroutine(DelaySynCut());
         }
         else if (CutscenesController.cus54 == 0 && CutscenesController.cus53 == 1 && SynItemIndex == 8)
         {
-            SceneManager.LoadScene("Cutscenes");
+            StartCoroutine(DelaySynCut());
         }
         else if (CutscenesController.cus75 == 0 && CutscenesController.cus74 == 1 && SynItemIndex == 17)
         {
-            SceneManager.LoadScene("Cutscenes");
+            StartCoroutine(DelaySynCut());
         }
         else if (CutscenesController.cus83 == 0 && CutscenesController.cus82 == 1 && SynItemIndex == 21)
         {
-            SceneManager.LoadScene("Cutscenes");
+            StartCoroutine(DelaySynCut());
         }
         else if (CutscenesController.cus125 == 0 && CutscenesController.cus124 == 1 && SynItemIndex == 25)
         {
-            SceneManager.LoadScene("Cutscenes");
+            StartCoroutine(DelaySynCut());
         }
         else if(CutscenesController.cus132 == 0 && CutscenesController.cus131 == 1 && ContainerController.OmnipotentBoundary >= 2 && SynItemIndex == 30)
         {
-            SceneManager.LoadScene("Cutscenes");
-        }
-        else
-        {
-            SynSuccessPanel.SetActive(false);
+            StartCoroutine(DelaySynCut());
         }
     }
 
@@ -1242,6 +1238,14 @@ public class ContainerController : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         CloseSSP.SetActive(true);
+    }
+
+    IEnumerator DelaySynCut()
+    {
+        LoadingOpen = true;
+
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Cutscenes");
     }
 
     IEnumerator WaitToLoadingPanel()

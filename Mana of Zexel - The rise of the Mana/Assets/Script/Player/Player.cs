@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    HubController hc;
+
     public bool FootStepIndex;
     public float move_speed = 5f;
     public int OnceFootStep = 0, once;
@@ -26,6 +28,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        hc = FindObjectOfType<HubController>();
         FadeOutPanel.SetActive(true);
         once = 0;
         TextDisplay = false;
@@ -55,6 +58,9 @@ public class Player : MonoBehaviour
                 Global.CurMPP2 = Global.MaxMPP2;
                 Global.CurHPP3 = Global.MaxHPP3;
                 Global.CurMPP3 = Global.MaxMPP3;
+                hc.ShowP1Detail();
+                hc.ShowP2Detail();
+                hc.ShowP3Detail();
                 Invoke("delay1", 2f);
             }
             else
@@ -713,7 +719,7 @@ public class Player : MonoBehaviour
             if (CutscenesController.cus9 == 0)
             {
                 show2.SetActive(true);
-                show1.text = "You can go to this area yet!";
+                show1.text = "You can't go to this area yet!";
                 Invoke("delay1", 2f);
             }
             else
@@ -768,7 +774,7 @@ public class Player : MonoBehaviour
             if (CutscenesController.cus34 == 0)
             {
                 show2.SetActive(true);
-                show1.text = "You can go to this area yet!";
+                show1.text = "You can't go to this area yet!";
                 Invoke("delay1", 2f);
             }
             else if (CutscenesController.cus35 == 0 && CutscenesController.cus34 == 1)
@@ -863,7 +869,7 @@ public class Player : MonoBehaviour
             if (CutscenesController.cus40 == 0)
             {
                 show2.SetActive(true);
-                show1.text = "You can go to this area yet!";
+                show1.text = "You can't go to this area yet!";
                 Invoke("delay1", 2f);
             }
             else if (CutscenesController.cus41 == 0 && CutscenesController.cus40 == 1)
@@ -916,7 +922,7 @@ public class Player : MonoBehaviour
             if (CutscenesController.cus49 == 0)
             {
                 show2.SetActive(true);
-                show1.text = "You can go to this area yet!";
+                show1.text = "You can't go to this area yet!";
                 Invoke("delay1", 2f);
             }
             else if (CutscenesController.cus50 == 0 && CutscenesController.cus49 == 1)
@@ -986,7 +992,7 @@ public class Player : MonoBehaviour
             if (CutscenesController.cus58 == 0)
             {
                 show2.SetActive(true);
-                show1.text = "You can go to this area yet!";
+                show1.text = "You can't go to this area yet!";
                 Invoke("delay1", 2f);
             }
             else if (CutscenesController.cus59 == 0 && CutscenesController.cus58 == 1)
@@ -1038,7 +1044,7 @@ public class Player : MonoBehaviour
             if (CutscenesController.cus63 == 0)
             {
                 show2.SetActive(true);
-                show1.text = "You can go to this area yet!";
+                show1.text = "You't can go to this area yet!";
                 Invoke("delay1", 2f);
             }
             else if (CutscenesController.cus64 == 0 && CutscenesController.cus63 == 1)
@@ -1090,7 +1096,7 @@ public class Player : MonoBehaviour
             if (CutscenesController.cus93 == 0)
             {
                 show2.SetActive(true);
-                show1.text = "You can go to this area yet!";
+                show1.text = "You can't go to this area yet!";
                 Invoke("delay1", 2f);
             }
             else
@@ -1152,7 +1158,7 @@ public class Player : MonoBehaviour
             if (CutscenesController.cus54 == 0)
             {
                 show2.SetActive(true);
-                show1.text = "You can go to this area yet!";
+                show1.text = "You can't go to this area yet!";
                 Invoke("delay1", 2f);
             }
             else
@@ -1207,7 +1213,7 @@ public class Player : MonoBehaviour
             if (CutscenesController.cus78 == 0)
             {
                 show2.SetActive(true);
-                show1.text = "You can go to this area yet!";
+                show1.text = "You can't go to this area yet!";
                 Invoke("delay1", 2f);
             }
             else if (CutscenesController.cus79 == 0 && CutscenesController.cus78 == 1)
@@ -1277,7 +1283,7 @@ public class Player : MonoBehaviour
             if (CutscenesController.cus78 == 0)
             {
                 show2.SetActive(true);
-                show1.text = "You can go to this area yet!";
+                show1.text = "You can't go to this area yet!";
                 Invoke("delay1", 2f);
             }
             else if (CutscenesController.cus79 == 0 && CutscenesController.cus78 == 1)
