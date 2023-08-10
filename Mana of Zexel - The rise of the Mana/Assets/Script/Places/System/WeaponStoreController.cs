@@ -272,6 +272,7 @@ public class WeaponStoreController : MonoBehaviour
             if (Global.Zen >= 500)
             {
                 BuyFX.Play();
+                BuyAskPanel.SetActive(false);
                 Global.VayneStaff1 += 1;
                 Global.Zen -= 500;
                 Bought1 = 1;
@@ -292,6 +293,7 @@ public class WeaponStoreController : MonoBehaviour
             if (Global.Zen >= 2000)
             {
                 BuyFX.Play();
+                BuyAskPanel.SetActive(false);
                 Global.VayneStaff2 += 1;
                 Global.Zen -= 2000;
                 Bought6 = 1;
@@ -312,6 +314,7 @@ public class WeaponStoreController : MonoBehaviour
             if (Global.Zen >= 4000)
             {
                 BuyFX.Play();
+                BuyAskPanel.SetActive(false);
                 Global.VayneStaff3 += 1;
                 Global.Zen -= 4000;
                 Bought11 = 1;
@@ -332,6 +335,7 @@ public class WeaponStoreController : MonoBehaviour
             if (Global.Zen >= 500)
             {
                 BuyFX.Play();
+                BuyAskPanel.SetActive(false);
                 Global.AliaShoes1 += 1;
                 Global.Zen -= 500;
                 Bought2 = 1;
@@ -352,6 +356,7 @@ public class WeaponStoreController : MonoBehaviour
             if (Global.Zen >= 2000)
             {
                 BuyFX.Play();
+                BuyAskPanel.SetActive(false);
                 Global.AliaShoes2 += 1;
                 Global.Zen -= 2000;
                 Bought7 = 1;
@@ -372,6 +377,7 @@ public class WeaponStoreController : MonoBehaviour
             if (Global.Zen >= 4000)
             {
                 BuyFX.Play();
+                BuyAskPanel.SetActive(false);
                 Global.AliaShoes3 += 1;
                 Global.Zen -= 4000;
                 Bought12 = 1;
@@ -392,6 +398,7 @@ public class WeaponStoreController : MonoBehaviour
             if (Global.Zen >= 500)
             {
                 BuyFX.Play();
+                BuyAskPanel.SetActive(false);
                 Global.MariaCrystal1 += 1;
                 Global.Zen -= 500;
                 Bought3 = 1;
@@ -412,6 +419,7 @@ public class WeaponStoreController : MonoBehaviour
             if (Global.Zen >= 2000)
             {
                 BuyFX.Play();
+                BuyAskPanel.SetActive(false);
                 Global.MariaCrystal2 += 1;
                 Global.Zen -= 2000;
                 Bought8 = 1;
@@ -432,6 +440,7 @@ public class WeaponStoreController : MonoBehaviour
             if (Global.Zen >= 4000)
             {
                 BuyFX.Play();
+                BuyAskPanel.SetActive(false);
                 Global.MariaCrystal3 += 1;
                 Global.Zen -= 4000;
                 Bought13 = 1;
@@ -452,6 +461,7 @@ public class WeaponStoreController : MonoBehaviour
             if (Global.Zen >= 500)
             {
                 BuyFX.Play();
+                BuyAskPanel.SetActive(false);
                 Global.AlchemistArmor1 += 1;
                 Global.Zen -= 500;
                 Bought4 = 1;
@@ -472,6 +482,7 @@ public class WeaponStoreController : MonoBehaviour
             if (Global.Zen >= 2000)
             {
                 BuyFX.Play();
+                BuyAskPanel.SetActive(false);
                 Global.AlchemistArmor2 += 1;
                 Global.Zen -= 2000;
                 Bought9 = 1;
@@ -492,6 +503,7 @@ public class WeaponStoreController : MonoBehaviour
             if (Global.Zen >= 4000)
             {
                 BuyFX.Play();
+                BuyAskPanel.SetActive(false);
                 Global.AlchemistArmor3 += 1;
                 Global.Zen -= 4000;
                 Bought14 = 1;
@@ -512,6 +524,7 @@ public class WeaponStoreController : MonoBehaviour
             if (Global.Zen >= 500)
             {
                 BuyFX.Play();
+                BuyAskPanel.SetActive(false);
                 Global.WarriorArmor1 += 1;
                 Global.Zen -= 500;
                 Bought5 = 1;
@@ -532,6 +545,7 @@ public class WeaponStoreController : MonoBehaviour
             if (Global.Zen >= 2000)
             {
                 BuyFX.Play();
+                BuyAskPanel.SetActive(false);
                 Global.WarriorArmor2 += 1;
                 Global.Zen -= 2000;
                 Bought10 = 1;
@@ -552,6 +566,7 @@ public class WeaponStoreController : MonoBehaviour
             if (Global.Zen >= 4000)
             {
                 BuyFX.Play();
+                BuyAskPanel.SetActive(false);
                 Global.WarriorArmor3 += 1;
                 Global.Zen -= 4000;
                 Bought15 = 1;

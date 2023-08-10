@@ -50,6 +50,8 @@ public class Cus41 : MonoBehaviour
             }
             else if (tang == 4)
             {
+                AliaVAL1.SetActive(false);
+                VayneVAR1.SetActive(false);
                 NameTagText.text = "Alia";
                 dia.text = "Hyaaaaaaa... Come on!";
             }
@@ -70,6 +72,7 @@ public class Cus41 : MonoBehaviour
             }
             else if (tang == 8)
             {
+                AliaVAL1.SetActive(true);
                 NameTagText.text = "Alia";
                 dia.text = "Uhm... I'm fine, luckily I haven't put all my strength into it yet.";
             }
@@ -82,6 +85,7 @@ public class Cus41 : MonoBehaviour
             }
             else if (tang == 10)
             {
+                VayneVAR1.SetActive(true);
                 NameTagText.text = "Vayne";
                 dia.text = "So if we break the barrier it will regenerate automatically?";
             }
@@ -164,7 +168,7 @@ public class Cus41 : MonoBehaviour
             }
             else if (tang == 24)
             {
-                AliaVAR1.SetActive(false);
+                MariaVAR1.SetActive(false);
                 VayneVAR1.SetActive(true);
                 NameTagText.text = "Vayne";
                 dia.text = "How worthy are these people to deserve?";
@@ -261,6 +265,8 @@ public class Cus41 : MonoBehaviour
             }
             else if (tang == 4)
             {
+                AliaVAL1.SetActive(false);
+                VayneVAR1.SetActive(false);
                 NameTagText.text = "Alia";
                 dia.text = "Hyaaaaaaaaa... Lên nào!";
             }
@@ -281,6 +287,7 @@ public class Cus41 : MonoBehaviour
             }
             else if (tang == 8)
             {
+                AliaVAL1.SetActive(true);
                 NameTagText.text = "Alia";
                 dia.text = "Uhm... Mình không sao, hên là mình vẫn chưa dốc toàn lực lao vào.";
             }
@@ -293,6 +300,7 @@ public class Cus41 : MonoBehaviour
             }
             else if (tang == 10)
             {
+                VayneVAR1.SetActive(true);
                 NameTagText.text = "Vayne";
                 dia.text = "Tức là chúng ta có phá kết giới nó sẽ tự động tái tạo lại ư?";
             }
@@ -375,7 +383,7 @@ public class Cus41 : MonoBehaviour
             }
             else if (tang == 24)
             {
-                AliaVAR1.SetActive(false);
+                MariaVAR1.SetActive(false);
                 VayneVAR1.SetActive(true);
                 NameTagText.text = "Vayne";
                 dia.text = "Những người xứng đáng như thế nào để xứng đáng đây?";
@@ -463,6 +471,11 @@ public class Cus41 : MonoBehaviour
         if (tang == 8)
         {
             cc.BGMCutscenes(2, false);
+        }
+
+        if (tang == 15)
+        {
+            cc.FXCutscenes(3);
         }
     }
 
