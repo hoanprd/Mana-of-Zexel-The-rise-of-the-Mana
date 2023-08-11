@@ -20,6 +20,7 @@ public class Cus52 : MonoBehaviour
     {
         cc = FindObjectOfType<CutscenesController>();
         tang = 0;
+        StartCoroutine(DelayBGM());
     }
 
     // Update is called once per frame
@@ -205,5 +206,11 @@ public class Cus52 : MonoBehaviour
         ContainerController.LoadingOpen = true;
         ContainerController.GuardianFeatherPick = 1;
         SceneManager.LoadScene("Mana gate");
+    }
+
+    IEnumerator DelayBGM()
+    {
+        yield return new WaitForSeconds(2f);
+        cc.BGMCutscenes(2, false);
     }
 }

@@ -188,8 +188,8 @@ public class BSManaGuardian1 : MonoBehaviour
                 if (BE1ANum <= 6)
                     EDamage.text = "-" + Global.DamageBE1;
 
-                Invoke("delayBE1", 1f);
-                Invoke("delayBE1attack2", 2f);
+                Invoke("delayBE1", 1.5f);
+                Invoke("delayBE1attack2", 2.5f);
             }
             CheckP1Die();
             CheckP2Die();
@@ -352,7 +352,7 @@ public class BSManaGuardian1 : MonoBehaviour
         show1 = 1;
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP1;
-        Invoke("delayP1PressAttack", 1f);
+        Invoke("delayP1PressAttack", 2f);
         dem = 2;
     }
     public void PressAttackP2()
@@ -362,7 +362,7 @@ public class BSManaGuardian1 : MonoBehaviour
         show2 = 1;
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP2;
-        Invoke("delayP2PressAttack", 1f);
+        Invoke("delayP2PressAttack", 2f);
         dem = 2;
     }
     public void PressAttackP3()
@@ -373,7 +373,7 @@ public class BSManaGuardian1 : MonoBehaviour
         show3 = 1;
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP3;
-        Invoke("delayP3PressAttack", 1f);
+        Invoke("delayP3PressAttack", 2f);
         dem = 2;
     }
 
@@ -397,7 +397,7 @@ public class BSManaGuardian1 : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 100 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
+            Invoke("delayP1PressSkill", 2f);
             dem = 2;
         }
         else
@@ -422,7 +422,7 @@ public class BSManaGuardian1 : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 200 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
+            Invoke("delayP1PressSkill", 2f);
             dem = 2;
         }
         else
@@ -447,7 +447,7 @@ public class BSManaGuardian1 : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 300 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
+            Invoke("delayP1PressSkill", 2f);
             dem = 2;
         }
         else
@@ -566,7 +566,7 @@ public class BSManaGuardian1 : MonoBehaviour
             showr2.SetActive(true);
             showr1.text = "HP +" + HealAmount;
             Invoke("delayshowr", 2f);
-            Invoke("delayP3PressSkill", 1f);
+            Invoke("delayP3PressSkill", 2f);
             dem = 2;
         }
         else
@@ -590,7 +590,7 @@ public class BSManaGuardian1 : MonoBehaviour
             showr2.SetActive(true);
             showr1.text = "MP +" + HealAmount;
             Invoke("delayshowr", 2f);
-            Invoke("delayP3PressSkill", 1f);
+            Invoke("delayP3PressSkill", 2f);
             dem = 2;
         }
         else
@@ -614,7 +614,7 @@ public class BSManaGuardian1 : MonoBehaviour
             int DamgeCal = Global.DamageP3 + (Global.DamageP3 * 300 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP3PressSkill", 1f);
+            Invoke("delayP3PressSkill", 2f);
             dem = 2;
         }
         else

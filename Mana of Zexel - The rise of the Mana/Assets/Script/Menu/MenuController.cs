@@ -759,6 +759,9 @@ public class MenuController : MonoBehaviour
         Global.MariaArmorStatus = sdg.SaveMariaArmorStatus;
 
         //Load weapon had bought
+        WeaponStoreController.AlchemistArmor1HadBought = sdg.SaveAlchemistArmor1HadBought;
+        WeaponStoreController.AlchemistArmor2HadBought = sdg.SaveAlchemistArmor2HadBought;
+        WeaponStoreController.AlchemistArmor3HadBought = sdg.SaveAlchemistArmor3HadBought;
         WeaponStoreController.Bought1 = sdg.SaveBought1;
         WeaponStoreController.Bought2 = sdg.SaveBought2;
         WeaponStoreController.Bought3 = sdg.SaveBought3;

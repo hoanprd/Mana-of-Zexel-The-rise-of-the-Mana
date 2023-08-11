@@ -798,6 +798,14 @@ public class HubController : MonoBehaviour
                 VayneWI[i].SetActive(false);
         }
 
+        for (int i = 0; i < VayneAI.Length; i++)
+        {
+            if (i == Global.VayneArmorStatus)
+                VayneAI[i].SetActive(true);
+            else
+                VayneAI[i].SetActive(false);
+        }
+
         VayneW1.GetComponent<Text>().text = "" + Global.VayneStaff1;
         VayneW2.GetComponent<Text>().text = "" + Global.VayneStaff2;
         VayneW3.GetComponent<Text>().text = "" + Global.VayneStaff3;
@@ -817,6 +825,14 @@ public class HubController : MonoBehaviour
                 AliaWI[i].SetActive(false);
         }
 
+        for (int i = 0; i < AliaAI.Length; i++)
+        {
+            if (i == Global.AliaArmorStatus)
+                AliaAI[i].SetActive(true);
+            else
+                AliaAI[i].SetActive(false);
+        }
+
         AliaW1.GetComponent<Text>().text = "" + Global.AliaShoes1;
         AliaW2.GetComponent<Text>().text = "" + Global.AliaShoes2;
         AliaW3.GetComponent<Text>().text = "" + Global.AliaShoes3;
@@ -834,6 +850,14 @@ public class HubController : MonoBehaviour
                 MariaWI[i].SetActive(true);
             else
                 MariaWI[i].SetActive(false);
+        }
+
+        for (int i = 0; i < MariaAI.Length; i++)
+        {
+            if (i == Global.MariaArmorStatus)
+                MariaAI[i].SetActive(true);
+            else
+                MariaAI[i].SetActive(false);
         }
 
         MariaW1.GetComponent<Text>().text = "" + Global.MariaCrystal1;

@@ -381,6 +381,9 @@ public class SaveGameSystem : MonoBehaviour
         sdg.SaveMariaArmorStatus = Global.MariaArmorStatus;
 
         //Set weapon had bought
+        sdg.SaveAlchemistArmor1HadBought = WeaponStoreController.AlchemistArmor1HadBought;
+        sdg.SaveAlchemistArmor2HadBought = WeaponStoreController.AlchemistArmor2HadBought;
+        sdg.SaveAlchemistArmor3HadBought = WeaponStoreController.AlchemistArmor3HadBought;
         sdg.SaveBought1 = WeaponStoreController.Bought1;
         sdg.SaveBought2 = WeaponStoreController.Bought2;
         sdg.SaveBought3 = WeaponStoreController.Bought3;
@@ -793,6 +796,9 @@ public class SaveGameSystem : MonoBehaviour
         sdg.SaveMariaArmorStatus = Global.MariaArmorStatus;
 
         //Set weapon had bought
+        sdg.SaveAlchemistArmor1HadBought = WeaponStoreController.AlchemistArmor1HadBought;
+        sdg.SaveAlchemistArmor2HadBought = WeaponStoreController.AlchemistArmor2HadBought;
+        sdg.SaveAlchemistArmor3HadBought = WeaponStoreController.AlchemistArmor3HadBought;
         sdg.SaveBought1 = WeaponStoreController.Bought1;
         sdg.SaveBought2 = WeaponStoreController.Bought2;
         sdg.SaveBought3 = WeaponStoreController.Bought3;

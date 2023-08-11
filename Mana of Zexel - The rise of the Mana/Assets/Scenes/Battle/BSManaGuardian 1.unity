@@ -3270,7 +3270,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: + 40
+  m_Text: + 120
 --- !u!222 &318926447
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15006,7 +15006,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: + 40
+  m_Text: + 120
 --- !u!222 &1282748656
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16845,7 +16845,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: + 40
+  m_Text: + 120
 --- !u!222 &1435586189
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21697,14 +21697,14 @@ PrefabInstance:
     - target: {fileID: 1155455705445324658, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1670761289}
     - target: {fileID: 1155455705445324658, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UseMP
       objectReference: {fileID: 0}
     - target: {fileID: 1155455705445324658, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BSInfernoScorpion1, Assembly-CSharp
+      value: BSManaGuardian1, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1155455705711808490, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_Pivot.x
@@ -21809,38 +21809,38 @@ PrefabInstance:
     - target: {fileID: 1155455706362756293, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1670761289}
     - target: {fileID: 1155455706362756293, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UseEP
       objectReference: {fileID: 0}
     - target: {fileID: 1155455706362756293, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BSInfernoScorpion1, Assembly-CSharp
+      value: BSManaGuardian1, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1155455706385581359, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1670761289}
     - target: {fileID: 1155455706385581359, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UseB
       objectReference: {fileID: 0}
     - target: {fileID: 1155455706385581359, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BSInfernoScorpion1, Assembly-CSharp
+      value: BSManaGuardian1, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1155455706448458142, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1670761289}
     - target: {fileID: 1155455706448458142, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UseHP
       objectReference: {fileID: 0}
     - target: {fileID: 1155455706448458142, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BSInfernoScorpion1, Assembly-CSharp
+      value: BSManaGuardian1, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1855495607324333717, guid: 887f5a3a756325640bb44da7de3a150e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -23215,7 +23215,7 @@ GameObject:
   - component: {fileID: 2106320712}
   - component: {fileID: 2106320713}
   m_Layer: 0
-  m_Name: Sound
+  m_Name: SoundController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23251,23 +23251,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGMSound:
-  - {fileID: 0}
+  - {fileID: 484856598}
   FXSound:
   - {fileID: 42011418}
-  - {fileID: 0}
+  - {fileID: 1717554887}
   - {fileID: 1964077357}
   - {fileID: 1858192412}
   - {fileID: 1315261431}
   - {fileID: 1891396642}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114537228}
+  - {fileID: 206936627}
+  - {fileID: 655568526}
   - {fileID: 900232760}
   - {fileID: 1256725639}
   - {fileID: 25513220}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 588658682}
+  - {fileID: 734811735}
+  - {fileID: 354274020}
   - {fileID: 157211684}
   - {fileID: 202958802}
   - {fileID: 547666167}

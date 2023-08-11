@@ -261,6 +261,9 @@ public class SaveDataGlobal
     public int SaveWarriorArmor3;
 
     //Set weapon status
+    public int SaveAlchemistArmor1HadBought;
+    public int SaveAlchemistArmor2HadBought;
+    public int SaveAlchemistArmor3HadBought;
     public int SaveVayneWeaponStatus;
     public int SaveVayneArmorStatus;
     public int SaveAliaWeaponStatus;
