@@ -32,19 +32,19 @@ public class ManaSlimeBattle : MonoBehaviour
         {
             Enemy.position = new Vector2(Enemy.position.x - 3f, Enemy.position.y);
             animanaslime.SetTrigger("e5attack");
-            Invoke("delayE5Done", 1f);
+            Invoke("delayE5Done", 1.5f);
         }
         else if (BSManaSlime1.E5Hit == 2)
         {
             Enemy.position = new Vector2(Enemy.position.x - 5f, Enemy.position.y + 1);
             animanaslime.SetTrigger("e5attack");
-            Invoke("delayE5Done", 1f);
+            Invoke("delayE5Done", 1.5f);
         }
         else if (BSManaSlime1.E5Hit == 3)
         {
             Enemy.position = new Vector2(Enemy.position.x - 6f, Enemy.position.y - 3);
             animanaslime.SetTrigger("e5attack");
-            Invoke("delayE5Done", 1f);
+            Invoke("delayE5Done", 1.5f);
         }
     }
 

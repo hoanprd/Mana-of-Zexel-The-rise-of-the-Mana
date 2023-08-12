@@ -248,7 +248,7 @@ public class BSManaSlime1 : MonoBehaviour
                 EDamage.color = Color.red;
                 EDamage.text = "-" + Global.DamageE5;
                 E5AttackTarget();
-                Invoke("delayE5", 1f);
+                Invoke("delayE5", 1.5f);
                 dem = 0;
             }
             CheckP1Die();
