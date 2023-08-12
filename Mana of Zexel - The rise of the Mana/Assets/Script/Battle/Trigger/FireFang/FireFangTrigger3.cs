@@ -29,7 +29,7 @@ public class FireFangTrigger3 : MonoBehaviour
         if (battle)
         {
             ContainerController.LoadingOpen = true;
-            HPMPBarController.EIndex = 2;
+            HPMPBarController.EIndex = 6;
             despawn = true;
             SceneManager.LoadScene("BSFireFang 1");
         }

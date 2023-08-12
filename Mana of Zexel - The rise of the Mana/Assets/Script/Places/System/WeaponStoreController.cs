@@ -119,7 +119,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyVayneStaff1()
     {
-        if (1 - Global.VayneStaff1 > 0)
+        if (Bought1 == 0)
         {
             ClickFX.Play();
             BuyIndex = 1;
@@ -129,7 +129,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyVayneStaff2()
     {
-        if(1 - Global.VayneStaff2 > 0)
+        if(Bought6 == 0)
         {
             ClickFX.Play();
             BuyIndex = 2;
@@ -139,7 +139,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyVayneStaff3()
     {
-        if (1 - Global.VayneStaff3 > 0)
+        if (Bought11 == 0)
         {
             ClickFX.Play();
             BuyIndex = 3;
@@ -149,7 +149,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyAliaShoes1()
     {
-        if (1 - Global.AliaShoes1 > 0)
+        if (Bought2 == 0)
         {
             ClickFX.Play();
             BuyIndex = 4;
@@ -159,7 +159,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyAliaShoes2()
     {
-        if (1 - Global.AliaShoes2 > 0)
+        if (Bought7 == 0)
         {
             ClickFX.Play();
             BuyIndex = 5;
@@ -169,7 +169,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyAliaShoes3()
     {
-        if (1 - Global.AliaShoes3 > 0)
+        if (Bought12 == 0)
         {
             ClickFX.Play();
             BuyIndex = 6;
@@ -179,7 +179,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyMariaCrystal1()
     {
-        if (1 - Global.MariaCrystal1 > 0)
+        if (Bought3 == 0)
         {
             ClickFX.Play();
             BuyIndex = 7;
@@ -189,7 +189,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyMariaCrystal2()
     {
-        if (1 - Global.MariaCrystal2 > 0)
+        if (Bought8 == 0)
         {
             ClickFX.Play();
             BuyIndex = 8;
@@ -199,7 +199,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyMariaCrystal3()
     {
-        if (1 - Global.MariaCrystal3 > 0)
+        if (Bought13 == 0)
         {
             ClickFX.Play();
             BuyIndex = 9;
@@ -209,7 +209,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyAchelmistArmor1()
     {
-        if (2 - Global.AlchemistArmor1 > 0)
+        if (2 - AlchemistArmor1HadBought > 0)
         {
             ClickFX.Play();
             BuyIndex = 10;
@@ -219,7 +219,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyAchelmistArmor2()
     {
-        if (2 - Global.AlchemistArmor2 > 0)
+        if (2 - AlchemistArmor2HadBought > 0)
         {
             ClickFX.Play();
             BuyIndex = 11;
@@ -229,7 +229,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyAchelmistArmor3()
     {
-        if (2 - Global.AlchemistArmor3 > 0)
+        if (2 - AlchemistArmor3HadBought > 0)
         {
             ClickFX.Play();
             BuyIndex = 12;
@@ -239,7 +239,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyWarriorArmor1()
     {
-        if (1 - Global.WarriorArmor1 > 0)
+        if (Bought5 == 0)
         {
             ClickFX.Play();
             BuyIndex = 13;
@@ -249,7 +249,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyWarriorArmor2()
     {
-        if (1 - Global.WarriorArmor2 > 0)
+        if (Bought10 == 0)
         {
             ClickFX.Play();
             BuyIndex = 14;
@@ -259,7 +259,7 @@ public class WeaponStoreController : MonoBehaviour
 
     public void BuyWarriorArmor3()
     {
-        if (1 - Global.WarriorArmor3 > 0)
+        if (Bought15 == 0)
         {
             ClickFX.Play();
             BuyIndex = 15;

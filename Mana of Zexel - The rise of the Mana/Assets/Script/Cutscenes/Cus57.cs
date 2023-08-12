@@ -217,7 +217,7 @@ public class Cus57 : MonoBehaviour
         cc.FXCutscenes(0);
         TuTang += 1;
 
-        if (TuTang > 1)
+        if (TuTang > 0)
         {
             CutscenesController.cus57 = 1;
             ContainerController.LoadingOpen = true;

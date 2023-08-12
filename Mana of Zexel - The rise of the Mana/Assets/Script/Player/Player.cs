@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public Text show3;
     public GameObject show4;
     public GameObject FadeOutPanel, FadeInPanel;
+    public bool HealDelay;
     private bool heal, tqz, mqz, alasaqz, asilaqz, klener, mwqz, ManaGenerator, FireManaGenerator, IceManaGenerator;
     public static int MapIndex;
     public static bool TextDisplay;
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
         hc = FindObjectOfType<HubController>();
         FadeOutPanel.SetActive(true);
         once = 0;
+        HealDelay = false;
         TextDisplay = false;
         StartCoroutine(DelayFadeOutOff());
     }
@@ -44,11 +46,12 @@ public class Player : MonoBehaviour
             show2.SetActive(false);
         }
 
-        if (heal && Input.GetKeyDown(KeyCode.Space))
+        if (heal && Input.GetKeyDown(KeyCode.Space) && HealDelay == false)
         {
             if (Global.Zen >= 100)
             {
                 TavernHeal.Play();
+                HealDelay = true;
                 show2.SetActive(true);
                 show1.text = "-100 Zen";
                 Global.Zen -= 100;
@@ -250,24 +253,30 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (ManaGenerator && Input.GetKeyDown(KeyCode.Space))
+        if (ManaGenerator && Input.GetKeyDown(KeyCode.Space) && HealDelay == false)
         {
+            TavernHeal.Play();
+            HealDelay = true;
             SynthesizeSystem.ManaSynthesize = 100;
             show2.SetActive(true);
             show1.text = "Mana restore!";
             Invoke("delay1", 2f);
         }
 
-        if (FireManaGenerator && Input.GetKeyDown(KeyCode.Space))
+        if (FireManaGenerator && Input.GetKeyDown(KeyCode.Space) && HealDelay == false)
         {
+            TavernHeal.Play();
+            HealDelay = true;
             SynthesizeSystem.ManaSynthesize = 100;
             show2.SetActive(true);
             show1.text = "Fire mana restore!";
             Invoke("delay1", 2f);
         }
 
-        if (IceManaGenerator && Input.GetKeyDown(KeyCode.Space))
+        if (IceManaGenerator && Input.GetKeyDown(KeyCode.Space) && HealDelay == false)
         {
+            TavernHeal.Play();
+            HealDelay = true;
             SynthesizeSystem.ManaSynthesize = 100;
             show2.SetActive(true);
             show1.text = "Ice mana restore!";
@@ -1622,6 +1631,7 @@ public class Player : MonoBehaviour
     void delay1()
     {
         show2.SetActive(false);
+        HealDelay = false;
     }
     /*void delay2()
     {

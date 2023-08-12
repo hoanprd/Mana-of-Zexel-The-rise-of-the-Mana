@@ -11,7 +11,7 @@ public class SynthesizeSystem : MonoBehaviour
     public GameObject ManaSynPanel;
     public GameObject SynDetailPanel;
     public GameObject RBHideSlide1, RBHideSlide2, RBHideSlide3, RBHideSlide4, RBHideSlide5, RBHideSlide6, RBHideSlide7, RBHideSlide8;
-    public GameObject[] Hide1, Hide2, Hide3, Hide4, Hide5;
+    public GameObject[] Hide1, Hide2, Hide3, Hide4, Hide5, Hide6;
 
     public Text num1;
     public Text num2;
@@ -130,6 +130,13 @@ public class SynthesizeSystem : MonoBehaviour
             for (int i = 0; i < Hide3.Length; i++)
             {
                 Hide3[i].SetActive(false);
+            }
+        }
+        if (CutscenesController.cus57 == 0)
+        {
+            for (int i = 0; i < Hide6.Length; i++)
+            {
+                Hide6[i].SetActive(false);
             }
         }
         if (CutscenesController.cus86 == 0)

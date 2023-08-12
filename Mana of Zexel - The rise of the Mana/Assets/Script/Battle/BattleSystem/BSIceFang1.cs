@@ -933,8 +933,9 @@ public class BSIceFang1 : MonoBehaviour
     public void PressRun()
     {
         HubController.BusyHub = false;
-        SceneManager.LoadScene("Inferno volcano");
+        SceneManager.LoadScene("Inferno ice");
     }
+
     public void PressBackToTheMap2()
     {
         ContainerController.LoadingOpen = true;
@@ -951,6 +952,7 @@ public class BSIceFang1 : MonoBehaviour
         }
         SceneManager.LoadScene("Inferno ice");
     }
+
     public void CheckP1Die()
     {
         if(Global.CurHPP1 <= 0)

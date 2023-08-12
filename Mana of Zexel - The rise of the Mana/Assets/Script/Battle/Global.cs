@@ -119,7 +119,7 @@ public class Global : MonoBehaviour
             DamageE7 = 180;
             SpeedE7 = 10;
 
-            HPE8 = 22000;
+            HPE8 = 2200;
             DamageE8 = 100;
             SpeedE8 = 30;
 
