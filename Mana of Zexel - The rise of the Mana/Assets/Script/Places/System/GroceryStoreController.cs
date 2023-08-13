@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GroceryStoreController : MonoBehaviour
 {
     public GameObject GroceryStorePanel, BuyAskPanel;
-    public Text MessageText;
+    public Text MessageText, AskConfirmText;
     public AudioSource BuyFX, ClickFX;
     public int BuyIndex;
     public bool IsActived = false, stop = false;
@@ -79,6 +79,7 @@ public class GroceryStoreController : MonoBehaviour
     {
         ClickFX.Play();
         BuyIndex = 1;
+        AskConfirmText.text = "Do you want to buy string?";
         BuyAskPanel.SetActive(true);
     }
 
@@ -86,6 +87,7 @@ public class GroceryStoreController : MonoBehaviour
     {
         ClickFX.Play();
         BuyIndex = 2;
+        AskConfirmText.text = "Do you want to buy wood?";
         BuyAskPanel.SetActive(true);
     }
 
@@ -93,6 +95,7 @@ public class GroceryStoreController : MonoBehaviour
     {
         ClickFX.Play();
         BuyIndex = 3;
+        AskConfirmText.text = "Do you want to buy Iron?";
         BuyAskPanel.SetActive(true);
     }
 
@@ -100,6 +103,7 @@ public class GroceryStoreController : MonoBehaviour
     {
         ClickFX.Play();
         BuyIndex = 4;
+        AskConfirmText.text = "Do you want to buy mana gem?";
         BuyAskPanel.SetActive(true);
     }
 
@@ -107,6 +111,7 @@ public class GroceryStoreController : MonoBehaviour
     {
         ClickFX.Play();
         BuyIndex = 5;
+        AskConfirmText.text = "Do you want to buy inferno sand?";
         BuyAskPanel.SetActive(true);
     }
 
@@ -114,6 +119,7 @@ public class GroceryStoreController : MonoBehaviour
     {
         ClickFX.Play();
         BuyIndex = 6;
+        AskConfirmText.text = "Do you want to buy mana liquid?";
         BuyAskPanel.SetActive(true);
     }
 
@@ -121,6 +127,7 @@ public class GroceryStoreController : MonoBehaviour
     {
         ClickFX.Play();
         BuyIndex = 7;
+        AskConfirmText.text = "Do you want to buy golden feather?";
         BuyAskPanel.SetActive(true);
     }
 
@@ -128,6 +135,7 @@ public class GroceryStoreController : MonoBehaviour
     {
         ClickFX.Play();
         BuyIndex = 8;
+        AskConfirmText.text = "Do you want to buy ice leather?";
         BuyAskPanel.SetActive(true);
     }
 

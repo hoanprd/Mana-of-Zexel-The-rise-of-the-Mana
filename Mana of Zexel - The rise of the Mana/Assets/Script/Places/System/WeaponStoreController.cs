@@ -12,7 +12,7 @@ public class WeaponStoreController : MonoBehaviour
     public bool IsActived = false, stop = false;
     public static int Bought1, Bought2, Bought3, Bought4, Bought5, Bought6, Bought7, Bought8, Bought9, Bought10, Bought11, Bought12, Bought13, Bought14, Bought15;
     public static int AlchemistArmor1HadBought, AlchemistArmor2HadBought, AlchemistArmor3HadBought;
-    public Text InShock1, InShock2, InShock3, InShock4, InShock5, InShock6, InShock7, InShock8, InShock9, InShock10, InShock11, InShock12, InShock13, InShock14, InShock15;
+    public Text InShock1, InShock2, InShock3, InShock4, InShock5, InShock6, InShock7, InShock8, InShock9, InShock10, InShock11, InShock12, InShock13, InShock14, InShock15, AskConfirmText;
     public GameObject[] WeaponShow;
 
     // Start is called before the first frame update
@@ -123,6 +123,7 @@ public class WeaponStoreController : MonoBehaviour
         {
             ClickFX.Play();
             BuyIndex = 1;
+            AskConfirmText.text = "Do you want buy this Amateurs Staff?";
             BuyAskPanel.SetActive(true);
         }
     }
@@ -133,6 +134,7 @@ public class WeaponStoreController : MonoBehaviour
         {
             ClickFX.Play();
             BuyIndex = 2;
+            AskConfirmText.text = "Do you want buy this Intermediate Staff?";
             BuyAskPanel.SetActive(true);
         }
     }
@@ -143,6 +145,7 @@ public class WeaponStoreController : MonoBehaviour
         {
             ClickFX.Play();
             BuyIndex = 3;
+            AskConfirmText.text = "Do you want buy this Master Staff?";
             BuyAskPanel.SetActive(true);
         }
     }
@@ -153,6 +156,7 @@ public class WeaponStoreController : MonoBehaviour
         {
             ClickFX.Play();
             BuyIndex = 4;
+            AskConfirmText.text = "Do you want buy this Amateurs Shoes?";
             BuyAskPanel.SetActive(true);
         }
     }
@@ -163,6 +167,7 @@ public class WeaponStoreController : MonoBehaviour
         {
             ClickFX.Play();
             BuyIndex = 5;
+            AskConfirmText.text = "Do you want buy this Intermediate Shoes?";
             BuyAskPanel.SetActive(true);
         }
     }
@@ -173,6 +178,7 @@ public class WeaponStoreController : MonoBehaviour
         {
             ClickFX.Play();
             BuyIndex = 6;
+            AskConfirmText.text = "Do you want buy this Master Shoes?";
             BuyAskPanel.SetActive(true);
         }
     }
@@ -183,6 +189,7 @@ public class WeaponStoreController : MonoBehaviour
         {
             ClickFX.Play();
             BuyIndex = 7;
+            AskConfirmText.text = "Do you want buy this Amateurs Crystal?";
             BuyAskPanel.SetActive(true);
         }
     }
@@ -193,6 +200,7 @@ public class WeaponStoreController : MonoBehaviour
         {
             ClickFX.Play();
             BuyIndex = 8;
+            AskConfirmText.text = "Do you want buy this Intermediate Crystal?";
             BuyAskPanel.SetActive(true);
         }
     }
@@ -203,6 +211,7 @@ public class WeaponStoreController : MonoBehaviour
         {
             ClickFX.Play();
             BuyIndex = 9;
+            AskConfirmText.text = "Do you want buy this Master Crystal?";
             BuyAskPanel.SetActive(true);
         }
     }
@@ -213,6 +222,7 @@ public class WeaponStoreController : MonoBehaviour
         {
             ClickFX.Play();
             BuyIndex = 10;
+            AskConfirmText.text = "Do you want buy this Amateurs Achelmist Armor?";
             BuyAskPanel.SetActive(true);
         }
     }
@@ -223,6 +233,7 @@ public class WeaponStoreController : MonoBehaviour
         {
             ClickFX.Play();
             BuyIndex = 11;
+            AskConfirmText.text = "Do you want buy this Intermediate Achelmist Armor?";
             BuyAskPanel.SetActive(true);
         }
     }
@@ -233,6 +244,7 @@ public class WeaponStoreController : MonoBehaviour
         {
             ClickFX.Play();
             BuyIndex = 12;
+            AskConfirmText.text = "Do you want buy this Master Achelmist Armor?";
             BuyAskPanel.SetActive(true);
         }
     }
@@ -243,6 +255,7 @@ public class WeaponStoreController : MonoBehaviour
         {
             ClickFX.Play();
             BuyIndex = 13;
+            AskConfirmText.text = "Do you want buy this Amateurs Warrior Armor?";
             BuyAskPanel.SetActive(true);
         }
     }
@@ -253,6 +266,7 @@ public class WeaponStoreController : MonoBehaviour
         {
             ClickFX.Play();
             BuyIndex = 14;
+            AskConfirmText.text = "Do you want buy this Intermediate Warrior Armor?";
             BuyAskPanel.SetActive(true);
         }
     }
@@ -263,6 +277,7 @@ public class WeaponStoreController : MonoBehaviour
         {
             ClickFX.Play();
             BuyIndex = 15;
+            AskConfirmText.text = "Do you want buy this Master Warrior Armor?";
             BuyAskPanel.SetActive(true);
         }
     }
