@@ -31,7 +31,7 @@ public class HubController : MonoBehaviour
     public int PlusPointIndex;
     public static bool BusyHub;
     public GameObject ShowVayneDetailPanel, ShowAliaDetailPanel, ShowMariaDetailPanel;
-    public GameObject DShowLevelP1, DShowAttackP1, DShowHPP1, DShowMPP1, DShowSpeedP1, DShowLevelP2, DShowAttackP2, DShowHPP2, DShowMPP2, DShowSpeedP2, DShowLevelP3, DShowAttackP3, DShowHPP3, DShowMPP3, DShowSpeedP3;
+    public GameObject DShowLevelP1, DShowEXPP1, DShowAttackP1, DShowHPP1, DShowMPP1, DShowSpeedP1, DShowLevelP2, DShowEXPP2, DShowAttackP2, DShowHPP2, DShowMPP2, DShowSpeedP2, DShowLevelP3, DShowEXPP3, DShowAttackP3, DShowHPP3, DShowMPP3, DShowSpeedP3;
     public GameObject PointPlusP1, AttackPointPlusLvP1, HPPointPlusLvP1, MPPointPlusLvP1, SpeedPointPlusLvP1, AttackPointPlusInfoP1, HPPointPlusInfoP1, MPPointPlusInfoP1, SpeedPointPlusInfoP1;
     public GameObject PointPlusP2, AttackPointPlusLvP2, HPPointPlusLvP2, MPPointPlusLvP2, SpeedPointPlusLvP2, AttackPointPlusInfoP2, HPPointPlusInfoP2, MPPointPlusInfoP2, SpeedPointPlusInfoP2;
     public GameObject PointPlusP3, AttackPointPlusLvP3, HPPointPlusLvP3, MPPointPlusLvP3, SpeedPointPlusLvP3, AttackPointPlusInfoP3, HPPointPlusInfoP3, MPPointPlusInfoP3, SpeedPointPlusInfoP3;
@@ -731,6 +731,7 @@ public class HubController : MonoBehaviour
     public void ShowP1Detail()
     {
         DShowLevelP1.GetComponent<Text>().text = "Level " + Global.LevelP1;
+        DShowEXPP1.GetComponent<Text>().text = "Exp: " + Global.CurEXPP1 + "/" + Global.MaxEXPP1;
         DShowAttackP1.GetComponent<Text>().text = "Attack: " + Global.DamageP1;
         DShowHPP1.GetComponent<Text>().text = "HP: " + Global.CurHPP1 + "/" + Global.MaxHPP1;
         DShowMPP1.GetComponent<Text>().text = "MP: " + Global.CurMPP1 + "/" + Global.MaxMPP1;
@@ -751,6 +752,7 @@ public class HubController : MonoBehaviour
     public void ShowP2Detail()
     {
         DShowLevelP2.GetComponent<Text>().text = "Level " + Global.LevelP2;
+        DShowEXPP2.GetComponent<Text>().text = "Exp: " + Global.CurEXPP2 + "/" + Global.MaxEXPP2;
         DShowAttackP2.GetComponent<Text>().text = "Attack: " + Global.DamageP2;
         DShowHPP2.GetComponent<Text>().text = "HP: " + Global.CurHPP2 + "/" + Global.MaxHPP2;
         DShowMPP2.GetComponent<Text>().text = "MP: " + Global.CurMPP2 + "/" + Global.MaxMPP2;
@@ -771,6 +773,7 @@ public class HubController : MonoBehaviour
     public void ShowP3Detail()
     {
         DShowLevelP3.GetComponent<Text>().text = "Level " + Global.LevelP3;
+        DShowEXPP3.GetComponent<Text>().text = "Exp: " + Global.CurEXPP3 + "/" + Global.MaxEXPP3;
         DShowAttackP3.GetComponent<Text>().text = "Attack: " + Global.DamageP3;
         DShowHPP3.GetComponent<Text>().text = "HP: " + Global.CurHPP3 + "/" + Global.MaxHPP3;
         DShowMPP3.GetComponent<Text>().text = "MP: " + Global.CurMPP3 + "/" + Global.MaxMPP3;

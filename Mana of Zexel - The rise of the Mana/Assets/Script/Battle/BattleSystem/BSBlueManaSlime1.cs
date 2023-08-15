@@ -74,6 +74,7 @@ public class BSBlueManaSlime1 : MonoBehaviour
     public Text EXPP2;
     public Text EXPP3;
     public Text Money;
+    public Text BlueManaSlimeBallItem;
     public Text LevelP1;
     public Text LevelP2;
     public Text LevelP3;
@@ -1074,6 +1075,7 @@ public class BSBlueManaSlime1 : MonoBehaviour
                 }
 
                 Money.text = Global.Zen + " ";
+                BlueManaSlimeBallItem.text = "Blue mana slime ball +1";
             }
 
             Invoke("delayCheckE9Die1", 1f);

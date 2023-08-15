@@ -4806,6 +4806,7 @@ GameObject:
   - component: {fileID: 255322709}
   - component: {fileID: 255322711}
   - component: {fileID: 255322710}
+  - component: {fileID: 255322712}
   m_Layer: 0
   m_Name: Blue mana slime battle 1
   m_TagString: Untagged
@@ -5018,6 +5019,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &255322712
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255322708}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d80cd6657e61e64184aa255b934c53f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &278075184
 GameObject:
   m_ObjectHideFlags: 0
@@ -5497,11 +5518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aad01fcc9070954397b64f85c3beee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  once: 0
-  IsReady: 0
   show1: {fileID: 1815647402}
   show2: {fileID: 1815647401}
-  VillagerDialog: {fileID: 0}
 --- !u!1 &509532861
 GameObject:
   m_ObjectHideFlags: 0
@@ -5626,7 +5644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f7af914c9f4f6439b73743c699a6da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpFX: {fileID: 0}
+  PickUpFX: {fileID: 1133030773}
   show1: {fileID: 1815647402}
   show2: {fileID: 1815647401}
 --- !u!1 &520981725
@@ -5752,7 +5770,7 @@ MonoBehaviour:
   CutTrigger5: {fileID: 883987139}
   ManaCoreIceZexel: {fileID: 300655754}
   ManaCoreIceVayne: {fileID: 1293109877}
-  VillagerMissing: {fileID: 0}
+  VillagerMissing: {fileID: 436548272}
 --- !u!1 &654062938
 GameObject:
   m_ObjectHideFlags: 0
@@ -6005,7 +6023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f7af914c9f4f6439b73743c699a6da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpFX: {fileID: 0}
+  PickUpFX: {fileID: 1133030773}
   show1: {fileID: 1815647402}
   show2: {fileID: 1815647401}
 --- !u!1 &705661149
@@ -6260,7 +6278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f7af914c9f4f6439b73743c699a6da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpFX: {fileID: 0}
+  PickUpFX: {fileID: 1133030773}
   show1: {fileID: 1815647402}
   show2: {fileID: 1815647401}
 --- !u!1 &763879111
@@ -61053,6 +61071,7 @@ GameObject:
   - component: {fileID: 830978913}
   - component: {fileID: 830978912}
   - component: {fileID: 830978911}
+  - component: {fileID: 830978914}
   m_Layer: 0
   m_Name: Blue mana slime battle 1
   m_TagString: Untagged
@@ -61265,6 +61284,26 @@ Transform:
   m_Father: {fileID: 434671644}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &830978914
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830978910}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d80cd6657e61e64184aa255b934c53f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &883987139
 GameObject:
   m_ObjectHideFlags: 0
@@ -61610,7 +61649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f7af914c9f4f6439b73743c699a6da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpFX: {fileID: 0}
+  PickUpFX: {fileID: 1133030773}
   show1: {fileID: 1815647402}
   show2: {fileID: 1815647401}
 --- !u!1 &1097901286
@@ -62580,6 +62619,7 @@ GameObject:
   - component: {fileID: 1236051724}
   - component: {fileID: 1236051726}
   - component: {fileID: 1236051725}
+  - component: {fileID: 1236051727}
   m_Layer: 0
   m_Name: Blue mana slime battle 1
   m_TagString: Untagged
@@ -62792,6 +62832,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1236051727
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236051723}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d80cd6657e61e64184aa255b934c53f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1293109877
 GameObject:
   m_ObjectHideFlags: 0
@@ -63154,7 +63214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f7af914c9f4f6439b73743c699a6da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpFX: {fileID: 0}
+  PickUpFX: {fileID: 1133030773}
   show1: {fileID: 1815647402}
   show2: {fileID: 1815647401}
 --- !u!1 &1407648207
@@ -63611,6 +63671,7 @@ GameObject:
   - component: {fileID: 1640022286}
   - component: {fileID: 1640022288}
   - component: {fileID: 1640022287}
+  - component: {fileID: 1640022289}
   m_Layer: 0
   m_Name: Blue mana slime battle 1
   m_TagString: Untagged
@@ -63823,6 +63884,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1640022289
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640022285}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d80cd6657e61e64184aa255b934c53f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1655879394
 GameObject:
   m_ObjectHideFlags: 0
@@ -64079,7 +64160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f7af914c9f4f6439b73743c699a6da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpFX: {fileID: 0}
+  PickUpFX: {fileID: 1133030773}
   show1: {fileID: 1815647402}
   show2: {fileID: 1815647401}
 --- !u!1 &1743557262
@@ -64935,7 +65016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f7af914c9f4f6439b73743c699a6da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpFX: {fileID: 0}
+  PickUpFX: {fileID: 1133030773}
   show1: {fileID: 1815647402}
   show2: {fileID: 1815647401}
 --- !u!1 &2146647178

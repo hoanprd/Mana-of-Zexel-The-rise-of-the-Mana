@@ -1429,13 +1429,13 @@ public class Player : MonoBehaviour
             if (CutscenesController.cus71 == 0 && CutscenesController.cus70 == 1)
             {
                 asilaqz = true;
-                show2.SetActive(false);
+                show2.SetActive(true);
                 show1.text = "Press Space to commit the quest";
             }
             else if (CutscenesController.cus77 == 0 && CutscenesController.cus76 == 1)
             {
                 asilaqz = false;
-                show2.SetActive(false);
+                show2.SetActive(true);
                 show1.text = "Press Space to commit the quest";
             }
         }

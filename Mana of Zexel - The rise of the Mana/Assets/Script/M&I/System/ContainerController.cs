@@ -370,6 +370,20 @@ public class ContainerController : MonoBehaviour
                 BlueManaCrystal += 1;
             }
         }
+        if (BlueManaSlimeBallPick == 1)
+        {
+            BlueManaSlimeBallPick = 0;
+
+            if (BlueManaSlimeBall <= 0)
+            {
+                BlueManaSlimeBall += 1;
+                Instantiate(BlueManaSlimeBallObject, MateBagList);
+            }
+            else
+            {
+                BlueManaSlimeBall += 1;
+            }
+        }
         if (NatureGrassPick == 1)
         {
             NatureGrassPick = 0;
