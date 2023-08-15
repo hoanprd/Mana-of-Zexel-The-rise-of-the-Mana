@@ -221,6 +221,7 @@ public class Cus57 : MonoBehaviour
         {
             CutscenesController.cus57 = 1;
             ContainerController.LoadingOpen = true;
+            ContainerController.ManaGenerator -= 1;
             SceneManager.LoadScene("Mana gate");
         }
 

@@ -1435,7 +1435,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         {
             HPHealingEffP1.SetActive(false);
             a1 -= 1;
-            Global.CurHPP1 += 50;
+            Global.CurHPP1 += Global.HPValue;
             if (Global.CurHPP1 > Global.MaxHPP1)
             {
                 Global.CurHPP1 = Global.MaxHPP1;
@@ -1446,7 +1446,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         {
             HPHealingEffP3.SetActive(false);
             a3 -= 1;
-            Global.CurHPP3 += 50;
+            Global.CurHPP3 += Global.HPValue;
             if (Global.CurHPP3 > Global.MaxHPP3)
             {
                 Global.CurHPP3 = Global.MaxHPP3;
@@ -1466,7 +1466,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         {
             MPHealingEffP1.SetActive(false);
             a1 -= 1;
-            Global.CurMPP1 += 30;
+            Global.CurMPP1 += Global.MPValue;
             if (Global.CurMPP1 > Global.MaxMPP1)
             {
                 Global.CurMPP1 = Global.MaxMPP1;
@@ -1477,7 +1477,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         {
             MPHealingEffP3.SetActive(false);
             a3 -= 1;
-            Global.CurMPP3 += 30;
+            Global.CurMPP3 += Global.MPValue;
             if (Global.CurMPP3 > Global.MaxMPP3)
             {
                 Global.CurMPP3 = Global.MaxMPP3;
@@ -1497,8 +1497,8 @@ public class BSInfernoBeast1 : MonoBehaviour
         {
             EPHealingEffP1.SetActive(false);
             a1 -= 1;
-            Global.CurHPP1 += 50;
-            Global.CurMPP1 += 30;
+            Global.CurHPP1 += Global.HPValue;
+            Global.CurMPP1 += Global.MPValue;
             if (Global.CurHPP1 > Global.MaxHPP1)
             {
                 Global.CurHPP1 = Global.MaxHPP1;
@@ -1513,8 +1513,8 @@ public class BSInfernoBeast1 : MonoBehaviour
         {
             EPHealingEffP3.SetActive(false);
             a3 -= 1;
-            Global.CurHPP3 += 50;
-            Global.CurMPP3 += 30;
+            Global.CurHPP3 += Global.HPValue;
+            Global.CurMPP3 += Global.MPValue;
             if (Global.CurHPP3 > Global.MaxHPP3)
             {
                 Global.CurHPP3 = Global.MaxHPP3;
@@ -1534,7 +1534,7 @@ public class BSInfernoBeast1 : MonoBehaviour
 
     void delayUseBom()
     {
-        Global.HPBE2 -= 200;
+        Global.HPBE2 -= Global.BomValue;
         BomEff.SetActive(false);
         if (UseItemIndex == 1)
         {
@@ -1557,7 +1557,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         {
             HPHealingEffP1.SetActive(false);
             a1 -= 1;
-            Global.CurHPP1 += 200;
+            Global.CurHPP1 += Global.HoliHPValue;
             if (Global.CurHPP1 > Global.MaxHPP1)
             {
                 Global.CurHPP1 = Global.MaxHPP1;
@@ -1568,7 +1568,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         {
             HPHealingEffP3.SetActive(false);
             a3 -= 1;
-            Global.CurHPP3 += 200;
+            Global.CurHPP3 += Global.HoliHPValue;
             if (Global.CurHPP3 > Global.MaxHPP3)
             {
                 Global.CurHPP3 = Global.MaxHPP3;
@@ -1588,7 +1588,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         {
             MPHealingEffP1.SetActive(false);
             a1 -= 1;
-            Global.CurMPP1 += 80;
+            Global.CurMPP1 += Global.HoliMPValue;
             if (Global.CurMPP1 > Global.MaxMPP1)
             {
                 Global.CurMPP1 = Global.MaxMPP1;
@@ -1599,7 +1599,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         {
             MPHealingEffP3.SetActive(false);
             a3 -= 1;
-            Global.CurMPP3 += 80;
+            Global.CurMPP3 += Global.HoliMPValue;
             if (Global.CurMPP3 > Global.MaxMPP3)
             {
                 Global.CurMPP3 = Global.MaxMPP3;
@@ -1615,7 +1615,7 @@ public class BSInfernoBeast1 : MonoBehaviour
 
     void delayUseUltraBom()
     {
-        Global.HPE10 -= 500;
+        Global.HPE10 -= Global.UltraBomValue;
         BomEff.SetActive(false);
         if (UseItemIndex == 1)
         {
@@ -1640,12 +1640,12 @@ public class BSInfernoBeast1 : MonoBehaviour
         pb.dead2 = 0;
         pb.dead3 = 0;
 
-        Global.CurHPP1 += 100;
-        Global.CurMPP1 += 50;
-        Global.CurHPP2 += 100;
-        Global.CurMPP2 += 50;
-        Global.CurHPP3 += 100;
-        Global.CurMPP3 += 50;
+        Global.CurHPP1 += Global.HoliHPValue;
+        Global.CurMPP1 += Global.HoliMPValue;
+        Global.CurHPP2 += Global.HoliHPValue;
+        Global.CurMPP2 += Global.HoliMPValue;
+        Global.CurHPP3 += Global.HoliHPValue;
+        Global.CurMPP3 += Global.HoliMPValue;
 
         if (Global.CurHPP1 > Global.MaxHPP1)
             Global.CurHPP1 = Global.MaxHPP1;

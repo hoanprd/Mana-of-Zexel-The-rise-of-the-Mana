@@ -1001,7 +1001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &222931111
 Animator:
   serializedVersion: 4
@@ -28209,7 +28209,6 @@ MonoBehaviour:
   IsReady: 0
   show1: {fileID: 1815647402}
   show2: {fileID: 1815647401}
-  VillagerDialog: {fileID: 0}
 --- !u!1 &672392490
 GameObject:
   m_ObjectHideFlags: 0
@@ -78630,7 +78629,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &850288992
 GameObject:
@@ -80055,7 +80054,7 @@ Transform:
   - {fileID: 772530678}
   - {fileID: 1759010016}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1179459352
 GameObject:
@@ -80103,7 +80102,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1204795228
 GameObject:
@@ -80123,7 +80122,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1204795229
 Animator:
   serializedVersion: 4
@@ -80386,64 +80385,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1965744171}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1309231386
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1309231388}
-  - component: {fileID: 1309231387}
-  m_Layer: 0
-  m_Name: MariaQuestZone
-  m_TagString: MQZ
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!61 &1309231387
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1309231386}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 1.3638127, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.7276254, y: 1}
-  m_EdgeRadius: 0
---- !u!4 &1309231388
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1309231386}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.85, y: -53.48, z: 3.9947174}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1347022560
 GameObject:
@@ -81028,7 +80969,6 @@ MonoBehaviour:
   IsReady: 0
   show1: {fileID: 1815647402}
   show2: {fileID: 1815647401}
-  VillagerDialog: {fileID: 0}
 --- !u!1 &1752969583
 GameObject:
   m_ObjectHideFlags: 0
@@ -81474,7 +81414,7 @@ Transform:
   - {fileID: 662957441}
   - {fileID: 1755717405}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1782469140
 GameObject:
@@ -81626,22 +81566,6 @@ PrefabInstance:
     - target: {fileID: 1455677027278786759, guid: 4d6b3f869355b4c4d847c798e74a19ad, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1455677027320047709, guid: 4d6b3f869355b4c4d847c798e74a19ad, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 679.172
-      objectReference: {fileID: 0}
-    - target: {fileID: 1455677027320047709, guid: 4d6b3f869355b4c4d847c798e74a19ad, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 150.0077
-      objectReference: {fileID: 0}
-    - target: {fileID: 1455677027320047709, guid: 4d6b3f869355b4c4d847c798e74a19ad, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 42
-      objectReference: {fileID: 0}
-    - target: {fileID: 1455677027320047709, guid: 4d6b3f869355b4c4d847c798e74a19ad, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 348.0625
       objectReference: {fileID: 0}
     - target: {fileID: 1455677027405645631, guid: 4d6b3f869355b4c4d847c798e74a19ad, type: 3}
       propertyPath: m_IsActive
@@ -81822,7 +81746,7 @@ Transform:
   - {fileID: 1204795232}
   - {fileID: 222931114}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1830438019
 MonoBehaviour:
@@ -81871,7 +81795,7 @@ Transform:
   - {fileID: 1503390383}
   - {fileID: 35217778}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1877139783
 MonoBehaviour:
@@ -82120,7 +82044,7 @@ Transform:
   - {fileID: 1037310269}
   - {fileID: 1739832177}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2026547984
 GameObject:
@@ -82154,7 +82078,7 @@ Transform:
   - {fileID: 491352771}
   - {fileID: 571143688}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2026820961
 GameObject:
@@ -82174,7 +82098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &2026820962
 Animator:
   serializedVersion: 4
@@ -82879,7 +82803,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4378421085706396170
 MonoBehaviour:
@@ -82969,7 +82893,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5385559138814604651
 Animator:
@@ -83015,7 +82939,9 @@ MonoBehaviour:
   show4: {fileID: 0}
   FadeOutPanel: {fileID: 2134592811}
   FadeInPanel: {fileID: 265122955}
+  HealDelay: 0
   FootStep: {fileID: 274626616}
+  TavernHeal: {fileID: 0}
 --- !u!1 &5385559138814604653
 GameObject:
   m_ObjectHideFlags: 0

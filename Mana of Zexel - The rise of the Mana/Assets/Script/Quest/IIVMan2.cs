@@ -6,45 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class IIVMan2 : MonoBehaviour
 {
-    public int once;
-    public bool IsReady;
-
     public Text show1;
-    public GameObject show2, VillagerDialog;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        once = 0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (IsReady)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                once = 1;
-                VillagerDialog.SetActive(true);
-                Invoke("delay1", 2f);
-            }
-        }
-    }
+    public GameObject show2;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            IsReady = true;
-            if (once == 0)
+            if (CutscenesController.cus119 == 0 && CutscenesController.cus118 == 1)
             {
                 show2.SetActive(true);
-                show1.text = "Press Space to talk with the villager";
+                show1.text = "He needs to find his lost wedding ring to get back to his wife";
             }
-            else
+            else if (CutscenesController.cus120 == 0 && CutscenesController.cus119 == 1)
             {
-                show2.SetActive(false);
+                show2.SetActive(true);
+                show1.text = "Time to return him to his wife this time";
             }
         }
     }
@@ -53,14 +30,7 @@ public class IIVMan2 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            IsReady = false;
             show2.SetActive(false);
         }
-    }
-
-    void delay1()
-    {
-        once = 0;
-        VillagerDialog.SetActive(false);
     }
 }

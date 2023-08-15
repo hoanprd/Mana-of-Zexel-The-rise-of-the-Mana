@@ -29,7 +29,7 @@ public class IceFangTrigger4 : MonoBehaviour
         if (battle)
         {
             ContainerController.LoadingOpen = true;
-            HPMPBarController.EIndex = 2;
+            HPMPBarController.EIndex = 8;
             despawn = true;
             SceneManager.LoadScene("BSIceFang 1");
         }

@@ -422,7 +422,7 @@ public class MenuController : MonoBehaviour
         SynthesizeSystem.ManaIceSynthesize = 100;
 
         StartCoroutine(DelayChangeCutscense());
-        //SceneManager.LoadScene("Wishing hill");
+        //SceneManager.LoadScene("Inferno ice");
     }
 
     public void PressLoadGame()

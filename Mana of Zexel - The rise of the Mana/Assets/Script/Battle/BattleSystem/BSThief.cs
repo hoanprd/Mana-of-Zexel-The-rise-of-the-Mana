@@ -530,7 +530,7 @@ public class BSThief : MonoBehaviour
                 StartCoroutine(CloseTutorial4());
             }
         }
-        Global.CurHPP1 += 50;
+        Global.CurHPP1 += Global.HPValue;
         ContainerController.HealPotion -= 1;
         if (Global.CurHPP1 > Global.MaxHPP1)
         {

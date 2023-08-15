@@ -10,7 +10,7 @@ public class IIVWoman : MonoBehaviour
     public bool IsReady;
 
     public Text show1;
-    public GameObject show2, VillagerDialog;
+    public GameObject show2;
 
     // Start is called before the first frame update
     void Start()
@@ -34,12 +34,11 @@ public class IIVWoman : MonoBehaviour
                 {
                     SceneManager.LoadScene("Cutscenes");
                 }
-                else if (CutscenesController.cus118 == 1 && CutscenesController.cus121 == 0)
+                /*else if (CutscenesController.cus118 == 1 && CutscenesController.cus121 == 0)
                 {
                     once = 1;
-                    VillagerDialog.SetActive(true);
                     Invoke("delay1", 2f);
-                }
+                }*/
             }
         }
     }
@@ -49,14 +48,42 @@ public class IIVWoman : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             IsReady = true;
-            if (once == 0)
+
+            if (once == 0 && CutscenesController.cus111 == 1 && CutscenesController.cus118 == 0)
             {
-                show2.SetActive(true);
-                show1.text = "Press Space to talk with the villager";
+                if (once == 0)
+                {
+                    show2.SetActive(true);
+                    show1.text = "Press Space to talk with the villager";
+                }
+                else
+                {
+                    show2.SetActive(false);
+                }
             }
-            else
+            else if (once == 0 && CutscenesController.cus120 == 1 && CutscenesController.cus121 == 0)
             {
-                show2.SetActive(false);
+                if (once == 0)
+                {
+                    show2.SetActive(true);
+                    show1.text = "Press Space to commit the quest";
+                }
+                else
+                {
+                    show2.SetActive(false);
+                }
+            }
+            else if (once == 0 && CutscenesController.cus128 == 1 && CutscenesController.cus120 == 0)
+            {
+                if (once == 0)
+                {
+                    show2.SetActive(true);
+                    show1.text = "Please help find my husband, the last time he was lost was in the ice cave";
+                }
+                else
+                {
+                    show2.SetActive(false);
+                }
             }
         }
     }
@@ -70,9 +97,9 @@ public class IIVWoman : MonoBehaviour
         }
     }
 
-    void delay1()
+    /*void delay1()
     {
         once = 0;
-        VillagerDialog.SetActive(false);
-    }
+        
+    }*/
 }

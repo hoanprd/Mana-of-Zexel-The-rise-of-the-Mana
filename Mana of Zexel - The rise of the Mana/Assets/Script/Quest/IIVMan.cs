@@ -10,7 +10,7 @@ public class IIVMan : MonoBehaviour
     public bool IsReady;
 
     public Text show1;
-    public GameObject show2, VillagerDialog;
+    public GameObject show2;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +37,6 @@ public class IIVMan : MonoBehaviour
                 else if (CutscenesController.cus117 == 0 && CutscenesController.cus116 == 1 && CutscenesTrigger.IceFangKill2 < 8)
                 {
                     once = 1;
-                    VillagerDialog.SetActive(true);
                     Invoke("delay1", 2f);
                 }
             }
@@ -49,14 +48,30 @@ public class IIVMan : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             IsReady = true;
-            if (once == 0)
+
+            if (once == 0 && CutscenesController.cus111 == 1 && CutscenesController.cus116 == 0)
             {
-                show2.SetActive(true);
-                show1.text = "Press Space to talk with the villager";
+                if (once == 0)
+                {
+                    show2.SetActive(true);
+                    show1.text = "Press Space to talk with the villager";
+                }
+                else
+                {
+                    show2.SetActive(false);
+                }
             }
-            else
+            else if (once == 0 && CutscenesController.cus116 == 1 && CutscenesController.cus117 == 0)
             {
-                show2.SetActive(false);
+                if (once == 0)
+                {
+                    show2.SetActive(true);
+                    show1.text = "Press Space to commit the quest";
+                }
+                else
+                {
+                    show2.SetActive(false);
+                }
             }
         }
     }
@@ -73,6 +88,7 @@ public class IIVMan : MonoBehaviour
     void delay1()
     {
         once = 0;
-        VillagerDialog.SetActive(false);
+        show2.SetActive(true);
+        show1.text = "You need to beat " + CutscenesTrigger.IceFangKill2 + "/8 ice fang";
     }
 }

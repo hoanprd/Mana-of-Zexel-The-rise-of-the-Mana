@@ -10,6 +10,9 @@ public class Global : MonoBehaviour
     public static int LevelP3, MaxEXPP3, CurEXPP3, MaxHPP3, MaxMPP3, DamageP3, SpeedP3, CurHPP3, CurMPP3;
     public static int Zen;
 
+    //Item stat
+    public static int HPValue, MPValue, BomValue, HoliHPValue, HoliMPValue, UltraBomValue;
+
     //Bonus
     public static int PlusPointP1, PlusPointP2, PlusPointP3;
     public static int PlusPointAttackLvP1, PlusPointHPLvP1, PlusPointMPLvP1, PlusPointSpeedLvP1, PlusPointAttackInfoP1, PlusPointHPInfoP1, PlusPointMPInfoP1, PlusPointSpeedInfoP1;
@@ -60,6 +63,13 @@ public class Global : MonoBehaviour
         ExpBE2 = 200;
         ExpBE3 = 200;
         ExpBE4 = 240;
+
+        HPValue = 50;
+        MPValue = 30;
+        BomValue = 400;
+        HoliHPValue = 200;
+        HoliMPValue = 80;
+        UltraBomValue = 1000;
 
         if (GameSettingController.GameDiff == 0)
         {

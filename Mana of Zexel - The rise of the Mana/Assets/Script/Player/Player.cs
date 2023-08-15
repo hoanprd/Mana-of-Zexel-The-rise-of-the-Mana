@@ -164,19 +164,21 @@ public class Player : MonoBehaviour
         }
         if (alasaqz && Input.GetKeyDown(KeyCode.Space))
         {
-            if (CutscenesController.cus67 == 0 && CutscenesController.cus66 == 1 && CutscenesTrigger.IceFangKill >= 4)
+            if (CutscenesController.cus67 == 0 && CutscenesController.cus66 == 1)
             {
-                FadeInPanel.SetActive(true);
-                StartCoroutine(DelayChangeCutscense());
+                if (CutscenesTrigger.IceFangKill >= 4)
+                {
+                    FadeInPanel.SetActive(true);
+                    StartCoroutine(DelayChangeCutscense());
+                }
+                else if (CutscenesTrigger.IceFangKill < 4)
+                {
+                    show2.SetActive(true);
+                    show1.text = "The number of ice fangs is still not enough. Remain: " + CutscenesTrigger.IceFangKill;
+                    Invoke("delay1", 2f);
+                }
             }
-            else if (CutscenesController.cus67 == 0 && CutscenesController.cus66 == 1 && CutscenesTrigger.IceFangKill < 4)
-            {
-                show2.SetActive(true);
-                show1.text = "The number of ice fangs is still not enough. Remain: " + CutscenesTrigger.IceFangKill;
-                Invoke("delay1", 2f);
-            }
-
-            if (CutscenesController.cus70 == 0 && CutscenesController.cus69 == 1)
+            else if (CutscenesController.cus70 == 0 && CutscenesController.cus69 == 1)
             {
                 FadeInPanel.SetActive(true);
                 StartCoroutine(DelayChangeCutscense());
@@ -1412,13 +1414,13 @@ public class Player : MonoBehaviour
             if (CutscenesController.cus67 == 0 && CutscenesController.cus66 == 1)
             {
                 alasaqz = true;
-                show2.SetActive(false);
+                show2.SetActive(true);
                 show1.text = "Press Space to commit the quest";
             }
             else if (CutscenesController.cus70 == 0 && CutscenesController.cus69 == 1)
             {
                 alasaqz = true;
-                show2.SetActive(false);
+                show2.SetActive(true);
                 show1.text = "Press Space to commit the quest";
             }
         }
