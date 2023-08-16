@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class WeaponStoreController : MonoBehaviour
 {
-    public GameObject WeaponStorePanel, BuyAskPanel;
-    public Text MessageText;
+    public GameObject WeaponStorePanel, BuyAskPanel, show2;
+    public Text MessageText, show1;
     public AudioSource BuyFX, ClickFX;
     public int BuyIndex;
     public bool IsActived = false, stop = false;
@@ -110,11 +110,15 @@ public class WeaponStoreController : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         IsActived = true;
+        show2.SetActive(true);
+        show1.text = "Press Space to buy";
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
         IsActived = false;
+        show2.SetActive(false);
+        show1.text = "";
     }
 
     public void BuyVayneStaff1()

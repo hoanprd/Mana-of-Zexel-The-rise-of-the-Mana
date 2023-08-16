@@ -157,13 +157,13 @@ public class Cus73 : MonoBehaviour
             }
             else if (tang == 21)
             {
+                VayneVAL1.SetActive(false);
+                MariaVAR1.SetActive(false);
                 NameTagText.text = "Vayne";
                 dia.text = "Hyaaaaaaaaaaaaaaaaaaa...";
             }
             else if (tang == 22)
             {
-                VayneVAL1.SetActive(false);
-                MariaVAR1.SetActive(false);
                 NameTagText.text = "";
                 dia.text = "Chenggggggggggggggg...";
             }
@@ -391,13 +391,13 @@ public class Cus73 : MonoBehaviour
             }
             else if (tang == 21)
             {
+                VayneVAL1.SetActive(false);
+                MariaVAR1.SetActive(false);
                 NameTagText.text = "Vayne";
                 dia.text = "Hyaaaaaaaaaaaaaaaaaaa...";
             }
             else if (tang == 22)
             {
-                VayneVAL1.SetActive(false);
-                MariaVAR1.SetActive(false);
                 NameTagText.text = "";
                 dia.text = "Chenggggggggggggggg...";
             }

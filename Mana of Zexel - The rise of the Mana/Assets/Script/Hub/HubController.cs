@@ -549,7 +549,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus73 == 0)
             QT.text = "Go deep inside the cave of the inferno volcano";
         else if (CutscenesController.cus74 == 0)
-            QT.text = "Let's return to the pub of Zexel town to find a solution to the eruption of the volcano";
+            QT.text = "Let's return to the tavern of Zexel town to find a solution to the eruption of the volcano";
         else if (CutscenesController.cus75 == 0)
             QT.text = "Let's synthesize a copy of Zexel's fire energy core";
         else if (CutscenesController.cus76 == 0)

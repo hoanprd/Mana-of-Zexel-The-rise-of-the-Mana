@@ -691,7 +691,7 @@ public class BSManaDragon1 : MonoBehaviour
             }
 
             showr2.SetActive(true);
-            showr1.text = "HP +50";
+            showr1.text = "HP +" + Global.HPValue;
             ContainerController.HealPotion -= 1;
             Invoke("delayUseHP", 2f);
         }
@@ -718,7 +718,7 @@ public class BSManaDragon1 : MonoBehaviour
             }
 
             showr2.SetActive(true);
-            showr1.text = "MP +30";
+            showr1.text = "MP +" + Global.MPValue;
             ContainerController.ManaPotion -= 1;
             Invoke("delayUseMP", 2f);
         }
@@ -746,7 +746,7 @@ public class BSManaDragon1 : MonoBehaviour
 
             ContainerController.ElixirPotion -= 1;
             showr2.SetActive(true);
-            showr1.text = "MP +50 MP +30";
+            showr1.text = "HP +" + Global.HPValue + "MP +" + Global.MPValue;
             Invoke("delayUseEP", 2f);
         }
         else
@@ -764,7 +764,7 @@ public class BSManaDragon1 : MonoBehaviour
             BomEff.SetActive(true);
             ContainerController.Bom -= 1;
             PDamage.color = Color.red;
-            PDamage.text = "-200";
+            PDamage.text = "-" + Global.BomValue;
             Invoke("delayUseBom", 2f);
         }
         else
@@ -791,7 +791,7 @@ public class BSManaDragon1 : MonoBehaviour
             }
 
             showr2.SetActive(true);
-            showr1.text = "HP +200";
+            showr1.text = "HP +" + Global.HoliHPValue;
             ContainerController.HoliHP -= 1;
             Invoke("delayUseHoliHP", 2f);
         }
@@ -819,7 +819,7 @@ public class BSManaDragon1 : MonoBehaviour
             }
 
             showr2.SetActive(true);
-            showr1.text = "MP +80";
+            showr1.text = "MP +" + Global.HoliMPValue;
             ContainerController.HoliMP -= 1;
             Invoke("delayUseHoliMP", 2f);
         }
@@ -839,7 +839,7 @@ public class BSManaDragon1 : MonoBehaviour
             BomEff.SetActive(true);
             ContainerController.UltraBom -= 1;
             PDamage.color = Color.red;
-            PDamage.text = "-500";
+            PDamage.text = "-" + Global.UltraBomValue;
             Invoke("delayUseUltraBom", 2f);
         }
         else

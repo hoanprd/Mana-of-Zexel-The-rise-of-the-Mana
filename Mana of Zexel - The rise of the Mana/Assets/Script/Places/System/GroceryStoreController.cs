@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class GroceryStoreController : MonoBehaviour
 {
-    public GameObject GroceryStorePanel, BuyAskPanel;
-    public Text MessageText, AskConfirmText;
+    public GameObject GroceryStorePanel, BuyAskPanel, show2;
+    public Text MessageText, AskConfirmText, show1;
     public AudioSource BuyFX, ClickFX;
     public int BuyIndex;
     public bool IsActived = false, stop = false;
@@ -61,11 +61,15 @@ public class GroceryStoreController : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         IsActived = true;
+        show2.SetActive(true);
+        show1.text = "Press Space to buy";
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
         IsActived = false;
+        show2.SetActive(false);
+        show1.text = "";
     }
 
     public void CloseGroceryPanel()

@@ -251,7 +251,7 @@ public class BSThief : MonoBehaviour
             HPHealingEffP1.SetActive(true);
             Item_panel.SetActive(false);
             showr2.SetActive(true);
-            showr1.text = "HP +50";
+            showr1.text = "HP +" + Global.HPValue;
             Invoke("delayshowr", 2f);
         }
         else
