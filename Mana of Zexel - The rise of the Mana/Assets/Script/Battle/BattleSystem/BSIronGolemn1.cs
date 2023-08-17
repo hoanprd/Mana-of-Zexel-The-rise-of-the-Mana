@@ -151,7 +151,7 @@ public class BSIronGolemn1 : MonoBehaviour
             P3Available = true;
         }
 
-        if (CutscenesController.cus88 == 1 && CutscenesController.cus98 == 0)
+        if (CutscenesController.cus93 == 1 && CutscenesController.cus103 == 0)
         {
             AliaStatus.SetActive(false);
             AliaBar.SetActive(false);
@@ -198,18 +198,6 @@ public class BSIronGolemn1 : MonoBehaviour
             else
                 ShowP2Panel(false);
         }
-        else if (a1 > 0 && Global.CurHPP1 > 0 && GameOver == false)
-        {
-            CheckBE4Die();
-            CheckP1Die();
-            CheckP2Die();
-            CheckP1P2P3Die();
-            UseItemIndex = 1;
-            if (show1 == 0)
-                ShowP1Panel(true);
-            else
-                ShowP1Panel(false);
-        }
         else if (aBE4 > 0 && Global.HPBE4 > 0 && GameOver == false)
         {
             CheckBE4Die();
@@ -226,13 +214,25 @@ public class BSIronGolemn1 : MonoBehaviour
                     EDamage.text = "-" + Global.DamageBE4;
                 else
                     EDamage.text = "-" + DamgeCal;
-                Invoke("delayBE4", 1f);
-                Invoke("delayBE4attack2", 2f);
-                Invoke("delayBE4attack3", 4f);
+                Invoke("delayBE4", 2f);
+                Invoke("delayBE4attack2", 4f);
+                Invoke("delayBE4attack3", 6f);
             }
             CheckP1Die();
             CheckP2Die();
             CheckP1P2P3Die();
+        }
+        else if (a1 > 0 && Global.CurHPP1 > 0 && GameOver == false)
+        {
+            CheckBE4Die();
+            CheckP1Die();
+            CheckP2Die();
+            CheckP1P2P3Die();
+            UseItemIndex = 1;
+            if (show1 == 0)
+                ShowP1Panel(true);
+            else
+                ShowP1Panel(false);
         }
         else if (a3 > 0 && Global.CurHPP3 > 0 && P3Available == true && GameOver == false)
         {
@@ -406,7 +406,7 @@ public class BSIronGolemn1 : MonoBehaviour
         show1 = 1;
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP1;
-        Invoke("delayP1PressAttack", 1f);
+        Invoke("delayP1PressAttack", 2f);
         dem = 3;
     }
     public void PressAttackP2()
@@ -416,7 +416,7 @@ public class BSIronGolemn1 : MonoBehaviour
         show2 = 1;
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP2;
-        Invoke("delayP2PressAttack", 1f);
+        Invoke("delayP2PressAttack", 2f);
         dem = 3;
     }
     public void PressAttackP3()
@@ -427,7 +427,7 @@ public class BSIronGolemn1 : MonoBehaviour
         show3 = 1;
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP3;
-        Invoke("delayP3PressAttack", 1f);
+        Invoke("delayP3PressAttack", 2f);
         dem = 3;
     }
 
@@ -451,7 +451,7 @@ public class BSIronGolemn1 : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 100 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
+            Invoke("delayP1PressSkill", 2f);
             dem = 3;
         }
         else
@@ -476,7 +476,7 @@ public class BSIronGolemn1 : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 200 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
+            Invoke("delayP1PressSkill", 2f);
             dem = 3;
         }
         else
@@ -501,7 +501,7 @@ public class BSIronGolemn1 : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 300 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
+            Invoke("delayP1PressSkill", 2f);
             dem = 3;
         }
         else
@@ -620,7 +620,7 @@ public class BSIronGolemn1 : MonoBehaviour
             showr2.SetActive(true);
             showr1.text = "HP +" + HealAmount;
             Invoke("delayshowr", 2f);
-            Invoke("delayP3PressSkill", 1f);
+            Invoke("delayP3PressSkill", 2f);
             dem = 3;
         }
         else
@@ -644,7 +644,7 @@ public class BSIronGolemn1 : MonoBehaviour
             showr2.SetActive(true);
             showr1.text = "MP +" + HealAmount;
             Invoke("delayshowr", 2f);
-            Invoke("delayP3PressSkill", 1f);
+            Invoke("delayP3PressSkill", 2f);
             dem = 3;
         }
         else
@@ -668,7 +668,7 @@ public class BSIronGolemn1 : MonoBehaviour
             int DamgeCal = Global.DamageP3 + (Global.DamageP3 * 300 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP3PressSkill", 1f);
+            Invoke("delayP3PressSkill", 2f);
             dem = 3;
         }
         else

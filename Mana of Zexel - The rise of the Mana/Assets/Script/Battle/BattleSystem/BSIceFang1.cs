@@ -154,7 +154,7 @@ public class BSIceFang1 : MonoBehaviour
             P3Available = true;
         }
 
-        if (CutscenesController.cus88 == 1 && CutscenesController.cus98 == 0)
+        if (CutscenesController.cus93 == 1 && CutscenesController.cus103 == 0)
         {
             AliaStatus.SetActive(false);
             AliaBar.SetActive(false);

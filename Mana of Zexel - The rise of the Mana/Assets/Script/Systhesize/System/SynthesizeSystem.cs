@@ -1334,7 +1334,7 @@ public class SynthesizeSystem : MonoBehaviour
             SynthesizeFX.Play();
             ManaSynthesize -= 60;
             ContainerController.PurifyingWater -= 1;
-            ContainerController.Photonria -= 2;
+            ContainerController.PhotonriaGem -= 2;
             ContainerController.ManaLiquidCatalyst -= 2;
             ContainerController.PurifyingPotionPick = 1;
             showr2.SetActive(true);
