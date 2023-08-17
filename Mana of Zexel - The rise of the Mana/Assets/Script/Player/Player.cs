@@ -436,6 +436,11 @@ public class Player : MonoBehaviour
                 FadeInPanel.SetActive(true);
                 StartCoroutine(DelayChangeCutscense());
             }
+            else if (CutscenesController.cus74 == 0 && CutscenesController.cus73 == 1)
+            {
+                FadeInPanel.SetActive(true);
+                StartCoroutine(DelayChangeCutscense());
+            }
             else if (CutscenesController.cus80 == 0 && CutscenesController.cus79 == 1)
             {
                 FadeInPanel.SetActive(true);
@@ -1405,7 +1410,7 @@ public class Player : MonoBehaviour
             if (CutscenesController.cus82 == 0 && CutscenesController.cus81 == 1)
             {
                 mwqz = true;
-                show2.SetActive(false);
+                show2.SetActive(true);
                 show1.text = "Press Space to commit the quest";
             }
         }

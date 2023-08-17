@@ -17,7 +17,7 @@ public class CutWishingForest : MonoBehaviour
         {
             CutTrigger3.SetActive(false);
         }
-        if (CutscenesController.cus13 == 0)
+        if (CutscenesController.cus81 == 0)
         {
             CutTrigger4.SetActive(false);
         }
@@ -30,7 +30,7 @@ public class CutWishingForest : MonoBehaviour
         {
             Destroy(CutTrigger2);
         }
-        if (CutscenesController.cus15 == 1)
+        if (CutscenesController.cus81 == 1)
         {
             Destroy(CutTrigger3);
         }

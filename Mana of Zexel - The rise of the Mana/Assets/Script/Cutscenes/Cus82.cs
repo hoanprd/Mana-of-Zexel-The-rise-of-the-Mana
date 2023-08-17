@@ -72,7 +72,7 @@ public class Cus82 : MonoBehaviour
             }
             else if (tang == 8)
             {
-                ManaWaterVAL1.SetActive(true);
+                ManaWaterVAL1.SetActive(false);
                 MariaVAL1.SetActive(true);
                 NameTagText.text = "Maria";
                 dia.text = "Looks like the first problem is solved already?";
@@ -130,6 +130,7 @@ public class Cus82 : MonoBehaviour
             {
                 CutscenesController.cus82 = 1;
                 ContainerController.LoadingOpen = true;
+                ContainerController.PurifyingWaterPick = 1;
                 SceneManager.LoadScene("Wishing forest");
             }
         }
@@ -179,7 +180,7 @@ public class Cus82 : MonoBehaviour
             }
             else if (tang == 8)
             {
-                ManaWaterVAL1.SetActive(true);
+                ManaWaterVAL1.SetActive(false);
                 MariaVAL1.SetActive(true);
                 NameTagText.text = "Maria";
                 dia.text = "Có vẻ vấn đề đầu tiên đã được giải quyết rồi nhỉ?";
@@ -237,6 +238,7 @@ public class Cus82 : MonoBehaviour
             {
                 CutscenesController.cus82 = 1;
                 ContainerController.LoadingOpen = true;
+                ContainerController.PurifyingWaterPick = 1;
                 SceneManager.LoadScene("Wishing forest");
             }
         }
@@ -254,6 +256,7 @@ public class Cus82 : MonoBehaviour
         cc.FXCutscenes(1);
         CutscenesController.cus82 = 1;
         ContainerController.LoadingOpen = true;
+        ContainerController.PurifyingWaterPick = 1;
         SceneManager.LoadScene("Wishing forest");
     }
 

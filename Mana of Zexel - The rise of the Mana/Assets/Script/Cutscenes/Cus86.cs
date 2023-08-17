@@ -108,6 +108,7 @@ public class Cus86 : MonoBehaviour
             {
                 CutscenesController.cus86 = 1;
                 ContainerController.LoadingOpen = true;
+                ContainerController.ManaCoreIceZexelPick = 1;
                 SceneManager.LoadScene("InsideIceCave");
             }
         }
@@ -193,6 +194,7 @@ public class Cus86 : MonoBehaviour
             {
                 CutscenesController.cus86 = 1;
                 ContainerController.LoadingOpen = true;
+                ContainerController.ManaCoreIceZexelPick = 1;
                 SceneManager.LoadScene("InsideIceCave");
             }
         }
@@ -210,6 +212,7 @@ public class Cus86 : MonoBehaviour
         cc.FXCutscenes(1);
         CutscenesController.cus86 = 1;
         ContainerController.LoadingOpen = true;
+        ContainerController.ManaCoreIceZexelPick = 1;
         SceneManager.LoadScene("InsideIceCave");
     }
 

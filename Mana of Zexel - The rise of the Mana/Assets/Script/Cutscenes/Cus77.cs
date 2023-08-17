@@ -55,7 +55,7 @@ public class Cus77 : MonoBehaviour
             {
                 NameTagText.text = "Asila";
                 dia.fontSize = 28;
-                dia.text = "That's right! We thought that when the whole village combined the territory like my parents did before, it would be difficult to manage, so I thought it would be best to split it up. At that time, we also exported goods from both sides to other villages. However, since I am the only one in charge of the export items, as my brother's duty, I don't want my brother to do as much work as I do. But Alasa disagrees.";
+                dia.text = "That's right! We thought that when the whole village combined the territory like my parents did before, it would be difficult to manage, I thought it would be best to split. At that time, we also exported goods from both sides to other villages. Since I am the only one in charge of the export items, I don't want my brother to do as much work as I do and Alasa disagrees.";
             }
             else if (tang == 6)
             {
@@ -95,7 +95,7 @@ public class Cus77 : MonoBehaviour
             else if (tang == 12)
             {
                 NameTagText.text = "Asila";
-                dia.text = "My brother's distrust makes me very regretful about dividing the two villages like this. I wish my brother could understand and forgive me. Because of that, Alasa's export goods were also banned, and to avoid outside knowing about the conflict between the two villages, I cut off contact with the outside so that others wouldn't take advantage of the conflict between the two villages.";
+                dia.text = "My brother's distrust makes me very regretful about dividing the two villages like this. I wish my brother could understand me. Because of that, Alasa's export goods were also banned, and to avoid outside knowing about the conflict between the two villages, I cut off contact with the outside so that others wouldn't take advantage of the conflict between the two villages.";
             }
             else if (tang == 13)
             {
@@ -209,6 +209,7 @@ public class Cus77 : MonoBehaviour
             {
                 CutscenesController.cus77 = 1;
                 ContainerController.LoadingOpen = true;
+                MapController.AltaInfernoToInfernoVolcano = true;
                 SceneManager.LoadScene("Inferno volcano");
             }
         }
@@ -229,7 +230,7 @@ public class Cus77 : MonoBehaviour
             else if (tang == 3)
             {
                 NameTagText.text = "Asila";
-                dia.text = "Alasa và ta đã từng hòa thuận với nhau, lúc trở thành trưởng làng thì em trai ta và ta đều muốn chia cắt vùng đất ở độc lập chỉ được trao đổi kinh tế với hàng hóa thôi. Các công việc cũng như hàng hóa của hai bên đều được trao đổi hàng ngày. Ở đây bọn ta cung cấp khoáng sản và quặng cho các công cụ sử dụng năng lượng nhiệt. Còn Alasa sẽ cung cấp các sản phẩm lạnh như băng và đồ may mặc.";
+                dia.text = "Alasa và ta đã từng hòa thuận với nhau, lúc trở thành trưởng làng thì em trai ta và ta đều muốn chia cắt vùng đất ở độc lập chỉ được trao đổi kinh tế với hàng hóa. Các công việc cũng như hàng hóa của hai bên đều được trao đổi hàng ngày. Ở đây bọn ta cung cấp khoáng sản và quặng cho các công cụ sử dụng năng lượng nhiệt. Còn Alasa sẽ cung cấp các sản phẩm lạnh như băng và đồ mặc.";
             }
             else if (tang == 4)
             {
@@ -241,7 +242,7 @@ public class Cus77 : MonoBehaviour
             {
                 NameTagText.text = "Asila";
                 dia.fontSize = 28;
-                dia.text = "Đúng thế! Chúng ta nghĩ rằng khi cả ngôi làng gộp chung lãnh thổ như ba mẹ ta làm trước đó sẽ khó quản lý nên ta nghĩ việc chia ra là tốt nhất. Lúc ấy bọn ta cũng có xuất khẩu các mặt hàng của hai bên cho các ngôi làng khác. Tuy nhiên vì ta lại là người duy nhất quản lý các mặt hàng xuất khẩu vì với bổn phận là anh trai ta không muốn em trai phải làm nhiều việc như ta. Nhưng Alasa lại không đồng ý.";
+                dia.text = "Đúng thế! Chúng ta nghĩ rằng khi cả ngôi làng gộp chung lãnh thổ như ba mẹ ta làm trước đó sẽ khó quản lý nên ta nghĩ việc chia ra là tốt nhất. Lúc ấy bọn ta cũng có xuất khẩu các mặt hàng của hai bên cho các ngôi làng khác. Tuy nhiên vì ta lại là người duy nhất quản lý các mặt hàng xuất khẩu. Ta không muốn em trai phải làm nhiều việc như ta và Alasa lại không đồng ý.";
             }
             else if (tang == 6)
             {
@@ -395,6 +396,7 @@ public class Cus77 : MonoBehaviour
             {
                 CutscenesController.cus77 = 1;
                 ContainerController.LoadingOpen = true;
+                MapController.AltaInfernoToInfernoVolcano = true;
                 SceneManager.LoadScene("Inferno volcano");
             }
         }
@@ -412,6 +414,7 @@ public class Cus77 : MonoBehaviour
         cc.FXCutscenes(1);
         CutscenesController.cus77 = 1;
         ContainerController.LoadingOpen = true;
+        MapController.AltaInfernoToInfernoVolcano = true;
         SceneManager.LoadScene("Inferno volcano");
     }
 

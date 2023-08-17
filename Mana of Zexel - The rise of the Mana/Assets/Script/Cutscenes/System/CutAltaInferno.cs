@@ -21,7 +21,7 @@ public class CutAltaInferno : MonoBehaviour
         }
 
 
-        if (CutscenesController.cus79 == 1)
+        if (CutscenesController.cus84 == 1)
         {
             Destroy(CutTrigger1);
         }

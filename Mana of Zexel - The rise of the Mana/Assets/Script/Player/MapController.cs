@@ -255,8 +255,8 @@ public class MapController : MonoBehaviour
         }
         else if (InfernoIceToAltaInferno == true)
         {
-            PlayerPrefs.SetFloat("x", -15);
-            PlayerPrefs.SetFloat("y", -22);
+            PlayerPrefs.SetFloat("x", -22);
+            PlayerPrefs.SetFloat("y", -21);
             PlayerPrefs.SetFloat("z", 0);
             InfernoIceToAltaInferno = false;
         }

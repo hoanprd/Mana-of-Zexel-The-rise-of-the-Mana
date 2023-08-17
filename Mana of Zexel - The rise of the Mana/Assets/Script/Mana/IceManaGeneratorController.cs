@@ -8,7 +8,7 @@ public class IceManaGeneratorController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (CutscenesController.cus86 == 0)
+        if (CutscenesController.cus90 == 0)
         {
             Destroy(gameObject);
         }

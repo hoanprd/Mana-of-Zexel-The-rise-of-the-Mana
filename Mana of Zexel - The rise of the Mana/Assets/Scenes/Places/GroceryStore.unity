@@ -2048,6 +2048,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d6b3f869355b4c4d847c798e74a19ad, type: 3}
+--- !u!114 &501358386 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1455677027320047706, guid: 4d6b3f869355b4c4d847c798e74a19ad, type: 3}
+  m_PrefabInstance: {fileID: 501358385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501358387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &501358387 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1455677027320047708, guid: 4d6b3f869355b4c4d847c798e74a19ad, type: 3}
+  m_PrefabInstance: {fileID: 501358385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &544078697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2493,8 +2509,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GroceryStorePanel: {fileID: 1071694633}
   BuyAskPanel: {fileID: 325156266}
+  show2: {fileID: 501358387}
   MessageText: {fileID: 559165501}
   AskConfirmText: {fileID: 552697387}
+  show1: {fileID: 501358386}
   BuyFX: {fileID: 850137975}
   ClickFX: {fileID: 1736531318}
   BuyIndex: 0

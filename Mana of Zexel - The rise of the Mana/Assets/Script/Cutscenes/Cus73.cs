@@ -257,6 +257,7 @@ public class Cus73 : MonoBehaviour
                 ContainerController.LoadingOpen = true;
                 ContainerController.IceCrystal -= 1;
                 ContainerController.FireOfPeace -= 1;
+                ContainerController.ManaCoreFireZexelPick = 1;
                 SceneManager.LoadScene("InsideVolcanoCave");
             }
         }
@@ -491,6 +492,7 @@ public class Cus73 : MonoBehaviour
                 ContainerController.LoadingOpen = true;
                 ContainerController.IceCrystal -= 1;
                 ContainerController.FireOfPeace -= 1;
+                ContainerController.ManaCoreFireZexelPick = 1;
                 SceneManager.LoadScene("InsideVolcanoCave");
             }
         }
@@ -546,6 +548,7 @@ public class Cus73 : MonoBehaviour
         ContainerController.LoadingOpen = true;
         ContainerController.IceCrystal -= 1;
         ContainerController.FireOfPeace -= 1;
+        ContainerController.ManaCoreFireZexelPick = 1;
         SceneManager.LoadScene("InsideVolcanoCave");
     }
 

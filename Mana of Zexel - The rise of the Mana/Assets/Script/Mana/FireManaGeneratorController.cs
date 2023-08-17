@@ -8,7 +8,7 @@ public class FireManaGeneratorController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (CutscenesController.cus85 == 0)
+        if (CutscenesController.cus89 == 0)
         {
             Destroy(gameObject);
         }

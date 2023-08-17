@@ -161,13 +161,13 @@ public class Global : MonoBehaviour
 
             if (CutscenesController.cus110 == 1 && CutscenesController.cus111 == 0)
             {
-                HPBE2 = 8000;
+                HPBE2 = 10000;
                 DamageBE2 = 220;
                 SpeedBE2 = 30;
             }
             else
             {
-                HPBE2 = 6000;
+                HPBE2 = 8000;
                 DamageBE2 = 200;
                 SpeedBE2 = 30;
             }
@@ -278,13 +278,13 @@ public class Global : MonoBehaviour
 
             if (CutscenesController.cus110 == 1 && CutscenesController.cus111 == 0)
             {
-                HPBE2 = 10000;
+                HPBE2 = 12000;
                 DamageBE2 = 320;
                 SpeedBE2 = 30;
             }
             else
             {
-                HPBE2 = 8000;
+                HPBE2 = 10000;
                 DamageBE2 = 300;
                 SpeedBE2 = 30;
             }

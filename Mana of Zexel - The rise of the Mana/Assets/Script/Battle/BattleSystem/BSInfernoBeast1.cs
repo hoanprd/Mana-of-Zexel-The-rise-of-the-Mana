@@ -122,7 +122,6 @@ public class BSInfernoBeast1 : MonoBehaviour
 
         BE2Hit = 0;
 
-        HPMPBarController.EIndex = 11;
         BreakDamageIndex = 0;
         BossSkillCharge = 0;
 
@@ -346,7 +345,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         show1 = 1;
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP1;
-        Invoke("delayP1PressAttack", 1f);
+        Invoke("delayP1PressAttack", 2f);
         dem = 3;
     }
     public void PressAttackP2()
@@ -356,7 +355,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         show2 = 1;
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP2;
-        Invoke("delayP2PressAttack", 1f);
+        Invoke("delayP2PressAttack", 2f);
         dem = 3;
     }
     public void PressAttackP3()
@@ -367,7 +366,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         show3 = 1;
         PDamage.color = Color.red;
         PDamage.text = "-" + Global.DamageP3;
-        Invoke("delayP3PressAttack", 1f);
+        Invoke("delayP3PressAttack", 2f);
         dem = 3;
     }
 
@@ -390,7 +389,7 @@ public class BSInfernoBeast1 : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 100 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
+            Invoke("delayP1PressSkill", 2f);
             dem = 3;
         }
         else
@@ -414,7 +413,7 @@ public class BSInfernoBeast1 : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 200 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
+            Invoke("delayP1PressSkill", 2f);
             dem = 3;
         }
         else
@@ -438,7 +437,7 @@ public class BSInfernoBeast1 : MonoBehaviour
             int DamgeCal = Global.DamageP1 + (Global.DamageP1 * 300 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP1PressSkill", 1f);
+            Invoke("delayP1PressSkill", 2f);
             dem = 3;
         }
         else
@@ -553,7 +552,7 @@ public class BSInfernoBeast1 : MonoBehaviour
             showr2.SetActive(true);
             showr1.text = "HP +" + HealAmount;
             Invoke("delayshowr", 2f);
-            Invoke("delayP3PressSkill", 1f);
+            Invoke("delayP3PressSkill", 2f);
             dem = 3;
         }
         else
@@ -576,7 +575,7 @@ public class BSInfernoBeast1 : MonoBehaviour
             showr2.SetActive(true);
             showr1.text = "MP +" + HealAmount;
             Invoke("delayshowr", 2f);
-            Invoke("delayP3PressSkill", 1f);
+            Invoke("delayP3PressSkill", 2f);
             dem = 3;
         }
         else
@@ -599,7 +598,7 @@ public class BSInfernoBeast1 : MonoBehaviour
             int DamgeCal = Global.DamageP3 + (Global.DamageP3 * 300 / 100);
             PDamage.color = Color.red;
             PDamage.text = "-" + DamgeCal;
-            Invoke("delayP3PressSkill", 1f);
+            Invoke("delayP3PressSkill", 2f);
             dem = 3;
         }
         else
@@ -1134,6 +1133,7 @@ public class BSInfernoBeast1 : MonoBehaviour
     {
         if (dem == 2)
         {
+            EnemyAttack1FX.Play();
             IBB.yes_InfernoBeastAttack1 = 1;
             dem -= 1;
 
@@ -1148,6 +1148,7 @@ public class BSInfernoBeast1 : MonoBehaviour
     {
         if (dem == 1)
         {
+            EnemyAttack2FX.Play();
             IBB.yes_InfernoBeastAttack2 = 1;
             dem -= 1;
 

@@ -10,8 +10,8 @@ public class SynthesizeSystem : MonoBehaviour
     public GameObject showr2;
     public GameObject ManaSynPanel;
     public GameObject SynDetailPanel;
-    public GameObject RBHideSlide1, RBHideSlide2, RBHideSlide3, RBHideSlide4, RBHideSlide5, RBHideSlide6, RBHideSlide7, RBHideSlide8;
-    public GameObject[] Hide1, Hide2, Hide3, Hide4, Hide5, Hide6;
+    public GameObject RBHideSlide1, RBHideSlide2, RBHideSlide3, RBHideSlide4, RBHideSlide5, RBHideSlide6, RBHideSlide7, RBHideSlide8, RBHideSlide9;
+    public GameObject[] Hide1, Hide2, Hide3, Hide4, Hide5, Hide6, Hide7;
 
     public Text num1;
     public Text num2;
@@ -102,13 +102,17 @@ public class SynthesizeSystem : MonoBehaviour
         {
             RBHideSlide6.SetActive(false);
         }
-        if (CutscenesController.cus88 == 0)
+        if (CutscenesController.cus81 == 0)
         {
             RBHideSlide7.SetActive(false);
         }
-        if (CutscenesController.cus109 == 0)
+        if (CutscenesController.cus88 == 0)
         {
             RBHideSlide8.SetActive(false);
+        }
+        if (CutscenesController.cus109 == 0)
+        {
+            RBHideSlide9.SetActive(false);
         }
 
         if (CutscenesController.cus18 == 0)
@@ -144,6 +148,13 @@ public class SynthesizeSystem : MonoBehaviour
             for (int i = 0; i < Hide4.Length; i++)
             {
                 Hide4[i].SetActive(false);
+            }
+        }
+        if (CutscenesController.cus124 == 0)
+        {
+            for (int i = 0; i < Hide7.Length; i++)
+            {
+                Hide7[i].SetActive(false);
             }
         }
         if (CutscenesController.cus131 == 0)
@@ -242,7 +253,7 @@ public class SynthesizeSystem : MonoBehaviour
         num73.text = "" + ContainerController.BackPainMedicine;
         num74.text = "1/" + ContainerController.PurifyingWater;
         num75.text = "2/" + ContainerController.PhotonriaGem;
-        num76.text = "2/" + ContainerController.PureObsidian;
+        num76.text = "2/" + ContainerController.ManaLiquidCatalyst;
         num77.text = "" + ContainerController.PurifyingPotion;
         num78.text = "4/" + ContainerController.NatureGrass;
         num79.text = "4/" + ContainerController.GoldenFeather;
@@ -1318,19 +1329,19 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton22()
     {
-        if (ContainerController.PurifyingWater >= 1 && ContainerController.Photonria >= 2 && ContainerController.PureObsidian >= 2 && ManaSynthesize >= 60)
+        if (ContainerController.PurifyingWater >= 1 && ContainerController.PhotonriaGem >= 2 && ContainerController.ManaLiquidCatalyst >= 2 && ManaSynthesize >= 60)
         {
             SynthesizeFX.Play();
             ManaSynthesize -= 60;
             ContainerController.PurifyingWater -= 1;
             ContainerController.Photonria -= 2;
-            ContainerController.PureObsidian -= 2;
+            ContainerController.ManaLiquidCatalyst -= 2;
             ContainerController.PurifyingPotionPick = 1;
             showr2.SetActive(true);
             showr1.text = "Success";
             Invoke("delay1", 1f);
         }
-        else if (ContainerController.PurifyingWater >= 1 && ContainerController.Photonria >= 2 && ContainerController.PureObsidian >= 2 && ManaSynthesize < 60)
+        else if (ContainerController.PurifyingWater >= 1 && ContainerController.PhotonriaGem >= 2 && ContainerController.ManaLiquidCatalyst >= 2 && ManaSynthesize < 60)
         {
             showr2.SetActive(true);
             showr1.text = "You don't have enough mana to synthesize this item!";

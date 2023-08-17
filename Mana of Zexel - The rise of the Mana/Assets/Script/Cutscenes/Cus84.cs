@@ -207,7 +207,9 @@ public class Cus84 : MonoBehaviour
             {
                 CutscenesController.cus84 = 1;
                 ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Alta inferno");
+                ContainerController.PurifyingPotion -= 1;
+                HPMPBarController.EIndex = 22;
+                SceneManager.LoadScene("BSInfernoBeast 1");
             }
         }
         else
@@ -391,7 +393,9 @@ public class Cus84 : MonoBehaviour
             {
                 CutscenesController.cus84 = 1;
                 ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Alta inferno");
+                ContainerController.PurifyingPotion -= 1;
+                HPMPBarController.EIndex = 22;
+                SceneManager.LoadScene("BSInfernoBeast 1");
             }
         }
     }
@@ -453,7 +457,9 @@ public class Cus84 : MonoBehaviour
         cc.FXCutscenes(1);
         CutscenesController.cus84 = 1;
         ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("Alta inferno");
+        ContainerController.PurifyingPotion -= 1;
+        HPMPBarController.EIndex = 22;
+        SceneManager.LoadScene("BSInfernoBeast 1");
     }
 
     IEnumerator DelayBGM()
