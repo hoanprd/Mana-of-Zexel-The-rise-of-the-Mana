@@ -1328,7 +1328,7 @@ public class BSBlueManaSlime1 : MonoBehaviour
     }
     void delayCheckE9Die1()
     {
-        URPMapController.TurnOffURP = true;
+        //URPMapController.TurnOffURP = true;
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }

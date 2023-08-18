@@ -269,7 +269,7 @@ public class Player : MonoBehaviour
         {
             TavernHeal.Play();
             HealDelay = true;
-            SynthesizeSystem.ManaSynthesize = 100;
+            SynthesizeSystem.ManaFireSynthesize = 100;
             show2.SetActive(true);
             show1.text = "Fire mana restore!";
             Invoke("delay1", 2f);
@@ -279,7 +279,7 @@ public class Player : MonoBehaviour
         {
             TavernHeal.Play();
             HealDelay = true;
-            SynthesizeSystem.ManaSynthesize = 100;
+            SynthesizeSystem.ManaIceSynthesize = 100;
             show2.SetActive(true);
             show1.text = "Ice mana restore!";
             Invoke("delay1", 2f);

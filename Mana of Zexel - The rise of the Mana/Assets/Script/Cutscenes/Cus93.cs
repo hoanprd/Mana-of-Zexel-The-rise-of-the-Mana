@@ -188,6 +188,8 @@ public class Cus93 : MonoBehaviour
             }
             else if (tang == 28)
             {
+                ZaneVAL1.SetActive(false);
+                VayneVAR1.SetActive(false);
                 NameTagText.text = "Vayne";
                 dia.text = "Hyaaaaaaa...";
             }
@@ -213,8 +215,6 @@ public class Cus93 : MonoBehaviour
             }
             else if (tang == 33)
             {
-                ZaneVAL1.SetActive(false);
-                AliaVAL1.SetActive(true);
                 NameTagText.text = "Alia";
                 dia.text = "Vayne! Watch...";
             }
@@ -225,8 +225,6 @@ public class Cus93 : MonoBehaviour
             }
             else if (tang == 35)
             {
-                AliaVAL1.SetActive(false);
-                VayneVAR1.SetActive(false);
                 NameTagText.text = "Alia";
                 dia.text = "Ahhhhhhhhh...";
             }
@@ -428,6 +426,8 @@ public class Cus93 : MonoBehaviour
             }
             else if (tang == 28)
             {
+                ZaneVAL1.SetActive(false);
+                VayneVAR1.SetActive(false);
                 NameTagText.text = "Vayne";
                 dia.text = "Hyaaaaaaa...";
             }
@@ -453,8 +453,6 @@ public class Cus93 : MonoBehaviour
             }
             else if (tang == 33)
             {
-                ZaneVAL1.SetActive(false);
-                AliaVAL1.SetActive(true);
                 NameTagText.text = "Alia";
                 dia.text = "Vayne! Coi chừng...";
             }
@@ -465,8 +463,6 @@ public class Cus93 : MonoBehaviour
             }
             else if (tang == 35)
             {
-                AliaVAL1.SetActive(false);
-                VayneVAR1.SetActive(false);
                 NameTagText.text = "Alia";
                 dia.text = "Ahhhhhhhhh...";
             }
