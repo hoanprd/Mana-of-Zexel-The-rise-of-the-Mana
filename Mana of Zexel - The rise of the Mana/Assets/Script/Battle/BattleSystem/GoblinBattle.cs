@@ -6,6 +6,7 @@ public class GoblinBattle : MonoBehaviour
 {
     public Animator anigoblin;
     public Transform Enemy;
+    public Canvas _canvas;
 
     public int yes_goblin = 0;
 
@@ -20,7 +21,6 @@ public class GoblinBattle : MonoBehaviour
     {
         if (yes_goblin == 1)
         {
-            //anigoblin.SetTrigger("e2attack");
             Invoke("delayE2", 0.01f);
             yes_goblin = 0;
         }
@@ -30,18 +30,21 @@ public class GoblinBattle : MonoBehaviour
     {
         if (BSGoblin1.E2Hit == 1)
         {
+            _canvas.sortingOrder = 1;
             Enemy.position = new Vector2(Enemy.position.x - 3f, Enemy.position.y);
             anigoblin.SetTrigger("e2attack");
             Invoke("delayE2Done", 1f);
         }
         else if (BSGoblin1.E2Hit == 2)
         {
+            _canvas.sortingOrder = 1;
             Enemy.position = new Vector2(Enemy.position.x - 5f, Enemy.position.y + 1);
             anigoblin.SetTrigger("e2attack");
             Invoke("delayE2Done", 1f);
         }
         else if (BSGoblin1.E2Hit == 3)
         {
+            _canvas.sortingOrder = 1;
             Enemy.position = new Vector2(Enemy.position.x - 6f, Enemy.position.y - 3);
             anigoblin.SetTrigger("e2attack");
             Invoke("delayE2Done", 1f);
@@ -51,5 +54,6 @@ public class GoblinBattle : MonoBehaviour
     void delayE2Done()
     {
         Enemy.position = new Vector2(4.24f, -0.21f);
+        _canvas.sortingOrder = 3;
     }
 }

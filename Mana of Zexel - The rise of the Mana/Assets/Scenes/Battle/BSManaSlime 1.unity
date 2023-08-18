@@ -5844,6 +5844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animanaslime: {fileID: 627926106}
   Enemy: {fileID: 627926104}
+  _canvas: {fileID: 2110691885}
   yes_ManaSlime: 0
 --- !u!95 &627926106
 Animator:
@@ -17430,6 +17431,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc05837d841f7c3419d798c279e44a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  URPI: {fileID: 1520440210}
+  Root: {fileID: 1520440212}
   URPPrefab:
   - {fileID: 9102692782035764627, guid: 5adecc7d8e4d5a6488a2467cea4775a2, type: 3}
 --- !u!4 &1520440212
@@ -22950,7 +22953,7 @@ Canvas:
   m_GameObject: {fileID: 2110691882}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 206664516}
   m_PlaneDistance: 100
   m_PixelPerfect: 0

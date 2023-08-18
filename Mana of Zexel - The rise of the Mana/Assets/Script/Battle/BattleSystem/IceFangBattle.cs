@@ -6,6 +6,7 @@ public class IceFangBattle : MonoBehaviour
 {
     public Animator aniicefang;
     public Transform Enemy;
+    public Canvas _canvas;
 
     public int yes_IceFang = 0;
 
@@ -14,7 +15,6 @@ public class IceFangBattle : MonoBehaviour
     {
         if (yes_IceFang == 1)
         {
-            //aniicefang.SetTrigger("e8attack");
             Invoke("delayE8", 0.01f);
             yes_IceFang = 0;
         }
@@ -24,18 +24,21 @@ public class IceFangBattle : MonoBehaviour
     {
         if (BSIceFang1.E8Hit == 1)
         {
+            _canvas.sortingOrder = 1;
             Enemy.position = new Vector2(Enemy.position.x - 3f, Enemy.position.y);
             aniicefang.SetTrigger("e8attack");
             Invoke("delayE8Done", 1f);
         }
         else if (BSIceFang1.E8Hit == 2)
         {
+            _canvas.sortingOrder = 1;
             Enemy.position = new Vector2(Enemy.position.x - 5f, Enemy.position.y + 1);
             aniicefang.SetTrigger("e8attack");
             Invoke("delayE8Done", 1f);
         }
         else if (BSIceFang1.E8Hit == 3)
         {
+            _canvas.sortingOrder = 1;
             Enemy.position = new Vector2(Enemy.position.x - 6f, Enemy.position.y - 3);
             aniicefang.SetTrigger("e8attack");
             Invoke("delayE8Done", 1f);
@@ -45,5 +48,6 @@ public class IceFangBattle : MonoBehaviour
     void delayE8Done()
     {
         Enemy.position = new Vector2(4.03f, -0.58f);
+        _canvas.sortingOrder = 3;
     }
 }

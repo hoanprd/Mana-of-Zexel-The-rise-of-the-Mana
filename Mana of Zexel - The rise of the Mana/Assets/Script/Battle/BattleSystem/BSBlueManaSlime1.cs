@@ -12,8 +12,6 @@ public class BSBlueManaSlime1 : MonoBehaviour
 
     public AudioSource VayneAttackFX, AliaAttackFX, MariaAttackFX, VayneSkill1FX, VayneSkill2FX, VayneSkill3FX, AliaSkill1FX, AliaSkill2FX, AliaSkill3FX, MariaSkill1FX, MariaSkill2FX, MariaSkill3FX, EnemyAttackFX, HealFX, ExplosionFX, OpenCloseFX;
 
-    public Canvas _canvas;
-
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
     public GameObject VayneAttackEffect, VayneSkill2Effect, VayneSkill3Effect, MariaAttackEffect, MariaSkill3Effect;
@@ -240,7 +238,6 @@ public class BSBlueManaSlime1 : MonoBehaviour
             ShowP1Panel(false);
             ShowP2Panel(false);
             ShowP3Panel(false);
-            _canvas.sortingOrder = 1;
             if (dem == 1)
             {
                 EnemyAttackFX.Play();
@@ -1105,7 +1102,6 @@ public class BSBlueManaSlime1 : MonoBehaviour
             Global.CurHPP3 -= Global.DamageE9;
         }
 
-        _canvas.sortingOrder = 3;
         EDamage.text = "";
         aE9 -= 1;
         dem_turn += 1;
@@ -1328,7 +1324,7 @@ public class BSBlueManaSlime1 : MonoBehaviour
     }
     void delayCheckE9Die1()
     {
-        //URPMapController.TurnOffURP = true;
+        URPIns.URPOff = true;
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }
