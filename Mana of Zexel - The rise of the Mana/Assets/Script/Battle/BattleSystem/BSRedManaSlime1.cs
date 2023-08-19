@@ -166,6 +166,7 @@ public class BSRedManaSlime1 : MonoBehaviour
             AliaStatus.SetActive(false);
             AliaBar.SetActive(false);
             a2 = 0;
+            dem = 1;
             HP2.text = "";
             MP2.text = "";
             P2Available = false;
@@ -1315,7 +1316,7 @@ public class BSRedManaSlime1 : MonoBehaviour
 
     void delayCheckP1P2P3Die1()
     {
-        URPMapController.TurnOffURP = true;
+        URPIns.URPOff = true;
         HPMP.SetActive(false);
         Lose_panel.SetActive(true);
     }
@@ -1325,7 +1326,7 @@ public class BSRedManaSlime1 : MonoBehaviour
     }
     void delayCheckE7Die1()
     {
-        URPMapController.TurnOffURP = true;
+        URPIns.URPOff = true;
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }

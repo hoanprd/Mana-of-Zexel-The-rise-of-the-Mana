@@ -102,7 +102,8 @@ public class Cus99 : MonoBehaviour
             {
                 CutscenesController.cus99 = 1;
                 ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Mana cliff");
+                HPMPBarController.EIndex = 23;
+                SceneManager.LoadScene("BSManaDragon 1");
             }
         }
         else
@@ -181,7 +182,8 @@ public class Cus99 : MonoBehaviour
             {
                 CutscenesController.cus99 = 1;
                 ContainerController.LoadingOpen = true;
-                SceneManager.LoadScene("Mana cliff");
+                HPMPBarController.EIndex = 23;
+                SceneManager.LoadScene("BSManaDragon 1");
             }
         }
     }
@@ -234,7 +236,8 @@ public class Cus99 : MonoBehaviour
         cc.FXCutscenes(1);
         CutscenesController.cus99 = 1;
         ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("Mana cliff");
+        HPMPBarController.EIndex = 23;
+        SceneManager.LoadScene("BSManaDragon 1");
     }
 
     IEnumerator DelayBGM()

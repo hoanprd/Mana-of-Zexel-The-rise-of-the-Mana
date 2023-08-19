@@ -12,11 +12,11 @@ public class GoblinTrigger6 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (CutscenesController.cus108 == 0)
+        if (CutscenesController.cus130 == 0)
         {
             despawnGoblinTrigger6 = true;
         }
-        else if (CutscenesController.cus108 == 1 && CutscenesController.cus109 == 0)
+        else if (CutscenesController.cus130 == 1 && CutscenesController.cus131 == 0)
         {
             despawnGoblinTrigger6 = false;
         }

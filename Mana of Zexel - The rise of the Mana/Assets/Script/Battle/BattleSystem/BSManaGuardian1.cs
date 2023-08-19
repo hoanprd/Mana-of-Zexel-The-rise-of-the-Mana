@@ -1321,7 +1321,7 @@ public class BSManaGuardian1 : MonoBehaviour
 
     void delayCheckP1P2P3Die1()
     {
-        URPMapController.TurnOffURP = true;
+        URPIns.URPOff = true;
         HPMP.SetActive(false);
         Lose_panel.SetActive(true);
     }
@@ -1331,7 +1331,7 @@ public class BSManaGuardian1 : MonoBehaviour
     }
     void delayCheckBE1Die1()
     {
-        URPMapController.TurnOffURP = true;
+        URPIns.URPOff = true;
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }

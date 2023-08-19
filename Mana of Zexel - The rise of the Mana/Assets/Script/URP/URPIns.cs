@@ -20,6 +20,8 @@ public class URPIns : MonoBehaviour
                 Instantiate(URPPrefab[i], new Vector3(0, 0, 0), Quaternion.identity, Root);
             }
         }
+
+        URPOff = false;
     }
 
     void Update()

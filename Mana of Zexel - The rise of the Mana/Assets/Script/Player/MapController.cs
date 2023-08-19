@@ -80,8 +80,10 @@ public class MapController : MonoBehaviour
         }
         else if (WeaponStoreToZexelTown == true)
         {
-            PlayerPrefs.SetFloat("x", -21);
-            PlayerPrefs.SetFloat("y", -18);
+            //PlayerPrefs.SetFloat("x", -21);
+            //PlayerPrefs.SetFloat("y", -18);
+            PlayerPrefs.SetFloat("x", -22);
+            PlayerPrefs.SetFloat("y", -16);
             PlayerPrefs.SetFloat("z", 0);
             WeaponStoreToZexelTown = false;
         }

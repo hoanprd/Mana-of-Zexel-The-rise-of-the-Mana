@@ -1643,7 +1643,7 @@ public class SynthesizeSystem : MonoBehaviour
     public void RightButton()
     {
         ClickFX.Play();
-        if (SlideIndex != 9)
+        if (SlideIndex != 10)
         {
             SlideIndex += 1;
             ShowSlide(SlideIndex);

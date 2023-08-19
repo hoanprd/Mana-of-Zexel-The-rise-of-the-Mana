@@ -93,7 +93,7 @@ public class BSIceFang1 : MonoBehaviour
     public int show2 = 0;
     public int show3 = 0;
     public static int E8Hit;
-    public bool GameOver, P2Available, P3Available;
+    public bool GameOver, P2Available, P3Available, delayE;
     public int UseItemIndex, ChooseSkillIndex;
 
     // Start is called before the first frame update
@@ -159,6 +159,9 @@ public class BSIceFang1 : MonoBehaviour
             AliaStatus.SetActive(false);
             AliaBar.SetActive(false);
             a2 = 0;
+            dem = 3;
+            delayE = true;
+            StartCoroutine(delayEF());
             HP2.text = "";
             MP2.text = "";
             P2Available = false;
@@ -200,7 +203,7 @@ public class BSIceFang1 : MonoBehaviour
             else
                 ShowP2Panel(false);
         }
-        else if (aE8 > 0 && Global.HPE8 > 0 && GameOver == false)
+        else if (aE8 > 0 && Global.HPE8 > 0 && GameOver == false && delayE == false)
         {
             CheckE8Die();
             ShowP1Panel(false);
@@ -262,7 +265,7 @@ public class BSIceFang1 : MonoBehaviour
             {
                 a1 = Global.SpeedP1 / 10;
                 a3 = Global.SpeedP3 / 10;
-                aE8 = Global.SpeedE9 / 10;
+                aE8 = Global.SpeedE8 / 10;
                 dem = 3;
             }
             else
@@ -1352,7 +1355,7 @@ public class BSIceFang1 : MonoBehaviour
 
     void delayCheckP1P2P3Die1()
     {
-        URPMapController.TurnOffURP = true;
+        URPIns.URPOff = true;
         HPMP.SetActive(false);
         Lose_panel.SetActive(true);
     }
@@ -1362,7 +1365,7 @@ public class BSIceFang1 : MonoBehaviour
     }
     void delayCheckE8Die1()
     {
-        URPMapController.TurnOffURP = true;
+        URPIns.URPOff = true;
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }
@@ -1704,5 +1707,11 @@ public class BSIceFang1 : MonoBehaviour
         EPHealingEffP3.SetActive(false);
         ReinEff.SetActive(false);
         showr2.SetActive(false);
+    }
+
+    IEnumerator delayEF()
+    {
+        yield return new WaitForSeconds(2f);
+        delayE = false;
     }
 }

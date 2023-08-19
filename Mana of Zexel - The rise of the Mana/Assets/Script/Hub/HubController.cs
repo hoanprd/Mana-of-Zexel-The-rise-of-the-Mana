@@ -105,11 +105,11 @@ public class HubController : MonoBehaviour
             {
                 MapText[i].text = "Alta inferno";
             }
-            else if (i == 11 && CutscenesController.cus88 == 1)
+            else if (i == 11 && CutscenesController.cus93 == 1)
             {
                 MapText[i].text = "Zexel temple";
             }
-            else if (i == 12 && CutscenesController.cus94 == 1)
+            else if (i == 12 && CutscenesController.cus98 == 1)
             {
                 MapText[i].text = "Mana Cllif";
             }

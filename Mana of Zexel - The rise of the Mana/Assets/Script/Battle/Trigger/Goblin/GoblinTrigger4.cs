@@ -12,7 +12,7 @@ public class GoblinTrigger4 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (CutscenesController.cus108 == 1 && CutscenesController.cus109 == 0)
+        if (CutscenesController.cus130 == 1 && CutscenesController.cus131 == 0)
         {
             despawn = true;
         }

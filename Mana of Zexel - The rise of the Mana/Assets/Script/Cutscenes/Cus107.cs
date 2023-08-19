@@ -79,6 +79,7 @@ public class Cus107 : MonoBehaviour
             {
                 CutscenesController.cus107 = 1;
                 ContainerController.LoadingOpen = true;
+                MapController.ZexelTownToWeaponStore = false;
                 MapController.WeaponStoreToZexelTown = true;
                 SceneManager.LoadScene("Zexel town");
             }
@@ -136,6 +137,7 @@ public class Cus107 : MonoBehaviour
             {
                 CutscenesController.cus107 = 1;
                 ContainerController.LoadingOpen = true;
+                MapController.ZexelTownToWeaponStore = false;
                 MapController.WeaponStoreToZexelTown = true;
                 SceneManager.LoadScene("Zexel town");
             }
@@ -154,7 +156,9 @@ public class Cus107 : MonoBehaviour
         cc.FXCutscenes(1);
         CutscenesController.cus107 = 1;
         ContainerController.LoadingOpen = true;
-        SceneManager.LoadScene("WeaponStore");
+        MapController.ZexelTownToWeaponStore = false;
+        MapController.WeaponStoreToZexelTown = true;
+        SceneManager.LoadScene("Zexel town");
     }
 
     IEnumerator DelayBGM()
