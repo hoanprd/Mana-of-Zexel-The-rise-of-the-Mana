@@ -136,8 +136,14 @@ public class CutscenesTrigger : MonoBehaviour
             {
                 StartCoroutine(DelayChangeCutscense());
             }
+            else if (CutscenesController.cus119 == 0 && CutscenesController.cus118 == 1 && Player.MapIndex == 9)
+            {
+                CutscenesController.cus119FIndex = 1;
+                StartCoroutine(DelayChangeCutscense());
+            }
             else if (CutscenesController.cus120 == 0 && CutscenesController.cus119 == 1 && Player.MapIndex == 9)
             {
+                CutscenesController.cus120FIndex = 1;
                 StartCoroutine(DelayChangeCutscense());
             }
             else if (CutscenesController.cus123 == 0 && CutscenesController.cus122 == 1 && Player.MapIndex == 3)

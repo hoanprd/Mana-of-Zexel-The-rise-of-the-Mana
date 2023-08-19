@@ -27,16 +27,20 @@ public class IIVMan : MonoBehaviour
             {
                 if (CutscenesController.cus116 == 0 && CutscenesController.cus111 == 1)
                 {
+                    CutscenesController.cus116FIndex = 1;
                     SceneManager.LoadScene("Cutscenes");
                 }
 
                 if (CutscenesController.cus117 == 0 && CutscenesController.cus116 == 1 && CutscenesTrigger.IceFangKill2 >= 8)
                 {
+                    CutscenesController.cus117FIndex = 1;
                     SceneManager.LoadScene("Cutscenes");
                 }
                 else if (CutscenesController.cus117 == 0 && CutscenesController.cus116 == 1 && CutscenesTrigger.IceFangKill2 < 8)
                 {
                     once = 1;
+                    show2.SetActive(true);
+                    show1.text = "You need to beat " + CutscenesTrigger.IceFangKill2 + "/8 ice fang";
                     Invoke("delay1", 2f);
                 }
             }
@@ -88,7 +92,7 @@ public class IIVMan : MonoBehaviour
     void delay1()
     {
         once = 0;
-        show2.SetActive(true);
-        show1.text = "You need to beat " + CutscenesTrigger.IceFangKill2 + "/8 ice fang";
+        show2.SetActive(false);
+        show1.text = "";
     }
 }

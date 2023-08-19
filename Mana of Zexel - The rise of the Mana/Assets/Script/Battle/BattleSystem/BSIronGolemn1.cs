@@ -219,7 +219,7 @@ public class BSIronGolemn1 : MonoBehaviour
                     EDamage.text = "-" + DamgeCal;
                 Invoke("delayBE4", 2f);
                 Invoke("delayBE4attack2", 4f);
-                Invoke("delayBE4attack3", 6f);
+                Invoke("delayBE4attack3", 7f);
             }
             CheckP1Die();
             CheckP2Die();
@@ -1175,7 +1175,7 @@ public class BSIronGolemn1 : MonoBehaviour
 
     void delayBE4attack2()
     {
-        if (dem == 2)
+        if (dem == 2 && GameOver == false)
         {
             BE4Action();
             dem -= 1;
@@ -1191,7 +1191,7 @@ public class BSIronGolemn1 : MonoBehaviour
 
     void delayBE4attack3()
     {
-        if (dem == 1)
+        if (dem == 1 && GameOver == false)
         {
             BE4Action();
             dem -= 1;

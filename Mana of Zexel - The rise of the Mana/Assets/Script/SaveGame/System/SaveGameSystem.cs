@@ -289,6 +289,7 @@ public class SaveGameSystem : MonoBehaviour
         sdg.SaveInfernoScorpionKill = CutscenesTrigger.InfernoScorpionKill;
         sdg.SaveInfernoScorpionKillP2 = CutscenesTrigger.InfernoScorpionKillP2;
         sdg.SaveIceFangKill = CutscenesTrigger.IceFangKill;
+        sdg.SaveIceFangKill2 = CutscenesTrigger.IceFangKill2;
         sdg.SaveGoblinKillP2 = CutscenesTrigger.GoblinKillP2;
         sdg.SaveGolemnKillP2 = CutscenesTrigger.GolemnKillP2;
 
@@ -303,7 +304,7 @@ public class SaveGameSystem : MonoBehaviour
         sdg.SaveMaxEXPP1 = Global.MaxEXPP1;
         sdg.SaveCurEXPP1 = Global.CurEXPP1;
         sdg.SavePlusPointP1 = Global.PlusPointP1;
-        sdg.SavePlusPointAttackLvP1 = Global.PlusPointHPLvP1;
+        sdg.SavePlusPointAttackLvP1 = Global.PlusPointAttackLvP1;
         sdg.SavePlusPointHPLvP1 = Global.PlusPointHPLvP1;
         sdg.SavePlusPointMPLvP1 = Global.PlusPointMPLvP1;
         sdg.SavePlusPointSpeedLvP1 = Global.PlusPointSpeedLvP1;
@@ -323,7 +324,7 @@ public class SaveGameSystem : MonoBehaviour
         sdg.SaveMaxEXPP2 = Global.MaxEXPP2;
         sdg.SaveCurEXPP2 = Global.CurEXPP2;
         sdg.SavePlusPointP2 = Global.PlusPointP2;
-        sdg.SavePlusPointAttackLvP2 = Global.PlusPointHPLvP2;
+        sdg.SavePlusPointAttackLvP2 = Global.PlusPointAttackLvP2;
         sdg.SavePlusPointHPLvP2 = Global.PlusPointHPLvP2;
         sdg.SavePlusPointMPLvP2 = Global.PlusPointMPLvP2;
         sdg.SavePlusPointSpeedLvP2 = Global.PlusPointSpeedLvP2;
@@ -343,7 +344,7 @@ public class SaveGameSystem : MonoBehaviour
         sdg.SaveMaxEXPP3 = Global.MaxEXPP3;
         sdg.SaveCurEXPP3 = Global.CurEXPP3;
         sdg.SavePlusPointP3 = Global.PlusPointP3;
-        sdg.SavePlusPointAttackLvP3 = Global.PlusPointHPLvP3;
+        sdg.SavePlusPointAttackLvP3 = Global.PlusPointAttackLvP3;
         sdg.SavePlusPointHPLvP3 = Global.PlusPointHPLvP3;
         sdg.SavePlusPointMPLvP3 = Global.PlusPointMPLvP3;
         sdg.SavePlusPointSpeedLvP3 = Global.PlusPointSpeedLvP3;
@@ -704,6 +705,7 @@ public class SaveGameSystem : MonoBehaviour
         sdg.SaveInfernoScorpionKill = CutscenesTrigger.InfernoScorpionKill;
         sdg.SaveInfernoScorpionKillP2 = CutscenesTrigger.InfernoScorpionKillP2;
         sdg.SaveIceFangKill = CutscenesTrigger.IceFangKill;
+        sdg.SaveIceFangKill2 = CutscenesTrigger.IceFangKill2;
         sdg.SaveGoblinKillP2 = CutscenesTrigger.GoblinKillP2;
         sdg.SaveGolemnKillP2 = CutscenesTrigger.GolemnKillP2;
 
@@ -718,7 +720,7 @@ public class SaveGameSystem : MonoBehaviour
         sdg.SaveMaxEXPP1 = Global.MaxEXPP1;
         sdg.SaveCurEXPP1 = Global.CurEXPP1;
         sdg.SavePlusPointP1 = Global.PlusPointP1;
-        sdg.SavePlusPointAttackLvP1 = Global.PlusPointHPLvP1;
+        sdg.SavePlusPointAttackLvP1 = Global.PlusPointAttackLvP1;
         sdg.SavePlusPointHPLvP1 = Global.PlusPointHPLvP1;
         sdg.SavePlusPointMPLvP1 = Global.PlusPointMPLvP1;
         sdg.SavePlusPointSpeedLvP1 = Global.PlusPointSpeedLvP1;
@@ -738,7 +740,7 @@ public class SaveGameSystem : MonoBehaviour
         sdg.SaveMaxEXPP2 = Global.MaxEXPP2;
         sdg.SaveCurEXPP2 = Global.CurEXPP2;
         sdg.SavePlusPointP2 = Global.PlusPointP2;
-        sdg.SavePlusPointAttackLvP2 = Global.PlusPointHPLvP2;
+        sdg.SavePlusPointAttackLvP2 = Global.PlusPointAttackLvP2;
         sdg.SavePlusPointHPLvP2 = Global.PlusPointHPLvP2;
         sdg.SavePlusPointMPLvP2 = Global.PlusPointMPLvP2;
         sdg.SavePlusPointSpeedLvP2 = Global.PlusPointSpeedLvP2;
@@ -758,7 +760,7 @@ public class SaveGameSystem : MonoBehaviour
         sdg.SaveMaxEXPP3 = Global.MaxEXPP3;
         sdg.SaveCurEXPP3 = Global.CurEXPP3;
         sdg.SavePlusPointP3 = Global.PlusPointP3;
-        sdg.SavePlusPointAttackLvP3 = Global.PlusPointHPLvP3;
+        sdg.SavePlusPointAttackLvP3 = Global.PlusPointAttackLvP3;
         sdg.SavePlusPointHPLvP3 = Global.PlusPointHPLvP3;
         sdg.SavePlusPointMPLvP3 = Global.PlusPointMPLvP3;
         sdg.SavePlusPointSpeedLvP3 = Global.PlusPointSpeedLvP3;

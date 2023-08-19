@@ -177,6 +177,7 @@ public class SaveDataGlobal
     public int SaveInfernoScorpionKill;
     public int SaveInfernoScorpionKillP2;
     public int SaveIceFangKill;
+    public int SaveIceFangKill2;
     public int SaveGoblinKillP2;
     public int SaveGolemnKillP2;
 

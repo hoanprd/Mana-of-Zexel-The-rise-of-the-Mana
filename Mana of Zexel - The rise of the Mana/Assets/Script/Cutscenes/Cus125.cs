@@ -10,7 +10,7 @@ public class Cus125 : MonoBehaviour
 
     public Text NameTagText;
     public Text dia;
-    public GameObject va1, va2;
+    public GameObject va1;
     public GameObject VayneVAL1, VayneVAR1, AliaVAR1, MariaVAL1;
     public GameObject NameTag;
     private int tang;

@@ -12,7 +12,7 @@ public class InfernoBeastTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (CutscenesController.cus105 == 1 && CutscenesController.cus106 == 0)
+        if (CutscenesController.cus110 == 1 && CutscenesController.cus111 == 0)
         {
             despawn = false;
         }

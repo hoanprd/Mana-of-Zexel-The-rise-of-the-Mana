@@ -150,7 +150,7 @@ public class Cus109 : MonoBehaviour
             else if (tang == 21)
             {
                 NameTagText.text = "Orina";
-                dia.text = "I met and talked to her almost a year ago, she has lost her humanity, I can't teach her anymore. So I really hope someone eats its evil plots to monopolize the world.";
+                dia.text = "I met and talked to her almost a year ago, he has lost her humanity, I can't teach her anymore. So I really hope someone eats its evil plots to monopolize the world.";
             }
             else if (tang == 22)
             {

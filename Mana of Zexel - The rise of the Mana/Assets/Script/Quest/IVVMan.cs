@@ -27,16 +27,20 @@ public class IVVMan : MonoBehaviour
             {
                 if (CutscenesController.cus112 == 0 && CutscenesController.cus111 == 1)
                 {
+                    CutscenesController.cus112FIndex = 1;
                     SceneManager.LoadScene("Cutscenes");
                 }
 
                 if (CutscenesController.cus113 == 0 && CutscenesController.cus112 == 1 && ContainerController.Wood >= 10)
                 {
+                    CutscenesController.cus113FIndex = 1;
                     SceneManager.LoadScene("Cutscenes");
                 }
                 else if (CutscenesController.cus113 == 0 && CutscenesController.cus112 == 1 && ContainerController.Wood < 10)
                 {
                     once = 1;
+                    show2.SetActive(true);
+                    show1.text = "You need at least 10 wood";
                     Invoke("delay1", 2f);
                 }
             }
@@ -88,7 +92,7 @@ public class IVVMan : MonoBehaviour
     void delay1()
     {
         once = 0;
-        show2.SetActive(true);
-        show1.text = "You need at least 10 wood";
+        show2.SetActive(false);
+        show1.text = "";
     }
 }

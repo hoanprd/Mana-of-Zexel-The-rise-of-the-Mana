@@ -220,10 +220,11 @@ public class MenuController : MonoBehaviour
         CutscenesTrigger.InfernoScorpionKill = 0;
         CutscenesTrigger.InfernoScorpionKillP2 = 0;
         CutscenesTrigger.IceFangKill = 0;
+        CutscenesTrigger.IceFangKill2 = 0;
         CutscenesTrigger.GoblinKillP2 = 0;
         CutscenesTrigger.GolemnKillP2 = 0;
 
-        //Set point
+        //Set posi
         PlayerPrefs.SetFloat("x", 2);
         PlayerPrefs.SetFloat("y", 1);
         PlayerPrefs.SetFloat("z", 0);
@@ -662,6 +663,7 @@ public class MenuController : MonoBehaviour
         CutscenesTrigger.InfernoScorpionKill = sdg.SaveInfernoScorpionKill;
         CutscenesTrigger.InfernoScorpionKillP2 = sdg.SaveInfernoScorpionKillP2;
         CutscenesTrigger.IceFangKill = sdg.SaveIceFangKill;
+        CutscenesTrigger.IceFangKill2 = sdg.SaveIceFangKill2;
         CutscenesTrigger.GoblinKillP2 = sdg.SaveGoblinKillP2;
         CutscenesTrigger.GolemnKillP2 = sdg.SaveGolemnKillP2;
 

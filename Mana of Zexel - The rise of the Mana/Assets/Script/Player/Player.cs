@@ -828,7 +828,7 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("InfernoDesertToZexelTown"))
         {
-            if (CutscenesController.cus111 == 0 && CutscenesController.cus110 == 1)
+            /*if (CutscenesController.cus111 == 0 && CutscenesController.cus110 == 1)
             {
                 FadeInPanel.SetActive(true);
                 MapController.InfernoDesertToZexelTown = true;
@@ -840,8 +840,8 @@ public class Player : MonoBehaviour
                 InfernoScorpionTrigger6.despawn = false;
                 MapIndex = 1;
                 StartCoroutine(DelayChangeCutscense());
-            }
-            else if (CutscenesController.cus130 == 0 && CutscenesController.cus129 == 1)
+            }*/
+            if (CutscenesController.cus130 == 0 && CutscenesController.cus129 == 1)
             {
                 FadeInPanel.SetActive(true);
                 MapController.InfernoDesertToZexelTown = true;
@@ -1045,7 +1045,7 @@ public class Player : MonoBehaviour
             FireFangTrigger4.despawn = false;
             MapController.InfernoVolcanoToInfernoDesert = true;
             MapIndex = 3;
-            if (CutscenesController.cus122 == 0 && CutscenesController.cus121 == 1)
+            if (CutscenesController.cus122 == 0 && CutscenesController.cus112 == 1 && CutscenesController.cus113 == 1 && CutscenesController.cus114 == 1 && CutscenesController.cus115 == 1 && CutscenesController.cus116 == 1 && CutscenesController.cus117 == 1 && CutscenesController.cus118 == 1 && CutscenesController.cus119 == 1 && CutscenesController.cus120 == 1 && CutscenesController.cus121 == 1)
             {
                 FadeInPanel.SetActive(true);
                 StartCoroutine(DelayChangeCutscense());
@@ -1097,7 +1097,7 @@ public class Player : MonoBehaviour
             IceFangTrigger2.despawn = false;
             IceFangTrigger3.despawn = false;
             IceFangTrigger4.despawn = false;
-            if (CutscenesController.cus122 == 0 && CutscenesController.cus121 == 1)
+            if (CutscenesController.cus122 == 0 && CutscenesController.cus112 == 1 && CutscenesController.cus113 == 1 && CutscenesController.cus114 == 1 && CutscenesController.cus115 == 1 && CutscenesController.cus116 == 1 && CutscenesController.cus117 == 1 && CutscenesController.cus118 == 1 && CutscenesController.cus119 == 1 && CutscenesController.cus120 == 1 && CutscenesController.cus121 == 1)
             {
                 FadeInPanel.SetActive(true);
                 StartCoroutine(DelayChangeCutscense());

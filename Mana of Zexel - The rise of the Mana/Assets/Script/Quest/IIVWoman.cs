@@ -27,11 +27,13 @@ public class IIVWoman : MonoBehaviour
             {
                 if (CutscenesController.cus118 == 0 && CutscenesController.cus111 == 1)
                 {
+                    CutscenesController.cus118FIndex = 1;
                     SceneManager.LoadScene("Cutscenes");
                 }
 
                 if (CutscenesController.cus121 == 0 && CutscenesController.cus120 == 1)
                 {
+                    CutscenesController.cus121FIndex = 1;
                     SceneManager.LoadScene("Cutscenes");
                 }
                 /*else if (CutscenesController.cus118 == 1 && CutscenesController.cus121 == 0)
@@ -73,7 +75,7 @@ public class IIVWoman : MonoBehaviour
                     show2.SetActive(false);
                 }
             }
-            else if (once == 0 && CutscenesController.cus128 == 1 && CutscenesController.cus120 == 0)
+            else if (once == 0 && CutscenesController.cus118 == 1 && CutscenesController.cus120 == 0)
             {
                 if (once == 0)
                 {

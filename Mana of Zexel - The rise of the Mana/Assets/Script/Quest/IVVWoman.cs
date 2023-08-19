@@ -27,16 +27,20 @@ public class IVVWoman : MonoBehaviour
             {
                 if (CutscenesController.cus114 == 0 && CutscenesController.cus111 == 1)
                 {
+                    CutscenesController.cus114FIndex = 1;
                     SceneManager.LoadScene("Cutscenes");
                 }
 
                 if (CutscenesController.cus115 == 0 && CutscenesController.cus114 == 1 && ContainerController.FireOre >= 10 && ContainerController.RedManaCrystal >= 10)
                 {
+                    CutscenesController.cus115FIndex = 1;
                     SceneManager.LoadScene("Cutscenes");
                 }
                 else if (CutscenesController.cus115 == 0 && CutscenesController.cus114 == 1 && ContainerController.FireOre < 10 && ContainerController.RedManaCrystal < 10)
                 {
                     once = 1;
+                    show2.SetActive(true);
+                    show1.text = "You need at least 10 fire ore and 10 red mana crystal";
                     Invoke("delay1", 2f);
                 }
             }
@@ -88,7 +92,7 @@ public class IVVWoman : MonoBehaviour
     void delay1()
     {
         once = 0;
-        show2.SetActive(true);
-        show1.text = "You need at least 10 fire ore and 10 red mana crystal";
+        show2.SetActive(false);
+        show1.text = "";
     }
 }

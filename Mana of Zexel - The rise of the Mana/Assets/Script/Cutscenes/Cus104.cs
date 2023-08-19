@@ -287,6 +287,6 @@ public class Cus104 : MonoBehaviour
     IEnumerator DelayBGM()
     {
         yield return new WaitForSeconds(2f);
-        cc.BGMCutscenes(4, false);
+        cc.BGMCutscenes(2, false);
     }
 }

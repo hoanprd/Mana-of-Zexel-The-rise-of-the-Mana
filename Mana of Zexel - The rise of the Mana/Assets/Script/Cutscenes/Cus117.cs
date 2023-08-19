@@ -59,7 +59,7 @@ public class Cus117 : MonoBehaviour
             else if (tang == 6)
             {
                 NameTagText.text = "";
-                dia.text = "Zen +200?";
+                dia.text = "Zen +200";
                 if (stop == 0)
                 {
                     stop = 1;
@@ -110,7 +110,7 @@ public class Cus117 : MonoBehaviour
             else if (tang == 6)
             {
                 NameTagText.text = "";
-                dia.text = "Zen +200?";
+                dia.text = "Zen +200";
                 if (stop == 0)
                 {
                     stop = 1;

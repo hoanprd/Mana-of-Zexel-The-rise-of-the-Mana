@@ -621,7 +621,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus109 == 0)
             QT.text = "Stop by Orina's place to find out new items";
         else if (CutscenesController.cus110 == 0)
-            QT.text = "Defeat the iron golem in the wishing forest to test your team's new strength";
+            QT.text = "Defeat the iron golem in the wishing forest to test your team's new strength then return to Zexel town";
         else if (CutscenesController.cus111 == 0)
             QT.text = "The inferno beast is back in alta inferno, go there and stop its destruction";
         else if (CutscenesController.cus112 == 0)

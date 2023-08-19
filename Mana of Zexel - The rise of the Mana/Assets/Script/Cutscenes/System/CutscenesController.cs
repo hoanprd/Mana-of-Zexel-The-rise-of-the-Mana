@@ -194,9 +194,13 @@ public class CutscenesController : MonoBehaviour
             C87.SetActive(true);
         else if (cus88 == 0)
             C88.SetActive(true);
-        else if (cus89 == 0)
+        /*else if (cus89 == 0)
             C89.SetActive(true);
         else if (cus90 == 0)
+            C90.SetActive(true);*/
+        else if (cus89 == 0 && cus89FIndex == 1 && cus88 == 1)
+            C89.SetActive(true);
+        else if (cus90 == 0 && cus90FIndex == 1 && cus88 == 1)
             C90.SetActive(true);
         else if (cus91 == 0 && cus89 == 1 && cus90 == 1)
             C91.SetActive(true);
@@ -240,6 +244,26 @@ public class CutscenesController : MonoBehaviour
             C110.SetActive(true);
         else if (cus111 == 0)
             C111.SetActive(true);
+        else if (cus112 == 0 && cus112FIndex == 1 && cus111 == 1)
+            C112.SetActive(true);
+        else if (cus113 == 0 && cus113FIndex == 1 && cus111 == 1)
+            C113.SetActive(true);
+        else if (cus114 == 0 && cus114FIndex == 1 && cus111 == 1)
+            C114.SetActive(true);
+        else if (cus115 == 0 && cus115FIndex == 1 && cus111 == 1)
+            C115.SetActive(true);
+        else if (cus116 == 0 && cus116FIndex == 1 && cus111 == 1)
+            C116.SetActive(true);
+        else if (cus117 == 0 && cus117FIndex == 1 && cus111 == 1)
+            C117.SetActive(true);
+        else if (cus118 == 0 && cus118FIndex == 1 && cus111 == 1)
+            C118.SetActive(true);
+        else if (cus119 == 0 && cus119FIndex == 1 && cus111 == 1)
+            C119.SetActive(true);
+        else if (cus120 == 0 && cus120FIndex == 1 && cus111 == 1)
+            C120.SetActive(true);
+        else if (cus121 == 0 && cus121FIndex == 1 && cus111 == 1)
+            C121.SetActive(true);
         else if (cus122 == 0 && cus112 == 1 && cus113 == 1 && cus114 == 1 && cus115 == 1 && cus116 == 1 && cus117 == 1 && cus118 == 1 && cus119 == 1 && cus120 == 1 && cus121 == 1)
             C122.SetActive(true);
         else if (cus123 == 0)
@@ -287,7 +311,7 @@ public class CutscenesController : MonoBehaviour
         else if (cus144 == 0)
             C144.SetActive(true);
 
-        if (cus89 == 0 && cus89FIndex == 1 && cus88 == 1)
+        /*if (cus89 == 0 && cus89FIndex == 1 && cus88 == 1)
             C89.SetActive(true);
         else if (cus90 == 0 && cus90FIndex == 1 && cus88 == 1)
             C90.SetActive(true);
@@ -311,7 +335,7 @@ public class CutscenesController : MonoBehaviour
         else if (cus120 == 0 && cus120FIndex == 1 && cus111 == 1)
             C120.SetActive(true);
         else if (cus121 == 0 && cus121FIndex == 1 && cus111 == 1)
-            C121.SetActive(true);
+            C121.SetActive(true);*/
     }
 
     public void BGMCutscenes(int changeIndex, bool stopPlay)

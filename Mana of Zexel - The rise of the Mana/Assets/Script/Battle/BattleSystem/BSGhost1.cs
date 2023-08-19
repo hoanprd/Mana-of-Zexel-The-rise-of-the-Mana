@@ -47,6 +47,8 @@ public class BSGhost1 : MonoBehaviour
     public GameObject P2TurnStatusObject;
     public GameObject P3TurnStatusObject;
 
+    public GameObject BattleEffect;
+
     public Text P1TurnStatus;
     public Text P2TurnStatus;
     public Text P3TurnStatus;
@@ -1336,6 +1338,7 @@ public class BSGhost1 : MonoBehaviour
     void delayCheckE11Die1()
     {
         URPIns.URPOff = true;
+        BattleEffect.SetActive(false);
         HPMP.SetActive(false);
         Win_panel.SetActive(true);
     }
