@@ -769,6 +769,7 @@ public class Player : MonoBehaviour
             {
                 FadeInPanel.SetActive(true);
                 MapController.WishingForestToZexelTown = true;
+                IronGolemnTrigger.despawn = false;
                 GolemnTrigger1.despawn = false;
                 GolemnTrigger2.despawn = false;
                 GolemnTrigger3.despawn = false;
@@ -778,6 +779,7 @@ public class Player : MonoBehaviour
             else
             {
                 MapController.WishingForestToZexelTown = true;
+                IronGolemnTrigger.despawn = false;
                 GolemnTrigger1.despawn = false;
                 GolemnTrigger2.despawn = false;
                 GolemnTrigger3.despawn = false;

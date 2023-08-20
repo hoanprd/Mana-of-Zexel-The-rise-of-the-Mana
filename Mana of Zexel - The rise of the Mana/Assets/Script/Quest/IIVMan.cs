@@ -10,7 +10,7 @@ public class IIVMan : MonoBehaviour
     public bool IsReady;
 
     public Text show1;
-    public GameObject show2;
+    public GameObject show2, FadeInPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +28,15 @@ public class IIVMan : MonoBehaviour
                 if (CutscenesController.cus116 == 0 && CutscenesController.cus111 == 1)
                 {
                     CutscenesController.cus116FIndex = 1;
-                    SceneManager.LoadScene("Cutscenes");
+                    FadeInPanel.SetActive(true);
+                    StartCoroutine(DelayChangeCutscense());
                 }
 
                 if (CutscenesController.cus117 == 0 && CutscenesController.cus116 == 1 && CutscenesTrigger.IceFangKill2 >= 8)
                 {
                     CutscenesController.cus117FIndex = 1;
-                    SceneManager.LoadScene("Cutscenes");
+                    FadeInPanel.SetActive(true);
+                    StartCoroutine(DelayChangeCutscense());
                 }
                 else if (CutscenesController.cus117 == 0 && CutscenesController.cus116 == 1 && CutscenesTrigger.IceFangKill2 < 8)
                 {
@@ -94,5 +96,11 @@ public class IIVMan : MonoBehaviour
         once = 0;
         show2.SetActive(false);
         show1.text = "";
+    }
+
+    IEnumerator DelayChangeCutscense()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Cutscenes");
     }
 }

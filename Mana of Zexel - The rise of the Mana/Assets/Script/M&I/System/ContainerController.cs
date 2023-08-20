@@ -1086,31 +1086,11 @@ public class ContainerController : MonoBehaviour
                 HoliMP += 1;
             }
         }
-        if (UltraBomPick == 1)
-        {
-            UltraBomPick = 0;
-
-            SynItemIndex = 28;
-            SynSuccessPanel.SetActive(true);
-            OpenBag();
-            OpenSynSuccessImage();
-            StartCoroutine(WaitToCloseSSP());
-
-            if (UltraBom <= 0)
-            {
-                UltraBom += 1;
-                Instantiate(UltraBomObject, ItemBagList);
-            }
-            else
-            {
-                UltraBom += 1;
-            }
-        }
         if (ReincarnationLifePick == 1)
         {
             ReincarnationLifePick = 0;
 
-            SynItemIndex = 29;
+            SynItemIndex = 28;
             SynSuccessPanel.SetActive(true);
             OpenBag();
             OpenSynSuccessImage();
@@ -1124,6 +1104,26 @@ public class ContainerController : MonoBehaviour
             else
             {
                 ReincarnationLife += 1;
+            }
+        }
+        if (UltraBomPick == 1)
+        {
+            UltraBomPick = 0;
+
+            SynItemIndex = 29;
+            SynSuccessPanel.SetActive(true);
+            OpenBag();
+            OpenSynSuccessImage();
+            StartCoroutine(WaitToCloseSSP());
+
+            if (UltraBom <= 0)
+            {
+                UltraBom += 1;
+                Instantiate(UltraBomObject, ItemBagList);
+            }
+            else
+            {
+                UltraBom += 1;
             }
         }
         if (FireOfPeacePick == 1)

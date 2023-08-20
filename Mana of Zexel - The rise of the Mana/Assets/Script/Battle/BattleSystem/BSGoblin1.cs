@@ -47,6 +47,8 @@ public class BSGoblin1 : MonoBehaviour
     public GameObject P2TurnStatusObject;
     public GameObject P3TurnStatusObject;
 
+    public GameObject[] RunOff;
+
     public Text P1TurnStatus;
     public Text P2TurnStatus;
     public Text P3TurnStatus;
@@ -169,6 +171,14 @@ public class BSGoblin1 : MonoBehaviour
             AliaStatus.SetActive(true);
             AliaBar.SetActive(true);
             P2Available = true;
+        }
+
+        if (CutscenesController.cus131 == 0 && CutscenesController.cus130 == 1)
+        {
+            for (int i = 0; i < RunOff.Length; i++)
+            {
+                RunOff[i].SetActive(false);
+            }
         }
 
         if (Global.CurHPP1 > 0)
@@ -955,6 +965,8 @@ public class BSGoblin1 : MonoBehaviour
             {
                 SceneManager.LoadScene("Cutscenes");
             }
+            else
+                SceneManager.LoadScene("Zexel town");
         }
         else
             SceneManager.LoadScene("Zexel town");

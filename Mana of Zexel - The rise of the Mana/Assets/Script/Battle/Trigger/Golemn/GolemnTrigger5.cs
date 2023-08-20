@@ -16,7 +16,7 @@ public class GolemnTrigger5 : MonoBehaviour
         {
             despawnGolemnTrigger5 = true;
         }
-        else if (CutscenesController.cus130 == 1 && CutscenesController.cus131 == 0)
+        else if (CutscenesController.cus130 == 1 && CutscenesController.cus131 == 0 && GlobalQuest.Golemn5Death == 0)
         {
             despawnGolemnTrigger5 = false;
         }
@@ -38,6 +38,7 @@ public class GolemnTrigger5 : MonoBehaviour
         {
             ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 3;
+            GlobalQuest.Golemn5Death = 1;
             despawnGolemnTrigger5 = true;
             SceneManager.LoadScene("BSGolemn 2");
         }

@@ -125,6 +125,7 @@ public class Cus127 : MonoBehaviour
                 CutscenesController.cus127 = 1;
                 ContainerController.UltraBom -= 2;
                 ContainerController.LoadingOpen = true;
+                HPMPBarController.EIndex = 4;
                 SceneManager.LoadScene("BSInfernoScorpion 1");
             }
         }
@@ -227,6 +228,7 @@ public class Cus127 : MonoBehaviour
                 CutscenesController.cus127 = 1;
                 ContainerController.UltraBom -= 2;
                 ContainerController.LoadingOpen = true;
+                HPMPBarController.EIndex = 4;
                 SceneManager.LoadScene("BSInfernoScorpion 1");
             }
         }
@@ -267,6 +269,7 @@ public class Cus127 : MonoBehaviour
         CutscenesController.cus127 = 1;
         ContainerController.UltraBom -= 2;
         ContainerController.LoadingOpen = true;
+        HPMPBarController.EIndex = 4;
         SceneManager.LoadScene("BSInfernoScorpion 1");
     }
 

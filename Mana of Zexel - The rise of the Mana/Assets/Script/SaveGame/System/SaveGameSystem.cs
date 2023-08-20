@@ -292,6 +292,10 @@ public class SaveGameSystem : MonoBehaviour
         sdg.SaveIceFangKill2 = CutscenesTrigger.IceFangKill2;
         sdg.SaveGoblinKillP2 = CutscenesTrigger.GoblinKillP2;
         sdg.SaveGolemnKillP2 = CutscenesTrigger.GolemnKillP2;
+        sdg.SaveGoblin5Death = GlobalQuest.Goblin5Death;
+        sdg.SaveGoblin6Death = GlobalQuest.Goblin6Death;
+        sdg.SaveGolemn4Death = GlobalQuest.Golemn4Death;
+        sdg.SaveGolemn5Death = GlobalQuest.Golemn5Death;
 
         //Set player 1 (Vayne)
         sdg.SaveMaxHPP1 = Global.MaxHPP1;
@@ -708,6 +712,10 @@ public class SaveGameSystem : MonoBehaviour
         sdg.SaveIceFangKill2 = CutscenesTrigger.IceFangKill2;
         sdg.SaveGoblinKillP2 = CutscenesTrigger.GoblinKillP2;
         sdg.SaveGolemnKillP2 = CutscenesTrigger.GolemnKillP2;
+        sdg.SaveGoblin5Death = GlobalQuest.Goblin5Death;
+        sdg.SaveGoblin6Death = GlobalQuest.Goblin6Death;
+        sdg.SaveGolemn4Death = GlobalQuest.Golemn4Death;
+        sdg.SaveGolemn5Death = GlobalQuest.Golemn5Death;
 
         //Set player 1 (Vayne)
         sdg.SaveMaxHPP1 = Global.MaxHPP1;

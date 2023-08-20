@@ -10,7 +10,7 @@ public class IDLBom : MonoBehaviour
     public bool IsReady;
 
     public Text show1;
-    public GameObject show2;
+    public GameObject show2, FadeInPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,9 @@ public class IDLBom : MonoBehaviour
             {
                 if (CutscenesController.cus127 == 0 && CutscenesController.cus126 == 1 && ContainerController.UltraBom >= 2)
                 {
-                    SceneManager.LoadScene("Cutscenes");
+                    FadeInPanel.SetActive(true);
+                    StartCoroutine(DelayChangeCutscense());
+                    //SceneManager.LoadScene("Cutscenes");
                 }
                 else if (CutscenesController.cus127 == 0 && CutscenesController.cus126 == 1 && ContainerController.UltraBom < 2)
                 {
@@ -69,6 +71,12 @@ public class IDLBom : MonoBehaviour
     void delay1()
     {
         once = 0;
-        show2.SetActive(true);
+        show2.SetActive(false);
+    }
+
+    IEnumerator DelayChangeCutscense()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Cutscenes");
     }
 }

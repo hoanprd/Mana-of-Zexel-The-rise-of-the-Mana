@@ -10,7 +10,7 @@ public class Cus124 : MonoBehaviour
 
     public Text NameTagText;
     public Text dia;
-    public GameObject va1, va2, ManaDetecBroken;
+    public GameObject va1, ManaDetecBroken;
     public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1;
     public GameObject NameTag;
     private int tang;
@@ -65,8 +65,6 @@ public class Cus124 : MonoBehaviour
             }
             else if (tang == 7)
             {
-                va1.SetActive(false);
-                va2.SetActive(true);
                 MariaVAL1.SetActive(false);
                 VayneVAR1.SetActive(false);
                 NameTagText.text = "";
@@ -172,6 +170,7 @@ public class Cus124 : MonoBehaviour
             {
                 CutscenesController.cus124 = 1;
                 ContainerController.LoadingOpen = true;
+                ContainerController.BrokenManaDetectorPick = 1;
                 SceneManager.LoadScene("Wishing forest");
             }
         }
@@ -214,8 +213,6 @@ public class Cus124 : MonoBehaviour
             }
             else if (tang == 7)
             {
-                va1.SetActive(false);
-                va2.SetActive(true);
                 MariaVAL1.SetActive(false);
                 VayneVAR1.SetActive(false);
                 NameTagText.text = "";
@@ -321,6 +318,7 @@ public class Cus124 : MonoBehaviour
             {
                 CutscenesController.cus124 = 1;
                 ContainerController.LoadingOpen = true;
+                ContainerController.BrokenManaDetectorPick = 1;
                 SceneManager.LoadScene("Wishing forest");
             }
         }
@@ -338,6 +336,7 @@ public class Cus124 : MonoBehaviour
         cc.FXCutscenes(1);
         CutscenesController.cus124 = 1;
         ContainerController.LoadingOpen = true;
+        ContainerController.BrokenManaDetectorPick = 1;
         SceneManager.LoadScene("Wishing forest");
     }
 

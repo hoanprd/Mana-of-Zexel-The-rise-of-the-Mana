@@ -16,7 +16,7 @@ public class GoblinTrigger5 : MonoBehaviour
         {
             despawnGoblinTrigger5 = true;
         }
-        else if (CutscenesController.cus130 == 1 && CutscenesController.cus131 == 0)
+        else if (CutscenesController.cus130 == 1 && CutscenesController.cus131 == 0 && GlobalQuest.Goblin5Death == 0)
         {
             despawnGoblinTrigger5 = false;
         }
@@ -38,6 +38,7 @@ public class GoblinTrigger5 : MonoBehaviour
         {
             ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 2;
+            GlobalQuest.Goblin5Death = 1;
             despawnGoblinTrigger5 = true;
             SceneManager.LoadScene("BSGoblin 1");
         }

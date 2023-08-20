@@ -10,7 +10,7 @@ public class IIVWoman : MonoBehaviour
     public bool IsReady;
 
     public Text show1;
-    public GameObject show2;
+    public GameObject show2, FadeInPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +28,15 @@ public class IIVWoman : MonoBehaviour
                 if (CutscenesController.cus118 == 0 && CutscenesController.cus111 == 1)
                 {
                     CutscenesController.cus118FIndex = 1;
-                    SceneManager.LoadScene("Cutscenes");
+                    FadeInPanel.SetActive(true);
+                    StartCoroutine(DelayChangeCutscense());
                 }
 
                 if (CutscenesController.cus121 == 0 && CutscenesController.cus120 == 1)
                 {
                     CutscenesController.cus121FIndex = 1;
-                    SceneManager.LoadScene("Cutscenes");
+                    FadeInPanel.SetActive(true);
+                    StartCoroutine(DelayChangeCutscense());
                 }
                 /*else if (CutscenesController.cus118 == 1 && CutscenesController.cus121 == 0)
                 {
@@ -104,4 +106,10 @@ public class IIVWoman : MonoBehaviour
         once = 0;
         
     }*/
+
+    IEnumerator DelayChangeCutscense()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Cutscenes");
+    }
 }

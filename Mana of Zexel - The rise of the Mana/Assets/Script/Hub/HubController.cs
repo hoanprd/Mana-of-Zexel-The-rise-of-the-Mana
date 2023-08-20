@@ -655,7 +655,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus126 == 0)
             QT.text = "Head to the village of Inferno desert to use the detector";
         else if (CutscenesController.cus127 == 0)
-            QT.text = "You need to use 3 Ultra bombs to dig up the lake area";
+            QT.text = "You need to use 2 Ultra bombs to dig up the lake area";
         else if (CutscenesController.cus128 == 0)
             QT.text = "";
         else if (CutscenesController.cus129 == 0)
@@ -841,8 +841,8 @@ public class HubController : MonoBehaviour
         AliaW3.GetComponent<Text>().text = "" + Global.AliaShoes3;
 
         AliaA1.GetComponent<Text>().text = "" + Global.WarriorArmor1;
-        AliaA2.GetComponent<Text>().text = "" + Global.WarriorArmor1;
-        AliaA3.GetComponent<Text>().text = "" + Global.WarriorArmor1;
+        AliaA2.GetComponent<Text>().text = "" + Global.WarriorArmor2;
+        AliaA3.GetComponent<Text>().text = "" + Global.WarriorArmor3;
     }
 
     public void ShowP3Equip()

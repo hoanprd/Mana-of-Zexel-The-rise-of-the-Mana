@@ -145,6 +145,7 @@ public class Cus128 : MonoBehaviour
             {
                 CutscenesController.cus128 = 1;
                 ContainerController.LoadingOpen = true;
+                HPMPBarController.EIndex = 10;
                 SceneManager.LoadScene("BSManaEagle 1");
             }
         }
@@ -268,6 +269,7 @@ public class Cus128 : MonoBehaviour
             {
                 CutscenesController.cus128 = 1;
                 ContainerController.LoadingOpen = true;
+                HPMPBarController.EIndex = 10;
                 SceneManager.LoadScene("BSManaEagle 1");
             }
         }
@@ -308,6 +310,7 @@ public class Cus128 : MonoBehaviour
         cc.FXCutscenes(1);
         CutscenesController.cus128 = 1;
         ContainerController.LoadingOpen = true;
+        HPMPBarController.EIndex = 10;
         SceneManager.LoadScene("BSManaEagle 1");
     }
 }

@@ -9,15 +9,5 @@ public class GlobalQuest : MonoBehaviour
     public static int HelpVillagerStop2;
     public static int HelpVillagerStop3;
     public static int HelpVillagerDone;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public static int Goblin5Death, Goblin6Death, Golemn4Death, Golemn5Death;
 }

@@ -101,7 +101,6 @@ public class Cus122 : MonoBehaviour
             }
             else if (tang == 12)
             {
-                VayneVAL1.SetActive(true);
                 NameTagText.text = "Jesca";
                 dia.text = "Huh? Is that Vayne's group? Do you guys have any business to come over here?";
             }
@@ -253,7 +252,6 @@ public class Cus122 : MonoBehaviour
             }
             else if (tang == 12)
             {
-                VayneVAL1.SetActive(true);
                 NameTagText.text = "Jesca";
                 dia.text = "Hể? Là nhóm anh Vayne đó ư? Mọi người có công chuyện gì cần ghé qua đây ư?";
             }

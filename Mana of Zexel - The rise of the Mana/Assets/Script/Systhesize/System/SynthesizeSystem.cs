@@ -292,7 +292,7 @@ public class SynthesizeSystem : MonoBehaviour
         num109.text = "" + ContainerController.UltraBom;
         num110.text = "4/" + ContainerController.ManaEagleFeather;
         num111.text = "2/" + ContainerController.IceLeather;
-        num112.text = "2" + ContainerController.ManaCloth;
+        num112.text = "2/" + ContainerController.ManaCloth;
         num113.text = "" + ContainerController.OmnipotentBoundary;
 
         ManaSynSlider.value = ManaSynthesize;
@@ -1437,7 +1437,7 @@ public class SynthesizeSystem : MonoBehaviour
         if (ContainerController.BrokenManaDetector >= 1 && ContainerController.BaxiataGem >= 4 && ContainerController.ManaLiquidCatalyst >= 4 && ManaSynthesize >= 60)
         {
             SynthesizeFX.Play();
-            ManaIceSynthesize -= 60;
+            ManaSynthesize -= 60;
             ContainerController.BrokenManaDetector -= 1;
             ContainerController.BaxiataGem -= 4;
             ContainerController.ManaLiquidCatalyst -= 4;

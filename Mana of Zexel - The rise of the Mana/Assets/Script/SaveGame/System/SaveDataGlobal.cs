@@ -180,6 +180,10 @@ public class SaveDataGlobal
     public int SaveIceFangKill2;
     public int SaveGoblinKillP2;
     public int SaveGolemnKillP2;
+    public int SaveGoblin5Death;
+    public int SaveGoblin6Death;
+    public int SaveGolemn4Death;
+    public int SaveGolemn5Death;
 
     //Set player 1 (Vayne)
     public int SaveMaxHPP1;

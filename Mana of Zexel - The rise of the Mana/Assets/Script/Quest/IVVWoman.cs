@@ -10,7 +10,7 @@ public class IVVWoman : MonoBehaviour
     public bool IsReady;
 
     public Text show1;
-    public GameObject show2;
+    public GameObject show2, FadeInPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +28,15 @@ public class IVVWoman : MonoBehaviour
                 if (CutscenesController.cus114 == 0 && CutscenesController.cus111 == 1)
                 {
                     CutscenesController.cus114FIndex = 1;
-                    SceneManager.LoadScene("Cutscenes");
+                    FadeInPanel.SetActive(true);
+                    StartCoroutine(DelayChangeCutscense());
                 }
 
                 if (CutscenesController.cus115 == 0 && CutscenesController.cus114 == 1 && ContainerController.FireOre >= 10 && ContainerController.RedManaCrystal >= 10)
                 {
                     CutscenesController.cus115FIndex = 1;
-                    SceneManager.LoadScene("Cutscenes");
+                    FadeInPanel.SetActive(true);
+                    StartCoroutine(DelayChangeCutscense());
                 }
                 else if (CutscenesController.cus115 == 0 && CutscenesController.cus114 == 1 && ContainerController.FireOre < 10 && ContainerController.RedManaCrystal < 10)
                 {
@@ -94,5 +96,11 @@ public class IVVWoman : MonoBehaviour
         once = 0;
         show2.SetActive(false);
         show1.text = "";
+    }
+
+    IEnumerator DelayChangeCutscense()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Cutscenes");
     }
 }

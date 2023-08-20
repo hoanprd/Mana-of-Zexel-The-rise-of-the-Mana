@@ -50,6 +50,8 @@ public class Cus126 : MonoBehaviour
             }
             else if (tang == 4)
             {
+                va1.SetActive(false);
+                va2.SetActive(true);
                 AliaVAL1.SetActive(false);
                 MeruVAR1.SetActive(false);
                 NameTagText.text = "";
@@ -156,6 +158,8 @@ public class Cus126 : MonoBehaviour
             }
             else if (tang == 4)
             {
+                va1.SetActive(false);
+                va2.SetActive(true);
                 AliaVAL1.SetActive(false);
                 MeruVAR1.SetActive(false);
                 NameTagText.text = "";
@@ -192,8 +196,6 @@ public class Cus126 : MonoBehaviour
             }
             else if (tang == 10)
             {
-                AliaVAR1.SetActive(false);
-                MariaVAR1.SetActive(true);
                 NameTagText.text = "Maria";
                 dia.text = "... Chị không biết nữa.";
             }

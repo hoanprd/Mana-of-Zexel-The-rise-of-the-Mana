@@ -223,6 +223,10 @@ public class MenuController : MonoBehaviour
         CutscenesTrigger.IceFangKill2 = 0;
         CutscenesTrigger.GoblinKillP2 = 0;
         CutscenesTrigger.GolemnKillP2 = 0;
+        GlobalQuest.Goblin5Death = 0;
+        GlobalQuest.Goblin6Death = 0;
+        GlobalQuest.Golemn4Death = 0;
+        GlobalQuest.Golemn5Death = 0;
 
         //Set posi
         PlayerPrefs.SetFloat("x", 2);
@@ -241,6 +245,14 @@ public class MenuController : MonoBehaviour
         Global.CurEXPP1 = 0;
 
         Global.PlusPointP1 = 1;
+        Global.PlusPointAttackLvP1 = 0;
+        Global.PlusPointHPLvP1 = 0;
+        Global.PlusPointMPLvP1 = 0;
+        Global.PlusPointSpeedLvP1 = 0;
+        Global.PlusPointAttackInfoP1 = 0;
+        Global.PlusPointHPInfoP1 = 0;
+        Global.PlusPointMPInfoP1 = 0;
+        Global.PlusPointSpeedInfoP1 = 0;
 
         /*Global.CurHPP1 = 1200;
         Global.MaxHPP1 = 1200;
@@ -264,6 +276,14 @@ public class MenuController : MonoBehaviour
         Global.CurEXPP2 = 0;
 
         Global.PlusPointP2 = 2;
+        Global.PlusPointAttackLvP2 = 0;
+        Global.PlusPointHPLvP2 = 0;
+        Global.PlusPointMPLvP2 = 0;
+        Global.PlusPointSpeedLvP2 = 0;
+        Global.PlusPointAttackInfoP2 = 0;
+        Global.PlusPointHPInfoP2 = 0;
+        Global.PlusPointMPInfoP2 = 0;
+        Global.PlusPointSpeedInfoP2 = 0;
 
         /*Global.CurHPP2 = 840;
         Global.MaxHPP2 = 840;
@@ -287,6 +307,14 @@ public class MenuController : MonoBehaviour
         Global.CurEXPP3 = 0;
 
         Global.PlusPointP3 = 5;
+        Global.PlusPointAttackLvP3 = 0;
+        Global.PlusPointHPLvP3 = 0;
+        Global.PlusPointMPLvP3 = 0;
+        Global.PlusPointSpeedLvP3 = 0;
+        Global.PlusPointAttackInfoP3 = 0;
+        Global.PlusPointHPInfoP3 = 0;
+        Global.PlusPointMPInfoP3 = 0;
+        Global.PlusPointSpeedInfoP3 = 0;
 
         /*Global.CurHPP3 = 1360;
         Global.MaxHPP3 = 1360;
@@ -365,6 +393,9 @@ public class MenuController : MonoBehaviour
         ContainerController.OmnipotentBoundary = 0;
 
         //Set weapon had bought
+        WeaponStoreController.AlchemistArmor1HadBought = 0;
+        WeaponStoreController.AlchemistArmor2HadBought = 0;
+        WeaponStoreController.AlchemistArmor3HadBought = 0;
         WeaponStoreController.Bought1 = 0;
         WeaponStoreController.Bought2 = 0;
         WeaponStoreController.Bought3 = 0;
@@ -666,6 +697,10 @@ public class MenuController : MonoBehaviour
         CutscenesTrigger.IceFangKill2 = sdg.SaveIceFangKill2;
         CutscenesTrigger.GoblinKillP2 = sdg.SaveGoblinKillP2;
         CutscenesTrigger.GolemnKillP2 = sdg.SaveGolemnKillP2;
+        GlobalQuest.Goblin5Death = sdg.SaveGoblin5Death;
+        GlobalQuest.Goblin6Death = sdg.SaveGoblin6Death;
+        GlobalQuest.Golemn4Death = sdg.SaveGolemn4Death;
+        GlobalQuest.Golemn5Death = sdg.SaveGolemn5Death;
 
         //Load position 
         PlayerPrefs.SetFloat("x", 6);
