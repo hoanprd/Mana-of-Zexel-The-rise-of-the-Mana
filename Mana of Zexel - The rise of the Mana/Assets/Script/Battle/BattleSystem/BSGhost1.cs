@@ -1155,7 +1155,7 @@ public class BSGhost1 : MonoBehaviour
     void delayP1PressAttack()
     {
         ShowP1Panel(false);
-        VayneAttackEffect.SetActive(true);
+        VayneAttackEffect.SetActive(false);
         Global.HPE11 -= Global.DamageP1;
         PDamage.text = "";
         a1 -= 1;
@@ -1290,19 +1290,19 @@ public class BSGhost1 : MonoBehaviour
             int CheckMaxhealP1 = Global.MaxMPP1 - Global.CurMPP1;
             int CheckMaxhealP2 = Global.MaxMPP2 - Global.CurMPP2;
 
-            if ((HealAmount < CheckMaxhealP1) && (Global.CurMPP1 > 0))
+            if ((HealAmount < CheckMaxhealP1) && (Global.CurHPP1 > 0))
             {
                 Global.CurMPP1 += HealAmount;
             }
-            else if ((HealAmount >= CheckMaxhealP1) && (Global.CurMPP1 > 0))
+            else if ((HealAmount >= CheckMaxhealP1) && (Global.CurHPP1 > 0))
             {
                 Global.CurMPP1 = Global.MaxMPP1;
             }
-            if ((HealAmount < CheckMaxhealP2) && (Global.CurMPP2 > 0))
+            if ((HealAmount < CheckMaxhealP2) && (Global.CurHPP2 > 0))
             {
                 Global.CurMPP2 += HealAmount;
             }
-            else if ((HealAmount >= CheckMaxhealP2) && (Global.CurMPP2 > 0))
+            else if ((HealAmount >= CheckMaxhealP2) && (Global.CurHPP2 > 0))
             {
                 Global.CurMPP2 = Global.MaxMPP2;
             }

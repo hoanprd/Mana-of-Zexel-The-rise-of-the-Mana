@@ -311,12 +311,12 @@ public class WeaponStoreController : MonoBehaviour
         }
         else if (BuyIndex == 2)
         {
-            if (Global.Zen >= 2000)
+            if (Global.Zen >= 1000)
             {
                 BuyFX.Play();
                 BuyAskPanel.SetActive(false);
                 Global.VayneStaff2 += 1;
-                Global.Zen -= 2000;
+                Global.Zen -= 1000;
                 Bought6 = 1;
                 InShock6.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
@@ -332,12 +332,12 @@ public class WeaponStoreController : MonoBehaviour
         }
         else if (BuyIndex == 3)
         {
-            if (Global.Zen >= 4000)
+            if (Global.Zen >= 1500)
             {
                 BuyFX.Play();
                 BuyAskPanel.SetActive(false);
                 Global.VayneStaff3 += 1;
-                Global.Zen -= 4000;
+                Global.Zen -= 1500;
                 Bought11 = 1;
                 InShock11.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
@@ -374,12 +374,12 @@ public class WeaponStoreController : MonoBehaviour
         }
         else if (BuyIndex == 5)
         {
-            if (Global.Zen >= 2000)
+            if (Global.Zen >= 1000)
             {
                 BuyFX.Play();
                 BuyAskPanel.SetActive(false);
                 Global.AliaShoes2 += 1;
-                Global.Zen -= 2000;
+                Global.Zen -= 1000;
                 Bought7 = 1;
                 InShock7.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
@@ -395,12 +395,12 @@ public class WeaponStoreController : MonoBehaviour
         }
         else if (BuyIndex == 6)
         {
-            if (Global.Zen >= 4000)
+            if (Global.Zen >= 1500)
             {
                 BuyFX.Play();
                 BuyAskPanel.SetActive(false);
                 Global.AliaShoes3 += 1;
-                Global.Zen -= 4000;
+                Global.Zen -= 1500;
                 Bought12 = 1;
                 InShock12.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
@@ -437,12 +437,12 @@ public class WeaponStoreController : MonoBehaviour
         }
         else if (BuyIndex == 8)
         {
-            if (Global.Zen >= 2000)
+            if (Global.Zen >= 1000)
             {
                 BuyFX.Play();
                 BuyAskPanel.SetActive(false);
                 Global.MariaCrystal2 += 1;
-                Global.Zen -= 2000;
+                Global.Zen -= 1000;
                 Bought8 = 1;
                 InShock8.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
@@ -458,12 +458,12 @@ public class WeaponStoreController : MonoBehaviour
         }
         else if (BuyIndex == 9)
         {
-            if (Global.Zen >= 4000)
+            if (Global.Zen >= 1500)
             {
                 BuyFX.Play();
                 BuyAskPanel.SetActive(false);
                 Global.MariaCrystal3 += 1;
-                Global.Zen -= 4000;
+                Global.Zen -= 1500;
                 Bought13 = 1;
                 InShock13.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
@@ -501,12 +501,12 @@ public class WeaponStoreController : MonoBehaviour
         }
         else if (BuyIndex == 11)
         {
-            if (Global.Zen >= 2000)
+            if (Global.Zen >= 1000)
             {
                 BuyFX.Play();
                 BuyAskPanel.SetActive(false);
                 Global.AlchemistArmor2 += 1;
-                Global.Zen -= 2000;
+                Global.Zen -= 1000;
                 Bought9 = 1;
                 AlchemistArmor2HadBought += 1;
                 InShock9.text = "In shock: " + (2 - AlchemistArmor2HadBought).ToString();
@@ -523,12 +523,12 @@ public class WeaponStoreController : MonoBehaviour
         }
         else if (BuyIndex == 12)
         {
-            if (Global.Zen >= 4000)
+            if (Global.Zen >= 1500)
             {
                 BuyFX.Play();
                 BuyAskPanel.SetActive(false);
                 Global.AlchemistArmor3 += 1;
-                Global.Zen -= 4000;
+                Global.Zen -= 1500;
                 Bought14 = 1;
                 AlchemistArmor3HadBought += 1;
                 InShock14.text = "In shock: " + (2 - AlchemistArmor3HadBought).ToString();
@@ -566,12 +566,12 @@ public class WeaponStoreController : MonoBehaviour
         }
         else if (BuyIndex == 14)
         {
-            if (Global.Zen >= 2000)
+            if (Global.Zen >= 1000)
             {
                 BuyFX.Play();
                 BuyAskPanel.SetActive(false);
                 Global.WarriorArmor2 += 1;
-                Global.Zen -= 2000;
+                Global.Zen -= 1000;
                 Bought10 = 1;
                 InShock10.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
@@ -587,12 +587,12 @@ public class WeaponStoreController : MonoBehaviour
         }
         else if (BuyIndex == 15)
         {
-            if (Global.Zen >= 4000)
+            if (Global.Zen >= 1500)
             {
                 BuyFX.Play();
                 BuyAskPanel.SetActive(false);
                 Global.WarriorArmor3 += 1;
-                Global.Zen -= 4000;
+                Global.Zen -= 1500;
                 Bought15 = 1;
                 InShock15.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";

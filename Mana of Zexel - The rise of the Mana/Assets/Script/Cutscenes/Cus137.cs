@@ -121,6 +121,7 @@ public class Cus137 : MonoBehaviour
             {
                 CutscenesController.cus137 = 1;
                 ContainerController.LoadingOpen = true;
+                HPMPBarController.EIndex = 26;
                 SceneManager.LoadScene("BSZane 1");
             }
         }
@@ -219,6 +220,7 @@ public class Cus137 : MonoBehaviour
             {
                 CutscenesController.cus137 = 1;
                 ContainerController.LoadingOpen = true;
+                HPMPBarController.EIndex = 26;
                 SceneManager.LoadScene("BSZane 1");
             }
         }
@@ -236,6 +238,7 @@ public class Cus137 : MonoBehaviour
         cc.FXCutscenes(1);
         CutscenesController.cus137 = 1;
         ContainerController.LoadingOpen = true;
+        HPMPBarController.EIndex = 26;
         SceneManager.LoadScene("BSZane 1");
     }
 

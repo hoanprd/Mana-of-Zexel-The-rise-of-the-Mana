@@ -13,6 +13,7 @@ public class cdOuttro : MonoBehaviour
     void Start()
     {
         Debug.Log("Bye");
+        ContainerController.DestroyBag = true;
         ct = sm * 60;
     }
 

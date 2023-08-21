@@ -15,7 +15,7 @@ public class HubController : MonoBehaviour
     public GameObject quest;
     public GameObject esc;
     public GameObject MariaInfo;
-    public GameObject EquipTextVayne, EquipTextAlia, EquipTextMaria;
+    public GameObject EquipTextVayne, EquipTextAlia, EquipTextMaria, PlayerHub;
     public Text LevelP1;
     public Text HPP1;
     public Text MPP1;
@@ -29,7 +29,7 @@ public class HubController : MonoBehaviour
     public Text QT;
     public int ShowLevelP1, ShowLevelP2, ShowLevelP3, ShowHPP1, ShowHPP2, ShowHPP3, ShowMPP1, ShowMPP2, ShowMPP3, ShowZen;
     public int PlusPointIndex;
-    public static bool BusyHub;
+    public static bool BusyHub, SicxalonDeath;
     public GameObject ShowVayneDetailPanel, ShowAliaDetailPanel, ShowMariaDetailPanel;
     public GameObject DShowLevelP1, DShowEXPP1, DShowAttackP1, DShowHPP1, DShowMPP1, DShowSpeedP1, DShowLevelP2, DShowEXPP2, DShowAttackP2, DShowHPP2, DShowMPP2, DShowSpeedP2, DShowLevelP3, DShowEXPP3, DShowAttackP3, DShowHPP3, DShowMPP3, DShowSpeedP3;
     public GameObject PointPlusP1, AttackPointPlusLvP1, HPPointPlusLvP1, MPPointPlusLvP1, SpeedPointPlusLvP1, AttackPointPlusInfoP1, HPPointPlusInfoP1, MPPointPlusInfoP1, SpeedPointPlusInfoP1;
@@ -53,8 +53,20 @@ public class HubController : MonoBehaviour
             Instantiate(Bag);
         }
 
+        if (CutscenesController.cus139 == 1)
+        {
+            SicxalonDeath = true;
+            PlayerHub.SetActive(false);
+        }
+        else
+        {
+            SicxalonDeath = false;
+        }
+
         //Map detail
-        for (int i = 0; i < MapArrow.Length; i++)
+        StartCoroutine(DelayMapUI());
+
+        /*for (int i = 0; i < MapArrow.Length; i++)
         {
             if (i == Player.MapIndex)
             {
@@ -119,7 +131,7 @@ public class HubController : MonoBehaviour
             }
         }
 
-        /*ShowLevelP1 = Global.LevelP1;
+        ShowLevelP1 = Global.LevelP1;
         ShowHPP1 = Global.CurHPP1;
         ShowMPP1 = Global.CurMPP1;
 
@@ -167,7 +179,7 @@ public class HubController : MonoBehaviour
             map.SetActive(true);
             BusyHub = true;
         }
-        else if (Input.GetKeyDown(KeyCode.I) && BusyHub == false && ContainerController.LoadingOpen == false)
+        else if (Input.GetKeyDown(KeyCode.I) && BusyHub == false && ContainerController.LoadingOpen == false && SicxalonDeath == false)
         {
             OpenHubFX.Play();
             Player.TextDisplay = true;
@@ -665,9 +677,9 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus131 == 0)
             QT.text = "Defeat all the monsters and protect the people of Zexel town";
         else if (CutscenesController.cus132 == 0)
-            QT.text = "Make a barrier that covers Zexel town to protect everyone in the village";
+            QT.text = "Make a barrier that covers Zexel town by synthesize Omnipotent Boundary to protect everyone in the village";
         else if (CutscenesController.cus133 == 0)
-            QT.text = "Come to the village in Inferno desert to use the barrier to protect everyone";
+            QT.text = "Synthesize an Omnipotent Boundary and come to the village in Inferno desert to protect everyone";
         else if (CutscenesController.cus134 == 0)
             QT.text = "Come to the mana temple to hear the messages of the mana gods";
         else if (CutscenesController.cus135 == 0)
@@ -2553,5 +2565,74 @@ public class HubController : MonoBehaviour
         EquipTextVayne.SetActive(false);
         EquipTextAlia.SetActive(false);
         EquipTextMaria.SetActive(false);
+    }
+
+    IEnumerator DelayMapUI()
+    {
+        yield return new WaitForSeconds(1f);
+        for (int i = 0; i < MapArrow.Length; i++)
+        {
+            if (i == Player.MapIndex)
+            {
+                MapArrow[i].SetActive(true);
+            }
+
+            if (i == 0 && CutscenesController.cus1 == 1)
+            {
+                MapText[i].text = "Wishing hill";
+            }
+            else if (i == 1 && CutscenesController.cus3 == 1)
+            {
+                MapText[i].text = "Zexel town";
+            }
+            else if (i == 2 && CutscenesController.cus8 == 1)
+            {
+                MapText[i].text = "Wishing forest";
+            }
+            else if (i == 3 && CutscenesController.cus35 == 1)
+            {
+                MapText[i].text = "Inferno desert";
+            }
+            else if (i == 4 && CutscenesController.cus41 == 1)
+            {
+                MapText[i].text = "Zexel gate";
+            }
+            else if (i == 5 && CutscenesController.cus50 == 1)
+            {
+                MapText[i].text = "Mana gate";
+            }
+            else if (i == 6 && CutscenesController.cus52 == 1)
+            {
+                MapText[i].text = "Mana dimension";
+            }
+            else if (i == 7 && CutscenesController.cus54 == 1)
+            {
+                MapText[i].text = "Mana temple";
+            }
+            else if (i == 8 && CutscenesController.cus58 == 1)
+            {
+                MapText[i].text = "Inferno volcano";
+            }
+            else if (i == 9 && CutscenesController.cus64 == 1)
+            {
+                MapText[i].text = "Inferno ice";
+            }
+            else if (i == 10 && CutscenesController.cus79 == 1)
+            {
+                MapText[i].text = "Alta inferno";
+            }
+            else if (i == 11 && CutscenesController.cus93 == 1)
+            {
+                MapText[i].text = "Zexel temple";
+            }
+            else if (i == 12 && CutscenesController.cus98 == 1)
+            {
+                MapText[i].text = "Mana Cllif";
+            }
+            else
+            {
+                MapText[i].text = "???";
+            }
+        }
     }
 }

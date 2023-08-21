@@ -56,7 +56,7 @@ public class ContainerController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (Input.GetKeyDown(KeyCode.B) && HubController.BusyHub == false && PickUpUpdate == false)
+        if (Input.GetKeyDown(KeyCode.B) && HubController.BusyHub == false && PickUpUpdate == false && HubController.SicxalonDeath == false)
         {
             OpenHubFX.Play();
             Player.TextDisplay = true;
@@ -1227,7 +1227,7 @@ public class ContainerController : MonoBehaviour
         {
             StartCoroutine(DelaySynCut());
         }
-        else if(CutscenesController.cus132 == 0 && CutscenesController.cus131 == 1 && ContainerController.OmnipotentBoundary >= 2 && SynItemIndex == 30)
+        else if(CutscenesController.cus132 == 0 && CutscenesController.cus131 == 1 && ContainerController.OmnipotentBoundary >= 1 && SynItemIndex == 30)
         {
             StartCoroutine(DelaySynCut());
         }

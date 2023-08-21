@@ -374,7 +374,7 @@ public class Player : MonoBehaviour
                 GoblinTrigger2.despawn = false;
                 GoblinTrigger3.despawn = false;
                 GoblinTrigger4.despawn = false;
-                MapIndex = 0;
+                //MapIndex = 0;
                 FadeInPanel.SetActive(true);
                 StartCoroutine(DelayChangeCutscense());
             }
@@ -385,7 +385,7 @@ public class Player : MonoBehaviour
                 GoblinTrigger2.despawn = false;
                 GoblinTrigger3.despawn = false;
                 GoblinTrigger4.despawn = false;
-                MapIndex = 0;
+                //MapIndex = 0;
                 StartCoroutine(DelayChangeMap(0));
             }
         }
@@ -1126,7 +1126,7 @@ public class Player : MonoBehaviour
                 InfernoScorpionTrigger4.despawn = false;
                 InfernoScorpionTrigger5.despawn = false;
                 InfernoScorpionTrigger6.despawn = false;
-                MapIndex = 12;
+                //MapIndex = 12;
                 StartCoroutine(DelayChangeMap(12));
             }
         }
@@ -1151,7 +1151,7 @@ public class Player : MonoBehaviour
                 ManaSlimeTrigger2.despawn = false;
                 ManaSlimeTrigger3.despawn = false;
                 ManaSlimeTrigger4.despawn = false;
-                MapIndex = 6;
+                //MapIndex = 6;
                 StartCoroutine(DelayChangeCutscense());
             }
             else
@@ -1161,7 +1161,7 @@ public class Player : MonoBehaviour
                 ManaSlimeTrigger2.despawn = false;
                 ManaSlimeTrigger3.despawn = false;
                 ManaSlimeTrigger4.despawn = false;
-                MapIndex = 6;
+                //MapIndex = 6;
                 StartCoroutine(DelayChangeMap(6));
             }
         }
@@ -1189,7 +1189,7 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("ManaTempleToManaDimension"))
         {
             MapController.ManaTempleToManaDimension = true;
-            MapIndex = 6;
+            //MapIndex = 6;
             StartCoroutine(DelayChangeMap(6));
         }
         if (collision.CompareTag("InfernoVolcanoToInsideVolcanoCave"))

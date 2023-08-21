@@ -158,7 +158,7 @@ public class CutscenesTrigger : MonoBehaviour
             {
                 StartCoroutine(DelayChangeCutscense());
             }
-            else if (CutscenesController.cus133 == 0 && CutscenesController.cus132 == 1 && Player.MapIndex == 3)
+            else if (CutscenesController.cus133 == 0 && CutscenesController.cus132 == 1 && ContainerController.OmnipotentBoundary >= 1 && Player.MapIndex == 3)
             {
                 StartCoroutine(DelayChangeCutscense());
             }

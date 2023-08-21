@@ -30,6 +30,7 @@ public class Cus138 : MonoBehaviour
             if (tang == 1)
             {
                 ZaneVAL1.SetActive(true);
+                NameTag.SetActive(true);
                 NameTagText.text = "Zane";
                 dia.text = "You guys are a lot stronger than last time, aren't you? You're surprised.";
             }
@@ -78,7 +79,7 @@ public class Cus138 : MonoBehaviour
             }
             if (tang == 10)
             {
-                ZaneVAL1.SetActive(true);
+                ZaneVAL1.SetActive(false);
                 MariaVAR1.SetActive(false);
                 NameTagText.text = "Sicxalon";
                 dia.text = "Gruuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh...";
@@ -159,6 +160,7 @@ public class Cus138 : MonoBehaviour
             {
                 CutscenesController.cus138 = 1;
                 ContainerController.LoadingOpen = true;
+                HPMPBarController.EIndex = 25;
                 SceneManager.LoadScene("BSSicxalon 1");
             }
         }
@@ -167,6 +169,7 @@ public class Cus138 : MonoBehaviour
             if (tang == 1)
             {
                 ZaneVAL1.SetActive(true);
+                NameTag.SetActive(true);
                 NameTagText.text = "Zane";
                 dia.text = "Các ngươi mạnh hơn lần trước rất nhiều nhỉ? Ta ngạc nhiên đấy.";
             }
@@ -215,7 +218,7 @@ public class Cus138 : MonoBehaviour
             }
             if (tang == 10)
             {
-                ZaneVAL1.SetActive(true);
+                ZaneVAL1.SetActive(false);
                 MariaVAR1.SetActive(false);
                 NameTagText.text = "Sicxalon";
                 dia.text = "Gruuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh...";
@@ -296,6 +299,7 @@ public class Cus138 : MonoBehaviour
             {
                 CutscenesController.cus138 = 1;
                 ContainerController.LoadingOpen = true;
+                HPMPBarController.EIndex = 25;
                 SceneManager.LoadScene("BSSicxalon 1");
             }
         }
@@ -345,6 +349,7 @@ public class Cus138 : MonoBehaviour
         cc.FXCutscenes(1);
         CutscenesController.cus138 = 1;
         ContainerController.LoadingOpen = true;
+        HPMPBarController.EIndex = 25;
         SceneManager.LoadScene("BSSicxalon 1");
     }
 }

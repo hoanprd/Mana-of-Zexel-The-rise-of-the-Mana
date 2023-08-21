@@ -121,7 +121,6 @@ public class Cus132 : MonoBehaviour
                 CutscenesController.cus132 = 1;
                 ContainerController.LoadingOpen = true;
                 ContainerController.OmnipotentBoundary -= 1;
-                MapController.TavernToSaveRoom = false;
                 MapController.WishingForestToZexelTown = true;
                 SceneManager.LoadScene("Zexel town");
             }
@@ -221,7 +220,6 @@ public class Cus132 : MonoBehaviour
                 CutscenesController.cus132 = 1;
                 ContainerController.LoadingOpen = true;
                 ContainerController.OmnipotentBoundary -= 1;
-                MapController.TavernToSaveRoom = false;
                 MapController.WishingForestToZexelTown = true;
                 SceneManager.LoadScene("Zexel town");
             }
@@ -250,7 +248,6 @@ public class Cus132 : MonoBehaviour
         CutscenesController.cus132 = 1;
         ContainerController.LoadingOpen = true;
         ContainerController.OmnipotentBoundary -= 1;
-        MapController.TavernToSaveRoom = false;
         MapController.WishingForestToZexelTown = true;
         SceneManager.LoadScene("Zexel town");
     }

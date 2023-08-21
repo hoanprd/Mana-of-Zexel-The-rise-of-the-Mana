@@ -180,11 +180,11 @@ public class Global : MonoBehaviour
             DamageBE4 = 180;
             SpeedBE4 = 30;
 
-            HPBE5 = 50000;
-            DamageBE5 = 500;
+            HPBE5 = 40000;
+            DamageBE5 = 400;
             SpeedBE5 = 20;
 
-            HPBE6 = 25000;
+            HPBE6 = 20000;
             DamageBE6 = 140;
             SpeedBE6 = 20;
         }
@@ -297,11 +297,11 @@ public class Global : MonoBehaviour
             DamageBE4 = 240;
             SpeedBE4 = 30;
 
-            HPBE5 = 80000;
-            DamageBE5 = 600;
+            HPBE5 = 60000;
+            DamageBE5 = 500;
             SpeedBE5 = 20;
 
-            HPBE6 = 35000;
+            HPBE6 = 30000;
             DamageBE6 = 150;
             SpeedBE6 = 20;
         }

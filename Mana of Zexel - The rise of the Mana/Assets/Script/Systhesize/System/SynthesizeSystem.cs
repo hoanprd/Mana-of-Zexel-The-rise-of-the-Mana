@@ -1496,7 +1496,7 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton28()
     {
-        if (ContainerController.ManaPotion >= 2 && ContainerController.BaxiataGem >= 1 && ContainerController.BlueLiquidCatalyst >= 2 && ManaSynthesize >= 40)
+        if (ContainerController.ManaPotion >= 2 && ContainerController.BaxiataGem >= 1 && ContainerController.BlueLiquidCatalyst >= 2 && ManaIceSynthesize >= 40)
         {
             SynthesizeFX.Play();
             ManaIceSynthesize -= 40;
