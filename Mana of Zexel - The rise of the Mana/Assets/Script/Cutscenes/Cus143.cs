@@ -29,6 +29,7 @@ public class Cus143 : MonoBehaviour
         {
             if (tang == 1)
             {
+                NameTag.SetActive(true);
                 VayneVAL1.SetActive(true);
                 NameTagText.text = "Vayne";
                 dia.text = "(Alia isn't planning to follow me?)";
@@ -71,8 +72,8 @@ public class Cus143 : MonoBehaviour
             }
             else if (tang == 9)
             {
-                VayneVAL1.SetActive(true);
-                AliaVAR1.SetActive(true);
+                VayneVAL1.SetActive(false);
+                AliaVAR1.SetActive(false);
                 NameTagText.text = "";
                 dia.text = "This is not simply an alchemist's journey.";
             }
@@ -111,6 +112,7 @@ public class Cus143 : MonoBehaviour
         {
             if (tang == 1)
             {
+                NameTag.SetActive(true);
                 VayneVAL1.SetActive(true);
                 NameTagText.text = "Vayne";
                 dia.text = "(Alia không tính đi theo mình ư?)";
@@ -153,8 +155,8 @@ public class Cus143 : MonoBehaviour
             }
             else if (tang == 9)
             {
-                VayneVAL1.SetActive(true);
-                AliaVAR1.SetActive(true);
+                VayneVAL1.SetActive(false);
+                AliaVAR1.SetActive(false);
                 NameTagText.text = "";
                 dia.text = "Đây không trình đơn giản là một cuộc hành trình của một nhà giả kim.";
             }

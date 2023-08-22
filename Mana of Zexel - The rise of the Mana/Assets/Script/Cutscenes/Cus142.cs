@@ -29,6 +29,7 @@ public class Cus142 : MonoBehaviour
         {
             if (tang == 1)
             {
+                NameTag.SetActive(true);
                 VayneVAL1.SetActive(true);
                 NameTagText.text = "Vayne";
                 dia.text = "Everything is ready, maybe I should go.";
@@ -187,37 +188,50 @@ public class Cus142 : MonoBehaviour
             }
             else if (tang == 29)
             {
+                NameTagText.text = "Vayne";
+                dia.text = "Although I tried my best, the town was still badly damaged... I have to go back to my hometown to see my mother soon so I can't help everyone to restore this town.";
+            }
+            else if (tang == 30)
+            {
+                KlenerVAL1.SetActive(false);
+                MrLanceVAL1.SetActive(true);
+                NameTagText.text = "Mr. Lance";
+                dia.text = "We can't depend on you forever, next time you come back the town will return to its original beauty even more.";
+            }
+            else if (tang == 31)
+            {
                 KlenerVAL1.SetActive(false);
                 MrLanceVAL1.SetActive(true);
                 NameTagText.text = "Mr. Lance";
                 dia.text = "That's why I thank you on behalf of all of you for everything and stay safe, Vayne!";
             }
-            else if (tang == 30)
+            else if (tang == 32)
             {
                 NameTagText.text = "Vayne";
                 dia.text = "Yes! And Alia isn't here?";
             }
-            else if (tang == 31)
+            else if (tang == 33)
             {
                 NameTagText.text = "Mr. Lance";
                 dia.text = "Looks like she went somewhere early in the morning!";
             }
-            else if (tang == 32)
+            else if (tang == 34)
             {
                 NameTagText.text = "Vayne";
                 dia.text = "Well... So I'm on my way. Good bye!";
             }
-            else if (tang == 33)
+            else if (tang == 35)
             {
                 MrLanceVAL1.SetActive(false);
                 VayneVAR1.SetActive(false);
                 NameTagText.text = "All";
                 dia.text = "Goodbye and see you soon!";
             }
-            else if (tang >= 34)
+            else if (tang >= 36)
             {
                 CutscenesController.cus142 = 1;
                 ContainerController.LoadingOpen = true;
+                MapController.TavernToZexelTown = true;
                 SceneManager.LoadScene("Zexel town");
             }
         }
@@ -225,6 +239,7 @@ public class Cus142 : MonoBehaviour
         {
             if (tang == 1)
             {
+                NameTag.SetActive(true);
                 VayneVAL1.SetActive(true);
                 NameTagText.text = "Vayne";
                 dia.text = "Mọi thứ đã chuẩn bị xong rồi, có lẽ mình nên xuất phát thôi.";
@@ -383,34 +398,44 @@ public class Cus142 : MonoBehaviour
             }
             else if (tang == 29)
             {
-                KlenerVAL1.SetActive(false);
-                MrLanceVAL1.SetActive(true);
-                NameTagText.text = "Mr. Lance";
-                dia.text = "Chính vì thế ta thay mặt tất cả cảm ơn cháu vì tất cả và thượng lộ bình an nhé Vayne!";
+                NameTagText.text = "Vayne";
+                dia.text = "Dù cháu đã cố gắng hết sức nhưng thị trấn vẫn bị thiệt hại nặng nề... Cháu phải quay về quê nhà để gặp lại mẹ sớm nên cháu không thể giúp mọi người phục hồi lại thị trấn này.";
             }
             else if (tang == 30)
             {
-                NameTagText.text = "Vayne";
-                dia.text = "Vâng ạ! Mà Alia không có ở đây à?";
+                KlenerVAL1.SetActive(false);
+                MrLanceVAL1.SetActive(true);
+                NameTagText.text = "Mr. Lance";
+                dia.text = "Bọn ta không thể phụ thuộc vào cháu mãi được, lần tới cháu quay lại đây thị trấn sẽ trở về lại vẻ đẹp vốn có của nó thậm chí hơn thế cơ.";
             }
             else if (tang == 31)
             {
                 NameTagText.text = "Mr. Lance";
-                dia.text = "Hình như con bé đã đi đâu hồi sáng sớm rồi!";
+                dia.text = "Chính vì thế ta thay mặt tất cả cảm ơn cháu vì tất cả và thượng lộ bình an nhé Vayne!";
             }
             else if (tang == 32)
             {
                 NameTagText.text = "Vayne";
-                dia.text = "Thế à... Vậy cháu lên đường đây. Chào tạm biệt!";
+                dia.text = "Vâng ạ! Mà Alia không có ở đây à?";
             }
             else if (tang == 33)
+            {
+                NameTagText.text = "Mr. Lance";
+                dia.text = "Hình như con bé đã đi đâu hồi sáng sớm rồi!";
+            }
+            else if (tang == 34)
+            {
+                NameTagText.text = "Vayne";
+                dia.text = "Thế à... Vậy cháu lên đường đây. Chào tạm biệt!";
+            }
+            else if (tang == 35)
             {
                 MrLanceVAL1.SetActive(false);
                 VayneVAR1.SetActive(false);
                 NameTagText.text = "All";
                 dia.text = "Chào tạm biệt và hẹn gặp lại!";
             }
-            else if (tang >= 34)
+            else if (tang >= 36)
             {
                 CutscenesController.cus142 = 1;
                 ContainerController.LoadingOpen = true;

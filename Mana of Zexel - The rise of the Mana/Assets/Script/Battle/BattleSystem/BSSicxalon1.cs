@@ -77,6 +77,7 @@ public class BSSicxalon1 : MonoBehaviour
     public int show1 = 0;
     public int show2 = 0;
     public int show3 = 0;
+    public int onceUIText;
     public int BE5Hit;
     public int UseItemIndex, ChooseSkillIndex;
     public int BE5ANum, TurnIndex, BossSkillCharge, BossSkillEngage, BossSkillBreak, BeforeBreakSkillDamageCal, AfterBreakDamageCal, BreakDamageCal, BreakDamageIndex;
@@ -416,9 +417,13 @@ public class BSSicxalon1 : MonoBehaviour
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough mana";
-            Invoke("delayshowr", 2f);
+            if (onceUIText == 0)
+            {
+                onceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough mana";
+                Invoke("delayshowr", 2f);
+            }
         }
     }
 
@@ -440,9 +445,13 @@ public class BSSicxalon1 : MonoBehaviour
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough mana";
-            Invoke("delayshowr", 2f);
+            if (onceUIText == 0)
+            {
+                onceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough mana";
+                Invoke("delayshowr", 2f);
+            }
         }
     }
 
@@ -464,9 +473,13 @@ public class BSSicxalon1 : MonoBehaviour
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough mana";
-            Invoke("delayshowr", 2f);
+            if (onceUIText == 0)
+            {
+                onceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough mana";
+                Invoke("delayshowr", 2f);
+            }
         }
     }
     public void CloseChooseSkillVayne()
@@ -505,9 +518,13 @@ public class BSSicxalon1 : MonoBehaviour
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough mana";
-            Invoke("delayshowr", 2f);
+            if (onceUIText == 0)
+            {
+                onceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough mana";
+                Invoke("delayshowr", 2f);
+            }
         }
     }
     public void PressSkillP22()
@@ -527,9 +544,13 @@ public class BSSicxalon1 : MonoBehaviour
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough mana";
-            Invoke("delayshowr", 2f);
+            if (onceUIText == 0)
+            {
+                onceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough mana";
+                Invoke("delayshowr", 2f);
+            }
         }
     }
     public void PressSkillP23()
@@ -549,9 +570,13 @@ public class BSSicxalon1 : MonoBehaviour
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough mana";
-            Invoke("delayshowr", 2f);
+            if (onceUIText == 0)
+            {
+                onceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough mana";
+                Invoke("delayshowr", 2f);
+            }
         }
     }
     public void CloseChooseSkillAlia()
@@ -591,9 +616,13 @@ public class BSSicxalon1 : MonoBehaviour
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough mana";
-            Invoke("delayshowr", 2f);
+            if (onceUIText == 0)
+            {
+                onceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough mana";
+                Invoke("delayshowr", 2f);
+            }
         }
     }
     public void PressSkillP32()
@@ -614,9 +643,13 @@ public class BSSicxalon1 : MonoBehaviour
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough mana";
-            Invoke("delayshowr", 2f);
+            if (onceUIText == 0)
+            {
+                onceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough mana";
+                Invoke("delayshowr", 2f);
+            }
         }
     }
     public void PressSkillP33()
@@ -637,9 +670,13 @@ public class BSSicxalon1 : MonoBehaviour
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough mana";
-            Invoke("delayshowr", 2f);
+            if (onceUIText == 0)
+            {
+                onceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough mana";
+                Invoke("delayshowr", 2f);
+            }
         }
     }
     public void CloseChooseSkillMaria()
@@ -969,14 +1006,17 @@ public class BSSicxalon1 : MonoBehaviour
         BE5ANum = Random.Range(1, 11);
         if (BE5ANum <= 5)
         {
+            EnemyAttack1FX.Play();
             SB.yes_SicxalonAttack1 = 1;
         }
         else if (BE5ANum > 5 && BE5ANum <= 9)
         {
+            EnemyAttack2FX.Play();
             SB.yes_SicxalonAttack2 = 1;
         }
         else if (BE5ANum == 10)
         {
+            EnemySkill2FX.Play();
             SB.yes_SicxalonSkill2 = 1;
         }
     }
@@ -1154,15 +1194,18 @@ public class BSSicxalon1 : MonoBehaviour
         {
             if (BE5ANum <= 3)
             {
+                pb.p1YesGetHit = 1;
                 Global.CurHPP1 -= Global.DamageBE5;
             }
             else if (BE5ANum == 4 || BE5ANum == 5)
             {
+                pb.p1YesGetHit = 1;
                 Global.CurHPP1 -= Global.DamageBE5;
                 Global.CurMPP1 -= 50;
             }
             else if (BE5ANum == 6 || BE5ANum == 7)
             {
+                pb.p1YesGetHit = 1;
                 Global.CurHPP1 = 0;
                 Global.CurMPP1 = 0;
             }
@@ -1173,15 +1216,18 @@ public class BSSicxalon1 : MonoBehaviour
         {
             if (BE5ANum <= 3)
             {
+                pb.p2YesGetHit = 1;
                 Global.CurHPP2 -= Global.DamageBE5;
             }
             else if (BE5ANum == 4 || BE5ANum == 5)
             {
+                pb.p2YesGetHit = 1;
                 Global.CurHPP2 -= Global.DamageBE5;
                 Global.CurMPP2 -= 50;
             }
             else if (BE5ANum == 6 || BE5ANum == 7)
             {
+                pb.p2YesGetHit = 1;
                 Global.CurHPP2 = 0;
                 Global.CurMPP2 = 0;
             }
@@ -1192,15 +1238,18 @@ public class BSSicxalon1 : MonoBehaviour
         {
             if (BE5ANum <= 3)
             {
+                pb.p3YesGetHit = 1;
                 Global.CurHPP3 -= Global.DamageBE5;
             }
             else if (BE5ANum == 4 || BE5ANum == 5)
             {
+                pb.p3YesGetHit = 1;
                 Global.CurHPP3 -= Global.DamageBE5;
                 Global.CurMPP3 -= 50;
             }
             else if (BE5ANum == 6 || BE5ANum == 7)
             {
+                pb.p3YesGetHit = 1;
                 Global.CurHPP3 = 0;
                 Global.CurMPP3 = 0;
             }
@@ -1217,6 +1266,7 @@ public class BSSicxalon1 : MonoBehaviour
         {
             if (BE5ANum <= 5)
             {
+                pb.p1YesGetHit = 1;
                 Global.CurHPP1 -= Global.DamageBE5;
                 EDamage.text = "";
                 EDamage2.text = "";
@@ -1226,6 +1276,7 @@ public class BSSicxalon1 : MonoBehaviour
             }
             else if (BE5ANum >= 6 && BE5ANum <= 9)
             {
+                pb.p1YesGetHit = 1;
                 Global.CurHPP1 -= Global.DamageBE5;
                 Global.CurMPP1 -= 50;
                 EDamage.text = "";
@@ -1236,6 +1287,7 @@ public class BSSicxalon1 : MonoBehaviour
             }
             else if (BE5ANum == 10)
             {
+                pb.p1YesGetHit = 1;
                 Global.CurHPP1 = 0;
                 Global.CurMPP1 = 0;
                 EDamage.text = "";
@@ -1251,6 +1303,7 @@ public class BSSicxalon1 : MonoBehaviour
         {
             if (BE5ANum <= 5)
             {
+                pb.p2YesGetHit = 1;
                 Global.CurHPP2 -= Global.DamageBE5;
                 EDamage.text = "";
                 EDamage2.text = "";
@@ -1260,6 +1313,7 @@ public class BSSicxalon1 : MonoBehaviour
             }
             else if (BE5ANum >= 6 && BE5ANum <= 9)
             {
+                pb.p2YesGetHit = 1;
                 Global.CurHPP2 -= Global.DamageBE5;
                 Global.CurMPP2 -= 50;
                 EDamage.text = "";
@@ -1270,6 +1324,7 @@ public class BSSicxalon1 : MonoBehaviour
             }
             else if (BE5ANum == 10)
             {
+                pb.p2YesGetHit = 1;
                 Global.CurHPP2 = 0;
                 Global.CurMPP2 = 0;
                 EDamage.text = "";
@@ -1285,6 +1340,7 @@ public class BSSicxalon1 : MonoBehaviour
         {
             if (BE5ANum <= 5)
             {
+                pb.p3YesGetHit = 1;
                 Global.CurHPP3 -= Global.DamageBE5;
                 EDamage.text = "";
                 EDamage2.text = "";
@@ -1294,6 +1350,7 @@ public class BSSicxalon1 : MonoBehaviour
             }
             else if (BE5ANum >= 6 && BE5ANum <= 9)
             {
+                pb.p3YesGetHit = 1;
                 Global.CurHPP3 -= Global.DamageBE5;
                 Global.CurMPP3 -= 50;
                 EDamage.text = "";
@@ -1304,6 +1361,7 @@ public class BSSicxalon1 : MonoBehaviour
             }
             else if (BE5ANum == 10)
             {
+                pb.p3YesGetHit = 1;
                 Global.CurHPP3 = 0;
                 Global.CurMPP3 = 0;
                 EDamage.text = "";
@@ -1872,6 +1930,7 @@ public class BSSicxalon1 : MonoBehaviour
         EPHealingEffP3.SetActive(false);
         ReinEff.SetActive(false);
         showr2.SetActive(false);
+        onceUIText = 0;
     }
 
     IEnumerator delayEndBattle()

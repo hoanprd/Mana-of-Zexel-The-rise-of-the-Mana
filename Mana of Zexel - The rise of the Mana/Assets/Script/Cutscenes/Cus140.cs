@@ -29,6 +29,7 @@ public class Cus140 : MonoBehaviour
         {
             if (tang == 1)
             {
+                NameTag.SetActive(true);
                 KlenerVAL1.SetActive(true);
                 NameTagText.text = "Klener";
                 dia.text = "Vayne, Alia you two are back!";
@@ -113,6 +114,7 @@ public class Cus140 : MonoBehaviour
         {
             if (tang == 1)
             {
+                NameTag.SetActive(true);
                 KlenerVAL1.SetActive(true);
                 NameTagText.text = "Klener";
                 dia.text = "Vayne, Alia hai người đã trở về rồi à!";

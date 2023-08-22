@@ -77,6 +77,7 @@ public class BSZane1 : MonoBehaviour
     public int show1 = 0;
     public int show2 = 0;
     public int show3 = 0;
+    public int onceUIText;
     public int BE6Hit;
     public int UseItemIndex, ChooseSkillIndex;
     public int BE6ANum, TurnIndex, EHeal, EMaxHeal;
@@ -402,9 +403,13 @@ public class BSZane1 : MonoBehaviour
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough mana";
-            Invoke("delayshowr", 2f);
+            if (onceUIText == 0)
+            {
+                onceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough mana";
+                Invoke("delayshowr", 2f);
+            }
         }
     }
 
@@ -427,9 +432,13 @@ public class BSZane1 : MonoBehaviour
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough mana";
-            Invoke("delayshowr", 2f);
+            if (onceUIText == 0)
+            {
+                onceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough mana";
+                Invoke("delayshowr", 2f);
+            }
         }
     }
 
@@ -452,9 +461,13 @@ public class BSZane1 : MonoBehaviour
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough mana";
-            Invoke("delayshowr", 2f);
+            if (onceUIText == 0)
+            {
+                onceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough mana";
+                Invoke("delayshowr", 2f);
+            }
         }
     }
     public void CloseChooseSkillVayne()
@@ -497,9 +510,13 @@ public class BSZane1 : MonoBehaviour
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough mana";
-            Invoke("delayshowr", 2f);
+            if (onceUIText == 0)
+            {
+                onceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough mana";
+                Invoke("delayshowr", 2f);
+            }
         }
     }
     public void PressSkillP22()
@@ -520,9 +537,13 @@ public class BSZane1 : MonoBehaviour
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough mana";
-            Invoke("delayshowr", 2f);
+            if (onceUIText == 0)
+            {
+                onceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough mana";
+                Invoke("delayshowr", 2f);
+            }
         }
     }
     public void PressSkillP23()
@@ -543,9 +564,13 @@ public class BSZane1 : MonoBehaviour
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough mana";
-            Invoke("delayshowr", 2f);
+            if (onceUIText == 0)
+            {
+                onceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough mana";
+                Invoke("delayshowr", 2f);
+            }
         }
     }
     public void CloseChooseSkillAlia()
@@ -589,9 +614,13 @@ public class BSZane1 : MonoBehaviour
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough mana";
-            Invoke("delayshowr", 2f);
+            if (onceUIText == 0)
+            {
+                onceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough mana";
+                Invoke("delayshowr", 2f);
+            }
         }
     }
     public void PressSkillP32()
@@ -613,9 +642,13 @@ public class BSZane1 : MonoBehaviour
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough mana";
-            Invoke("delayshowr", 2f);
+            if (onceUIText == 0)
+            {
+                onceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough mana";
+                Invoke("delayshowr", 2f);
+            }
         }
     }
     public void PressSkillP33()
@@ -637,9 +670,13 @@ public class BSZane1 : MonoBehaviour
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough mana";
-            Invoke("delayshowr", 2f);
+            if (onceUIText == 0)
+            {
+                onceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough mana";
+                Invoke("delayshowr", 2f);
+            }
         }
     }
     public void CloseChooseSkillMaria()
@@ -1533,6 +1570,7 @@ public class BSZane1 : MonoBehaviour
         ReinEff.SetActive(false);
         showr2.SetActive(false);
         showr4.SetActive(false);
+        onceUIText = 0;
     }
 
     IEnumerator delayEndBattle()

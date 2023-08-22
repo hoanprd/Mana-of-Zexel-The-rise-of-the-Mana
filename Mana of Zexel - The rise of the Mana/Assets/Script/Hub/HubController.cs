@@ -743,7 +743,14 @@ public class HubController : MonoBehaviour
     public void ShowP1Detail()
     {
         DShowLevelP1.GetComponent<Text>().text = "Level " + Global.LevelP1;
-        DShowEXPP1.GetComponent<Text>().text = "Exp: " + Global.CurEXPP1 + "/" + Global.MaxEXPP1;
+        if (Global.LevelP1 < 30)
+        {
+            DShowEXPP1.GetComponent<Text>().text = "Exp: " + Global.CurEXPP1 + "/" + Global.MaxEXPP1;
+        }
+        else
+        {
+            DShowEXPP1.GetComponent<Text>().text = "Exp: MAX";
+        }
         DShowAttackP1.GetComponent<Text>().text = "Attack: " + Global.DamageP1;
         DShowHPP1.GetComponent<Text>().text = "HP: " + Global.CurHPP1 + "/" + Global.MaxHPP1;
         DShowMPP1.GetComponent<Text>().text = "MP: " + Global.CurMPP1 + "/" + Global.MaxMPP1;
@@ -764,7 +771,14 @@ public class HubController : MonoBehaviour
     public void ShowP2Detail()
     {
         DShowLevelP2.GetComponent<Text>().text = "Level " + Global.LevelP2;
-        DShowEXPP2.GetComponent<Text>().text = "Exp: " + Global.CurEXPP2 + "/" + Global.MaxEXPP2;
+        if (Global.LevelP2 < 30)
+        {
+            DShowEXPP2.GetComponent<Text>().text = "Exp: " + Global.CurEXPP2 + "/" + Global.MaxEXPP2;
+        }
+        else
+        {
+            DShowEXPP2.GetComponent<Text>().text = "Exp: MAX";
+        }
         DShowAttackP2.GetComponent<Text>().text = "Attack: " + Global.DamageP2;
         DShowHPP2.GetComponent<Text>().text = "HP: " + Global.CurHPP2 + "/" + Global.MaxHPP2;
         DShowMPP2.GetComponent<Text>().text = "MP: " + Global.CurMPP2 + "/" + Global.MaxMPP2;
@@ -785,7 +799,14 @@ public class HubController : MonoBehaviour
     public void ShowP3Detail()
     {
         DShowLevelP3.GetComponent<Text>().text = "Level " + Global.LevelP3;
-        DShowEXPP3.GetComponent<Text>().text = "Exp: " + Global.CurEXPP3 + "/" + Global.MaxEXPP3;
+        if (Global.LevelP3 < 30)
+        {
+            DShowEXPP3.GetComponent<Text>().text = "Exp: " + Global.CurEXPP3 + "/" + Global.MaxEXPP3;
+        }
+        else
+        {
+            DShowEXPP3.GetComponent<Text>().text = "Exp: MAX";
+        }
         DShowAttackP3.GetComponent<Text>().text = "Attack: " + Global.DamageP3;
         DShowHPP3.GetComponent<Text>().text = "HP: " + Global.CurHPP3 + "/" + Global.MaxHPP3;
         DShowMPP3.GetComponent<Text>().text = "MP: " + Global.CurMPP3 + "/" + Global.MaxMPP3;

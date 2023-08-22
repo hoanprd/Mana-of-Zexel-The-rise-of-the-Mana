@@ -30,6 +30,7 @@ public class Cus141 : MonoBehaviour
         {
             if (tang == 1)
             {
+                NameTag.SetActive(true);
                 ManaElfVAL1.SetActive(true);
                 NameTagText.text = "Mana elf";
                 dia.text = "This is Sicxalon's soul...";
@@ -96,6 +97,7 @@ public class Cus141 : MonoBehaviour
         {
             if (tang == 1)
             {
+                NameTag.SetActive(true);
                 ManaElfVAL1.SetActive(true);
                 NameTagText.text = "Mana elf";
                 dia.text = "Đây là linh hồn của Sicxalon...";

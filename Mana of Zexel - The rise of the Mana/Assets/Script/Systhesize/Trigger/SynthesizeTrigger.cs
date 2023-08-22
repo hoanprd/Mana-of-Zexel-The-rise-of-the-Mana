@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SynthesizeTrigger : MonoBehaviour
 {
-    public GameObject showr2, spanel1;
+    public GameObject showr2, SaveTextOff, spanel1;
     public Text showr1;
     private bool pick;
     //private int once = 0;
@@ -32,6 +32,7 @@ public class SynthesizeTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             pick = true;
+            SaveTextOff.SetActive(false);
             showr2.SetActive(true);
             showr1.text = "Press Space to synthesize";
         }
