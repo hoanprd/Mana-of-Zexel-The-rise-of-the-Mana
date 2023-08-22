@@ -150,7 +150,7 @@ public class Cus142 : MonoBehaviour
             else if (tang == 23)
             {
                 VayneVAR1.SetActive(true);
-                NameTagText.text = "";
+                NameTagText.text = "Vayne";
                 dia.text = "Wow, you know I'm leaving today?";
             }
             else if (tang == 24)
@@ -231,6 +231,7 @@ public class Cus142 : MonoBehaviour
             {
                 CutscenesController.cus142 = 1;
                 ContainerController.LoadingOpen = true;
+                MapController.ZexelTownToTavern = false;
                 MapController.TavernToZexelTown = true;
                 SceneManager.LoadScene("Zexel town");
             }
@@ -360,7 +361,7 @@ public class Cus142 : MonoBehaviour
             else if (tang == 23)
             {
                 VayneVAR1.SetActive(true);
-                NameTagText.text = "";
+                NameTagText.text = "Vayne";
                 dia.text = "Ủa, mấy người biết tôi sẽ đi hôm nay sao?";
             }
             else if (tang == 24)
@@ -439,6 +440,7 @@ public class Cus142 : MonoBehaviour
             {
                 CutscenesController.cus142 = 1;
                 ContainerController.LoadingOpen = true;
+                MapController.ZexelTownToTavern = false;
                 MapController.TavernToZexelTown = true;
                 SceneManager.LoadScene("Zexel town");
             }
@@ -462,6 +464,7 @@ public class Cus142 : MonoBehaviour
         cc.FXCutscenes(1);
         CutscenesController.cus142 = 1;
         ContainerController.LoadingOpen = true;
+        MapController.ZexelTownToTavern = false;
         MapController.TavernToZexelTown = true;
         SceneManager.LoadScene("Zexel town");
     }

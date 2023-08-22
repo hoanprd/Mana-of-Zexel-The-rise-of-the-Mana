@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class cd : MonoBehaviour
 {
     public AudioSource OPBGM;
-    public GameObject FadeOut, FadeIn;
+    public GameObject FadeIn;
 
     bool ta = true;
     float ct;
@@ -29,7 +29,7 @@ public class cd : MonoBehaviour
             OPBGM.volume = PlayerPrefs.GetFloat("SBGM");
         }
 
-        FadeOut.SetActive(true);
+        //FadeOut.SetActive(true);
 
         //OPBGM.Play();
 

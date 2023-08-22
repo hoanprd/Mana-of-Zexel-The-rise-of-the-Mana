@@ -1359,7 +1359,7 @@ public class Player : MonoBehaviour
             StartCoroutine(DelayChangeMap(4));
         }
 
-        if (collision.CompareTag("HealPoint"))
+        if (collision.CompareTag("HealPoint") && HubController.SicxalonDeath == false)
         {
             heal = true;
             show2.SetActive(true);
@@ -1450,7 +1450,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("HealPoint"))
+        if (collision.CompareTag("HealPoint") && HubController.SicxalonDeath == false)
         {
             heal = false;
             show2.SetActive(false);

@@ -29,7 +29,7 @@ public class SynthesizeTrigger : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && HubController.SicxalonDeath == false)
         {
             pick = true;
             SaveTextOff.SetActive(false);
@@ -39,7 +39,7 @@ public class SynthesizeTrigger : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && HubController.SicxalonDeath == false)
         {
             pick = false;
             showr2.SetActive(false);
