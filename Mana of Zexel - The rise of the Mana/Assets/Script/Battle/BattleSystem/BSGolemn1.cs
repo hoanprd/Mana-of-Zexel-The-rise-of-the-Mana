@@ -528,6 +528,8 @@ public class BSGolemn1 : MonoBehaviour
     public void CloseChooseSkillVayne()
     {
         OpenCloseFX.Play();
+        showr2.SetActive(false);
+        showr1.text = "";
         ChooseVayneSkillPanel.SetActive(false);
         show1 = 0;
     }
@@ -622,6 +624,8 @@ public class BSGolemn1 : MonoBehaviour
     public void CloseChooseSkillAlia()
     {
         OpenCloseFX.Play();
+        showr2.SetActive(false);
+        showr1.text = "";
         ChooseAliaSkillPanel.SetActive(false);
         show2 = 0;
     }
@@ -719,6 +723,8 @@ public class BSGolemn1 : MonoBehaviour
     public void CloseChooseSkillMaria()
     {
         OpenCloseFX.Play();
+        showr2.SetActive(false);
+        showr1.text = "";
         ChooseMariaSkillPanel.SetActive(false);
         show3 = 0;
     }

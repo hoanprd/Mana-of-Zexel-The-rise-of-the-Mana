@@ -202,7 +202,8 @@ public class BSThief : MonoBehaviour
             {
                 TutorialImage2.SetActive(false);
             }
-            CloseChooseSkillVayne();
+            ChooseVayneSkillPanel.SetActive(false);
+            show = 0;
             ChooseSkillIndex = 1;
             pb.yes2 = 1;
             show = 1;
@@ -219,13 +220,15 @@ public class BSThief : MonoBehaviour
                 onceUIText = 1;
                 showr2.SetActive(true);
                 showr1.text = "Not enough mana";
-                Invoke("delayshowr", 2f);
+                Invoke("delayshowr2", 2f);
             }
         }
     }
     public void CloseChooseSkillVayne()
     {
         OpenCloseFX.Play();
+        showr2.SetActive(false);
+        showr1.text = "";
         ChooseVayneSkillPanel.SetActive(false);
         show = 0;
     }
@@ -552,6 +555,18 @@ public class BSThief : MonoBehaviour
         MPHealingEffP1.SetActive(false);
         PDamage.text = "";
         showr2.SetActive(false);
+    }
+
+    void delayshowr2()
+    {
+        if (a1 == 0)
+        {
+            aE1 = Global.SpeedE1 / 10;
+        }
+
+        showr2.SetActive(false);
+        showr1.text = "";
+
         onceUIText = 0;
     }
 
