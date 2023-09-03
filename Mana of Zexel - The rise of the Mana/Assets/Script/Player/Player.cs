@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public GameObject FadeOutPanel, FadeInPanel;
     public bool HealDelay;
     private bool heal, tqz, mqz, alasaqz, asilaqz, klener, mwqz, ManaGenerator, FireManaGenerator, IceManaGenerator;
+    private int OnceUIText;
     public static int MapIndex;
     public static bool TextDisplay;
     public AudioSource FootStep, TavernHeal;
@@ -32,6 +33,7 @@ public class Player : MonoBehaviour
         hc = FindObjectOfType<HubController>();
         FadeOutPanel.SetActive(true);
         once = 0;
+        OnceUIText = 0;
         HealDelay = false;
         TextDisplay = false;
         StartCoroutine(DelayFadeOutOff());
@@ -68,9 +70,13 @@ public class Player : MonoBehaviour
             }
             else
             {
-                show2.SetActive(true);
-                show1.text = "Not enough Zen!";
-                Invoke("delay1", 2f);
+                if (OnceUIText == 0)
+                {
+                    OnceUIText = 1;
+                    show2.SetActive(true);
+                    show1.text = "Not enough Zen!";
+                    Invoke("delay1", 2f);
+                }
             }
         }
         if (tqz && Input.GetKeyDown(KeyCode.Space))
@@ -85,9 +91,13 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
-                    show2.SetActive(true);
-                    show1.text = "Not enough heal potion!";
-                    Invoke("delay1", 2f);
+                    if (OnceUIText == 0)
+                    {
+                        OnceUIText = 1;
+                        show2.SetActive(true);
+                        show1.text = "Not enough heal potion!";
+                        Invoke("delay1", 2f);
+                    }
                 }
             }
             else if (CutscenesController.cus6 == 1 && CutscenesController.cus7 == 0)
@@ -99,9 +109,13 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
-                    show2.SetActive(true);
-                    show1.text = "You need to defeat at least 4 goblins";
-                    Invoke("delay1", 2f);
+                    if (OnceUIText == 0)
+                    {
+                        OnceUIText = 1;
+                        show2.SetActive(true);
+                        show1.text = "You need to defeat at least 4 goblins";
+                        Invoke("delay1", 2f);
+                    }
                 }
             }
             else if (CutscenesController.cus15 == 1 && CutscenesController.cus16 == 0)
@@ -115,9 +129,13 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
-                    show2.SetActive(true);
-                    show1.text = "Not enough materials!";
-                    Invoke("delay1", 2f);
+                    if (OnceUIText == 0)
+                    {
+                        OnceUIText = 1;
+                        show2.SetActive(true);
+                        show1.text = "Not enough materials!";
+                        Invoke("delay1", 2f);
+                    }
                 }
             }
             else if (CutscenesController.cus97 == 0 && CutscenesController.cus96 == 1)
@@ -133,9 +151,13 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
-                    show2.SetActive(true);
-                    show1.text = "Not enough materials!";
-                    Invoke("delay1", 2f);
+                    if (OnceUIText == 0)
+                    {
+                        OnceUIText = 1;
+                        show2.SetActive(true);
+                        show1.text = "Not enough materials!";
+                        Invoke("delay1", 2f);
+                    }
                 }
             }
         }
@@ -156,9 +178,13 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
-                    show2.SetActive(true);
-                    show1.text = "You don't have enough 3 mana gem!";
-                    Invoke("delay1", 2f);
+                    if (OnceUIText == 0)
+                    {
+                        OnceUIText = 1;
+                        show2.SetActive(true);
+                        show1.text = "You don't have enough 3 mana gem!";
+                        Invoke("delay1", 2f);
+                    }
                 }
             }
         }
@@ -173,9 +199,13 @@ public class Player : MonoBehaviour
                 }
                 else if (CutscenesTrigger.IceFangKill < 4)
                 {
-                    show2.SetActive(true);
-                    show1.text = "The number of ice fangs is still not enough. Remain: " + CutscenesTrigger.IceFangKill;
-                    Invoke("delay1", 2f);
+                    if (OnceUIText == 0)
+                    {
+                        OnceUIText = 1;
+                        show2.SetActive(true);
+                        show1.text = "The number of ice fangs is still not enough. Remain: " + CutscenesTrigger.IceFangKill;
+                        Invoke("delay1", 2f);
+                    }
                 }
             }
             else if (CutscenesController.cus70 == 0 && CutscenesController.cus69 == 1)
@@ -185,9 +215,13 @@ public class Player : MonoBehaviour
             }
             else if (CutscenesController.cus70 == 0 && CutscenesController.cus69 == 0 && CutscenesController.cus68 == 0)
             {
-                show2.SetActive(true);
-                show1.text = "You still haven't found the ice crystal";
-                Invoke("delay1", 2f);
+                if (OnceUIText == 0)
+                {
+                    OnceUIText = 1;
+                    show2.SetActive(true);
+                    show1.text = "You still haven't found the ice crystal";
+                    Invoke("delay1", 2f);
+                }
             }
         }
         if (asilaqz && Input.GetKeyDown(KeyCode.Space))
@@ -215,9 +249,13 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
-                    show2.SetActive(true);
-                    show1.text = "Not enough items";
-                    Invoke("delay1", 2f);
+                    if (OnceUIText == 0)
+                    {
+                        OnceUIText = 1;
+                        show2.SetActive(true);
+                        show1.text = "Not enough items";
+                        Invoke("delay1", 2f);
+                    }
                 }
             }
             else if (CutscenesController.cus22 == 0 && CutscenesController.cus21 == 1)
@@ -229,9 +267,13 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
-                    show2.SetActive(true);
-                    show1.text = "Not enough items";
-                    Invoke("delay1", 2f);
+                    if (OnceUIText == 0)
+                    {
+                        OnceUIText = 1;
+                        show2.SetActive(true);
+                        show1.text = "Not enough items";
+                        Invoke("delay1", 2f);
+                    }
                 }
             }
         }
@@ -248,9 +290,13 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
-                    show2.SetActive(true);
-                    show1.text = "You don't have enough back pain medicine!";
-                    Invoke("delay1", 2f);
+                    if (OnceUIText == 0)
+                    {
+                        OnceUIText = 1;
+                        show2.SetActive(true);
+                        show1.text = "You don't have enough back pain medicine!";
+                        Invoke("delay1", 2f);
+                    }
                 }
             }
         }
@@ -260,9 +306,13 @@ public class Player : MonoBehaviour
             TavernHeal.Play();
             HealDelay = true;
             SynthesizeSystem.ManaSynthesize = 100;
-            show2.SetActive(true);
-            show1.text = "Mana restore!";
-            Invoke("delay1", 2f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                show2.SetActive(true);
+                show1.text = "Mana restore!";
+                Invoke("delay1", 2f);
+            }
         }
 
         if (FireManaGenerator && Input.GetKeyDown(KeyCode.Space) && HealDelay == false)
@@ -270,9 +320,13 @@ public class Player : MonoBehaviour
             TavernHeal.Play();
             HealDelay = true;
             SynthesizeSystem.ManaFireSynthesize = 100;
-            show2.SetActive(true);
-            show1.text = "Fire mana restore!";
-            Invoke("delay1", 2f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                show2.SetActive(true);
+                show1.text = "Fire mana restore!";
+                Invoke("delay1", 2f);
+            }
         }
 
         if (IceManaGenerator && Input.GetKeyDown(KeyCode.Space) && HealDelay == false)
@@ -280,9 +334,13 @@ public class Player : MonoBehaviour
             TavernHeal.Play();
             HealDelay = true;
             SynthesizeSystem.ManaIceSynthesize = 100;
-            show2.SetActive(true);
-            show1.text = "Ice mana restore!";
-            Invoke("delay1", 2f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                show2.SetActive(true);
+                show1.text = "Ice mana restore!";
+                Invoke("delay1", 2f);
+            }
         }
 
         if (FadeInPanel.activeSelf == true || FadeOutPanel.activeSelf == true)
@@ -734,9 +792,13 @@ public class Player : MonoBehaviour
         {
             if (CutscenesController.cus9 == 0)
             {
-                show2.SetActive(true);
-                show1.text = "You can't go to this area yet!";
-                Invoke("delay1", 2f);
+                if (OnceUIText == 0)
+                {
+                    OnceUIText = 1;
+                    show2.SetActive(true);
+                    show1.text = "You can't go to this area yet!";
+                    Invoke("delay1", 2f);
+                }
             }
             else
             {
@@ -791,9 +853,13 @@ public class Player : MonoBehaviour
         {
             if (CutscenesController.cus34 == 0)
             {
-                show2.SetActive(true);
-                show1.text = "You can't go to this area yet!";
-                Invoke("delay1", 2f);
+                if (OnceUIText == 0)
+                {
+                    OnceUIText = 1;
+                    show2.SetActive(true);
+                    show1.text = "You can't go to this area yet!";
+                    Invoke("delay1", 2f);
+                }
             }
             else if (CutscenesController.cus35 == 0 && CutscenesController.cus34 == 1)
             {
@@ -886,9 +952,13 @@ public class Player : MonoBehaviour
         {
             if (CutscenesController.cus40 == 0)
             {
-                show2.SetActive(true);
-                show1.text = "You can't go to this area yet!";
-                Invoke("delay1", 2f);
+                if (OnceUIText == 0)
+                {
+                    OnceUIText = 1;
+                    show2.SetActive(true);
+                    show1.text = "You can't go to this area yet!";
+                    Invoke("delay1", 2f);
+                }
             }
             else if (CutscenesController.cus41 == 0 && CutscenesController.cus40 == 1)
             {
@@ -939,9 +1009,13 @@ public class Player : MonoBehaviour
         {
             if (CutscenesController.cus49 == 0)
             {
-                show2.SetActive(true);
-                show1.text = "You can't go to this area yet!";
-                Invoke("delay1", 2f);
+                if (OnceUIText == 0)
+                {
+                    OnceUIText = 1;
+                    show2.SetActive(true);
+                    show1.text = "You can't go to this area yet!";
+                    Invoke("delay1", 2f);
+                }
             }
             else if (CutscenesController.cus50 == 0 && CutscenesController.cus49 == 1)
             {
@@ -1009,9 +1083,13 @@ public class Player : MonoBehaviour
         {
             if (CutscenesController.cus58 == 0)
             {
-                show2.SetActive(true);
-                show1.text = "You can't go to this area yet!";
-                Invoke("delay1", 2f);
+                if (OnceUIText == 0)
+                {
+                    OnceUIText = 1;
+                    show2.SetActive(true);
+                    show1.text = "You can't go to this area yet!";
+                    Invoke("delay1", 2f);
+                }
             }
             else if (CutscenesController.cus59 == 0 && CutscenesController.cus58 == 1)
             {
@@ -1061,9 +1139,13 @@ public class Player : MonoBehaviour
         {
             if (CutscenesController.cus63 == 0)
             {
-                show2.SetActive(true);
-                show1.text = "You't can go to this area yet!";
-                Invoke("delay1", 2f);
+                if (OnceUIText == 0)
+                {
+                    OnceUIText = 1;
+                    show2.SetActive(true);
+                    show1.text = "You can't go to this area yet!";
+                    Invoke("delay1", 2f);
+                }
             }
             else if (CutscenesController.cus64 == 0 && CutscenesController.cus63 == 1)
             {
@@ -1113,9 +1195,13 @@ public class Player : MonoBehaviour
         {
             if (CutscenesController.cus93 == 0)
             {
-                show2.SetActive(true);
-                show1.text = "You can't go to this area yet!";
-                Invoke("delay1", 2f);
+                if (OnceUIText == 0)
+                {
+                    OnceUIText = 1;
+                    show2.SetActive(true);
+                    show1.text = "You can't go to this area yet!";
+                    Invoke("delay1", 2f);
+                }
             }
             else
             {
@@ -1175,9 +1261,13 @@ public class Player : MonoBehaviour
         {
             if (CutscenesController.cus54 == 0)
             {
-                show2.SetActive(true);
-                show1.text = "You can't go to this area yet!";
-                Invoke("delay1", 2f);
+                if (OnceUIText == 0)
+                {
+                    OnceUIText = 1;
+                    show2.SetActive(true);
+                    show1.text = "You can't go to this area yet!";
+                    Invoke("delay1", 2f);
+                }
             }
             else
             {
@@ -1230,9 +1320,13 @@ public class Player : MonoBehaviour
         {
             if (CutscenesController.cus78 == 0)
             {
-                show2.SetActive(true);
-                show1.text = "You can't go to this area yet!";
-                Invoke("delay1", 2f);
+                if (OnceUIText == 0)
+                {
+                    OnceUIText = 1;
+                    show2.SetActive(true);
+                    show1.text = "You can't go to this area yet!";
+                    Invoke("delay1", 2f);
+                }
             }
             else if (CutscenesController.cus79 == 0 && CutscenesController.cus78 == 1)
             {
@@ -1300,9 +1394,13 @@ public class Player : MonoBehaviour
         {
             if (CutscenesController.cus78 == 0)
             {
-                show2.SetActive(true);
-                show1.text = "You can't go to this area yet!";
-                Invoke("delay1", 2f);
+                if (OnceUIText == 0)
+                {
+                    OnceUIText = 1;
+                    show2.SetActive(true);
+                    show1.text = "You can't go to this area yet!";
+                    Invoke("delay1", 2f);
+                }
             }
             else if (CutscenesController.cus79 == 0 && CutscenesController.cus78 == 1)
             {
@@ -1641,6 +1739,7 @@ public class Player : MonoBehaviour
     {
         show2.SetActive(false);
         HealDelay = false;
+        OnceUIText = 0;
     }
     /*void delay2()
     {

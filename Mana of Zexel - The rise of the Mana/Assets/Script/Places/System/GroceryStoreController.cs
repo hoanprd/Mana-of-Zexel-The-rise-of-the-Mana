@@ -12,10 +12,15 @@ public class GroceryStoreController : MonoBehaviour
     public bool IsActived = false, stop = false;
     public Transform MainPanel;
     public GameObject[] GroceryPrefab, HideGroceryItem1, HideGroceryItem2, HideGroceryItem3;
+    private int OnceTextUI;
 
     // Start is called before the first frame update
     void Start()
     {
+        IsActived = false;
+        stop = false;
+        OnceTextUI = 0;
+
         /*for (int i = 0; i < GroceryPrefab.Length; i++)
         {
             Instantiate(GroceryPrefab[i], MainPanel);
@@ -155,14 +160,22 @@ public class GroceryStoreController : MonoBehaviour
                 Global.Zen -= 20;
                 MessageText.text = "Thanks for shopping";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 2)
@@ -175,14 +188,22 @@ public class GroceryStoreController : MonoBehaviour
                 Global.Zen -= 30;
                 MessageText.text = "Thanks for shopping";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 3)
@@ -195,14 +216,22 @@ public class GroceryStoreController : MonoBehaviour
                 Global.Zen -= 50;
                 MessageText.text = "Thanks for shopping";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 4)
@@ -215,14 +244,22 @@ public class GroceryStoreController : MonoBehaviour
                 Global.Zen -= 100;
                 MessageText.text = "Thanks for shopping";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 5)
@@ -235,14 +272,22 @@ public class GroceryStoreController : MonoBehaviour
                 Global.Zen -= 40;
                 MessageText.text = "Thanks for shopping";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 6)
@@ -255,14 +300,22 @@ public class GroceryStoreController : MonoBehaviour
                 Global.Zen -= 150;
                 MessageText.text = "Thanks for shopping";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 7)
@@ -275,14 +328,22 @@ public class GroceryStoreController : MonoBehaviour
                 Global.Zen -= 300;
                 MessageText.text = "Thanks for shopping";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 8)
@@ -295,14 +356,22 @@ public class GroceryStoreController : MonoBehaviour
                 Global.Zen -= 300;
                 MessageText.text = "Thanks for shopping";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
     }
@@ -318,5 +387,6 @@ public class GroceryStoreController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         MessageText.text = "Wellcome!!!";
         stop = false;
+        OnceTextUI = 0;
     }
 }

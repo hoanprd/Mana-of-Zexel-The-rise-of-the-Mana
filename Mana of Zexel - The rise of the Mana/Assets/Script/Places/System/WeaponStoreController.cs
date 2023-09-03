@@ -14,6 +14,7 @@ public class WeaponStoreController : MonoBehaviour
     public static int AlchemistArmor1HadBought, AlchemistArmor2HadBought, AlchemistArmor3HadBought;
     public Text InShock1, InShock2, InShock3, InShock4, InShock5, InShock6, InShock7, InShock8, InShock9, InShock10, InShock11, InShock12, InShock13, InShock14, InShock15, AskConfirmText;
     public GameObject[] WeaponShow;
+    private int OnceTextUI;
 
     // Start is called before the first frame update
     void Start()
@@ -299,14 +300,22 @@ public class WeaponStoreController : MonoBehaviour
                 Bought1 = 1;
                 InShock1.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 2)
@@ -320,14 +329,22 @@ public class WeaponStoreController : MonoBehaviour
                 Bought6 = 1;
                 InShock6.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 3)
@@ -341,14 +358,22 @@ public class WeaponStoreController : MonoBehaviour
                 Bought11 = 1;
                 InShock11.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 4)
@@ -362,14 +387,22 @@ public class WeaponStoreController : MonoBehaviour
                 Bought2 = 1;
                 InShock2.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 5)
@@ -383,14 +416,22 @@ public class WeaponStoreController : MonoBehaviour
                 Bought7 = 1;
                 InShock7.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 6)
@@ -404,14 +445,22 @@ public class WeaponStoreController : MonoBehaviour
                 Bought12 = 1;
                 InShock12.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 7)
@@ -425,14 +474,22 @@ public class WeaponStoreController : MonoBehaviour
                 Bought3 = 1;
                 InShock3.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 8)
@@ -446,14 +503,22 @@ public class WeaponStoreController : MonoBehaviour
                 Bought8 = 1;
                 InShock8.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 9)
@@ -467,14 +532,22 @@ public class WeaponStoreController : MonoBehaviour
                 Bought13 = 1;
                 InShock13.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 10)
@@ -489,14 +562,22 @@ public class WeaponStoreController : MonoBehaviour
                 AlchemistArmor1HadBought += 1;
                 InShock4.text = "In shock: " + (2 - AlchemistArmor1HadBought).ToString();
                 MessageText.text = "Good luck with the new weapon!!!";
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 11)
@@ -511,14 +592,22 @@ public class WeaponStoreController : MonoBehaviour
                 AlchemistArmor2HadBought += 1;
                 InShock9.text = "In shock: " + (2 - AlchemistArmor2HadBought).ToString();
                 MessageText.text = "Good luck with the new weapon!!!";
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 12)
@@ -533,14 +622,22 @@ public class WeaponStoreController : MonoBehaviour
                 AlchemistArmor3HadBought += 1;
                 InShock14.text = "In shock: " + (2 - AlchemistArmor3HadBought).ToString();
                 MessageText.text = "Good luck with the new weapon!!!";
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 13)
@@ -554,14 +651,22 @@ public class WeaponStoreController : MonoBehaviour
                 Bought5 = 1;
                 InShock5.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 14)
@@ -575,14 +680,22 @@ public class WeaponStoreController : MonoBehaviour
                 Bought10 = 1;
                 InShock10.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
         else if (BuyIndex == 15)
@@ -596,14 +709,22 @@ public class WeaponStoreController : MonoBehaviour
                 Bought15 = 1;
                 InShock15.text = "In shock: 0";
                 MessageText.text = "Good luck with the new weapon!!!";
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
             else
             {
                 ClickFX.Play();
                 MessageText.text = "You don't have enough Zen";
                 BuyAskPanel.SetActive(false);
-                StartCoroutine(DelayBuy());
+                if (OnceTextUI == 0)
+                {
+                    OnceTextUI = 1;
+                    StartCoroutine(DelayBuy());
+                }
             }
         }
     }
@@ -626,5 +747,6 @@ public class WeaponStoreController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         MessageText.text = "Enjoy my weapon!!!";
         stop = false;
+        OnceTextUI = 0;
     }
 }

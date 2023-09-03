@@ -33,14 +33,6 @@ public class HV3 : MonoBehaviour
             show1.text = "You don't have enough elixir potion";
             Invoke("delay1", 1f);
         }
-
-        if (PlayerPrefs.GetInt("SHV") == 3 && GlobalQuest.HelpVillagerStop1 == 1 && GlobalQuest.HelpVillagerStop2 == 1 && GlobalQuest.HelpVillagerStop3 == 1)
-        {
-            GlobalQuest.HelpVillagerStop1 = 2;
-            GlobalQuest.HelpVillagerStop2 = 2;
-            GlobalQuest.HelpVillagerStop3 = 2;
-            SceneManager.LoadScene("Cutscenes");
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -69,5 +61,13 @@ public class HV3 : MonoBehaviour
     void delay1()
     {
         show2.SetActive(false);
+
+        if (GlobalQuest.HelpVillagerDone == 3 && GlobalQuest.HelpVillagerStop1 == 1 && GlobalQuest.HelpVillagerStop2 == 1 && GlobalQuest.HelpVillagerStop3 == 1)
+        {
+            GlobalQuest.HelpVillagerStop1 = 2;
+            GlobalQuest.HelpVillagerStop2 = 2;
+            GlobalQuest.HelpVillagerStop3 = 2;
+            SceneManager.LoadScene("Cutscenes");
+        }
     }
 }

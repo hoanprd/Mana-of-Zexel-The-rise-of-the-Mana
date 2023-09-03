@@ -17,6 +17,7 @@ public class SaveGameSystem : MonoBehaviour
 
     public int SaveIndex, SaveOverrideIndex;
     public string CryptedPassword;
+    private int OnceUIText;
     string userPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class SaveGameSystem : MonoBehaviour
     {
         SaveIndex = 0;
         SaveOverrideIndex = 0;
+        OnceUIText = 0;
 
         if (!Directory.Exists($"{userPath}\\{"PRD Team"}"))
         {
@@ -492,9 +494,13 @@ public class SaveGameSystem : MonoBehaviour
             CryptSaveData csd2 = new CryptSaveData($"{userPath}\\{"PRD Team"}\\{"SaveData01"}\\{"SaveD1.prd"}", CryptedPassword);
             csd2.EncryptedSaveData();
 
-            show4.SetActive(true);
-            show3.text = "Data Save!";
-            Invoke("delay2", 2f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                show4.SetActive(true);
+                show3.text = "Data Save!";
+                Invoke("delay2", 2f);
+            }
         }
         else if (SaveIndex == 2)
         {
@@ -509,9 +515,13 @@ public class SaveGameSystem : MonoBehaviour
             CryptSaveData csd2 = new CryptSaveData($"{userPath}\\{"PRD Team"}\\{"SaveData02"}\\{"SaveD2.prd"}", CryptedPassword);
             csd2.EncryptedSaveData();
 
-            show4.SetActive(true);
-            show3.text = "Data Save!";
-            Invoke("delay2", 2f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                show4.SetActive(true);
+                show3.text = "Data Save!";
+                Invoke("delay2", 2f);
+            }
         }
         else if (SaveIndex == 3)
         {
@@ -526,9 +536,13 @@ public class SaveGameSystem : MonoBehaviour
             CryptSaveData csd2 = new CryptSaveData($"{userPath}\\{"PRD Team"}\\{"SaveData03"}\\{"SaveD3.prd"}", CryptedPassword);
             csd2.EncryptedSaveData();
 
-            show4.SetActive(true);
-            show3.text = "Data Save!";
-            Invoke("delay2", 2f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                show4.SetActive(true);
+                show3.text = "Data Save!";
+                Invoke("delay2", 2f);
+            }
         }
     }
 
@@ -910,9 +924,13 @@ public class SaveGameSystem : MonoBehaviour
             CryptSaveData csd2 = new CryptSaveData($"{userPath}\\{"PRD Team"}\\{"SaveData01"}\\{"SaveD1.prd"}", CryptedPassword);
             csd2.EncryptedSaveData();
 
-            show4.SetActive(true);
-            show3.text = "Data Save!";
-            Invoke("delay2", 2f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                show4.SetActive(true);
+                show3.text = "Data Save!";
+                Invoke("delay2", 2f);
+            }
         }
         else if (SaveOverrideIndex == 2)
         {
@@ -926,9 +944,13 @@ public class SaveGameSystem : MonoBehaviour
             CryptSaveData csd2 = new CryptSaveData($"{userPath}\\{"PRD Team"}\\{"SaveData02"}\\{"SaveD2.prd"}", CryptedPassword);
             csd2.EncryptedSaveData();
 
-            show4.SetActive(true);
-            show3.text = "Data Save!";
-            Invoke("delay2", 2f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                show4.SetActive(true);
+                show3.text = "Data Save!";
+                Invoke("delay2", 2f);
+            }
         }
         else if (SaveOverrideIndex == 3)
         {
@@ -942,9 +964,13 @@ public class SaveGameSystem : MonoBehaviour
             CryptSaveData csd2 = new CryptSaveData($"{userPath}\\{"PRD Team"}\\{"SaveData03"}\\{"SaveD3.prd"}", CryptedPassword);
             csd2.EncryptedSaveData();
 
-            show4.SetActive(true);
-            show3.text = "Data Save!";
-            Invoke("delay2", 2f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                show4.SetActive(true);
+                show3.text = "Data Save!";
+                Invoke("delay2", 2f);
+            }
         }
     }
 
@@ -964,5 +990,6 @@ public class SaveGameSystem : MonoBehaviour
     void delay2()
     {
         show4.SetActive(false);
+        OnceUIText = 0;
     }
 }

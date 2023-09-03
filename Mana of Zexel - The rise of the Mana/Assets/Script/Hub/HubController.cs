@@ -41,11 +41,14 @@ public class HubController : MonoBehaviour
     public GameObject VayneEmptySlotW1, VayneEmptySlotW2, VayneEmptySlotW3, VayneEmptySlotA1, VayneEmptySlotA2, VayneEmptySlotA3, AliaEmptySlotW1, AliaEmptySlotW2, AliaEmptySlotW3, AliaEmptySlotA1, AliaEmptySlotA2, AliaEmptySlotA3, MariaEmptySlotW1, MariaEmptySlotW2, MariaEmptySlotW3, MariaEmptySlotA1, MariaEmptySlotA2, MariaEmptySlotA3, VayneW1, VayneW2, VayneW3, VayneA1, VayneA2, VayneA3, AliaW1, AliaW2, AliaW3, AliaA1, AliaA2, AliaA3, MariaW1, MariaW2, MariaW3, MariaA1, MariaA2, MariaA3;
     public GameObject Bag;
     public GameObject TimePanel, HubPanel;
+    private int OnceUIText;
 
     // Start is called before the first frame update
     void Start()
     {
         BusyHub = false;
+
+        OnceUIText = 0;
 
         if (ContainerController.stop != 1)
         {
@@ -1140,8 +1143,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneArmorStatus == 0 && Global.AlchemistArmor1 >= 1 && Global.CurHPP1 < Global.MaxHPP1)
         {
-            EquipTextVayne.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextVayne.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
 
         if (Global.VayneArmorStatus == 2 && Global.AlchemistArmor1 >= 1 && Global.CurHPP1 == Global.MaxHPP1)
@@ -1168,8 +1175,12 @@ public class HubController : MonoBehaviour
         }
         else if(Global.VayneArmorStatus == 2 && Global.AlchemistArmor1 >= 1 && Global.CurHPP1 < Global.MaxHPP1)
         {
-            EquipTextVayne.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextVayne.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
 
         if (Global.VayneArmorStatus == 3 && Global.AlchemistArmor1 >= 1 && Global.CurHPP1 == Global.MaxHPP1)
@@ -1196,8 +1207,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneArmorStatus == 3 && Global.AlchemistArmor1 >= 1 && Global.CurHPP1 < Global.MaxHPP1)
         {
-            EquipTextVayne.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextVayne.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
     }
 
@@ -1225,8 +1240,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneArmorStatus == 0 && Global.AlchemistArmor2 >= 1 && Global.CurHPP1 < Global.MaxHPP1)
         {
-            EquipTextVayne.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextVayne.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
 
         if (Global.VayneArmorStatus == 1 && Global.AlchemistArmor2 >= 1 && Global.CurHPP1 == Global.MaxHPP1)
@@ -1253,8 +1272,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneArmorStatus == 1 && Global.AlchemistArmor2 >= 1 && Global.CurHPP1 < Global.MaxHPP1)
         {
-            EquipTextVayne.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextVayne.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
 
         if (Global.VayneArmorStatus == 3 && Global.AlchemistArmor2 >= 1 && Global.CurHPP1 == Global.MaxHPP1)
@@ -1281,8 +1304,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneArmorStatus == 3 && Global.AlchemistArmor2 >= 1 && Global.CurHPP1 < Global.MaxHPP1)
         {
-            EquipTextVayne.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextVayne.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
     }
 
@@ -1310,8 +1337,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneArmorStatus == 0 && Global.AlchemistArmor3 >= 1 && Global.CurHPP1 < Global.MaxHPP1)
         {
-            EquipTextVayne.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextVayne.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
 
         if (Global.VayneArmorStatus == 1 && Global.AlchemistArmor3 >= 1 && Global.CurHPP1 == Global.MaxHPP1)
@@ -1338,8 +1369,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneArmorStatus == 1 && Global.AlchemistArmor3 >= 1 && Global.CurHPP1 < Global.MaxHPP1)
         {
-            EquipTextVayne.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextVayne.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
 
         if (Global.VayneArmorStatus == 2 && Global.AlchemistArmor3 >= 1 && Global.CurHPP1 == Global.MaxHPP1)
@@ -1366,8 +1401,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.VayneArmorStatus == 2 && Global.AlchemistArmor3 >= 1 && Global.CurHPP1 < Global.MaxHPP1)
         {
-            EquipTextVayne.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextVayne.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
     }
 
@@ -1606,8 +1645,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaArmorStatus == 0 && Global.WarriorArmor1 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
         {
-            EquipTextAlia.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextAlia.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
 
         if (Global.AliaArmorStatus == 2 && Global.WarriorArmor1 >= 1 && Global.CurHPP2 == Global.MaxHPP2)
@@ -1634,8 +1677,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaArmorStatus == 2 && Global.WarriorArmor1 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
         {
-            EquipTextAlia.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextAlia.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
 
         if (Global.AliaArmorStatus == 3 && Global.WarriorArmor1 >= 1 && Global.CurHPP2 == Global.MaxHPP2)
@@ -1662,8 +1709,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaArmorStatus == 3 && Global.WarriorArmor1 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
         {
-            EquipTextAlia.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextAlia.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
     }
 
@@ -1691,8 +1742,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaArmorStatus == 0 && Global.WarriorArmor2 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
         {
-            EquipTextAlia.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextAlia.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
 
         if (Global.AliaArmorStatus == 1 && Global.WarriorArmor2 >= 1 && Global.CurHPP2 == Global.MaxHPP2)
@@ -1719,8 +1774,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaArmorStatus == 1 && Global.WarriorArmor2 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
         {
-            EquipTextAlia.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextAlia.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
 
         if (Global.AliaArmorStatus == 3 && Global.WarriorArmor2 >= 1 && Global.CurHPP2 == Global.MaxHPP2)
@@ -1747,8 +1806,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaArmorStatus == 3 && Global.WarriorArmor2 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
         {
-            EquipTextAlia.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextAlia.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
     }
 
@@ -1776,8 +1839,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaArmorStatus == 0 && Global.WarriorArmor3 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
         {
-            EquipTextAlia.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextAlia.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
 
         if (Global.AliaArmorStatus == 1 && Global.WarriorArmor3 >= 1 && Global.CurHPP2 == Global.MaxHPP2)
@@ -1804,8 +1871,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaArmorStatus == 1 && Global.WarriorArmor3 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
         {
-            EquipTextAlia.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextAlia.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
 
         if (Global.AliaArmorStatus == 2 && Global.WarriorArmor3 >= 1 && Global.CurHPP2 == Global.MaxHPP2)
@@ -1832,8 +1903,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.AliaArmorStatus == 2 && Global.WarriorArmor3 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
         {
-            EquipTextAlia.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextAlia.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
     }
 
@@ -2072,8 +2147,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaArmorStatus == 0 && Global.AlchemistArmor1 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
         {
-            EquipTextMaria.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextMaria.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
 
         if (Global.MariaArmorStatus == 2 && Global.AlchemistArmor1 >= 1 && Global.CurHPP3 == Global.MaxHPP3)
@@ -2100,8 +2179,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaArmorStatus == 2 && Global.AlchemistArmor1 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
         {
-            EquipTextMaria.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextMaria.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
 
         if (Global.MariaArmorStatus == 3 && Global.AlchemistArmor1 >= 1 && Global.CurHPP3 == Global.MaxHPP3)
@@ -2128,8 +2211,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaArmorStatus == 3 && Global.AlchemistArmor1 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
         {
-            EquipTextMaria.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextMaria.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
     }
 
@@ -2157,8 +2244,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaArmorStatus == 0 && Global.AlchemistArmor2 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
         {
-            EquipTextMaria.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextMaria.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
 
         if (Global.MariaArmorStatus == 1 && Global.AlchemistArmor2 >= 1 && Global.CurHPP3 == Global.MaxHPP3)
@@ -2185,8 +2276,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaArmorStatus == 1 && Global.AlchemistArmor2 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
         {
-            EquipTextMaria.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextMaria.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
 
         if (Global.MariaArmorStatus == 3 && Global.AlchemistArmor2 >= 1 && Global.CurHPP3 == Global.MaxHPP3)
@@ -2213,8 +2308,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaArmorStatus == 3 && Global.AlchemistArmor2 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
         {
-            EquipTextMaria.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextMaria.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
     }
 
@@ -2242,8 +2341,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaArmorStatus == 0 && Global.AlchemistArmor3 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
         {
-            EquipTextMaria.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextMaria.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
 
         if (Global.MariaArmorStatus == 1 && Global.AlchemistArmor3 >= 1 && Global.CurHPP3 == Global.MaxHPP3)
@@ -2270,8 +2373,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaArmorStatus == 1 && Global.AlchemistArmor3 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
         {
-            EquipTextMaria.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextMaria.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
 
         if (Global.MariaArmorStatus == 2 && Global.AlchemistArmor3 >= 1 && Global.CurHPP3 == Global.MaxHPP3)
@@ -2298,8 +2405,12 @@ public class HubController : MonoBehaviour
         }
         else if (Global.MariaArmorStatus == 2 && Global.AlchemistArmor3 >= 1 && Global.CurHPP2 < Global.MaxHPP2)
         {
-            EquipTextMaria.SetActive(true);
-            StartCoroutine(DelayEquipText());
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                EquipTextMaria.SetActive(true);
+                StartCoroutine(DelayEquipText());
+            }
         }
     }
 
@@ -2586,6 +2697,7 @@ public class HubController : MonoBehaviour
         EquipTextVayne.SetActive(false);
         EquipTextAlia.SetActive(false);
         EquipTextMaria.SetActive(false);
+        OnceUIText = 0;
     }
 
     IEnumerator DelayMapUI()

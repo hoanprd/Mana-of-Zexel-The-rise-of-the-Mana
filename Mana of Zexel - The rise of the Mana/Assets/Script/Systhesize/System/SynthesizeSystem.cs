@@ -63,6 +63,7 @@ public class SynthesizeSystem : MonoBehaviour
 
     public static int SynBugStop, ManaSynthesize, ManaFireSynthesize, ManaIceSynthesize;
     public int SlideIndex = 0;
+    private int OnceUIText;
     //public static bool BomCut, VenomKillerCut, PorridgeCut, ManaNecklaceCut, ManaFireCoreVayneCut, OmnipotentBoundaryCut;
 
     // Start is called before the first frame update
@@ -71,6 +72,7 @@ public class SynthesizeSystem : MonoBehaviour
         ManaSynSlider.maxValue = 100;
         ManaFireSynSlider.maxValue = 100;
         ManaIceSynSlider.maxValue = 100;
+        OnceUIText = 0;
 
         /*BomCut = false;
         VenomKillerCut = false;
@@ -768,21 +770,33 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.DriedLeaves -= 1;
             ContainerController.PureWater -= 1;
             ContainerController.HealPotionPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.HealPotion == 4)
         {
-            showr2.SetActive(true);
-            showr1.text = "Item limit reached!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Item limit reached!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -794,21 +808,33 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.MorningDrop -= 1;
             ContainerController.PureWater -= 1;
             ContainerController.ManaPotionPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.ManaPotion == 4)
         {
-            showr2.SetActive(true);
-            showr1.text = "Item limit reached!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Item limit reached!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -820,21 +846,33 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.HealPotion -= 1;
             ContainerController.ManaPotion -= 1;
             ContainerController.ElixirPotionPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.ElixirPotion == 4)
         {
-            showr2.SetActive(true);
-            showr1.text = "Item limit reached!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Item limit reached!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -848,9 +886,13 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.Iron -= 2;
             ContainerController.ManaGem -= 2;
             ContainerController.BomPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.Iron >= 0 && ContainerController.ManaGem >= 0 && ContainerController.Bom < 4)
         {
@@ -858,21 +900,33 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.Iron -= 2;
             ContainerController.ManaGem -= 2;
             ContainerController.BomPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.Bom >= 4)
         {
-            showr2.SetActive(true);
-            showr1.text = "Item limit reached!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Item limit reached!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -886,9 +940,13 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.Wheat -= 3;
             ContainerController.PureWater -= 2;
             ContainerController.PorridgePick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.Wheat >= 3 && ContainerController.PureWater >= 2)
         {
@@ -900,15 +958,23 @@ public class SynthesizeSystem : MonoBehaviour
             {
                 CutscenesTrigger.PorridgeSyn = 1;
             }
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -920,15 +986,23 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.String -= 4;
             ContainerController.ManaGem -= 2;
             ContainerController.ManaClothPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -941,25 +1015,37 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.Wood -= 3;
             ContainerController.ManaCloth -= 2;
             ContainerController.ManaShieldPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
     public void SynthesizeButton8()
     {
-        if (ContainerController.ScorpionVenom >= 2 && ContainerController.ElixirPotion >= 2 && CutscenesController.cus45 == 0 && CutscenesController.cus44 == 1)
+        if (ContainerController.ScorpionVenom >= 2 && ContainerController.ElixirPotion >= 2 && CutscenesController.cus45 == 0 && CutscenesController.cus43 == 1)
         {
-            showr2.SetActive(true);
-            showr1.text = "You need to keep inferno scorpion venom to give Orina";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You need to keep inferno scorpion venom to give Orina";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.ScorpionVenom >= 2 && ContainerController.ElixirPotion >= 2 && CutscenesController.cus40 == 0 && CutscenesController.cus39 == 1 && SynBugStop == 0)
         {
@@ -969,9 +1055,13 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.ScorpionVenom -= 2;
             ContainerController.ElixirPotion -= 2;
             ContainerController.VenomKillerPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.ScorpionVenom >= 2 && ContainerController.ElixirPotion >= 2)
         {
@@ -979,15 +1069,23 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.ScorpionVenom -= 2;
             ContainerController.ElixirPotion -= 2;
             ContainerController.VenomKillerPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1003,21 +1101,33 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.ManaGem -= 1;
             ContainerController.GuardianFeather -= 1;
             ContainerController.ManaNecklacePick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.String > 0 && ContainerController.ManaGem > 0 && ContainerController.GuardianFeather > 0 && CutscenesController.cus54 == 0 && CutscenesController.cus53 == 0)
         {
-            showr2.SetActive(true);
-            showr1.text = "You can't systhesize this item yet!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You can't systhesize this item yet!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1031,21 +1141,33 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.Wood -= 2;
             ContainerController.ManaGem -= 4;
             ContainerController.ManaGeneratorPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.Iron >= 4 && ContainerController.Wood >= 2 && ContainerController.ManaGem >= 4 && ManaSynthesize < 80)
         {
-            showr2.SetActive(true);
-            showr1.text = "You don't have enough mana to synthesize this item!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You don't have enough mana to synthesize this item!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1057,15 +1179,23 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.Iron -= 1;
             ContainerController.ManaOre -= 2;
             ContainerController.BaxiataPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1079,21 +1209,33 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.InfernoSand -= 1;
             ContainerController.Baxiata -= 2;
             ContainerController.BaxiataGemPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.ManaCrystal >= 2 && ContainerController.InfernoSand > 0 && ContainerController.Baxiata >= 2 && ManaSynthesize < 20)
         {
-            showr2.SetActive(true);
-            showr1.text = "You don't have enough mana to synthesize this item!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You don't have enough mana to synthesize this item!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1106,15 +1248,23 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.IceOre -= 2;
             ContainerController.Baxiata -= 1;
             ContainerController.PhotonriaPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1128,21 +1278,33 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.BlueManaCrystal -= 2;
             ContainerController.Photonria -= 2;
             ContainerController.PhotonriaGemPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.RedManaCrystal >= 2 && ContainerController.BlueManaCrystal >= 2 && ContainerController.Photonria >= 2 && ManaSynthesize < 40)
         {
-            showr2.SetActive(true);
-            showr1.text = "You don't have enough mana to synthesize this item!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You don't have enough mana to synthesize this item!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1155,21 +1317,33 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.ManaLiquid -= 2;
             ContainerController.PureWater -= 2;
             ContainerController.ManaLiquidCatalystPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.ManaLiquid >= 2 && ContainerController.PureWater >= 2 && ManaSynthesize < 20)
         {
-            showr2.SetActive(true);
-            showr1.text = "You don't have enough mana to synthesize this item!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You don't have enough mana to synthesize this item!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1182,21 +1356,33 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.RedManaSlimeBall -= 2;
             ContainerController.PureWater -= 2;
             ContainerController.RedLiquidCatalystPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.RedManaSlimeBall >= 2 && ContainerController.PureWater >= 2 && ManaSynthesize < 20)
         {
-            showr2.SetActive(true);
-            showr1.text = "You don't have enough mana to synthesize this item!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You don't have enough mana to synthesize this item!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1209,21 +1395,33 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.BlueManaSlimeBall -= 2;
             ContainerController.PureWater -= 2;
             ContainerController.BlueLiquidCatalystPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.BlueManaSlimeBall >= 2 && ContainerController.PureWater >= 2 && ManaSynthesize < 20)
         {
-            showr2.SetActive(true);
-            showr1.text = "You don't have enough mana to synthesize this item!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You don't have enough mana to synthesize this item!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1239,21 +1437,33 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.RedManaCrystal -= 2;
             ContainerController.RedLiquidCatalyst -= 2;
             ContainerController.ManaCoreFireVaynePick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.ManaCoreFireZexel > 0 && ContainerController.RedManaCrystal >= 2 && ContainerController.RedLiquidCatalyst >= 2 && ManaFireSynthesize < 20)
         {
-            showr2.SetActive(true);
-            showr1.text = "You don't have enough mana to synthesize this item!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You don't have enough mana to synthesize this item!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1267,21 +1477,33 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.BlueManaCrystal -= 2;
             ContainerController.BlueLiquidCatalyst -= 2;
             ContainerController.ManaCoreIceVaynePick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.ManaCoreIceZexel > 0 && ContainerController.BlueManaCrystal >= 2 && ContainerController.BlueLiquidCatalyst >= 2 && ManaIceSynthesize < 20)
         {
-            showr2.SetActive(true);
-            showr1.text = "You don't have enough mana to synthesize this item!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You don't have enough mana to synthesize this item!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1294,15 +1516,23 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.GoldenFeather -= 3;
             ContainerController.Rock -= 2;
             ContainerController.PureObsidianPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1315,15 +1545,23 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.ScorpionVenom -= 2;
             ContainerController.ElixirPotion -= 2;
             ContainerController.BackPainMedicinePick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1337,21 +1575,33 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.PhotonriaGem -= 2;
             ContainerController.ManaLiquidCatalyst -= 2;
             ContainerController.PurifyingPotionPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.PurifyingWater >= 1 && ContainerController.PhotonriaGem >= 2 && ContainerController.ManaLiquidCatalyst >= 2 && ManaSynthesize < 60)
         {
-            showr2.SetActive(true);
-            showr1.text = "You don't have enough mana to synthesize this item!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You don't have enough mana to synthesize this item!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1364,15 +1614,23 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.GoldenFeather -= 4;
             ContainerController.Wheat -= 2;
             ContainerController.PowderOfLifePick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1386,21 +1644,33 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.Wood -= 2;
             ContainerController.RedManaCrystal -= 4;
             ContainerController.FireManaGeneratorPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.ManaCoreIceZexel > 0 && ContainerController.BlueManaCrystal >= 2 && ContainerController.BlueLiquidCatalyst >= 2 && ManaFireSynthesize < 80)
         {
-            showr2.SetActive(true);
-            showr1.text = "You don't have enough mana to synthesize this item!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You don't have enough mana to synthesize this item!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1414,21 +1684,33 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.Wood -= 2;
             ContainerController.BlueManaCrystal -= 4;
             ContainerController.IceManaGeneratorPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.Iron >= 4 && ContainerController.Wood >= 2 && ContainerController.BlueManaCrystal >= 4 && ManaIceSynthesize < 80)
         {
-            showr2.SetActive(true);
-            showr1.text = "You don't have enough mana to synthesize this item!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You don't have enough mana to synthesize this item!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1442,21 +1724,33 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.BaxiataGem -= 4;
             ContainerController.ManaLiquidCatalyst -= 4;
             ContainerController.ManaDetectorPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.BrokenManaDetector >= 1 && ContainerController.BaxiataGem >= 4 && ContainerController.ManaLiquidCatalyst >= 4 && ManaSynthesize < 60)
         {
-            showr2.SetActive(true);
-            showr1.text = "You don't have enough mana to synthesize this item!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You don't have enough mana to synthesize this item!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1470,27 +1764,43 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.BaxiataGem -= 1;
             ContainerController.RedLiquidCatalyst -= 2;
             ContainerController.HoliHPPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.HealPotion >= 2 && ContainerController.BaxiataGem >= 1 && ContainerController.RedLiquidCatalyst >= 2 && ManaFireSynthesize < 40)
         {
-            showr2.SetActive(true);
-            showr1.text = "You don't have enough mana to synthesize this item!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You don't have enough mana to synthesize this item!";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.HealPotion >= 2 && ContainerController.BaxiataGem >= 1 && ContainerController.RedLiquidCatalyst >= 2 && ManaFireSynthesize >= 40 && ContainerController.HoliHP >= 4)
         {
-            showr2.SetActive(true);
-            showr1.text = "Item limit has been reached!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Item limit has been reached!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1504,27 +1814,43 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.BaxiataGem -= 1;
             ContainerController.BlueLiquidCatalyst -= 2;
             ContainerController.HoliMPPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.ManaPotion >= 2 && ContainerController.BaxiataGem >= 1 && ContainerController.BlueLiquidCatalyst >= 2 && ManaIceSynthesize < 40)
         {
-            showr2.SetActive(true);
-            showr1.text = "You don't have enough mana to synthesize this item!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You don't have enough mana to synthesize this item!";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.ManaPotion >= 2 && ContainerController.BaxiataGem >= 1 && ContainerController.BlueLiquidCatalyst >= 2 && ManaIceSynthesize >= 40 && ContainerController.HoliMP >= 4)
         {
-            showr2.SetActive(true);
-            showr1.text = "Item limit has been reached!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Item limit has been reached!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1538,27 +1864,43 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.ManaLiquid -= 2;
             ContainerController.PowderOfLife -= 1;
             ContainerController.ReincarnationLifePick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.ElixirPotion >= 2 && ContainerController.ManaLiquid >= 2 && ContainerController.PowderOfLife >= 1 && ManaSynthesize < 50)
         {
-            showr2.SetActive(true);
-            showr1.text = "You don't have enough mana to synthesize this item!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You don't have enough mana to synthesize this item!";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.ElixirPotion >= 2 && ContainerController.ManaLiquid >= 2 && ContainerController.PowderOfLife >= 1 && ManaSynthesize >= 50 && ContainerController.ReincarnationLife >= 4)
         {
-            showr2.SetActive(true);
-            showr1.text = "Item limit has been reached!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Item limit has been reached!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1572,27 +1914,43 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.PhotonriaGem -= 1;
             ContainerController.PureObsidian -= 1;
             ContainerController.UltraBomPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.Bom >= 2 && ContainerController.PhotonriaGem >= 1 && ContainerController.PureObsidian >= 1 && ManaSynthesize < 50)
         {
-            showr2.SetActive(true);
-            showr1.text = "You don't have enough mana to synthesize this item!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You don't have enough mana to synthesize this item!";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.Bom >= 2 && ContainerController.PhotonriaGem >= 1 && ContainerController.PureObsidian >= 1 && ManaSynthesize >= 50 && ContainerController.ReincarnationLife >= 4)
         {
-            showr2.SetActive(true);
-            showr1.text = "Item limit has been reached!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Item limit has been reached!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1611,9 +1969,13 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.IceLeather -= 4;
             ContainerController.ManaCloth -= 2;
             ContainerController.OmnipotentBoundaryPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.ManaEagleFeather >= 4 && ContainerController.IceLeather >= 2 && ContainerController.ManaCloth >= 2 && ManaSynthesize >= 100)
         {
@@ -1622,21 +1984,33 @@ public class SynthesizeSystem : MonoBehaviour
             ContainerController.IceLeather -= 4;
             ContainerController.ManaCloth -= 2;
             ContainerController.OmnipotentBoundaryPick = 1;
-            showr2.SetActive(true);
-            showr1.text = "Success";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Success";
+                Invoke("delay1", 1f);
+            }
         }
         else if (ContainerController.ManaEagleFeather >= 4 && ContainerController.IceLeather >= 2 && ContainerController.ManaCloth >= 2 && ManaSynthesize < 100)
         {
-            showr2.SetActive(true);
-            showr1.text = "You don't have enough mana to synthesize this item!";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "You don't have enough mana to synthesize this item!";
+                Invoke("delay1", 1f);
+            }
         }
         else
         {
-            showr2.SetActive(true);
-            showr1.text = "Not enough material";
-            Invoke("delay1", 1f);
+            if (OnceUIText == 0)
+            {
+                OnceUIText = 1;
+                showr2.SetActive(true);
+                showr1.text = "Not enough material";
+                Invoke("delay1", 1f);
+            }
         }
     }
 
@@ -1676,7 +2050,10 @@ public class SynthesizeSystem : MonoBehaviour
 
     void delay1()
     {
+        showr1.text = "";
         showr2.SetActive(false);
+        OnceUIText = 0;
+
         /*if (CutscenesController.cus25 == 0 && CutscenesController.cus24 == 1 && BomCut == true)
         {
             ContainerController.Bom -= 1;
