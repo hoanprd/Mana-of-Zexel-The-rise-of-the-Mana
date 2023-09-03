@@ -2742,7 +2742,7 @@ public class HubController : MonoBehaviour
             {
                 MapText[i].text = "Mana temple";
             }
-            else if (i == 8 && CutscenesController.cus58 == 1)
+            else if (i == 8 && CutscenesController.cus59 == 1)
             {
                 MapText[i].text = "Inferno volcano";
             }

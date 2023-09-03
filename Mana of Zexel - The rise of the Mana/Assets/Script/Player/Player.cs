@@ -203,7 +203,7 @@ public class Player : MonoBehaviour
                     {
                         OnceUIText = 1;
                         show2.SetActive(true);
-                        show1.text = "The number of ice fangs is still not enough. Remain: " + CutscenesTrigger.IceFangKill;
+                        show1.text = "The number of ice fangs is still not enough. Remain: " + (4 - CutscenesTrigger.IceFangKill);
                         Invoke("delay1", 2f);
                     }
                 }
