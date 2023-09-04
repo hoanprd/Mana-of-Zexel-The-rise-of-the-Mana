@@ -13,6 +13,7 @@ public class DateController : MonoBehaviour
     public static float GlobalTime;
     public static int GlobalUpHour, GlobalPHour, GlobalDownHour, GlobalDayNight;
     public static bool StartGlobalTime, DayOn, NightOn;
+    private bool UIDay, UINight;
 
     // Start is called before the first frame update
     void Start()
@@ -25,18 +26,41 @@ public class DateController : MonoBehaviour
             GlobalPHour = 6;
             GlobalDownHour = 7;
             StartGlobalTime = false;
+            UIDay = true;
+            UINight = false;
         }
 
         if (GlobalDayNight == 0)
         {
             DayNight.text = "AM";
+            UIDay = true;
+            UINight = false;
         }
         else if (GlobalDayNight == 1)
+        {
             DayNight.text = "PM";
+            UIDay = false;
+            UINight = true;
+        }
 
         UpHour.text = GlobalUpHour + "";
         PHour.text = GlobalPHour + "";
         DownHour.text = GlobalDownHour + "";
+
+        if (((GlobalDayNight == 0 && GlobalPHour >= 6) || (GlobalDayNight == 1 && GlobalPHour < 6)))
+        {
+            UIDay = true;
+            UINight = false;
+            UIDayNightText.ChangeUITextColorDay = true;
+            UIDayNightText.ChangeUITextColorNight = false;
+        }
+        else if (((GlobalDayNight == 1 && GlobalPHour >= 6) || (GlobalDayNight == 0 && GlobalPHour < 6)))
+        {
+            UIDay = false;
+            UINight = true;
+            UIDayNightText.ChangeUITextColorDay = false;
+            UIDayNightText.ChangeUITextColorNight = true;
+        }
 
         CheckDayNightChange();
     }
@@ -143,6 +167,12 @@ public class DateController : MonoBehaviour
             URPPlacesController.UpdateURP = true;
             Sun.SetTrigger("sunon");
             Moon.SetTrigger("moonoff");
+            if (UIDay == true && UINight == false)
+            {
+                UIDay = false;
+                UINight = true;
+                UIDayNightText.ChangeUITextColorDay = true;
+            }
         }
         else if (((GlobalDayNight == 1 && GlobalPHour >= 6) || (GlobalDayNight == 0 && GlobalPHour < 6)))
         {
@@ -152,6 +182,12 @@ public class DateController : MonoBehaviour
             URPPlacesController.UpdateURP = true;
             Sun.SetTrigger("sunoff");
             Moon.SetTrigger("moonon");
+            if (UIDay == false && UINight == true)
+            {
+                UIDay = true;
+                UINight = false;
+                UIDayNightText.ChangeUITextColorNight = true;
+            }
         }
     }
 }

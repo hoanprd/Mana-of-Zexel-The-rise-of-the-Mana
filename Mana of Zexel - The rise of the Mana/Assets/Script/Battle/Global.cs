@@ -32,11 +32,11 @@ public class Global : MonoBehaviour
     public static int HPE10, DamageE10, SpeedE10, ExpE10;
     public static int HPE11, DamageE11, SpeedE11, ExpE11;
 
-    public static int HPBE1, DamageBE1, SpeedBE1, ExpBE1;
-    public static int HPBE2, DamageBE2, SpeedBE2, ExpBE2;
-    public static int HPBE3, DamageBE3, SpeedBE3, ExpBE3;
+    public static int HPBE1, DamageBE1, SpeedBE1, ExpBE1, SkillBreakDamageBE1;
+    public static int HPBE2, DamageBE2, SpeedBE2, ExpBE2, SkillBreakDamageBE2;
+    public static int HPBE3, DamageBE3, SpeedBE3, ExpBE3, SkillBreakDamageBE3;
     public static int HPBE4, DamageBE4, SpeedBE4, ExpBE4;
-    public static int HPBE5, DamageBE5, SpeedBE5;
+    public static int HPBE5, DamageBE5, SpeedBE5, SkillBreakDamageBE5;
     public static int HPBE6, DamageBE6, SpeedBE6;
 
     //Equip
@@ -187,6 +187,11 @@ public class Global : MonoBehaviour
             HPBE6 = 20000;
             DamageBE6 = 140;
             SpeedBE6 = 20;
+
+            SkillBreakDamageBE1 = 400;
+            SkillBreakDamageBE2 = 1000;
+            SkillBreakDamageBE3 = 800;
+            SkillBreakDamageBE5 = 4000;
         }
         else if (GameSettingController.GameDiff == 1)
         {
@@ -304,6 +309,11 @@ public class Global : MonoBehaviour
             HPBE6 = 30000;
             DamageBE6 = 150;
             SpeedBE6 = 20;
+
+            SkillBreakDamageBE1 = 500;
+            SkillBreakDamageBE2 = 1200;
+            SkillBreakDamageBE3 = 1000;
+            SkillBreakDamageBE5 = 4200;
         }
 
         /*//Mob

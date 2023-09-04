@@ -195,6 +195,52 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.727627, y: 8}
   m_EdgeRadius: 0
+--- !u!1 &35549497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 35549499}
+  - component: {fileID: 35549498}
+  m_Layer: 0
+  m_Name: UITextURP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &35549498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35549497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a19b78e782ae0142b3424d253ea4be0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIText:
+  - {fileID: 1815647402}
+--- !u!4 &35549499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35549497}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &35706325
 GameObject:
   m_ObjectHideFlags: 0
@@ -127079,7 +127125,6 @@ GameObject:
   - component: {fileID: 1828904447}
   - component: {fileID: 1828904449}
   - component: {fileID: 1828904451}
-  - component: {fileID: 1828904450}
   m_Layer: 0
   m_Name: Mana water 1
   m_TagString: Untagged
@@ -127174,22 +127219,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1828904450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1828904446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6c59aba39841d3449be673b66f5ad6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  once: 0
-  IsReady: 0
-  show1: {fileID: 1815647402}
-  show2: {fileID: 1815647401}
 --- !u!61 &1828904451
 BoxCollider2D:
   m_ObjectHideFlags: 0
