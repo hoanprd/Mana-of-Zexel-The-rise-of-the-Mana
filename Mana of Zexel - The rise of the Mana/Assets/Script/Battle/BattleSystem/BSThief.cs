@@ -118,7 +118,7 @@ public class BSThief : MonoBehaviour
                     pb.p1YesGetHit = 1;
                     EDamage.color = Color.red;
                     EDamage.text = "-" + Global.DamageE1;
-                    Invoke("delayE1", 1f);
+                    Invoke("delayE1", 2f);
                     dem = 0;
                 }
                 CheckP1Die();
@@ -140,7 +140,7 @@ public class BSThief : MonoBehaviour
                     pb.p1YesGetHit = 1;
                     EDamage.color = Color.red;
                     EDamage.text = "-" + Global.DamageE1;
-                    Invoke("delayE1", 1f);
+                    Invoke("delayE1", 2f);
                     dem = 0;
                 }
                 CheckP1Die();

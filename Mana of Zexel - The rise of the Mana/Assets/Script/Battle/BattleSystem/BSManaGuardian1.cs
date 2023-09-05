@@ -189,8 +189,8 @@ public class BSManaGuardian1 : MonoBehaviour
                 if (BE1ANum <= 6)
                     EDamage.text = "-" + Global.DamageBE1;
 
-                Invoke("delayBE1", 1.5f);
-                Invoke("delayBE1attack2", 2.5f);
+                Invoke("delayBE1", 2f);
+                Invoke("delayBE1attack2", 4f);
             }
             CheckP1Die();
             CheckP2Die();
@@ -1184,7 +1184,7 @@ public class BSManaGuardian1 : MonoBehaviour
             EDamage.color = Color.red;
             EDamage.text = "-" + Global.DamageBE1;
 
-            Invoke("delayBE1", 1f);
+            Invoke("delayBE1", 2f);
         }
     }
 

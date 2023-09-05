@@ -251,7 +251,7 @@ public class BSThief1 : MonoBehaviour
                 EDamage.color = Color.red;
                 EDamage.text = "-" + Global.DamageE1;
                 E1AttackTarget();
-                Invoke("delayE1", 1f);
+                Invoke("delayE1", 2f);
                 dem = 0;
             }
             CheckP1Die();
@@ -455,7 +455,6 @@ public class BSThief1 : MonoBehaviour
         {
             VayneSkill1FX.Play();
             ChooseVayneSkillPanel.SetActive(false);
-            show1 = 0;
             ChooseSkillIndex = 1;
             pb.yes2 = 1;
             show1 = 1;
@@ -483,7 +482,6 @@ public class BSThief1 : MonoBehaviour
         {
             VayneSkill2FX.Play();
             ChooseVayneSkillPanel.SetActive(false);
-            show1 = 0;
             VayneSkill2Effect.SetActive(true);
             ChooseSkillIndex = 2;
             pb.yes7 = 1;
@@ -512,7 +510,6 @@ public class BSThief1 : MonoBehaviour
         {
             VayneSkill3FX.Play();
             ChooseVayneSkillPanel.SetActive(false);
-            show1 = 0;
             VayneSkill3Effect.SetActive(true);
             ChooseSkillIndex = 3;
             pb.yes8 = 1;

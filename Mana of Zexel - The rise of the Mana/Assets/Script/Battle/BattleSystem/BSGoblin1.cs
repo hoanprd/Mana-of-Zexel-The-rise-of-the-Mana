@@ -252,7 +252,7 @@ public class BSGoblin1 : MonoBehaviour
                     EDamage.color = Color.red;
                     EDamage.text = "-" + Global.DamageE2;
                     E2AttackTarget();
-                    Invoke("delayE2", 1f);
+                    Invoke("delayE2", 2f);
                     dem = 0;
                 }
                 CheckP1Die();

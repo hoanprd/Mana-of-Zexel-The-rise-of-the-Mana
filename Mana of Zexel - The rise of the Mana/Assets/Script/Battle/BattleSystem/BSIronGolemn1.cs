@@ -1228,7 +1228,7 @@ public class BSIronGolemn1 : MonoBehaviour
                 EDamage.text = "-" + Global.DamageBE4;
             else
                 EDamage.text = "-" + DamgeCal;
-            Invoke("delayBE4", 1f);
+            Invoke("delayBE4", 2f);
         }
     }
 
@@ -1244,7 +1244,7 @@ public class BSIronGolemn1 : MonoBehaviour
                 EDamage.text = "-" + Global.DamageBE4;
             else
                 EDamage.text = "-" + DamgeCal;
-            Invoke("delayBE4", 1f);
+            Invoke("delayBE4", 2f);
         }
     }
 

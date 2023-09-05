@@ -171,13 +171,13 @@ public class Cus102 : MonoBehaviour
                 VayneVAL1.SetActive(false);
                 MariaVAR1.SetActive(false);
                 NameTagText.text = "Mr. Lance";
-                dia.text = "Vâng bọn cháu vô liền.";
+                dia.text = "Này hai đứa đang ở ngoài đó à? Đến giờ ăn rồi đó!";
             }
             else if (tang == 13)
             {
                 VayneVAL1.SetActive(true);
                 NameTagText.text = "Vayne";
-                dia.text = "Yes, we'll be right in.";
+                dia.text = "Vâng bọn cháu vô liền.";
             }
             else if (tang >= 14)
             {

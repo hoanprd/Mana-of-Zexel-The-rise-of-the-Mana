@@ -179,9 +179,9 @@ public class BSInfernoBeast1 : MonoBehaviour
                 if (BE2ANum <= 4)
                     EDamage.text = "-" + Global.DamageBE2;
 
-                Invoke("delayBE2", 1f);
-                Invoke("delayBE2attack2", 2f);
-                Invoke("delayBE2attack3", 4f);
+                Invoke("delayBE2", 2f);
+                Invoke("delayBE2attack2", 4f);
+                Invoke("delayBE2attack3", 6f);
             }
             CheckP1Die();
             CheckP2Die();
@@ -1192,7 +1192,7 @@ public class BSInfernoBeast1 : MonoBehaviour
             EDamage.color = Color.red;
             EDamage.text = "-" + Global.DamageBE2;
 
-            Invoke("delayBE2", 1f);
+            Invoke("delayBE2", 2f);
         }
     }
 
@@ -1207,7 +1207,7 @@ public class BSInfernoBeast1 : MonoBehaviour
             EDamage.color = Color.red;
             EDamage.text = "-" + Global.DamageBE2;
 
-            Invoke("delayBE2", 1f);
+            Invoke("delayBE2", 2f);
         }
     }
 

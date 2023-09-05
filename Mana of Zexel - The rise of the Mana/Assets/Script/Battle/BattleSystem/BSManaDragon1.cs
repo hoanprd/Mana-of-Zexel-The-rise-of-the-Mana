@@ -224,7 +224,7 @@ public class BSManaDragon1 : MonoBehaviour
                 if (BE3ANum <= 5)
                     EDamage.text = "-" + Global.DamageBE3;
 
-                Invoke("delayBE3", 1f);
+                Invoke("delayBE3", 2f);
             }
             CheckP1Die();
             CheckP2Die();

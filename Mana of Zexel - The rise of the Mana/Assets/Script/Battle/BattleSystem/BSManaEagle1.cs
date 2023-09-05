@@ -229,8 +229,8 @@ public class BSManaEagle1 : MonoBehaviour
                 EDamage.color = Color.red;
                 EDamage.text = "-" + Global.DamageE10;
                 E10AttackTarget();
-                Invoke("delayE10", 1f);
-                Invoke("delayeE10attack2", 2f);
+                Invoke("delayE10", 2f);
+                Invoke("delayeE10attack2", 4f);
             }
             CheckP1Die();
             CheckP2Die();
@@ -1194,7 +1194,7 @@ public class BSManaEagle1 : MonoBehaviour
             EDamage.color = Color.red;
             EDamage.text = "-" + Global.DamageE10;
             E10AttackTarget();
-            Invoke("delayE10", 1f);
+            Invoke("delayE10", 2f);
         }
     }
     void delayP1PressAttack()

@@ -227,8 +227,8 @@ public class BSFireFang1 : MonoBehaviour
                 EDamage.color = Color.red;
                 EDamage.text = "-" + Global.DamageE6;
                 E6AttackTarget();
-                Invoke("delayE6", 1.5f);
-                Invoke("delayeE6attack2", 2.5f);
+                Invoke("delayE6", 2f);
+                Invoke("delayeE6attack2", 4f);
             }
             CheckP1Die();
             CheckP2Die();
@@ -1187,7 +1187,7 @@ public class BSFireFang1 : MonoBehaviour
             EDamage.color = Color.red;
             EDamage.text = "-" + Global.DamageE6;
             E6AttackTarget();
-            Invoke("delayE6", 1f);
+            Invoke("delayE6", 2f);
         }
     }
     void delayP1PressAttack()

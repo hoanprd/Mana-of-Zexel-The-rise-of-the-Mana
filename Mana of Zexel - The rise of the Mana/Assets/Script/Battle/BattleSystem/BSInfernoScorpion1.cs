@@ -229,8 +229,8 @@ public class BSInfernoScorpion1 : MonoBehaviour
                 EDamage.color = Color.red;
                 EDamage.text = "-" + Global.DamageE4;
                 E4AttackTarget();
-                Invoke("delayE4", 1f);
-                Invoke("delayeE4attack2", 2f);
+                Invoke("delayE4", 2f);
+                Invoke("delayeE4attack2", 4f);
             }
             CheckP1Die();
             CheckP2Die();
@@ -1225,7 +1225,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
             EDamage.color = Color.red;
             EDamage.text = "-" + Global.DamageE4;
             E4AttackTarget();
-            Invoke("delayE4", 1f);
+            Invoke("delayE4", 2f);
         }
     }
     void delayP1PressAttack()

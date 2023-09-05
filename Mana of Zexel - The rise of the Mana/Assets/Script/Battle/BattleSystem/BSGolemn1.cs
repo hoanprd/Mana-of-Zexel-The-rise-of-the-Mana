@@ -229,8 +229,8 @@ public class BSGolemn1 : MonoBehaviour
                 EDamage.color = Color.red;
                 EDamage.text = "-" + Global.DamageE3;
                 E3AttackTarget();
-                Invoke("delayE3", 1.5f);
-                Invoke("delayeE3attack2", 2.5f);
+                Invoke("delayE3", 2f);
+                Invoke("delayeE3attack2", 4f);
             }
             CheckP1Die();
             CheckP2Die();
@@ -1221,7 +1221,7 @@ public class BSGolemn1 : MonoBehaviour
             EDamage.color = Color.red;
             EDamage.text = "-" + Global.DamageE3;
             E3AttackTarget();
-            Invoke("delayE3", 1f);
+            Invoke("delayE3", 2f);
         }
     }
     void delayP1PressAttack()

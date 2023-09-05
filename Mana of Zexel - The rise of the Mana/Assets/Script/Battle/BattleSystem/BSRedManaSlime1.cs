@@ -250,7 +250,7 @@ public class BSRedManaSlime1 : MonoBehaviour
                 EDamage.color = Color.red;
                 EDamage.text = "-" + Global.DamageE7;
                 E7AttackTarget();
-                Invoke("delayE7", 1f);
+                Invoke("delayE7", 2f);
                 dem = 0;
             }
             CheckP1Die();

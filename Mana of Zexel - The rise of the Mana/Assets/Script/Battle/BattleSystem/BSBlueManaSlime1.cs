@@ -248,7 +248,7 @@ public class BSBlueManaSlime1 : MonoBehaviour
                 EDamage.color = Color.red;
                 EDamage.text = "-" + Global.DamageE9;
                 E9AttackTarget();
-                Invoke("delayE9", 1f);
+                Invoke("delayE9", 2f);
                 dem = 0;
             }
             CheckP1Die();
@@ -452,7 +452,6 @@ public class BSBlueManaSlime1 : MonoBehaviour
         {
             VayneSkill1FX.Play();
             ChooseVayneSkillPanel.SetActive(false);
-            show1 = 0;
             ChooseSkillIndex = 1;
             pb.yes2 = 1;
             show1 = 1;
@@ -480,7 +479,6 @@ public class BSBlueManaSlime1 : MonoBehaviour
         {
             VayneSkill2FX.Play();
             ChooseVayneSkillPanel.SetActive(false);
-            show1 = 0;
             VayneSkill2Effect.SetActive(true);
             ChooseSkillIndex = 2;
             pb.yes7 = 1;
@@ -509,7 +507,6 @@ public class BSBlueManaSlime1 : MonoBehaviour
         {
             VayneSkill3FX.Play();
             ChooseVayneSkillPanel.SetActive(false);
-            show1 = 0;
             VayneSkill3Effect.SetActive(true);
             ChooseSkillIndex = 3;
             pb.yes8 = 1;
@@ -552,7 +549,6 @@ public class BSBlueManaSlime1 : MonoBehaviour
         {
             AliaSkill1FX.Play();
             ChooseAliaSkillPanel.SetActive(false);
-            show2 = 0;
             ChooseSkillIndex = 1;
             pb.yes4 = 1;
             show2 = 1;
@@ -579,7 +575,6 @@ public class BSBlueManaSlime1 : MonoBehaviour
         {
             AliaSkill2FX.Play();
             ChooseAliaSkillPanel.SetActive(false);
-            show2 = 0;
             ChooseSkillIndex = 2;
             pb.yes9 = 1;
             show2 = 1;
@@ -606,7 +601,6 @@ public class BSBlueManaSlime1 : MonoBehaviour
         {
             AliaSkill3FX.Play();
             ChooseAliaSkillPanel.SetActive(false);
-            show2 = 0;
             ChooseSkillIndex = 3;
             pb.yes10 = 1;
             show2 = 1;
@@ -648,7 +642,6 @@ public class BSBlueManaSlime1 : MonoBehaviour
         {
             MariaSkill1FX.Play();
             ChooseMariaSkillPanel.SetActive(false);
-            show3 = 0;
             ChooseSkillIndex = 1;
             pb.yes6 = 1;
             show3 = 1;
@@ -676,7 +669,6 @@ public class BSBlueManaSlime1 : MonoBehaviour
         {
             MariaSkill2FX.Play();
             ChooseMariaSkillPanel.SetActive(false);
-            show3 = 0;
             ChooseSkillIndex = 2;
             pb.yes11 = 1;
             show3 = 1;
@@ -704,7 +696,6 @@ public class BSBlueManaSlime1 : MonoBehaviour
         {
             MariaSkill3FX.Play();
             ChooseMariaSkillPanel.SetActive(false);
-            show3 = 0;
             MariaSkill3Effect.SetActive(true);
             ChooseSkillIndex = 3;
             pb.yes12 = 1;

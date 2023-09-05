@@ -232,8 +232,8 @@ public class BSGhost1 : MonoBehaviour
                     EDamage.color = Color.red;
                     EDamage.text = "-" + Global.DamageE11;
                     E11AttackTarget();
-                    Invoke("delayE11", 1f);
-                    Invoke("delayeE11attack2", 2f);
+                    Invoke("delayE11", 2f);
+                    Invoke("delayeE11attack2", 4f);
                 }
                 CheckP1Die();
                 CheckP2Die();
@@ -1192,7 +1192,7 @@ public class BSGhost1 : MonoBehaviour
             EDamage.color = Color.red;
             EDamage.text = "-" + Global.DamageE11;
             E11AttackTarget();
-            Invoke("delayE11", 1f);
+            Invoke("delayE11", 2f);
         }
     }
     void delayP1PressAttack()

@@ -198,8 +198,8 @@ public class BSSicxalon1 : MonoBehaviour
                 else if (BE5ANum == 6 || BE5ANum == 7)
                     EDamage.text = "-999999";
 
-                Invoke("delayBE5", 1f);
-                Invoke("delayBE5attack2", 3f);
+                Invoke("delayBE5", 2f);
+                Invoke("delayBE5attack2", 4f);
             }
             CheckP1Die();
             CheckP2Die();

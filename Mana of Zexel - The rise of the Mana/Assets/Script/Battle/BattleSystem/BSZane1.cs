@@ -190,8 +190,8 @@ public class BSZane1 : MonoBehaviour
                     EDamage.text = "-" + Global.DamageBE6;
                 else
                     PDamage.text = "+" + DamgeCal;
-                Invoke("delayBE6", 1f);
-                Invoke("delayBE6attack2", 2f);
+                Invoke("delayBE6", 2f);
+                Invoke("delayBE6attack2", 4f);
             }
             CheckP1Die();
             CheckP2Die();
@@ -1092,7 +1092,7 @@ public class BSZane1 : MonoBehaviour
                 EDamage.text = "-" + Global.DamageBE6;
             else
                 PDamage.text = "+" + DamgeCal;
-            Invoke("delayBE6", 1f);
+            Invoke("delayBE6", 2f);
         }
     }
 
