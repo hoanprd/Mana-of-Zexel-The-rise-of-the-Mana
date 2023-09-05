@@ -228,7 +228,7 @@ public class BSFireFang1 : MonoBehaviour
                 EDamage.text = "-" + Global.DamageE6;
                 E6AttackTarget();
                 Invoke("delayE6", 2f);
-                Invoke("delayeE6attack2", 4f);
+                Invoke("delayeE6attack2", 3f);
             }
             CheckP1Die();
             CheckP2Die();

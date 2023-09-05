@@ -220,7 +220,7 @@ public class BSIceFang1 : MonoBehaviour
                 EDamage.text = "-" + Global.DamageE8;
                 E8AttackTarget();
                 Invoke("delayE8", 2f);
-                Invoke("delayE8attack2", 4f);
+                Invoke("delayE8attack2", 3f);
                 Invoke("delayE8attack3", 6f);
             }
             CheckP1Die();

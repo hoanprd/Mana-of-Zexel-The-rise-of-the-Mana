@@ -230,7 +230,7 @@ public class BSGolemn1 : MonoBehaviour
                 EDamage.text = "-" + Global.DamageE3;
                 E3AttackTarget();
                 Invoke("delayE3", 2f);
-                Invoke("delayeE3attack2", 4f);
+                Invoke("delayeE3attack2", 3f);
             }
             CheckP1Die();
             CheckP2Die();

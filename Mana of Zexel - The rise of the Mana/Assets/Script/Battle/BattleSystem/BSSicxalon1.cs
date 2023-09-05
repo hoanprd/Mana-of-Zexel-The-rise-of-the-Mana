@@ -199,7 +199,7 @@ public class BSSicxalon1 : MonoBehaviour
                     EDamage.text = "-999999";
 
                 Invoke("delayBE5", 2f);
-                Invoke("delayBE5attack2", 4f);
+                Invoke("delayBE5attack2", 3f);
             }
             CheckP1Die();
             CheckP2Die();

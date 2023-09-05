@@ -233,7 +233,7 @@ public class BSGhost1 : MonoBehaviour
                     EDamage.text = "-" + Global.DamageE11;
                     E11AttackTarget();
                     Invoke("delayE11", 2f);
-                    Invoke("delayeE11attack2", 4f);
+                    Invoke("delayeE11attack2", 3f);
                 }
                 CheckP1Die();
                 CheckP2Die();

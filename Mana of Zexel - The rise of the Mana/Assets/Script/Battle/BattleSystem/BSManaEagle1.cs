@@ -230,7 +230,7 @@ public class BSManaEagle1 : MonoBehaviour
                 EDamage.text = "-" + Global.DamageE10;
                 E10AttackTarget();
                 Invoke("delayE10", 2f);
-                Invoke("delayeE10attack2", 4f);
+                Invoke("delayeE10attack2", 3f);
             }
             CheckP1Die();
             CheckP2Die();

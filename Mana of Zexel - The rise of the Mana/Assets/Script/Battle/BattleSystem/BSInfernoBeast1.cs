@@ -181,7 +181,7 @@ public class BSInfernoBeast1 : MonoBehaviour
 
                 Invoke("delayBE2", 2f);
                 Invoke("delayBE2attack2", 4f);
-                Invoke("delayBE2attack3", 6f);
+                Invoke("delayBE2attack3", 8f);
             }
             CheckP1Die();
             CheckP2Die();

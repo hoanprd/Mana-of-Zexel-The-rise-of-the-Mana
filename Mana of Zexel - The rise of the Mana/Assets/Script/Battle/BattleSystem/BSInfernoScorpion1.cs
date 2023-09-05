@@ -230,7 +230,7 @@ public class BSInfernoScorpion1 : MonoBehaviour
                 EDamage.text = "-" + Global.DamageE4;
                 E4AttackTarget();
                 Invoke("delayE4", 2f);
-                Invoke("delayeE4attack2", 4f);
+                Invoke("delayeE4attack2", 3f);
             }
             CheckP1Die();
             CheckP2Die();

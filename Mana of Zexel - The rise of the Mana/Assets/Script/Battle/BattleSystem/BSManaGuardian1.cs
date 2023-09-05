@@ -190,7 +190,7 @@ public class BSManaGuardian1 : MonoBehaviour
                     EDamage.text = "-" + Global.DamageBE1;
 
                 Invoke("delayBE1", 2f);
-                Invoke("delayBE1attack2", 4f);
+                Invoke("delayBE1attack2", 3f);
             }
             CheckP1Die();
             CheckP2Die();

@@ -220,7 +220,7 @@ public class BSIronGolemn1 : MonoBehaviour
                     EDamage.text = "-" + DamgeCal;
                 Invoke("delayBE4", 2f);
                 Invoke("delayBE4attack2", 4f);
-                Invoke("delayBE4attack3", 7f);
+                Invoke("delayBE4attack3", 8f);
             }
             CheckP1Die();
             CheckP2Die();

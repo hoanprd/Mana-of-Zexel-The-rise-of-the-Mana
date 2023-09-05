@@ -191,7 +191,7 @@ public class BSZane1 : MonoBehaviour
                 else
                     PDamage.text = "+" + DamgeCal;
                 Invoke("delayBE6", 2f);
-                Invoke("delayBE6attack2", 4f);
+                Invoke("delayBE6attack2", 3f);
             }
             CheckP1Die();
             CheckP2Die();

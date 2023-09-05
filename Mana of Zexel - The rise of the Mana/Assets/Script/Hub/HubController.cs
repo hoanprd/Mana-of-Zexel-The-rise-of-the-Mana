@@ -2758,7 +2758,7 @@ public class HubController : MonoBehaviour
             {
                 MapText[i].text = "Zexel temple";
             }
-            else if (i == 12 && CutscenesController.cus98 == 1)
+            else if (i == 12 && CutscenesController.cus99 == 1)
             {
                 MapText[i].text = "Mana Cllif";
             }
