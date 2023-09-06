@@ -223,6 +223,7 @@ public class MenuController : MonoBehaviour
         CutscenesTrigger.IceFangKill2 = 0;
         CutscenesTrigger.GoblinKillP2 = 0;
         CutscenesTrigger.GolemnKillP2 = 0;
+        GlobalQuest.IronGolemnKill = 0;
         GlobalQuest.Goblin5Death = 0;
         GlobalQuest.Goblin6Death = 0;
         GlobalQuest.Golemn4Death = 0;
@@ -697,6 +698,7 @@ public class MenuController : MonoBehaviour
         CutscenesTrigger.IceFangKill2 = sdg.SaveIceFangKill2;
         CutscenesTrigger.GoblinKillP2 = sdg.SaveGoblinKillP2;
         CutscenesTrigger.GolemnKillP2 = sdg.SaveGolemnKillP2;
+        GlobalQuest.IronGolemnKill = sdg.SaveIronGolemnKill;
         GlobalQuest.Goblin5Death = sdg.SaveGoblin5Death;
         GlobalQuest.Goblin6Death = sdg.SaveGoblin6Death;
         GlobalQuest.Golemn4Death = sdg.SaveGolemn4Death;

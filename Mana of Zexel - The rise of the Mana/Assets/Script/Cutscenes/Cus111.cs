@@ -13,7 +13,7 @@ public class Cus111 : MonoBehaviour
     public GameObject va1;
     public GameObject VayneVAL1, VayneVAR1, AliaVAL1, AliaVAR1, MariaVAL1, MariaVAR1, ShanVAL1, AsilaVAL1, AlasaVAR1, ZaneVAR1;
     public GameObject NameTag;
-    private int tang;
+    private int tang, stop;
 
     // Start is called before the first frame update
     void Start()
@@ -92,6 +92,11 @@ public class Cus111 : MonoBehaviour
                 AlasaVAR1.SetActive(false);
                 NameTagText.text = "";
                 dia.text = "Zen +1000";
+                if (stop == 0)
+                {
+                    stop = 1;
+                    Global.Zen += 1000;
+                }
             }
             else if (tang == 11)
             {
@@ -416,6 +421,11 @@ public class Cus111 : MonoBehaviour
                 AlasaVAR1.SetActive(false);
                 NameTagText.text = "";
                 dia.text = "Zen +1000";
+                if (stop == 0)
+                {
+                    stop = 1;
+                    Global.Zen += 1000;
+                }
             }
             else if (tang == 11)
             {
@@ -724,6 +734,10 @@ public class Cus111 : MonoBehaviour
         cc.FXCutscenes(1);
         CutscenesController.cus111 = 1;
         ContainerController.LoadingOpen = true;
+        if (tang < 10)
+        {
+            Global.Zen += 1000;
+        }
         SceneManager.LoadScene("Alta inferno");
     }
 

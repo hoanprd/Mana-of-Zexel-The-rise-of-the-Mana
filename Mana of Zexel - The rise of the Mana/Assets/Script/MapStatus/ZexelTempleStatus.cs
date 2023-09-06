@@ -9,7 +9,7 @@ public class ZexelTempleStatus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (CutscenesController.cus116 == 1)
+        if (CutscenesController.cus135 == 1)
         {
             TrueRoomDoor.SetActive(false);
         }

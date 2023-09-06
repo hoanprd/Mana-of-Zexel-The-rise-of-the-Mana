@@ -827,7 +827,7 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("WishingForestToZexelTown"))
         {
-            if (CutscenesController.cus110 == 0 && CutscenesController.cus109 == 1)
+            if (CutscenesController.cus110 == 0 && CutscenesController.cus109 == 1 && GlobalQuest.IronGolemnKill == 1)
             {
                 FadeInPanel.SetActive(true);
                 MapController.WishingForestToZexelTown = true;
@@ -1193,7 +1193,7 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("InfernoDesertToManaCliff"))
         {
-            if (CutscenesController.cus93 == 0)
+            if (CutscenesController.cus98 == 0)
             {
                 if (OnceUIText == 0)
                 {

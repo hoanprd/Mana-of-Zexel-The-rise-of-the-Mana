@@ -294,6 +294,7 @@ public class SaveGameSystem : MonoBehaviour
         sdg.SaveIceFangKill2 = CutscenesTrigger.IceFangKill2;
         sdg.SaveGoblinKillP2 = CutscenesTrigger.GoblinKillP2;
         sdg.SaveGolemnKillP2 = CutscenesTrigger.GolemnKillP2;
+        sdg.SaveIronGolemnKill = GlobalQuest.IronGolemnKill;
         sdg.SaveGoblin5Death = GlobalQuest.Goblin5Death;
         sdg.SaveGoblin6Death = GlobalQuest.Goblin6Death;
         sdg.SaveGolemn4Death = GlobalQuest.Golemn4Death;
@@ -726,6 +727,7 @@ public class SaveGameSystem : MonoBehaviour
         sdg.SaveIceFangKill2 = CutscenesTrigger.IceFangKill2;
         sdg.SaveGoblinKillP2 = CutscenesTrigger.GoblinKillP2;
         sdg.SaveGolemnKillP2 = CutscenesTrigger.GolemnKillP2;
+        sdg.SaveIronGolemnKill = GlobalQuest.IronGolemnKill;
         sdg.SaveGoblin5Death = GlobalQuest.Goblin5Death;
         sdg.SaveGoblin6Death = GlobalQuest.Goblin6Death;
         sdg.SaveGolemn4Death = GlobalQuest.Golemn4Death;

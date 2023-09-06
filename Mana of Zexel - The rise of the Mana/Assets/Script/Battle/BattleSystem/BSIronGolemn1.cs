@@ -986,6 +986,10 @@ public class BSIronGolemn1 : MonoBehaviour
         ContainerController.IronPick = 1;
         ContainerController.ManaGemPick = 1;
         HubController.BusyHub = false;
+        if (CutscenesController.cus110 == 0 && CutscenesController.cus109 == 1)
+        {
+            GlobalQuest.IronGolemnKill = 1;
+        }
         SceneManager.LoadScene("Wishing forest");
     }
 

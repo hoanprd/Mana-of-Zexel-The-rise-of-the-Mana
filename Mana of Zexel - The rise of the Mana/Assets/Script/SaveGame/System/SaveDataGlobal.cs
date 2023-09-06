@@ -180,6 +180,7 @@ public class SaveDataGlobal
     public int SaveIceFangKill2;
     public int SaveGoblinKillP2;
     public int SaveGolemnKillP2;
+    public int SaveIronGolemnKill;
     public int SaveGoblin5Death;
     public int SaveGoblin6Death;
     public int SaveGolemn4Death;

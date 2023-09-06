@@ -77,17 +77,10 @@ public class IIVWoman : MonoBehaviour
                     show2.SetActive(false);
                 }
             }
-            else if (once == 0 && CutscenesController.cus118 == 1 && CutscenesController.cus120 == 0)
+            else if (CutscenesController.cus118 == 1 && CutscenesController.cus120 == 0)
             {
-                if (once == 0)
-                {
-                    show2.SetActive(true);
-                    show1.text = "Please help find my husband, the last time he was lost was in the ice cave";
-                }
-                else
-                {
-                    show2.SetActive(false);
-                }
+                show2.SetActive(true);
+                show1.text = "Please help find my husband, the last time he was lost was in the ice cave";
             }
         }
     }
@@ -98,6 +91,7 @@ public class IIVWoman : MonoBehaviour
         {
             IsReady = false;
             show2.SetActive(false);
+            show1.text = "";
         }
     }
 
