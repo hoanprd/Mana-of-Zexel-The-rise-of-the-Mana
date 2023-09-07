@@ -566,7 +566,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus74 == 0)
             QT.text = "Let's return to the tavern of Zexel town to find a solution to the eruption of the volcano";
         else if (CutscenesController.cus75 == 0)
-            QT.text = "Let's synthesize a copy of Zexel's fire energy core";
+            QT.text = "Let's synthesize Vayne's fire mana core a copy of Zexel's fire energy core";
         else if (CutscenesController.cus76 == 0)
             QT.text = "Let's go deep inside the volcanic cave to proceed to place Vayne's fire mana energy core";
         else if (CutscenesController.cus77 == 0)
@@ -590,7 +590,7 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus86 == 0)
             QT.text = "Find the village chief Alasa who is deep in the ice cave in inferno ice";
         else if (CutscenesController.cus87 == 0)
-            QT.text = "Let's clone Zexel's ice mana core and replace it in the ice cave inferno ice";
+            QT.text = "Let's clone Zexel's ice mana core by synthesizing Vayne's ice mana core and replace it in the ice cave inferno ice";
         else if (CutscenesController.cus88 == 0)
             QT.text = "Let's go back to Mr.'s tavern. Lance in Zexel town, Vayne has an idea";
         else if (CutscenesController.cus89 == 0)
@@ -640,37 +640,37 @@ public class HubController : MonoBehaviour
         else if (CutscenesController.cus111 == 0)
             QT.text = "The inferno beast is back in alta inferno, go there and stop its destruction";
         else if (CutscenesController.cus112 == 0)
-            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice\nPlease check each villager for request and quest status display";
         else if (CutscenesController.cus113 == 0)
-            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice\nPlease check each villager for request and quest status display";
         else if (CutscenesController.cus114 == 0)
-            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice\nPlease check each villager for request and quest status display";
         else if (CutscenesController.cus115 == 0)
-            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice\nPlease check each villager for request and quest status display";
         else if (CutscenesController.cus116 == 0)
-            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice\nPlease check each villager for request and quest status display";
         else if (CutscenesController.cus117 == 0)
-            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice\nPlease check each villager for request and quest status display";
         else if (CutscenesController.cus118 == 0)
-            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice\nPlease check each villager for request and quest status display";
         else if (CutscenesController.cus119 == 0)
-            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice\nPlease check each villager for request and quest status display";
         else if (CutscenesController.cus120 == 0)
-            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice\nPlease check each villager for request and quest status display";
         else if (CutscenesController.cus121 == 0)
-            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice";
+            QT.text = "We need to help the villagers who are struggling in the two villages of inferno volcano and inferno ice\nPlease check each villager for request and quest status display";
         else if (CutscenesController.cus122 == 0)
             QT.text = "Let's return to Zexel town to prepare for the battle with Zane";
         else if (CutscenesController.cus123 == 0)
-            QT.text = "Follow Jesca to the village of Inferno desert to learn about the village situation";
+            QT.text = "Follow Jesca to the village of Inferno desert to find about the village situation";
         else if (CutscenesController.cus124 == 0)
             QT.text = "Let's go to Maria's old house in the Wishing forest to find the mana detector";
         else if (CutscenesController.cus125 == 0)
-            QT.text = "Let's repair the mana detector from the old one you just found";
+            QT.text = "Let's repair the mana detector from the old one you just found by synthesizing the new one";
         else if (CutscenesController.cus126 == 0)
             QT.text = "Head to the village of Inferno desert to use the detector";
         else if (CutscenesController.cus127 == 0)
-            QT.text = "You need to use 2 Ultra bombs to dig up the lake area";
+            QT.text = "You need to synthesize 2 Ultra bombs to dig up the lake area";
         else if (CutscenesController.cus128 == 0)
             QT.text = "";
         else if (CutscenesController.cus129 == 0)

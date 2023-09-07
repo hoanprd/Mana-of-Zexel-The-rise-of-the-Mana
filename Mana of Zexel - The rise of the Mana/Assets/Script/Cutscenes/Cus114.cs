@@ -72,7 +72,6 @@ public class Cus114 : MonoBehaviour
             }
             else if (tang == 9)
             {
-                VayneVAL1.SetActive(false);
                 NameTagText.text = "Vayne";
                 dia.text = "Don't worry the monsters here won't give us a hard time. I will provide you with timely supplies.";
             }
@@ -129,7 +128,6 @@ public class Cus114 : MonoBehaviour
             }
             else if (tang == 9)
             {
-                VayneVAL1.SetActive(false);
                 NameTagText.text = "Vayne";
                 dia.text = "Đừng lo đám quái vật ở đây sẽ không làm khó chúng tôi đâu. Tôi sẽ cung cấp nguồn hàng kịp lúc cho cô.";
             }

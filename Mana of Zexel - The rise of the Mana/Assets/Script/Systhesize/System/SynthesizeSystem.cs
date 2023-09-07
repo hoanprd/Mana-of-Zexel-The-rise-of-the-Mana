@@ -894,7 +894,7 @@ public class SynthesizeSystem : MonoBehaviour
                 Invoke("delay1", 1f);
             }
         }
-        else if (ContainerController.Iron >= 0 && ContainerController.ManaGem >= 0 && ContainerController.Bom < 4)
+        else if (ContainerController.Iron >= 2 && ContainerController.ManaGem >= 2 && ContainerController.Bom < 4)
         {
             SynthesizeFX.Play();
             ContainerController.Iron -= 2;

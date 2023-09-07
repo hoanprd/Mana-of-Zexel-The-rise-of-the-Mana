@@ -1225,7 +1225,6 @@ public class Player : MonoBehaviour
             ManaEagleTrigger4.despawn = false;
             MapIndex = 3;
             StartCoroutine(DelayChangeMap(3));
-            SceneManager.LoadScene("Inferno desert");
         }
         if (collision.CompareTag("ManaGateToManaDimension"))
         {

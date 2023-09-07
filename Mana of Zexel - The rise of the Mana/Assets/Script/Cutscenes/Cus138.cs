@@ -147,7 +147,7 @@ public class Cus138 : MonoBehaviour
             else if (tang == 21)
             {
                 AliaVAR1.SetActive(false);
-                VayneVAL1.SetActive(true);
+                VayneVAR1.SetActive(true);
                 NameTagText.text = "Vayne";
                 dia.text = "We'll reincarnate it for you. Step aside and observe, we fight not for our selfishness but for our loved ones.";
             }
@@ -286,7 +286,7 @@ public class Cus138 : MonoBehaviour
             else if (tang == 21)
             {
                 AliaVAR1.SetActive(false);
-                VayneVAL1.SetActive(true);
+                VayneVAR1.SetActive(true);
                 NameTagText.text = "Vayne";
                 dia.text = "Bọn ta sẽ hóa kiếp nó cho ngươi xem. Hãy tránh ra mà quan sát đi, bọn ta chiến đấu không vì lòng ích kỷ của bản thân mà là vì những người thân của ta.";
             }

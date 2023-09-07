@@ -13,7 +13,7 @@ public class Cus115 : MonoBehaviour
     public GameObject va1;
     public GameObject VayneVAL1;
     public GameObject NameTag;
-    private int tang, stop1, stop2;
+    private int tang, stop1;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,6 @@ public class Cus115 : MonoBehaviour
         cc = FindObjectOfType<CutscenesController>();
         tang = 0;
         stop1 = 0;
-        stop2 = 0;
         StartCoroutine(DelayBGM());
     }
 
@@ -64,34 +63,26 @@ public class Cus115 : MonoBehaviour
             }
             else if (tang == 6)
             {
-                NameTagText.text = "";
-                dia.text = "Baxiata +1";
-                if (stop2 == 0)
-                {
-                    stop2 = 1;
-                    ContainerController.BaxiataPick = 1;
-                }
-            }
-            else if (tang == 7)
-            {
                 NameTagText.text = "Vayne";
                 dia.text = "Does your family specialize in producing these gems?";
             }
-            else if (tang == 8)
+            else if (tang == 7)
             {
                 NameTagText.text = "Villager (Woman)";
                 dia.text = "Yes, these mineral resources will be finely processed to obtain, but the precious gem is not only full of energy but also collectible, so its export value will be high.";
             }
-            else if (tang == 9)
+            else if (tang == 8)
             {
                 VayneVAL1.SetActive(false);
                 NameTagText.text = "Vayne";
                 dia.text = "So that's it! Really great.";
             }
-            else if (tang >= 10)
+            else if (tang >= 9)
             {
                 CutscenesController.cus115 = 1;
                 ContainerController.LoadingOpen = true;
+                ContainerController.FireOre -= 10;
+                ContainerController.RedManaCrystal -= 10;
                 SceneManager.LoadScene("Inferno volcano");
             }
         }
@@ -131,34 +122,26 @@ public class Cus115 : MonoBehaviour
             }
             else if (tang == 6)
             {
-                NameTagText.text = "";
-                dia.text = "Baxiata +1";
-                if (stop2 == 0)
-                {
-                    stop2 = 1;
-                    ContainerController.BaxiataPick = 1;
-                }
-            }
-            else if (tang == 7)
-            {
                 NameTagText.text = "Vayne";
                 dia.text = "Gia đình cô chuyên sản xuất các viên ngọc này ư?";
             }
-            else if (tang == 8)
+            else if (tang == 7)
             {
                 NameTagText.text = "Villager (Woman)";
                 dia.text = "Đúng thế, các nguồn khoáng sản này sẽ được chế biến mịn để thu được nhưng viên ngọc quý giá không chỉ mang đầy năng lượng mà còn mang tính sưu tầm nên mang giá trị xuất khẩu bên ngoài sẽ cao.";
             }
-            else if (tang == 9)
+            else if (tang == 8)
             {
                 VayneVAL1.SetActive(false);
                 NameTagText.text = "Vayne";
                 dia.text = "Ra là thế! Tuyệt vời thật.";
             }
-            else if (tang >= 10)
+            else if (tang >= 9)
             {
                 CutscenesController.cus115 = 1;
                 ContainerController.LoadingOpen = true;
+                ContainerController.FireOre -= 10;
+                ContainerController.RedManaCrystal -= 10;
                 SceneManager.LoadScene("Inferno volcano");
             }
         }
@@ -176,14 +159,11 @@ public class Cus115 : MonoBehaviour
         cc.FXCutscenes(1);
         CutscenesController.cus115 = 1;
         ContainerController.LoadingOpen = true;
+        ContainerController.FireOre -= 10;
+        ContainerController.RedManaCrystal -= 10;
         if (tang < 5)
         {
             ContainerController.PhotonriaPick = 1;
-            ContainerController.BaxiataPick = 1;
-        }
-        else if (tang == 5)
-        {
-            ContainerController.BaxiataPick = 1;
         }
         SceneManager.LoadScene("Inferno volcano");
     }
