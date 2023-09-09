@@ -1856,12 +1856,12 @@ public class SynthesizeSystem : MonoBehaviour
 
     public void SynthesizeButton29()
     {
-        if (ContainerController.ElixirPotion >= 2 && ContainerController.ManaLiquid >= 2 && ContainerController.PowderOfLife >= 1 && ManaSynthesize >= 50)
+        if (ContainerController.ElixirPotion >= 2 && ContainerController.ManaLiquidCatalyst >= 2 && ContainerController.PowderOfLife >= 1 && ManaSynthesize >= 50)
         {
             SynthesizeFX.Play();
             ManaSynthesize -= 50;
             ContainerController.ElixirPotion -= 2;
-            ContainerController.ManaLiquid -= 2;
+            ContainerController.ManaLiquidCatalyst -= 2;
             ContainerController.PowderOfLife -= 1;
             ContainerController.ReincarnationLifePick = 1;
             if (OnceUIText == 0)
@@ -1872,7 +1872,7 @@ public class SynthesizeSystem : MonoBehaviour
                 Invoke("delay1", 1f);
             }
         }
-        else if (ContainerController.ElixirPotion >= 2 && ContainerController.ManaLiquid >= 2 && ContainerController.PowderOfLife >= 1 && ManaSynthesize < 50)
+        else if (ContainerController.ElixirPotion >= 2 && ContainerController.ManaLiquidCatalyst >= 2 && ContainerController.PowderOfLife >= 1 && ManaSynthesize < 50)
         {
             if (OnceUIText == 0)
             {
@@ -1882,7 +1882,7 @@ public class SynthesizeSystem : MonoBehaviour
                 Invoke("delay1", 1f);
             }
         }
-        else if (ContainerController.ElixirPotion >= 2 && ContainerController.ManaLiquid >= 2 && ContainerController.PowderOfLife >= 1 && ManaSynthesize >= 50 && ContainerController.ReincarnationLife >= 4)
+        else if (ContainerController.ElixirPotion >= 2 && ContainerController.ManaLiquidCatalyst >= 2 && ContainerController.PowderOfLife >= 1 && ManaSynthesize >= 50 && ContainerController.ReincarnationLife >= 4)
         {
             if (OnceUIText == 0)
             {
@@ -1980,6 +1980,7 @@ public class SynthesizeSystem : MonoBehaviour
         else if (ContainerController.ManaEagleFeather >= 4 && ContainerController.IceLeather >= 2 && ContainerController.ManaCloth >= 2 && ManaSynthesize >= 100)
         {
             SynthesizeFX.Play();
+            ManaSynthesize -= 100;
             ContainerController.ManaEagleFeather -= 4;
             ContainerController.IceLeather -= 4;
             ContainerController.ManaCloth -= 2;
