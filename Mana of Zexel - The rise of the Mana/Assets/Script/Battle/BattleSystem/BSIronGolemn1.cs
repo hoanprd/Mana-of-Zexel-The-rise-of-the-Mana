@@ -901,11 +901,11 @@ public class BSIronGolemn1 : MonoBehaviour
 
             if (UseItemIndex == 1)
             {
-                HPHealingEffP1.SetActive(true);
+                MPHealingEffP1.SetActive(true);
             }
             else if (UseItemIndex == 3)
             {
-                HPHealingEffP3.SetActive(true);
+                MPHealingEffP3.SetActive(true);
             }
 
             showr2.SetActive(true);

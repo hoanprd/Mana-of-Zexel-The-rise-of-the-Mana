@@ -6,6 +6,7 @@ public class SicxalonBattle : MonoBehaviour
 {
     public Animator anisicxalon;
     public Canvas _canvas;
+    public GameObject HPBE5Display;
 
     public int yes_SicxalonAttack1 = 0;
     public int yes_SicxalonAttack2 = 0;
@@ -18,6 +19,7 @@ public class SicxalonBattle : MonoBehaviour
     {
         if (yes_SicxalonAttack1 == 1)
         {
+            HPBE5Display.SetActive(false);
             _canvas.sortingOrder = 1;
             anisicxalon.SetTrigger("be5attack1");
             yes_SicxalonAttack1 = 0;
@@ -25,6 +27,7 @@ public class SicxalonBattle : MonoBehaviour
         }
         if (yes_SicxalonAttack2 == 1)
         {
+            HPBE5Display.SetActive(false);
             _canvas.sortingOrder = 1;
             anisicxalon.SetTrigger("be5attack2");
             yes_SicxalonAttack2 = 0;
@@ -33,11 +36,15 @@ public class SicxalonBattle : MonoBehaviour
 
         if (yes_SicxalonSkillCharge == 1)
         {
+            HPBE5Display.SetActive(false);
+            _canvas.sortingOrder = 1;
             anisicxalon.SetTrigger("be5skillcharge");
             yes_SicxalonSkillCharge = 0;
+            Invoke("delayBE5Done", 1f);
         }
         if (yes_SicxalonSkill1 == 1)
         {
+            HPBE5Display.SetActive(false);
             _canvas.sortingOrder = 1;
             anisicxalon.SetTrigger("be5skill1");
             yes_SicxalonSkill1 = 0;
@@ -45,6 +52,7 @@ public class SicxalonBattle : MonoBehaviour
         }
         if (yes_SicxalonSkill2 == 1)
         {
+            HPBE5Display.SetActive(false);
             _canvas.sortingOrder = 1;
             anisicxalon.SetTrigger("be5skill2");
             yes_SicxalonSkill2 = 0;
@@ -55,5 +63,6 @@ public class SicxalonBattle : MonoBehaviour
     void delayBE5Done()
     {
         _canvas.sortingOrder = 3;
+        HPBE5Display.SetActive(true);
     }
 }
