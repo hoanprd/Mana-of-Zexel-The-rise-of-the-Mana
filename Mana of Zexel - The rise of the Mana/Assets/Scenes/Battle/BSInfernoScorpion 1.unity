@@ -1302,7 +1302,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -18342,6 +18342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f54ea0828c9a649af0dbfa416cdd77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 206664516}
   VayneAttackFX: {fileID: 1532780774}
   AliaAttackFX: {fileID: 1734135516}
   MariaAttackFX: {fileID: 910641613}
@@ -18359,6 +18360,8 @@ MonoBehaviour:
   ExplosionFX: {fileID: 1501570041}
   OpenCloseFX: {fileID: 756982714}
   _canvas: {fileID: 2110691885}
+  _canvasObject:
+  - {fileID: 2110691882}
   Item_panel: {fileID: 2001497631}
   HPHealingEffP1: {fileID: 702486433}
   MPHealingEffP1: {fileID: 1630379881}

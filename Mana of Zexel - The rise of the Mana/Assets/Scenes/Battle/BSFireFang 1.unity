@@ -1603,9 +1603,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1670761282}
-        m_TargetAssemblyTypeName: BSInfernoScorpion1, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1670761289}
+        m_TargetAssemblyTypeName: BSFireFang1, Assembly-CSharp
+        m_MethodName: PressRun
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1878,7 +1878,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -17989,6 +17989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06fd4955e680c864bb0eedb8acb48e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 206664516}
   VayneAttackFX: {fileID: 1589195994}
   AliaAttackFX: {fileID: 1238392794}
   MariaAttackFX: {fileID: 2031494472}
@@ -18006,6 +18007,8 @@ MonoBehaviour:
   ExplosionFX: {fileID: 1024511063}
   OpenCloseFX: {fileID: 1446443991}
   _canvas: {fileID: 2110691885}
+  _canvasObject:
+  - {fileID: 2110691882}
   Item_panel: {fileID: 2001497631}
   HPHealingEffP1: {fileID: 525438429}
   MPHealingEffP1: {fileID: 312091850}

@@ -10,7 +10,11 @@ public class BSInfernoBeast1 : MonoBehaviour
     PlayerBattle pb;
     InfernoBeastBattle IBB;
 
+    [SerializeField] private Camera cam;
+
     public AudioSource VayneAttackFX, AliaAttackFX, MariaAttackFX, VayneSkill1FX, VayneSkill2FX, VayneSkill3FX, AliaSkill1FX, AliaSkill2FX, AliaSkill3FX, MariaSkill1FX, MariaSkill2FX, MariaSkill3FX, EnemyAttack1FX, EnemyAttack2FX, EnemySkillChargeFX, EnemySkill1FX, HealFX, ExplosionFX, OpenCloseFX;
+
+    public GameObject[] _canvasObject;
 
     public GameObject Item_panel;
     public GameObject HPHealingEffP1, MPHealingEffP1, EPHealingEffP1, HPHealingEffP3, MPHealingEffP3, EPHealingEffP3, BomEff, ReinEff;
@@ -81,6 +85,8 @@ public class BSInfernoBeast1 : MonoBehaviour
     public int UseItemIndex, ChooseSkillIndex;
     public int BE2ANum, TurnIndex, BossSkillCharge, BossSkillEngage, BossSkillBreak, BeforeBreakSkillDamageCal, AfterBreakDamageCal, BreakDamageCal, BreakDamageIndex;
     public bool GameOver;
+    private float zoomChange, zoom, zoomMultiplier, minZoom, maxZoom, velocity, smoothTime;
+    private bool zoomStart, zoomDone;
 
     // Start is called before the first frame update
     void Start()
@@ -88,8 +94,21 @@ public class BSInfernoBeast1 : MonoBehaviour
         pb = FindObjectOfType<PlayerBattle>();
         IBB = FindObjectOfType<InfernoBeastBattle>();
 
+        CanvasDisplay(false);
+        zoomChange = 0f;
+        zoom = cam.orthographicSize;
+        zoomMultiplier = 4f;
+        minZoom = 1f;
+        maxZoom = 5f;
+        velocity = 0f;
+        smoothTime = 0.25f;
+        zoomStart = false;
+        zoomDone = false;
+        StartCoroutine(CamZoomDisplay());
+
         GameOver = false;
         HubController.BusyHub = true;
+        onceUIText = 0;
 
         if (Global.LevelP1 < 10)
         {
@@ -137,6 +156,14 @@ public class BSInfernoBeast1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (zoomStart == true && zoomChange <= 5)
+        {
+            zoomChange += Time.deltaTime;
+            zoom += zoomChange * zoomMultiplier;
+            zoom = Mathf.Clamp(zoom, minZoom, maxZoom);
+            cam.orthographicSize = Mathf.SmoothDamp(cam.orthographicSize, zoom, ref velocity, smoothTime);
+        }
+
         CheckBE2Die();
         CheckP1P2P3Die();
         CheckP1Die();
@@ -144,7 +171,7 @@ public class BSInfernoBeast1 : MonoBehaviour
         CheckP3Die();
         UpdateUIText();
 
-        if (a2 > 0 && Global.CurHPP2 > 0 && GameOver == false)
+        if (a2 > 0 && Global.CurHPP2 > 0 && GameOver == false && zoomDone == true)
         {
             CheckBE2Die();
             CheckP1Die();
@@ -156,7 +183,7 @@ public class BSInfernoBeast1 : MonoBehaviour
             else
                 ShowP2Panel(false);
         }
-        else if (aBE2 > 0 && Global.HPBE2 > 0 && GameOver == false)
+        else if (aBE2 > 0 && Global.HPBE2 > 0 && GameOver == false && zoomDone == true)
         {
             CheckBE2Die();
             ShowP1Panel(false);
@@ -187,7 +214,7 @@ public class BSInfernoBeast1 : MonoBehaviour
             CheckP2Die();
             CheckP1P2P3Die();
         }
-        else if (a1 > 0 && Global.CurHPP1 > 0 && GameOver == false)
+        else if (a1 > 0 && Global.CurHPP1 > 0 && GameOver == false && zoomDone == true)
         {
             CheckBE2Die();
             CheckP1Die();
@@ -199,7 +226,7 @@ public class BSInfernoBeast1 : MonoBehaviour
             else
                 ShowP1Panel(false);
         }
-        else if (a3 > 0 && Global.CurHPP3 > 0 && GameOver == false)
+        else if (a3 > 0 && Global.CurHPP3 > 0 && GameOver == false && zoomDone == true)
         {
             CheckBE2Die();
             CheckP1Die();
@@ -1728,6 +1755,24 @@ public class BSInfernoBeast1 : MonoBehaviour
         dem_turn += 1;
     }
 
+    public void CanvasDisplay(bool actived)
+    {
+        if (actived == true)
+        {
+            for (int i = 0; i < _canvasObject.Length; i++)
+            {
+                _canvasObject[i].SetActive(true);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < _canvasObject.Length; i++)
+            {
+                _canvasObject[i].SetActive(false);
+            }
+        }
+    }
+
     void delayshowr()
     {
         HPHealingEffP1.SetActive(false);
@@ -1739,5 +1784,15 @@ public class BSInfernoBeast1 : MonoBehaviour
         ReinEff.SetActive(false);
         showr2.SetActive(false);
         onceUIText = 0;
+    }
+
+    IEnumerator CamZoomDisplay()
+    {
+        yield return new WaitForSeconds(2f);
+        zoomStart = true;
+
+        yield return new WaitForSeconds(2f);
+        zoomDone = true;
+        CanvasDisplay(true);
     }
 }

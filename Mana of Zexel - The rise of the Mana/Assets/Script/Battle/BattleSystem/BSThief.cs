@@ -10,7 +10,11 @@ public class BSThief : MonoBehaviour
     PlayerBattle pb;
     ThiefBattle tb;
 
+    [SerializeField] private Camera cam;
+
     public AudioSource VayneAttackFX, VayneSkill1FX, VayneSkill2FX, VayneSkill3FX, EnemyAttackFX, HealFX, OpenCloseFX;
+
+    public GameObject[] _canvasObject;
 
     public GameObject Item_panel;
     public GameObject VayneAttackEffect, HPHealingEffP1, MPHealingEffP1;
@@ -50,6 +54,8 @@ public class BSThief : MonoBehaviour
     public int onceUIText;
     public int UseItemIndex, ChooseSkillIndex;
     public bool GameOver, Tutorial1, Tutorial2, Tutorial3, Tutorial4;
+    private float zoomChange, zoom, zoomMultiplier, minZoom, maxZoom, velocity, smoothTime;
+    private bool zoomStart, zoomDone;
 
     // Start is called before the first frame update
     void Start()
@@ -57,11 +63,24 @@ public class BSThief : MonoBehaviour
         pb = FindObjectOfType<PlayerBattle>();
         tb = FindObjectOfType<ThiefBattle>();
 
-        Tutorial1 = Tutorial2 = Tutorial3 = Tutorial4 = true;
-        TutorialImage1.SetActive(true);
+        CanvasDisplay(false);
+        zoomChange = 0f;
+        zoom = cam.orthographicSize;
+        zoomMultiplier = 4f;
+        minZoom = 1f;
+        maxZoom = 5f;
+        velocity = 0f;
+        smoothTime = 0.25f;
+        zoomStart = false;
+        zoomDone = false;
+        StartCoroutine(CamZoomDisplay());
+
+        //Tutorial1 = Tutorial2 = Tutorial3 = Tutorial4 = true;
+        //TutorialImage1.SetActive(true);
 
         GameOver = false;
         HubController.BusyHub = true;
+        onceUIText = 0;
 
         if (Global.LevelP1 < 10)
         {
@@ -79,6 +98,14 @@ public class BSThief : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (zoomStart == true && zoomChange <= 5)
+        {
+            zoomChange += Time.deltaTime;
+            zoom += zoomChange * zoomMultiplier;
+            zoom = Mathf.Clamp(zoom, minZoom, maxZoom);
+            cam.orthographicSize = Mathf.SmoothDamp(cam.orthographicSize, zoom, ref velocity, smoothTime);
+        }
+
         CheckE1Die();
         CheckP1Die();
         HP1.text = "HP: " + Global.CurHPP1.ToString() + "/" + Global.MaxHPP1;
@@ -98,7 +125,7 @@ public class BSThief : MonoBehaviour
 
         if (Global.SpeedP1 >= Global.SpeedE1)
         {
-            if(a1 > 0 && Global.CurHPP1 > 0 && GameOver == false)
+            if(a1 > 0 && Global.CurHPP1 > 0 && GameOver == false && zoomDone == true)
             {
                 CheckE1Die();
                 CheckP1Die();
@@ -107,7 +134,7 @@ public class BSThief : MonoBehaviour
                 else
                     ShowP1Panel(false);
             }
-            else if(aE1 > 0 && Global.HPE1 > 0 && GameOver == false)
+            else if(aE1 > 0 && Global.HPE1 > 0 && GameOver == false && zoomDone == true)
             {
                 CheckE1Die();
                 ShowP1Panel(false);
@@ -526,6 +553,25 @@ public class BSThief : MonoBehaviour
         Money.text = Global.Zen + " ";
         NB.SetActive(true);
     }
+
+    public void CanvasDisplay(bool actived)
+    {
+        if (actived == true)
+        {
+            for (int i = 0; i < _canvasObject.Length; i++)
+            {
+                _canvasObject[i].SetActive(true);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < _canvasObject.Length; i++)
+            {
+                _canvasObject[i].SetActive(false);
+            }
+        }
+    }
+
     void delayshowr()
     {
         if (Tutorial3 == true)
@@ -574,5 +620,17 @@ public class BSThief : MonoBehaviour
     {
         yield return new WaitForSeconds(8f);
         TutorialImage4.SetActive(false);
+    }
+
+    IEnumerator CamZoomDisplay()
+    {
+        yield return new WaitForSeconds(2f);
+        zoomStart = true;
+
+        yield return new WaitForSeconds(2f);
+        zoomDone = true;
+        Tutorial1 = Tutorial2 = Tutorial3 = Tutorial4 = true;
+        TutorialImage1.SetActive(true);
+        CanvasDisplay(true);
     }
 }

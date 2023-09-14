@@ -1986,7 +1986,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -12812,7 +12812,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1670761290}
         m_TargetAssemblyTypeName: BSBlueManaSlime1, Assembly-CSharp
-        m_MethodName: PressAttack
+        m_MethodName: PressRun
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18460,6 +18460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 756ff9fada4da614082435d2ad448268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 206664516}
   VayneAttackFX: {fileID: 1291556758}
   AliaAttackFX: {fileID: 432362399}
   MariaAttackFX: {fileID: 442056919}
@@ -18476,6 +18477,8 @@ MonoBehaviour:
   HealFX: {fileID: 1879376896}
   ExplosionFX: {fileID: 2055359160}
   OpenCloseFX: {fileID: 1701939527}
+  _canvasObject:
+  - {fileID: 2110691882}
   Item_panel: {fileID: 2001497631}
   HPHealingEffP1: {fileID: 131327561}
   MPHealingEffP1: {fileID: 463079574}
@@ -20166,7 +20169,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1670761290}
         m_TargetAssemblyTypeName: BSBlueManaSlime1, Assembly-CSharp
-        m_MethodName: PressAttack
+        m_MethodName: PressSkillVayne
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22298,7 +22301,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1670761290}
         m_TargetAssemblyTypeName: BSBlueManaSlime1, Assembly-CSharp
-        m_MethodName: PressAttack
+        m_MethodName: PressItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

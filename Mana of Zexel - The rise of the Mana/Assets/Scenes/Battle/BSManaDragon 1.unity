@@ -2014,7 +2014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &195126706
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2275,7 +2275,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -18813,6 +18813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06379b28dcfae54281e3d57f167dfa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 206664516}
   VayneAttackFX: {fileID: 1960724043}
   AliaAttackFX: {fileID: 163105812}
   MariaAttackFX: {fileID: 1568828703}
@@ -18832,6 +18833,8 @@ MonoBehaviour:
   HealFX: {fileID: 51142917}
   ExplosionFX: {fileID: 371550118}
   OpenCloseFX: {fileID: 1367744901}
+  _canvasObject:
+  - {fileID: 2110691882}
   Item_panel: {fileID: 2001497631}
   HPHealingEffP1: {fileID: 672496728}
   MPHealingEffP1: {fileID: 1589142440}
@@ -22370,7 +22373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2008230246
 RectTransform:
   m_ObjectHideFlags: 0
