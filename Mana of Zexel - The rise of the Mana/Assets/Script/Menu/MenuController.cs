@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    public GameObject LoadGamePanel, SettingPanel, GameSetting, GraphicSetting, SoundSetting, GameSettingButton, GraphicSettingButton, SoundSettingButton;
+    public GameObject LoadGamePanel, SettingPanel, GameSetting, GraphicSetting, SoundSetting, GameSettingButton, GraphicSettingButton, SoundSettingButton, SaveSettingImage;
     public GameObject FadeOutPanel, FadeInPanel, AskDeleteLoadGamePanel;
     public Text DifficultChooseText, PlotLangueChooseText;
     public Text showdata1;
@@ -1058,7 +1058,21 @@ public class MenuController : MonoBehaviour
     public void SettingPanelClose()
     {
         ClickFX.Play();
+        SaveSettingImage.SetActive(true);
         SettingPanel.SetActive(false);
+        if (GameSettingController.GameScreenResolution == 0)
+        {
+            Screen.SetResolution(960, 540, false);
+        }
+        else if (GameSettingController.GameScreenResolution == 1)
+        {
+            Screen.SetResolution(1280, 720, false);
+        }
+        else
+        {
+            Screen.SetResolution(1920, 1080, false);
+        }
+        StartCoroutine(DelaySaveSetting());
     }
 
     public void PressExit()
@@ -1089,5 +1103,11 @@ public class MenuController : MonoBehaviour
 
         yield return new WaitForSeconds(1.4f);
         FadeOutPanel.SetActive(false);
+    }
+
+    IEnumerator DelaySaveSetting()
+    {
+        yield return new WaitForSeconds(2f);
+        SaveSettingImage.SetActive(false);
     }
 }
