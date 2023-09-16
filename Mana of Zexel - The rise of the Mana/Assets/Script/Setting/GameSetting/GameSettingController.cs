@@ -17,6 +17,7 @@ public class GameSettingController : MonoBehaviour
         {
             GDLButton.SetActive(false);
             GameDiff = 0;
+            PlayerPrefs.SetInt("SDifficultChoose", GameDiff);
         }
         else
         {
@@ -35,6 +36,7 @@ public class GameSettingController : MonoBehaviour
         {
             PLLButton.SetActive(false);
             GameLangPlot = 0;
+            PlayerPrefs.SetInt("SPlotLangueChoose", GameLangPlot);
         }
         else
         {
@@ -52,6 +54,7 @@ public class GameSettingController : MonoBehaviour
         if (!PlayerPrefs.HasKey("SGameResolutionChoose"))
         {
             GameScreenResolution = 1;
+            PlayerPrefs.SetInt("SGameResolutionChoose", GameScreenResolution);
         }
         else
         {
