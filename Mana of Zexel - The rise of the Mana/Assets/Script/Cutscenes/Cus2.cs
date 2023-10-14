@@ -23,6 +23,10 @@ public class Cus2 : MonoBehaviour
         tang = 0;
         TuTang = 0;
         StartCoroutine(DelayBGM());
+        if (Global.EnemyListInfo[0] == 0)
+        {
+            Global.EnemyListInfo[0] = 1;
+        }
     }
 
     // Update is called once per frame

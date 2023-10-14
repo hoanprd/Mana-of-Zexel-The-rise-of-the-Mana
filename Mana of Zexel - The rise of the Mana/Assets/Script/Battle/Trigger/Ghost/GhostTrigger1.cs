@@ -37,6 +37,10 @@ public class GhostTrigger1 : MonoBehaviour
         {
             ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 11;
+            if (Global.EnemyListInfo[10] == 0)
+            {
+                Global.EnemyListInfo[10] = 1;
+            }
             despawn = true;
             SceneManager.LoadScene("BSGhost 1");
         }

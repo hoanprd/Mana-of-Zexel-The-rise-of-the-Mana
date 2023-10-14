@@ -276,6 +276,14 @@ public class Player : MonoBehaviour
                     }
                 }
             }
+            else
+            {
+                if (HubController.BusyHub == false && EnemyInfoInterface.OpenEnemyList == false)
+                {
+                    HubController.BusyHub = true;
+                    EnemyInfoInterface.OpenEnemyList = true;
+                }
+            }
         }
 
         if (mwqz && Input.GetKeyDown(KeyCode.Space))
@@ -1652,6 +1660,15 @@ public class Player : MonoBehaviour
                 show2.SetActive(true);
                 show1.text = "Press Space to commit the quest";
             }
+            else
+            {
+                if (HubController.BusyHub == false)
+                {
+                    klener = true;
+                    show2.SetActive(true);
+                    show1.text = "Press Space to look monster list";
+                }
+            }
         }
 
         if (collision.gameObject.CompareTag("ManaGenerator"))
@@ -1700,6 +1717,15 @@ public class Player : MonoBehaviour
                 klener = false;
                 show2.SetActive(false);
                 show1.text = "";
+            }
+            else
+            {
+                if (HubController.BusyHub == false)
+                {
+                    klener = false;
+                    show2.SetActive(false);
+                    show1.text = "";
+                }
             }
         }
 

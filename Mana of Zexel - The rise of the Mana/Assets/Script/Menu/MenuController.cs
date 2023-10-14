@@ -32,6 +32,8 @@ public class MenuController : MonoBehaviour
         LoadGameCheck = false;
         LoadGameIndex = 0;
         DeleteLoadGameIndex = 0;
+
+        Global.EnemyListInfo = new int[12];
     }
 
     void Update()
@@ -329,6 +331,12 @@ public class MenuController : MonoBehaviour
 
         //Set Zen
         Global.Zen = 0;
+
+        //Set enemy list
+        for (int i = 0; i < 12; i++)
+        {
+            Global.EnemyListInfo[i] = 0;
+        }
 
         //Set item material
         ContainerController.DriedLeaves = 0;
@@ -771,6 +779,22 @@ public class MenuController : MonoBehaviour
 
         //Load Zen
         Global.Zen = sdg.SaveZen;
+
+        //Load enemy list
+        try
+        {
+            for (int i = 0; i < 12; i++)
+            {
+                Global.EnemyListInfo[i] = sdg.SaveEnemyListInfo[i];
+            }
+        }
+        catch
+        {
+            for (int i = 0; i < 12; i++)
+            {
+                Global.EnemyListInfo[i] = 0;
+            }
+        }
 
         //Load Weapon
         Global.VayneStaff1 = sdg.SaveVayneStaff1;

@@ -30,6 +30,10 @@ public class FireFangTrigger1 : MonoBehaviour
         {
             ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 6;
+            if (Global.EnemyListInfo[5] == 0)
+            {
+                Global.EnemyListInfo[5] = 1;
+            }
             despawn = true;
             SceneManager.LoadScene("BSFireFang 1");
         }

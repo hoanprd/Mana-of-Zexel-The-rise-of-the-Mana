@@ -30,6 +30,10 @@ public class ManaEagleTrigger4 : MonoBehaviour
         {
             ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 10;
+            if (Global.EnemyListInfo[9] == 0)
+            {
+                Global.EnemyListInfo[9] = 1;
+            }
             despawn = true;
             SceneManager.LoadScene("BSManaEagle 1");
         }

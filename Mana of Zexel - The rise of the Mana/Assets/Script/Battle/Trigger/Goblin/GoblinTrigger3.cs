@@ -35,6 +35,10 @@ public class GoblinTrigger3 : MonoBehaviour
         {
             ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 2;
+            if (Global.EnemyListInfo[1] == 0)
+            {
+                Global.EnemyListInfo[1] = 1;
+            }
             despawn = true;
             SceneManager.LoadScene("BSGoblin 1");
         }

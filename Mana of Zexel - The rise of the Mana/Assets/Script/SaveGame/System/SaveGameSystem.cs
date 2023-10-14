@@ -363,6 +363,13 @@ public class SaveGameSystem : MonoBehaviour
         //Set Zen
         sdg.SaveZen = Global.Zen;
 
+        //Save enemy list
+        sdg.SaveEnemyListInfo = new int[12];
+        for (int i = 0; i < 12; i++)
+        {
+            sdg.SaveEnemyListInfo[i] = Global.EnemyListInfo[i];
+        }
+
         //Set weapon
         sdg.SaveVayneStaff1 = Global.VayneStaff1;
         sdg.SaveVayneStaff2 = Global.VayneStaff2;
@@ -795,6 +802,13 @@ public class SaveGameSystem : MonoBehaviour
 
         //Set Zen
         sdg.SaveZen = Global.Zen;
+
+        //Save enemy list
+        sdg.SaveEnemyListInfo = new int[12];
+        for (int i = 0; i < 12; i++)
+        {
+            sdg.SaveEnemyListInfo[i] = Global.EnemyListInfo[i];
+        }
 
         //Set weapon
         sdg.SaveVayneStaff1 = Global.VayneStaff1;

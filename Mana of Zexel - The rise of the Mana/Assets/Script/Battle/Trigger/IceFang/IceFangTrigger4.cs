@@ -30,6 +30,10 @@ public class IceFangTrigger4 : MonoBehaviour
         {
             ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 8;
+            if (Global.EnemyListInfo[7] == 0)
+            {
+                Global.EnemyListInfo[7] = 1;
+            }
             despawn = true;
             SceneManager.LoadScene("BSIceFang 1");
         }

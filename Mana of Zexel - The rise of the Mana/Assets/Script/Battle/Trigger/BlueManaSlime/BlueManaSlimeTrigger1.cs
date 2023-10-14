@@ -30,6 +30,10 @@ public class BlueManaSlimeTrigger1 : MonoBehaviour
         {
             ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 9;
+            if (Global.EnemyListInfo[8] == 0)
+            {
+                Global.EnemyListInfo[8] = 1;
+            }
             despawn = true;
             SceneManager.LoadScene("BSBlueManaSlime 1");
         }

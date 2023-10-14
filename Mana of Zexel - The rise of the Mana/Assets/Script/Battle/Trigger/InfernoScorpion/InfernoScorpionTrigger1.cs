@@ -30,6 +30,10 @@ public class InfernoScorpionTrigger1 : MonoBehaviour
         {
             ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 4;
+            if (Global.EnemyListInfo[3] == 0)
+            {
+                Global.EnemyListInfo[3] = 1;
+            }
             despawn = true;
             SceneManager.LoadScene("BSInfernoScorpion 1");
         }

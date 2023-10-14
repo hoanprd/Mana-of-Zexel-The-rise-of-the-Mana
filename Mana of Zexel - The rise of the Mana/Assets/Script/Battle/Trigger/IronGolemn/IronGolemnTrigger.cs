@@ -36,6 +36,10 @@ public class IronGolemnTrigger : MonoBehaviour
         {
             ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 24;
+            if (Global.EnemyListInfo[11] == 0)
+            {
+                Global.EnemyListInfo[11] = 1;
+            }
             despawn = true;
             SceneManager.LoadScene("BSIronGolemn 1");
         }

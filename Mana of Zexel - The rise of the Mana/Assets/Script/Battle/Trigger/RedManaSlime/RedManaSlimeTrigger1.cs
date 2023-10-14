@@ -30,6 +30,10 @@ public class RedManaSlimeTrigger1 : MonoBehaviour
         {
             ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 7;
+            if (Global.EnemyListInfo[6] == 0)
+            {
+                Global.EnemyListInfo[6] = 1;
+            }
             despawn = true;
             SceneManager.LoadScene("BSRedManaSlime 1");
         }

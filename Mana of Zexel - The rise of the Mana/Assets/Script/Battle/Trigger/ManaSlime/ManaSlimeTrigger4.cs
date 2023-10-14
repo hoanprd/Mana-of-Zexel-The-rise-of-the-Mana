@@ -30,6 +30,10 @@ public class ManaSlimeTrigger4 : MonoBehaviour
         {
             ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 5;
+            if (Global.EnemyListInfo[4] == 0)
+            {
+                Global.EnemyListInfo[4] = 1;
+            }
             despawn = true;
             SceneManager.LoadScene("BSManaSlime 1");
         }

@@ -249,6 +249,9 @@ public class SaveDataGlobal
     //Set Zen
     public int SaveZen;
 
+    //Set enemy list
+    public int[] SaveEnemyListInfo;
+
     //Set weapon
     public int SaveVayneStaff1;
     public int SaveVayneStaff2;

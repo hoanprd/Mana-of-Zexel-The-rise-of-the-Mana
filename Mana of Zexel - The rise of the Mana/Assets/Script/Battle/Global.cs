@@ -39,6 +39,9 @@ public class Global : MonoBehaviour
     public static int HPBE5, DamageBE5, SpeedBE5, SkillBreakDamageBE5;
     public static int HPBE6, DamageBE6, SpeedBE6;
 
+    //Enemy info
+    public static int[] EnemyListInfo;
+
     //Equip
     public static int VayneStaff1, VayneStaff2, VayneStaff3, AlchemistArmor1, AlchemistArmor2, AlchemistArmor3, VayneWeaponStatus, VayneArmorStatus;
     public static int AliaShoes1, AliaShoes2, AliaShoes3, WarriorArmor1, WarriorArmor2, WarriorArmor3, AliaWeaponStatus, AliaArmorStatus;

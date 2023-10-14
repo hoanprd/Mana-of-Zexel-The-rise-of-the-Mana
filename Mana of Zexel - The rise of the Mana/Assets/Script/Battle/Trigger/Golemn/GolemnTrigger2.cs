@@ -35,6 +35,10 @@ public class GolemnTrigger2 : MonoBehaviour
         {
             ContainerController.LoadingOpen = true;
             HPMPBarController.EIndex = 3;
+            if (Global.EnemyListInfo[2] == 0)
+            {
+                Global.EnemyListInfo[2] = 1;
+            }
             despawn = true;
             SceneManager.LoadScene("BSGolemn 1");
         }
